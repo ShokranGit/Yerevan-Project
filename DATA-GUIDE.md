@@ -79,7 +79,30 @@ Rough anchors:
 
 ---
 
-## 3. Changing the themes
+## 3. Setting the timeline's span
+
+By default the timeline runs from your earliest entry to your latest, and it
+re-scales every time you add something. To hold it open across a period you
+haven't filled in yet — so the shape of the research is visible before the
+research is finished — set either end in `meta`:
+
+```json
+"meta": {
+  "timelineStart": "1990-01-01",
+  "timelineEnd": "2028-12-31"
+}
+```
+
+Leave a value as `""` to let that end follow the data. The current setting fixes
+the end at **December 2028** and lets the start follow your earliest entry.
+
+An override can only *widen* the timeline, never narrow it: if you add an entry
+outside the stated range, the timeline stretches to include it rather than
+hiding the point. You can't lose data by mis-setting these.
+
+---
+
+## 4. Changing the themes
 
 Edit the `categories` array. Each needs `id`, `label`, and `color`:
 
@@ -93,7 +116,7 @@ basemap — mid-tone and saturated works; very dark or very pale does not.
 
 ---
 
-## 4. Before committing
+## 5. Before committing
 
 JSON is unforgiving — one trailing comma and the whole map goes blank. Check first:
 
@@ -105,7 +128,7 @@ If the map shows an error screen instead of loading, that's almost always the ca
 
 ---
 
-## 5. A note on structure
+## 6. A note on structure
 
 The `analysis` field is what makes this a research instrument rather than a
 gazetteer. A point with a date, a place, and no argument is a pin. The map becomes
