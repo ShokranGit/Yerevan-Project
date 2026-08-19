@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Yerevan Project",
+    "subtitle": "An interactive research map of urban space, social movements, and political events",
+    "author": "Alireza Bahrani",
+    "affiliation": "",
+    "description": "This map presents an ongoing research project on Yerevan's urban space — beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
+    "note": "This is a working research instrument, not a finished publication. Entries marked EXAMPLE are placeholders demonstrating the data format and should be replaced.",
+    "updated": "2026-08-19"
+  },
+
+  "categories": [
+    { "id": "protest",      "label": "Protest & mobilization",        "color": "#e0574a" },
+    { "id": "development",  "label": "Urban development",             "color": "#4aa8e0" },
+    { "id": "demolition",   "label": "Demolition & displacement",     "color": "#c96fd1" },
+    { "id": "state",        "label": "State violence & policing",     "color": "#e8a13a" },
+    { "id": "politics",     "label": "Electoral & institutional",     "color": "#5ec9a8" },
+    { "id": "conflict",     "label": "War & Nagorno-Karabakh",        "color": "#9b8cf0" },
+    { "id": "memory",       "label": "Memory & monuments",            "color": "#d1b04a" },
+    { "id": "publiclife",   "label": "Everyday public space",         "color": "#7fbf5e" },
+    { "id": "infra",        "label": "Infrastructure & utilities",    "color": "#6b8fa8" }
+  ],
+
+  "events": [
+
+    {
+      "id": "example-northern-avenue",
+      "title": "EXAMPLE — Northern Avenue opens",
+      "date": "2007-11-01",
+      "datePrecision": "month",
+      "coordinates": [44.5136, 40.1817],
+      "location": "Northern Avenue, between Republic Square and Freedom Square",
+      "categories": ["development", "demolition"],
+      "summary": "Placeholder entry. Replace this text with your own account of the event: what happened, who was involved, what the observable facts are. Two blank lines make a new paragraph.",
+      "analysis": "Placeholder. This is where your interpretive writing goes — the argument the point is making within the wider research. It is styled differently from the summary so that description and analysis stay visually distinct.",
+      "actors": ["Yerevan Municipality", "Private developers", "Displaced residents"],
+      "tags": ["Northern Avenue", "master plan", "expropriation"],
+      "sources": [
+        { "title": "Replace with a real citation", "url": "", "note": "archival / interview / press" }
+      ],
+      "media": [],
+      "fieldnote": ""
+    },
+
+    {
+      "id": "example-mashtots-park",
+      "title": "EXAMPLE — Mashtots Park movement",
+      "date": "2012-02-01",
+      "dateEnd": "2012-04-30",
+      "datePrecision": "month",
+      "coordinates": [44.5063, 40.1793],
+      "location": "Mashtots Park, Mashtots Avenue",
+      "categories": ["protest", "publiclife"],
+      "summary": "Placeholder entry showing an event with a duration — note the 'dateEnd' field, which makes this point stay visible across a span of months rather than a single day.",
+      "analysis": "Placeholder analysis.",
+      "actors": [],
+      "tags": ["green space", "civic movement"],
+      "sources": [],
+      "media": [],
+      "fieldnote": ""
+    },
+
+    {
+      "id": "example-republic-square-2018",
+      "title": "EXAMPLE — Republic Square, spring 2018",
+      "date": "2018-04-23",
+      "datePrecision": "day",
+      "coordinates": [44.5126, 40.1776],
+      "location": "Republic Square",
+      "categories": ["protest", "politics"],
+      "summary": "Placeholder entry demonstrating a single-day event with day-level precision.",
+      "analysis": "Placeholder analysis.",
+      "actors": [],
+      "tags": ["2018", "revolution"],
+      "sources": [],
+      "media": [],
+      "fieldnote": ""
+    }
+
+  ]
+}
