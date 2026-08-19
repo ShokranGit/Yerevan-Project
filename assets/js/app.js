@@ -135,13 +135,31 @@
     });
     state.events = state.events.filter(function (e) { return e._t !== null; });
 
+    /* --- timeline bounds ---------------------------------------------
+       By default the timeline spans exactly the data, with a little padding
+       so the first and last points aren't flush against the handles.
+       meta.timelineStart / meta.timelineEnd override either end, so the
+       timeline can hold open space for periods not yet filled in.
+       ------------------------------------------------------------------ */
     var times = state.events.map(function (e) { return e._t; })
       .concat(state.events.map(function (e) { return e._tEnd; }));
-    state.tMin = times.length ? Math.min.apply(null, times) : Date.UTC(2000, 0, 1);
-    state.tMax = times.length ? Math.max.apply(null, times) : Date.UTC(2026, 0, 1);
-    /* pad a little so end points aren't flush against the handles */
-    var pad = Math.max((state.tMax - state.tMin) * 0.02, 86400000 * 30);
-    state.tMin -= pad; state.tMax += pad;
+    var dataMin = times.length ? Math.min.apply(null, times) : Date.UTC(2000, 0, 1);
+    var dataMax = times.length ? Math.max.apply(null, times) : Date.UTC(2026, 0, 1);
+    var pad = Math.max((dataMax - dataMin) * 0.02, 86400000 * 30);
+
+    var meta = data.meta || {};
+    var forcedMin = parseDate(meta.timelineStart);
+    var forcedMax = parseDate(meta.timelineEnd);
+
+    state.tMin = forcedMin !== null ? forcedMin : dataMin - pad;
+    state.tMax = forcedMax !== null ? forcedMax : dataMax + pad;
+
+    /* an override must never hide data that falls outside it */
+    if (times.length) {
+      state.tMin = Math.min(state.tMin, dataMin - pad);
+      state.tMax = Math.max(state.tMax, dataMax + pad);
+    }
+
     state.winStart = state.tMin; state.winEnd = state.tMax;
 
     state.categories.forEach(function (c) { state.activeCats.add(c.id); });
