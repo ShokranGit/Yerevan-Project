@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Yerevan Project — An Interactive Research Map</title>
+<meta name="description" content="Mapping urban space, social movements, and political events in Yerevan, Armenia." />
+<link rel="preconnect" href="https://basemaps.cartocdn.com" />
+<link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
+<link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ============ LEFT PANEL ============ -->
+  <aside id="panel">
+
+    <header id="panel-head">
+      <div class="brand">
+        <h1>Yerevan Project</h1>
+        <p class="brand-sub">Urban space · social movements · political events</p>
+      </div>
+      <button id="panel-toggle" class="icon-btn" title="Collapse panel" aria-label="Collapse panel">&#10094;</button>
+    </header>
+
+    <!-- ---- VIEW A: browse / filter ---- -->
+    <div id="browse-view">
+
+      <div class="field">
+        <input id="search" type="search" placeholder="Search events, places, actors…" autocomplete="off" />
+      </div>
+
+      <section class="block">
+        <div class="block-head">
+          <h2>Themes</h2>
+          <button id="cat-all" class="link-btn">all</button>
+          <button id="cat-none" class="link-btn">none</button>
+        </div>
+        <div id="categories"></div>
+      </section>
+
+      <section class="block">
+        <div class="block-head">
+          <h2>Results <span id="result-count" class="count">0</span></h2>
+          <select id="sort" title="Sort results">
+            <option value="date-asc">Oldest first</option>
+            <option value="date-desc">Newest first</option>
+            <option value="title">A–Z</option>
+          </select>
+        </div>
+        <ul id="results"></ul>
+      </section>
+
+    </div>
+
+    <!-- ---- VIEW B: single event detail ---- -->
+    <article id="detail-view" hidden>
+      <button id="detail-back" class="back-btn">&#10094; Back to all events</button>
+      <div id="detail-body"></div>
+    </article>
+
+  </aside>
+
+  <!-- ============ MAP ============ -->
+  <main id="map-wrap">
+    <div id="map"></div>
+
+    <div id="map-controls">
+      <button class="map-btn" id="basemap-btn" title="Switch basemap">Basemap</button>
+      <button class="map-btn" id="reset-btn" title="Reset view">Reset view</button>
+      <button class="map-btn" id="about-btn" title="About this map">About</button>
+    </div>
+
+    <!-- ---- TIMELINE ---- -->
+    <div id="timeline">
+      <div class="tl-row">
+        <button id="play-btn" class="play-btn" title="Play through time" aria-label="Play">&#9654;</button>
+        <div class="tl-label">
+          <span id="tl-from">—</span>
+          <span class="tl-dash">→</span>
+          <span id="tl-to">—</span>
+        </div>
+        <button id="tl-reset" class="link-btn">full range</button>
+      </div>
+      <div class="tl-slider">
+        <div id="tl-track"></div>
+        <div id="tl-fill"></div>
+        <div id="tl-density"></div>
+        <input type="range" id="tl-start" min="0" max="100" value="0" step="1" aria-label="Start of time window" />
+        <input type="range" id="tl-end" min="0" max="100" value="100" step="1" aria-label="End of time window" />
+      </div>
+      <div id="tl-ticks"></div>
+    </div>
+  </main>
+
+</div>
+
+<!-- ============ ABOUT MODAL ============ -->
+<div id="about-modal" class="modal" hidden>
+  <div class="modal-card">
+    <button id="about-close" class="modal-close" aria-label="Close">&times;</button>
+    <h2>About this map</h2>
+    <div id="about-body"></div>
+  </div>
+</div>
+
+<div id="loading">Loading map…</div>
+
+<script src="assets/vendor/maplibre-gl.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
