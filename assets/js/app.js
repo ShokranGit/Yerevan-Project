@@ -158,6 +158,7 @@
      ================================================================= */
 
   var loaderHidden = false;
+  var mapLoaded = false;
   function hideLoader() {
     if (loaderHidden) return;
     loaderHidden = true;
@@ -189,6 +190,7 @@
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 88, unit: "metric" }), "bottom-right");
 
     map.on("load", function () {
+      mapLoaded = true;
       addLayers();
       refresh();
       hideLoader();
@@ -208,14 +210,14 @@
     /* Failsafe: never let the loading screen trap the interface. The panel,
        timeline and filters are useful even if basemap tiles cannot be reached. */
     setTimeout(function () {
-      if (!loaderHidden) {
-        hideLoader();
+      hideLoader();
+      if (!mapLoaded) {
         refresh();
         mapNotice("<strong style=\"color:#e6e8ec\">Basemap did not load.</strong><br>" +
           "The timeline, themes and event list still work. This is usually a network " +
           "or firewall problem reaching the map tile server.");
       }
-    }, 8000);
+    }, 20000);
   }
 
   function addLayers() {
