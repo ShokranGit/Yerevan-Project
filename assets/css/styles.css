@@ -518,80 +518,52 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 
 
 /* ===================================================================
-   BUILDING PICKER
+   COORDINATE PICK — attached to the readout it belongs to
    =================================================================== */
 
-.map-btn.on{ color:#fff; background:var(--accent); border-color:var(--accent); }
-#pick-count{ opacity:.8; }
+/* The strip itself is click-through; only the button inside it is not. */
+#coords button{ pointer-events:auto; }
 
-#pick-panel{
-  position:absolute; top:52px; right:14px; z-index:6;
-  width:322px; max-height:min(58vh, 520px);
-  display:flex; flex-direction:column;
-  background:rgba(22,25,32,.96); backdrop-filter:blur(10px);
-  border:1px solid var(--line); border-radius:9px;
-  box-shadow:0 10px 34px rgba(0,0,0,.45);
-  font-size:12px; color:var(--text-2);
+#pick-btn{
+  display:flex; align-items:center; justify-content:center;
+  width:20px; height:20px; padding:0; margin:-2px 2px -2px -3px;
+  background:none; border:none; border-radius:4px; cursor:pointer;
+  color:var(--text-3);
 }
-#pick-panel[hidden]{ display:none; }
-.pick-head{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:9px 12px; border-bottom:1px solid var(--line);
-  color:var(--text); font-size:12.5px;
+#pick-btn svg{ width:14px; height:14px; }
+#pick-btn:hover{ color:var(--accent); }
+#pick-btn.on{ background:var(--accent); color:#fff; }
+
+#pick-out{
+  position:absolute; left:20px; bottom:44px; z-index:5;
+  display:flex; align-items:center; gap:8px;
+  padding:5px 7px 5px 11px; border-radius:6px;
+  background:rgba(22,25,32,.94); border:1px solid var(--line);
+  backdrop-filter:blur(8px);
+  font-size:11.5px; color:var(--text);
 }
-.pick-head button{
-  background:none; border:none; color:var(--text-3);
-  font-size:16px; line-height:1; cursor:pointer;
-}
-.pick-head button:hover{ color:var(--accent); }
-#pick-list{ overflow:auto; padding:6px 8px; }
-.pick-empty{ margin:8px 6px; color:var(--text-3); line-height:1.5; }
-.pick-row{
-  display:flex; align-items:flex-start; gap:8px;
-  padding:7px 6px; border-bottom:1px solid rgba(255,255,255,.05);
-}
-.pick-row:last-child{ border-bottom:none; }
-.pick-row > b{ color:var(--accent); font-size:11px; min-width:14px; padding-top:1px; }
-.pick-main{ flex:1 1 auto; min-width:0; line-height:1.45; word-break:break-word; }
-.pick-main code{
-  font-size:11px; color:var(--text); font-variant-numeric:tabular-nums;
-  user-select:all;
-}
-.pick-meta{ color:var(--text-3); font-size:10.5px; }
-.pick-zone{
-  flex:0 0 auto; padding:2px 7px; border-radius:4px; cursor:pointer;
-  font-size:10px; letter-spacing:.04em; text-transform:uppercase;
-  border:1px solid var(--line); background:var(--bg-3); color:var(--text-2);
-}
-.pick-zone.republic{ background:var(--accent); border-color:var(--accent); color:#fff; }
-.pick-zone.avenue{ background:#b8bcc2; border-color:#b8bcc2; color:#22252c; }
-.pick-x{
-  flex:0 0 auto; background:none; border:none; cursor:pointer;
-  color:var(--text-3); font-size:15px; line-height:1;
-}
-.pick-x:hover{ color:var(--accent); }
-.pick-actions{
-  display:flex; gap:6px; padding:9px 10px; border-top:1px solid var(--line);
-}
-.pick-actions button{
-  flex:1 1 auto; padding:6px 4px; cursor:pointer; font-size:11px;
-  background:var(--bg-3); border:1px solid var(--line); border-radius:5px;
+#pick-out[hidden]{ display:none; }
+#pick-val{ font-variant-numeric:tabular-nums; letter-spacing:.03em; user-select:all; }
+#pick-out button{
+  padding:3px 8px; cursor:pointer; font-size:10.5px;
+  background:var(--bg-3); border:1px solid var(--line); border-radius:4px;
   color:var(--text-2);
 }
-.pick-actions button:hover{ color:var(--text); border-color:var(--accent); }
+#pick-out button:hover{ color:var(--text); border-color:var(--accent); }
+#pick-clear{ padding:3px 7px !important; }
 
-#map-wrap.on-light #pick-panel{
-  background:rgba(255,255,255,.96); border-color:#d5d8de; color:#4a5058;
+.pick-dot{
+  width:11px; height:11px; border-radius:50%;
+  border:2px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.45);
 }
-#map-wrap.on-light .pick-head{ border-bottom-color:#d5d8de; color:#111; }
-#map-wrap.on-light .pick-actions{ border-top-color:#d5d8de; }
-#map-wrap.on-light .pick-actions button,
-#map-wrap.on-light .pick-zone{ background:#f2f4f6; border-color:#d5d8de; color:#4a5058; }
-#map-wrap.on-light .pick-zone.republic{ background:var(--accent); border-color:var(--accent); color:#fff; }
-#map-wrap.on-light .pick-zone.avenue{ background:#b8bcc2; border-color:#a9aeb5; color:#22252c; }
-#map-wrap.on-light .pick-main code{ color:#111; }
-#map-wrap.on-light .pick-row{ border-bottom-color:#e6e8ec; }
+
+#map-wrap.on-light #pick-out{
+  background:rgba(255,255,255,.94); border-color:#d5d8de; color:#111;
+}
+#map-wrap.on-light #pick-out button{ background:#f2f4f6; border-color:#d5d8de; color:#4a5058; }
+#map-wrap.on-light #pick-btn{ color:#868c94; }
+#map-wrap.on-light #pick-btn.on{ color:#fff; }
 
 @media (max-width:760px){
-  #pick-panel{ width:auto; left:10px; right:10px; top:48px; }
+  #pick-out{ left:10px; bottom:40px; }
 }
