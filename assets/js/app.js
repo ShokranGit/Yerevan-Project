@@ -409,14 +409,32 @@
          have made a shallow pool into a four-metre wall. A fill layer drapes
          over the terrain instead: every part of the pool is blue, and it
          follows the slope of the square, which is what a pool actually does. */
+      /* Two ways of putting a shape on the ground, and the choice is forced by
+         the terrain, not by taste. Anything low sitting on a slope has to be
+         DRAPED: a fill layer follows the hillside, while a short extrusion gets
+         swallowed by the ground rising through it. So water, and any feature
+         carrying "flat": true — plazas, platforms, terraces — go in this layer,
+         and what stands ON them is extruded separately.
+         Tsitsernakaberd is the case that forced it: the memorial platform is
+         draped, and the stele and the twelve pylons rise out of it. */
       map.addLayer({
         id: "figure-water", type: "fill", source: "figure",
-        filter: ["==", ["get", "zone"], "water"],
-        paint: { "fill-color": WATER, "fill-opacity": 0.9 }
+        filter: ["any",
+          ["==", ["get", "zone"], "water"],
+          ["==", ["get", "flat"], true]
+        ],
+        paint: {
+          "fill-color": ["match", ["get", "zone"],
+            "water", WATER, "republic", RED, "accent", RED, GREY_MASS],
+          "fill-opacity": 0.9
+        }
       });
       map.addLayer({
         id: "figure-buildings", type: "fill-extrusion", source: "figure",
-        filter: ["!=", ["get", "zone"], "water"],
+        filter: ["all",
+          ["!=", ["get", "zone"], "water"],
+          ["!=", ["get", "flat"], true]
+        ],
         paint: {
           "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "accent", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
