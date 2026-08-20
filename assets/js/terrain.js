@@ -1,26 +1,36 @@
 /* ===================================================================
-   Yerevan Project — 3D TERRAIN
+   Yerevan Project — TOPOGRAPHY
    -------------------------------------------------------------------
    Yerevan is not a city on a plane. It sits in an amphitheatre: the
    Hrazdan cuts a gorge through it, Kond and Kanaker stand above the
-   centre, Nork rides the eastern ridge, and Ararat closes the horizon
-   to the south-west. Flat maps of Yerevan hide the single fact that
-   most explains where things were built and where crowds could gather.
+   centre, Nork rides the eastern ridge, and the land falls away
+   south-west toward the Ararat plain. A flat map of Yerevan hides the
+   one fact that most explains where things were built and where
+   crowds could gather.
 
-   Elevation comes from the AWS Terrain Tiles open dataset (SRTM /
-   NASADEM, ~30 m), keyless and CORS-open. Resolution is landform, not
-   street furniture: the gorge and the ridges read clearly, individual
-   steps of the Cascade do not.
+   There is no switch. This is the map.
 
-   Its own file, like picker.js — it waits for window.__map, then
-   re-applies itself after every basemap change, because setStyle
-   discards sources.
+   Two things are doing the work, and they are not the same thing:
+
+   * TERRAIN  — the map surface itself bends, so a tilted camera shows
+     real slope. Convincing when you look across the city; nearly
+     invisible looking straight down at one square, because Kentron's
+     own relief is only tens of metres over a couple of kilometres.
+
+   * HILLSHADE — the same elevation drawn as light and shadow, flat on
+     the ground. This is what makes the landform legible at *every*
+     zoom, and it is why the first version of this file looked like
+     nothing had happened. Shaded relief is the topographic map; the
+     bending is the 3D.
+
+   Elevation: AWS Terrain Tiles (terrarium encoding, SRTM/NASADEM,
+   ~30 m), keyless and CORS-open. That resolution is landform, not
+   street furniture — the gorge and the ridges read clearly, the
+   individual steps of the Cascade do not.
    =================================================================== */
 
 (function () {
   "use strict";
-
-  var $ = function (id) { return document.getElementById(id); };
 
   var DEM = {
     type: "raster-dem",
@@ -31,60 +41,50 @@
     attribution: 'Elevation: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">AWS Terrain Tiles</a> (SRTM/NASADEM)'
   };
 
-  /* 1.5× is a compromise: Kentron's relief is tens of metres and would be
-     invisible at 1×, while the 400 m between the gorge and Nork would look
-     absurd much above 2×. */
-  var EXAGGERATION = 1.5;
-
-  /* Looking south-west from the city, down the Ararat plain. */
-  var REGION = { center: [44.44, 40.05], zoom: 9.3, pitch: 74, bearing: 214 };
+  /* 1.8x: Kentron's relief would be invisible at 1x, and the ~400 m between
+     the gorge floor and Nork would look like a mountain range much above 2x. */
+  var EXAGGERATION = 1.8;
 
   var map = null;
-  var enabled = true;
+
+  /* The shading has to sit under the streets and buildings, or it draws on
+     top of the drawing. Find the first line/symbol layer and go beneath it. */
+  function groundLayerId() {
+    var layers = map.getStyle().layers || [];
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === "line" || layers[i].type === "symbol" ||
+          layers[i].type === "fill-extrusion") return layers[i].id;
+    }
+    return undefined;
+  }
 
   function apply() {
     if (!map || !map.isStyleLoaded()) return;
+
     if (!map.getSource("dem")) map.addSource("dem", DEM);
-    map.setTerrain(enabled ? { source: "dem", exaggeration: EXAGGERATION } : null);
+
+    if (!map.getLayer("hillshade")) {
+      map.addLayer({
+        id: "hillshade",
+        type: "hillshade",
+        source: "dem",
+        paint: {
+          "hillshade-exaggeration": 0.55,
+          "hillshade-shadow-color": "#7d838c",
+          "hillshade-highlight-color": "#ffffff",
+          "hillshade-accent-color": "#9aa0a8",
+          "hillshade-illumination-direction": 315,
+          "hillshade-illumination-anchor": "map"
+        }
+      }, groundLayerId());
+    }
+
+    if (!map.getTerrain()) {
+      map.setTerrain({ source: "dem", exaggeration: EXAGGERATION });
+    }
   }
 
   function safeApply() { try { apply(); } catch (err) { console.warn("terrain:", err); } }
-
-  function setEnabled(v) {
-    enabled = v;
-    $("terrain-btn").classList.toggle("on", enabled);
-    safeApply();
-    if (!enabled && map.getPitch() > 60) map.easeTo({ pitch: 55, duration: 500 });
-  }
-
-  function addButtons() {
-    var host = $("map-controls");
-    if (!host || $("terrain-btn")) return;
-    var anchor = $("about-btn");
-
-    var t = document.createElement("button");
-    t.className = "map-btn on";
-    t.id = "terrain-btn";
-    t.title = "3D terrain — the landform under the city";
-    t.textContent = "Terrain";
-    t.addEventListener("click", function () { setEnabled(!enabled); });
-
-    var r = document.createElement("button");
-    r.className = "map-btn";
-    r.id = "region-btn";
-    r.title = "Pull back to the Ararat plain";
-    r.textContent = "Region";
-    r.addEventListener("click", function () {
-      if (!enabled) setEnabled(true);
-      map.easeTo({
-        center: REGION.center, zoom: REGION.zoom,
-        pitch: REGION.pitch, bearing: REGION.bearing, duration: 2600
-      });
-    });
-
-    host.insertBefore(t, anchor);
-    host.insertBefore(r, anchor);
-  }
 
   var waited = 0;
   var timer = setInterval(function () {
@@ -93,9 +93,8 @@
       map = window.__map;
       /* MapLibre caps pitch at 60 by default; terrain is worth more than that. */
       try { map.setMaxPitch(85); } catch (e) {}
-      addButtons();
       safeApply();
-      /* setStyle drops every source, so the DEM has to be put back each time. */
+      /* setStyle drops every source and layer, so put them back each time. */
       map.on("styledata", safeApply);
     } else if (++waited > 200) {
       clearInterval(timer);
