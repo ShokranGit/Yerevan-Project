@@ -7,7 +7,7 @@
     "description": "This map presents an ongoing research project on Yerevan's urban space — beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
     "timelineStart": "2000-01-01",
     "timelineEnd": "2028-12-31",
-    "note": "Working research instrument, not a finished publication. Entries are drawn from the Northern Avenue paper (edited Nov 2025) and carry its citations. Coordinates flagged as approximate still need verification.",
+    "note": "Working research instrument, not a finished publication. Entries derive from the Northern Avenue paper (edited Nov 2025) and carry its citations. Photographs are openly licensed (Wikimedia Commons); each carries its photographer, date and licence, and links to its source file.",
     "updated": "2026-08-19"
   },
   "categories": [
@@ -145,7 +145,24 @@
           "title": "Vermishyan & Michikyan (2020). The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue"
         }
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Eminent_domain%2C_Northern_Avenue%2C_Yerevan.JPG/1280px-Eminent_domain%2C_Northern_Avenue%2C_Yerevan.JPG",
+          "caption": "An apartment block slated for demolition under the “eminent domain” clause. Residents have hung a banner reading “State Needs” / “Yes to Renovation” / “No to Demolition.”",
+          "credit": "Photo: Արշավիր (Arshavir), 14 April 2011",
+          "license": "CC0 (public domain)",
+          "source": "https://commons.wikimedia.org/wiki/File:Eminent_domain,_Northern_Avenue,_Yerevan.JPG"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Construction_of_Northern_Avenue_in_Yerevan.jpg/1280px-Construction_of_Northern_Avenue_in_Yerevan.jpg",
+          "caption": "The corridor under construction, a year before the avenue opened.",
+          "credit": "Photo: 517design, 29 April 2006",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Construction_of_Northern_Avenue_in_Yerevan.jpg"
+        }
+      ],
       "fieldnote": "Hakob Hakobyan's painting *No to Neutron Weapons* shows a compressed, headless crowd in an urban corridor framed by buildings closely resembling Northern Avenue. Hakobyan: \"Neutron weapons destroy people, but do not damage buildings… they are no longer worth anything if the people are gone.\""
     },
     {
@@ -210,7 +227,16 @@
           "note": "press"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Construction_of_Northern_Avenue_in_Yerevan.jpg/1280px-Construction_of_Northern_Avenue_in_Yerevan.jpg",
+          "caption": "Northern Avenue under construction, photographed five weeks before the first section opened to the public.",
+          "credit": "Photo: 517design, 29 April 2006",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Construction_of_Northern_Avenue_in_Yerevan.jpg"
+        }
+      ]
     },
     {
       "id": "northern-avenue-opening-2007",
@@ -261,7 +287,16 @@
           "title": "Vermishyan & Michikyan (2020)"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Avenue_5%2C_Northern_Avenue.jpg/1280px-Avenue_5%2C_Northern_Avenue.jpg",
+          "caption": "The completed avenue — nine-storey frontages, luxury retail at street level, and the sparse furniture that makes walking the dominant activity.",
+          "credit": "Photo: Armineaghayan, 9 June 2014",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Avenue_5,_Northern_Avenue.jpg"
+        }
+      ]
     },
     {
       "id": "opera-square-election-protests-2003",
@@ -303,7 +338,16 @@
           "title": "Abrahamian, L. (2012). Yerevan: memory and forgetting in the organisation of post-Soviet urban space"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Armenian_Presidential_Elections_2008_Protest_Day_1_-_Opera_Square.jpg/1280px-Armenian_Presidential_Elections_2008_Protest_Day_1_-_Opera_Square.jpg",
+          "caption": "Day one of the 2008 post-election protests. A march that began at the Matenadaran, 30,000–50,000 strong, arrives at its destination: Opera Square.",
+          "credit": "Photo: Serouj, 20 February 2008",
+          "license": "CC BY 3.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Armenian_Presidential_Elections_2008_Protest_Day_1_-_Opera_Square.jpg"
+        }
+      ]
     },
     {
       "id": "opera-square-crackdown-2008",
@@ -338,7 +382,16 @@
           "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Armenian_Presidential_Elections_2008_Protest_Day_1_-_Matenadaran_southwest.jpg/1280px-Armenian_Presidential_Elections_2008_Protest_Day_1_-_Matenadaran_southwest.jpg",
+          "caption": "The rally at the Matenadaran on the first day of protest, ten days before the crackdown.",
+          "credit": "Photo: Serouj, 20 February 2008",
+          "license": "CC BY 3.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Armenian_Presidential_Elections_2008_Protest_Day_1_-_Matenadaran_southwest.jpg"
+        }
+      ]
     },
     {
       "id": "opera-square-closure-2008",
@@ -434,7 +487,24 @@
           "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mashtots-raffi_kojian-1744.jpg/1280px-Mashtots-raffi_kojian-1744.jpg",
+          "caption": "The Mashtots Park movement in the park itself.",
+          "credit": "Photo: Raffi Kojian, 14 February 2012",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Mashtots-raffi_kojian-1744.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Mashtots-raffi_kojian-1748.jpg/1280px-Mashtots-raffi_kojian-1748.jpg",
+          "caption": "Occupying the contested ground, February 2012.",
+          "credit": "Photo: Raffi Kojian, 14 February 2012",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Mashtots-raffi_kojian-1748.jpg"
+        }
+      ]
     },
     {
       "id": "hovannisian-hunger-strike-2013",
@@ -565,7 +635,16 @@
           "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Electric_Yerevan.JPG/1280px-Electric_Yerevan.JPG",
+          "caption": "Electric Yerevan occupying Baghramyan Avenue — a street, not a square.",
+          "credit": "Photo: Narek75, 26 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Electric_Yerevan.JPG"
+        }
+      ]
     },
     {
       "id": "northern-avenue-mall-2014",
@@ -639,7 +718,24 @@
           "title": "Zolyan, Broers & Ohanyan (2020). Thirty years of protest"
         }
       ],
-      "media": []
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Republic_Square_During_the_2018_Armenian_protests_01.jpg/1280px-Republic_Square_During_the_2018_Armenian_protests_01.jpg",
+          "caption": "Republic Square during the 2018 protests — the square that had symbolised statehood, filled by the movement.",
+          "credit": "Photo: Narek75, 19 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Republic_Square_During_the_2018_Armenian_protests_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Republic_Square_During_the_2018_Armenian_protests_02.jpg/1280px-Republic_Square_During_the_2018_Armenian_protests_02.jpg",
+          "caption": "The same evening, from the crowd.",
+          "credit": "Photo: Narek75, 19 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Republic_Square_During_the_2018_Armenian_protests_02.jpg"
+        }
+      ]
     },
     {
       "id": "musicians-arrest-2018",
