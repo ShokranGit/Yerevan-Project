@@ -1,0 +1,71 @@
+{
+  "version": 8,
+  "name": "Kentron figure-ground",
+  "metadata": { "note": "Palette and drawing logic follow slide 10 of the proposal defence: white ground, grey fabric, red figure." },
+  "glyphs": "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "openmaptiles": { "type": "vector", "url": "https://tiles.openfreemap.org/planet" }
+  },
+  "layers": [
+    { "id": "bg", "type": "background",
+      "paint": { "background-color": "#f4f4f4" } },
+
+    { "id": "water", "type": "fill", "source": "openmaptiles", "source-layer": "water",
+      "paint": { "fill-color": "#e2e5e7" } },
+
+    { "id": "park", "type": "fill", "source": "openmaptiles", "source-layer": "park",
+      "paint": { "fill-color": "#eceeec", "fill-opacity": 0.9 } },
+
+    { "id": "landuse", "type": "fill", "source": "openmaptiles", "source-layer": "landuse",
+      "filter": ["match", ["get", "class"], ["residential", "commercial", "industrial"], true, false],
+      "paint": { "fill-color": "#f0f0f0" } },
+
+    { "id": "road-minor", "type": "line", "source": "openmaptiles", "source-layer": "transportation",
+      "minzoom": 12,
+      "filter": ["match", ["get", "class"], ["minor", "service", "path", "track"], true, false],
+      "paint": {
+        "line-color": "#d8dade",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 0.4, 16, 2, 18, 5]
+      } },
+
+    { "id": "road-major", "type": "line", "source": "openmaptiles", "source-layer": "transportation",
+      "filter": ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false],
+      "paint": {
+        "line-color": "#cdd0d5",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 0.8, 14, 2.4, 16, 5, 18, 11]
+      } },
+
+    { "id": "rail", "type": "line", "source": "openmaptiles", "source-layer": "transportation",
+      "filter": ["==", ["get", "class"], "rail"], "minzoom": 13,
+      "paint": { "line-color": "#dcdee1", "line-width": 1 } },
+
+    { "id": "building-ground", "type": "fill-extrusion", "source": "openmaptiles",
+      "source-layer": "building", "minzoom": 13,
+      "paint": {
+        "fill-extrusion-color": "#b8bcc2",
+        "fill-extrusion-height": ["coalesce", ["get", "render_height"], 9],
+        "fill-extrusion-base": ["coalesce", ["get", "render_min_height"], 0],
+        "fill-extrusion-opacity": 0.92,
+        "fill-extrusion-vertical-gradient": true
+      } },
+
+    { "id": "place-label", "type": "symbol", "source": "openmaptiles", "source-layer": "place",
+      "minzoom": 10, "maxzoom": 15,
+      "filter": ["match", ["get", "class"], ["suburb", "neighbourhood", "quarter"], true, false],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 11, "text-transform": "uppercase", "text-letter-spacing": 0.12
+      },
+      "paint": { "text-color": "#8b9097", "text-halo-color": "#f4f4f4", "text-halo-width": 1.6 } },
+
+    { "id": "street-label", "type": "symbol", "source": "openmaptiles",
+      "source-layer": "transportation_name", "minzoom": 15,
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Noto Sans Regular"], "text-size": 10,
+        "symbol-placement": "line"
+      },
+      "paint": { "text-color": "#9aa0a7", "text-halo-color": "#f4f4f4", "text-halo-width": 1.6 } }
+  ]
+}
