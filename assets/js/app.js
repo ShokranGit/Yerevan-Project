@@ -258,7 +258,9 @@
 
     map.on("load", function () {
       mapLoaded = true;
-      addFigureGround();
+      window.__map = map;                 /* handy in the console */
+      try { addFigureGround(); }
+      catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
       refresh();
       hideLoader();
@@ -270,7 +272,8 @@
 
     map.on("styledata", function () {
       if (!map.isStyleLoaded()) return;
-      addFigureGround();
+      try { addFigureGround(); }
+      catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
     });
 
