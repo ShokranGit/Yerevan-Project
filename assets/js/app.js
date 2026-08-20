@@ -135,6 +135,33 @@
     });
     state.events = state.events.filter(function (e) { return e._t !== null; });
 
+    /* --- co-located entries -------------------------------------------
+       Several events share one address (the avenue itself, Opera Square).
+       Drawn at their true coordinates they collapse into a single dot and
+       all but one become unclickable. Entries sharing a location are fanned
+       out on a small circle — roughly 15 m — purely for display. The stored
+       coordinates are untouched.
+       ------------------------------------------------------------------ */
+    var byLoc = {};
+    state.events.forEach(function (e) {
+      var k = e.coordinates[0].toFixed(5) + "," + e.coordinates[1].toFixed(5);
+      (byLoc[k] = byLoc[k] || []).push(e);
+    });
+    Object.keys(byLoc).forEach(function (k) {
+      var group = byLoc[k];
+      if (group.length < 2) { group[0]._display = group[0].coordinates; return; }
+      var R = 0.00016;                                  /* ~18 m in latitude */
+      var latScale = Math.cos(group[0].coordinates[1] * Math.PI / 180) || 1;
+      group.forEach(function (e, i) {
+        var a = (2 * Math.PI * i) / group.length - Math.PI / 2;
+        e._display = [
+          e.coordinates[0] + (R * Math.cos(a)) / latScale,
+          e.coordinates[1] + R * Math.sin(a)
+        ];
+        e._fanned = true;
+      });
+    });
+
     /* --- timeline bounds ---------------------------------------------
        By default the timeline spans exactly the data, with a little padding
        so the first and last points aren't flush against the handles.
@@ -154,11 +181,10 @@
     state.tMin = forcedMin !== null ? forcedMin : dataMin - pad;
     state.tMax = forcedMax !== null ? forcedMax : dataMax + pad;
 
-    /* an override must never hide data that falls outside it */
-    if (times.length) {
-      state.tMin = Math.min(state.tMin, dataMin - pad);
-      state.tMax = Math.max(state.tMax, dataMax + pad);
-    }
+    /* An entry falling outside an explicit range is not hidden: it is treated
+       as STANDING CONTEXT — a condition that predates (or outlasts) the mapped
+       period rather than an event inside it. Context entries stay visible at
+       every timeline position and do not compress the scale. */
 
     state.winStart = state.tMin; state.winEnd = state.tMax;
 
@@ -295,10 +321,20 @@
      FILTER + REFRESH
      ================================================================= */
 
+  /* an entry outside the timeline's stated span is standing context */
+  function isContext(e) {
+    return e._tEnd < state.tMin || e._t > state.tMax;
+  }
+
+  function inWindow(e) {
+    if (isContext(e)) return true;
+    return !(e._tEnd < state.winStart || e._t > state.winEnd);
+  }
+
   function visibleEvents() {
     var q = state.query.trim().toLowerCase();
     return state.events.filter(function (e) {
-      if (e._tEnd < state.winStart || e._t > state.winEnd) return false;
+      if (!inWindow(e)) return false;
       if (state.categories.length) {
         var hit = e.categories.some(function (c) { return state.activeCats.has(c); });
         if (!hit && e.categories.length) return false;
@@ -327,7 +363,7 @@
           return {
             type: "Feature",
             id: hashId(e.id),
-            geometry: { type: "Point", coordinates: e.coordinates },
+            geometry: { type: "Point", coordinates: e._display || e.coordinates },
             properties: {
               id: e.id,
               title: e.title || "(untitled)",
@@ -395,7 +431,7 @@
   function updateCategoryCounts() {
     var counts = {};
     state.events.forEach(function (e) {
-      if (e._tEnd < state.winStart || e._t > state.winEnd) return;
+      if (!inWindow(e)) return;
       e.categories.forEach(function (c) { counts[c] = (counts[c] || 0) + 1; });
     });
     Array.prototype.forEach.call(document.querySelectorAll("[data-count]"), function (el) {
@@ -419,7 +455,8 @@
       var li = document.createElement("li");
       li.className = "res" + (e.id === state.selectedId ? " active" : "");
       li.innerHTML =
-        '<div class="res-date">' + esc(fmtDate(e)) + '</div>' +
+        '<div class="res-date">' + esc(fmtDate(e)) +
+          (isContext(e) ? ' <span class="ctx">context</span>' : '') + '</div>' +
         '<div class="res-title">' + esc(e.title || "(untitled)") + '</div>' +
         '<div class="res-tags">' +
           e.categories.map(function (c) {
@@ -445,7 +482,7 @@
     history.replaceState(null, "", "#" + encodeURIComponent(id));
 
     if (fly !== false && map) {
-      map.easeTo({ center: e.coordinates, zoom: Math.max(map.getZoom(), 15), duration: 900 });
+      map.easeTo({ center: e._display || e.coordinates, zoom: Math.max(map.getZoom(), 16), duration: 900 });
     }
 
     var h = "";
@@ -505,7 +542,7 @@
     $("detail-body").querySelectorAll("[data-act]").forEach(function (b) {
       b.addEventListener("click", function () {
         if (b.dataset.act === "zoom") {
-          map.easeTo({ center: e.coordinates, zoom: 16.5, duration: 900 });
+          map.easeTo({ center: e._display || e.coordinates, zoom: 17, duration: 900 });
         } else {
           navigator.clipboard.writeText(location.href).then(function () {
             b.textContent = "Copied";
@@ -551,6 +588,7 @@
     var BUCKETS = 60, hist = new Array(BUCKETS).fill(0);
     state.events.forEach(function (ev) {
       var f = (ev._t - state.tMin) / (state.tMax - state.tMin);
+      if (f < 0 || f > 1) return;              /* standing context, not an event */
       var i = Math.min(BUCKETS - 1, Math.max(0, Math.floor(f * BUCKETS)));
       hist[i]++;
     });
