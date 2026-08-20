@@ -7,7 +7,7 @@
 <meta name="description" content="Mapping urban space, social movements, and political events in Yerevan, Armenia." />
 <link rel="preconnect" href="https://basemaps.cartocdn.com" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css?v=20260821h" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260821j" rel="stylesheet" />
 </head>
 <body>
 
@@ -99,6 +99,40 @@
       <button class="map-btn" id="about-btn" title="About this map">About</button>
     </div>
 
+    <!-- ---- THE POLITICAL LANDSCAPE, 1887 TO NOW ----
+         Left-right across, Moscow-Brussels in depth, time going up.
+         The year slider is the timeline; the space fills in as it moves. -->
+    <button id="p3-thumb" type="button" title="Armenian political landscape in 3D">
+      <canvas id="p3-thumb-canvas"></canvas>
+      <b>Parties</b>
+    </button>
+
+    <div id="p3-modal" hidden>
+      <div class="g3-shell">
+        <div class="g3-stage">
+          <canvas id="p3-canvas"></canvas>
+          <div class="g3-head">
+            <div>
+              <h2>The political landscape</h2>
+              <p>Left to right across, Moscow to Brussels in depth, time rising. Drag the year.</p>
+            </div>
+            <div style="display:flex;gap:6px">
+              <button class="map-btn" id="p3-play" type="button">Play</button>
+              <button class="map-btn" id="p3-reset" type="button">Reset</button>
+              <button class="map-btn" id="p3-close" type="button">Close</button>
+            </div>
+          </div>
+          <div id="p3-legend"></div>
+          <div class="p3-bar">
+            <b id="p3-year-label">2026</b>
+            <input id="p3-year" type="range" min="1988" max="2026" value="2026" step="1" aria-label="Year" />
+          </div>
+          <div id="p3-year-note"></div>
+        </div>
+        <aside class="g3-side" id="p3-info"></aside>
+      </div>
+    </div>
+
     <!-- ---- THE RELATIONAL MODEL, IN 3D ----
          A thumbnail that turns by itself; click it for the full window. -->
     <button id="g3-thumb" type="button" title="The relational model in 3D">
@@ -184,9 +218,10 @@
 <script src="assets/vendor/maplibre-gl.js"></script>
 <!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
      and without it readers keep running yesterday's code. -->
-<script src="assets/js/app.js?v=20260821h"></script>
-<script src="assets/js/picker.js?v=20260821h"></script>
-<script src="assets/js/terrain.js?v=20260821h"></script>
-<script src="assets/js/graph3d.js?v=20260821h"></script>
+<script src="assets/js/app.js?v=20260821j"></script>
+<script src="assets/js/picker.js?v=20260821j"></script>
+<script src="assets/js/terrain.js?v=20260821j"></script>
+<script src="assets/js/graph3d.js?v=20260821j"></script>
+<script src="assets/js/parties3d.js?v=20260821j"></script>
 </body>
 </html>
