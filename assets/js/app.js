@@ -256,7 +256,13 @@
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: "metric" }), "bottom-left");
 
-    map.on("load", function () {
+    /* Some styles never fire "load" — MapLibre only emits it after a first full
+       render, and a style whose sources are still settling can skip it. "idle"
+       always arrives. Boot from whichever comes first, exactly once. */
+    var booted = false;
+    function boot() {
+      if (booted) return;
+      booted = true;
       mapLoaded = true;
       window.__map = map;                 /* handy in the console */
       try { addFigureGround(); }
@@ -266,9 +272,10 @@
       hideLoader();
       wireMapFurniture();
       openFromHash();
-    });
+    }
 
-    map.on("idle", hideLoader);
+    map.on("load", boot);
+    map.on("idle", function () { boot(); hideLoader(); });
 
     map.on("styledata", function () {
       if (!map.isStyleLoaded()) return;
