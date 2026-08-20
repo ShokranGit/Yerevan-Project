@@ -10,16 +10,33 @@
 
   /* ---------------- configuration ---------------- */
 
-  /* Three ways of seeing the same city.
-     "kentron" is the figure-ground drawing from slide 10 of the proposal
-     defence, rebuilt in 3D: grey fabric, red figure, dashed rings. */
+  /* Ways of seeing the same city. "kentron" is the figure-ground drawing from
+     slide 10 of the proposal defence, rebuilt in 3D: grey fabric, red figure,
+     dashed rings. The others are there for checking the drawing against the
+     world — satellite especially, when you want to see what is actually on a
+     roof. Terrain and hillshade re-apply to whichever is chosen. */
+  function rasterStyle(tiles, credit, maxzoom) {
+    return {
+      version: 8,
+      sources: { base: { type: "raster", tiles: [tiles], tileSize: 256,
+                         maxzoom: maxzoom || 19, attribution: credit } },
+      layers: [{ id: "base", type: "raster", source: "base" }]
+    };
+  }
   var BASEMAPS = {
-    kentron: "assets/style-kentron.json",
-    dark:    "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
-    light:   "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+    kentron:   "assets/style-kentron.json",
+    light:     "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+    streets:   "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+    dark:      "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+    satellite: rasterStyle(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "Imagery &copy; Esri, Maxar, Earthstar Geographics", 19)
   };
-  var BASEMAP_ORDER = ["kentron", "dark", "light"];
-  var BASEMAP_LABEL = { kentron: "Figure-ground 3D", dark: "Dark", light: "Light" };
+  var BASEMAP_ORDER = ["kentron", "light", "streets", "dark", "satellite"];
+  var BASEMAP_LABEL = {
+    kentron: "Figure-ground", light: "Light", streets: "Streets",
+    dark: "Dark", satellite: "Satellite"
+  };
 
   var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
   var HOME_FLAT = { center: [44.5136, 40.1830], zoom: 13.1, pitch: 0, bearing: 0 };
@@ -372,8 +389,10 @@
      rule there and the drawing follows.
      ================================================================= */
 
+  /* The figure is drawn on every basemap, not just the figure-ground one — the
+     point of switching to satellite is to check the red buildings against the
+     real roofs, which only works if they are still there. */
   function addFigureGround() {
-    if (state.basemap !== "kentron") return;
 
     /* The figure: the buildings Alireza marked dark on slide 10. These are real
        OpenStreetMap footprints with real heights, extracted once and stored in
@@ -399,7 +418,7 @@
         id: "figure-buildings", type: "fill-extrusion", source: "figure",
         filter: ["!=", ["get", "zone"], "water"],
         paint: {
-          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, GREY_MASS],
+          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "accent", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           "fill-extrusion-base": 0,
           "fill-extrusion-opacity": 0.96,
@@ -995,6 +1014,24 @@
       var h = state.basemap === "kentron" ? HOME : HOME_FLAT;
       map.easeTo({ center: h.center, zoom: h.zoom, pitch: h.pitch, bearing: h.bearing, duration: 1100 });
     });
+    /* Basemap dropdown. setStyle throws away every source and layer, so the
+       figure-ground rebuilds from the "styledata" handler and terrain.js
+       re-attaches the DEM the same way. */
+    var bmSel = $("basemap-select");
+    if (bmSel) {
+      bmSel.innerHTML = BASEMAP_ORDER.map(function (k) {
+        return '<option value="' + k + '">' + BASEMAP_LABEL[k] + "</option>";
+      }).join("");
+      bmSel.value = state.basemap;
+      bmSel.addEventListener("change", function () {
+        state.basemap = this.value;
+        var dark = state.basemap === "dark" || state.basemap === "satellite";
+        document.body.classList.toggle("light", !dark);
+        $("map-wrap").classList.toggle("on-light", !dark);
+        map.setStyle(BASEMAPS[state.basemap]);
+      });
+    }
+
     $("about-btn").addEventListener("click", function () { $("about-modal").hidden = false; });
     $("about-close").addEventListener("click", function () { $("about-modal").hidden = true; });
     $("about-modal").addEventListener("click", function (e) {
