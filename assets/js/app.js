@@ -10,12 +10,24 @@
 
   /* ---------------- configuration ---------------- */
 
+  /* Three ways of seeing the same city.
+     "kentron" is the figure-ground drawing from slide 10 of the proposal
+     defence, rebuilt in 3D: grey fabric, red figure, dashed rings. */
   var BASEMAPS = {
-    dark:  "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
-    light: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+    kentron: "assets/style-kentron.json",
+    dark:    "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+    light:   "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
   };
+  var BASEMAP_ORDER = ["kentron", "dark", "light"];
+  var BASEMAP_LABEL = { kentron: "Figure-ground 3D", dark: "Dark", light: "Light" };
 
-  var HOME = { center: [44.5136, 40.1830], zoom: 13.1, pitch: 0, bearing: 0 };
+  var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
+  var HOME_FLAT = { center: [44.5136, 40.1830], zoom: 13.1, pitch: 0, bearing: 0 };
+
+  /* palette — red and grey, from the proposal deck */
+  var RED       = "#c9262c";
+  var RED_DEEP  = "#8f1b20";
+  var GREY_MASS = "#b8bcc2";
   var SRC = "events";
   var PLAY_MS = 18000; // full sweep duration
 
@@ -31,7 +43,7 @@
     tMin: 0, tMax: 0,
     winStart: 0, winEnd: 0,
     selectedId: null,
-    basemap: "dark",
+    basemap: "kentron",
     playing: false,
     playRAF: null
   };
@@ -96,7 +108,13 @@
      LOAD
      ================================================================= */
 
-  fetch("data/events.json", { cache: "no-store" })
+  var KENTRON = null;
+
+  fetch("data/kentron.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .catch(function () { return null; })
+    .then(function (k) { KENTRON = k; })
+    .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
     .then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
       return r.json();
@@ -227,14 +245,18 @@
       style: BASEMAPS[state.basemap],
       center: HOME.center,
       zoom: HOME.zoom,
+      pitch: HOME.pitch,
+      bearing: HOME.bearing,
+      maxPitch: 70,
       attributionControl: { compact: true }
     });
 
-    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    map.addControl(new maplibregl.NavigationControl({ showCompass: true, visualizePitch: true }), "top-right");
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 88, unit: "metric" }), "bottom-right");
 
     map.on("load", function () {
       mapLoaded = true;
+      addFigureGround();
       addLayers();
       refresh();
       hideLoader();
@@ -244,8 +266,15 @@
     map.on("idle", hideLoader);
 
     map.on("styledata", function () {
-      if (map.isStyleLoaded() && !map.getSource(SRC)) { addLayers(); refresh(); }
+      if (!map.isStyleLoaded()) return;
+      addFigureGround();
+      if (!map.getSource(SRC)) { addLayers(); refresh(); }
     });
+
+    map.on("sourcedata", function (e) {
+      if (e.sourceId === "openmaptiles" && e.isSourceLoaded) scheduleAccent();
+    });
+    map.on("moveend", scheduleAccent);
 
     map.on("error", function (e) {
       console.warn("map error:", e && e.error ? e.error.message : e);
@@ -291,7 +320,7 @@
         ],
         "circle-color": ["get", "color"],
         "circle-stroke-width": ["case", ["boolean", ["feature-state", "selected"], false], 3, 1.5],
-        "circle-stroke-color": "#ffffff",
+        "circle-stroke-color": state.basemap === "dark" ? "#ffffff" : "#22262c",
         "circle-stroke-opacity": 0.9,
         "circle-opacity": 0.95
       }
@@ -313,6 +342,122 @@
     map.on("click", "ev-dot", function (e) {
       selectEvent(e.features[0].properties.id, false);
     });
+  }
+
+
+  /* =================================================================
+     FIGURE AND GROUND
+     -------------------------------------------------------------------
+     Slide 10 of the proposal defence draws Kentron as figure-ground: the
+     fabric of the city in outline, the buildings that frame the two
+     squares and the avenue filled solid, the squares and the downtown
+     ringed in dashed line. This rebuilds that drawing in three
+     dimensions from OpenStreetMap building heights.
+
+     Which buildings are "figure" is decided by an explicit spatial rule
+     held in data/kentron.json — a 75 m buffer along the Opera–Republic
+     axis plus the two squares — not by a hand-picked list. Change the
+     rule there and the drawing follows.
+     ================================================================= */
+
+  function pointInRing(pt, ring) {
+    var x = pt[0], y = pt[1], inside = false;
+    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  }
+
+  function inAccentZone(pt) {
+    if (!KENTRON || !KENTRON.accent) return false;
+    return KENTRON.accent.features.some(function (f) {
+      return pointInRing(pt, f.geometry.coordinates[0]);
+    });
+  }
+
+  function centroidOf(geom) {
+    var ring = geom.type === "Polygon" ? geom.coordinates[0]
+             : geom.type === "MultiPolygon" ? geom.coordinates[0][0] : null;
+    if (!ring || !ring.length) return null;
+    var sx = 0, sy = 0;
+    for (var i = 0; i < ring.length; i++) { sx += ring[i][0]; sy += ring[i][1]; }
+    return [sx / ring.length, sy / ring.length];
+  }
+
+  function addFigureGround() {
+    if (state.basemap !== "kentron" || !map.getSource("openmaptiles")) return;
+
+    if (!map.getSource("accent")) {
+      map.addSource("accent", { type: "geojson", data: emptyFC() });
+      map.addLayer({
+        id: "accent-buildings", type: "fill-extrusion", source: "accent",
+        paint: {
+          "fill-extrusion-color": RED,
+          "fill-extrusion-height": ["+", ["coalesce", ["get", "h"], 12], 0.6],
+          "fill-extrusion-base": 0,
+          "fill-extrusion-opacity": 0.97,
+          "fill-extrusion-vertical-gradient": true
+        }
+      });
+    }
+
+    if (KENTRON && KENTRON.rings && !map.getSource("rings")) {
+      map.addSource("rings", { type: "geojson", data: KENTRON.rings });
+      map.addLayer({
+        id: "ring-kentron", type: "line", source: "rings",
+        filter: ["==", ["get", "kind"], "kentron"],
+        paint: { "line-color": "#3d4148", "line-width": 2.4, "line-dasharray": [3, 2.4], "line-opacity": 0.85 }
+      });
+      map.addLayer({
+        id: "ring-squares", type: "line", source: "rings",
+        filter: ["==", ["get", "kind"], "square"],
+        paint: { "line-color": RED, "line-width": 2.6, "line-dasharray": [2.4, 2], "line-opacity": 0.95 }
+      });
+      map.addLayer({
+        id: "ring-axis", type: "line", source: "rings",
+        filter: ["==", ["get", "kind"], "axis"],
+        paint: { "line-color": RED_DEEP, "line-width": 3, "line-dasharray": [1.4, 1.4], "line-opacity": 0.8 }
+      });
+    }
+    refreshAccent();
+  }
+
+  /* Buildings arrive tile by tile, so the figure is recomputed as they load. */
+  var accentSeen = {}, accentFeatures = [], accentTimer = null;
+
+  function refreshAccent() {
+    if (state.basemap !== "kentron" || !map.getSource("accent")) return;
+    var feats;
+    try { feats = map.querySourceFeatures("openmaptiles", { sourceLayer: "building" }); }
+    catch (e) { return; }
+
+    var added = 0;
+    feats.forEach(function (f) {
+      var c = centroidOf(f.geometry);
+      if (!c || !inAccentZone(c)) return;
+      var key = c[0].toFixed(5) + "," + c[1].toFixed(5);
+      if (accentSeen[key]) return;
+      accentSeen[key] = 1;
+      accentFeatures.push({
+        type: "Feature",
+        properties: { h: f.properties.render_height || 12 },
+        geometry: f.geometry
+      });
+      added++;
+    });
+    if (added) {
+      map.getSource("accent").setData({ type: "FeatureCollection", features: accentFeatures });
+    }
+  }
+
+  function scheduleAccent() {
+    clearTimeout(accentTimer);
+    accentTimer = setTimeout(refreshAccent, 250);
+  }
+
+  function resetFigureGround() {
+    accentSeen = {}; accentFeatures = []; 
   }
 
   function emptyFC() { return { type: "FeatureCollection", features: [] }; }
@@ -736,6 +881,8 @@
      ================================================================= */
 
   function wireUI() {
+    document.body.classList.toggle("light", state.basemap !== "dark");
+    $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
     $("search").addEventListener("input", function () {
       state.query = this.value; refresh();
     });
@@ -757,12 +904,23 @@
     $("play-btn").addEventListener("click", togglePlay);
     $("tl-reset").addEventListener("click", function () { stopPlay(); setWindow(0, 1); });
     $("reset-btn").addEventListener("click", function () {
-      map.easeTo({ center: HOME.center, zoom: HOME.zoom, duration: 900 });
+      var h = state.basemap === "kentron" ? HOME : HOME_FLAT;
+      map.easeTo({ center: h.center, zoom: h.zoom, pitch: h.pitch, bearing: h.bearing, duration: 1100 });
     });
+    $("basemap-btn").textContent = BASEMAP_LABEL[state.basemap];
     $("basemap-btn").addEventListener("click", function () {
-      state.basemap = state.basemap === "dark" ? "light" : "dark";
-      document.body.classList.toggle("light", state.basemap === "light");
+      var i = BASEMAP_ORDER.indexOf(state.basemap);
+      state.basemap = BASEMAP_ORDER[(i + 1) % BASEMAP_ORDER.length];
+      document.body.classList.toggle("light", state.basemap !== "dark");
+      $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
+      $("basemap-btn").textContent = BASEMAP_LABEL[state.basemap];
+      resetFigureGround();
       map.setStyle(BASEMAPS[state.basemap]);
+      if (state.basemap === "kentron") {
+        map.easeTo({ pitch: HOME.pitch, bearing: HOME.bearing, duration: 900 });
+      } else {
+        map.easeTo({ pitch: 0, bearing: 0, duration: 900 });
+      }
     });
     $("about-btn").addEventListener("click", function () { $("about-modal").hidden = false; });
     $("about-close").addEventListener("click", function () { $("about-modal").hidden = true; });
