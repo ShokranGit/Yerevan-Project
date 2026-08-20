@@ -498,13 +498,7 @@
       }).join("") + '</div>';
     }
 
-    (e.media || []).forEach(function (m) {
-      if (m.type && m.type !== "image") return;
-      h += '<figure class="d-media"><img src="' + esc(m.url) + '" alt="' + esc(m.caption || "") + '" loading="lazy">' +
-           (m.caption ? '<figcaption>' + esc(m.caption) +
-             (m.credit ? ' <em>' + esc(m.credit) + '</em>' : '') + '</figcaption>' : '') +
-           '</figure>';
-    });
+    (e.media || []).forEach(function (m) { h += renderMedia(m); });
 
     if (e.summary) {
       h += '<div class="d-sec"><h3>What happened</h3><p>' + para(e.summary) + '</p></div>';
@@ -539,6 +533,15 @@
          '</div>';
 
     $("detail-body").innerHTML = h;
+    $("detail-body").querySelectorAll(".embed-play").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var box = b.parentNode;
+        box.innerHTML = '<iframe src="' + box.dataset.src +
+          '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; ' +
+          'gyroscope; picture-in-picture" allowfullscreen title="Embedded video"></iframe>';
+      });
+    });
+
     $("detail-body").querySelectorAll("[data-act]").forEach(function (b) {
       b.addEventListener("click", function () {
         if (b.dataset.act === "zoom") {
@@ -555,6 +558,54 @@
     $("browse-view").hidden = true;
     $("detail-view").hidden = false;
     $("detail-view").scrollTop = 0;
+  }
+
+
+  /* -----------------------------------------------------------------
+     Media. Three kinds:
+       image  — a still, shown inline
+       video  — a self-hosted file (.webm/.mp4/.ogv), played inline
+       embed  — YouTube/Vimeo, loaded only when the reader clicks, so
+                no third-party request is made just by opening an entry
+     Every item carries its own credit and licence, rendered under it.
+     ----------------------------------------------------------------- */
+  function mediaMeta(m) {
+    var bits = [];
+    if (m.caption) bits.push(esc(m.caption));
+    var attrib = [];
+    if (m.credit) attrib.push(esc(m.credit));
+    if (m.license) {
+      attrib.push(m.source
+        ? '<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(m.license) + '</a>'
+        : esc(m.license));
+    } else if (m.source) {
+      attrib.push('<a href="' + esc(m.source) + '" target="_blank" rel="noopener">source</a>');
+    }
+    if (attrib.length) bits.push('<em>' + attrib.join(' · ') + '</em>');
+    return bits.length ? '<figcaption>' + bits.join('<br>') + '</figcaption>' : '';
+  }
+
+  function renderMedia(m) {
+    if (!m || !m.url && !m.embed) return "";
+    var kind = m.type || (m.embed ? "embed" : "image");
+
+    if (kind === "video") {
+      return '<figure class="d-media"><video controls preload="none" playsinline ' +
+             (m.poster ? 'poster="' + esc(m.poster) + '" ' : '') +
+             'src="' + esc(m.url) + '"></video>' + mediaMeta(m) + '</figure>';
+    }
+
+    if (kind === "embed") {
+      var src = esc(m.embed || m.url);
+      return '<figure class="d-media"><div class="embed" data-src="' + src + '">' +
+             (m.poster ? '<img src="' + esc(m.poster) + '" alt="" loading="lazy">' : '') +
+             '<button class="embed-play" type="button" aria-label="Play video">&#9654;</button>' +
+             '</div>' + mediaMeta(m) + '</figure>';
+    }
+
+    return '<figure class="d-media"><a href="' + esc(m.source || m.url) + '" target="_blank" rel="noopener">' +
+           '<img src="' + esc(m.url) + '" alt="' + esc(m.caption || "") + '" loading="lazy"></a>' +
+           mediaMeta(m) + '</figure>';
   }
 
   function para(txt) {
