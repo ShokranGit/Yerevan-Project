@@ -42,6 +42,8 @@
     sort: "date-asc",
     tMin: 0, tMax: 0,
     winStart: 0, winEnd: 0,
+    cMin: Date.UTC(1900, 0, 1), cMax: Date.UTC(2000, 0, 1),
+    cStart: Date.UTC(1900, 0, 1), cEnd: Date.UTC(2000, 0, 1),
     selectedId: null,
     basemap: "kentron",
     playing: false,
@@ -251,8 +253,8 @@
       attributionControl: { compact: true }
     });
 
-    map.addControl(new maplibregl.NavigationControl({ showCompass: true, visualizePitch: true }), "top-right");
-    map.addControl(new maplibregl.ScaleControl({ maxWidth: 88, unit: "metric" }), "bottom-right");
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: "metric" }), "bottom-left");
 
     map.on("load", function () {
       mapLoaded = true;
@@ -260,6 +262,7 @@
       addLayers();
       refresh();
       hideLoader();
+      wireMapFurniture();
       openFromHash();
     });
 
@@ -275,6 +278,7 @@
       if (e.sourceId === "openmaptiles" && e.isSourceLoaded) scheduleAccent();
     });
     map.on("moveend", scheduleAccent);
+    map.on("idle", scheduleAccent);
 
     map.on("error", function (e) {
       console.warn("map error:", e && e.error ? e.error.message : e);
@@ -376,6 +380,23 @@
     });
   }
 
+  /* A building counts as figure if its centre OR any of its corners falls in
+     the zone. Centre-only misses long blocks that straddle the boundary — and
+     on Northern Avenue most of the relevant buildings are long blocks. */
+  function touchesAccentZone(geom) {
+    var rings = geom.type === "Polygon" ? geom.coordinates
+              : geom.type === "MultiPolygon" ? geom.coordinates.map(function (c) { return c[0]; })
+              : null;
+    if (!rings) return false;
+    var c = centroidOf(geom);
+    if (c && inAccentZone(c)) return true;
+    for (var i = 0; i < rings.length; i++) {
+      var r = rings[i];
+      for (var j = 0; j < r.length; j++) if (inAccentZone(r[j])) return true;
+    }
+    return false;
+  }
+
   function centroidOf(geom) {
     var ring = geom.type === "Polygon" ? geom.coordinates[0]
              : geom.type === "MultiPolygon" ? geom.coordinates[0][0] : null;
@@ -430,18 +451,19 @@
     if (state.basemap !== "kentron" || !map.getSource("accent")) return;
     var feats;
     try { feats = map.querySourceFeatures("openmaptiles", { sourceLayer: "building" }); }
-    catch (e) { return; }
+    catch (e) { window.__fg = { error: String(e) }; return; }
 
     var added = 0;
     feats.forEach(function (f) {
+      if (!f.geometry || !touchesAccentZone(f.geometry)) return;
       var c = centroidOf(f.geometry);
-      if (!c || !inAccentZone(c)) return;
+      if (!c) return;
       var key = c[0].toFixed(5) + "," + c[1].toFixed(5);
       if (accentSeen[key]) return;
       accentSeen[key] = 1;
       accentFeatures.push({
         type: "Feature",
-        properties: { h: f.properties.render_height || 12 },
+        properties: { h: (f.properties && f.properties.render_height) || 12 },
         geometry: f.geometry
       });
       added++;
@@ -449,6 +471,9 @@
     if (added) {
       map.getSource("accent").setData({ type: "FeatureCollection", features: accentFeatures });
     }
+    /* visible from the console: how many buildings the tiles offered, and how
+       many the rule selected. Cheap to keep, invaluable when it misbehaves. */
+    window.__fg = { queried: feats.length, figure: accentFeatures.length, zoom: +map.getZoom().toFixed(2) };
   }
 
   function scheduleAccent() {
@@ -466,14 +491,18 @@
      FILTER + REFRESH
      ================================================================= */
 
-  /* an entry outside the timeline's stated span is standing context */
+  /* Two time axes now cover the material: the century track (1900–2000) and
+     the main track (2000 onward). An entry is in view if it falls inside
+     either window. Anything older than 1900 is standing context. */
   function isContext(e) {
-    return e._tEnd < state.tMin || e._t > state.tMax;
+    return e._tEnd < state.cMin || e._t > state.tMax;
   }
 
   function inWindow(e) {
     if (isContext(e)) return true;
-    return !(e._tEnd < state.winStart || e._t > state.winEnd);
+    var modern  = !(e._tEnd < state.winStart || e._t > state.winEnd);
+    var century = !(e._tEnd < state.cStart   || e._t > state.cEnd);
+    return modern || century;
   }
 
   function visibleEvents() {
@@ -804,6 +833,49 @@
       input.addEventListener("input", onSlide);
     });
     updateTimelineUI();
+    buildCentury();
+  }
+
+  /* ---- the century track: 1900–2000, by decade ---- */
+  function cFrac(t) { return (t - state.cMin) / (state.cMax - state.cMin); }
+
+  function buildCentury() {
+    var BUCKETS = 50, hist = new Array(BUCKETS).fill(0);
+    state.events.forEach(function (ev) {
+      var f = cFrac(ev._t);
+      if (f < 0 || f > 1) return;
+      hist[Math.min(BUCKETS - 1, Math.floor(f * BUCKETS))]++;
+    });
+    var peak = Math.max.apply(null, hist) || 1;
+    $("cn-density").innerHTML = hist.map(function (n) {
+      return '<span style="height:' + (n ? Math.max(2, (n / peak) * 18) : 0) + 'px"></span>';
+    }).join("");
+
+    var ticks = [];
+    for (var y = 1900; y <= 2000; y += 20) ticks.push(y);
+    $("cn-ticks").innerHTML = ticks.map(function (t) { return "<span>" + t + "</span>"; }).join("");
+
+    ["cn-start", "cn-end"].forEach(function (id) {
+      $(id).addEventListener("input", onCenturySlide);
+    });
+    updateCenturyUI();
+  }
+
+  function onCenturySlide() {
+    var a = +$("cn-start").value, b = +$("cn-end").value;
+    if (a > b) { if (this === $("cn-start")) { b = a; $("cn-end").value = a; } else { a = b; $("cn-start").value = b; } }
+    state.cStart = state.cMin + (a / 1000) * (state.cMax - state.cMin);
+    state.cEnd   = state.cMin + (b / 1000) * (state.cMax - state.cMin);
+    updateCenturyUI();
+    refresh();
+  }
+
+  function updateCenturyUI() {
+    var a = +$("cn-start").value / 1000, b = +$("cn-end").value / 1000;
+    $("cn-fill").style.left = (a * 100) + "%";
+    $("cn-fill").style.width = ((b - a) * 100) + "%";
+    $("cn-from").textContent = new Date(state.cStart).getUTCFullYear();
+    $("cn-to").textContent   = new Date(state.cEnd).getUTCFullYear();
   }
 
   function onSlide() {
@@ -880,6 +952,46 @@
      UI WIRING
      ================================================================= */
 
+
+  /* =================================================================
+     NORTH ARROW · COORDINATE READOUT
+     ================================================================= */
+
+  function wireMapFurniture() {
+    var arrow = $("north");
+
+    function syncArrow() {
+      var b = map.getBearing();
+      arrow.querySelector("svg").style.transform = "rotate(" + (-b).toFixed(1) + "deg)";
+      arrow.classList.toggle("off-north", Math.abs(b) > 0.5);
+    }
+    map.on("rotate", syncArrow);
+    map.on("pitch", syncArrow);
+    syncArrow();
+
+    arrow.addEventListener("click", function () {
+      map.easeTo({ bearing: 0, duration: 700 });
+    });
+
+    /* Coordinates follow the pointer on a desktop and the centre of the map on
+       a touch screen, where there is no pointer to follow. */
+    var lat = $("coord-lat"), lng = $("coord-lng"), zm = $("coord-zoom");
+
+    function show(ll) {
+      var la = ll.lat, lo = ll.lng;
+      lat.textContent = Math.abs(la).toFixed(5) + "° " + (la >= 0 ? "N" : "S");
+      lng.textContent = Math.abs(lo).toFixed(5) + "° " + (lo >= 0 ? "E" : "W");
+      zm.textContent  = "z" + map.getZoom().toFixed(1);
+    }
+    map.on("mousemove", function (e) { show(e.lngLat); });
+    map.on("mouseout", function () { show(map.getCenter()); });
+    map.on("move", function () {
+      if (!matchMedia("(hover: hover)").matches) show(map.getCenter());
+      else zm.textContent = "z" + map.getZoom().toFixed(1);
+    });
+    show(map.getCenter());
+  }
+
   function wireUI() {
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
@@ -903,6 +1015,11 @@
     });
     $("play-btn").addEventListener("click", togglePlay);
     $("tl-reset").addEventListener("click", function () { stopPlay(); setWindow(0, 1); });
+    $("cn-reset").addEventListener("click", function () {
+      $("cn-start").value = 0; $("cn-end").value = 1000;
+      state.cStart = state.cMin; state.cEnd = state.cMax;
+      updateCenturyUI(); refresh();
+    });
     $("reset-btn").addEventListener("click", function () {
       var h = state.basemap === "kentron" ? HOME : HOME_FLAT;
       map.easeTo({ center: h.center, zoom: h.zoom, pitch: h.pitch, bearing: h.bearing, duration: 1100 });
