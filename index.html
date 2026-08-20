@@ -66,6 +66,19 @@
   <main id="map-wrap">
     <div id="map"></div>
 
+    <!-- north arrow: rotates with the map, click to face north again -->
+    <button id="north" title="Reset bearing to north" aria-label="Reset bearing to north">
+      <svg viewBox="0 0 40 52" aria-hidden="true">
+        <polygon class="n-dark" points="20,3 30,44 20,35"/>
+        <polygon class="n-light" points="20,3 10,44 20,35"/>
+        <text class="n-label" x="20" y="51" text-anchor="middle">N</text>
+      </svg>
+    </button>
+
+    <div id="coords" aria-live="off">
+      <span id="coord-lat">—</span><span id="coord-lng">—</span><span id="coord-zoom"></span>
+    </div>
+
     <div id="map-controls">
       <button class="map-btn" id="basemap-btn" title="Switch basemap">Basemap</button>
       <button class="map-btn" id="reset-btn" title="Reset view">Reset view</button>
@@ -91,6 +104,26 @@
         <input type="range" id="tl-end" min="0" max="100" value="100" step="1" aria-label="End of time window" />
       </div>
       <div id="tl-ticks"></div>
+
+      <!-- the long view: one century, by decade -->
+      <div class="tl-sep"></div>
+      <div class="tl-row tl-row-century">
+        <span class="tl-era">The century</span>
+        <div class="tl-label">
+          <span id="cn-from">—</span>
+          <span class="tl-dash">→</span>
+          <span id="cn-to">—</span>
+        </div>
+        <button id="cn-reset" class="link-btn">full century</button>
+      </div>
+      <div class="tl-slider tl-slider-century">
+        <div id="cn-track"></div>
+        <div id="cn-fill"></div>
+        <div id="cn-density"></div>
+        <input type="range" id="cn-start" min="0" max="1000" value="0" step="1" aria-label="Start of century window" />
+        <input type="range" id="cn-end" min="0" max="1000" value="1000" step="1" aria-label="End of century window" />
+      </div>
+      <div id="cn-ticks"></div>
     </div>
   </main>
 
