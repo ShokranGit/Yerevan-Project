@@ -381,10 +381,25 @@
        and identical for every reader. */
     if (FIGURE && !map.getSource("figure")) {
       map.addSource("figure", { type: "geojson", data: FIGURE });
+      /* Water is drawn FLAT, not extruded, and this is not a style preference.
+         MapLibre anchors each extruded prism to a single ground elevation, so a
+         low prism sitting on sloping ground gets swallowed by the hill on its
+         uphill side. Republic Square falls 1.9 m across the Singing Fountains
+         basin — 3.4 m once the 1.8x terrain exaggeration is applied — so half
+         the pool disappeared at 0.5 m, and the height needed to survive would
+         have made a shallow pool into a four-metre wall. A fill layer drapes
+         over the terrain instead: every part of the pool is blue, and it
+         follows the slope of the square, which is what a pool actually does. */
+      map.addLayer({
+        id: "figure-water", type: "fill", source: "figure",
+        filter: ["==", ["get", "zone"], "water"],
+        paint: { "fill-color": WATER, "fill-opacity": 0.9 }
+      });
       map.addLayer({
         id: "figure-buildings", type: "fill-extrusion", source: "figure",
+        filter: ["!=", ["get", "zone"], "water"],
         paint: {
-          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "water", WATER, GREY_MASS],
+          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           "fill-extrusion-base": 0,
           "fill-extrusion-opacity": 0.96,
