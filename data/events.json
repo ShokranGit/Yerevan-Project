@@ -5,79 +5,676 @@
     "author": "Alireza Bahrani",
     "affiliation": "",
     "description": "This map presents an ongoing research project on Yerevan's urban space — beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
-    "timelineStart": "",
+    "timelineStart": "2000-01-01",
     "timelineEnd": "2028-12-31",
-    "note": "This is a working research instrument, not a finished publication. Entries marked EXAMPLE are placeholders demonstrating the data format and should be replaced.",
+    "note": "Working research instrument, not a finished publication. Entries are drawn from the Northern Avenue paper (edited Nov 2025) and carry its citations. Coordinates flagged as approximate still need verification.",
     "updated": "2026-08-19"
   },
-
   "categories": [
-    { "id": "protest",      "label": "Protest & mobilization",        "color": "#e0574a" },
-    { "id": "development",  "label": "Urban development",             "color": "#4aa8e0" },
-    { "id": "demolition",   "label": "Demolition & displacement",     "color": "#c96fd1" },
-    { "id": "state",        "label": "State violence & policing",     "color": "#e8a13a" },
-    { "id": "politics",     "label": "Electoral & institutional",     "color": "#5ec9a8" },
-    { "id": "conflict",     "label": "War & Nagorno-Karabakh",        "color": "#9b8cf0" },
-    { "id": "memory",       "label": "Memory & monuments",            "color": "#d1b04a" },
-    { "id": "publiclife",   "label": "Everyday public space",         "color": "#7fbf5e" },
-    { "id": "infra",        "label": "Infrastructure & utilities",    "color": "#6b8fa8" }
-  ],
-
-  "events": [
-
     {
-      "id": "example-northern-avenue",
-      "title": "EXAMPLE — Northern Avenue opens",
-      "date": "2007-11-01",
-      "datePrecision": "month",
-      "coordinates": [44.5136, 40.1817],
-      "location": "Northern Avenue, between Republic Square and Freedom Square",
-      "categories": ["development", "demolition"],
-      "summary": "Placeholder entry. Replace this text with your own account of the event: what happened, who was involved, what the observable facts are. Two blank lines make a new paragraph.",
-      "analysis": "Placeholder. This is where your interpretive writing goes — the argument the point is making within the wider research. It is styled differently from the summary so that description and analysis stay visually distinct.",
-      "actors": ["Yerevan Municipality", "Private developers", "Displaced residents"],
-      "tags": ["Northern Avenue", "master plan", "expropriation"],
+      "id": "protest",
+      "label": "Protest & mobilization",
+      "color": "#e0574a"
+    },
+    {
+      "id": "development",
+      "label": "Urban development",
+      "color": "#4aa8e0"
+    },
+    {
+      "id": "demolition",
+      "label": "Demolition & displacement",
+      "color": "#c96fd1"
+    },
+    {
+      "id": "state",
+      "label": "State violence & policing",
+      "color": "#e8a13a"
+    },
+    {
+      "id": "politics",
+      "label": "Electoral & institutional",
+      "color": "#5ec9a8"
+    },
+    {
+      "id": "conflict",
+      "label": "War & Nagorno-Karabakh",
+      "color": "#9b8cf0"
+    },
+    {
+      "id": "memory",
+      "label": "Memory & monuments",
+      "color": "#d1b04a"
+    },
+    {
+      "id": "publiclife",
+      "label": "Everyday public space",
+      "color": "#7fbf5e"
+    },
+    {
+      "id": "infra",
+      "label": "Infrastructure & utilities",
+      "color": "#6b8fa8"
+    }
+  ],
+  "events": [
+    {
+      "id": "tamanyan-master-plan-1924",
+      "title": "Araratian Street enters Tamanyan's master plan",
+      "date": "1924",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Northern Avenue corridor, Kentron",
+      "categories": [
+        "development",
+        "memory"
+      ],
+      "summary": "Alexander Tamanyan's 1924 master plan for a capital of roughly 150,000 people laid out a radial-circular street structure with monumental squares organised as a single ensemble. Among its elements was a diagonal avenue between the two main squares, named Araratian Street — sited so as to open a visual corridor onto Mount Ararat.\n\nThe avenue was never built under Soviet rule. It remained an unrealised line on a plan for more than seventy years.",
+      "analysis": "The avenue arrives already loaded. Because it belongs to Tamanyan's plan, building it could be framed not as speculative development but as the completion of a national architectural aspiration — which is precisely how Kocharyan's administration would present it in 2007.\n\nThe Ararat axis matters too: what was designed as a sightline toward the mountain — the central symbol of Armenian territorial loss — was compromised in execution, the avenue terminating unexpectedly near Abovyan Street. The corridor's symbolic orientation was there in the plan and absent in the built result.",
+      "actors": [
+        "Alexander Tamanyan (1878–1936)"
+      ],
+      "tags": [
+        "Tamanyan",
+        "master plan",
+        "Araratian Street",
+        "Ararat axis",
+        "Tamanianakan"
+      ],
       "sources": [
-        { "title": "Replace with a real citation", "url": "", "note": "archival / interview / press" }
+        {
+          "title": "Petrosyan (2016)",
+          "note": "original plan and the Araratian Street name"
+        },
+        {
+          "title": "Ter-Ghazaryan, D. K. (2010). Re-imagining Yerevan in the post-Soviet era",
+          "note": "dissertation; Tamanianakan idiom"
+        },
+        {
+          "title": "Ter-Ghazaryan (2013), p. 151",
+          "note": "broken axis, termination near Abovyan"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "northern-avenue-demolitions-2002",
+      "title": "Demolition of the old quarter and the displacement of 2,500 residents",
+      "date": "2002",
+      "dateEnd": "2007",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Pre-Soviet residential fabric on the Northern Avenue corridor, Kentron",
+      "categories": [
+        "demolition",
+        "development",
+        "protest"
+      ],
+      "summary": "From 2002 the existing pre-Soviet residential fabric along the planned corridor was demolished and approximately 2,500 dwellers were displaced — clearing one of the last remaining parts of old Yerevan for luxury housing, high-end retail, offices, cafés, hotels, restaurants and nightclubs.\n\nThe clearance provoked public resistance and sparked the first waves of urban activism committed to preserving the identity of Kentron. Some residents named the redevelopment a \"white genocide\", drawing a symbolic parallel to the forced displacements of 1915.",
+      "analysis": "This is the founding injury of the site, and the reason the finished avenue could not be socially claimed. The vocabulary residents reached for — genocide, the neutron bomb — is not hyperbole about architecture; it registers the removal of people while the built fabric of the city was not merely preserved but upgraded.\n\nIt also marks the beginning of a longer transfer: the moment when contestation over Yerevan starts to attach to buildings and neighbourhoods rather than to elections. The preservationist networks that would carry Mashtots Park and Afrikana form in the wake of this clearance.",
+      "actors": [
+        "Yerevan Municipality",
+        "North Island (Armenian–Russian joint venture)",
+        "Makarius Group",
+        "Ara Abrahamyan",
+        "Displaced residents of the old quarter"
+      ],
+      "tags": [
+        "displacement",
+        "expropriation",
+        "white genocide",
+        "old Yerevan",
+        "Kentron"
+      ],
+      "sources": [
+        {
+          "title": "Petrosyan (2016), p. 2",
+          "note": "~2,500 displaced"
+        },
+        {
+          "title": "Fehlings, S. (2017). The ignoble savage in urban Yerevan",
+          "note": "\"white genocide\"; resident testimony"
+        },
+        {
+          "title": "Vermishyan & Michikyan (2020). The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue"
+        }
       ],
       "media": [],
-      "fieldnote": ""
+      "fieldnote": "Hakob Hakobyan's painting *No to Neutron Weapons* shows a compressed, headless crowd in an urban corridor framed by buildings closely resembling Northern Avenue. Hakobyan: \"Neutron weapons destroy people, but do not damage buildings… they are no longer worth anything if the people are gone.\""
     },
-
     {
-      "id": "example-mashtots-park",
-      "title": "EXAMPLE — Mashtots Park movement",
-      "date": "2012-02-01",
-      "dateEnd": "2012-04-30",
-      "datePrecision": "month",
-      "coordinates": [44.5063, 40.1793],
-      "location": "Mashtots Park, Mashtots Avenue",
-      "categories": ["protest", "publiclife"],
-      "summary": "Placeholder entry showing an event with a duration — note the 'dateEnd' field, which makes this point stay visible across a span of months rather than a single day.",
-      "analysis": "Placeholder analysis.",
-      "actors": [],
-      "tags": ["green space", "civic movement"],
-      "sources": [],
-      "media": [],
-      "fieldnote": ""
+      "id": "cascade-phase-two-2002",
+      "title": "Second phase of the Cascade begins",
+      "date": "2002",
+      "dateEnd": "2009",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5153,
+        40.1911
+      ],
+      "location": "Cascade complex, above Opera Square",
+      "categories": [
+        "development",
+        "memory"
+      ],
+      "summary": "Alongside Northern Avenue, Kocharyan pursued the second phase of the Cascade — a landscape project extending the pedestrian route from Opera Square up the hillside toward a 65-metre obelisk commemorating the October Revolution and the establishment of Soviet Armenia. Its first phase had been built between 1971 and 1980.\n\nUnlike Northern Avenue, which was privately financed, the Cascade relied on American-Armenian philanthropist Gerard L. Cafesjian. It remains unfinished.",
+      "analysis": "The Cascade and Northern Avenue form a single pedestrian armature drawn from Tamanyan's plan, running from the obelisk down through Opera Square and on toward Republic Square and Ararat.\n\nIts incompleteness does work of its own. The unfinished structure is an open wound in daily conversation, gathering the 1988 Spitak earthquake, the collapse of the USSR, the first Karabakh war, state corruption and the capital flight of diaspora investors into a single visible object: the nation-building project left undone.",
+      "actors": [
+        "Robert Kocharyan",
+        "Gerard L. Cafesjian"
+      ],
+      "tags": [
+        "Cascade",
+        "Cafesjian",
+        "obelisk",
+        "unfinished",
+        "nation-building"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The Rise of Northern Avenue'"
+        }
+      ],
+      "media": []
     },
-
     {
-      "id": "example-republic-square-2018",
-      "title": "EXAMPLE — Republic Square, spring 2018",
-      "date": "2018-04-23",
+      "id": "northern-avenue-first-section-2006",
+      "title": "First section of Northern Avenue opens",
+      "date": "2006-05-30",
       "datePrecision": "day",
-      "coordinates": [44.5126, 40.1776],
-      "location": "Republic Square",
-      "categories": ["protest", "politics"],
-      "summary": "Placeholder entry demonstrating a single-day event with day-level precision.",
-      "analysis": "Placeholder analysis.",
+      "coordinates": [
+        44.5133,
+        40.1793
+      ],
+      "location": "Northern Avenue, Abovyan Street end",
+      "categories": [
+        "development"
+      ],
+      "summary": "The first completed section of the avenue opened to the public, reported by Noyan Tapan on 30 May 2006, a year ahead of the full opening.",
+      "analysis": "Worth holding as a separate point from the 2007 opening: the avenue came into use in fragments, alongside continuing construction, rather than arriving whole.",
       "actors": [],
-      "tags": ["2018", "revolution"],
-      "sources": [],
+      "tags": [
+        "opening",
+        "phased construction"
+      ],
+      "sources": [
+        {
+          "title": "Noyan Tapan (2006, May 30). First section of Northern Avenue opens",
+          "url": "https://nt.am/en/news/153335/",
+          "note": "press"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "northern-avenue-opening-2007",
+      "title": "Northern Avenue opens",
+      "date": "2007",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Northern Avenue, Kentron",
+      "categories": [
+        "development",
+        "politics"
+      ],
+      "summary": "A 27-metre-wide, 450-metre-long pedestrian street with four squares and eleven buildings averaging nine floors, connecting Opera Square and Republic Square. Financed by an estimated 200–250 million USD in private investment, including the Armenian–Russian joint venture North Island and diaspora businessman Ara Abrahamyan, who declared he had invested more than 100 million USD.\n\nIt was promoted through an official discourse of \"civilizing the city center\". At the opening Kocharyan framed it as \"a symbol of modern Yerevan and the most popular leisure space\". Urban lore holds that Kocharyan and his associates own more than 70% of the buildings on the street.",
+      "analysis": "The first major construction undertaking in Armenia after the collapse of the USSR, and the template for everything that followed: Yerevan's entry into global city-branding and capital absorption.\n\nThe financing is the political content. Russian-affiliated capital and the entanglement of Kocharyan's administration with Russian influence are built into the street itself — which is part of why the space registered to residents as belonging to someone else. And yet the standard reading stops here, filing the avenue as a depoliticized artefact of neoliberal urbanism. That reading is too deterministic: it undermines the power of the everyday, of locality, and of people's agency, and it cannot see what the avenue would become.",
+      "actors": [
+        "Robert Kocharyan",
+        "North Island",
+        "Makarius Group",
+        "Ara Abrahamyan",
+        "Union of Armenians of Russia",
+        "Narek Sargsyan (chief architect, 1999–2004)"
+      ],
+      "tags": [
+        "opening",
+        "neoliberal urbanism",
+        "city branding",
+        "Russian capital",
+        "civilizing the city center"
+      ],
+      "sources": [
+        {
+          "title": "Armeniapedia. Northern Avenue",
+          "url": "https://www.armeniapedia.org/wiki/Northern_Avenue"
+        },
+        {
+          "title": "Aysor.am (2016, November 22)",
+          "url": "https://www.aysor.am/am/news/2016/11/22/",
+          "note": "Abrahamyan on his investment"
+        },
+        {
+          "title": "Ter-Ghazaryan (2013)",
+          "note": "\"civilizing the city center\""
+        },
+        {
+          "title": "Vermishyan & Michikyan (2020)"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "opera-square-election-protests-2003",
+      "title": "Post-election protests at Opera Square (2003/4, 2008, 2013)",
+      "date": "2003",
+      "dateEnd": "2013",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Opera / Freedom Square",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "Three cycles of protest against fraudulent elections — 2003/4, 2008 and 2013 — all based in Opera Square. All failed to achieve a political outcome, despite Armenians facing the same grievances across the period: fraudulent elections, poor living conditions, oligarchy and a dissatisfied youth.",
+      "analysis": "The control case for the paper's argument. The grievances in 2013 were not meaningfully different from those of 2018; what differed was where people stood.\n\nFor three decades Freedom Square was the people's square and Republic Square symbolised power and statehood — a binary inherited from the late 1980s, when the popular movement only rarely used Lenin/Republic Square. Protest that stayed inside that binary stayed inside the terms the state had already set for it.",
+      "actors": [
+        "Raffi Hovannisian",
+        "Levon Ter-Petrosyan",
+        "Serzh Sargsyan"
+      ],
+      "tags": [
+        "election fraud",
+        "Opera Square",
+        "Freedom Square",
+        "failed protest"
+      ],
+      "sources": [
+        {
+          "title": "Tangiyan, S. (2020), p. 65"
+        },
+        {
+          "title": "Zolyan, M. (2020), p. 67",
+          "note": "\"the people's square\" / statehood"
+        },
+        {
+          "title": "Abrahamian, L. (2012). Yerevan: memory and forgetting in the organisation of post-Soviet urban space"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "opera-square-crackdown-2008",
+      "title": "Crackdown on the Opera Square sit-in — ten dead",
+      "date": "2008-03-01",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Opera / Freedom Square",
+      "categories": [
+        "state",
+        "protest"
+      ],
+      "summary": "In the aftermath of the contested presidential election, a sit-in protest occupied Opera Square. The evacuation of the protesters was followed by a brutal crackdown that ended in the death of ten individuals.",
+      "analysis": "The rupture. Violence in a square widely understood as the people's place broke the time–space continuity of protest in Yerevan.\n\nThis is the first of the two blows that dislodged Opera Square as the country's default site of contentious politics — and, in doing so, began the search for somewhere else to stand.",
+      "actors": [
+        "Protesters",
+        "Police",
+        "Serzh Sargsyan",
+        "Robert Kocharyan"
+      ],
+      "tags": [
+        "1 March 2008",
+        "crackdown",
+        "state violence",
+        "political prisoners"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "opera-square-closure-2008",
+      "title": "Opera Square closed for two years to build underground parking",
+      "date": "2008",
+      "dateEnd": "2010",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Opera / Freedom Square",
+      "categories": [
+        "state",
+        "development"
+      ],
+      "summary": "Later in the same year as the crackdown, Opera Square was closed to the public in order to build an underground parking space. Construction took two years.",
+      "analysis": "The second blow, and the more consequential one. Violence had made the square frightening; closure made it unavailable.\n\nThe combination of violence, closure and displacement destabilised Opera Square's long-standing role and produced both a material and a symbolic vacuum. Dissent was pushed outward — and had to find new ground. This is the opening through which urban space beyond Opera Square becomes politically meaningful.",
+      "actors": [],
+      "tags": [
+        "closure",
+        "underground parking",
+        "spatial vacuum"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "political-prisoners-northern-avenue-2008",
+      "title": "Protests for political prisoners move onto Northern Avenue",
+      "date": "2008",
+      "dateEnd": "2010",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Northern Avenue, Kentron",
+      "categories": [
+        "protest"
+      ],
+      "summary": "With Opera Square closed, the crowd demanding the release of political prisoners moved onto Northern Avenue to demonstrate.",
+      "analysis": "The first time the avenue carries contentious politics — and it does so by default rather than by choice, as the overflow from a square that was no longer available.\n\nA year after opening, a street built as a leisure corridor and widely read as apolitical is already hosting demands for the release of prisoners. The point matters for the argument: the avenue's political life does not begin in 2018, and it does not begin with intention.",
+      "actors": [],
+      "tags": [
+        "political prisoners",
+        "displacement of protest",
+        "2008"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "mashtots-park-2012",
+      "title": "Mashtots Park movement",
+      "date": "2012",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5063,
+        40.1793
+      ],
+      "location": "Mashtots Park, Mashtots Avenue",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "summary": "A movement against construction in Mashtots Park, organised by the same activist groups that had mobilised to save national forests. Part of the wave of preservation and green-space activism that followed the founding of numerous NGOs in the late 2000s.",
+      "analysis": "Green space becomes a route into political life. The relevant statistic sits behind it: Yerevan's green space fell from 30.6% in 1986 to 3.6% by 2006, while the monetary volume of construction in the capital increased five-fold between 1995 and 2006.\n\nThese struggles offered an accessible political scale — close to bodies and everyday routines — at a moment when national politics felt polarised or inaccessible.",
+      "actors": [
+        "Preservation and environmental activist groups",
+        "Yerevan Municipality"
+      ],
+      "tags": [
+        "green space",
+        "preservation",
+        "civil society",
+        "Mashtots Park"
+      ],
+      "sources": [
+        {
+          "title": "Ter-Ghazaryan (2010), pp. 79, 94",
+          "note": "construction volume and green-space decline"
+        },
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "hovannisian-hunger-strike-2013",
+      "title": "Raffi Hovannisian's hunger strike at Opera Square",
+      "date": "2013",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Opera / Freedom Square",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "Raffi Hovannisian, the first foreign minister of the Republic of Armenia and a candidate in the 2013 presidential election, went on a hunger strike for two weeks in Opera Square in protest against the result.",
+      "analysis": "Formal opposition politics still performing itself in the old location, and still not producing an outcome. Hovannisian would later appear at the Afrikana site — a figure moving between the two registers, from the square to the building site, as the centre of political gravity shifts.",
+      "actors": [
+        "Raffi Hovannisian"
+      ],
+      "tags": [
+        "hunger strike",
+        "2013 election",
+        "Opera Square"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "hundred-dram-2014",
+      "title": "100 AMD movement against the marshrutka fare rise",
+      "date": "2014",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Yerevan (city-wide; anchored at Freedom Square)",
+      "categories": [
+        "protest",
+        "infra"
+      ],
+      "summary": "A movement against the price hike of the marshrutka public transport system, organised by the same networks that had formed around forest and park preservation.",
+      "analysis": "Mobility joins heritage and green space in the repertoire of urban grievance. The chain is cumulative: forests, park, fares, building — each campaign trains the same networks and widens what counts as political.",
+      "actors": [],
+      "tags": [
+        "marshrutka",
+        "public transport",
+        "fares",
+        "100 AMD"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
       "media": [],
-      "fieldnote": ""
+      "fieldnote": "Location is city-wide; anchored here at Freedom Square. Refine if a focal site is preferred."
+    },
+    {
+      "id": "afrikana-2014",
+      "title": "Resistance to the demolition of the Afrikana building",
+      "date": "2014",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5119,
+        40.1799
+      ],
+      "location": "Afrikana building, Kentron (coordinates approximate — verify)",
+      "categories": [
+        "protest",
+        "demolition"
+      ],
+      "summary": "Continuing the development of the urban fabric surrounding Northern Avenue, the Millennium Construction Company bought the Afrikana building to demolish it and raise a hotel in its place. The building had been a cultural centre and a gathering place for many civil society groups, and the announcement shocked its users.\n\nYoung activists organised marches through Northern Avenue and across Kentron — wearing T-shirts printed with Yerevan's silhouette, playing music, making noise, distributing pamphlets, and writing \"The Place of Memory\" and \"You Can't Replace Me\" on the corrugated metal fencing at the site. Raffi Hovannisian joined the protesters, telling news outlets that \"Armenia had the kind of authorities who destroy historical monuments.\"",
+      "analysis": "The hinge. Mobilisation coheres around the protection of urban space itself rather than around national-scale political rupture, and activism becomes able to operate across scales — shuttling between the urban and the national, and between formal and informal politics.\n\nNote what the marches used the avenue *for*: a performative route chosen for visibility and resonance. The corridor is being read, correctly, as the place where you are seen.\n\nIn a walking interview, passing the site, my interviewee said: \"Everything began from here.\" For her and for many others, fighting to preserve Afrikana was the moment they identified themselves as political subjects and as a public.",
+      "actors": [
+        "Millennium Construction Company",
+        "Young preservation activists",
+        "Raffi Hovannisian",
+        "Civil society groups using Afrikana"
+      ],
+      "tags": [
+        "Afrikana",
+        "heritage",
+        "demolition",
+        "The Place of Memory",
+        "You Can't Replace Me"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'",
+          "note": "walking interview, fieldwork"
+        }
+      ],
+      "media": [],
+      "fieldnote": "COORDINATES APPROXIMATE. Placed in the Kentron block west of Northern Avenue pending a precise address — worth fixing, since the site anchors a key claim in the argument."
+    },
+    {
+      "id": "electric-yerevan-2015",
+      "title": "Electric Yerevan",
+      "date": "2015-06",
+      "dateEnd": "2015-07",
+      "datePrecision": "month",
+      "coordinates": [
+        44.517,
+        40.1893
+      ],
+      "location": "Baghramyan Avenue",
+      "categories": [
+        "protest",
+        "infra"
+      ],
+      "summary": "The movement against the electricity price hike, occupying Baghramyan Avenue. The peak of the urban politics that had been developing since the late 2000s.",
+      "analysis": "The high-water mark of the urban repertoire before 2018 — and, notably, staged on an avenue rather than in a square. Occupying a street toward the National Assembly rather than assembling in Opera Square is itself evidence that the geography of Armenian protest had already moved.",
+      "actors": [],
+      "tags": [
+        "Electric Yerevan",
+        "electricity tariff",
+        "Baghramyan",
+        "occupation"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "northern-avenue-mall-2014",
+      "title": "Renovation converts underground parking into a shopping mall",
+      "date": "2014",
+      "datePrecision": "year",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Beneath Northern Avenue",
+      "categories": [
+        "development"
+      ],
+      "summary": "A renovation phase converted two underground parking structures into a partially functioning shopping mall, further altering the avenue's spatial logic.",
+      "analysis": "A second layer of commercial programme added beneath a street already saturated with it — and, in the everyday life above, the entrance to the underground market becomes one of the avenue's fixed positions, where a disabled Iranian musician sets up and shifts repertoire with the composition of the passing crowd.",
+      "actors": [],
+      "tags": [
+        "renovation",
+        "underground mall",
+        "parking"
+      ],
+      "sources": [
+        {
+          "title": "Ter-Ghazaryan (2013)"
+        },
+        {
+          "title": "Northern Avenue paper (Bahrani)"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "velvet-revolution-2018",
+      "title": "The Velvet Revolution centres on Republic Square",
+      "date": "2018-03-31",
+      "dateEnd": "2018-05-08",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5126,
+        40.1776
+      ],
+      "location": "Republic Square",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "From 31 March to 8 May 2018, protests against Serzh Sargsyan's leadership and the ruling Republican Party. Nikol Pashinyan, a parliament member and head of the Civil Contract party, led them. On 8 May a parliamentary vote made him prime minister.\n\nFor the first time since independence, the movement's centre was Republic Square rather than Opera Square.",
+      "analysis": "The claim the whole paper is built to support: the movement's success cannot be understood without the shift in political gravity from Opera Square to Republic Square through Northern Avenue.\n\nChoosing Republic Square for the evening gatherings where revolutionaries formed their identity through conversation demonstrates, as Abrahamian argues, that the velvet revolution was free from the influence of the Karabakh Movement. The generation that made that move had spent a decade walking the corridor between the two squares — and the ten years of ordinary practice on Northern Avenue are what made the move to Republic Square not merely thinkable but close to inevitable.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Serzh Sargsyan",
+        "Civil Contract party",
+        "Republican Party of Armenia"
+      ],
+      "tags": [
+        "Velvet Revolution",
+        "2018",
+        "Republic Square",
+        "Pashinyan"
+      ],
+      "sources": [
+        {
+          "title": "Abrahamian (2018)"
+        },
+        {
+          "title": "Ohanyan, A., & Broers, L. (2020). Armenia's Velvet Revolution",
+          "note": "p. 18"
+        },
+        {
+          "title": "Zolyan, Broers & Ohanyan (2020). Thirty years of protest"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "musicians-arrest-2018",
+      "title": "Police arrest a Ukrainian band; musicians gather in protest",
+      "date": "2018-08",
+      "datePrecision": "month",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Northern Avenue, Kentron",
+      "categories": [
+        "protest",
+        "publiclife",
+        "state"
+      ],
+      "summary": "Police arrested members of a Ukrainian music band performing on Northern Avenue. The next day, hundreds of people and dozens of Armenian musicians gathered to demand their release.",
+      "analysis": "Three months after the revolution, the avenue produces its own protest — over the right to play music on it.\n\nStreet music is not incidental here: musicians are forbidden to play in the main spaces of Opera and Republic Square, so they position themselves at those squares' edges or on Northern Avenue. The corridor absorbs what the squares exclude. That is the mechanism the paper calls exfoliation, caught in a single incident — and this time the response is immediate, collective, and self-consciously about the street.",
+      "actors": [
+        "Street musicians",
+        "Police",
+        "Ukrainian band"
+      ],
+      "tags": [
+        "street music",
+        "regulation of public space",
+        "August 2018"
+      ],
+      "sources": [
+        {
+          "title": "Northern Avenue paper (Bahrani), everyday life section",
+          "note": "fieldwork"
+        }
+      ],
+      "media": []
     }
-
   ]
 }
