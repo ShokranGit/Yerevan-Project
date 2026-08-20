@@ -381,7 +381,7 @@
       map.addLayer({
         id: "figure-buildings", type: "fill-extrusion", source: "figure",
         paint: {
-          "fill-extrusion-color": RED,
+          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           "fill-extrusion-base": 0,
           "fill-extrusion-opacity": 0.96,
