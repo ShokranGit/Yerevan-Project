@@ -66,7 +66,12 @@
 
     if (!map.getSource("dem")) map.addSource("dem", DEM);
 
-    if (!map.getLayer("hillshade")) {
+    /* Satellite imagery already carries its own shadows; shading it again just
+       makes it muddy. A raster-only style has no line or symbol layer, which is
+       exactly the signal, so groundLayerId() coming back undefined means skip. */
+    var under = groundLayerId();
+
+    if (under && !map.getLayer("hillshade")) {
       map.addLayer({
         id: "hillshade",
         type: "hillshade",
@@ -81,7 +86,7 @@
           "hillshade-illumination-direction": 315,
           "hillshade-illumination-anchor": "map"
         }
-      }, groundLayerId());
+      }, under);
     }
 
     if (!map.getTerrain()) {
