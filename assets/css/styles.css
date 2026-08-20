@@ -158,6 +158,11 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   color:var(--text-3); font-variant-numeric:tabular-nums;
 }
 .res-title{ font-size:14px; margin:2px 0 3px; line-height:1.35; }
+.ctx{
+  display:inline-block; margin-left:5px; padding:0 5px;
+  border:1px solid var(--line); border-radius:20px;
+  font-size:8.5px; letter-spacing:.09em; color:var(--text-3);
+}
 .res-tags{ display:flex; flex-wrap:wrap; gap:4px; margin-top:5px; }
 .chip{
   font-size:10px; padding:1.5px 7px; border-radius:20px;
