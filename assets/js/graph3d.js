@@ -22,6 +22,22 @@
   var $ = function (id) { return document.getElementById(id); };
   var GRAPH = null;
 
+  /* The linked entries used to come only from window.YerevanMap, which app.js
+     publishes when the map finishes booting. If the tiles are slow or blocked —
+     a conference wifi, an offline demo — the map never boots, the API never
+     appears, and every node here silently reported nothing linked. The entries
+     live in a flat file; read it directly and stop depending on the map. */
+  var EVENTS = null;
+  function allEvents() {
+    var api = window.YerevanMap;
+    if (api && api.events) { var e = api.events(); if (e && e.length) return e; }
+    return EVENTS || [];
+  }
+  fetch("data/events.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { EVENTS = (j && j.events) || []; })
+    .catch(function () { EVENTS = []; });
+
   function makeView() {
     return { yaw: 0.6, pitch: -0.25, zoom: 1, spin: true, hover: null, sel: null };
   }
@@ -173,8 +189,7 @@
       box.innerHTML = '<p class="g3-empty">Drag to turn the model. Click any node to see what the map holds about it.</p>';
       return;
     }
-    var api = window.YerevanMap;
-    var all = (api && api.events && api.events()) || [];
+    var all = allEvents();
     var byId = {};
     all.forEach(function (e) { byId[e.id] = e; });
 

@@ -26,6 +26,22 @@
 
   var $ = function (id) { return document.getElementById(id); };
   var D = null;
+
+  /* The linked entries used to come only from window.YerevanMap, which app.js
+     publishes when the map finishes booting. If the tiles are slow or blocked —
+     a conference wifi, an offline demo — the map never boots, the API never
+     appears, and every node here silently reported nothing linked. The entries
+     live in a flat file; read it directly and stop depending on the map. */
+  var EVENTS = null;
+  function allEvents() {
+    var api = window.YerevanMap;
+    if (api && api.events) { var e = api.events(); if (e && e.length) return e; }
+    return EVENTS || [];
+  }
+  fetch("data/events.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { EVENTS = (j && j.events) || []; })
+    .catch(function () { EVENTS = []; });
   var view = { yaw: 0.5, pitch: -0.18, zoom: 1, spin: true, sel: null, hover: null };
   var thumb = { yaw: 0.5, pitch: -0.18, zoom: 1, spin: true, sel: null, hover: null };
   var year = 2026, playing = false, playT = 0;
@@ -218,8 +234,7 @@
         'Election figures without a check mark still need verifying against a source.</p>';
       return;
     }
-    var api = window.YerevanMap;
-    var all = (api && api.events && api.events()) || [];
+    var all = allEvents();
     var byId = {}; all.forEach(function (e) { byId[e.id] = e; });
     var linked = (p.events || []).map(function (i) { return byId[i]; }).filter(Boolean);
     if (!linked.length && p.query) {
