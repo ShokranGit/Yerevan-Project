@@ -323,7 +323,15 @@
       : "";
   }
 
+  /* The frame is requested BEFORE anything is drawn, and every draw is
+     wrapped. A throw inside a requestAnimationFrame callback silently ends
+     the chain: the picture freezes and nothing says why. That cost a
+     debugging round on this very file. Never let a render loop sit one
+     exception away from death. */
+  var warned = false;
   function loop() {
+    requestAnimationFrame(loop);
+    try {
     if (thumb.spin) thumb.yaw += 0.002;
     if (view.spin) view.yaw += 0.0015;
     if (playing) {
@@ -338,7 +346,9 @@
     if (t) draw(t, thumb, { labels: false, year: 2026 });
     var b = $("p3-canvas");
     if (b && !$("p3-modal").hidden) draw(b, view, { labels: true, axes: true, year: year });
-    requestAnimationFrame(loop);
+    } catch (err) {
+      if (!warned) { warned = true; console.warn("parties3d draw:", err); }
+    }
   }
 
   function open() { $("p3-modal").hidden = false; view.spin = false; dossier(view.sel); }
