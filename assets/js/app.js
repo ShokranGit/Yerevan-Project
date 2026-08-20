@@ -110,12 +110,13 @@
      LOAD
      ================================================================= */
 
-  var KENTRON = null;
+  var KENTRON = null, FIGURE = null;
 
-  fetch("data/kentron.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .catch(function () { return null; })
-    .then(function (k) { KENTRON = k; })
+  Promise.all([
+    fetch("data/kentron.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch("data/figure.json",  { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+  ])
+    .then(function (both) { KENTRON = both[0]; FIGURE = both[1]; })
     .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
     .then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
@@ -254,7 +255,6 @@
     });
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
-    map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: "metric" }), "bottom-left");
 
     /* Some styles never fire "load" — MapLibre only emits it after a first full
        render, and a style whose sources are still settling can skip it. "idle"
@@ -284,11 +284,6 @@
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
     });
 
-    map.on("sourcedata", function (e) {
-      if (e.sourceId === "openmaptiles" && e.isSourceLoaded) scheduleAccent();
-    });
-    map.on("moveend", scheduleAccent);
-    map.on("idle", scheduleAccent);
 
     map.on("error", function (e) {
       console.warn("map error:", e && e.error ? e.error.message : e);
@@ -374,60 +369,22 @@
      rule there and the drawing follows.
      ================================================================= */
 
-  function pointInRing(pt, ring) {
-    var x = pt[0], y = pt[1], inside = false;
-    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
-      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) inside = !inside;
-    }
-    return inside;
-  }
-
-  function inAccentZone(pt) {
-    if (!KENTRON || !KENTRON.accent) return false;
-    return KENTRON.accent.features.some(function (f) {
-      return pointInRing(pt, f.geometry.coordinates[0]);
-    });
-  }
-
-  /* A building counts as figure if its centre OR any of its corners falls in
-     the zone. Centre-only misses long blocks that straddle the boundary — and
-     on Northern Avenue most of the relevant buildings are long blocks. */
-  function touchesAccentZone(geom) {
-    var rings = geom.type === "Polygon" ? geom.coordinates
-              : geom.type === "MultiPolygon" ? geom.coordinates.map(function (c) { return c[0]; })
-              : null;
-    if (!rings) return false;
-    var c = centroidOf(geom);
-    if (c && inAccentZone(c)) return true;
-    for (var i = 0; i < rings.length; i++) {
-      var r = rings[i];
-      for (var j = 0; j < r.length; j++) if (inAccentZone(r[j])) return true;
-    }
-    return false;
-  }
-
-  function centroidOf(geom) {
-    var ring = geom.type === "Polygon" ? geom.coordinates[0]
-             : geom.type === "MultiPolygon" ? geom.coordinates[0][0] : null;
-    if (!ring || !ring.length) return null;
-    var sx = 0, sy = 0;
-    for (var i = 0; i < ring.length; i++) { sx += ring[i][0]; sy += ring[i][1]; }
-    return [sx / ring.length, sy / ring.length];
-  }
-
   function addFigureGround() {
-    if (state.basemap !== "kentron" || !map.getSource("openmaptiles")) return;
+    if (state.basemap !== "kentron") return;
 
-    if (!map.getSource("accent")) {
-      map.addSource("accent", { type: "geojson", data: emptyFC() });
+    /* The figure: the buildings Alireza marked dark on slide 10. These are real
+       OpenStreetMap footprints with real heights, extracted once and stored in
+       data/figure.json — not selected at runtime. Deterministic, reviewable,
+       and identical for every reader. */
+    if (FIGURE && !map.getSource("figure")) {
+      map.addSource("figure", { type: "geojson", data: FIGURE });
       map.addLayer({
-        id: "accent-buildings", type: "fill-extrusion", source: "accent",
+        id: "figure-buildings", type: "fill-extrusion", source: "figure",
         paint: {
           "fill-extrusion-color": RED,
-          "fill-extrusion-height": ["+", ["coalesce", ["get", "h"], 12], 0.6],
+          "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           "fill-extrusion-base": 0,
-          "fill-extrusion-opacity": 0.97,
+          "fill-extrusion-opacity": 0.96,
           "fill-extrusion-vertical-gradient": true
         }
       });
@@ -451,49 +408,10 @@
         paint: { "line-color": RED_DEEP, "line-width": 3, "line-dasharray": [1.4, 1.4], "line-opacity": 0.8 }
       });
     }
-    refreshAccent();
+    window.__fg = { figure: FIGURE ? FIGURE.features.length : 0 };
   }
 
-  /* Buildings arrive tile by tile, so the figure is recomputed as they load. */
-  var accentSeen = {}, accentFeatures = [], accentTimer = null;
-
-  function refreshAccent() {
-    if (state.basemap !== "kentron" || !map.getSource("accent")) return;
-    var feats;
-    try { feats = map.querySourceFeatures("openmaptiles", { sourceLayer: "building" }); }
-    catch (e) { window.__fg = { error: String(e) }; return; }
-
-    var added = 0;
-    feats.forEach(function (f) {
-      if (!f.geometry || !touchesAccentZone(f.geometry)) return;
-      var c = centroidOf(f.geometry);
-      if (!c) return;
-      var key = c[0].toFixed(5) + "," + c[1].toFixed(5);
-      if (accentSeen[key]) return;
-      accentSeen[key] = 1;
-      accentFeatures.push({
-        type: "Feature",
-        properties: { h: (f.properties && f.properties.render_height) || 12 },
-        geometry: f.geometry
-      });
-      added++;
-    });
-    if (added) {
-      map.getSource("accent").setData({ type: "FeatureCollection", features: accentFeatures });
-    }
-    /* visible from the console: how many buildings the tiles offered, and how
-       many the rule selected. Cheap to keep, invaluable when it misbehaves. */
-    window.__fg = { queried: feats.length, figure: accentFeatures.length, zoom: +map.getZoom().toFixed(2) };
-  }
-
-  function scheduleAccent() {
-    clearTimeout(accentTimer);
-    accentTimer = setTimeout(refreshAccent, 250);
-  }
-
-  function resetFigureGround() {
-    accentSeen = {}; accentFeatures = []; 
-  }
+  function resetFigureGround() { /* nothing cached any more */ }
 
   function emptyFC() { return { type: "FeatureCollection", features: [] }; }
 
@@ -993,6 +911,31 @@
       lng.textContent = Math.abs(lo).toFixed(5) + "° " + (lo >= 0 ? "E" : "W");
       zm.textContent  = "z" + map.getZoom().toFixed(1);
     }
+    /* Scale bar, drawn into the same strip as the coordinates so the two can
+       never overlap. Width is snapped to a round ground distance. */
+    var bar = $("scale-bar"), barLabel = $("scale-label"), MAXPX = 88;
+
+    function niceRound(d) {
+      var pow = Math.pow(10, Math.floor(Math.log(d) / Math.LN10));
+      var f = d / pow;
+      return (f >= 5 ? 5 : f >= 3 ? 3 : f >= 2 ? 2 : 1) * pow;
+    }
+
+    function updateScale() {
+      var y = map.getCanvas().clientHeight / 2;
+      var a = map.unproject([0, y]), b = map.unproject([MAXPX, y]);
+      var metres = a.distanceTo(b);
+      if (!isFinite(metres) || metres <= 0) return;
+      var round = niceRound(metres);
+      bar.style.width = Math.max(18, Math.round(MAXPX * (round / metres))) + "px";
+      barLabel.textContent = round >= 1000
+        ? (round / 1000) + " km"
+        : Math.round(round) + " m";
+    }
+    map.on("move", updateScale);
+    map.on("zoom", updateScale);
+    updateScale();
+
     map.on("mousemove", function (e) { show(e.lngLat); });
     map.on("mouseout", function () { show(map.getCenter()); });
     map.on("move", function () {
