@@ -28,6 +28,9 @@
   var RED       = "#c9262c";
   var RED_DEEP  = "#8f1b20";
   var GREY_MASS = "#b8bcc2";
+  /* Conventional cartographic water, for pools and fountain basins.
+     Extruded barely half a metre, so it reads as a surface, not a block. */
+  var WATER     = "#6fa8cf";
   var SRC = "events";
   var PLAY_MS = 18000; // full sweep duration
 
@@ -381,7 +384,7 @@
       map.addLayer({
         id: "figure-buildings", type: "fill-extrusion", source: "figure",
         paint: {
-          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, GREY_MASS],
+          "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "water", WATER, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           "fill-extrusion-base": 0,
           "fill-extrusion-opacity": 0.96,
