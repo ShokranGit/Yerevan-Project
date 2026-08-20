@@ -7,7 +7,7 @@
 <meta name="description" content="Mapping urban space, social movements, and political events in Yerevan, Armenia." />
 <link rel="preconnect" href="https://basemaps.cartocdn.com" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260820a" rel="stylesheet" />
 </head>
 <body>
 
@@ -141,6 +141,8 @@
 <div id="loading">Loading map…</div>
 
 <script src="assets/vendor/maplibre-gl.js"></script>
-<script src="assets/js/app.js"></script>
+<!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
+     and without it readers keep running yesterday's code. -->
+<script src="assets/js/app.js?v=20260820a"></script>
 </body>
 </html>
