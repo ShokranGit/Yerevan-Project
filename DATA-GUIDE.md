@@ -96,9 +96,29 @@ research is finished — set either end in `meta`:
 Leave a value as `""` to let that end follow the data. The current setting fixes
 the end at **December 2028** and lets the start follow your earliest entry.
 
-An override can only *widen* the timeline, never narrow it: if you add an entry
-outside the stated range, the timeline stretches to include it rather than
-hiding the point. You can't lose data by mis-setting these.
+### Entries outside the range become "context"
+
+An entry dated outside an explicit range isn't hidden — it's treated as
+**standing context**: a condition that predates (or outlasts) the mapped period
+rather than an event inside it. Context entries stay visible at every timeline
+position, are marked `context` in the results list, and don't compress the scale.
+
+That's how the 1924 Tamanyan master plan sits on a timeline that starts in 2000:
+the plan is a standing condition of the site, not a moment inside the story, and
+including it doesn't squash twenty years of events into the right-hand third of
+the track.
+
+---
+
+## 3a. Entries at the same address
+
+Several entries legitimately share one location — five of them sit on Northern
+Avenue itself. Drawn at identical coordinates they collapse into a single dot and
+all but one become unclickable, so entries sharing a location are **fanned out on
+a small circle, roughly 18 metres, for display only**. The coordinates in the file
+are never modified, and the fan disappears as soon as the entries have distinct
+coordinates. If you'd rather place them precisely along the avenue, just give each
+its own coordinates and the fanning stops on its own.
 
 ---
 
