@@ -291,6 +291,20 @@
       refresh();
       hideLoader();
       wireMapFurniture();
+
+      /* The small public surface other files talk to. graph3d.js uses it to
+         list what the map holds about a node and to open an entry when one is
+         clicked. Keep it this narrow — three functions, no internals. */
+      window.YerevanMap = {
+        events: function () { return state.events.slice(); },
+        select: function (id) { selectEvent(id, true); },
+        search: function (q) {
+          state.query = q || "";
+          var box = $("search"); if (box) box.value = state.query;
+          refresh();
+        }
+      };
+
       openFromHash();
     }
 
