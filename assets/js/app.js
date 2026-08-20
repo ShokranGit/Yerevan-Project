@@ -438,7 +438,12 @@
         paint: {
           "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "accent", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
-          "fill-extrusion-base": 0,
+          /* Per-feature base, so a shape can be built out of stacked slices.
+             A MapLibre extrusion is always a vertical prism with a flat top —
+             it cannot taper and it cannot lean. Slicing is the way around that:
+             ten short prisms, each one narrower and shifted, read as a tapering
+             needle or a pylon leaning inward. See synthetic-monuments.md. */
+          "fill-extrusion-base": ["coalesce", ["get", "base"], 0],
           "fill-extrusion-opacity": 0.96,
           "fill-extrusion-vertical-gradient": true
         }
