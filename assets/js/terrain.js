@@ -10,23 +10,25 @@
 
    There is no switch. This is the map.
 
-   Two things are doing the work, and they are not the same thing:
+   HILLSHADE is what you actually see: the elevation drawn as light and
+   shadow, lying flat on the ground, under the streets and buildings.
+   TERRAIN is the surface itself bending, which only reads once the
+   camera is tilted and pulled back — Kentron's own relief is a few
+   tens of metres over a couple of kilometres, so looking straight down
+   at one square, no amount of bending will look like anything.
 
-   * TERRAIN  — the map surface itself bends, so a tilted camera shows
-     real slope. Convincing when you look across the city; nearly
-     invisible looking straight down at one square, because Kentron's
-     own relief is only tens of metres over a couple of kilometres.
-
-   * HILLSHADE — the same elevation drawn as light and shadow, flat on
-     the ground. This is what makes the landform legible at *every*
-     zoom, and it is why the first version of this file looked like
-     nothing had happened. Shaded relief is the topographic map; the
-     bending is the 3D.
+   If the landform is invisible, the answer is almost always zoom, not
+   settings: pull back to z12–13 and the amphitheatre appears.
 
    Elevation: AWS Terrain Tiles (terrarium encoding, SRTM/NASADEM,
-   ~30 m), keyless and CORS-open. That resolution is landform, not
-   street furniture — the gorge and the ridges read clearly, the
-   individual steps of the Cascade do not.
+   ~30 m), keyless and CORS-open. Landform resolution, not street
+   furniture — the gorge and the ridges read clearly, the individual
+   steps of the Cascade do not.
+
+   window.__terrain reports what actually got applied. If Alireza says
+   he cannot see the landscape, that object is the first thing to ask
+   for, because Claude's own browser tab never finishes loading a map
+   and cannot look at the result.
    =================================================================== */
 
 (function () {
@@ -47,8 +49,9 @@
 
   var map = null;
 
-  /* The shading has to sit under the streets and buildings, or it draws on
-     top of the drawing. Find the first line/symbol layer and go beneath it. */
+  /* The shading has to sit under the streets and buildings, or it draws over
+     the figure-ground drawing. Everything below the first line / symbol /
+     extrusion layer is ground: background, water, parks, land use. */
   function groundLayerId() {
     var layers = map.getStyle().layers || [];
     for (var i = 0; i < layers.length; i++) {
@@ -69,10 +72,12 @@
         type: "hillshade",
         source: "dem",
         paint: {
-          "hillshade-exaggeration": 0.55,
-          "hillshade-shadow-color": "#7d838c",
+          /* Strong on purpose. This is a research map of a city whose
+             shape is its terrain, not a pretty basemap. */
+          "hillshade-exaggeration": 1,
+          "hillshade-shadow-color": "#3f454d",
           "hillshade-highlight-color": "#ffffff",
-          "hillshade-accent-color": "#9aa0a8",
+          "hillshade-accent-color": "#6f757d",
           "hillshade-illumination-direction": 315,
           "hillshade-illumination-anchor": "map"
         }
@@ -82,9 +87,23 @@
     if (!map.getTerrain()) {
       map.setTerrain({ source: "dem", exaggeration: EXAGGERATION });
     }
+
+    window.__terrain = {
+      dem: !!map.getSource("dem"),
+      hillshade: !!map.getLayer("hillshade"),
+      under: groundLayerId(),
+      terrain: !!map.getTerrain(),
+      exaggeration: EXAGGERATION
+    };
   }
 
-  function safeApply() { try { apply(); } catch (err) { console.warn("terrain:", err); } }
+  function safeApply() {
+    try { apply(); }
+    catch (err) {
+      window.__terrainErr = String(err && err.message || err);
+      console.warn("terrain:", err);
+    }
+  }
 
   var waited = 0;
   var timer = setInterval(function () {
@@ -94,10 +113,12 @@
       /* MapLibre caps pitch at 60 by default; terrain is worth more than that. */
       try { map.setMaxPitch(85); } catch (e) {}
       safeApply();
-      /* setStyle drops every source and layer, so put them back each time. */
+      /* Tiles and style data arrive in waves; re-apply until it sticks. */
       map.on("styledata", safeApply);
+      map.on("sourcedata", safeApply);
     } else if (++waited > 200) {
       clearInterval(timer);
+      window.__terrainErr = "window.__map never appeared — the map never booted";
     }
   }, 150);
 
