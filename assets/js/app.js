@@ -40,6 +40,9 @@
 
   /* palette — red and grey, from the proposal deck */
   var RED       = "#c9262c";
+  /* forget-me-not purple: the flower adopted for the 1915 centenary, and the
+     colour this map gives to 23-24 April of every year. */
+  var COMMEM    = "#7d5ba6";
   var RED_DEEP  = "#8f1b20";
   var GREY_MASS = "#b8bcc2";
   /* Conventional cartographic water, for pools and fountain basins.
@@ -200,6 +203,11 @@
         });
       });
       e._search = bag.join(" ").toLowerCase();
+      /* An entry can carry more than one route — the genocide ceremony
+         walks two, in different decades. The first is the primary: it is
+         what the camera frames and what the replay button draws. The rest
+         are drawn beside it by buildRoutes(). */
+      if (e.paths && e.paths.length && !e.path) e.path = e.paths[0].path;
     });
     state.events = state.events.filter(function (e) { return e._t !== null; });
 
@@ -449,7 +457,12 @@
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": ["coalesce", ["get", "color"], RED],
-        "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 0.95, 0.6],
+        /* A route that is no longer walked is drawn fainter than one that is.
+           line-dasharray is the one paint property MapLibre will not accept an
+           expression for, so the difference has to be carried by opacity. */
+        "line-opacity": ["case",
+          ["==", ["get", "past"], 1], 0.42,
+          ["boolean", ["feature-state", "selected"], false], 0.95, 0.6],
         "line-width": ["interpolate", ["linear"], ["zoom"], 11, 2, 16, 5],
         "line-dasharray": [2.2, 1.4]
       }
@@ -618,7 +631,49 @@
     return [[w, s], [e2, n]];
   }
 
+  /* -----------------------------------------------------------------
+     MARCH NOTES — a label pinned to a route saying when it was walked
+     -----------------------------------------------------------------
+     The genocide ceremony walks two routes that differ only in their first
+     kilometre, and the whole argument is which years used which. A colour
+     cannot say that; a word can. So each route carries a small note at its
+     own midpoint naming its years, and the note for a route no longer
+     walked is drawn in the past tense of the same colour.
+     ----------------------------------------------------------------- */
+  var marchNotes = [];
+
+  function clearMarchNotes() {
+    marchNotes.forEach(function (m) { m.remove(); });
+    marchNotes = [];
+  }
+
+  function showMarchNotes(e) {
+    clearMarchNotes();
+    if (!map || !e || !e.paths || !e.paths.length) return;
+    var colour = e.pathColor || catById(e.categories[0]).color;
+    e.paths.forEach(function (p) {
+      if (!p.path || p.path.length < 2) return;
+      var L = p._len || pathLength(p.path);
+      var hit = alongPath(p.path, L * 0.42);
+      var at = (hit && hit.at) || p.path[Math.floor(p.path.length / 2)];
+      var el = document.createElement("div");
+      el.className = "march-note" + (p.active === false ? " past" : "");
+      el.style.setProperty("--mk", colour);
+      el.innerHTML = '<b>' + esc(tr(p, "label") || "") + '</b>' +
+                     '<span>' + esc(t("march.years", { y: num(p.years || "") })) + '</span>';
+      el.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        selectEvent(e.id, false);
+      });
+      marchNotes.push(
+        new maplibregl.Marker({ element: el, anchor: "bottom" })
+          .setLngLat(at).addTo(map)
+      );
+    });
+  }
+
   function clearPlaces() {
+    clearMarchNotes();
     placeMarkers.forEach(function (m) { m.remove(); });
     placeMarkers = [];
     if (map && map.getSource("geo-link")) map.getSource("geo-link").setData(emptyFC());
@@ -1043,13 +1098,21 @@
     state.events.forEach(function (e) {
       if (!e.path || e.path.length < 2) return;
       e._pathLen = pathLength(e.path);
-      lines.push({
-        type: "Feature",
-        id: hashId(e.id),
-        properties: { id: e.id, color: catById(e.categories[0]).color },
-        geometry: { type: "LineString", coordinates: e.path }
+      var colour = e.pathColor || catById(e.categories[0]).color;
+      var set = (e.paths && e.paths.length) ? e.paths
+              : [{ id: e.id, path: e.path, active: true }];
+      set.forEach(function (p, n) {
+        if (!p.path || p.path.length < 2) return;
+        p._len = pathLength(p.path);
+        lines.push({
+          type: "Feature",
+          id: hashId(p.id || (e.id + "-" + n)),
+          properties: { id: e.id, sub: p.id || "", color: p.color || colour,
+                        past: p.active === false ? 1 : 0 },
+          geometry: { type: "LineString", coordinates: p.path }
+        });
+        chevrons(p.path, e.id).forEach(function (c) { marks.push(c); });
       });
-      chevrons(e.path, e.id).forEach(function (c) { marks.push(c); });
       var route = e.route || {};
       ends.push({ type: "Feature",
         properties: { id: e.id, go: route.from || e.id, kind: "start" },
@@ -1057,6 +1120,14 @@
       ends.push({ type: "Feature",
         properties: { id: e.id, go: route.to || e.id, kind: "end" },
         geometry: { type: "Point", coordinates: e.path[e.path.length - 1] } });
+      if (e.paths) {
+        e.paths.forEach(function (p) {
+          if (!p.path || p.path.length < 2 || p.path === e.path) return;
+          ends.push({ type: "Feature",
+            properties: { id: e.id, go: e.id, kind: "start" },
+            geometry: { type: "Point", coordinates: p.path[0] } });
+        });
+      }
     });
     ROUTES      = { type: "FeatureCollection", features: lines };
     ROUTE_MARKS = { type: "FeatureCollection", features: marks };
@@ -1265,8 +1336,17 @@
          cancelled by the move that follows it. */
       var back = (map.getPitch() < 1 && state.cityPitch) ? state.cityPitch : null;
       if (e.path && e.path.length > 1) {
-        /* A march is not a place. Frame the whole walk, then draw it. */
-        map.fitBounds(pathBounds(e.path), {
+        /* A march is not a place. Frame the whole walk, then draw it. An entry
+           with several routes is framed around all of them at once — the point
+           of drawing two is seeing them diverge. */
+        var allPts = e.path;
+        if (e.paths && e.paths.length > 1) {
+          allPts = [];
+          e.paths.forEach(function (pp) {
+            if (pp.path) allPts = allPts.concat(pp.path);
+          });
+        }
+        map.fitBounds(pathBounds(allPts), {
           padding: { top: 90, bottom: 190, left: 60, right: 60 },
           duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
         });
@@ -1277,6 +1357,8 @@
     } else if (map && e.path && e.path.length > 1) {
       animateRoute(e);
     }
+
+    if (map) showMarchNotes(e);
 
     var h = "";
     h += '<div class="d-date">' + esc(fmtDate(e)) + '</div>';
@@ -1334,7 +1416,23 @@
       }
     }
 
-    if (e.path && e.path.length > 1) {
+    if (e.paths && e.paths.length) {
+      /* Two routes, one ritual. The list is the argument: same destination,
+         same organisers, different first kilometre, different decades. */
+      h += '<div class="d-marches">';
+      e.paths.forEach(function (pp, n) {
+        var Lp = pp._len || pathLength(pp.path || []);
+        var farp = Lp >= 1000 ? num((Lp / 1000).toFixed(1)) + " " + t("unit.km")
+                              : num(Math.round(Lp)) + " " + t("unit.m");
+        h += '<button type="button" class="d-march' +
+             (pp.active === false ? ' past' : '') + '" data-march="' + n + '"' +
+             ' style="--mk:' + esc(e.pathColor || RED) + '">' +
+             '<i></i><b>' + esc(tr(pp, "label") || "") + '</b>' +
+             '<span>' + esc(num(pp.years || "")) + '</span>' +
+             '<em>' + esc(farp) + '</em></button>';
+      });
+      h += '</div>';
+    } else if (e.path && e.path.length > 1) {
       var L = e._pathLen || pathLength(e.path);
       var far = L >= 1000 ? num((L / 1000).toFixed(1)) + " " + t("unit.km")
                           : num(Math.round(L)) + " " + t("unit.m");
@@ -1357,6 +1455,46 @@
     }
     if (analysis) {
       h += '<div class="d-sec analysis"><h3>' + esc(t("detail.analysis")) + '</h3><p>' + para(analysis) + '</p></div>';
+    }
+
+    /* ---- year by year ----
+       A recurring rite is not one event; it is a series in which one variable
+       moves. Rendering the series as a list, with the starting square and the
+       confidence beside each year, is the only honest way to show that the
+       square changed once and stayed changed. */
+    if (e.years && e.years.length) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.chronicle")) + '</h3>';
+      h += '<div class="d-years">';
+      e.years.forEach(function (y) {
+        var sk = "start." + (y.start || "unconfirmed");
+        h += '<div class="d-year' + (y.start === "republic" ? " rep" : y.start === "freedom" ? " fre" : "") +
+             '" data-year="' + esc(y.year) + '" id="yr-' + esc(y.year) + '">' +
+             '<div class="d-year-head"><b>' + esc(num(y.year)) + '</b>' +
+             '<span class="d-year-sq">' + esc(t(sk)) + '</span>' +
+             (y.flags === true ? '<span class="d-year-fl">' + esc(t("flags.yes")) + '</span>' : "") +
+             '<span class="d-year-cf cf-' + esc(y.confidence || "unknown") + '">' +
+               esc(t("conf." + (y.confidence || "unknown"))) + '</span>' +
+             '</div>' +
+             '<p>' + para(tr(y, "note") || "") + '</p></div>';
+      });
+      h += '</div>';
+      var cn = tr(e, "chronicleNote");
+      if (cn) h += '<p class="d-note">' + esc(cn) + '</p>';
+      h += '</div>';
+    }
+
+    /* ---- the words ----
+       Slogans are kept in Armenian first, transliterated second, glossed
+       third. A translation alone would lose what is being claimed: the
+       chants are quotations of older Armenian, and that is the claim. */
+    if (e.slogans && e.slogans.length) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.slogans")) + '</h3><div class="d-slogans">';
+      e.slogans.forEach(function (sl) {
+        h += '<div class="d-slogan"><b lang="hy">' + esc(sl.hy) + '</b>' +
+             '<i>' + esc(sl.latin || "") + '</i>' +
+             '<p>' + esc(tr(sl, "gloss") || "") + '</p></div>';
+      });
+      h += '</div></div>';
     }
     var actors = trL(e, "actors");
     if (actors.length) {
@@ -1409,6 +1547,20 @@
 
     $("detail-body").querySelectorAll("[data-go]").forEach(function (b) {
       b.addEventListener("click", function () { selectEvent(b.dataset.go, true); });
+    });
+
+    /* One button per route: frame that route alone and walk it. */
+    $("detail-body").querySelectorAll("[data-march]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pp = (e.paths || [])[+b.dataset.march];
+        if (!pp || !pp.path || !map) return;
+        map.fitBounds(pathBounds(pp.path), {
+          padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
+        });
+        setTimeout(function () {
+          animateRoute({ path: pp.path, _pathLen: pp._len });
+        }, 600);
+      });
     });
 
     $("detail-body").querySelectorAll("[data-act]").forEach(function (b) {
@@ -1486,8 +1638,13 @@
              '</div>' + mediaMeta(m) + '</figure>';
     }
 
+    /* The local copy is the point — a link that rots takes the evidence with
+       it. But an image that has been added to the data and not yet mirrored
+       should still show, so the remote original is kept as a fallback of last
+       resort rather than as the source. */
+    var fb = m.remote ? ' data-fb="' + esc(m.remote) + '" onerror="if(this.dataset.fb){var u=this.dataset.fb;this.dataset.fb=\'\';this.src=u;}"' : "";
     return '<figure class="d-media"><a href="' + esc(m.source || m.url) + '" target="_blank" rel="noopener">' +
-           '<img src="' + esc(m.url) + '" alt="' + esc(tr(m, "caption")) + '" loading="lazy"></a>' +
+           '<img src="' + esc(m.url) + '"' + fb + ' alt="' + esc(tr(m, "caption")) + '" loading="lazy"></a>' +
            mediaMeta(m) + '</figure>';
   }
 
@@ -1535,6 +1692,8 @@
 
     buildEpisodes();
 
+    buildCommem();
+
     renderTicks();
 
     [s, e].forEach(function (input) {
@@ -1556,6 +1715,72 @@
     var cn = [];
     for (y = 1900; y <= 2000; y += 20) cn.push(y);
     $("cn-ticks").innerHTML = cn.map(function (t) { return "<span>" + num(t) + "</span>"; }).join("");
+  }
+
+  /* -----------------------------------------------------------------
+     THE ANNUAL COMMEMORATION — 23 and 24 April, every year
+     -----------------------------------------------------------------
+     An episode is one stretch of time with a beginning and an end. This is
+     the other shape a political calendar takes: the same two days, returning,
+     for as long as the axis runs. Two days inside a twenty-nine-year track is
+     well under a pixel, so each year is drawn as a minimum-width stem rather
+     than a band, in the purple of the forget-me-not adopted for the 1915
+     centenary. Clicking any year opens the entry that explains all of them.
+     ----------------------------------------------------------------- */
+
+  function commemEvents() {
+    return state.events.filter(function (e) { return e.recurs && e.recurs.days; });
+  }
+
+  function buildCommem() {
+    var box = $("tl-commem");
+    if (!box) return;
+    var evs = commemEvents();
+    if (!evs.length) { box.innerHTML = ""; return; }
+
+    var html = "", key = $("tl-commem-key");
+    evs.forEach(function (e) {
+      var r = e.recurs, colour = r.color || COMMEM;
+      var y0 = Math.max(r.from || 1900, new Date(state.tMin).getUTCFullYear());
+      var y1 = Math.min(r.to || 3000, new Date(state.tMax).getUTCFullYear());
+      var d0 = r.days[0], d1 = r.days[r.days.length - 1];
+      for (var y = y0; y <= y1; y++) {
+        var a = Date.UTC(y, (r.month || 1) - 1, d0);
+        var b = Date.UTC(y, (r.month || 1) - 1, d1 + 1);
+        var f0 = (a - state.tMin) / (state.tMax - state.tMin);
+        var f1 = (b - state.tMin) / (state.tMax - state.tMin);
+        if (f1 < 0 || f0 > 1) continue;
+        html += '<button type="button" class="tl-cm" data-commem="' + esc(e.id) + '"' +
+                ' data-year="' + y + '"' +
+                ' title="' + esc(num(y) + " — " + (tr(e, "title") || "")) + '"' +
+                ' style="left:' + (Math.max(0, f0) * 100).toFixed(4) + '%;width:' +
+                (Math.max(0, (Math.min(1, f1) - Math.max(0, f0))) * 100).toFixed(4) +
+                '%;--cm:' + esc(colour) + '"><i></i></button>';
+      }
+      if (key) key.style.setProperty("--cm", colour);
+    });
+    box.innerHTML = html;
+
+    box.querySelectorAll("[data-commem]").forEach(function (b) {
+      b.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        selectEvent(b.dataset.commem, true);
+        var row = document.getElementById("yr-" + b.dataset.year);
+        if (row) {
+          row.classList.add("hit");
+          setTimeout(function () { row.scrollIntoView({ block: "center" }); }, 60);
+          setTimeout(function () { row.classList.remove("hit"); }, 2600);
+        }
+      });
+    });
+
+    if (key && !key._bound) {
+      key._bound = true;
+      key.addEventListener("click", function () {
+        var e0 = commemEvents()[0];
+        if (e0) selectEvent(e0.id, true);
+      });
+    }
   }
 
   /* -----------------------------------------------------------------
@@ -1991,6 +2216,7 @@
         buildCategories();
         renderTicks();
         buildEpisodes();
+        buildCommem();
         buildAbout();
         updateTimelineUI();
         updateCenturyUI();
