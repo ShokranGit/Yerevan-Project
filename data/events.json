@@ -1423,14 +1423,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nikol_Pashinyan_13_Apr_2018.jpg/1400px-Nikol_Pashinyan_13_Apr_2018.jpg",
-          "mirror": "media/rev2018-nikol-pashinyan-13-apr-2018.jpg",
+          "url": "media/rev2018-nikol-pashinyan-13-apr-2018.jpg",
           "caption": "Pashinyan at Freedom Square on the day the march arrived. The photographer's own caption reads: “Nikol Pashinyan, Freedom Sq (Opera), Yerevan”.",
           "credit": "Photo: Yerevantsi, 13 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_13_Apr_2018.jpg",
           "caption_hy": "Փաշինյանը Ազատության հրապարակում այն օրը, երբ երթը հասավ։ Լուսանկարչի սեփական մակագրությունն է․ «Nikol Pashinyan, Freedom Sq (Opera), Yerevan»։",
-          "caption_fa": "پاشینیان در میدان آزادی، روزی که راهپیمایی رسید. شرح خود عکاس: «Nikol Pashinyan, Freedom Sq (Opera), Yerevan»."
+          "caption_fa": "پاشینیان در میدان آزادی، روزی که راهپیمایی رسید. شرح خود عکاس: «Nikol Pashinyan, Freedom Sq (Opera), Yerevan».",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nikol_Pashinyan_13_Apr_2018.jpg/1400px-Nikol_Pashinyan_13_Apr_2018.jpg"
         }
       ],
       "title_hy": "Երթը հասնում է Երևան և ավարտվում Ազատության հրապարակում",
@@ -1585,25 +1585,25 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg/1400px-Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg",
-          "mirror": "media/rev2018-nikol-pashinyan-april-16-baghramyan-avenue.jpg",
+          "url": "media/rev2018-nikol-pashinyan-april-16-baghramyan-avenue.jpg",
           "caption": "Pashinyan on Baghramyan Avenue, 16 April.",
           "credit": "Photo: Yerevantsi, 16 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg",
           "caption_hy": "Փաշինյանը Բաղրամյան պողոտայում, ապրիլի 16։",
-          "caption_fa": "پاشینیان در خیابان باغرامیان، ۱۶ آوریل."
+          "caption_fa": "پاشینیان در خیابان باغرامیان، ۱۶ آوریل.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg/1400px-Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg"
         },
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg/1400px-16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg",
-          "mirror": "media/rev2018-16-04-2018-protest-demonstrations-yerevan.jpg",
+          "url": "media/rev2018-16-04-2018-protest-demonstrations-yerevan.jpg",
           "caption": "Yerevan on 16 April, the first day of open civil disobedience.",
           "credit": "Photo: Ավետիսյան91, 16 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg",
           "caption_hy": "Երևանը ապրիլի 16-ին՝ բացահայտ քաղաքացիական անհնազանդության առաջին օրը։",
-          "caption_fa": "ایروان در ۱۶ آوریل، نخستین روز نافرمانی مدنی آشکار."
+          "caption_fa": "ایروان در ۱۶ آوریل، نخستین روز نافرمانی مدنی آشکار.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg/1400px-16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg"
         }
       ],
       "title_hy": "Փշալար Բաղրամյան պողոտայում․ Փաշինյանը վիրավորվում է, 46 տուժած",
@@ -1688,14 +1688,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg/1400px-17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg",
-          "mirror": "media/rev2018-17-04-2018-protest-demonstrations-yerevan-1.jpg",
+          "url": "media/rev2018-17-04-2018-protest-demonstrations-yerevan-1.jpg",
           "caption": "17 April. The photographer's caption places this at Republic Square — «Հանրապետության հրապարակ» — two days before the square became the movement's nightly centre.",
           "credit": "Photo: Ավետիսյան91, 17 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg",
           "caption_hy": "Ապրիլի 17։ Լուսանկարչի մակագրությունը սա տեղադրում է Հանրապետության հրապարակում՝ երկու օր առաջ, քան հրապարակը դարձավ շարժման ամենօրյա կենտրոնը։",
-          "caption_fa": "۱۷ آوریل. شرح عکاس این تصویر را در میدان جمهوری جای می‌دهد — دو روز پیش از آنکه میدان به مرکز شبانهٔ جنبش بدل شود."
+          "caption_fa": "۱۷ آوریل. شرح عکاس این تصویر را در میدان جمهوری جای می‌دهد — دو روز پیش از آنکه میدان به مرکز شبانهٔ جنبش بدل شود.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg/1400px-17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg"
         }
       ],
       "title_hy": "Խորհրդարանը Սարգսյանին դարձնում է վարչապետ",
@@ -1768,25 +1768,25 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg/1400px-18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg",
-          "mirror": "media/rev2018-18-04-2018-protest-demonstrations-yerevan.jpg",
+          "url": "media/rev2018-18-04-2018-protest-demonstrations-yerevan.jpg",
           "caption": "The march on Tigran Mets Avenue, 18 April 2018.",
           "credit": "Photo: Ավետիսյան91, 18 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg",
           "caption_hy": "Երթը Տիգրան Մեծի պողոտայում, 2018 թվականի ապրիլի 18։",
-          "caption_fa": "راهپیمایی در خیابان تیگران متس، ۱۸ آوریل ۲۰۱۸."
+          "caption_fa": "راهپیمایی در خیابان تیگران متس، ۱۸ آوریل ۲۰۱۸.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg/1400px-18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg"
         },
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg/1400px-Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg",
-          "mirror": "media/rev2018-nikol-pashinyan-april-18-tigran-mets-avenue.jpg",
+          "url": "media/rev2018-nikol-pashinyan-april-18-tigran-mets-avenue.jpg",
           "caption": "Pashinyan on Tigran Mets Avenue the same day.",
           "credit": "Photo: Yerevantsi, 18 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg",
           "caption_hy": "Փաշինյանը Տիգրան Մեծի պողոտայում նույն օրը։",
-          "caption_fa": "پاشینیان در خیابان تیگران متس همان روز."
+          "caption_fa": "پاشینیان در خیابان تیگران متس همان روز.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg/1400px-Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg"
         }
       ],
       "title_hy": "Բազմությունը երթով իջնում է Տիգրան Մեծով",
@@ -1865,14 +1865,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Republic_Square_During_the_2018_Armenian_protests_02.jpg/1400px-Republic_Square_During_the_2018_Armenian_protests_02.jpg",
-          "mirror": "media/rev2018-republic-square-during-the-2018-armenian-protests-02.jpg",
+          "url": "media/rev2018-republic-square-during-the-2018-armenian-protests-02.jpg",
           "caption": "Republic Square, 19 April 2018.",
           "credit": "Photo: Narek75, 19 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:Republic_Square_During_the_2018_Armenian_protests_02.jpg",
           "caption_hy": "Հանրապետության հրապարակը, 2018 թվականի ապրիլի 19։",
-          "caption_fa": "میدان جمهوری، ۱۹ آوریل ۲۰۱۸."
+          "caption_fa": "میدان جمهوری، ۱۹ آوریل ۲۰۱۸.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Republic_Square_During_the_2018_Armenian_protests_02.jpg/1400px-Republic_Square_During_the_2018_Armenian_protests_02.jpg"
         }
       ],
       "title_hy": "Ամենօրյա հանրահավաքը տեղափոխվում է Հանրապետության հրապարակ",
@@ -2143,14 +2143,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg",
-          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-03.jpg",
+          "url": "media/rev2018-22-04-2018-protest-demonstration-yerevan-03.jpg",
           "caption": "During the march, 22 April 2018.",
           "credit": "Photo: Pandukht, 22 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg",
           "caption_hy": "Երթի ընթացքում, 2018 թվականի ապրիլի 22։",
-          "caption_fa": "در جریان راهپیمایی، ۲۲ آوریل ۲۰۱۸."
+          "caption_fa": "در جریان راهپیمایی، ۲۲ آوریل ۲۰۱۸.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg"
         }
       ],
       "title_hy": "Երթը դեպի հարավ․ Հանրապետության հրապարակից Էրեբունի",
@@ -2261,25 +2261,25 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg",
-          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-26.jpg",
+          "url": "media/rev2018-22-04-2018-protest-demonstration-yerevan-26.jpg",
           "caption": "Seconds after the clash between demonstrators and police at the Artsakh–Erebuni intersection, 22 April 2018.",
           "credit": "Photo: Pandukht, 22 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg",
           "caption_hy": "Ցուցարարների և ոստիկանության բախումից վայրկյաններ անց՝ Արցախ-Էրեբունի խաչմերուկում, 2018 թվականի ապրիլի 22։",
-          "caption_fa": "ثانیه‌هایی پس از درگیری معترضان و پلیس در تقاطع آرتساخ–ارِبونی، ۲۲ آوریل ۲۰۱۸."
+          "caption_fa": "ثانیه‌هایی پس از درگیری معترضان و پلیس در تقاطع آرتساخ–ارِبونی، ۲۲ آوریل ۲۰۱۸.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg"
         },
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg",
-          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-29.jpg",
+          "url": "media/rev2018-22-04-2018-protest-demonstration-yerevan-29.jpg",
           "caption": "Minutes later at the same crossroads: the police leave the site.",
           "credit": "Photo: Pandukht, 22 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg",
           "caption_hy": "Րոպեներ անց նույն խաչմերուկում․ ոստիկանները լքում են վայրը։",
-          "caption_fa": "دقایقی بعد در همان چهارراه: پلیس محل را ترک می‌کند."
+          "caption_fa": "دقایقی بعد در همان چهارراه: پلیس محل را ترک می‌کند.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg"
         }
       ],
       "title_hy": "Ձերբակալություն Արցախի և Էրեբունու անկյունում",
@@ -2367,14 +2367,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg/1400px-23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg",
-          "mirror": "media/rev2018-23-04-2018-protest-demonstration-yerevan-9.jpg",
+          "url": "media/rev2018-23-04-2018-protest-demonstration-yerevan-9.jpg",
           "caption": "The rally at Republic Square on 23 April, the day of the resignation.",
           "credit": "Photo: Ավետիսյան91, 23 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg",
           "caption_hy": "Հանրահավաքը Հանրապետության հրապարակում ապրիլի 23-ին՝ հրաժարականի օրը։",
-          "caption_fa": "تجمع در میدان جمهوری در ۲۳ آوریل، روز استعفا."
+          "caption_fa": "تجمع در میدان جمهوری در ۲۳ آوریل، روز استعفا.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg/1400px-23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg"
         }
       ],
       "title_hy": "Սարգսյանը հրաժարական է տալիս․ «Նիկոլ Փաշինյանը ճիշտ էր։ Ես սխալվեցի»",
@@ -2525,14 +2525,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25.04.2018_Protest_Demonstration%2C_Yerevan.jpg/1400px-25.04.2018_Protest_Demonstration%2C_Yerevan.jpg",
-          "mirror": "media/rev2018-25-04-2018-protest-demonstration-yerevan.jpg",
+          "url": "media/rev2018-25-04-2018-protest-demonstration-yerevan.jpg",
           "caption": "«ՀՀԿ հեռացիր» — “RPA go away” — posters on Northern Avenue, 25 April 2018.",
           "credit": "Photo: Ավետիսյան91, 25 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:25.04.2018_Protest_Demonstration%2C_Yerevan.jpg",
           "caption_hy": "«ՀՀԿ հեռացիր» պաստառները Հյուսիսային պողոտայում, 2018 թվականի ապրիլի 25։",
-          "caption_fa": "پوسترهای «ՀՀԿ հեռացիր» — «حزب جمهوری‌خواه، برو» — روی خیابان شمالی، ۲۵ آوریل ۲۰۱۸."
+          "caption_fa": "پوسترهای «ՀՀԿ հեռացիր» — «حزب جمهوری‌خواه، برو» — روی خیابان شمالی، ۲۵ آوریل ۲۰۱۸.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25.04.2018_Protest_Demonstration%2C_Yerevan.jpg/1400px-25.04.2018_Protest_Demonstration%2C_Yerevan.jpg"
         }
       ],
       "title_hy": "«ՀՀԿ հեռացիր» Հյուսիսային պողոտայում",
@@ -2690,14 +2690,14 @@
       "media": [
         {
           "type": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg/1400px-26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg",
-          "mirror": "media/rev2018-26-04-2018-protest-demonstration-yerevan-003.jpg",
+          "url": "media/rev2018-26-04-2018-protest-demonstration-yerevan-003.jpg",
           "caption": "A march from the Lambada bridge toward Republic Square along Baghramyan Avenue, 26 April 2018, in the week between the resignation and the strike.",
           "credit": "Photo: Pandukht, 26 April 2018",
           "license": "CC BY-SA 4.0",
           "source": "https://commons.wikimedia.org/wiki/File:26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg",
           "caption_hy": "Երթ Լամբադա կամրջից դեպի Հանրապետության հրապարակ Բաղրամյան պողոտայով, 2018 թվականի ապրիլի 26, հրաժարականի և գործադուլի միջև ընկած շաբաթում։",
-          "caption_fa": "راهپیمایی از پل لامبادا به‌سوی میدان جمهوری در خیابان باغرامیان، ۲۶ آوریل ۲۰۱۸، در هفتهٔ میان استعفا و اعتصاب."
+          "caption_fa": "راهپیمایی از پل لامبادا به‌سوی میدان جمهوری در خیابان باغرامیان، ۲۶ آوریل ۲۰۱۸، در هفتهٔ میان استعفا و اعتصاب.",
+          "remote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg/1400px-26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg"
         }
       ],
       "title_hy": "Համընդհանուր գործադուլը կանգնեցնում է երկիրը",
