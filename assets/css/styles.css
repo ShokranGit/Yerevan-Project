@@ -774,3 +774,127 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
   #p3-thumb{ width:96px; height:96px; bottom:238px; right:10px; }
   #p3-modal{ padding:12px; }
 }
+
+/* ===================================================================
+   THREE LANGUAGES
+   -------------------------------------------------------------------
+   English and Armenian read left to right; Persian reads right to
+   left. Rather than rewrite every rule above into logical properties —
+   a large diff across working layout — the physical rules that would
+   land on the wrong side are flipped here, in one block, keyed off the
+   dir attribute i18n.js sets on <html>.
+
+   Three things deliberately do NOT flip:
+
+     the timeline      time runs left to right in the density
+                       histogram, the ticks and the range inputs; a
+                       mirrored track would put the past on the right
+                       and disagree with its own drawing.
+     the spectrum bar  left-wing and right-wing are a seating
+                       convention, not a reading direction.
+     coordinates       machine values, copied into other tools.
+
+   Each of those is pinned with direction:ltr and nothing else.
+   =================================================================== */
+
+/* ---- type ----
+   The Latin stacks above carry no Armenian or Persian glyphs, so each
+   language brings its own face and keeps the Latin one behind it for
+   the citations, which stay in Latin script in every language. */
+html.lang-hy{
+  --font-ui: "Noto Sans Armenian", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Noto Serif Armenian", "Iowan Old Style", Georgia, serif;
+}
+html.lang-fa{
+  --font-ui: "Vazirmatn", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Vazirmatn", "Iowan Old Style", Georgia, serif;
+}
+/* Persian and Armenian both sit lower and need a little more air than
+   Inter at the same size. */
+html.lang-fa body{ line-height:1.85; }
+html.lang-fa .brand-sub{ letter-spacing:0; text-transform:none; }
+html.lang-hy .brand-sub{ letter-spacing:.02em; text-transform:none; }
+html.lang-fa .d-sec h3, html.lang-fa .block-head h2,
+html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
+
+/* ---- the switch ---- */
+#lang-switch{
+  display:flex; gap:2px; margin:2px 34px 0 0;
+  border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  background:var(--bg-3); flex:0 0 auto;
+}
+#lang-switch button{
+  background:none; border:none; cursor:pointer;
+  padding:3px 7px; font-size:11px; line-height:1.5;
+  color:var(--text-3); transition:background .15s, color .15s;
+}
+#lang-switch button:hover{ color:var(--text); background:var(--bg); }
+#lang-switch button.on{ background:var(--accent); color:#fff; }
+#lang-switch button[data-lang="hy"]{ font-family:"Noto Sans Armenian", inherit; }
+#lang-switch button[data-lang="fa"]{ font-family:"Vazirmatn", inherit; font-size:12px; }
+
+/* ---- things that never flip ---- */
+#coord-lat, #coord-lng, #coord-zoom, #pick-val, #scale-label{ direction:ltr; unicode-bidi:isolate; }
+.tl-slider, .tl-slider input[type=range],
+#tl-density, #cn-density, #tl-ticks, #cn-ticks,
+.p3-bar, .p3-bar input[type=range], .p3-scale{ direction:ltr; }
+.d-sec.sources li span[dir="ltr"]{ unicode-bidi:isolate; }
+
+.g3-head-btns{ display:flex; gap:6px; }
+
+/* ===================== RIGHT TO LEFT ===================== */
+
+/* The panel moves to the right on its own: #app is a flex row, and a
+   flex row follows the writing direction. Everything below is what
+   flexbox cannot do for us. */
+
+[dir="rtl"] #panel{ border-right:none; border-left:1px solid var(--line); }
+[dir="rtl"] #app.panel-closed #panel{ margin-left:0; margin-right:calc(-1 * var(--panel-w)); }
+
+[dir="rtl"] #panel-toggle{
+  left:auto; right:calc(var(--panel-w) - 14px);
+  transform:rotate(180deg);
+  transition:right .28s cubic-bezier(.4,0,.2,1), transform .28s, background .15s;
+}
+[dir="rtl"] #app.panel-closed #panel-toggle{ left:auto; right:10px; transform:rotate(0deg); }
+
+[dir="rtl"] #lang-switch{ margin:2px 0 0 34px; }
+
+[dir="rtl"] .count{ margin-left:0; margin-right:4px; }
+[dir="rtl"] .ctx{ margin-left:0; margin-right:5px; }
+[dir="rtl"] .res{ border-left:none; border-right:2px solid transparent; }
+[dir="rtl"] .res.active{ border-left-color:transparent; border-right-color:var(--accent); }
+[dir="rtl"] .d-sec.analysis{ border-left:none; border-right:2px solid var(--accent); }
+[dir="rtl"] .d-sec ul{ padding-left:0; padding-right:18px; }
+[dir="rtl"] .embed-play{ padding-left:0; padding-right:3px; }
+[dir="rtl"] .back-caret{ display:inline-block; transform:scaleX(-1); }
+[dir="rtl"] .tl-dash{ display:inline-block; transform:scaleX(-1); }
+
+[dir="rtl"] #map-controls{ right:auto; left:14px; }
+[dir="rtl"] .modal-close{ right:auto; left:16px; }
+[dir="rtl"] #north{ right:auto; left:17px; }
+[dir="rtl"] #coords{ left:auto; right:20px; }
+[dir="rtl"] #scale{ padding-left:0; padding-right:12px; border-left:none; border-right:1px solid var(--line); }
+[dir="rtl"] .tl-era{ padding-right:0; padding-left:2px; }
+[dir="rtl"] #pick-out{ left:auto; right:20px; }
+
+[dir="rtl"] #g3-thumb{ right:auto; left:14px; }
+[dir="rtl"] #p3-thumb{ right:auto; left:14px; }
+[dir="rtl"] .g3-side{ border-left:none; border-right:1px solid var(--line); }
+[dir="rtl"] .g3-head{ left:18px; right:18px; }
+[dir="rtl"] .p3-caveat{
+  border-left:none; border-right:2px solid var(--line);
+  padding-left:0; padding-right:10px;
+}
+
+@media (max-width: 860px){
+  [dir="rtl"] #app.panel-closed #panel{ margin-right:0; margin-top:calc(-48% + 0px); }
+  [dir="rtl"] #panel{ border-left:none; }
+  [dir="rtl"] #map-controls{ right:auto; left:10px; }
+  [dir="rtl"] #north{ right:auto; left:11px; }
+  [dir="rtl"] #coords{ left:auto; right:10px; }
+  [dir="rtl"] #pick-out{ left:auto; right:10px; }
+  [dir="rtl"] #g3-thumb{ right:auto; left:10px; }
+  [dir="rtl"] #p3-thumb{ right:auto; left:10px; }
+  [dir="rtl"] .g3-side{ border-right:none; }
+}
