@@ -1,0 +1,58 @@
+{
+  "note": "A gazetteer of places this map has to be able to show at more than street scale. An entry whose subject lies outside Yerevan names the places that should be framed with it, and the map opens a bird's-eye view containing all of them, labelled. Coordinates for settlements and the airport are OpenStreetMap node positions, read 2026-08-21. 'bbox' is [west, south, east, north] and exists only to frame a view; it is not a boundary and makes no claim about one.",
+  "anchor": "yerevan",
+  "places": [
+    { "id": "yerevan", "kind": "city",
+      "label": "Yerevan", "label_hy": "Երևան", "label_fa": "ایروان",
+      "at": [44.51262, 40.17771],
+      "osm": "node/Երևան" },
+
+    { "id": "gyumri", "kind": "city",
+      "label": "Gyumri", "label_hy": "Գյումրի", "label_fa": "گیومری",
+      "at": [43.84161, 40.78521],
+      "osm": "node/Գյումրի",
+      "note": "Where the My Step walk began, 31 March 2018." },
+
+    { "id": "vanadzor", "kind": "city",
+      "label": "Vanadzor", "label_hy": "Վանաձոր", "label_fa": "واناتزور",
+      "at": [44.48518, 40.81124], "osm": "node/Վանաձոր" },
+
+    { "id": "spitak", "kind": "town",
+      "label": "Spitak", "label_hy": "Սպիտակ", "label_fa": "اسپیتاک",
+      "at": [44.26477, 40.83434], "osm": "node/Սպիտակ",
+      "note": "Epicentre of the earthquake of 7 December 1988." },
+
+    { "id": "dilijan", "kind": "town",
+      "label": "Dilijan", "label_hy": "Դիլիջան", "label_fa": "دیلیجان",
+      "at": [44.87222, 40.74171], "osm": "node/Դիլիջան" },
+
+    { "id": "hrazdan", "kind": "town",
+      "label": "Hrazdan", "label_hy": "Հրազդան", "label_fa": "هرازدان",
+      "at": [44.75007, 40.51969], "osm": "node/Հրազդան" },
+
+    { "id": "abovyan", "kind": "town",
+      "label": "Abovyan", "label_hy": "Աբովյան", "label_fa": "آبوویان",
+      "at": [44.63340, 40.27148], "osm": "node/Աբովյան" },
+
+    { "id": "stepanakert", "kind": "city",
+      "label": "Stepanakert", "label_hy": "Ստեփանակերտ", "label_fa": "استپاناکرت",
+      "at": [46.75106, 39.81822], "osm": "node/Xankəndi",
+      "note": "Tagged in OpenStreetMap as Xankəndi. Both names are in use and the choice between them is itself part of the conflict; the map shows the Armenian name because the research is written from Yerevan, and says so here." },
+
+    { "id": "artsakh", "kind": "region",
+      "label": "Nagorno-Karabakh", "label_hy": "Լեռնային Ղարաբաղ", "label_fa": "قره‌باغ کوهستانی",
+      "at": [46.55, 39.85],
+      "bbox": [45.95, 38.85, 47.20, 40.30],
+      "note": "The box frames a view; it is not a border. No line drawn here should be read as a claim." },
+
+    { "id": "ararat", "kind": "mountain",
+      "label": "Mount Ararat", "label_hy": "Արարատ", "label_fa": "کوه آرارات",
+      "at": [44.29910, 39.70230],
+      "note": "Summit, 5,137 m, in present-day Turkey. The sightline Tamanyan's plan opened toward it is the reason it belongs on this map." },
+
+    { "id": "zvartnots", "kind": "airport",
+      "label": "Zvartnots Airport", "label_hy": "Զվարթնոց", "label_fa": "فرودگاه زوارتنوتس",
+      "at": [44.39590, 40.14730],
+      "note": "Roads to it were blockaded on 25 April and 2 May 2018." }
+  ]
+}
