@@ -109,6 +109,7 @@
 
     "tl.play": "Play through time",
     "tl.full": "full range",
+    "tl.periods": "Periods",
     "tl.century": "The century",
     "tl.fullCentury": "full century",
     "tl.startAria": "Start of time window",
@@ -238,6 +239,7 @@
 
     "tl.play": "Նվագարկել ժամանակի ընթացքում",
     "tl.full": "ամբողջ միջակայքը",
+    "tl.periods": "Ժամանակաշրջաններ",
     "tl.century": "Դարը",
     "tl.fullCentury": "ամբողջ դարը",
     "tl.startAria": "Ժամանակային պատուհանի սկիզբ",
@@ -367,6 +369,7 @@
 
     "tl.play": "پخش در طول زمان",
     "tl.full": "کل بازه",
+    "tl.periods": "دوره‌ها",
     "tl.century": "آن سده",
     "tl.fullCentury": "کل سده",
     "tl.startAria": "آغاز بازهٔ زمانی",

@@ -691,6 +691,38 @@
     return out;
   }
 
+  /* -----------------------------------------------------------------
+     Going to an entry without dragging the whole city behind you
+     -----------------------------------------------------------------
+     easeTo interpolates the camera in a straight line at whatever zoom
+     it ends on, so it requests every tile it passes over. Yerevan to
+     Gyumri at zoom 16 is a hundred kilometres of that: measured at 309
+     basemap tiles for one click, and with terrain on, a DEM tile for
+     each as well. That is what froze the map.
+
+     So a long move is not animated at all: it jumps, and pays for one
+     viewport. Short moves keep easeTo, which looks better over a few
+     streets and costs almost nothing.
+     ----------------------------------------------------------------- */
+  /* Eight kilometres: every place in Yerevan animates as before — you want to
+     see the corridor go past — and only something genuinely outside the city,
+     like the walk starting in Gyumri, jumps. */
+  var JUMP_OVER_M = 8000;
+
+  function goTo(target, zoom) {
+    var here = map.getCenter();
+    var far = metres([here.lng, here.lat], target);
+    if (far > JUMP_OVER_M) {
+      /* flyTo is not the answer either — arcing out and back in crosses every
+         zoom level and asks for MORE tiles than the straight line did (measured
+         693 against 309). Over this distance the animation is worthless anyway:
+         nothing legible passes underneath. Jump, and load one viewport. */
+      map.jumpTo({ center: target, zoom: zoom });
+    } else {
+      map.easeTo({ center: target, zoom: zoom, duration: 900 });
+    }
+  }
+
   function pathBounds(path) {
     var w = path[0][0], e = w, s2 = path[0][1], n = s2;
     path.forEach(function (p) {
@@ -938,7 +970,7 @@
         });
         setTimeout(function () { animateRoute(e); }, 700);
       } else {
-        map.easeTo({ center: e._display || e.coordinates, zoom: Math.max(map.getZoom(), 16), duration: 900 });
+        goTo(e._display || e.coordinates, Math.max(map.getZoom(), 16));
       }
     } else if (map && e.path && e.path.length > 1) {
       animateRoute(e);
@@ -1048,7 +1080,7 @@
           });
           setTimeout(function () { animateRoute(e); }, 600);
         } else if (b.dataset.act === "zoom") {
-          map.easeTo({ center: e._display || e.coordinates, zoom: 17, duration: 900 });
+          goTo(e._display || e.coordinates, 17);
         } else {
           navigator.clipboard.writeText(location.href).then(function () {
             b.textContent = t("detail.copied");
@@ -1155,18 +1187,27 @@
 
     buildEpisodes();
 
-    /* year ticks */
-    var y0 = new Date(state.tMin).getUTCFullYear(), y1 = new Date(state.tMax).getUTCFullYear();
-    var span = y1 - y0, step = span > 24 ? 5 : span > 12 ? 3 : span > 6 ? 2 : 1;
-    var ticks = [];
-    for (var y = Math.ceil(y0 / step) * step; y <= y1; y += step) ticks.push(y);
-    $("tl-ticks").innerHTML = ticks.map(function (t) { return "<span>" + t + "</span>"; }).join("");
+    renderTicks();
 
     [s, e].forEach(function (input) {
       input.addEventListener("input", onSlide);
     });
     updateTimelineUI();
     buildCentury();
+  }
+
+  /* Year labels on both tracks. Separate from buildTimeline because that
+     rebinds the sliders and resets the window; relabelling must not. */
+  function renderTicks() {
+    var y0 = new Date(state.tMin).getUTCFullYear(), y1 = new Date(state.tMax).getUTCFullYear();
+    var span = y1 - y0, step = span > 24 ? 5 : span > 12 ? 3 : span > 6 ? 2 : 1;
+    var ticks = [], y;
+    for (y = Math.ceil(y0 / step) * step; y <= y1; y += step) ticks.push(y);
+    $("tl-ticks").innerHTML = ticks.map(function (t) { return "<span>" + num(t) + "</span>"; }).join("");
+
+    var cn = [];
+    for (y = 1900; y <= 2000; y += 20) cn.push(y);
+    $("cn-ticks").innerHTML = cn.map(function (t) { return "<span>" + num(t) + "</span>"; }).join("");
   }
 
   /* -----------------------------------------------------------------
@@ -1179,31 +1220,134 @@
      is what clicking the label does. A sticky note, then a period.
      ----------------------------------------------------------------- */
 
-  function buildEpisodes() {
-    var box = $("tl-episodes");
-    if (!box) return;
-    if (!state.episodes.length) { box.innerHTML = ""; return; }
+  function episodeSpan(ep) {
+    var a = parseDate(ep.start), b = parseDate(ep.end);
+    if (a === null || b === null) return null;
+    var f0 = (a - state.tMin) / (state.tMax - state.tMin);
+    var f1 = (b - state.tMin) / (state.tMax - state.tMin);
+    if (f1 < 0 || f0 > 1) return null;
+    return { a: a, b: b, f0: Math.max(0, f0), f1: Math.min(1, f1) };
+  }
 
+  function episodeCount(ep) {
+    var a = parseDate(ep.start), b = parseDate(ep.end);
+    return state.events.filter(function (e) {
+      return e.episode === ep.id || (e._t >= a && e._t <= b);
+    }).length;
+  }
+
+  function buildEpisodes() {
+    var box = $("tl-episodes"), rail = $("tl-rail");
+    if (!box) return;
+    if (!state.episodes.length) {
+      box.innerHTML = "";
+      if (rail) rail.innerHTML = "";
+      return;
+    }
+
+    /* --- on the track itself: the span, in place, no label ---
+       A thirty-nine-day episode is four pixels wide on a twenty-nine-year
+       axis. It can show WHEN, and nothing else; the words go in the rail. */
     box.innerHTML = state.episodes.map(function (ep, i) {
-      var a = parseDate(ep.start), b = parseDate(ep.end);
-      if (a === null || b === null) return "";
-      var f0 = (a - state.tMin) / (state.tMax - state.tMin);
-      var f1 = (b - state.tMin) / (state.tMax - state.tMin);
-      if (f1 < 0 || f0 > 1) return "";
-      f0 = Math.max(0, f0); f1 = Math.min(1, f1);
-      var col = ep.color || RED;
+      var sp = episodeSpan(ep);
+      if (!sp) return "";
       return '<button type="button" class="tl-ep" data-ep="' + i + '"' +
-             ' style="left:' + (f0 * 100).toFixed(3) + '%;width:' + ((f1 - f0) * 100).toFixed(3) + '%;' +
-             '--ep:' + esc(col) + '">' +
-             '<i class="tl-ep-band"></i>' +
-             '<b class="tl-ep-note">' + esc(tr(ep, "label")) + '</b>' +
-             '</button>';
+             ' title="' + esc(tr(ep, "label")) + '"' +
+             ' style="left:' + (sp.f0 * 100).toFixed(3) + '%;width:' +
+             ((sp.f1 - sp.f0) * 100).toFixed(3) + '%;--ep:' + esc(ep.color || RED) + '">' +
+             '<i class="tl-ep-band"></i></button>';
     }).join("");
+
+    /* --- the rail: one labelled chip per period, in time order ---
+       Chips are placed under their own span and then pushed right just far
+       enough not to overlap the one before, so a chip always sits at or after
+       the period it names. A tick joins each chip back to its place. */
+    if (rail) {
+      var w = rail.clientWidth || 1000;
+      var items = [];
+      state.episodes.forEach(function (ep, i) {
+        var sp = episodeSpan(ep);
+        if (sp) items.push({ ep: ep, i: i, sp: sp });
+      });
+      items.sort(function (x, y) { return x.sp.f0 - y.sp.f0; });
+
+      rail.innerHTML = items.map(function (it) {
+        return '<button type="button" class="tl-rail-chip" data-ep="' + it.i + '"' +
+               ' title="' + esc(tr(it.ep, "label")) + '"' +
+               ' style="--ep:' + esc(it.ep.color || RED) + '">' +
+               '<i class="tl-rail-tick"></i>' +
+               '<span>' + esc(tr(it.ep, "label")) + '</span>' +
+               (episodeCount(it.ep) ? '<b>' + esc(num(episodeCount(it.ep))) + '</b>' : "") +
+               '</button>';
+      }).join("");
+
+      /* lay them out after the browser has measured the text */
+      /* A chip belongs under its own span, and must never sit on top of
+         another. So: try each row in turn, take the first where the chip fits
+         at or after its own position, and only if no row can take it fall back
+         to the emptiest one. Chips are capped at 40% of the rail and ellipsed,
+         which is what keeps a long Armenian label from making the problem
+         unsolvable. Three rows is far more than this map will need. */
+      var chips = rail.querySelectorAll(".tl-rail-chip");
+      var ROW_H = 28, MAX_ROWS = 3;
+      var rows = [], used = 1, r;
+      for (r = 0; r < MAX_ROWS; r++) rows.push(0);
+
+      Array.prototype.forEach.call(chips, function (c, n) {
+        var want = items[n].sp.f0 * w;
+        var cw = c.offsetWidth;
+        var row = -1, left = 0;
+        for (r = 0; r < MAX_ROWS; r++) {
+          var tryLeft = Math.max(rows[r], want);
+          if (tryLeft + cw <= w) { row = r; left = tryLeft; break; }
+        }
+        if (row < 0) {                       /* nothing fits — use the emptiest row */
+          row = 0;
+          for (r = 1; r < MAX_ROWS; r++) if (rows[r] < rows[row]) row = r;
+          left = rows[row];
+        }
+        used = Math.max(used, row + 1);
+        c.style.left = Math.round(left) + "px";
+        c.style.top = (row * ROW_H) + "px";
+        rows[row] = left + cw + 8;
+        /* the tick leans back toward the span it names; only the top row can
+           actually reach the track above */
+        var tick = c.firstElementChild;
+        tick.style.left = Math.max(2, Math.min(cw - 2, want - left)) + "px";
+        tick.style.display = row === 0 ? "block" : "none";
+      });
+      rail.style.height = (used * ROW_H - 2) + "px";
+
+      rail.querySelectorAll("[data-ep]").forEach(function (b) {
+        b.addEventListener("click", function (evt) {
+          evt.stopPropagation();
+          showEpisode(state.episodes[+b.dataset.ep]);
+        });
+      });
+    }
 
     box.querySelectorAll("[data-ep]").forEach(function (b) {
       b.addEventListener("click", function (evt) {
         evt.stopPropagation();
         showEpisode(state.episodes[+b.dataset.ep]);
+      });
+    });
+
+    markActiveEpisode();
+  }
+
+  /* Which period, if any, the window is currently sitting inside. */
+  function markActiveEpisode() {
+    var rail = $("tl-rail"), box = $("tl-episodes");
+    if (!rail && !box) return;
+    state.episodes.forEach(function (ep, i) {
+      var a = parseDate(ep.start), b = parseDate(ep.end);
+      var inside = a !== null && state.winStart <= a && state.winEnd >= b &&
+                   (state.winEnd - state.winStart) < (b - a) * 4;
+      [rail, box].forEach(function (host) {
+        if (!host) return;
+        var el = host.querySelector('[data-ep="' + i + '"]');
+        if (el) el.classList.toggle("on", inside);
       });
     });
   }
@@ -1244,9 +1388,6 @@
       return '<span style="height:' + (n ? Math.max(2, (n / peak) * 18) : 0) + 'px"></span>';
     }).join("");
 
-    var ticks = [];
-    for (var y = 1900; y <= 2000; y += 20) ticks.push(y);
-    $("cn-ticks").innerHTML = ticks.map(function (t) { return "<span>" + t + "</span>"; }).join("");
 
     ["cn-start", "cn-end"].forEach(function (id) {
       $(id).addEventListener("input", onCenturySlide);
@@ -1287,14 +1428,7 @@
     fill.style.width = ((e - s) * 100) + "%";
     $("tl-from").textContent = fmtStamp(state.winStart);
     $("tl-to").textContent = fmtStamp(state.winEnd);
-    /* the note stops shouting once you are inside the period it marks */
-    var inside = state.episodes.some(function (ep) {
-      var a = parseDate(ep.start), b = parseDate(ep.end);
-      return a !== null && state.winStart <= a && state.winEnd >= b &&
-             (state.winEnd - state.winStart) < (b - a) * 4;
-    });
-    var box = $("tl-episodes");
-    if (box) box.classList.toggle("zoomed", inside);
+    markActiveEpisode();
   }
 
   function setWindow(sFrac, eFrac) {
@@ -1443,7 +1577,14 @@
     $("detail-back").addEventListener("click", closeDetail);
     $("panel-toggle").addEventListener("click", function () {
       $("app").classList.toggle("panel-closed");
-      setTimeout(function () { map && map.resize(); }, 300);
+      setTimeout(function () { map && map.resize(); buildEpisodes(); }, 320);
+    });
+    /* chip positions are measured in pixels, so they have to be laid out again
+       whenever the rail changes width */
+    var rz = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(rz);
+      rz = setTimeout(buildEpisodes, 180);
     });
     $("play-btn").addEventListener("click", togglePlay);
     $("tl-reset").addEventListener("click", function () { stopPlay(); setWindow(0, 1); });
@@ -1500,6 +1641,7 @@
           bm2.value = state.basemap;
         }
         buildCategories();
+        renderTicks();
         buildEpisodes();
         buildAbout();
         updateTimelineUI();
