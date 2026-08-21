@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Get the media — Yerevan Project</title>
+<style>
+  :root{ --bg:#0f1115; --bg2:#161920; --line:#2a2f3a; --text:#e6e8ec; --t2:#9aa1ad; --t3:#6b7280; --red:#c9262c; --ok:#7fbf5e; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.65 Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:760px;margin:0 auto;padding:56px 24px 90px}
+  h1{font:600 30px/1.25 Georgia,"Times New Roman",serif;margin:0 0 8px}
+  .sub{color:var(--t3);font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 26px}
+  p{color:var(--t2);margin:0 0 14px}
+  b{color:var(--text)}
+  button{font:inherit}
+  #go{display:flex;align-items:center;justify-content:center;gap:12px;
+    width:100%;max-width:560px;min-height:120px;margin:30px 0 8px;
+    background:var(--red);color:#fff;font:700 26px/1.2 inherit;border:none;border-radius:14px;
+    cursor:pointer;box-shadow:0 10px 34px rgba(201,38,44,.32);transition:transform .12s,filter .12s}
+  #go:hover{filter:brightness(1.08)} #go:active{transform:translateY(1px)}
+  #go[disabled]{background:var(--bg2);color:var(--t3);box-shadow:none;cursor:default}
+  #bar{height:5px;background:var(--bg2);border-radius:3px;overflow:hidden;max-width:560px;margin:0 0 8px}
+  #bar i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+  #say{font-size:14px;color:var(--t2);min-height:24px;margin:0 0 26px}
+  #say.ok{color:var(--ok)}
+  .note{border-left:2px solid var(--line);padding:2px 0 2px 14px;font-size:14px;color:var(--t3);margin-top:32px}
+  ul{color:var(--t2);font-size:14px;padding-left:20px}
+  li{margin-bottom:5px}
+  code{color:#d8873f;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Get the media</h1>
+  <p class="sub">Yerevan Project · a utility page, not part of the map</p>
+
+  <p>This packs the <b>13 photographs of the 2018 revolution</b> — every one of them
+  Creative Commons BY-SA 4.0, from Wikimedia Commons — into a single file and saves it
+  to your Downloads folder.</p>
+
+  <p>Nothing is installed and nothing is uploaded. The images are fetched from Commons
+  by your own browser, wrapped into one archive in memory, and handed to you.</p>
+
+  <button id="go">↓&nbsp; Save the photographs</button>
+  <div id="bar"><i></i></div>
+  <p id="say">Ready. 13 files, about 9 MB.</p>
+
+  <p class="note">If nothing appears in Downloads, look at the right-hand end of Chrome's
+  address bar for a small download arrow with a red dot, or a crossed-out arrow. That is
+  Chrome blocking the download. Click it, choose <b>Always allow</b>, then press the
+  button again.</p>
+
+  <div class="note" style="border-left-color:#3a3f4a">
+    <p style="margin-bottom:8px"><b>What is in the file</b></p>
+    <ul id="list"><li>loading the list…</li></ul>
+  </div>
+</main>
+
+<script>
+/* ===================================================================
+   A single tar, built in the page.
+   -------------------------------------------------------------------
+   Chrome blocks a burst of automatic downloads, so thirteen files
+   cannot simply be fetched and saved one after another. One archive,
+   saved by one human click, goes through every time. USTAR is about
+   twenty lines and needs no library.
+   =================================================================== */
+(function () {
+  "use strict";
+
+  var FILES = [
+    "Nikol Pashinyan 13 Apr 2018.jpg",
+    "Nikol Pashinyan April 16 Baghramyan Avenue.jpg",
+    "16.04.2018 Protest Demonstrations, Yerevan.jpg",
+    "17.04.2018 Protest Demonstrations, Yerevan 1.jpg",
+    "18.04.2018, Protest Demonstrations, Yerevan.jpg",
+    "Nikol Pashinyan April 18 Tigran Mets Avenue.jpg",
+    "Republic Square During the 2018 Armenian protests 02.jpg",
+    "22.04.2018 Protest Demonstration, Yerevan 03.jpg",
+    "22.04.2018 Protest Demonstration, Yerevan 29.jpg",
+    "22.04.2018 Protest Demonstration, Yerevan 26.jpg",
+    "23.04.2018 Protest Demonstration, Yerevan 9.jpg",
+    "25.04.2018 Protest Demonstration, Yerevan.jpg",
+    "26.04.2018 Protest Demonstration, Yerevan 003.jpg"
+  ];
+  var API = "https://commons.wikimedia.org/w/api.php";
+
+  var $ = function (id) { return document.getElementById(id); };
+  function say(t, ok) { $("say").textContent = t; $("say").className = ok ? "ok" : ""; }
+  function pct(f) { $("bar").firstElementChild.style.width = Math.round(f * 100) + "%"; }
+
+  function slug(t) {
+    return "rev2018-" + t.replace(/\.jpg$/i, "").replace(/[^A-Za-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "").toLowerCase() + ".jpg";
+  }
+
+  function header(name, size) {
+    var h = new Uint8Array(512);
+    function put(s, off, len) {
+      for (var i = 0; i < Math.min(len, s.length); i++) h[off + i] = s.charCodeAt(i);
+    }
+    function oct(n, len) {
+      var s = n.toString(8);
+      while (s.length < len - 1) s = "0" + s;
+      return s + "\0";
+    }
+    put(name, 0, 100);
+    put(oct(420, 8), 100, 8); put(oct(0, 8), 108, 8); put(oct(0, 8), 116, 8);
+    put(oct(size, 12), 124, 12); put(oct(1525737600, 12), 136, 12);
+    for (var i = 148; i < 156; i++) h[i] = 32;      /* checksum field = spaces first */
+    h[156] = 48;                                     /* type '0' = regular file */
+    put("ustar\x0000", 257, 8);
+    var sum = 0; for (var k = 0; k < 512; k++) sum += h[k];
+    put(oct(sum, 7) + " ", 148, 8);
+    return h;
+  }
+
+  var meta = null;
+
+  function loadList() {
+    var titles = FILES.map(function (f) { return "File:" + f; }).join("|");
+    var url = API + "?action=query&format=json&origin=*&prop=imageinfo" +
+              "&iiprop=url|extmetadata&iiurlwidth=1400&titles=" + encodeURIComponent(titles);
+    return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+      var strip = function (x) { return x ? String(x.value).replace(/<[^>]*>/g, "").trim() : ""; };
+      meta = [];
+      var pages = (j.query && j.query.pages) || {};
+      Object.keys(pages).forEach(function (k) {
+        var p = pages[k], ii = p.imageinfo && p.imageinfo[0];
+        if (!ii) return;
+        var m = ii.extmetadata || {};
+        meta.push({
+          name: p.title.replace(/^File:/, ""),
+          file: slug(p.title.replace(/^File:/, "")),
+          url: ii.thumburl,
+          author: strip(m.Artist),
+          license: strip(m.LicenseShortName),
+          date: strip(m.DateTimeOriginal).slice(0, 10)
+        });
+      });
+      meta.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+      $("list").innerHTML = meta.map(function (m) {
+        return "<li>" + m.date + " — " + m.name +
+               " <span style='color:#4d525c'>· " + m.author + " · " + m.license + "</span></li>";
+      }).join("");
+      say("Ready. " + meta.length + " files, about 9 MB.");
+    });
+  }
+
+  function build() {
+    $("go").disabled = true;
+    var parts = [], done = 0;
+
+    function next(i) {
+      if (i >= meta.length) return Promise.resolve();
+      say("Fetching " + (i + 1) + " of " + meta.length + " — " + meta[i].name);
+      return fetch(meta[i].url).then(function (r) {
+        if (!r.ok) throw new Error(meta[i].name + " → HTTP " + r.status);
+        return r.arrayBuffer();
+      }).then(function (ab) {
+        var buf = new Uint8Array(ab);
+        parts.push(header(meta[i].file, buf.length));
+        parts.push(buf);
+        var pad = (512 - (buf.length % 512)) % 512;
+        if (pad) parts.push(new Uint8Array(pad));
+        done++; pct(done / meta.length);
+        return next(i + 1);
+      });
+    }
+
+    return next(0).then(function () {
+      parts.push(new Uint8Array(1024));                /* two empty blocks end a tar */
+      var blob = new Blob(parts, { type: "application/octet-stream" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "rev2018-media.tar";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 20000);
+      say("Saved rev2018-media.tar (" + (blob.size / 1048576).toFixed(1) +
+          " MB). Check your Downloads folder.", true);
+      $("go").disabled = false;
+      $("go").textContent = "↓  Save it again";
+    }).catch(function (err) {
+      say("Failed: " + err.message + " — reload the page and try once more.");
+      $("go").disabled = false;
+    });
+  }
+
+  $("go").addEventListener("click", function () {
+    if (!meta) { say("Still loading the list — try again in a second."); return; }
+    build();
+  });
+
+  loadList().catch(function (err) {
+    say("Could not reach Wikimedia Commons: " + err.message);
+    $("list").innerHTML = "<li>list unavailable</li>";
+  });
+})();
+</script>
+</body>
+</html>
