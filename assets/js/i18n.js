@@ -71,6 +71,11 @@
     "detail.copy": "Copy link",
     "detail.copied": "Copied",
 
+    "route.onfoot": "{d} on foot",
+    "route.from": "Where it started",
+    "route.to": "Where it ended",
+    "route.replay": "Walk it again",
+    "episode.isolate": "Show this period",
     "media.source": "source",
     "media.play": "Play video",
     "media.embed": "Embedded video",
@@ -195,6 +200,11 @@
     "detail.copy": "Պատճենել հղումը",
     "detail.copied": "Պատճենվեց",
 
+    "route.onfoot": "{d} ոտքով",
+    "route.from": "Որտեղ սկսվեց",
+    "route.to": "Որտեղ ավարտվեց",
+    "route.replay": "Կրկին անցնել ճանապարհը",
+    "episode.isolate": "Ցույց տալ այս ժամանակահատվածը",
     "media.source": "աղբյուր",
     "media.play": "Նվագարկել տեսանյութը",
     "media.embed": "Ներդրված տեսանյութ",
@@ -319,6 +329,11 @@
     "detail.copy": "کپی پیوند",
     "detail.copied": "کپی شد",
 
+    "route.onfoot": "{d} پیاده",
+    "route.from": "جایی که آغاز شد",
+    "route.to": "جایی که پایان گرفت",
+    "route.replay": "دوباره این مسیر را برو",
+    "episode.isolate": "نمایش این دوره",
     "media.source": "منبع",
     "media.play": "پخش ویدیو",
     "media.embed": "ویدیوی جاسازی‌شده",
@@ -404,7 +419,7 @@
     "kind.snap": "زودهنگام پارلمانی",
 
     "dir.N": "ش", "dir.S": "ج", "dir.E": "خ", "dir.W": "ب",
-    "unit.km": "کم", "unit.m": "م",
+    "unit.km": "کیلومتر", "unit.m": "متر",
     "months": ["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"],
     "monthsLong": ["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"]
   }
@@ -488,9 +503,15 @@
   /* Persian readers expect Persian-Indic digits in running text. Coordinates
      and zoom levels stay Latin — they are read as machine values and get
      copied into other tools. */
+  /* Decimal separators differ too, and a stray full stop in a Persian or
+     Armenian number is the kind of small wrongness a reader notices before
+     anything else. Armenian keeps Latin digits and takes a comma; Persian
+     takes its own digits and its own decimal mark. */
   function num(n) {
-    if (lang !== "fa") return String(n);
-    return String(n).replace(/[0-9]/g, function (d) { return FA_DIGITS[+d]; });
+    var s = String(n);
+    if (lang === "hy") return s.replace(".", ",");
+    if (lang !== "fa") return s;
+    return s.replace(/[0-9]/g, function (d) { return FA_DIGITS[+d]; }).replace(".", "\u066B");
   }
 
   function month(i, long) {

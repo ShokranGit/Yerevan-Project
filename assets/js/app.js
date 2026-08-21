@@ -58,6 +58,7 @@
     query: "",
     sort: "date-asc",
     tMin: 0, tMax: 0,
+    episodes: [],
     winStart: 0, winEnd: 0,
     cMin: Date.UTC(1900, 0, 1), cMax: Date.UTC(2000, 0, 1),
     cStart: Date.UTC(1900, 0, 1), cEnd: Date.UTC(2000, 0, 1),
@@ -68,6 +69,8 @@
   };
 
   var map;
+  var ROUTES = null, ROUTE_MARKS = null, ROUTE_ENDS = null;
+  var routeRAF = null;
   var hoverPopup = new maplibregl.Popup({
     closeButton: false, closeOnClick: false, offset: 12, maxWidth: "260px"
   });
@@ -166,6 +169,7 @@
   function init(data) {
     state.raw = data;
     state.categories = data.categories || [];
+    state.episodes = data.episodes || [];
     state.events = (data.events || []).filter(function (e) {
       return e && e.coordinates && e.coordinates.length === 2;
     });
@@ -190,6 +194,11 @@
       e._search = bag.join(" ").toLowerCase();
     });
     state.events = state.events.filter(function (e) { return e._t !== null; });
+
+    /* Marches. Built here rather than at draw time: the chevrons are real
+       geometry and there is no reason to recompute them on every repaint. */
+    try { buildRoutes(); }
+    catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
 
     /* --- co-located entries -------------------------------------------
        Several events share one address (the avenue itself, Opera Square).
@@ -303,6 +312,8 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
+      try { addRoutes(); }
+      catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
       refresh();
       hideLoader();
       wireMapFurniture();
@@ -331,6 +342,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
+      try { addRoutes(); } catch (err) { window.__routeErr = String(err && err.message || err); }
     });
 
 
@@ -401,6 +413,112 @@
     });
   }
 
+
+  function addRoutes() {
+    if (!ROUTES || !ROUTES.features.length) return;
+    if (map.getSource("routes")) return;
+
+    map.addSource("routes",      { type: "geojson", data: ROUTES });
+    map.addSource("route-marks", { type: "geojson", data: ROUTE_MARKS });
+    map.addSource("route-ends",  { type: "geojson", data: ROUTE_ENDS });
+    map.addSource("route-anim",  { type: "geojson", data: emptyFC() });
+
+    /* a soft halo, so the line survives a busy basemap */
+    map.addLayer({
+      id: "route-halo", type: "line", source: "routes",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#000000", "line-opacity": 0.22, "line-blur": 2,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 5, 16, 11]
+      }
+    });
+    map.addLayer({
+      id: "route-line", type: "line", source: "routes",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": ["coalesce", ["get", "color"], RED],
+        "line-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 0.95, 0.6],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 2, 16, 5],
+        "line-dasharray": [2.2, 1.4]
+      }
+    });
+    map.addLayer({
+      id: "route-marks", type: "line", source: "route-marks",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#ffffff", "line-opacity": 0.8,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 1, 16, 2.4]
+      }
+    });
+    /* the walk itself, drawn as it is described */
+    map.addLayer({
+      id: "route-anim", type: "line", source: "route-anim",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#ffffff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 3, 16, 7],
+        "line-opacity": 0.95, "line-blur": 0.4
+      }
+    });
+
+    /* Both ends carry their own entry: the meeting that set the march off and
+       the place it was stopped. Hollow ring for the start, solid for the end. */
+    map.addLayer({
+      id: "route-end", type: "circle", source: "route-ends",
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 4.5, 16, 8],
+        "circle-color": ["case", ["==", ["get", "kind"], "end"], RED, "#ffffff"],
+        "circle-stroke-width": 2.4,
+        "circle-stroke-color": ["case", ["==", ["get", "kind"], "end"], "#ffffff", RED],
+        "circle-opacity": 0.98
+      }
+    });
+
+    map.on("mouseenter", "route-end", function () { map.getCanvas().style.cursor = "pointer"; });
+    map.on("mouseleave", "route-end", function () { map.getCanvas().style.cursor = ""; });
+    map.on("click", "route-end", function (e) {
+      var go = e.features[0].properties.go;
+      if (go) selectEvent(go, true);
+    });
+    map.on("mouseenter", "route-line", function () { map.getCanvas().style.cursor = "pointer"; });
+    map.on("mouseleave", "route-line", function () { map.getCanvas().style.cursor = ""; });
+    map.on("click", "route-line", function (e) {
+      selectEvent(e.features[0].properties.id, true);
+    });
+  }
+
+  /* Draw the march along its own length. Roughly a kilometre a second, so a
+     four-kilometre walk takes about four seconds — long enough to read as a
+     journey, short enough that nobody waits for it. */
+  function animateRoute(ev) {
+    if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
+    var src = map.getSource("route-anim");
+    if (!src || !ev.path) return;
+    var L = ev._pathLen || pathLength(ev.path);
+    var dur = Math.max(1600, Math.min(6000, L));
+    var t0 = performance.now();
+    function frame(now) {
+      var f = Math.min(1, (now - t0) / dur);
+      var eased = 1 - Math.pow(1 - f, 2);
+      src.setData({ type: "FeatureCollection", features: [{
+        type: "Feature", properties: {},
+        geometry: { type: "LineString", coordinates: pathTo(ev.path, L * eased) }
+      }] });
+      if (f < 1) routeRAF = requestAnimationFrame(frame);
+      else {
+        routeRAF = null;
+        setTimeout(function () {
+          if (!routeRAF && map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
+        }, 900);
+      }
+    }
+    routeRAF = requestAnimationFrame(frame);
+  }
+
+  function clearRouteAnim() {
+    if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
+    if (map && map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
+  }
 
   /* =================================================================
      FIGURE AND GROUND
@@ -504,6 +622,139 @@
   function emptyFC() { return { type: "FeatureCollection", features: [] }; }
 
   /* =================================================================
+     MARCHES
+     -------------------------------------------------------------------
+     An entry with a "path" is not a point but a walk: a line of real
+     street geometry, taken from OpenStreetMap, from where the march
+     started to where it ended. It is drawn permanently — a march that
+     only appears when you already know to look for it teaches nobody —
+     and it draws itself along its own length when the entry is opened,
+     because the thing being described took an hour and a route, not a
+     place.
+
+     Direction is shown with chevrons built as geometry rather than as
+     map symbols. A symbol layer needs the basemap's glyph server, and
+     this map has five basemaps, one of them a bare raster with no
+     glyphs at all. Little painted V shapes work on all of them.
+     ================================================================= */
+
+  function metres(a, b) {
+    var R = 6371000, t = Math.PI / 180;
+    var dla = (b[1] - a[1]) * t, dlo = (b[0] - a[0]) * t;
+    var x = Math.sin(dla / 2) * Math.sin(dla / 2) +
+            Math.cos(a[1] * t) * Math.cos(b[1] * t) * Math.sin(dlo / 2) * Math.sin(dlo / 2);
+    return 2 * R * Math.asin(Math.sqrt(x));
+  }
+
+  function pathLength(path) {
+    var L = 0;
+    for (var i = 0; i < path.length - 1; i++) L += metres(path[i], path[i + 1]);
+    return L;
+  }
+
+  /* the point a given number of metres along the path, and the bearing there */
+  function alongPath(path, target) {
+    var run = 0;
+    for (var i = 0; i < path.length - 1; i++) {
+      var seg = metres(path[i], path[i + 1]);
+      if (run + seg >= target) {
+        var f = seg ? (target - run) / seg : 0;
+        return {
+          at: [path[i][0] + (path[i + 1][0] - path[i][0]) * f,
+               path[i][1] + (path[i + 1][1] - path[i][1]) * f],
+          i: i,
+          bearing: Math.atan2(path[i + 1][0] - path[i][0],
+                              path[i + 1][1] - path[i][1])
+        };
+      }
+      run += seg;
+    }
+    return { at: path[path.length - 1], i: path.length - 2,
+             bearing: Math.atan2(path[path.length - 1][0] - path[path.length - 2][0],
+                                 path[path.length - 1][1] - path[path.length - 2][1]) };
+  }
+
+  /* the first n metres of a path, as its own line — this is what animates */
+  function pathTo(path, target) {
+    var out = [path[0]], run = 0;
+    for (var i = 0; i < path.length - 1; i++) {
+      var seg = metres(path[i], path[i + 1]);
+      if (run + seg >= target) {
+        var f = seg ? (target - run) / seg : 0;
+        out.push([path[i][0] + (path[i + 1][0] - path[i][0]) * f,
+                  path[i][1] + (path[i + 1][1] - path[i][1]) * f]);
+        return out;
+      }
+      run += seg;
+      out.push(path[i + 1]);
+    }
+    return out;
+  }
+
+  function pathBounds(path) {
+    var w = path[0][0], e = w, s2 = path[0][1], n = s2;
+    path.forEach(function (p) {
+      if (p[0] < w) w = p[0]; if (p[0] > e) e = p[0];
+      if (p[1] < s2) s2 = p[1]; if (p[1] > n) n = p[1];
+    });
+    return [[w, s2], [e, n]];
+  }
+
+  /* a chevron every SPACING metres, pointing the way the march went */
+  var CHEVRON_M = 190;
+  function chevrons(path, id) {
+    var L = pathLength(path), out = [];
+    var latScale = Math.cos(path[0][1] * Math.PI / 180) || 1;
+    for (var d = CHEVRON_M * 0.6; d < L - 40; d += CHEVRON_M) {
+      var p = alongPath(path, d);
+      var b = p.bearing;                       /* radians, 0 = north */
+      var size = 0.000075;                     /* ~8 m */
+      function wing(turn) {
+        var a = b + Math.PI + turn;
+        return [p.at[0] + (Math.sin(a) * size) / latScale, p.at[1] + Math.cos(a) * size];
+      }
+      out.push({
+        type: "Feature",
+        properties: { id: id },
+        geometry: { type: "LineString", coordinates: [wing(-0.75), p.at, wing(0.75)] }
+      });
+    }
+    return out;
+  }
+
+  function buildRoutes() {
+    var lines = [], marks = [], ends = [];
+    state.events.forEach(function (e) {
+      if (!e.path || e.path.length < 2) return;
+      e._pathLen = pathLength(e.path);
+      lines.push({
+        type: "Feature",
+        id: hashId(e.id),
+        properties: { id: e.id, color: catById(e.categories[0]).color },
+        geometry: { type: "LineString", coordinates: e.path }
+      });
+      chevrons(e.path, e.id).forEach(function (c) { marks.push(c); });
+      var route = e.route || {};
+      ends.push({ type: "Feature",
+        properties: { id: e.id, go: route.from || e.id, kind: "start" },
+        geometry: { type: "Point", coordinates: e.path[0] } });
+      ends.push({ type: "Feature",
+        properties: { id: e.id, go: route.to || e.id, kind: "end" },
+        geometry: { type: "Point", coordinates: e.path[e.path.length - 1] } });
+    });
+    ROUTES      = { type: "FeatureCollection", features: lines };
+    ROUTE_MARKS = { type: "FeatureCollection", features: marks };
+    ROUTE_ENDS  = { type: "FeatureCollection", features: ends };
+    /* Readable without a map. The container that verifies this project cannot
+       reach a tile server, so the map never boots there and nothing that lives
+       only inside a layer can be checked. The built collections are put on the
+       window so the geometry can be tested on its own. */
+    window.__routes = { lines: lines.length, chevrons: marks.length, ends: ends.length,
+                        metres: Math.round(lines.reduce(function (n, f) {
+                          return n + pathLength(f.geometry.coordinates); }, 0)) };
+  }
+
+  /* =================================================================
      FILTER + REFRESH
      ================================================================= */
 
@@ -585,6 +836,9 @@
     if (!map || !map.getSource(SRC)) return;
     Object.keys(idMap).forEach(function (k) {
       map.setFeatureState({ source: SRC, id: idMap[k] }, { selected: k === state.selectedId });
+      if (map.getSource("routes")) {
+        map.setFeatureState({ source: "routes", id: idMap[k] }, { selected: k === state.selectedId });
+      }
     });
   }
 
@@ -674,8 +928,20 @@
     applySelectionState();
     history.replaceState(null, "", "#" + encodeURIComponent(id));
 
+    if (map) clearRouteAnim();
     if (fly !== false && map) {
-      map.easeTo({ center: e._display || e.coordinates, zoom: Math.max(map.getZoom(), 16), duration: 900 });
+      if (e.path && e.path.length > 1) {
+        /* A march is not a place. Frame the whole walk, then draw it. */
+        map.fitBounds(pathBounds(e.path), {
+          padding: { top: 90, bottom: 190, left: 60, right: 60 },
+          duration: 1100, pitch: Math.min(map.getPitch(), 45)
+        });
+        setTimeout(function () { animateRoute(e); }, 700);
+      } else {
+        map.easeTo({ center: e._display || e.coordinates, zoom: Math.max(map.getZoom(), 16), duration: 900 });
+      }
+    } else if (map && e.path && e.path.length > 1) {
+      animateRoute(e);
     }
 
     var h = "";
@@ -683,6 +949,11 @@
     h += '<h2 class="d-title">' + esc(tr(e, "title") || t("res.untitled")) + '</h2>';
     var place = tr(e, "location");
     if (place) h += '<div class="d-place">' + esc(place) + '</div>';
+    var ep = e.episode ? episodeById(e.episode) : null;
+    if (ep) {
+      h += '<button class="d-episode" data-ep-go="' + esc(ep.id) + '"' +
+           ' style="--ep:' + esc(ep.color || RED) + '">' + esc(tr(ep, "label")) + '</button>';
+    }
 
     if (e.categories.length) {
       h += '<div class="d-tags">' + e.categories.map(function (c) {
@@ -690,6 +961,21 @@
         return '<span class="chip" style="border-color:' + esc(cat.color) +
                '88;color:' + esc(cat.color) + '">' + esc(tr(cat, "label")) + '</span>';
       }).join("") + '</div>';
+    }
+
+    if (e.path && e.path.length > 1) {
+      var L = e._pathLen || pathLength(e.path);
+      var far = L >= 1000 ? num((L / 1000).toFixed(1)) + " " + t("unit.km")
+                          : num(Math.round(L)) + " " + t("unit.m");
+      h += '<div class="d-route">' +
+           '<div class="d-route-head">' + esc(t("route.onfoot", { d: far })) + '</div>';
+      var r = e.route || {};
+      if (r.from) h += '<button class="d-route-end" data-go="' + esc(r.from) + '">' +
+                       '<i class="rs"></i>' + esc(t("route.from")) + '</button>';
+      if (r.to)   h += '<button class="d-route-end" data-go="' + esc(r.to) + '">' +
+                       '<i class="re"></i>' + esc(t("route.to")) + '</button>';
+      h += '<button class="d-route-replay" data-act="replay">' + esc(t("route.replay")) + '</button>';
+      h += '</div>';
     }
 
     (e.media || []).forEach(function (m) { h += renderMedia(m); });
@@ -743,9 +1029,25 @@
       });
     });
 
+    $("detail-body").querySelectorAll("[data-ep-go]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        closeDetail();
+        showEpisode(episodeById(b.dataset.epGo));
+      });
+    });
+
+    $("detail-body").querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { selectEvent(b.dataset.go, true); });
+    });
+
     $("detail-body").querySelectorAll("[data-act]").forEach(function (b) {
       b.addEventListener("click", function () {
-        if (b.dataset.act === "zoom") {
+        if (b.dataset.act === "replay") {
+          map.fitBounds(pathBounds(e.path), {
+            padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
+          });
+          setTimeout(function () { animateRoute(e); }, 600);
+        } else if (b.dataset.act === "zoom") {
           map.easeTo({ center: e._display || e.coordinates, zoom: 17, duration: 900 });
         } else {
           navigator.clipboard.writeText(location.href).then(function () {
@@ -815,6 +1117,7 @@
   }
 
   function closeDetail() {
+    clearRouteAnim();
     state.selectedId = null;
     applySelectionState();
     history.replaceState(null, "", location.pathname + location.search);
@@ -850,6 +1153,8 @@
       return '<span style="height:' + (n ? Math.max(2, (n / peak) * 20) : 0) + 'px"></span>';
     }).join("");
 
+    buildEpisodes();
+
     /* year ticks */
     var y0 = new Date(state.tMin).getUTCFullYear(), y1 = new Date(state.tMax).getUTCFullYear();
     var span = y1 - y0, step = span > 24 ? 5 : span > 12 ? 3 : span > 6 ? 2 : 1;
@@ -862,6 +1167,66 @@
     });
     updateTimelineUI();
     buildCentury();
+  }
+
+  /* -----------------------------------------------------------------
+     EPISODES — a named stretch of time, marked on the track
+     -----------------------------------------------------------------
+     The 2018 revolution ran thirty-nine days inside a twenty-nine-year
+     axis: four pixels wide at full range. So it is drawn as a marker
+     with a label tethered to it, not as a band you could read — and it
+     becomes a real band as soon as you zoom the window into it, which
+     is what clicking the label does. A sticky note, then a period.
+     ----------------------------------------------------------------- */
+
+  function buildEpisodes() {
+    var box = $("tl-episodes");
+    if (!box) return;
+    if (!state.episodes.length) { box.innerHTML = ""; return; }
+
+    box.innerHTML = state.episodes.map(function (ep, i) {
+      var a = parseDate(ep.start), b = parseDate(ep.end);
+      if (a === null || b === null) return "";
+      var f0 = (a - state.tMin) / (state.tMax - state.tMin);
+      var f1 = (b - state.tMin) / (state.tMax - state.tMin);
+      if (f1 < 0 || f0 > 1) return "";
+      f0 = Math.max(0, f0); f1 = Math.min(1, f1);
+      var col = ep.color || RED;
+      return '<button type="button" class="tl-ep" data-ep="' + i + '"' +
+             ' style="left:' + (f0 * 100).toFixed(3) + '%;width:' + ((f1 - f0) * 100).toFixed(3) + '%;' +
+             '--ep:' + esc(col) + '">' +
+             '<i class="tl-ep-band"></i>' +
+             '<b class="tl-ep-note">' + esc(tr(ep, "label")) + '</b>' +
+             '</button>';
+    }).join("");
+
+    box.querySelectorAll("[data-ep]").forEach(function (b) {
+      b.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        showEpisode(state.episodes[+b.dataset.ep]);
+      });
+    });
+  }
+
+  /* Clicking the note zooms the window onto the episode, with a week of air
+     on each side so its edges are visible rather than flush with the track. */
+  function showEpisode(ep) {
+    if (!ep) return;
+    var a = parseDate(ep.start), b = parseDate(ep.end);
+    if (a === null || b === null) return;
+    var pad = Math.max(7 * 864e5, (b - a) * 0.35);
+    stopPlay();
+    setWindow(
+      Math.max(0, (a - pad - state.tMin) / (state.tMax - state.tMin)),
+      Math.min(1, (b + pad - state.tMin) / (state.tMax - state.tMin))
+    );
+  }
+
+  function episodeById(id) {
+    for (var i = 0; i < state.episodes.length; i++) {
+      if (state.episodes[i].id === id) return state.episodes[i];
+    }
+    return null;
   }
 
   /* ---- the century track: 1900–2000, by decade ---- */
@@ -922,6 +1287,14 @@
     fill.style.width = ((e - s) * 100) + "%";
     $("tl-from").textContent = fmtStamp(state.winStart);
     $("tl-to").textContent = fmtStamp(state.winEnd);
+    /* the note stops shouting once you are inside the period it marks */
+    var inside = state.episodes.some(function (ep) {
+      var a = parseDate(ep.start), b = parseDate(ep.end);
+      return a !== null && state.winStart <= a && state.winEnd >= b &&
+             (state.winEnd - state.winStart) < (b - a) * 4;
+    });
+    var box = $("tl-episodes");
+    if (box) box.classList.toggle("zoomed", inside);
   }
 
   function setWindow(sFrac, eFrac) {
@@ -1127,6 +1500,7 @@
           bm2.value = state.basemap;
         }
         buildCategories();
+        buildEpisodes();
         buildAbout();
         updateTimelineUI();
         updateCenturyUI();
