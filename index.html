@@ -12,7 +12,7 @@
      back to the system stack in styles.css if the network refuses them. -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600&family=Noto+Serif+Armenian:wght@400;600&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css?v=20260821n" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260821p" rel="stylesheet" />
 </head>
 <body>
 
@@ -182,6 +182,8 @@
         <div id="tl-track"></div>
         <div id="tl-fill"></div>
         <div id="tl-density"></div>
+        <!-- named stretches of time: the 2018 revolution, and whatever follows -->
+        <div id="tl-episodes"></div>
         <input type="range" id="tl-start" min="0" max="100" value="0" step="1" data-i18n-aria-label="tl.startAria" aria-label="Start of time window" />
         <input type="range" id="tl-end" min="0" max="100" value="100" step="1" data-i18n-aria-label="tl.endAria" aria-label="End of time window" />
       </div>
@@ -226,11 +228,11 @@
 <!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
      and without it readers keep running yesterday's code.
      i18n.js loads first — every other file asks it for its words. -->
-<script src="assets/js/i18n.js?v=20260821n"></script>
-<script src="assets/js/app.js?v=20260821n"></script>
-<script src="assets/js/picker.js?v=20260821n"></script>
-<script src="assets/js/terrain.js?v=20260821n"></script>
-<script src="assets/js/graph3d.js?v=20260821n"></script>
-<script src="assets/js/parties3d.js?v=20260821n"></script>
+<script src="assets/js/i18n.js?v=20260821p"></script>
+<script src="assets/js/app.js?v=20260821p"></script>
+<script src="assets/js/picker.js?v=20260821p"></script>
+<script src="assets/js/terrain.js?v=20260821p"></script>
+<script src="assets/js/graph3d.js?v=20260821p"></script>
+<script src="assets/js/parties3d.js?v=20260821p"></script>
 </body>
 </html>
