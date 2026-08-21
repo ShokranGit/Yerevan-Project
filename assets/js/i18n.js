@@ -71,6 +71,8 @@
     "detail.copy": "Copy link",
     "detail.copied": "Copied",
 
+    "scale.apart": "{d} km",
+    "scale.fromCity": "{d} km from {city}",
     "route.onfoot": "{d} on foot",
     "route.from": "Where it started",
     "route.to": "Where it ended",
@@ -201,6 +203,8 @@
     "detail.copy": "Պատճենել հղումը",
     "detail.copied": "Պատճենվեց",
 
+    "scale.apart": "{d} կմ",
+    "scale.fromCity": "{d} կմ {city}ից",
     "route.onfoot": "{d} ոտքով",
     "route.from": "Որտեղ սկսվեց",
     "route.to": "Որտեղ ավարտվեց",
@@ -331,6 +335,8 @@
     "detail.copy": "کپی پیوند",
     "detail.copied": "کپی شد",
 
+    "scale.apart": "{d} کیلومتر",
+    "scale.fromCity": "{d} کیلومتر تا {city}",
     "route.onfoot": "{d} پیاده",
     "route.from": "جایی که آغاز شد",
     "route.to": "جایی که پایان گرفت",

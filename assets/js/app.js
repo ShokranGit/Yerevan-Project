@@ -64,6 +64,7 @@
     cStart: Date.UTC(1900, 0, 1), cEnd: Date.UTC(2000, 0, 1),
     selectedId: null,
     basemap: "kentron",
+    cityPitch: 55,
     playing: false,
     playRAF: null
   };
@@ -139,13 +140,20 @@
      LOAD
      ================================================================= */
 
-  var KENTRON = null, FIGURE = null;
+  var KENTRON = null, FIGURE = null, GAZ = null;
+
+  function getJSON(u) {
+    return fetch(u, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
 
   Promise.all([
-    fetch("data/kentron.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
-    fetch("data/figure.json",  { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    getJSON("data/kentron.json"),
+    getJSON("data/figure.json"),
+    getJSON("data/places.json")
   ])
-    .then(function (both) { KENTRON = both[0]; FIGURE = both[1]; })
+    .then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; })
     .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
     .then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
@@ -312,7 +320,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
-      try { addRoutes(); }
+      try { addRoutes(); addGeoLink(); }
       catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
       refresh();
       hideLoader();
@@ -342,7 +350,11 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
-      try { addRoutes(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+      try { addRoutes(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+      if (state.selectedId) {
+        var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
+        if (sel) showPlaces(frameFor(sel), sel);      /* a style swap wipes the markers */
+      }
     });
 
 
@@ -518,6 +530,174 @@
   function clearRouteAnim() {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
     if (map && map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
+  }
+
+  /* =================================================================
+     SCALE — when an entry is not in Yerevan
+     -------------------------------------------------------------------
+     Most of this map is one district of one city, and the camera flies
+     to a point at street zoom. Some entries are not: the walk starts in
+     Gyumri, the earthquake destroyed Spitak, the war was fought in
+     Karabakh, and the axis Tamanyan drew points at a mountain in another
+     country. Sending the reader there alone, at zoom 16, is worse than
+     useless — a screen of unfamiliar streets with no way to tell where
+     it is or how far from everything else in the argument.
+
+     So an entry outside the city opens a bird's-eye view instead: north
+     up, flat, framed to hold both Yerevan and the place, with both named
+     on the map and a dashed line between them carrying the distance.
+     The reader is never shown somewhere without being shown where it is.
+
+     Which places to frame comes from `frame: ["gyumri"]` on the entry,
+     read against data/places.json. An entry that is simply far away and
+     names nothing gets framed against Yerevan automatically, so the rule
+     holds even for material added later by someone who has not read this.
+     ================================================================= */
+
+  var CITY_RADIUS_M = 8000;      /* beyond this an entry is "not in Yerevan" */
+  /* Room for the furniture: the timeline strip owns the bottom ~280 px and the
+     two 3-D thumbnails the right edge. A place framed underneath either of them
+     is a place the reader never sees. */
+  var WIDE_PAD = { top: 110, bottom: 300, left: 90, right: 190 };
+  var placeMarkers = [];
+
+  function placeById(id) {
+    if (!GAZ || !GAZ.places) return null;
+    for (var i = 0; i < GAZ.places.length; i++) {
+      if (GAZ.places[i].id === id) return GAZ.places[i];
+    }
+    return null;
+  }
+
+  function anchorPlace() {
+    return placeById((GAZ && GAZ.anchor) || "yerevan");
+  }
+
+  /* The places an entry should be framed with, or null for the ordinary
+     street-scale behaviour. */
+  function frameFor(e) {
+    var anchor = anchorPlace();
+    var list = [];
+
+    if (e.frame && e.frame.length) {
+      e.frame.forEach(function (id) {
+        var pl = placeById(id);
+        if (pl) list.push(pl);
+      });
+    }
+
+    var far = anchor ? metres(anchor.at, e.coordinates) > CITY_RADIUS_M : false;
+
+    if (!list.length) {
+      if (!far) return null;                        /* an ordinary Yerevan entry */
+      /* Far away and unlabelled: frame it against the city anyway, using the
+         entry's own place name so the marker still says something. */
+      list.push({ id: "_entry", kind: "site", at: e.coordinates,
+                  label: tr(e, "location") || tr(e, "title") });
+    }
+
+    if (anchor && !list.some(function (p) { return p.id === anchor.id; })) list.push(anchor);
+    return list.length > 1 || far ? list : null;
+  }
+
+  /* west, south, east, north over points and boxes alike */
+  function framedBounds(places) {
+    var w = 180, s = 90, e2 = -180, n = -90;
+    places.forEach(function (p) {
+      var pts = p.bbox ? [[p.bbox[0], p.bbox[1]], [p.bbox[2], p.bbox[3]]] : [p.at];
+      pts.forEach(function (q) {
+        if (q[0] < w) w = q[0]; if (q[0] > e2) e2 = q[0];
+        if (q[1] < s) s = q[1]; if (q[1] > n) n = q[1];
+      });
+    });
+    return [[w, s], [e2, n]];
+  }
+
+  function clearPlaces() {
+    placeMarkers.forEach(function (m) { m.remove(); });
+    placeMarkers = [];
+    if (map && map.getSource("geo-link")) map.getSource("geo-link").setData(emptyFC());
+  }
+
+  /* Labels are HTML markers, not symbol layers, and that is deliberate: a
+     symbol layer needs the basemap's glyph server, and one of the five
+     basemaps here is a bare raster with none. HTML also inherits the page's
+     Armenian and Persian faces and its text direction for free. */
+  function showPlaces(places, e) {
+    clearPlaces();
+    if (!places || !map) return;
+
+    places.forEach(function (p) {
+      var el = document.createElement("div");
+      el.className = "geo-mark geo-" + (p.kind || "site");
+      el.innerHTML = '<i></i><b>' + esc(tr(p, "label") || p.label || "") + '</b>';
+      var note = tr(p, "note");
+      if (note) el.title = note;
+      placeMarkers.push(
+        new maplibregl.Marker({ element: el, anchor: "bottom" })
+          .setLngLat(p.bbox ? [(p.bbox[0] + p.bbox[2]) / 2, (p.bbox[1] + p.bbox[3]) / 2] : p.at)
+          .addTo(map)
+      );
+    });
+
+    /* The connector. When the entry names several places it is drawn through
+       all of them in the order given — for the walk from Gyumri that is the
+       towns it passed, in sequence. It is dashed and schematic on purpose:
+       this is not the road, and a solid line would claim to be. */
+    var anchor = anchorPlace();
+    var other = places.filter(function (p) { return !anchor || p.id !== anchor.id; })[0];
+    if (anchor && other && map.getSource("geo-link")) {
+      var centre = function (q) {
+        return q.bbox ? [(q.bbox[0] + q.bbox[2]) / 2, (q.bbox[1] + q.bbox[3]) / 2] : q.at;
+      };
+      var chain = (e && e.frame && e.frame.length > 1)
+        ? places.slice()
+        : [anchor, other];
+      var line = [], i, j;
+      for (j = 0; j < chain.length - 1; j++) {
+        var a0 = centre(chain[j]), b0 = centre(chain[j + 1]);
+        for (i = 0; i < 12; i++) {
+          line.push([a0[0] + (b0[0] - a0[0]) * (i / 12), a0[1] + (b0[1] - a0[1]) * (i / 12)]);
+        }
+      }
+      line.push(centre(chain[chain.length - 1]));
+      map.getSource("geo-link").setData({
+        type: "FeatureCollection",
+        features: [{ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: line } }]
+      });
+      var a = anchor.at, b = centre(other);
+
+      /* The chip is the straight-line distance, so it is only drawn when the
+         line on the map IS that straight line. Where the connector runs through
+         a chain of towns, a number floating beside it would be read as the
+         length of the chain, which it is not — the panel carries it instead. */
+      if (chain.length === 2) {
+        var km = metres(a, b) / 1000;
+        var mid = document.createElement("div");
+        mid.className = "geo-dist";
+        mid.textContent = t("scale.apart", { d: num(km >= 100 ? Math.round(km) : km.toFixed(1)) });
+        placeMarkers.push(
+          new maplibregl.Marker({ element: mid, anchor: "center" })
+            .setLngLat([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]).addTo(map)
+        );
+      }
+    }
+  }
+
+  function addGeoLink() {
+    if (!map.getSource("geo-link")) {
+      map.addSource("geo-link", { type: "geojson", data: emptyFC() });
+    }
+    if (!map.getLayer("geo-link")) {
+      map.addLayer({
+        id: "geo-link", type: "line", source: "geo-link",
+        layout: { "line-cap": "round" },
+        paint: {
+          "line-color": RED, "line-opacity": 0.55,
+          "line-width": 1.6, "line-dasharray": [1.5, 2.2]
+        }
+      });
+    }
   }
 
   /* =================================================================
@@ -709,17 +889,20 @@
      like the walk starting in Gyumri, jumps. */
   var JUMP_OVER_M = 8000;
 
-  function goTo(target, zoom) {
+  function goTo(target, zoom, pitch) {
     var here = map.getCenter();
     var far = metres([here.lng, here.lat], target);
+    var opts = { center: target, zoom: zoom };
+    if (pitch != null) opts.pitch = pitch;
     if (far > JUMP_OVER_M) {
       /* flyTo is not the answer either — arcing out and back in crosses every
          zoom level and asks for MORE tiles than the straight line did (measured
          693 against 309). Over this distance the animation is worthless anyway:
          nothing legible passes underneath. Jump, and load one viewport. */
-      map.jumpTo({ center: target, zoom: zoom });
+      map.jumpTo(opts);
     } else {
-      map.easeTo({ center: target, zoom: zoom, duration: 900 });
+      opts.duration = 900;
+      map.easeTo(opts);
     }
   }
 
@@ -960,17 +1143,35 @@
     applySelectionState();
     history.replaceState(null, "", "#" + encodeURIComponent(id));
 
-    if (map) clearRouteAnim();
-    if (fly !== false && map) {
+    if (map) { clearRouteAnim(); clearPlaces(); }
+
+    /* Not in Yerevan? Then the answer is not "go there", it is "show where
+       there is". North up, flat, both places named, the distance between. */
+    var wide = map ? frameFor(e) : null;
+    if (wide && map) {
+      /* remember the tilt so the city gets its 3D back afterwards */
+      if (map.getPitch() > 1) state.cityPitch = map.getPitch();
+      showPlaces(wide, e);
+      if (fly !== false) {
+        map.easeTo({ pitch: 0, bearing: 0, duration: 300 });
+        map.fitBounds(framedBounds(wide), {
+          padding: WIDE_PAD, maxZoom: 11, pitch: 0, bearing: 0, duration: 1400
+        });
+      }
+    } else if (fly !== false && map) {
+      /* Coming back from a bird's-eye view, the city is a 3D drawing again.
+         The tilt has to travel with the same easeTo — a separate one is simply
+         cancelled by the move that follows it. */
+      var back = (map.getPitch() < 1 && state.cityPitch) ? state.cityPitch : null;
       if (e.path && e.path.length > 1) {
         /* A march is not a place. Frame the whole walk, then draw it. */
         map.fitBounds(pathBounds(e.path), {
           padding: { top: 90, bottom: 190, left: 60, right: 60 },
-          duration: 1100, pitch: Math.min(map.getPitch(), 45)
+          duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
         });
         setTimeout(function () { animateRoute(e); }, 700);
       } else {
-        goTo(e._display || e.coordinates, Math.max(map.getZoom(), 16));
+        goTo(e._display || e.coordinates, Math.max(map.getZoom(), 16), back);
       }
     } else if (map && e.path && e.path.length > 1) {
       animateRoute(e);
@@ -993,6 +1194,21 @@
         return '<span class="chip" style="border-color:' + esc(cat.color) +
                '88;color:' + esc(cat.color) + '">' + esc(tr(cat, "label")) + '</span>';
       }).join("") + '</div>';
+    }
+
+    var wideP = frameFor(e);
+    if (wideP) {
+      var anch = anchorPlace();
+      var oth = wideP.filter(function (x) { return !anch || x.id !== anch.id; })[0];
+      if (oth && anch) {
+        var kmP = metres(anch.at, oth.bbox
+          ? [(oth.bbox[0] + oth.bbox[2]) / 2, (oth.bbox[1] + oth.bbox[3]) / 2] : oth.at) / 1000;
+        h += '<div class="d-elsewhere">' +
+             '<b>' + esc(tr(oth, "label") || oth.label || "") + '</b>' +
+             '<span>' + esc(t("scale.fromCity", {
+                 d: num(kmP >= 100 ? Math.round(kmP) : kmP.toFixed(1)),
+                 city: tr(anch, "label") })) + '</span></div>';
+      }
     }
 
     if (e.path && e.path.length > 1) {
@@ -1080,7 +1296,15 @@
           });
           setTimeout(function () { animateRoute(e); }, 600);
         } else if (b.dataset.act === "zoom") {
-          goTo(e._display || e.coordinates, 17);
+          var w2 = frameFor(e);
+          if (w2) {
+            showPlaces(w2, e);
+            map.fitBounds(framedBounds(w2), {
+              padding: WIDE_PAD, maxZoom: 11, pitch: 0, bearing: 0, duration: 1200
+            });
+          } else {
+            goTo(e._display || e.coordinates, 17);
+          }
         } else {
           navigator.clipboard.writeText(location.href).then(function () {
             b.textContent = t("detail.copied");
@@ -1150,6 +1374,7 @@
 
   function closeDetail() {
     clearRouteAnim();
+    clearPlaces();
     state.selectedId = null;
     applySelectionState();
     history.replaceState(null, "", location.pathname + location.search);
