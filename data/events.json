@@ -101,7 +101,7 @@
         "memory"
       ],
       "summary": "Alexander Tamanyan's 1924 master plan for a capital of roughly 150,000 people laid out a radial-circular street structure with monumental squares organised as a single ensemble. Among its elements was a diagonal avenue between the two main squares, named Araratian Street — sited so as to open a visual corridor onto Mount Ararat.\n\nThe avenue was never built under Soviet rule. It remained an unrealised line on a plan for more than seventy years.",
-      "analysis": "The avenue arrives already loaded. Because it belongs to Tamanyan's plan, building it could be framed not as speculative development but as the completion of a national architectural aspiration — which is precisely how Kocharyan's administration would present it in 2007.\n\nThe Ararat axis matters too: what was designed as a sightline toward the mountain — the central symbol of Armenian territorial loss — was compromised in execution, the avenue terminating unexpectedly near Abovyan Street. The corridor's symbolic orientation was there in the plan and absent in the built result.",
+      "analysis": "The avenue arrives already loaded. Because it belongs to Tamanyan's plan, building it could be framed not as speculative development but as the completion of a national architectural aspiration — which is precisely how Kocharyan's administration would present it in 2007.\n\nThe Ararat axis matters too: what was designed as a sightline toward the mountain — the central symbol of Armenian territorial loss — was compromised in execution, the avenue terminating unexpectedly near Abovyan Street. The corridor's symbolic orientation was there in the plan and absent in the built result.\n\nMeasured on this map. Northern Avenue as built runs on a bearing of 184.6° — that is its real OpenStreetMap centreline, 611 m, and near enough straight that its endpoints and its best-fit axis agree to a tenth of a degree. The bearing from its southern end to Ararat's summit is 199.1°. The two are 14.5° apart.\n\nWhat the avenue points at, then, is the gap between the two peaks: seven degrees off Little Ararat, fourteen and a half off Great Ararat. The massif is wide enough at 56 km that mountain still fills the end of the view — but the summit does not close it. The corridor the literature describes as a sightline to Ararat is not, in the street that was actually built, a sightline to Ararat's peak. The solid white line on the map is the avenue extended; the dotted red one is the true bearing to the summit, and the wedge between them is the discrepancy.\n\nThe other half of the same failure is at the bottom end: the avenue stops 305 m short of Republic Square and turns. That is the termination near Abovyan Street that Ter-Ghazaryan describes — the corridor does not reach the square it was drawn to join, and so never opens onto the axis at all.",
       "actors": [
         "Alexander Tamanyan (1878–1936)"
       ],
@@ -110,7 +110,8 @@
         "master plan",
         "Araratian Street",
         "Ararat axis",
-        "Tamanianakan"
+        "Tamanianakan",
+        "Ararat axis, measured"
       ],
       "sources": [
         {
@@ -130,13 +131,20 @@
           "note": "broken axis, termination near Abovyan",
           "note_hy": "խախտված առանցքը, ավարտը Աբովյանի մոտ",
           "note_fa": "محور شکسته، پایان نزدیک آبوویان"
+        },
+        {
+          "title": "OpenStreetMap contributors, way Հյուսիսային պողոտա",
+          "url": "https://www.openstreetmap.org/",
+          "note": "centreline read 2026-08-21; bearings computed on the sphere from it. ODbL",
+          "note_hy": "առանցքագիծը կարդացվել է 2026-08-21, ազիմուտները հաշվարկվել են դրանից՝ գնդի վրա։ ODbL",
+          "note_fa": "خط مرکزی خوانده‌شده در ۲۰۲۶-۰۸-۲۱؛ راستاها بر پایهٔ آن روی کره محاسبه شده‌اند. ODbL"
         }
       ],
       "media": [],
       "title_hy": "Արարատյան փողոցը մտնում է Թամանյանի գլխավոր հատակագծի մեջ",
       "location_hy": "Հյուսիսային պողոտայի միջանցք, Կենտրոն",
       "summary_hy": "Ալեքսանդր Թամանյանի՝ մոտ 150 000 բնակչի հաշվարկված 1924 թվականի մայրաքաղաքի գլխավոր հատակագիծը սահմանում էր ճառագայթաօղակաձև փողոցային կառուցվածք՝ միասնական անսամբլի ձևով կազմակերպված մոնումենտալ հրապարակներով։ Դրա տարրերից էր երկու գլխավոր հրապարակները միացնող անկյունագծային պողոտան՝ Արարատյան փողոց անունով, որը դրված էր այնպես, որ բացեր տեսողական միջանցք դեպի Արարատ լեռը։\n\nՊողոտան խորհրդային տարիներին այդպես էլ չկառուցվեց։ Ավելի քան յոթանասուն տարի այն մնաց հատակագծի վրա չիրականացված մի գիծ։",
-      "analysis_hy": "Պողոտան գալիս է արդեն բեռնված։ Քանի որ այն պատկանում է Թամանյանի հատակագծին, դրա կառուցումը կարելի էր ներկայացնել ոչ թե որպես սպեկուլյատիվ շինարարություն, այլ որպես ազգային ճարտարապետական ձգտման ավարտ — ինչպես որ հենց այդպես էլ ներկայացրեց Քոչարյանի վարչակազմը 2007 թվականին։\n\nԱրարատյան առանցքը նույնպես կարևոր է․ այն, ինչ նախագծված էր որպես տեսագիծ դեպի լեռը՝ հայկական տարածքային կորստի կենտրոնական խորհրդանիշը, իրականացման ընթացքում խախտվեց, և պողոտան անսպասելիորեն ավարտվեց Աբովյան փողոցի մոտ։ Միջանցքի խորհրդանշական ուղղվածությունը կար հատակագծում և բացակայում էր կառուցված արդյունքում։",
+      "analysis_hy": "Պողոտան գալիս է արդեն բեռնված։ Քանի որ այն պատկանում է Թամանյանի հատակագծին, դրա կառուցումը կարելի էր ներկայացնել ոչ թե որպես սպեկուլյատիվ շինարարություն, այլ որպես ազգային ճարտարապետական ձգտման ավարտ — ինչպես որ հենց այդպես էլ ներկայացրեց Քոչարյանի վարչակազմը 2007 թվականին։\n\nԱրարատյան առանցքը նույնպես կարևոր է․ այն, ինչ նախագծված էր որպես տեսագիծ դեպի լեռը՝ հայկական տարածքային կորստի կենտրոնական խորհրդանիշը, իրականացման ընթացքում խախտվեց, և պողոտան անսպասելիորեն ավարտվեց Աբովյան փողոցի մոտ։ Միջանցքի խորհրդանշական ուղղվածությունը կար հատակագծում և բացակայում էր կառուցված արդյունքում։\n\nՉափված այս քարտեզի վրա։ Կառուցված Հյուսիսային պողոտան ունի 184,6° ազիմուտ․ դա նրա իրական OpenStreetMap առանցքագիծն է՝ 611 մ, և բավական ուղիղ, որ ծայրակետերն ու լավագույն մոտարկման առանցքը համընկնեն մինչև աստիճանի տասներորդը։ Նրա հարավային ծայրից Արարատի գագաթի ազիմուտը 199,1° է։ Երկուսի տարբերությունը 14,5° է։\n\nՈւրեմն պողոտան ուղղված է երկու գագաթների միջև ընկած բացվածքին․ յոթ աստիճան Փոքր Արարատից, տասնչորսուկես՝ Մեծ Արարատից։ 56 կիլոմետրից զանգվածն այնքան լայն է, որ լեռը դեռ լցնում է տեսարանի ծայրը, բայց գագաթը չի փակում այն։ Այն միջանցքը, որը գրականությունը նկարագրում է որպես տեսագիծ դեպի Արարատ, իրականում կառուցված փողոցում Արարատի գագաթի տեսագիծ չէ։ Քարտեզի ամբողջական սպիտակ գիծը պողոտայի երկարացումն է, կետագիծ կարմիրը՝ գագաթի իրական ազիմուտը, իսկ նրանց միջև ընկած սեպը՝ շեղումը։\n\nՆույն ձախողման մյուս կեսը ներքևի ծայրին է․ պողոտան կանգ է առնում Հանրապետության հրապարակից 305 մ առաջ և թեքվում։ Դա հենց այն ավարտն է Աբովյան փողոցի մոտ, որը նկարագրում է Տեր-Ղազարյանը․ միջանցքը չի հասնում այն հրապարակին, որին միանալու համար գծվել էր, և հետևաբար երբեք չի բացվում առանցքի վրա։",
       "actors_hy": [
         "Ալեքսանդր Թամանյան (1878–1936)"
       ],
@@ -145,12 +153,13 @@
         "գլխավոր հատակագիծ",
         "Արարատյան փողոց",
         "Արարատյան առանցք",
-        "Թամանյանական"
+        "Թամանյանական",
+        "Արարատյան առանցք՝ չափված"
       ],
       "title_fa": "خیابان آراراتی وارد طرح جامع تامانیان می‌شود",
       "location_fa": "کریدور خیابان شمالی، کِنترون",
       "summary_fa": "طرح جامع ۱۹۲۴ الکساندر تامانیان برای پایتختی با حدود ۱۵۰٬۰۰۰ نفر، ساختاری شعاعی‑حلقوی از خیابان‌ها با میدان‌های یادمانی را در قالب یک مجموعهٔ واحد پیش نهاد. یکی از عناصر آن، خیابانی مورب میان دو میدان اصلی بود به نام خیابان آراراتی — چنان جانمایی‌شده که کریدوری بصری رو به کوه آرارات بگشاید.\n\nاین خیابان در دورهٔ شوروی هرگز ساخته نشد. بیش از هفتاد سال خطی تحقق‌نیافته روی یک نقشه ماند.",
-      "analysis_fa": "خیابان از همان آغاز بارِ معنایی دارد. چون به طرح تامانیان تعلق دارد، ساختنش را می‌شد نه توسعهٔ سوداگرانه بلکه به‌کمال‌رساندن یک آرمان معماری ملی جلوه داد — و دولت کوچاریان در سال ۲۰۰۷ دقیقاً همین کار را کرد.\n\nمحور آرارات هم مهم است: آنچه به‌عنوان دیدگاهی به‌سوی کوه طراحی شده بود — نماد مرکزی از دست رفتن سرزمین ارمنی — در اجرا مخدوش شد و خیابان به‌طور غیرمنتظره نزدیک خیابان آبوویان پایان گرفت. جهت‌گیری نمادین کریدور در نقشه بود و در نتیجهٔ ساخته‌شده نبود.",
+      "analysis_fa": "خیابان از همان آغاز بارِ معنایی دارد. چون به طرح تامانیان تعلق دارد، ساختنش را می‌شد نه توسعهٔ سوداگرانه بلکه به‌کمال‌رساندن یک آرمان معماری ملی جلوه داد — و دولت کوچاریان در سال ۲۰۰۷ دقیقاً همین کار را کرد.\n\nمحور آرارات هم مهم است: آنچه به‌عنوان دیدگاهی به‌سوی کوه طراحی شده بود — نماد مرکزی از دست رفتن سرزمین ارمنی — در اجرا مخدوش شد و خیابان به‌طور غیرمنتظره نزدیک خیابان آبوویان پایان گرفت. جهت‌گیری نمادین کریدور در نقشه بود و در نتیجهٔ ساخته‌شده نبود.\n\nاندازه‌گیری‌شده روی همین نقشه. خیابان شمالی آن‌گونه که ساخته شد در راستای ۱۸۴٫۶ درجه می‌رود — این خط مرکزی واقعی آن در OpenStreetMap است، ۶۱۱ متر، و چنان راست که دو سرش و محور بهترین‌برازش تا یک‌دهم درجه بر هم منطبق‌اند. راستای انتهای جنوبی آن تا قلهٔ آرارات ۱۹۹٫۱ درجه است. اختلاف این دو ۱۴٫۵ درجه است.\n\nپس آنچه خیابان به آن اشاره می‌کند شکاف میان دو قله است: هفت درجه دورتر از آرارات کوچک، چهارده‌ونیم درجه دورتر از آرارات بزرگ. تودهٔ کوهستان از فاصلهٔ ۵۶ کیلومتری آن‌قدر پهن هست که هنوز انتهای منظر را پر کند — اما قله آن را نمی‌بندد. کریدوری که ادبیات موضوع آن را دیدگاهی به‌سوی آرارات توصیف می‌کند، در خیابانی که واقعاً ساخته شد، دیدگاهی به‌سوی قلهٔ آرارات نیست. خط سفید یکدست روی نقشه امتداد خیابان است، خط‌چین قرمز راستای واقعی تا قله، و گوهٔ میان آن دو همان انحراف است.\n\nنیمهٔ دیگر همین ناکامی در انتهای پایینی است: خیابان ۳۰۵ متر مانده به میدان جمهوری می‌ایستد و می‌پیچد. این همان پایان‌یافتن نزدیک خیابان آبوویان است که تر‑غازاریان توصیف می‌کند — کریدور به میدانی که برای پیوستن به آن کشیده شده بود نمی‌رسد، و بنابراین هرگز بر محور گشوده نمی‌شود.",
       "actors_fa": [
         "الکساندر تامانیان (۱۸۷۸–۱۹۳۶)"
       ],
@@ -159,7 +168,34 @@
         "طرح جامع",
         "خیابان آراراتی",
         "محور آرارات",
-        "تامانیانی"
+        "تامانیانی",
+        "محور آرارات، اندازه‌گیری‌شده"
+      ],
+      "frame": [
+        "ararat",
+        "yerevan"
+      ],
+      "sightlines": [
+        {
+          "kind": "axis",
+          "from": [
+            44.51446,
+            40.18006
+          ],
+          "along": [
+            44.51388,
+            40.17457999999999
+          ],
+          "km": 56
+        },
+        {
+          "kind": "target",
+          "from": [
+            44.51446,
+            40.18006
+          ],
+          "to": "ararat"
+        }
       ]
     },
     {
