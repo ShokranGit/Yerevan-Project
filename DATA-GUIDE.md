@@ -155,3 +155,64 @@ gazetteer. A point with a date, a place, and no argument is a pin. The map becom
 an argument when the entries start speaking to each other — which is also why
 `tags` and `actors` are worth filling in consistently: they're how you'll later
 find the threads running across events you catalogued months apart.
+
+---
+
+## 7. Recurring rites: `recurs`, `paths`, `years`, `slogans`
+
+Most entries happened once. A few things in this city happen every year, and an
+annual rite is not a series of near-identical entries — sixteen of those would
+drown the timeline. It is one entry with an internal calendar.
+
+```jsonc
+{
+  "id": "genocide-ceremony",
+  "date": "1999-04-23", "dateEnd": "2026-04-24",
+  "datePrecision": "recurring",
+
+  // Two days of every year, marked on the timeline in their own colour.
+  // Clicking any year's mark opens this entry and highlights that year below.
+  "recurs": { "month": 4, "days": [23, 24], "from": 1999, "color": "#7d5ba6" },
+
+  // More than one route. The FIRST is the primary: it is what the camera
+  // frames and what the entry's replay button walks. Every one of them is
+  // drawn, each with a note on the map naming the years it was used.
+  "pathColor": "#7d5ba6",
+  "paths": [
+    { "id": "genocide-march-republic",
+      "label": "Republic Square → Tsitsernakaberd",
+      "years": "2022–2026", "active": true,  "path": [[lng, lat], …] },
+    { "id": "genocide-march-freedom",
+      "label": "Freedom Square → Tsitsernakaberd",
+      "years": "1999–2021", "active": false, "path": [[lng, lat], …] }
+  ],
+
+  // The year-by-year chronicle rendered under the analysis.
+  // `confidence` is rendered, not footnoted: half the argument rests on
+  // which years are actually known, so a reader must see the gaps.
+  "years": [
+    { "year": 2022, "date": "2022-04-23",
+      "start": "republic",            // republic | freedom | unconfirmed | none
+      "actor": "ARF Youth Union",
+      "flags": true,                  // true | false | null (unrecorded)
+      "confidence": "confirmed",      // confirmed | partial | unknown
+      "note": "…", "note_hy": "…", "note_fa": "…" }
+  ],
+
+  // Chants and formulas, Armenian first, transliterated, then glossed.
+  "slogans": [
+    { "hy": "Զարթնի՛ր լաօ", "latin": "Zartnir lao",
+      "gloss": "…", "gloss_hy": "…", "gloss_fa": "…" }
+  ]
+}
+```
+
+`active: false` draws a route fainter and gives its note a dashed border — the
+route is still there, it is just no longer walked. (MapLibre will not accept a
+data expression for `line-dasharray`, so that difference is carried by opacity;
+do not try to switch the dash pattern per feature.)
+
+A media item may carry `remote` alongside `url`. `url` is the mirrored local copy
+and is what should normally be shown; `remote` is a fallback the panel uses only
+if the local file is missing, so an image added to the data before it has been
+mirrored still appears.

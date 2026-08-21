@@ -37,8 +37,8 @@
   <h1>Get the media</h1>
   <p class="sub">Yerevan Project · a utility page, not part of the map</p>
 
-  <p>This packs the <b>13 photographs of the 2018 revolution</b> — every one of them
-  Creative Commons BY-SA 4.0, from Wikimedia Commons — into a single file and saves it
+  <p>This packs the <b>6 photographs of the 23–24 April commemoration</b> — all Creative Commons or public domain,
+  from Wikimedia Commons — into a single file and saves it
   to your Downloads folder.</p>
 
   <p>Nothing is installed and nothing is uploaded. The images are fetched from Commons
@@ -46,7 +46,7 @@
 
   <button id="go">↓&nbsp; Save the photographs</button>
   <div id="bar"><i></i></div>
-  <p id="say">Ready. 13 files, about 9 MB.</p>
+  <p id="say">Ready. 6 files, about 5 MB.</p>
 
   <p class="note">If nothing appears in Downloads, look at the right-hand end of Chrome's
   address bar for a small download arrow with a red dot, or a crossed-out arrow. That is
@@ -71,20 +71,15 @@
 (function () {
   "use strict";
 
+  /* The genocide-ceremony set. The thirteen 2018 revolution photographs this
+     page fetched before are already in media/ and are not repeated here. */
   var FILES = [
-    "Nikol Pashinyan 13 Apr 2018.jpg",
-    "Nikol Pashinyan April 16 Baghramyan Avenue.jpg",
-    "16.04.2018 Protest Demonstrations, Yerevan.jpg",
-    "17.04.2018 Protest Demonstrations, Yerevan 1.jpg",
-    "18.04.2018, Protest Demonstrations, Yerevan.jpg",
-    "Nikol Pashinyan April 18 Tigran Mets Avenue.jpg",
-    "Republic Square During the 2018 Armenian protests 02.jpg",
-    "22.04.2018 Protest Demonstration, Yerevan 03.jpg",
-    "22.04.2018 Protest Demonstration, Yerevan 29.jpg",
-    "22.04.2018 Protest Demonstration, Yerevan 26.jpg",
-    "23.04.2018 Protest Demonstration, Yerevan 9.jpg",
-    "25.04.2018 Protest Demonstration, Yerevan.jpg",
-    "26.04.2018 Protest Demonstration, Yerevan 003.jpg"
+    { t: "Jaherov ert.jpg",                                              f: "genocide-torchlight-2019.jpg" },
+    { t: "Armenian genocide memorial torchlight procession.jpg",         f: "genocide-torchlight-2023-presidents-residence.jpg" },
+    { t: "Armenian Genocide Memorial, Yerevan 01.jpg",                   f: "genocide-2019-04-24-memorial-01.jpg" },
+    { t: "Armenian Genocide Memorial, Yerevan 23.jpg",                   f: "genocide-2019-04-24-memorial-23.jpg" },
+    { t: "100th anniversary of Armenian Genocide in Tsitsernakaberd 01.jpg", f: "genocide-2015-centenary-01.jpg" },
+    { t: "100th anniversary of Armenian Genocide in Tsitsernakaberd 03.jpg", f: "genocide-2015-centenary-03.jpg" }
   ];
   var API = "https://commons.wikimedia.org/w/api.php";
 
@@ -93,7 +88,8 @@
   function pct(f) { $("bar").firstElementChild.style.width = Math.round(f * 100) + "%"; }
 
   function slug(t) {
-    return "rev2018-" + t.replace(/\.jpg$/i, "").replace(/[^A-Za-z0-9]+/g, "-")
+    for (var i = 0; i < FILES.length; i++) if (FILES[i].t === t) return FILES[i].f;
+    return t.replace(/\.jpg$/i, "").replace(/[^A-Za-z0-9]+/g, "-")
       .replace(/^-|-$/g, "").toLowerCase() + ".jpg";
   }
 
@@ -121,7 +117,7 @@
   var meta = null;
 
   function loadList() {
-    var titles = FILES.map(function (f) { return "File:" + f; }).join("|");
+    var titles = FILES.map(function (f) { return "File:" + f.t; }).join("|");
     var url = API + "?action=query&format=json&origin=*&prop=imageinfo" +
               "&iiprop=url|extmetadata&iiurlwidth=1400&titles=" + encodeURIComponent(titles);
     return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
@@ -176,12 +172,12 @@
       var blob = new Blob(parts, { type: "application/octet-stream" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "rev2018-media.tar";
+      a.download = "genocide-media.tar";
       document.body.appendChild(a);
       a.click();
       a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 20000);
-      say("Saved rev2018-media.tar (" + (blob.size / 1048576).toFixed(1) +
+      say("Saved genocide-media.tar (" + (blob.size / 1048576).toFixed(1) +
           " MB). Check your Downloads folder.", true);
       $("go").disabled = false;
       $("go").textContent = "↓  Save it again";
