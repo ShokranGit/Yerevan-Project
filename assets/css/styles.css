@@ -898,3 +898,84 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
   [dir="rtl"] #p3-thumb{ right:auto; left:10px; }
   [dir="rtl"] .g3-side{ border-right:none; }
 }
+
+/* ===================================================================
+   MARCHES AND EPISODES
+   =================================================================== */
+
+/* ---- a named stretch of time, marked on the main track ----
+   Thirty-nine days inside twenty-nine years is four pixels. So the mark is a
+   thin stem with a label tethered above it — a sticky note — and it only
+   becomes a readable band once the window is zoomed into the period, which is
+   what clicking the note does. */
+#tl-episodes{
+  position:absolute; top:0; left:0; right:0; height:26px;
+  pointer-events:none; z-index:3;
+}
+.tl-ep{
+  position:absolute; top:0; height:26px;
+  min-width:3px; padding:0; margin:0;
+  background:none; border:none; cursor:pointer;
+  pointer-events:auto;
+}
+.tl-ep-band{
+  position:absolute; left:0; right:0; top:6px; height:13px;
+  min-width:3px; display:block;
+  background:var(--ep); opacity:.55; border-radius:2px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35);
+  transition:opacity .18s;
+}
+.tl-ep:hover .tl-ep-band{ opacity:.95; }
+.tl-ep-note{
+  position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+  white-space:nowrap; font-size:10px; font-weight:600; letter-spacing:.02em;
+  color:#fff; background:var(--ep);
+  padding:2px 7px; border-radius:4px 4px 4px 0;
+  box-shadow:0 2px 10px rgba(0,0,0,.45);
+  transition:opacity .2s;
+}
+/* the tether from the note down to the mark it belongs to */
+.tl-ep-note::after{
+  content:""; position:absolute; top:100%; left:50%; width:1px; height:6px;
+  background:var(--ep); opacity:.75;
+}
+/* once you are inside the period, the note has done its job */
+#tl-episodes.zoomed .tl-ep-note{ opacity:.35; }
+#tl-episodes.zoomed .tl-ep:hover .tl-ep-note{ opacity:1; }
+
+@media (max-width: 860px){
+  .tl-ep-note{ font-size:9px; padding:1px 5px; }
+}
+
+/* ---- the episode badge inside an entry ---- */
+.d-episode{
+  display:inline-block; margin:0 0 14px;
+  font-size:11px; font-weight:600; letter-spacing:.03em;
+  color:#fff; background:var(--ep); border:none; border-radius:4px;
+  padding:3px 9px; cursor:pointer; opacity:.9;
+}
+.d-episode:hover{ opacity:1; }
+
+/* ---- a march, in the entry panel ---- */
+.d-route{
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px;
+  margin:0 0 16px; padding:11px 13px;
+  background:var(--bg-3); border-radius:7px;
+  border:1px solid var(--line);
+}
+.d-route-head{
+  flex:1 0 100%; font-size:12px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--text-3);
+}
+html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; letter-spacing:0; }
+.d-route-end, .d-route-replay{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:12px; color:var(--text-2);
+  background:var(--bg-2); border:1px solid var(--line);
+  border-radius:5px; padding:4px 9px; cursor:pointer;
+}
+.d-route-end:hover, .d-route-replay:hover{ color:var(--text); border-color:var(--accent); }
+.d-route-end i{ width:9px; height:9px; border-radius:50%; flex:0 0 auto; }
+.d-route-end i.rs{ background:#fff; box-shadow:0 0 0 2px var(--accent) inset; }
+.d-route-end i.re{ background:var(--accent); box-shadow:0 0 0 1.5px #fff; }
+.d-route-replay{ margin-inline-start:auto; }
