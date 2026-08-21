@@ -1,1 +1,671 @@
-{"note":"The relational model from the proposal defence, as a rotatable 3D graph. Nodes carry either explicit event ids or a fallback search term; empty 'events' means the capacity exists but nothing is linked yet. Coordinates are in an arbitrary unit-space centred on 'public-space'.","groups":{"concept":{"label":"Concept","color":"#c9262c"},"place":{"label":"Place","color":"#8f1b20"},"event":{"label":"Event","color":"#6f757d"},"actor":{"label":"Actor","color":"#b8bcc2"},"frame":{"label":"Wider frame","color":"#6fa8cf"}},"nodes":[{"id":"public-space","label":"Public space","group":"concept","r":7.5,"p":[0,0,0],"events":[],"query":"square"},{"id":"visibility","label":"Visibility","group":"concept","r":7.5,"p":[0,34,0],"events":[],"query":"protest"},{"id":"erasure","label":"Erasure","group":"concept","r":7.5,"p":[0,-34,0],"events":[],"query":"demolition"},{"id":"sovereignty","label":"Sovereignty","group":"concept","r":7.5,"p":[26,17,-18],"events":[],"query":"sovereignty"},{"id":"memory","label":"Memory","group":"concept","r":7.5,"p":[-26,-17,18],"events":[],"query":"memory"},{"id":"northern-avenue","label":"Northern Avenue","group":"place","r":6,"p":[45.5,7.3,6.9],"events":["northern-avenue-demolitions-2002","northern-avenue-first-section-2006","northern-avenue-opening-2007","northern-avenue-mall-2014","political-prisoners-northern-avenue-2008","tamanyan-master-plan-1924"],"query":"northern avenue"},{"id":"opera-square","label":"Opera / Freedom Square","group":"place","r":6,"p":[16.8,14.4,42.8],"events":["opera-square-election-protests-2003","opera-square-crackdown-2008","opera-square-closure-2008","hovannisian-hunger-strike-2013"],"query":"opera"},{"id":"republic-square","label":"Republic Square","group":"place","r":6,"p":[-28.7,13,36],"events":["velvet-revolution-2018"],"query":"republic square"},{"id":"mashtots-park","label":"Mashtots Park","group":"place","r":6,"p":[-45.5,4.7,-6.9],"events":["mashtots-park-2012"],"query":"mashtots"},{"id":"cascade","label":"The Cascade","group":"place","r":6,"p":[-16.8,-2.4,-42.8],"events":["cascade-phase-two-2002"],"query":"cascade"},{"id":"tsitsernakaberd","label":"Tsitsernakaberd","group":"place","r":6,"p":[28.7,-1,-36],"events":[],"query":"tsitsernakaberd"},{"id":"y1924","label":"1924 · Tamanyan plan","group":"event","r":4.6,"p":[66.5,-0.7,40.8],"events":["tamanyan-master-plan-1924"],"query":"tamanyan"},{"id":"y2002","label":"2002 · Demolitions","group":"event","r":4.6,"p":[18.2,5.6,75.8],"events":["northern-avenue-demolitions-2002"],"query":"demolition"},{"id":"y2007","label":"2007 · Avenue opens","group":"event","r":4.6,"p":[-40.8,3.9,66.5],"events":["northern-avenue-opening-2007"],"query":"northern avenue"},{"id":"y2008","label":"2008 · March crackdown","group":"event","r":4.6,"p":[-75.8,-4.7,18.2],"events":["opera-square-crackdown-2008","opera-square-closure-2008","political-prisoners-northern-avenue-2008"],"query":"2008"},{"id":"y2012","label":"2012 · Mashtots Park","group":"event","r":4.6,"p":[-66.5,-15.3,-40.8],"events":["mashtots-park-2012"],"query":"mashtots"},{"id":"y2014","label":"2014 · 100 dram","group":"event","r":4.6,"p":[-18.2,-21.6,-75.8],"events":["hundred-dram-2014","afrikana-2014"],"query":"2014"},{"id":"y2015","label":"2015 · Electric Yerevan","group":"event","r":4.6,"p":[40.8,-19.9,-66.5],"events":["electric-yerevan-2015"],"query":"electric"},{"id":"y2018","label":"2018 · Velvet Revolution","group":"event","r":4.6,"p":[75.8,-11.3,-18.2],"events":["velvet-revolution-2018","musicians-arrest-2018"],"query":"revolution"},{"id":"state","label":"The state","group":"actor","r":5,"p":[24.9,44.7,31.3],"events":[],"query":"police"},{"id":"developers","label":"Developers","group":"actor","r":5,"p":[-31.3,43.7,24.9],"events":[],"query":"development"},{"id":"residents","label":"Residents","group":"actor","r":5,"p":[-24.9,35.3,-31.3],"events":[],"query":"residents"},{"id":"diaspora","label":"Diaspora","group":"actor","r":5,"p":[31.3,36.3,-24.9],"events":[],"query":"diaspora"},{"id":"karabakh","label":"Nagorno-Karabakh","group":"frame","r":6.5,"p":[-11.9,43.9,91.2],"events":[],"query":"karabakh"},{"id":"genocide","label":"1915 Genocide","group":"frame","r":6.5,"p":[-73.1,27.9,-55.9],"events":[],"query":"genocide"},{"id":"soviet","label":"Soviet Yerevan","group":"frame","r":6.5,"p":[84.9,30.2,-35.4],"events":[],"query":"soviet"}],"links":[["public-space","visibility"],["public-space","erasure"],["public-space","sovereignty"],["public-space","memory"],["visibility","sovereignty"],["erasure","memory"],["northern-avenue","public-space"],["northern-avenue","erasure"],["opera-square","visibility"],["opera-square","public-space"],["republic-square","sovereignty"],["republic-square","visibility"],["mashtots-park","erasure"],["mashtots-park","public-space"],["cascade","memory"],["cascade","public-space"],["tsitsernakaberd","memory"],["y1924","northern-avenue"],["y1924","soviet"],["y2002","northern-avenue"],["y2002","erasure"],["y2002","developers"],["y2007","northern-avenue"],["y2007","developers"],["y2008","opera-square"],["y2008","state"],["y2008","visibility"],["y2012","mashtots-park"],["y2012","residents"],["y2014","residents"],["y2014","visibility"],["y2015","republic-square"],["y2015","residents"],["y2015","state"],["y2018","republic-square"],["y2018","northern-avenue"],["y2018","visibility"],["y2018","residents"],["y2018","sovereignty"],["state","sovereignty"],["developers","erasure"],["residents","public-space"],["diaspora","memory"],["diaspora","genocide"],["karabakh","sovereignty"],["karabakh","y2018"],["karabakh","state"],["genocide","memory"],["genocide","tsitsernakaberd"],["soviet","erasure"],["soviet","public-space"]]}
+{
+  "note": "The relational model from the proposal defence, as a rotatable 3D graph. Nodes carry either explicit event ids or a fallback search term; empty 'events' means the capacity exists but nothing is linked yet. Coordinates are in an arbitrary unit-space centred on 'public-space'.",
+  "groups": {
+    "concept": {
+      "label": "Concept",
+      "color": "#c9262c",
+      "label_hy": "Հասկացություն",
+      "label_fa": "مفهوم"
+    },
+    "place": {
+      "label": "Place",
+      "color": "#8f1b20",
+      "label_hy": "Վայր",
+      "label_fa": "مکان"
+    },
+    "event": {
+      "label": "Event",
+      "color": "#6f757d",
+      "label_hy": "Իրադարձություն",
+      "label_fa": "رویداد"
+    },
+    "actor": {
+      "label": "Actor",
+      "color": "#b8bcc2",
+      "label_hy": "Դերակատար",
+      "label_fa": "کنشگر"
+    },
+    "frame": {
+      "label": "Wider frame",
+      "color": "#6fa8cf",
+      "label_hy": "Ավելի լայն շրջանակ",
+      "label_fa": "قاب فراگیرتر"
+    }
+  },
+  "nodes": [
+    {
+      "id": "public-space",
+      "label": "Public space",
+      "group": "concept",
+      "r": 7.5,
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "events": [],
+      "query": "square",
+      "label_hy": "Հանրային տարածք",
+      "label_fa": "فضای عمومی"
+    },
+    {
+      "id": "visibility",
+      "label": "Visibility",
+      "group": "concept",
+      "r": 7.5,
+      "p": [
+        0,
+        34,
+        0
+      ],
+      "events": [],
+      "query": "protest",
+      "label_hy": "Տեսանելիություն",
+      "label_fa": "رؤیت‌پذیری"
+    },
+    {
+      "id": "erasure",
+      "label": "Erasure",
+      "group": "concept",
+      "r": 7.5,
+      "p": [
+        0,
+        -34,
+        0
+      ],
+      "events": [],
+      "query": "demolition",
+      "label_hy": "Ջնջում",
+      "label_fa": "محو کردن"
+    },
+    {
+      "id": "sovereignty",
+      "label": "Sovereignty",
+      "group": "concept",
+      "r": 7.5,
+      "p": [
+        26,
+        17,
+        -18
+      ],
+      "events": [],
+      "query": "sovereignty",
+      "label_hy": "Ինքնիշխանություն",
+      "label_fa": "حاکمیت"
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "group": "concept",
+      "r": 7.5,
+      "p": [
+        -26,
+        -17,
+        18
+      ],
+      "events": [],
+      "query": "memory",
+      "label_hy": "Հիշողություն",
+      "label_fa": "حافظه"
+    },
+    {
+      "id": "northern-avenue",
+      "label": "Northern Avenue",
+      "group": "place",
+      "r": 6,
+      "p": [
+        45.5,
+        7.3,
+        6.9
+      ],
+      "events": [
+        "northern-avenue-demolitions-2002",
+        "northern-avenue-first-section-2006",
+        "northern-avenue-opening-2007",
+        "northern-avenue-mall-2014",
+        "political-prisoners-northern-avenue-2008",
+        "tamanyan-master-plan-1924"
+      ],
+      "query": "northern avenue",
+      "label_hy": "Հյուսիսային պողոտա",
+      "label_fa": "خیابان شمالی"
+    },
+    {
+      "id": "opera-square",
+      "label": "Opera / Freedom Square",
+      "group": "place",
+      "r": 6,
+      "p": [
+        16.8,
+        14.4,
+        42.8
+      ],
+      "events": [
+        "opera-square-election-protests-2003",
+        "opera-square-crackdown-2008",
+        "opera-square-closure-2008",
+        "hovannisian-hunger-strike-2013"
+      ],
+      "query": "opera",
+      "label_hy": "Օպերայի / Ազատության հրապարակ",
+      "label_fa": "میدان اپرا / آزادی"
+    },
+    {
+      "id": "republic-square",
+      "label": "Republic Square",
+      "group": "place",
+      "r": 6,
+      "p": [
+        -28.7,
+        13,
+        36
+      ],
+      "events": [
+        "velvet-revolution-2018"
+      ],
+      "query": "republic square",
+      "label_hy": "Հանրապետության հրապարակ",
+      "label_fa": "میدان جمهوری"
+    },
+    {
+      "id": "mashtots-park",
+      "label": "Mashtots Park",
+      "group": "place",
+      "r": 6,
+      "p": [
+        -45.5,
+        4.7,
+        -6.9
+      ],
+      "events": [
+        "mashtots-park-2012"
+      ],
+      "query": "mashtots",
+      "label_hy": "Մաշտոցի այգի",
+      "label_fa": "پارک ماشتوتس"
+    },
+    {
+      "id": "cascade",
+      "label": "The Cascade",
+      "group": "place",
+      "r": 6,
+      "p": [
+        -16.8,
+        -2.4,
+        -42.8
+      ],
+      "events": [
+        "cascade-phase-two-2002"
+      ],
+      "query": "cascade",
+      "label_hy": "Կասկադ",
+      "label_fa": "کاسکاد"
+    },
+    {
+      "id": "tsitsernakaberd",
+      "label": "Tsitsernakaberd",
+      "group": "place",
+      "r": 6,
+      "p": [
+        28.7,
+        -1,
+        -36
+      ],
+      "events": [],
+      "query": "tsitsernakaberd",
+      "label_hy": "Ծիծեռնակաբերդ",
+      "label_fa": "تسیتسرناکابرد"
+    },
+    {
+      "id": "y1924",
+      "label": "1924 · Tamanyan plan",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        66.5,
+        -0.7,
+        40.8
+      ],
+      "events": [
+        "tamanyan-master-plan-1924"
+      ],
+      "query": "tamanyan",
+      "label_hy": "1924 · Թամանյանի հատակագիծ",
+      "label_fa": "۱۹۲۴ · طرح تامانیان"
+    },
+    {
+      "id": "y2002",
+      "label": "2002 · Demolitions",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        18.2,
+        5.6,
+        75.8
+      ],
+      "events": [
+        "northern-avenue-demolitions-2002"
+      ],
+      "query": "demolition",
+      "label_hy": "2002 · Քանդումներ",
+      "label_fa": "۲۰۰۲ · تخریب‌ها"
+    },
+    {
+      "id": "y2007",
+      "label": "2007 · Avenue opens",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        -40.8,
+        3.9,
+        66.5
+      ],
+      "events": [
+        "northern-avenue-opening-2007"
+      ],
+      "query": "northern avenue",
+      "label_hy": "2007 · Պողոտան բացվում է",
+      "label_fa": "۲۰۰۷ · گشایش خیابان"
+    },
+    {
+      "id": "y2008",
+      "label": "2008 · March crackdown",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        -75.8,
+        -4.7,
+        18.2
+      ],
+      "events": [
+        "opera-square-crackdown-2008",
+        "opera-square-closure-2008",
+        "political-prisoners-northern-avenue-2008"
+      ],
+      "query": "2008",
+      "label_hy": "2008 · Մարտյան ճնշում",
+      "label_fa": "۲۰۰۸ · سرکوب مارس"
+    },
+    {
+      "id": "y2012",
+      "label": "2012 · Mashtots Park",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        -66.5,
+        -15.3,
+        -40.8
+      ],
+      "events": [
+        "mashtots-park-2012"
+      ],
+      "query": "mashtots",
+      "label_hy": "2012 · Մաշտոցի այգի",
+      "label_fa": "۲۰۱۲ · پارک ماشتوتس"
+    },
+    {
+      "id": "y2014",
+      "label": "2014 · 100 dram",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        -18.2,
+        -21.6,
+        -75.8
+      ],
+      "events": [
+        "hundred-dram-2014",
+        "afrikana-2014"
+      ],
+      "query": "2014",
+      "label_hy": "2014 · 100 դրամ",
+      "label_fa": "۲۰۱۴ · ۱۰۰ درام"
+    },
+    {
+      "id": "y2015",
+      "label": "2015 · Electric Yerevan",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        40.8,
+        -19.9,
+        -66.5
+      ],
+      "events": [
+        "electric-yerevan-2015"
+      ],
+      "query": "electric",
+      "label_hy": "2015 · Էլեկտրիկ Երևան",
+      "label_fa": "۲۰۱۵ · ایروان برقی"
+    },
+    {
+      "id": "y2018",
+      "label": "2018 · Velvet Revolution",
+      "group": "event",
+      "r": 4.6,
+      "p": [
+        75.8,
+        -11.3,
+        -18.2
+      ],
+      "events": [
+        "velvet-revolution-2018",
+        "musicians-arrest-2018"
+      ],
+      "query": "revolution",
+      "label_hy": "2018 · Թավշյա հեղափոխություն",
+      "label_fa": "۲۰۱۸ · انقلاب مخملی"
+    },
+    {
+      "id": "state",
+      "label": "The state",
+      "group": "actor",
+      "r": 5,
+      "p": [
+        24.9,
+        44.7,
+        31.3
+      ],
+      "events": [],
+      "query": "police",
+      "label_hy": "Պետությունը",
+      "label_fa": "دولت"
+    },
+    {
+      "id": "developers",
+      "label": "Developers",
+      "group": "actor",
+      "r": 5,
+      "p": [
+        -31.3,
+        43.7,
+        24.9
+      ],
+      "events": [],
+      "query": "development",
+      "label_hy": "Կառուցապատողներ",
+      "label_fa": "سازندگان"
+    },
+    {
+      "id": "residents",
+      "label": "Residents",
+      "group": "actor",
+      "r": 5,
+      "p": [
+        -24.9,
+        35.3,
+        -31.3
+      ],
+      "events": [],
+      "query": "residents",
+      "label_hy": "Բնակիչներ",
+      "label_fa": "ساکنان"
+    },
+    {
+      "id": "diaspora",
+      "label": "Diaspora",
+      "group": "actor",
+      "r": 5,
+      "p": [
+        31.3,
+        36.3,
+        -24.9
+      ],
+      "events": [],
+      "query": "diaspora",
+      "label_hy": "Սփյուռք",
+      "label_fa": "دیاسپورا"
+    },
+    {
+      "id": "karabakh",
+      "label": "Nagorno-Karabakh",
+      "group": "frame",
+      "r": 6.5,
+      "p": [
+        -11.9,
+        43.9,
+        91.2
+      ],
+      "events": [],
+      "query": "karabakh",
+      "label_hy": "Լեռնային Ղարաբաղ",
+      "label_fa": "قره‌باغ کوهستانی"
+    },
+    {
+      "id": "genocide",
+      "label": "1915 Genocide",
+      "group": "frame",
+      "r": 6.5,
+      "p": [
+        -73.1,
+        27.9,
+        -55.9
+      ],
+      "events": [],
+      "query": "genocide",
+      "label_hy": "1915 թ. ցեղասպանություն",
+      "label_fa": "نسل‌کشی ۱۹۱۵"
+    },
+    {
+      "id": "soviet",
+      "label": "Soviet Yerevan",
+      "group": "frame",
+      "r": 6.5,
+      "p": [
+        84.9,
+        30.2,
+        -35.4
+      ],
+      "events": [],
+      "query": "soviet",
+      "label_hy": "Խորհրդային Երևան",
+      "label_fa": "ایروانِ شوروی"
+    }
+  ],
+  "links": [
+    [
+      "public-space",
+      "visibility"
+    ],
+    [
+      "public-space",
+      "erasure"
+    ],
+    [
+      "public-space",
+      "sovereignty"
+    ],
+    [
+      "public-space",
+      "memory"
+    ],
+    [
+      "visibility",
+      "sovereignty"
+    ],
+    [
+      "erasure",
+      "memory"
+    ],
+    [
+      "northern-avenue",
+      "public-space"
+    ],
+    [
+      "northern-avenue",
+      "erasure"
+    ],
+    [
+      "opera-square",
+      "visibility"
+    ],
+    [
+      "opera-square",
+      "public-space"
+    ],
+    [
+      "republic-square",
+      "sovereignty"
+    ],
+    [
+      "republic-square",
+      "visibility"
+    ],
+    [
+      "mashtots-park",
+      "erasure"
+    ],
+    [
+      "mashtots-park",
+      "public-space"
+    ],
+    [
+      "cascade",
+      "memory"
+    ],
+    [
+      "cascade",
+      "public-space"
+    ],
+    [
+      "tsitsernakaberd",
+      "memory"
+    ],
+    [
+      "y1924",
+      "northern-avenue"
+    ],
+    [
+      "y1924",
+      "soviet"
+    ],
+    [
+      "y2002",
+      "northern-avenue"
+    ],
+    [
+      "y2002",
+      "erasure"
+    ],
+    [
+      "y2002",
+      "developers"
+    ],
+    [
+      "y2007",
+      "northern-avenue"
+    ],
+    [
+      "y2007",
+      "developers"
+    ],
+    [
+      "y2008",
+      "opera-square"
+    ],
+    [
+      "y2008",
+      "state"
+    ],
+    [
+      "y2008",
+      "visibility"
+    ],
+    [
+      "y2012",
+      "mashtots-park"
+    ],
+    [
+      "y2012",
+      "residents"
+    ],
+    [
+      "y2014",
+      "residents"
+    ],
+    [
+      "y2014",
+      "visibility"
+    ],
+    [
+      "y2015",
+      "republic-square"
+    ],
+    [
+      "y2015",
+      "residents"
+    ],
+    [
+      "y2015",
+      "state"
+    ],
+    [
+      "y2018",
+      "republic-square"
+    ],
+    [
+      "y2018",
+      "northern-avenue"
+    ],
+    [
+      "y2018",
+      "visibility"
+    ],
+    [
+      "y2018",
+      "residents"
+    ],
+    [
+      "y2018",
+      "sovereignty"
+    ],
+    [
+      "state",
+      "sovereignty"
+    ],
+    [
+      "developers",
+      "erasure"
+    ],
+    [
+      "residents",
+      "public-space"
+    ],
+    [
+      "diaspora",
+      "memory"
+    ],
+    [
+      "diaspora",
+      "genocide"
+    ],
+    [
+      "karabakh",
+      "sovereignty"
+    ],
+    [
+      "karabakh",
+      "y2018"
+    ],
+    [
+      "karabakh",
+      "state"
+    ],
+    [
+      "genocide",
+      "memory"
+    ],
+    [
+      "genocide",
+      "tsitsernakaberd"
+    ],
+    [
+      "soviet",
+      "erasure"
+    ],
+    [
+      "soviet",
+      "public-space"
+    ]
+  ]
+}

@@ -1,1 +1,1583 @@
-{"note":"Armenian political parties, 1887 to 2026, placed in a space whose axes are stated below. Election figures marked verified:true were checked against sources during the session that built this file (Wikipedia 2026 Armenian parliamentary election; Armenpress CEC seat allocation, 15 June 2026). The rest come from the model's background knowledge and SHOULD BE CHECKED before the map is published or cited. Spectrum and stance values are editorial placements, not measurements.","axes":{"x":{"label":"Left – Right","min":-10,"max":10,"minLabel":"Left","maxLabel":"Right"},"z":{"label":"Moscow – Brussels","min":-10,"max":10,"minLabel":"Russia","maxLabel":"West"},"y":{"label":"Founded","min":1887,"max":2026}},"issues":[{"id":"eu","label":"European integration","neg":"Against","pos":"For"},{"id":"russia","label":"Alignment with Russia","neg":"Closer to Moscow","pos":"Away from Moscow"},{"id":"artsakh","label":"Artsakh / Nagorno-Karabakh","neg":"Settlement first","pos":"Restoration first"},{"id":"peace","label":"Peace deal with Azerbaijan","neg":"Reject","pos":"Accept"},{"id":"market","label":"Economy","neg":"State-led","pos":"Market-led"}],"elections":[{"year":1995,"kind":"parliamentary","note":"First post-independence National Assembly. ARF banned."},{"year":1999,"kind":"parliamentary","note":"Unity Bloc wins; the National Assembly shooting follows in October."},{"year":2003,"kind":"parliamentary","note":"Justice Alliance forms against the RPA."},{"year":2007,"kind":"parliamentary","note":"RPA consolidates; Prosperous Armenia enters."},{"year":2008,"kind":"presidential","note":"Ter-Petrosyan's campaign ends in the Freedom Square crackdown of 1 March."},{"year":2012,"kind":"parliamentary","note":"RPA majority."},{"year":2013,"kind":"presidential","note":"Hovannisian's Barevolution and hunger strike on Freedom Square."},{"year":2017,"kind":"parliamentary","note":"Last election before the Velvet Revolution."},{"year":2018,"kind":"parliamentary","note":"Snap election after the Velvet Revolution. My Step takes 70%."},{"year":2021,"kind":"parliamentary","note":"Snap election after the 2020 Artsakh war."},{"year":2026,"kind":"parliamentary","note":"7 June. Civil Contract 49.89%, Strong Armenia 23.34%, Armenia Alliance 9.95%.","verified":true}],"parties":[{"id":"sdhp","name":"Social Democrat Hunchakian Party","hy":"Սոցիալ-դեմոկրատ հնչակյան կուսակցություն","abbr":"SDHP","founded":1887,"dissolved":null,"spectrum":-6,"geo":-1,"position":"Left","ideology":["Democratic socialism","Armenian national liberation"],"leaders":[],"elections":[],"stances":{"eu":0,"russia":-2,"artsakh":6,"peace":-2,"market":-6},"note":"Founded in Geneva. One of the three historic diaspora parties that re-registered in Armenia after 1991.","events":[],"query":"hunchak"},{"id":"arf","name":"Armenian Revolutionary Federation (Dashnaktsutyun)","hy":"Հայ Յեղափոխական Դաշնակցություն","abbr":"ARF","founded":1890,"dissolved":null,"spectrum":-5,"geo":-4,"position":"Left / national","ideology":["Democratic socialism","Armenian nationalism","Socialist International member"],"leaders":[{"name":"Ishkhan Saghatelyan","wiki":"Ishkhan_Saghatelyan","role":"Supreme Body representative","from":2021,"to":null}],"elections":[{"year":2007,"share":13.2,"seats":16},{"year":2012,"share":5.7,"seats":5},{"year":2017,"share":6.6,"seats":7}],"stances":{"eu":-3,"russia":-5,"artsakh":9,"peace":-8,"market":-4},"note":"Banned by presidential decree in 1994 under Ter-Petrosyan; legalised again in 1998. Ran inside the Armenia Alliance from 2021.","events":[],"query":"dashnak"},{"id":"cpa","name":"Communist Party of Armenia","hy":"Հայաստանի կոմունիստական կուսակցություն","abbr":"CPA","founded":1920,"dissolved":null,"spectrum":-9,"geo":-9,"position":"Far left","ideology":["Communism","Marxism–Leninism"],"leaders":[],"elections":[{"year":1995,"share":12.1,"seats":7},{"year":1999,"share":12.1,"seats":11}],"stances":{"eu":-8,"russia":-9,"artsakh":6,"peace":-4,"market":-9},"note":"Ruling party of the Armenian SSR until 1990; reorganised as an opposition party after independence.","events":[],"query":"communist"},{"id":"anm","name":"Armenian National Movement","hy":"Հայոց համազգային շարժում","abbr":"ANM","founded":1989,"dissolved":2013,"spectrum":-1,"geo":5,"position":"Centre","ideology":["Liberal democracy","Armenian national self-determination"],"leaders":[{"name":"Levon Ter-Petrosyan","wiki":"Levon_Ter-Petrosyan","role":"Leader; President 1991–1998","from":1989,"to":1998}],"elections":[{"year":1995,"share":42.7,"seats":119}],"stances":{"eu":4,"russia":1,"artsakh":3,"peace":6,"market":4},"note":"Grew directly out of the Karabakh Committee of 1988. Governed until Ter-Petrosyan's resignation in 1998; later folded into the Armenian National Congress.","events":["tamanyan-master-plan-1924"],"query":"ter-petrosyan"},{"id":"rpa","name":"Republican Party of Armenia","hy":"Հայաստանի Հանրապետական կուսակցություն","abbr":"RPA","founded":1990,"dissolved":null,"spectrum":5,"geo":-3,"position":"Right","ideology":["National conservatism","Neoliberal economics"],"leaders":[{"name":"Serzh Sargsyan","wiki":"Serzh_Sargsyan","role":"Chairman; President 2008–2018","from":2007,"to":null},{"name":"Vazgen Sargsyan","wiki":"Vazgen_Sargsyan","role":"Founder of the Yerkrapah wing","from":1990,"to":1999}],"elections":[{"year":1999,"share":41.2,"seats":62},{"year":2003,"share":23.5,"seats":33},{"year":2007,"share":33.9,"seats":65},{"year":2012,"share":44.0,"seats":69},{"year":2017,"share":49.2,"seats":58},{"year":2018,"share":4.7,"seats":0}],"stances":{"eu":0,"russia":-6,"artsakh":8,"peace":-6,"market":5},"note":"The party of government from 1999 to 2018. Fell below the threshold in the snap election that followed the Velvet Revolution.","events":["velvet-revolution-2018","opera-square-crackdown-2008","electric-yerevan-2015"],"query":"republican party"},{"id":"ndu","name":"National Democratic Union","hy":"Ազգային ժողովրդավարական միություն","abbr":"NDU","founded":1991,"dissolved":null,"spectrum":2,"geo":2,"position":"Centre-right","ideology":["National democracy","Conservatism"],"leaders":[{"name":"Vazgen Manukyan","wiki":"Vazgen_Manukyan","role":"Founder","from":1991,"to":null}],"elections":[{"year":1995,"share":7.5,"seats":5},{"year":1999,"share":5.2,"seats":6}],"stances":{"eu":2,"russia":-2,"artsakh":8,"peace":-6,"market":3},"note":"Formed in 1991 by figures who broke with Ter-Petrosyan's ANM. Manukyan led the Homeland Salvation Movement against Pashinyan after the 2020 war.","events":[],"query":"manukyan"},{"id":"ppa","name":"People's Party of Armenia","hy":"Հայաստանի ժողովրդական կուսակցություն","abbr":"PPA","founded":1998,"dissolved":null,"spectrum":-4,"geo":-3,"position":"Centre-left","ideology":["Social democracy"],"leaders":[{"name":"Karen Demirchyan","wiki":"Karen_Demirchyan","role":"Founder","from":1998,"to":1999},{"name":"Stepan Demirchyan","wiki":"Stepan_Demirchyan","role":"Chairman","from":1999,"to":null}],"elections":[{"year":1999,"share":41.2,"seats":0},{"year":2003,"share":14.1,"seats":14}],"stances":{"eu":1,"russia":-4,"artsakh":7,"peace":-3,"market":-4},"note":"Founded by the former Soviet Armenian leader Karen Demirchyan, who was assassinated in the National Assembly shooting of 27 October 1999. His son Stepan inherited the party.","events":[],"query":"demirchyan"},{"id":"rol","name":"Rule of Law (Orinats Yerkir)","hy":"Օրինաց երկիր","abbr":"RoL","founded":1998,"dissolved":null,"spectrum":3,"geo":1,"position":"Centre-right","ideology":["Liberal conservatism","Rule of law"],"leaders":[{"name":"Artur Baghdasaryan","wiki":"Artur_Baghdasaryan","role":"Founder","from":1998,"to":null}],"elections":[{"year":2003,"share":12.6,"seats":19},{"year":2007,"share":7.0,"seats":9},{"year":2012,"share":5.5,"seats":6}],"stances":{"eu":3,"russia":-2,"artsakh":6,"peace":-3,"market":4},"note":"A coalition partner through the Kocharyan and Sargsyan years.","events":[],"query":"orinats"},{"id":"republic","name":"Republic Party","hy":"Հանրապետություն","abbr":"Rep","founded":2001,"dissolved":null,"spectrum":1,"geo":5,"position":"Centre-right","ideology":["Liberalism","Pro-Western orientation"],"leaders":[{"name":"Aram Sargsyan","role":"Founder; PM 1999–2000","from":2001,"to":null}],"elections":[],"stances":{"eu":6,"russia":2,"artsakh":5,"peace":3,"market":4},"note":"Founded by Aram Z. Sargsyan, brother of the assassinated prime minister Vazgen Sargsyan. Not to be confused with the Republican Party. Part of the Yelk alliance in 2017.","events":[],"query":"republic party"},{"id":"heritage","name":"Heritage","hy":"Ժառանգություն","abbr":"Her","founded":2002,"dissolved":null,"spectrum":1,"geo":6,"position":"Centre-right","ideology":["Liberal conservatism","Pro-European orientation"],"leaders":[{"name":"Raffi Hovannisian","wiki":"Raffi_Hovannisian","role":"Founder; first Foreign Minister","from":2002,"to":null}],"elections":[{"year":2007,"share":5.8,"seats":7},{"year":2012,"share":5.8,"seats":5},{"year":2017,"share":2.1,"seats":0}],"stances":{"eu":8,"russia":3,"artsakh":8,"peace":-2,"market":4},"note":"Hovannisian's 2013 hunger strike on Freedom Square after the presidential election is one of the entries on this map.","events":["hovannisian-hunger-strike-2013"],"query":"hovannisian"},{"id":"pap","name":"Prosperous Armenia","hy":"Բարգավաճ Հայաստան","abbr":"PAP","founded":2004,"dissolved":null,"spectrum":5,"geo":-5,"position":"Right","ideology":["National conservatism","Right-wing populism"],"leaders":[{"name":"Gagik Tsarukyan","wiki":"Gagik_Tsarukyan","role":"Founder","from":2004,"to":null}],"elections":[{"year":2007,"share":15.1,"seats":25},{"year":2012,"share":30.2,"seats":37},{"year":2017,"share":27.4,"seats":31},{"year":2018,"share":8.3,"seats":26},{"year":2021,"share":3.9,"seats":0},{"year":2026,"share":3.9,"seats":0}],"stances":{"eu":-2,"russia":-6,"artsakh":7,"peace":-4,"market":5},"note":"Founded by the businessman Gagik Tsarukyan, widely understood as a counterweight to the Republican Party under Kocharyan.","events":[],"query":"tsarukyan"},{"id":"anc","name":"Armenian National Congress","hy":"Հայ ազգային կոնգրես","abbr":"ANC","founded":2008,"dissolved":null,"spectrum":0,"geo":2,"position":"Centre","ideology":["Liberalism","Rule of law"],"leaders":[{"name":"Levon Ter-Petrosyan","wiki":"Levon_Ter-Petrosyan","role":"Leader","from":2008,"to":null}],"elections":[{"year":2012,"share":7.1,"seats":7},{"year":2017,"share":1.7,"seats":0}],"stances":{"eu":4,"russia":0,"artsakh":2,"peace":8,"market":3},"note":"Formed out of the movement around Ter-Petrosyan's 2008 presidential campaign — the campaign whose Freedom Square sit-in was broken up on 1 March 2008.","events":["opera-square-crackdown-2008","opera-square-closure-2008","political-prisoners-northern-avenue-2008"],"query":"congress"},{"id":"cc","name":"Civil Contract","hy":"Քաղաքացիական պայմանագիր","abbr":"CP","founded":2015,"dissolved":null,"spectrum":0,"geo":6,"position":"Centre","ideology":["Liberalism","Anti-corruption","Pro-European orientation"],"leaders":[{"name":"Nikol Pashinyan","wiki":"Nikol_Pashinyan","role":"Founder; Prime Minister since 2018","from":2015,"to":null}],"elections":[{"year":2018,"share":70.4,"seats":88},{"year":2021,"share":53.9,"seats":71},{"year":2026,"share":49.89,"seats":64,"verified":true}],"stances":{"eu":8,"russia":-1,"artsakh":-2,"peace":9,"market":4},"note":"Grew out of the Yelk alliance and the 2018 Velvet Revolution. Ran as My Step in 2018. Won a third term in June 2026 without the two-thirds majority needed for constitutional change.","events":["velvet-revolution-2018","musicians-arrest-2018"],"query":"pashinyan"},{"id":"bright","name":"Bright Armenia","hy":"Լուսավոր Հայաստան","abbr":"BAP","founded":2015,"dissolved":null,"spectrum":2,"geo":7,"position":"Centre-right","ideology":["Classical liberalism","Pro-European orientation"],"leaders":[{"name":"Edmon Marukyan","wiki":"Edmon_Marukyan","role":"Founder","from":2015,"to":null}],"elections":[{"year":2018,"share":6.4,"seats":18},{"year":2021,"share":1.2,"seats":0}],"stances":{"eu":9,"russia":1,"artsakh":5,"peace":5,"market":6},"note":"Part of the Yelk alliance with Civil Contract in 2017; went into opposition after 2018.","events":[],"query":"bright armenia"},{"id":"mystep","name":"My Step Alliance","hy":"Իմ քայլը","abbr":"MS","founded":2018,"dissolved":2021,"spectrum":0,"geo":5,"position":"Centre","ideology":["Big-tent revolutionary alliance"],"leaders":[{"name":"Nikol Pashinyan","wiki":"Nikol_Pashinyan","role":"Leader","from":2018,"to":2021}],"elections":[{"year":2018,"share":70.4,"seats":88}],"stances":{"eu":6,"russia":0,"artsakh":3,"peace":5,"market":3},"note":"The vehicle Civil Contract used for the snap election of December 2018, together with the Mission Party. Dissolved before 2021.","events":["velvet-revolution-2018"],"query":"my step"},{"id":"forrepublic","name":"For the Republic","hy":"Հանուն Հանրապետության","abbr":"FtR","founded":2019,"dissolved":null,"spectrum":1,"geo":7,"position":"Centre-right","ideology":["Liberalism","Pro-Western orientation"],"leaders":[{"name":"Arman Babajanyan","wiki":"Arman_Babajanyan","role":"Founder","from":2019,"to":null}],"elections":[],"stances":{"eu":9,"russia":3,"artsakh":0,"peace":8,"market":5},"note":"Founded by the journalist and former political prisoner Arman Babajanyan.","events":[],"query":"babajanyan"},{"id":"homeland","name":"Homeland Party","hy":"Հայրենիք","abbr":"HP","founded":2020,"dissolved":null,"spectrum":5,"geo":-4,"position":"Right","ideology":["National conservatism","Securitarianism"],"leaders":[{"name":"Artur Vanetsyan","wiki":"Artur_Vanetsyan","role":"Founder; former head of the National Security Service","from":2020,"to":null}],"elections":[],"stances":{"eu":-1,"russia":-5,"artsakh":9,"peace":-8,"market":4},"note":"Founded after the 2020 Artsakh war by the former security chief who broke with Pashinyan.","events":[],"query":"vanetsyan"},{"id":"armeniaalliance","name":"Armenia Alliance","hy":"Հայաստան դաշինք","abbr":"HD","founded":2021,"dissolved":null,"spectrum":6,"geo":-7,"position":"Right","ideology":["National conservatism","Alignment with Russia"],"leaders":[{"name":"Robert Kocharyan","wiki":"Robert_Kocharyan","role":"Leader; President 1998–2008","from":2021,"to":null}],"elections":[{"year":2021,"share":21.0,"seats":29},{"year":2026,"share":9.95,"seats":12,"verified":true}],"stances":{"eu":-5,"russia":-8,"artsakh":9,"peace":-9,"market":3},"note":"Kocharyan's bloc, formed with the ARF for the 2021 snap election called after the defeat in Artsakh.","events":[],"query":"kocharyan"},{"id":"ihavehonor","name":"I Have Honor Alliance","hy":"Պատիվ ունեմ","abbr":"PU","founded":2021,"dissolved":null,"spectrum":6,"geo":-5,"position":"Right","ideology":["National conservatism"],"leaders":[{"name":"Artur Vanetsyan","wiki":"Artur_Vanetsyan","role":"Co-leader","from":2021,"to":null},{"name":"Serzh Sargsyan","wiki":"Serzh_Sargsyan","role":"Co-leader","from":2021,"to":null}],"elections":[{"year":2021,"share":5.2,"seats":7}],"stances":{"eu":-2,"russia":-6,"artsakh":9,"peace":-8,"market":5},"note":"The Republican Party and the Homeland Party running together in 2021.","events":[],"query":"i have honor"},{"id":"strongarmenia","name":"Strong Armenia","hy":"Ուժեղ Հայաստան","abbr":"UH","founded":2025,"dissolved":null,"spectrum":6,"geo":-6,"position":"Right","ideology":["Conservatism","Traditional values","Closer ties with Russia"],"leaders":[{"name":"Samvel Karapetyan","wiki":"Samvel_Karapetyan_(businessman)","role":"Founder","from":2025,"to":null}],"elections":[{"year":2026,"share":23.34,"seats":29,"verified":true}],"stances":{"eu":-4,"russia":-7,"artsakh":7,"peace":-6,"market":6},"note":"The alliance around the businessman Samvel Karapetyan. Became the main opposition at the June 2026 election; rejected the result and alleged rigging.","events":[],"query":"karapetyan"}],"links":[["anm","ndu","split"],["anm","anc","successor"],["rpa","ihavehonor","alliance"],["homeland","ihavehonor","alliance"],["arf","armeniaalliance","alliance"],["cc","mystep","alliance"],["cc","bright","alliance"],["cc","republic","alliance"],["ppa","anc","alliance"],["republic","anc","alliance"],["cpa","anm","rival"],["rpa","pap","rival"],["cc","rpa","rival"],["cc","armeniaalliance","rival"],["cc","strongarmenia","rival"],["heritage","republic","alliance"],["pap","anc","alliance"],["rpa","rol","alliance"],["rpa","ppa","alliance"]]}
+{
+  "note": "Armenian political parties, 1887 to 2026, placed in a space whose axes are stated below. Election figures marked verified:true were checked against sources during the session that built this file (Wikipedia 2026 Armenian parliamentary election; Armenpress CEC seat allocation, 15 June 2026). The rest come from the model's background knowledge and SHOULD BE CHECKED before the map is published or cited. Spectrum and stance values are editorial placements, not measurements.",
+  "axes": {
+    "x": {
+      "label": "Left – Right",
+      "min": -10,
+      "max": 10,
+      "minLabel": "Left",
+      "maxLabel": "Right",
+      "label_hy": "Ձախ – Աջ",
+      "label_fa": "چپ – راست",
+      "minLabel_hy": "Ձախ",
+      "minLabel_fa": "چپ",
+      "maxLabel_hy": "Աջ",
+      "maxLabel_fa": "راست"
+    },
+    "z": {
+      "label": "Moscow – Brussels",
+      "min": -10,
+      "max": 10,
+      "minLabel": "Russia",
+      "maxLabel": "West",
+      "label_hy": "Մոսկվա – Բրյուսել",
+      "label_fa": "مسکو – بروکسل",
+      "minLabel_hy": "Ռուսաստան",
+      "minLabel_fa": "روسیه",
+      "maxLabel_hy": "Արևմուտք",
+      "maxLabel_fa": "غرب"
+    },
+    "y": {
+      "label": "Founded",
+      "min": 1887,
+      "max": 2026,
+      "label_hy": "Հիմնադրման տարի",
+      "label_fa": "سال تأسیس"
+    }
+  },
+  "issues": [
+    {
+      "id": "eu",
+      "label": "European integration",
+      "neg": "Against",
+      "pos": "For",
+      "label_hy": "Եվրոպական ինտեգրում",
+      "neg_hy": "Դեմ",
+      "pos_hy": "Կողմ",
+      "label_fa": "همگرایی اروپایی",
+      "neg_fa": "مخالف",
+      "pos_fa": "موافق"
+    },
+    {
+      "id": "russia",
+      "label": "Alignment with Russia",
+      "neg": "Closer to Moscow",
+      "pos": "Away from Moscow",
+      "label_hy": "Ռուսաստանի հետ դաշնակցում",
+      "neg_hy": "Ավելի մոտ Մոսկվային",
+      "pos_hy": "Հեռու Մոսկվայից",
+      "label_fa": "هم‌سویی با روسیه",
+      "neg_fa": "نزدیک‌تر به مسکو",
+      "pos_fa": "دورتر از مسکو"
+    },
+    {
+      "id": "artsakh",
+      "label": "Artsakh / Nagorno-Karabakh",
+      "neg": "Settlement first",
+      "pos": "Restoration first",
+      "label_hy": "Արցախ / Լեռնային Ղարաբաղ",
+      "neg_hy": "Նախ՝ կարգավորում",
+      "pos_hy": "Նախ՝ վերականգնում",
+      "label_fa": "آرتساخ / قره‌باغ کوهستانی",
+      "neg_fa": "نخست توافق",
+      "pos_fa": "نخست بازپس‌گیری"
+    },
+    {
+      "id": "peace",
+      "label": "Peace deal with Azerbaijan",
+      "neg": "Reject",
+      "pos": "Accept",
+      "label_hy": "Խաղաղության համաձայնագիր Ադրբեջանի հետ",
+      "neg_hy": "Մերժել",
+      "pos_hy": "Ընդունել",
+      "label_fa": "توافق صلح با آذربایجان",
+      "neg_fa": "رد",
+      "pos_fa": "پذیرش"
+    },
+    {
+      "id": "market",
+      "label": "Economy",
+      "neg": "State-led",
+      "pos": "Market-led",
+      "label_hy": "Տնտեսություն",
+      "neg_hy": "Պետականորեն ղեկավարվող",
+      "pos_hy": "Շուկայական",
+      "label_fa": "اقتصاد",
+      "neg_fa": "دولت‌محور",
+      "pos_fa": "بازارمحور"
+    }
+  ],
+  "elections": [
+    {
+      "year": 1995,
+      "kind": "parliamentary",
+      "note": "First post-independence National Assembly. ARF banned.",
+      "note_hy": "Անկախությունից հետո առաջին Ազգային ժողովը։ ՀՅԴ-ն արգելված էր։",
+      "note_fa": "نخستین مجلس ملی پس از استقلال. فدراسیون انقلابی ارمنی ممنوع بود."
+    },
+    {
+      "year": 1999,
+      "kind": "parliamentary",
+      "note": "Unity Bloc wins; the National Assembly shooting follows in October.",
+      "note_hy": "Հաղթում է «Միասնություն» դաշինքը, հոկտեմբերին հետևում է Ազգային ժողովի ահաբեկչությունը։",
+      "note_fa": "بلوک وحدت می‌برد؛ تیراندازی مجلس ملی در اکتبر در پی می‌آید."
+    },
+    {
+      "year": 2003,
+      "kind": "parliamentary",
+      "note": "Justice Alliance forms against the RPA.",
+      "note_hy": "«Արդարություն» դաշինքը ձևավորվում է ՀՀԿ-ի դեմ։",
+      "note_fa": "ائتلاف عدالت در برابر حزب جمهوری‌خواه شکل می‌گیرد."
+    },
+    {
+      "year": 2007,
+      "kind": "parliamentary",
+      "note": "RPA consolidates; Prosperous Armenia enters.",
+      "note_hy": "ՀՀԿ-ն ամրապնդվում է, մուտք է գործում Բարգավաճ Հայաստանը։",
+      "note_fa": "حزب جمهوری‌خواه تثبیت می‌شود؛ ارمنستان شکوفا وارد می‌شود."
+    },
+    {
+      "year": 2008,
+      "kind": "presidential",
+      "note": "Ter-Petrosyan's campaign ends in the Freedom Square crackdown of 1 March.",
+      "note_hy": "Տեր-Պետրոսյանի քարոզարշավն ավարտվում է մարտի 1-ի Ազատության հրապարակի ճնշմամբ։",
+      "note_fa": "کارزار تر‑پطروسیان با سرکوب ۱ مارس در میدان آزادی پایان می‌یابد."
+    },
+    {
+      "year": 2012,
+      "kind": "parliamentary",
+      "note": "RPA majority.",
+      "note_hy": "ՀՀԿ մեծամասնություն։",
+      "note_fa": "اکثریت حزب جمهوری‌خواه."
+    },
+    {
+      "year": 2013,
+      "kind": "presidential",
+      "note": "Hovannisian's Barevolution and hunger strike on Freedom Square.",
+      "note_hy": "Հովհաննիսյանի «Բարևոլյուցիան» և հացադուլը Ազատության հրապարակում։",
+      "note_fa": "«باروولوسیون» هوانسیان و اعتصاب غذا در میدان آزادی."
+    },
+    {
+      "year": 2017,
+      "kind": "parliamentary",
+      "note": "Last election before the Velvet Revolution.",
+      "note_hy": "Վերջին ընտրությունը Թավշյա հեղափոխությունից առաջ։",
+      "note_fa": "آخرین انتخابات پیش از انقلاب مخملی."
+    },
+    {
+      "year": 2018,
+      "kind": "parliamentary",
+      "note": "Snap election after the Velvet Revolution. My Step takes 70%.",
+      "note_hy": "Արտահերթ ընտրություններ Թավշյա հեղափոխությունից հետո։ «Իմ քայլը» ստանում է 70 տոկոս։",
+      "note_fa": "انتخابات زودهنگام پس از انقلاب مخملی. گام من ۷۰ درصد می‌گیرد."
+    },
+    {
+      "year": 2021,
+      "kind": "parliamentary",
+      "note": "Snap election after the 2020 Artsakh war.",
+      "note_hy": "Արտահերթ ընտրություններ 2020 թվականի Արցախյան պատերազմից հետո։",
+      "note_fa": "انتخابات زودهنگام پس از جنگ آرتساخ ۲۰۲۰."
+    },
+    {
+      "year": 2026,
+      "kind": "parliamentary",
+      "note": "7 June. Civil Contract 49.89%, Strong Armenia 23.34%, Armenia Alliance 9.95%.",
+      "verified": true,
+      "note_hy": "Հունիսի 7։ Քաղաքացիական պայմանագիր՝ 49,89%, Ուժեղ Հայաստան՝ 23,34%, Հայաստան դաշինք՝ 9,95%։",
+      "note_fa": "۷ ژوئن. پیمان مدنی ۴۹٫۸۹٪، ارمنستان نیرومند ۲۳٫۳۴٪، ائتلاف ارمنستان ۹٫۹۵٪."
+    }
+  ],
+  "parties": [
+    {
+      "id": "sdhp",
+      "name": "Social Democrat Hunchakian Party",
+      "hy": "Սոցիալ-դեմոկրատ հնչակյան կուսակցություն",
+      "abbr": "SDHP",
+      "founded": 1887,
+      "dissolved": null,
+      "spectrum": -6,
+      "geo": -1,
+      "position": "Left",
+      "ideology": [
+        "Democratic socialism",
+        "Armenian national liberation"
+      ],
+      "leaders": [],
+      "elections": [],
+      "stances": {
+        "eu": 0,
+        "russia": -2,
+        "artsakh": 6,
+        "peace": -2,
+        "market": -6
+      },
+      "note": "Founded in Geneva. One of the three historic diaspora parties that re-registered in Armenia after 1991.",
+      "events": [],
+      "query": "hunchak",
+      "name_hy": "Սոցիալ-դեմոկրատ հնչակյան կուսակցություն",
+      "name_fa": "حزب سوسیال‑دموکرات هنچاکیان",
+      "position_hy": "Ձախ",
+      "position_fa": "چپ",
+      "ideology_hy": [
+        "Ժողովրդավարական սոցիալիզմ",
+        "Հայ ազգային ազատագրություն"
+      ],
+      "ideology_fa": [
+        "سوسیالیسم دموکراتیک",
+        "رهایی‌بخشی ملی ارمنی"
+      ],
+      "note_hy": "Հիմնադրվել է Ժնևում։ Երեք պատմական սփյուռքյան կուսակցություններից մեկը, որոնք 1991 թվականից հետո վերագրանցվեցին Հայաստանում։",
+      "note_fa": "در ژنو تأسیس شد. یکی از سه حزب تاریخی دیاسپورا که پس از ۱۹۹۱ در ارمنستان دوباره ثبت شدند."
+    },
+    {
+      "id": "arf",
+      "name": "Armenian Revolutionary Federation (Dashnaktsutyun)",
+      "hy": "Հայ Յեղափոխական Դաշնակցություն",
+      "abbr": "ARF",
+      "founded": 1890,
+      "dissolved": null,
+      "spectrum": -5,
+      "geo": -4,
+      "position": "Left / national",
+      "ideology": [
+        "Democratic socialism",
+        "Armenian nationalism",
+        "Socialist International member"
+      ],
+      "leaders": [
+        {
+          "name": "Ishkhan Saghatelyan",
+          "wiki": "Ishkhan_Saghatelyan",
+          "role": "Supreme Body representative",
+          "from": 2021,
+          "to": null,
+          "name_hy": "Իշխան Սաղաթելյան",
+          "name_fa": "ایشخان ساقاتلیان",
+          "role_hy": "Գերագույն մարմնի ներկայացուցիչ",
+          "role_fa": "نمایندهٔ ارگان عالی"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2007,
+          "share": 13.2,
+          "seats": 16
+        },
+        {
+          "year": 2012,
+          "share": 5.7,
+          "seats": 5
+        },
+        {
+          "year": 2017,
+          "share": 6.6,
+          "seats": 7
+        }
+      ],
+      "stances": {
+        "eu": -3,
+        "russia": -5,
+        "artsakh": 9,
+        "peace": -8,
+        "market": -4
+      },
+      "note": "Banned by presidential decree in 1994 under Ter-Petrosyan; legalised again in 1998. Ran inside the Armenia Alliance from 2021.",
+      "events": [],
+      "query": "dashnak",
+      "name_hy": "Հայ Յեղափոխական Դաշնակցություն",
+      "name_fa": "فدراسیون انقلابی ارمنی (داشناکسوتیون)",
+      "position_hy": "Ձախ / ազգային",
+      "position_fa": "چپ / ملی",
+      "ideology_hy": [
+        "Ժողովրդավարական սոցիալիզմ",
+        "Հայ ազգայնականություն",
+        "Սոցիալիստական ինտերնացիոնալի անդամ"
+      ],
+      "ideology_fa": [
+        "سوسیالیسم دموکراتیک",
+        "ناسیونالیسم ارمنی",
+        "عضو انترناسیونال سوسیالیستی"
+      ],
+      "note_hy": "1994 թվականին Տեր-Պետրոսյանի օրոք արգելվել է նախագահական հրամանագրով, 1998-ին կրկին օրինականացվել։ 2021 թվականից մասնակցել է «Հայաստան» դաշինքի կազմում։",
+      "note_fa": "در ۱۹۹۴ با فرمان ریاست‌جمهوری در دورهٔ تر‑پطروسیان ممنوع شد؛ در ۱۹۹۸ دوباره قانونی شد. از ۲۰۲۱ درون ائتلاف ارمنستان شرکت کرد."
+    },
+    {
+      "id": "cpa",
+      "name": "Communist Party of Armenia",
+      "hy": "Հայաստանի կոմունիստական կուսակցություն",
+      "abbr": "CPA",
+      "founded": 1920,
+      "dissolved": null,
+      "spectrum": -9,
+      "geo": -9,
+      "position": "Far left",
+      "ideology": [
+        "Communism",
+        "Marxism–Leninism"
+      ],
+      "leaders": [],
+      "elections": [
+        {
+          "year": 1995,
+          "share": 12.1,
+          "seats": 7
+        },
+        {
+          "year": 1999,
+          "share": 12.1,
+          "seats": 11
+        }
+      ],
+      "stances": {
+        "eu": -8,
+        "russia": -9,
+        "artsakh": 6,
+        "peace": -4,
+        "market": -9
+      },
+      "note": "Ruling party of the Armenian SSR until 1990; reorganised as an opposition party after independence.",
+      "events": [],
+      "query": "communist",
+      "name_hy": "Հայաստանի կոմունիստական կուսակցություն",
+      "name_fa": "حزب کمونیست ارمنستان",
+      "position_hy": "Ծայրահեղ ձախ",
+      "position_fa": "چپ افراطی",
+      "ideology_hy": [
+        "Կոմունիզմ",
+        "Մարքսիզմ-լենինիզմ"
+      ],
+      "ideology_fa": [
+        "کمونیسم",
+        "مارکسیسم–لنینیسم"
+      ],
+      "note_hy": "Հայկական ԽՍՀ իշխող կուսակցությունը մինչև 1990 թվականը, անկախությունից հետո վերակազմավորվել է որպես ընդդիմադիր կուսակցություն։",
+      "note_fa": "حزب حاکم جمهوری شوروی ارمنستان تا ۱۹۹۰؛ پس از استقلال به‌عنوان حزبی اپوزیسیون بازسازمان یافت."
+    },
+    {
+      "id": "anm",
+      "name": "Armenian National Movement",
+      "hy": "Հայոց համազգային շարժում",
+      "abbr": "ANM",
+      "founded": 1989,
+      "dissolved": 2013,
+      "spectrum": -1,
+      "geo": 5,
+      "position": "Centre",
+      "ideology": [
+        "Liberal democracy",
+        "Armenian national self-determination"
+      ],
+      "leaders": [
+        {
+          "name": "Levon Ter-Petrosyan",
+          "wiki": "Levon_Ter-Petrosyan",
+          "role": "Leader; President 1991–1998",
+          "from": 1989,
+          "to": 1998,
+          "name_hy": "Լևոն Տեր-Պետրոսյան",
+          "name_fa": "لوون تر‑پطروسیان",
+          "role_hy": "Առաջնորդ, ՀՀ նախագահ 1991–1998",
+          "role_fa": "رهبر؛ رئیس‌جمهور ۱۹۹۱–۱۹۹۸"
+        }
+      ],
+      "elections": [
+        {
+          "year": 1995,
+          "share": 42.7,
+          "seats": 119
+        }
+      ],
+      "stances": {
+        "eu": 4,
+        "russia": 1,
+        "artsakh": 3,
+        "peace": 6,
+        "market": 4
+      },
+      "note": "Grew directly out of the Karabakh Committee of 1988. Governed until Ter-Petrosyan's resignation in 1998; later folded into the Armenian National Congress.",
+      "events": [
+        "tamanyan-master-plan-1924"
+      ],
+      "query": "ter-petrosyan",
+      "name_hy": "Հայոց համազգային շարժում",
+      "name_fa": "جنبش ملی ارمنی",
+      "position_hy": "Կենտրոն",
+      "position_fa": "میانه",
+      "ideology_hy": [
+        "Լիբերալ ժողովրդավարություն",
+        "Հայ ազգային ինքնորոշում"
+      ],
+      "ideology_fa": [
+        "دموکراسی لیبرال",
+        "خودتعیینی ملی ارمنی"
+      ],
+      "note_hy": "Անմիջականորեն աճել է 1988 թվականի Ղարաբաղ կոմիտեից։ Կառավարել է մինչև Տեր-Պետրոսյանի հրաժարականը՝ 1998 թվականին, հետագայում միաձուլվել Հայ ազգային կոնգրեսին։",
+      "note_fa": "مستقیماً از کمیتهٔ قره‌باغ ۱۹۸۸ برآمد. تا استعفای تر‑پطروسیان در ۱۹۹۸ حکومت کرد؛ بعدها در کنگرهٔ ملی ارمنی ادغام شد."
+    },
+    {
+      "id": "rpa",
+      "name": "Republican Party of Armenia",
+      "hy": "Հայաստանի Հանրապետական կուսակցություն",
+      "abbr": "RPA",
+      "founded": 1990,
+      "dissolved": null,
+      "spectrum": 5,
+      "geo": -3,
+      "position": "Right",
+      "ideology": [
+        "National conservatism",
+        "Neoliberal economics"
+      ],
+      "leaders": [
+        {
+          "name": "Serzh Sargsyan",
+          "wiki": "Serzh_Sargsyan",
+          "role": "Chairman; President 2008–2018",
+          "from": 2007,
+          "to": null,
+          "name_hy": "Սերժ Սարգսյան",
+          "name_fa": "سرژ سرکیسیان",
+          "role_hy": "Կուսակցության նախագահ, ՀՀ նախագահ 2008–2018",
+          "role_fa": "رئیس حزب؛ رئیس‌جمهور ۲۰۰۸–۲۰۱۸"
+        },
+        {
+          "name": "Vazgen Sargsyan",
+          "wiki": "Vazgen_Sargsyan",
+          "role": "Founder of the Yerkrapah wing",
+          "from": 1990,
+          "to": 1999,
+          "name_hy": "Վազգեն Սարգսյան",
+          "name_fa": "وازگن سرکیسیان",
+          "role_hy": "Երկրապահ թևի հիմնադիր",
+          "role_fa": "بنیان‌گذار جناح یرکراپا"
+        }
+      ],
+      "elections": [
+        {
+          "year": 1999,
+          "share": 41.2,
+          "seats": 62
+        },
+        {
+          "year": 2003,
+          "share": 23.5,
+          "seats": 33
+        },
+        {
+          "year": 2007,
+          "share": 33.9,
+          "seats": 65
+        },
+        {
+          "year": 2012,
+          "share": 44.0,
+          "seats": 69
+        },
+        {
+          "year": 2017,
+          "share": 49.2,
+          "seats": 58
+        },
+        {
+          "year": 2018,
+          "share": 4.7,
+          "seats": 0
+        }
+      ],
+      "stances": {
+        "eu": 0,
+        "russia": -6,
+        "artsakh": 8,
+        "peace": -6,
+        "market": 5
+      },
+      "note": "The party of government from 1999 to 2018. Fell below the threshold in the snap election that followed the Velvet Revolution.",
+      "events": [
+        "velvet-revolution-2018",
+        "opera-square-crackdown-2008",
+        "electric-yerevan-2015"
+      ],
+      "query": "republican party",
+      "name_hy": "Հայաստանի Հանրապետական կուսակցություն",
+      "name_fa": "حزب جمهوری‌خواه ارمنستان",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Ազգային պահպանողականություն",
+        "Նեոլիբերալ տնտեսագիտություն"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری ملی",
+        "اقتصاد نولیبرال"
+      ],
+      "note_hy": "Իշխող կուսակցությունը 1999-ից 2018 թվականը։ Թավշյա հեղափոխությանը հաջորդած արտահերթ ընտրություններում չհաղթահարեց շեմը։",
+      "note_fa": "حزب حاکم از ۱۹۹۹ تا ۲۰۱۸. در انتخابات زودهنگام پس از انقلاب مخملی زیر آستانه ماند."
+    },
+    {
+      "id": "ndu",
+      "name": "National Democratic Union",
+      "hy": "Ազգային ժողովրդավարական միություն",
+      "abbr": "NDU",
+      "founded": 1991,
+      "dissolved": null,
+      "spectrum": 2,
+      "geo": 2,
+      "position": "Centre-right",
+      "ideology": [
+        "National democracy",
+        "Conservatism"
+      ],
+      "leaders": [
+        {
+          "name": "Vazgen Manukyan",
+          "wiki": "Vazgen_Manukyan",
+          "role": "Founder",
+          "from": 1991,
+          "to": null,
+          "name_hy": "Վազգեն Մանուկյան",
+          "name_fa": "وازگن مانوکیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [
+        {
+          "year": 1995,
+          "share": 7.5,
+          "seats": 5
+        },
+        {
+          "year": 1999,
+          "share": 5.2,
+          "seats": 6
+        }
+      ],
+      "stances": {
+        "eu": 2,
+        "russia": -2,
+        "artsakh": 8,
+        "peace": -6,
+        "market": 3
+      },
+      "note": "Formed in 1991 by figures who broke with Ter-Petrosyan's ANM. Manukyan led the Homeland Salvation Movement against Pashinyan after the 2020 war.",
+      "events": [],
+      "query": "manukyan",
+      "name_hy": "Ազգային ժողովրդավարական միություն",
+      "name_fa": "اتحاد ملی دموکراتیک",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Ազգային ժողովրդավարություն",
+        "Պահպանողականություն"
+      ],
+      "ideology_fa": [
+        "دموکراسی ملی",
+        "محافظه‌کاری"
+      ],
+      "note_hy": "Ստեղծվել է 1991 թվականին այն գործիչների կողմից, ովքեր հեռացան Տեր-Պետրոսյանի ՀՀՇ-ից։ Մանուկյանը 2020 թվականի պատերազմից հետո ղեկավարեց Հայրենիքի փրկության շարժումը Փաշինյանի դեմ։",
+      "note_fa": "در ۱۹۹۱ به‌دست چهره‌هایی تأسیس شد که از جنبش ملی ارمنی تر‑پطروسیان جدا شدند. مانوکیان پس از جنگ ۲۰۲۰ جنبش نجات میهن را علیه پاشینیان رهبری کرد."
+    },
+    {
+      "id": "ppa",
+      "name": "People's Party of Armenia",
+      "hy": "Հայաստանի ժողովրդական կուսակցություն",
+      "abbr": "PPA",
+      "founded": 1998,
+      "dissolved": null,
+      "spectrum": -4,
+      "geo": -3,
+      "position": "Centre-left",
+      "ideology": [
+        "Social democracy"
+      ],
+      "leaders": [
+        {
+          "name": "Karen Demirchyan",
+          "wiki": "Karen_Demirchyan",
+          "role": "Founder",
+          "from": 1998,
+          "to": 1999,
+          "name_hy": "Կարեն Դեմիրճյան",
+          "name_fa": "کارن دمیرچیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        },
+        {
+          "name": "Stepan Demirchyan",
+          "wiki": "Stepan_Demirchyan",
+          "role": "Chairman",
+          "from": 1999,
+          "to": null,
+          "name_hy": "Ստեփան Դեմիրճյան",
+          "name_fa": "استپان دمیرچیان",
+          "role_hy": "Կուսակցության նախագահ",
+          "role_fa": "رئیس حزب"
+        }
+      ],
+      "elections": [
+        {
+          "year": 1999,
+          "share": 41.2,
+          "seats": 0
+        },
+        {
+          "year": 2003,
+          "share": 14.1,
+          "seats": 14
+        }
+      ],
+      "stances": {
+        "eu": 1,
+        "russia": -4,
+        "artsakh": 7,
+        "peace": -3,
+        "market": -4
+      },
+      "note": "Founded by the former Soviet Armenian leader Karen Demirchyan, who was assassinated in the National Assembly shooting of 27 October 1999. His son Stepan inherited the party.",
+      "events": [],
+      "query": "demirchyan",
+      "name_hy": "Հայաստանի ժողովրդական կուսակցություն",
+      "name_fa": "حزب مردم ارمنستان",
+      "position_hy": "Ձախ կենտրոն",
+      "position_fa": "میانه‑چپ",
+      "ideology_hy": [
+        "Սոցիալ-դեմոկրատիա"
+      ],
+      "ideology_fa": [
+        "سوسیال‌دموکراسی"
+      ],
+      "note_hy": "Հիմնադրվել է Խորհրդային Հայաստանի նախկին ղեկավար Կարեն Դեմիրճյանի կողմից, ով սպանվեց 1999 թվականի հոկտեմբերի 27-ի խորհրդարանական ահաբեկչության ժամանակ։ Կուսակցությունն անցավ որդուն՝ Ստեփանին։",
+      "note_fa": "به‌دست کارن دمیرچیان، رهبر پیشین ارمنستان شوروی، تأسیس شد؛ او در تیراندازی مجلس ملی در ۲۷ اکتبر ۱۹۹۹ ترور شد. پسرش استپان حزب را به ارث برد."
+    },
+    {
+      "id": "rol",
+      "name": "Rule of Law (Orinats Yerkir)",
+      "hy": "Օրինաց երկիր",
+      "abbr": "RoL",
+      "founded": 1998,
+      "dissolved": null,
+      "spectrum": 3,
+      "geo": 1,
+      "position": "Centre-right",
+      "ideology": [
+        "Liberal conservatism",
+        "Rule of law"
+      ],
+      "leaders": [
+        {
+          "name": "Artur Baghdasaryan",
+          "wiki": "Artur_Baghdasaryan",
+          "role": "Founder",
+          "from": 1998,
+          "to": null,
+          "name_hy": "Արթուր Բաղդասարյան",
+          "name_fa": "آرتور باغداساریان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2003,
+          "share": 12.6,
+          "seats": 19
+        },
+        {
+          "year": 2007,
+          "share": 7.0,
+          "seats": 9
+        },
+        {
+          "year": 2012,
+          "share": 5.5,
+          "seats": 6
+        }
+      ],
+      "stances": {
+        "eu": 3,
+        "russia": -2,
+        "artsakh": 6,
+        "peace": -3,
+        "market": 4
+      },
+      "note": "A coalition partner through the Kocharyan and Sargsyan years.",
+      "events": [],
+      "query": "orinats",
+      "name_hy": "Օրինաց երկիր",
+      "name_fa": "حاکمیت قانون (اوریناتس یرکیر)",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Լիբերալ պահպանողականություն",
+        "Օրենքի գերակայություն"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری لیبرال",
+        "حاکمیت قانون"
+      ],
+      "note_hy": "Կոալիցիոն գործընկեր Քոչարյանի և Սարգսյանի տարիներին։",
+      "note_fa": "شریک ائتلافی در سال‌های کوچاریان و سرکیسیان."
+    },
+    {
+      "id": "republic",
+      "name": "Republic Party",
+      "hy": "Հանրապետություն",
+      "abbr": "Rep",
+      "founded": 2001,
+      "dissolved": null,
+      "spectrum": 1,
+      "geo": 5,
+      "position": "Centre-right",
+      "ideology": [
+        "Liberalism",
+        "Pro-Western orientation"
+      ],
+      "leaders": [
+        {
+          "name": "Aram Sargsyan",
+          "role": "Founder; PM 1999–2000",
+          "from": 2001,
+          "to": null,
+          "name_hy": "Արամ Սարգսյան",
+          "name_fa": "آرام سرکیسیان",
+          "role_hy": "Հիմնադիր, վարչապետ 1999–2000",
+          "role_fa": "بنیان‌گذار؛ نخست‌وزیر ۱۹۹۹–۲۰۰۰"
+        }
+      ],
+      "elections": [],
+      "stances": {
+        "eu": 6,
+        "russia": 2,
+        "artsakh": 5,
+        "peace": 3,
+        "market": 4
+      },
+      "note": "Founded by Aram Z. Sargsyan, brother of the assassinated prime minister Vazgen Sargsyan. Not to be confused with the Republican Party. Part of the Yelk alliance in 2017.",
+      "events": [],
+      "query": "republic party",
+      "name_hy": "Հանրապետություն",
+      "name_fa": "حزب جمهوری",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Լիբերալիզմ",
+        "Արևմտամետ կողմնորոշում"
+      ],
+      "ideology_fa": [
+        "لیبرالیسم",
+        "گرایش غرب‌گرا"
+      ],
+      "note_hy": "Հիմնադրվել է Արամ Զ. Սարգսյանի կողմից՝ սպանված վարչապետ Վազգեն Սարգսյանի եղբոր։ Չշփոթել Հանրապետական կուսակցության հետ։ 2017 թվականին «Ելք» դաշինքի մաս։",
+      "note_fa": "به‌دست آرام ز. سرکیسیان، برادر وازگن سرکیسیانِ نخست‌وزیرِ ترورشده، تأسیس شد. با حزب جمهوری‌خواه اشتباه نشود. در ۲۰۱۷ بخشی از ائتلاف یلک بود."
+    },
+    {
+      "id": "heritage",
+      "name": "Heritage",
+      "hy": "Ժառանգություն",
+      "abbr": "Her",
+      "founded": 2002,
+      "dissolved": null,
+      "spectrum": 1,
+      "geo": 6,
+      "position": "Centre-right",
+      "ideology": [
+        "Liberal conservatism",
+        "Pro-European orientation"
+      ],
+      "leaders": [
+        {
+          "name": "Raffi Hovannisian",
+          "wiki": "Raffi_Hovannisian",
+          "role": "Founder; first Foreign Minister",
+          "from": 2002,
+          "to": null,
+          "name_hy": "Րաֆֆի Հովհաննիսյան",
+          "name_fa": "رافی هوانسیان",
+          "role_hy": "Հիմնադիր, առաջին արտգործնախարար",
+          "role_fa": "بنیان‌گذار؛ نخستین وزیر امور خارجه"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2007,
+          "share": 5.8,
+          "seats": 7
+        },
+        {
+          "year": 2012,
+          "share": 5.8,
+          "seats": 5
+        },
+        {
+          "year": 2017,
+          "share": 2.1,
+          "seats": 0
+        }
+      ],
+      "stances": {
+        "eu": 8,
+        "russia": 3,
+        "artsakh": 8,
+        "peace": -2,
+        "market": 4
+      },
+      "note": "Hovannisian's 2013 hunger strike on Freedom Square after the presidential election is one of the entries on this map.",
+      "events": [
+        "hovannisian-hunger-strike-2013"
+      ],
+      "query": "hovannisian",
+      "name_hy": "Ժառանգություն",
+      "name_fa": "میراث",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Լիբերալ պահպանողականություն",
+        "Եվրոպամետ կողմնորոշում"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری لیبرال",
+        "گرایش اروپاگرا"
+      ],
+      "note_hy": "Հովհաննիսյանի՝ 2013 թվականի նախագահական ընտրություններից հետո Ազատության հրապարակում արած հացադուլը այս քարտեզի գրառումներից մեկն է։",
+      "note_fa": "اعتصاب غذای هوانسیان در میدان آزادی پس از انتخابات ریاست‌جمهوری ۲۰۱۳ یکی از مدخل‌های همین نقشه است."
+    },
+    {
+      "id": "pap",
+      "name": "Prosperous Armenia",
+      "hy": "Բարգավաճ Հայաստան",
+      "abbr": "PAP",
+      "founded": 2004,
+      "dissolved": null,
+      "spectrum": 5,
+      "geo": -5,
+      "position": "Right",
+      "ideology": [
+        "National conservatism",
+        "Right-wing populism"
+      ],
+      "leaders": [
+        {
+          "name": "Gagik Tsarukyan",
+          "wiki": "Gagik_Tsarukyan",
+          "role": "Founder",
+          "from": 2004,
+          "to": null,
+          "name_hy": "Գագիկ Ծառուկյան",
+          "name_fa": "گاگیک تساروکیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2007,
+          "share": 15.1,
+          "seats": 25
+        },
+        {
+          "year": 2012,
+          "share": 30.2,
+          "seats": 37
+        },
+        {
+          "year": 2017,
+          "share": 27.4,
+          "seats": 31
+        },
+        {
+          "year": 2018,
+          "share": 8.3,
+          "seats": 26
+        },
+        {
+          "year": 2021,
+          "share": 3.9,
+          "seats": 0
+        },
+        {
+          "year": 2026,
+          "share": 3.9,
+          "seats": 0
+        }
+      ],
+      "stances": {
+        "eu": -2,
+        "russia": -6,
+        "artsakh": 7,
+        "peace": -4,
+        "market": 5
+      },
+      "note": "Founded by the businessman Gagik Tsarukyan, widely understood as a counterweight to the Republican Party under Kocharyan.",
+      "events": [],
+      "query": "tsarukyan",
+      "name_hy": "Բարգավաճ Հայաստան",
+      "name_fa": "ارمنستان شکوفا",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Ազգային պահպանողականություն",
+        "Աջ պոպուլիզմ"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری ملی",
+        "پوپولیسم راست"
+      ],
+      "note_hy": "Հիմնադրվել է գործարար Գագիկ Ծառուկյանի կողմից, լայնորեն ընկալվում էր որպես հակակշիռ Քոչարյանի օրոք Հանրապետական կուսակցությանը։",
+      "note_fa": "به‌دست گاگیک تساروکیانِ بازرگان تأسیس شد و به‌گستردگی وزنه‌ای در برابر حزب جمهوری‌خواه در دورهٔ کوچاریان فهمیده می‌شد."
+    },
+    {
+      "id": "anc",
+      "name": "Armenian National Congress",
+      "hy": "Հայ ազգային կոնգրես",
+      "abbr": "ANC",
+      "founded": 2008,
+      "dissolved": null,
+      "spectrum": 0,
+      "geo": 2,
+      "position": "Centre",
+      "ideology": [
+        "Liberalism",
+        "Rule of law"
+      ],
+      "leaders": [
+        {
+          "name": "Levon Ter-Petrosyan",
+          "wiki": "Levon_Ter-Petrosyan",
+          "role": "Leader",
+          "from": 2008,
+          "to": null,
+          "name_hy": "Լևոն Տեր-Պետրոսյան",
+          "name_fa": "لوون تر‑پطروسیان",
+          "role_hy": "Առաջնորդ",
+          "role_fa": "رهبر"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2012,
+          "share": 7.1,
+          "seats": 7
+        },
+        {
+          "year": 2017,
+          "share": 1.7,
+          "seats": 0
+        }
+      ],
+      "stances": {
+        "eu": 4,
+        "russia": 0,
+        "artsakh": 2,
+        "peace": 8,
+        "market": 3
+      },
+      "note": "Formed out of the movement around Ter-Petrosyan's 2008 presidential campaign — the campaign whose Freedom Square sit-in was broken up on 1 March 2008.",
+      "events": [
+        "opera-square-crackdown-2008",
+        "opera-square-closure-2008",
+        "political-prisoners-northern-avenue-2008"
+      ],
+      "query": "congress",
+      "name_hy": "Հայ ազգային կոնգրես",
+      "name_fa": "کنگرهٔ ملی ارمنی",
+      "position_hy": "Կենտրոն",
+      "position_fa": "میانه",
+      "ideology_hy": [
+        "Լիբերալիզմ",
+        "Օրենքի գերակայություն"
+      ],
+      "ideology_fa": [
+        "لیبرالیسم",
+        "حاکمیت قانون"
+      ],
+      "note_hy": "Ձևավորվել է Տեր-Պետրոսյանի 2008 թվականի նախագահական քարոզարշավի շուրջ շարժումից․ այն քարոզարշավի, որի նստացույցը Ազատության հրապարակում ցրվեց 2008 թվականի մարտի 1-ին։",
+      "note_fa": "از جنبش گرد کارزار ریاست‌جمهوری ۲۰۰۸ تر‑پطروسیان شکل گرفت — همان کارزاری که تحصنش در میدان آزادی در ۱ مارس ۲۰۰۸ درهم شکسته شد."
+    },
+    {
+      "id": "cc",
+      "name": "Civil Contract",
+      "hy": "Քաղաքացիական պայմանագիր",
+      "abbr": "CP",
+      "founded": 2015,
+      "dissolved": null,
+      "spectrum": 0,
+      "geo": 6,
+      "position": "Centre",
+      "ideology": [
+        "Liberalism",
+        "Anti-corruption",
+        "Pro-European orientation"
+      ],
+      "leaders": [
+        {
+          "name": "Nikol Pashinyan",
+          "wiki": "Nikol_Pashinyan",
+          "role": "Founder; Prime Minister since 2018",
+          "from": 2015,
+          "to": null,
+          "name_hy": "Նիկոլ Փաշինյան",
+          "name_fa": "نیکول پاشینیان",
+          "role_hy": "Հիմնադիր, վարչապետ 2018-ից",
+          "role_fa": "بنیان‌گذار؛ نخست‌وزیر از ۲۰۱۸"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2018,
+          "share": 70.4,
+          "seats": 88
+        },
+        {
+          "year": 2021,
+          "share": 53.9,
+          "seats": 71
+        },
+        {
+          "year": 2026,
+          "share": 49.89,
+          "seats": 64,
+          "verified": true
+        }
+      ],
+      "stances": {
+        "eu": 8,
+        "russia": -1,
+        "artsakh": -2,
+        "peace": 9,
+        "market": 4
+      },
+      "note": "Grew out of the Yelk alliance and the 2018 Velvet Revolution. Ran as My Step in 2018. Won a third term in June 2026 without the two-thirds majority needed for constitutional change.",
+      "events": [
+        "velvet-revolution-2018",
+        "musicians-arrest-2018"
+      ],
+      "query": "pashinyan",
+      "name_hy": "Քաղաքացիական պայմանագիր",
+      "name_fa": "پیمان مدنی",
+      "position_hy": "Կենտրոն",
+      "position_fa": "میانه",
+      "ideology_hy": [
+        "Լիբերալիզմ",
+        "Հակակոռուպցիոն",
+        "Եվրոպամետ կողմնորոշում"
+      ],
+      "ideology_fa": [
+        "لیبرالیسم",
+        "ضدفساد",
+        "گرایش اروپاگرا"
+      ],
+      "note_hy": "Աճել է «Ելք» դաշինքից և 2018 թվականի Թավշյա հեղափոխությունից։ 2018-ին մասնակցել է որպես «Իմ քայլը»։ 2026 թվականի հունիսին նվաճեց երրորդ ժամկետը՝ առանց սահմանադրական փոփոխության համար անհրաժեշտ երկու երրորդի։",
+      "note_fa": "از ائتلاف یلک و انقلاب مخملی ۲۰۱۸ برآمد. در ۲۰۱۸ با نام گام من شرکت کرد. در ژوئن ۲۰۲۶ دورهٔ سوم را برد، بی‌آنکه دوسوم لازم برای تغییر قانون اساسی را داشته باشد."
+    },
+    {
+      "id": "bright",
+      "name": "Bright Armenia",
+      "hy": "Լուսավոր Հայաստան",
+      "abbr": "BAP",
+      "founded": 2015,
+      "dissolved": null,
+      "spectrum": 2,
+      "geo": 7,
+      "position": "Centre-right",
+      "ideology": [
+        "Classical liberalism",
+        "Pro-European orientation"
+      ],
+      "leaders": [
+        {
+          "name": "Edmon Marukyan",
+          "wiki": "Edmon_Marukyan",
+          "role": "Founder",
+          "from": 2015,
+          "to": null,
+          "name_hy": "Էդմոն Մարուքյան",
+          "name_fa": "ادمون ماروکیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2018,
+          "share": 6.4,
+          "seats": 18
+        },
+        {
+          "year": 2021,
+          "share": 1.2,
+          "seats": 0
+        }
+      ],
+      "stances": {
+        "eu": 9,
+        "russia": 1,
+        "artsakh": 5,
+        "peace": 5,
+        "market": 6
+      },
+      "note": "Part of the Yelk alliance with Civil Contract in 2017; went into opposition after 2018.",
+      "events": [],
+      "query": "bright armenia",
+      "name_hy": "Լուսավոր Հայաստան",
+      "name_fa": "ارمنستان روشن",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Դասական լիբերալիզմ",
+        "Եվրոպամետ կողմնորոշում"
+      ],
+      "ideology_fa": [
+        "لیبرالیسم کلاسیک",
+        "گرایش اروپاگرا"
+      ],
+      "note_hy": "2017 թվականին «Ելք» դաշինքի մաս՝ Քաղաքացիական պայմանագրի հետ, 2018-ից հետո անցավ ընդդիմություն։",
+      "note_fa": "در ۲۰۱۷ همراه پیمان مدنی بخشی از ائتلاف یلک بود؛ پس از ۲۰۱۸ به اپوزیسیون رفت."
+    },
+    {
+      "id": "mystep",
+      "name": "My Step Alliance",
+      "hy": "Իմ քայլը",
+      "abbr": "MS",
+      "founded": 2018,
+      "dissolved": 2021,
+      "spectrum": 0,
+      "geo": 5,
+      "position": "Centre",
+      "ideology": [
+        "Big-tent revolutionary alliance"
+      ],
+      "leaders": [
+        {
+          "name": "Nikol Pashinyan",
+          "wiki": "Nikol_Pashinyan",
+          "role": "Leader",
+          "from": 2018,
+          "to": 2021,
+          "name_hy": "Նիկոլ Փաշինյան",
+          "name_fa": "نیکول پاشینیان",
+          "role_hy": "Առաջնորդ",
+          "role_fa": "رهبر"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2018,
+          "share": 70.4,
+          "seats": 88
+        }
+      ],
+      "stances": {
+        "eu": 6,
+        "russia": 0,
+        "artsakh": 3,
+        "peace": 5,
+        "market": 3
+      },
+      "note": "The vehicle Civil Contract used for the snap election of December 2018, together with the Mission Party. Dissolved before 2021.",
+      "events": [
+        "velvet-revolution-2018"
+      ],
+      "query": "my step",
+      "name_hy": "Իմ քայլը",
+      "name_fa": "ائتلاف گام من",
+      "position_hy": "Կենտրոն",
+      "position_fa": "میانه",
+      "ideology_hy": [
+        "Լայն ընդգրկման հեղափոխական դաշինք"
+      ],
+      "ideology_fa": [
+        "ائتلاف انقلابی فراگیر"
+      ],
+      "note_hy": "Այն միջոցը, որով Քաղաքացիական պայմանագիրը մասնակցեց 2018 թվականի դեկտեմբերի արտահերթ ընտրություններին՝ «Առաքելություն» կուսակցության հետ միասին։ Լուծարվել է մինչև 2021 թվականը։",
+      "note_fa": "ابزاری که پیمان مدنی برای انتخابات زودهنگام دسامبر ۲۰۱۸، همراه با حزب رسالت، به کار برد. پیش از ۲۰۲۱ منحل شد."
+    },
+    {
+      "id": "forrepublic",
+      "name": "For the Republic",
+      "hy": "Հանուն Հանրապետության",
+      "abbr": "FtR",
+      "founded": 2019,
+      "dissolved": null,
+      "spectrum": 1,
+      "geo": 7,
+      "position": "Centre-right",
+      "ideology": [
+        "Liberalism",
+        "Pro-Western orientation"
+      ],
+      "leaders": [
+        {
+          "name": "Arman Babajanyan",
+          "wiki": "Arman_Babajanyan",
+          "role": "Founder",
+          "from": 2019,
+          "to": null,
+          "name_hy": "Արման Բաբաջանյան",
+          "name_fa": "آرمان باباجانیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [],
+      "stances": {
+        "eu": 9,
+        "russia": 3,
+        "artsakh": 0,
+        "peace": 8,
+        "market": 5
+      },
+      "note": "Founded by the journalist and former political prisoner Arman Babajanyan.",
+      "events": [],
+      "query": "babajanyan",
+      "name_hy": "Հանուն Հանրապետության",
+      "name_fa": "برای جمهوری",
+      "position_hy": "Աջ կենտրոն",
+      "position_fa": "میانه‑راست",
+      "ideology_hy": [
+        "Լիբերալիզմ",
+        "Արևմտամետ կողմնորոշում"
+      ],
+      "ideology_fa": [
+        "لیبرالیسم",
+        "گرایش غرب‌گرا"
+      ],
+      "note_hy": "Հիմնադրվել է լրագրող և նախկին քաղբանտարկյալ Արման Բաբաջանյանի կողմից։",
+      "note_fa": "به‌دست آرمان باباجانیان، روزنامه‌نگار و زندانی سیاسی پیشین، تأسیس شد."
+    },
+    {
+      "id": "homeland",
+      "name": "Homeland Party",
+      "hy": "Հայրենիք",
+      "abbr": "HP",
+      "founded": 2020,
+      "dissolved": null,
+      "spectrum": 5,
+      "geo": -4,
+      "position": "Right",
+      "ideology": [
+        "National conservatism",
+        "Securitarianism"
+      ],
+      "leaders": [
+        {
+          "name": "Artur Vanetsyan",
+          "wiki": "Artur_Vanetsyan",
+          "role": "Founder; former head of the National Security Service",
+          "from": 2020,
+          "to": null,
+          "name_hy": "Արթուր Վանեցյան",
+          "name_fa": "آرتور وانتسیان",
+          "role_hy": "Հիմնադիր, ԱԱԾ նախկին տնօրեն",
+          "role_fa": "بنیان‌گذار؛ رئیس پیشین سرویس امنیت ملی"
+        }
+      ],
+      "elections": [],
+      "stances": {
+        "eu": -1,
+        "russia": -5,
+        "artsakh": 9,
+        "peace": -8,
+        "market": 4
+      },
+      "note": "Founded after the 2020 Artsakh war by the former security chief who broke with Pashinyan.",
+      "events": [],
+      "query": "vanetsyan",
+      "name_hy": "Հայրենիք",
+      "name_fa": "حزب میهن",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Ազգային պահպանողականություն",
+        "Անվտանգայնություն"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری ملی",
+        "امنیت‌گرایی"
+      ],
+      "note_hy": "Հիմնադրվել է 2020 թվականի Արցախյան պատերազմից հետո անվտանգության նախկին ղեկավարի կողմից, ով հեռացավ Փաշինյանից։",
+      "note_fa": "پس از جنگ آرتساخ ۲۰۲۰ به‌دست رئیس پیشین امنیت که از پاشینیان جدا شد تأسیس گردید."
+    },
+    {
+      "id": "armeniaalliance",
+      "name": "Armenia Alliance",
+      "hy": "Հայաստան դաշինք",
+      "abbr": "HD",
+      "founded": 2021,
+      "dissolved": null,
+      "spectrum": 6,
+      "geo": -7,
+      "position": "Right",
+      "ideology": [
+        "National conservatism",
+        "Alignment with Russia"
+      ],
+      "leaders": [
+        {
+          "name": "Robert Kocharyan",
+          "wiki": "Robert_Kocharyan",
+          "role": "Leader; President 1998–2008",
+          "from": 2021,
+          "to": null,
+          "name_hy": "Ռոբերտ Քոչարյան",
+          "name_fa": "روبرت کوچاریان",
+          "role_hy": "Առաջնորդ, ՀՀ նախագահ 1998–2008",
+          "role_fa": "رهبر؛ رئیس‌جمهور ۱۹۹۸–۲۰۰۸"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2021,
+          "share": 21.0,
+          "seats": 29
+        },
+        {
+          "year": 2026,
+          "share": 9.95,
+          "seats": 12,
+          "verified": true
+        }
+      ],
+      "stances": {
+        "eu": -5,
+        "russia": -8,
+        "artsakh": 9,
+        "peace": -9,
+        "market": 3
+      },
+      "note": "Kocharyan's bloc, formed with the ARF for the 2021 snap election called after the defeat in Artsakh.",
+      "events": [],
+      "query": "kocharyan",
+      "name_hy": "Հայաստան դաշինք",
+      "name_fa": "ائتلاف ارمنستان",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Ազգային պահպանողականություն",
+        "Ռուսաստանի հետ դաշնակցում"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری ملی",
+        "هم‌سویی با روسیه"
+      ],
+      "note_hy": "Քոչարյանի դաշինքը, ձևավորված ՀՅԴ-ի հետ՝ Արցախում պարտությունից հետո հրավիրված 2021 թվականի արտահերթ ընտրությունների համար։",
+      "note_fa": "بلوک کوچاریان، تشکیل‌شده با فدراسیون انقلابی ارمنی برای انتخابات زودهنگام ۲۰۲۱ که پس از شکست در آرتساخ فراخوانده شد."
+    },
+    {
+      "id": "ihavehonor",
+      "name": "I Have Honor Alliance",
+      "hy": "Պատիվ ունեմ",
+      "abbr": "PU",
+      "founded": 2021,
+      "dissolved": null,
+      "spectrum": 6,
+      "geo": -5,
+      "position": "Right",
+      "ideology": [
+        "National conservatism"
+      ],
+      "leaders": [
+        {
+          "name": "Artur Vanetsyan",
+          "wiki": "Artur_Vanetsyan",
+          "role": "Co-leader",
+          "from": 2021,
+          "to": null,
+          "name_hy": "Արթուր Վանեցյան",
+          "name_fa": "آرتور وانتسیان",
+          "role_hy": "Համանախագահ",
+          "role_fa": "هم‌رهبر"
+        },
+        {
+          "name": "Serzh Sargsyan",
+          "wiki": "Serzh_Sargsyan",
+          "role": "Co-leader",
+          "from": 2021,
+          "to": null,
+          "name_hy": "Սերժ Սարգսյան",
+          "name_fa": "سرژ سرکیسیان",
+          "role_hy": "Համանախագահ",
+          "role_fa": "هم‌رهبر"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2021,
+          "share": 5.2,
+          "seats": 7
+        }
+      ],
+      "stances": {
+        "eu": -2,
+        "russia": -6,
+        "artsakh": 9,
+        "peace": -8,
+        "market": 5
+      },
+      "note": "The Republican Party and the Homeland Party running together in 2021.",
+      "events": [],
+      "query": "i have honor",
+      "name_hy": "Պատիվ ունեմ",
+      "name_fa": "ائتلاف شرف دارم",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Ազգային պահպանողականություն"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری ملی"
+      ],
+      "note_hy": "Հանրապետական կուսակցությունը և Հայրենիք կուսակցությունը՝ միասին 2021 թվականին։",
+      "note_fa": "حزب جمهوری‌خواه و حزب میهن که در ۲۰۲۱ با هم شرکت کردند."
+    },
+    {
+      "id": "strongarmenia",
+      "name": "Strong Armenia",
+      "hy": "Ուժեղ Հայաստան",
+      "abbr": "UH",
+      "founded": 2025,
+      "dissolved": null,
+      "spectrum": 6,
+      "geo": -6,
+      "position": "Right",
+      "ideology": [
+        "Conservatism",
+        "Traditional values",
+        "Closer ties with Russia"
+      ],
+      "leaders": [
+        {
+          "name": "Samvel Karapetyan",
+          "wiki": "Samvel_Karapetyan_(businessman)",
+          "role": "Founder",
+          "from": 2025,
+          "to": null,
+          "name_hy": "Սամվել Կարապետյան",
+          "name_fa": "سامول کاراپتیان",
+          "role_hy": "Հիմնադիր",
+          "role_fa": "بنیان‌گذار"
+        }
+      ],
+      "elections": [
+        {
+          "year": 2026,
+          "share": 23.34,
+          "seats": 29,
+          "verified": true
+        }
+      ],
+      "stances": {
+        "eu": -4,
+        "russia": -7,
+        "artsakh": 7,
+        "peace": -6,
+        "market": 6
+      },
+      "note": "The alliance around the businessman Samvel Karapetyan. Became the main opposition at the June 2026 election; rejected the result and alleged rigging.",
+      "events": [],
+      "query": "karapetyan",
+      "name_hy": "Ուժեղ Հայաստան",
+      "name_fa": "ارمنستان نیرومند",
+      "position_hy": "Աջ",
+      "position_fa": "راست",
+      "ideology_hy": [
+        "Պահպանողականություն",
+        "Ավանդական արժեքներ",
+        "Ռուսաստանի հետ ավելի սերտ կապեր"
+      ],
+      "ideology_fa": [
+        "محافظه‌کاری",
+        "ارزش‌های سنتی",
+        "پیوند نزدیک‌تر با روسیه"
+      ],
+      "note_hy": "Գործարար Սամվել Կարապետյանի շուրջ ձևավորված դաշինքը։ 2026 թվականի հունիսի ընտրություններին դարձավ գլխավոր ընդդիմություն, մերժեց արդյունքը և կեղծիք վկայաբերեց։",
+      "note_fa": "ائتلاف گرد ساموِل کاراپتیانِ بازرگان. در انتخابات ژوئن ۲۰۲۶ به اپوزیسیون اصلی بدل شد؛ نتیجه را رد کرد و مدعی تقلب شد."
+    }
+  ],
+  "links": [
+    [
+      "anm",
+      "ndu",
+      "split"
+    ],
+    [
+      "anm",
+      "anc",
+      "successor"
+    ],
+    [
+      "rpa",
+      "ihavehonor",
+      "alliance"
+    ],
+    [
+      "homeland",
+      "ihavehonor",
+      "alliance"
+    ],
+    [
+      "arf",
+      "armeniaalliance",
+      "alliance"
+    ],
+    [
+      "cc",
+      "mystep",
+      "alliance"
+    ],
+    [
+      "cc",
+      "bright",
+      "alliance"
+    ],
+    [
+      "cc",
+      "republic",
+      "alliance"
+    ],
+    [
+      "ppa",
+      "anc",
+      "alliance"
+    ],
+    [
+      "republic",
+      "anc",
+      "alliance"
+    ],
+    [
+      "cpa",
+      "anm",
+      "rival"
+    ],
+    [
+      "rpa",
+      "pap",
+      "rival"
+    ],
+    [
+      "cc",
+      "rpa",
+      "rival"
+    ],
+    [
+      "cc",
+      "armeniaalliance",
+      "rival"
+    ],
+    [
+      "cc",
+      "strongarmenia",
+      "rival"
+    ],
+    [
+      "heritage",
+      "republic",
+      "alliance"
+    ],
+    [
+      "pap",
+      "anc",
+      "alliance"
+    ],
+    [
+      "rpa",
+      "rol",
+      "alliance"
+    ],
+    [
+      "rpa",
+      "ppa",
+      "alliance"
+    ]
+  ]
+}
