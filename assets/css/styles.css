@@ -1015,3 +1015,57 @@ html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; let
 @media (max-width: 860px){
   .tl-rail-chip{ font-size:11px; height:22px; padding:0 7px 0 8px; }
 }
+
+/* ===================================================================
+   GEOGRAPHIC SCALE — places named on the map
+   -------------------------------------------------------------------
+   HTML markers rather than symbol layers: a symbol layer needs the
+   basemap's glyph server and one of the five basemaps here is a bare
+   raster with none. HTML also inherits the Armenian and Persian faces
+   and the page's text direction without being told.
+   =================================================================== */
+.geo-mark{
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  transform:translateY(6px); pointer-events:auto; cursor:default;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.55));
+}
+.geo-mark i{
+  width:9px; height:9px; border-radius:50%;
+  background:var(--accent); border:2px solid #fff; order:2;
+}
+.geo-mark b{
+  order:1; white-space:nowrap;
+  font-size:12px; font-weight:600; letter-spacing:.01em; color:#fff;
+  background:rgba(22,25,32,.92); border:1px solid var(--line);
+  padding:3px 9px; border-radius:5px;
+}
+/* the anchor city reads as the place you came from, not another destination */
+.geo-mark.geo-city i{ background:#fff; border-color:var(--accent); }
+.geo-mark.geo-region b, .geo-mark.geo-mountain b{
+  background:rgba(22,25,32,.8); font-weight:500; letter-spacing:.06em;
+  text-transform:uppercase; font-size:11px;
+}
+.geo-mark.geo-region i, .geo-mark.geo-mountain i{
+  width:7px; height:7px; border-radius:1px; transform:rotate(45deg);
+  background:var(--text-2); border-color:#fff;
+}
+html.lang-fa .geo-mark.geo-region b, html.lang-hy .geo-mark.geo-region b,
+html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
+  text-transform:none; letter-spacing:0; font-size:12px;
+}
+.geo-dist{
+  font-size:11px; color:var(--text-2); white-space:nowrap;
+  background:rgba(15,17,21,.85); border:1px solid var(--line);
+  padding:2px 7px; border-radius:4px; direction:ltr;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));
+}
+
+/* "this entry is not in Yerevan", said in the panel as well as on the map */
+.d-elsewhere{
+  display:flex; align-items:baseline; gap:9px; flex-wrap:wrap;
+  margin:0 0 14px; padding:9px 12px;
+  background:var(--bg-3); border:1px solid var(--line);
+  border-inline-start:2px solid var(--accent); border-radius:6px;
+}
+.d-elsewhere b{ font-size:14px; color:var(--text); }
+.d-elsewhere span{ font-size:12px; color:var(--text-3); }
