@@ -71,6 +71,8 @@
     "detail.copy": "Copy link",
     "detail.copied": "Copied",
 
+    "axis.built": "Avenue as built",
+    "axis.apart": "{d}° apart",
     "scale.apart": "{d} km",
     "scale.fromCity": "{d} km from {city}",
     "route.onfoot": "{d} on foot",
@@ -203,6 +205,8 @@
     "detail.copy": "Պատճենել հղումը",
     "detail.copied": "Պատճենվեց",
 
+    "axis.built": "Պողոտան՝ ինչպես կառուցվել է",
+    "axis.apart": "{d}° տարբերություն",
     "scale.apart": "{d} կմ",
     "scale.fromCity": "{d} կմ {city}ից",
     "route.onfoot": "{d} ոտքով",
@@ -335,6 +339,8 @@
     "detail.copy": "کپی پیوند",
     "detail.copied": "کپی شد",
 
+    "axis.built": "خیابان، آن‌گونه که ساخته شد",
+    "axis.apart": "{d}° اختلاف",
     "scale.apart": "{d} کیلومتر",
     "scale.fromCity": "{d} کیلومتر تا {city}",
     "route.onfoot": "{d} پیاده",

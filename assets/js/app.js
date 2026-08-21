@@ -600,15 +600,20 @@
     return list.length > 1 || far ? list : null;
   }
 
-  /* west, south, east, north over points and boxes alike */
-  function framedBounds(places) {
+  /* west, south, east, north over points, boxes and sightlines alike — a line
+     that runs off the edge of the frame is a line the reader cannot compare */
+  function framedBounds(places, e) {
     var w = 180, s = 90, e2 = -180, n = -90;
+    function eat(q) {
+      if (q[0] < w) w = q[0]; if (q[0] > e2) e2 = q[0];
+      if (q[1] < s) s = q[1]; if (q[1] > n) n = q[1];
+    }
     places.forEach(function (p) {
-      var pts = p.bbox ? [[p.bbox[0], p.bbox[1]], [p.bbox[2], p.bbox[3]]] : [p.at];
-      pts.forEach(function (q) {
-        if (q[0] < w) w = q[0]; if (q[0] > e2) e2 = q[0];
-        if (q[1] < s) s = q[1]; if (q[1] > n) n = q[1];
-      });
+      (p.bbox ? [[p.bbox[0], p.bbox[1]], [p.bbox[2], p.bbox[3]]] : [p.at]).forEach(eat);
+    });
+    sightlineFeatures(e || {}).forEach(function (f) {
+      var c = f.geometry.coordinates;
+      eat(c[0]); eat(c[c.length - 1]);
     });
     return [[w, s], [e2, n]];
   }
@@ -617,6 +622,7 @@
     placeMarkers.forEach(function (m) { m.remove(); });
     placeMarkers = [];
     if (map && map.getSource("geo-link")) map.getSource("geo-link").setData(emptyFC());
+    if (map && map.getSource("geo-sight")) map.getSource("geo-sight").setData(emptyFC());
   }
 
   /* Labels are HTML markers, not symbol layers, and that is deliberate: a
@@ -626,6 +632,11 @@
   function showPlaces(places, e) {
     clearPlaces();
     if (!places || !map) return;
+
+    if (map.getSource("geo-sight")) {
+      var sl = sightlineFeatures(e || {});
+      if (sl.length) map.getSource("geo-sight").setData({ type: "FeatureCollection", features: sl });
+    }
 
     places.forEach(function (p) {
       var el = document.createElement("div");
@@ -646,7 +657,8 @@
        this is not the road, and a solid line would claim to be. */
     var anchor = anchorPlace();
     var other = places.filter(function (p) { return !anchor || p.id !== anchor.id; })[0];
-    if (anchor && other && map.getSource("geo-link")) {
+    var hasSight = !!(e && e.sightlines && e.sightlines.length);
+    if (anchor && other && !hasSight && map.getSource("geo-link")) {
       var centre = function (q) {
         return q.bbox ? [(q.bbox[0] + q.bbox[2]) / 2, (q.bbox[1] + q.bbox[3]) / 2] : q.at;
       };
@@ -684,6 +696,68 @@
     }
   }
 
+  /* -----------------------------------------------------------------
+     SIGHTLINES
+     -----------------------------------------------------------------
+     A street can be built to point at something. Tamanyan's plan opened
+     a corridor toward Ararat; the avenue that was finally built points
+     somewhere near it. That is an argument about two bearings, and two
+     bearings are a thing a map can simply draw.
+
+     An entry declares them:
+
+       "sightlines": [
+         { "kind": "axis",   "from": [lng,lat], "along": [lng,lat], "km": 70 },
+         { "kind": "target", "from": [lng,lat], "to": "ararat" }
+       ]
+
+     "axis" is extended from `from` through `along` for `km`; "target"
+     runs from `from` to a place in the gazetteer. The wedge between the
+     two is the finding.
+     ----------------------------------------------------------------- */
+
+  function bearingDeg(a, b) {
+    var T = Math.PI / 180;
+    var la1 = a[1] * T, la2 = b[1] * T, d = (b[0] - a[0]) * T;
+    var y = Math.sin(d) * Math.cos(la2);
+    var x = Math.cos(la1) * Math.sin(la2) - Math.sin(la1) * Math.cos(la2) * Math.cos(d);
+    return (Math.atan2(y, x) / T + 360) % 360;
+  }
+
+  /* the point `km` along a bearing from a point — spherical, because at
+     seventy kilometres a flat approximation is visibly wrong */
+  function projectDeg(from, brg, km) {
+    var T = Math.PI / 180, R = 6371.0088;
+    var d = km / R, b = brg * T, la1 = from[1] * T, lo1 = from[0] * T;
+    var la2 = Math.asin(Math.sin(la1) * Math.cos(d) + Math.cos(la1) * Math.sin(d) * Math.cos(b));
+    var lo2 = lo1 + Math.atan2(Math.sin(b) * Math.sin(d) * Math.cos(la1),
+                               Math.cos(d) - Math.sin(la1) * Math.sin(la2));
+    return [lo2 / T, la2 / T];
+  }
+
+  function sightlineFeatures(e) {
+    if (!e.sightlines || !e.sightlines.length) return [];
+    var out = [];
+    e.sightlines.forEach(function (sl) {
+      var from = sl.from, to = null;
+      if (sl.kind === "axis" && sl.along) {
+        to = projectDeg(from, bearingDeg(from, sl.along), sl.km || 60);
+      } else if (sl.to) {
+        var pl = typeof sl.to === "string" ? placeById(sl.to) : null;
+        to = pl ? pl.at : (Array.isArray(sl.to) ? sl.to : null);
+      }
+      if (!to) return;
+      var line = [], i;
+      for (i = 0; i <= 32; i++) {
+        line.push([from[0] + (to[0] - from[0]) * (i / 32),
+                   from[1] + (to[1] - from[1]) * (i / 32)]);
+      }
+      out.push({ type: "Feature", properties: { kind: sl.kind || "target" },
+                 geometry: { type: "LineString", coordinates: line } });
+    });
+    return out;
+  }
+
   function addGeoLink() {
     if (!map.getSource("geo-link")) {
       map.addSource("geo-link", { type: "geojson", data: emptyFC() });
@@ -695,6 +769,33 @@
         paint: {
           "line-color": RED, "line-opacity": 0.55,
           "line-width": 1.6, "line-dasharray": [1.5, 2.2]
+        }
+      });
+    }
+    if (!map.getSource("geo-sight")) {
+      map.addSource("geo-sight", { type: "geojson", data: emptyFC() });
+    }
+    /* Two layers, not one with a match expression: line-dasharray is the one
+       paint property MapLibre will not take a data expression for, and feeding
+       it one silently throws the WHOLE layer out of the style. Split by filter
+       instead. What was built is a solid white line; the bearing it was meant
+       to have is dotted red. */
+    if (!map.getLayer("geo-sight-axis")) {
+      map.addLayer({
+        id: "geo-sight-axis", type: "line", source: "geo-sight",
+        filter: ["==", ["get", "kind"], "axis"],
+        layout: { "line-cap": "round" },
+        paint: { "line-color": "#ffffff", "line-opacity": 0.9, "line-width": 2 }
+      });
+    }
+    if (!map.getLayer("geo-sight-target")) {
+      map.addLayer({
+        id: "geo-sight-target", type: "line", source: "geo-sight",
+        filter: ["!=", ["get", "kind"], "axis"],
+        layout: { "line-cap": "round" },
+        paint: {
+          "line-color": RED, "line-opacity": 0.85, "line-width": 1.8,
+          "line-dasharray": [2, 2]
         }
       });
     }
@@ -1154,7 +1255,7 @@
       showPlaces(wide, e);
       if (fly !== false) {
         map.easeTo({ pitch: 0, bearing: 0, duration: 300 });
-        map.fitBounds(framedBounds(wide), {
+        map.fitBounds(framedBounds(wide, e), {
           padding: WIDE_PAD, maxZoom: 11, pitch: 0, bearing: 0, duration: 1400
         });
       }
@@ -1208,6 +1309,28 @@
              '<span>' + esc(t("scale.fromCity", {
                  d: num(kmP >= 100 ? Math.round(kmP) : kmP.toFixed(1)),
                  city: tr(anch, "label") })) + '</span></div>';
+      }
+    }
+
+    if (e.sightlines && e.sightlines.length >= 2) {
+      var axis = null, targ = null;
+      e.sightlines.forEach(function (sl) {
+        if (sl.kind === "axis" && sl.along) axis = bearingDeg(sl.from, sl.along);
+        else if (sl.to) {
+          var pl = typeof sl.to === "string" ? placeById(sl.to) : null;
+          var pt = pl ? pl.at : (Array.isArray(sl.to) ? sl.to : null);
+          if (pt) targ = { b: bearingDeg(sl.from, pt), label: pl ? tr(pl, "label") : "" };
+        }
+      });
+      if (axis != null && targ) {
+        var gap = Math.abs(((targ.b - axis + 180) % 360) - 180);
+        h += '<div class="d-axis">' +
+             '<span class="ax-built"><i></i>' + esc(t("axis.built")) + ' <b>' +
+               esc(num(axis.toFixed(1))) + '°</b></span>' +
+             '<span class="ax-target"><i></i>' + esc(targ.label) + ' <b>' +
+               esc(num(targ.b.toFixed(1))) + '°</b></span>' +
+             '<em>' + esc(t("axis.apart", { d: num(gap.toFixed(1)) })) + '</em>' +
+             '</div>';
       }
     }
 
@@ -1299,7 +1422,7 @@
           var w2 = frameFor(e);
           if (w2) {
             showPlaces(w2, e);
-            map.fitBounds(framedBounds(w2), {
+            map.fitBounds(framedBounds(w2, e), {
               padding: WIDE_PAD, maxZoom: 11, pitch: 0, bearing: 0, duration: 1200
             });
           } else {
