@@ -33,10 +33,7 @@
       "Imagery &copy; Esri, Maxar, Earthstar Geographics", 19)
   };
   var BASEMAP_ORDER = ["kentron", "light", "streets", "dark", "satellite"];
-  var BASEMAP_LABEL = {
-    kentron: "Figure-ground", light: "Light", streets: "Streets",
-    dark: "Dark", satellite: "Satellite"
-  };
+  /* Basemap labels come from the dictionary, keyed by these same five ids. */
 
   var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
   var HOME_FLAT = { center: [44.5136, 40.1830], zoom: 13.1, pitch: 0, bearing: 0 };
@@ -79,13 +76,22 @@
 
   var $ = function (id) { return document.getElementById(id); };
 
+  /* Three languages. i18n.js is loaded before this file, so these are safe to
+     call at any point; the tiny guards are only for opening index.html with
+     the script tag removed. */
+  var t   = function (k, v) { return window.I18N ? I18N.t(k, v) : k; };
+  var tr  = function (o, f) { return window.I18N ? I18N.tr(o, f) : (o && o[f]) || ""; };
+  var trL = function (o, f) { return window.I18N ? I18N.trList(o, f) : (o && o[f]) || []; };
+  var num = function (n) { return window.I18N ? I18N.num(n) : String(n); };
+
   function esc(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
 
-  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  function MONTH(i) { return window.I18N ? I18N.month(i) :
+    ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][i]; }
 
   function parseDate(s) {
     if (!s) return null;
@@ -97,18 +103,18 @@
 
   /* renders a date honouring its stated precision */
   function fmtDate(ev) {
-    if (!ev.date) return "undated";
+    if (!ev.date) return t("date.undated");
     var p = String(ev.date).split("-");
     var prec = ev.datePrecision || (p.length === 1 ? "year" : p.length === 2 ? "month" : "day");
     var out;
-    if (prec === "year") out = p[0];
-    else if (prec === "month") out = MONTHS[+p[1] - 1] + " " + p[0];
-    else out = (+p[2]) + " " + MONTHS[+p[1] - 1] + " " + p[0];
+    if (prec === "year") out = num(p[0]);
+    else if (prec === "month") out = MONTH(+p[1] - 1) + " " + num(p[0]);
+    else out = num(+p[2]) + " " + MONTH(+p[1] - 1) + " " + num(p[0]);
     if (ev.dateEnd && ev.dateEnd !== ev.date) {
       var q = String(ev.dateEnd).split("-");
-      var end = q.length === 1 ? q[0]
-              : q.length === 2 ? MONTHS[+q[1] - 1] + " " + q[0]
-              : (+q[2]) + " " + MONTHS[+q[1] - 1] + " " + q[0];
+      var end = q.length === 1 ? num(q[0])
+              : q.length === 2 ? MONTH(+q[1] - 1) + " " + num(q[0])
+              : num(+q[2]) + " " + MONTH(+q[1] - 1) + " " + num(q[0]);
       out += " – " + end;
     }
     return out;
@@ -116,7 +122,7 @@
 
   function fmtStamp(t) {
     var d = new Date(t);
-    return MONTHS[d.getUTCMonth()] + " " + d.getUTCFullYear();
+    return MONTH(d.getUTCMonth()) + " " + num(d.getUTCFullYear());
   }
 
   function catById(id) {
@@ -146,10 +152,10 @@
     .catch(function (err) {
       $("loading").innerHTML =
         '<div style="text-align:center;max-width:420px;line-height:1.7">' +
-        '<strong style="color:#e6e8ec">Could not load data/events.json</strong><br>' +
+        '<strong style="color:#e6e8ec">' + esc(t("err.load")) + '</strong><br>' +
         '<span style="font-size:12px">' + esc(err.message) + '</span><br><br>' +
-        '<span style="font-size:12px">If you opened index.html directly from disk, run a local ' +
-        'server instead:<br><code style="color:#d8873f">python3 -m http.server</code></span></div>';
+        '<span style="font-size:12px">' + esc(t("err.localhint")) +
+        '<br><code style="color:#d8873f">python3 -m http.server</code></span></div>';
       console.error(err);
     });
 
@@ -169,10 +175,19 @@
       e._t = parseDate(e.date);
       e._tEnd = parseDate(e.dateEnd) || e._t;
       e.categories = e.categories || [];
-      e._search = [
-        e.title, e.location, e.summary, e.analysis,
-        (e.tags || []).join(" "), (e.actors || []).join(" ")
-      ].join(" ").toLowerCase();
+      /* Indexed in all three languages at once: a reader searching in
+         Armenian should find an entry even while reading it in English, and
+         the Latin-script keywords stay findable from every interface. */
+      var bag = [];
+      ["title", "location", "summary", "analysis", "fieldnote"].forEach(function (f) {
+        ["", "_hy", "_fa"].forEach(function (sfx) { if (e[f + sfx]) bag.push(e[f + sfx]); });
+      });
+      ["tags", "actors"].forEach(function (f) {
+        ["", "_hy", "_fa"].forEach(function (sfx) {
+          if (e[f + sfx] && e[f + sfx].join) bag.push(e[f + sfx].join(" "));
+        });
+      });
+      e._search = bag.join(" ").toLowerCase();
     });
     state.events = state.events.filter(function (e) { return e._t !== null; });
 
@@ -329,9 +344,8 @@
       hideLoader();
       if (!mapLoaded) {
         refresh();
-        mapNotice("<strong style=\"color:#e6e8ec\">Basemap did not load.</strong><br>" +
-          "The timeline, themes and event list still work. This is usually a network " +
-          "or firewall problem reaching the map tile server.");
+        mapNotice('<strong style="color:#e6e8ec">' + esc(t("notice.basemap")) + "</strong><br>" +
+          esc(t("notice.basemapBody")));
       }
     }, 20000);
   }
@@ -524,7 +538,10 @@
   function sortEvents(list) {
     var s = state.sort;
     return list.slice().sort(function (a, b) {
-      if (s === "title") return (a.title || "").localeCompare(b.title || "");
+      if (s === "title") {
+        var la = window.I18N ? I18N.lang : "en";
+        return tr(a, "title").localeCompare(tr(b, "title"), la);
+      }
       return s === "date-desc" ? b._t - a._t : a._t - b._t;
     });
   }
@@ -542,7 +559,7 @@
             geometry: { type: "Point", coordinates: e._display || e.coordinates },
             properties: {
               id: e.id,
-              title: e.title || "(untitled)",
+              title: tr(e, "title") || t("res.untitled"),
               dateLabel: fmtDate(e),
               color: catById(e.categories[0]).color
             }
@@ -554,7 +571,7 @@
 
     renderResults(vis);
     updateCategoryCounts();
-    $("result-count").textContent = vis.length;
+    $("result-count").textContent = num(vis.length);
   }
 
   /* stable numeric id for feature-state */
@@ -584,7 +601,7 @@
       row.dataset.cat = c.id;
       row.innerHTML =
         '<span class="swatch" style="background:' + esc(c.color) + '"></span>' +
-        '<span class="cat-label">' + esc(c.label) + '</span>' +
+        '<span class="cat-label">' + esc(tr(c, "label")) + '</span>' +
         '<span class="cat-count" data-count="' + esc(c.id) + '"></span>';
       row.addEventListener("click", function (ev) {
         ev.preventDefault();
@@ -623,8 +640,8 @@
     var ul = $("results");
     ul.innerHTML = "";
     if (!list.length) {
-      ul.innerHTML = '<li class="empty">No events match the current filters.<br>' +
-        'Widen the time window or re-enable a theme.</li>';
+      ul.innerHTML = '<li class="empty">' + esc(t("res.empty")) + '<br>' +
+        esc(t("res.emptyHint")) + '</li>';
       return;
     }
     list.forEach(function (e) {
@@ -632,13 +649,13 @@
       li.className = "res" + (e.id === state.selectedId ? " active" : "");
       li.innerHTML =
         '<div class="res-date">' + esc(fmtDate(e)) +
-          (isContext(e) ? ' <span class="ctx">context</span>' : '') + '</div>' +
-        '<div class="res-title">' + esc(e.title || "(untitled)") + '</div>' +
+          (isContext(e) ? ' <span class="ctx">' + esc(t("res.context")) + '</span>' : '') + '</div>' +
+        '<div class="res-title">' + esc(tr(e, "title") || t("res.untitled")) + '</div>' +
         '<div class="res-tags">' +
           e.categories.map(function (c) {
             var cat = catById(c);
             return '<span class="chip" style="border-color:' + esc(cat.color) + '55">' +
-                   esc(cat.label) + '</span>';
+                   esc(tr(cat, "label")) + '</span>';
           }).join("") +
         '</div>';
       li.addEventListener("click", function () { selectEvent(e.id, true); });
@@ -663,49 +680,57 @@
 
     var h = "";
     h += '<div class="d-date">' + esc(fmtDate(e)) + '</div>';
-    h += '<h2 class="d-title">' + esc(e.title || "(untitled)") + '</h2>';
-    if (e.location) h += '<div class="d-place">' + esc(e.location) + '</div>';
+    h += '<h2 class="d-title">' + esc(tr(e, "title") || t("res.untitled")) + '</h2>';
+    var place = tr(e, "location");
+    if (place) h += '<div class="d-place">' + esc(place) + '</div>';
 
     if (e.categories.length) {
       h += '<div class="d-tags">' + e.categories.map(function (c) {
         var cat = catById(c);
         return '<span class="chip" style="border-color:' + esc(cat.color) +
-               '88;color:' + esc(cat.color) + '">' + esc(cat.label) + '</span>';
+               '88;color:' + esc(cat.color) + '">' + esc(tr(cat, "label")) + '</span>';
       }).join("") + '</div>';
     }
 
     (e.media || []).forEach(function (m) { h += renderMedia(m); });
 
-    if (e.summary) {
-      h += '<div class="d-sec"><h3>What happened</h3><p>' + para(e.summary) + '</p></div>';
+    var summary = tr(e, "summary"), analysis = tr(e, "analysis");
+    if (summary) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.happened")) + '</h3><p>' + para(summary) + '</p></div>';
     }
-    if (e.analysis) {
-      h += '<div class="d-sec analysis"><h3>Analysis</h3><p>' + para(e.analysis) + '</p></div>';
+    if (analysis) {
+      h += '<div class="d-sec analysis"><h3>' + esc(t("detail.analysis")) + '</h3><p>' + para(analysis) + '</p></div>';
     }
-    if (e.actors && e.actors.length) {
-      h += '<div class="d-sec"><h3>Actors</h3><ul>' +
-           e.actors.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join("") + '</ul></div>';
+    var actors = trL(e, "actors");
+    if (actors.length) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.actors")) + '</h3><ul>' +
+           actors.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join("") + '</ul></div>';
     }
-    if (e.tags && e.tags.length) {
-      h += '<div class="d-sec"><h3>Keywords</h3><div class="d-tags">' +
-           e.tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join("") +
+    var kws = trL(e, "tags");
+    if (kws.length) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.keywords")) + '</h3><div class="d-tags">' +
+           kws.map(function (k) { return '<span class="chip">' + esc(k) + '</span>'; }).join("") +
            '</div></div>';
     }
+    /* Bibliography stays in the script it was published in — that is how a
+       reader looks it up. Only the note beside it is translated. */
     if (e.sources && e.sources.length) {
-      h += '<div class="d-sec"><h3>Sources</h3><ul>' + e.sources.map(function (s) {
-        if (typeof s === "string") return '<li>' + esc(s) + '</li>';
-        return '<li>' + (s.url
+      h += '<div class="d-sec sources"><h3>' + esc(t("detail.sources")) + '</h3><ul>' + e.sources.map(function (s) {
+        if (typeof s === "string") return '<li><span dir="ltr">' + esc(s) + '</span></li>';
+        var note = tr(s, "note");
+        return '<li><span dir="ltr">' + (s.url
           ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || s.url) + '</a>'
-          : esc(s.title || "")) + (s.note ? ' — ' + esc(s.note) : '') + '</li>';
+          : esc(s.title || "")) + '</span>' + (note ? ' — ' + esc(note) : '') + '</li>';
       }).join("") + '</ul></div>';
     }
-    if (e.fieldnote) {
-      h += '<div class="d-sec"><h3>Field note</h3><p>' + para(e.fieldnote) + '</p></div>';
+    var fieldnote = tr(e, "fieldnote");
+    if (fieldnote) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.fieldnote")) + '</h3><p>' + para(fieldnote) + '</p></div>';
     }
 
     h += '<div class="d-actions">' +
-         '<button data-act="zoom">Zoom here</button>' +
-         '<button data-act="link">Copy link</button>' +
+         '<button data-act="zoom">' + esc(t("detail.zoom")) + '</button>' +
+         '<button data-act="link">' + esc(t("detail.copy")) + '</button>' +
          '</div>';
 
     $("detail-body").innerHTML = h;
@@ -714,7 +739,7 @@
         var box = b.parentNode;
         box.innerHTML = '<iframe src="' + box.dataset.src +
           '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; ' +
-          'gyroscope; picture-in-picture" allowfullscreen title="Embedded video"></iframe>';
+          'gyroscope; picture-in-picture" allowfullscreen title="' + esc(t("media.embed")) + '"></iframe>';
       });
     });
 
@@ -724,8 +749,8 @@
           map.easeTo({ center: e._display || e.coordinates, zoom: 17, duration: 900 });
         } else {
           navigator.clipboard.writeText(location.href).then(function () {
-            b.textContent = "Copied";
-            setTimeout(function () { b.textContent = "Copy link"; }, 1400);
+            b.textContent = t("detail.copied");
+            setTimeout(function () { b.textContent = t("detail.copy"); }, 1400);
           });
         }
       });
@@ -747,7 +772,8 @@
      ----------------------------------------------------------------- */
   function mediaMeta(m) {
     var bits = [];
-    if (m.caption) bits.push(esc(m.caption));
+    var cap = tr(m, "caption");
+    if (cap) bits.push(esc(cap));
     var attrib = [];
     if (m.credit) attrib.push(esc(m.credit));
     if (m.license) {
@@ -755,7 +781,7 @@
         ? '<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(m.license) + '</a>'
         : esc(m.license));
     } else if (m.source) {
-      attrib.push('<a href="' + esc(m.source) + '" target="_blank" rel="noopener">source</a>');
+      attrib.push('<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(t("media.source")) + '</a>');
     }
     if (attrib.length) bits.push('<em>' + attrib.join(' · ') + '</em>');
     return bits.length ? '<figcaption>' + bits.join('<br>') + '</figcaption>' : '';
@@ -775,12 +801,12 @@
       var src = esc(m.embed || m.url);
       return '<figure class="d-media"><div class="embed" data-src="' + src + '">' +
              (m.poster ? '<img src="' + esc(m.poster) + '" alt="" loading="lazy">' : '') +
-             '<button class="embed-play" type="button" aria-label="Play video">&#9654;</button>' +
+             '<button class="embed-play" type="button" aria-label="' + esc(t("media.play")) + '">&#9654;</button>' +
              '</div>' + mediaMeta(m) + '</figure>';
     }
 
     return '<figure class="d-media"><a href="' + esc(m.source || m.url) + '" target="_blank" rel="noopener">' +
-           '<img src="' + esc(m.url) + '" alt="' + esc(m.caption || "") + '" loading="lazy"></a>' +
+           '<img src="' + esc(m.url) + '" alt="' + esc(tr(m, "caption")) + '" loading="lazy"></a>' +
            mediaMeta(m) + '</figure>';
   }
 
@@ -876,8 +902,8 @@
     var a = +$("cn-start").value / 1000, b = +$("cn-end").value / 1000;
     $("cn-fill").style.left = (a * 100) + "%";
     $("cn-fill").style.width = ((b - a) * 100) + "%";
-    $("cn-from").textContent = new Date(state.cStart).getUTCFullYear();
-    $("cn-to").textContent   = new Date(state.cEnd).getUTCFullYear();
+    $("cn-from").textContent = num(new Date(state.cStart).getUTCFullYear());
+    $("cn-to").textContent   = num(new Date(state.cEnd).getUTCFullYear());
   }
 
   function onSlide() {
@@ -940,13 +966,17 @@
   function buildAbout() {
     var m = (state.raw && state.raw.meta) || {};
     var h = "";
-    if (m.description) h += "<p>" + para(m.description) + "</p>";
-    if (m.author) h += "<p><strong>" + esc(m.author) + "</strong>" +
-                       (m.affiliation ? " — " + esc(m.affiliation) : "") + "</p>";
-    if (m.note) h += "<p>" + para(m.note) + "</p>";
+    var desc = tr(m, "description"), note = tr(m, "note");
+    if (desc) h += "<p>" + para(desc) + "</p>";
+    if (m.author) h += "<p><strong>" + esc(tr(m, "author") || m.author) + "</strong>" +
+                       (m.affiliation ? " — " + esc(tr(m, "affiliation") || m.affiliation) : "") + "</p>";
+    if (note) h += "<p>" + para(note) + "</p>";
     h += '<p style="font-size:12px;color:#6b7280;margin-top:22px">' +
-         state.events.length + " events mapped · basemap © CARTO, © OpenStreetMap contributors" +
-         (m.updated ? " · data updated " + esc(m.updated) : "") + "</p>";
+         esc(t("about.mapped", { n: num(state.events.length) })) + " · " + esc(t("about.credit")) +
+         (m.updated ? " · " + esc(t("about.updated", { d: m.updated })) : "") + "</p>";
+    if (window.I18N && I18N.lang !== "en") {
+      h += '<p style="font-size:12px;color:#6b7280;margin-top:8px">' + esc(t("about.draft")) + "</p>";
+    }
     $("about-body").innerHTML = h;
   }
 
@@ -981,8 +1011,10 @@
 
     function show(ll) {
       var la = ll.lat, lo = ll.lng;
-      lat.textContent = Math.abs(la).toFixed(5) + "° " + (la >= 0 ? "N" : "S");
-      lng.textContent = Math.abs(lo).toFixed(5) + "° " + (lo >= 0 ? "E" : "W");
+      /* Coordinates keep Latin digits in every language: they are machine
+         values, copied straight into other tools. */
+      lat.textContent = Math.abs(la).toFixed(5) + "° " + t(la >= 0 ? "dir.N" : "dir.S");
+      lng.textContent = Math.abs(lo).toFixed(5) + "° " + t(lo >= 0 ? "dir.E" : "dir.W");
       zm.textContent  = "z" + map.getZoom().toFixed(1);
     }
     /* Scale bar, drawn into the same strip as the coordinates so the two can
@@ -1003,8 +1035,8 @@
       var round = niceRound(metres);
       bar.style.width = Math.max(18, Math.round(MAXPX * (round / metres))) + "px";
       barLabel.textContent = round >= 1000
-        ? (round / 1000) + " km"
-        : Math.round(round) + " m";
+        ? num(round / 1000) + " " + t("unit.km")
+        : num(Math.round(round)) + " " + t("unit.m");
     }
     map.on("move", updateScale);
     map.on("zoom", updateScale);
@@ -1057,7 +1089,7 @@
     var bmSel = $("basemap-select");
     if (bmSel) {
       bmSel.innerHTML = BASEMAP_ORDER.map(function (k) {
-        return '<option value="' + k + '">' + BASEMAP_LABEL[k] + "</option>";
+        return '<option value="' + k + '">' + esc(t("basemap." + k)) + "</option>";
       }).join("");
       bmSel.value = state.basemap;
       bmSel.addEventListener("change", function () {
@@ -1081,6 +1113,27 @@
       }
       if (e.key === " " && e.target === document.body) { e.preventDefault(); togglePlay(); }
     });
+
+    /* Everything drawn from data has to be drawn again in the new language.
+       Static labels are handled inside i18n.js; this is only what this file
+       rendered itself. */
+    if (window.I18N) {
+      I18N.onChange(function () {
+        var bm2 = $("basemap-select");
+        if (bm2) {
+          bm2.innerHTML = BASEMAP_ORDER.map(function (k) {
+            return '<option value="' + k + '">' + esc(t("basemap." + k)) + "</option>";
+          }).join("");
+          bm2.value = state.basemap;
+        }
+        buildCategories();
+        buildAbout();
+        updateTimelineUI();
+        updateCenturyUI();
+        refresh();
+        if (state.selectedId && !$("detail-view").hidden) selectEvent(state.selectedId, false);
+      });
+    }
   }
 
 

@@ -57,7 +57,7 @@
   function copy(txt, btn) {
     function done() {
       var old = btn.textContent;
-      btn.textContent = "copied";
+      btn.textContent = window.I18N ? I18N.t("detail.copied") : "copied";
       setTimeout(function () { btn.textContent = old; }, 1200);
     }
     function fallback() {

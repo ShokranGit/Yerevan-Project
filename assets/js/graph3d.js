@@ -22,6 +22,10 @@
   var $ = function (id) { return document.getElementById(id); };
   var GRAPH = null;
 
+  var t  = function (k, v) { return window.I18N ? I18N.t(k, v) : k; };
+  var tr = function (o, f) { return window.I18N ? I18N.tr(o, f) : (o && o[f]) || ""; };
+  var num = function (n) { return window.I18N ? I18N.num(n) : String(n); };
+
   /* The linked entries used to come only from window.YerevanMap, which app.js
      publishes when the map finishes booting. If the tiles are slow or blocked —
      a conference wifi, an offline demo — the map never boots, the API never
@@ -120,10 +124,13 @@
       }
       if (opts.labels && !dim && p.k > 0.55) {
         g.globalAlpha = lit ? 1 : 0.5 + 0.5 * (p.k - 0.5) * 2;
-        g.font = (lit ? "600 " : "") + Math.round(11 * Math.min(1.25, p.k * 1.15)) + "px Inter, system-ui, sans-serif";
+        /* The label font must carry Armenian and Persian glyphs, or a node
+           renders as a row of boxes on a canvas that reports no error. */
+        g.font = (lit ? "600 " : "") + Math.round(11 * Math.min(1.25, p.k * 1.15)) +
+                 'px Inter, "Noto Sans Armenian", Vazirmatn, system-ui, sans-serif';
         g.fillStyle = lit ? "#fff" : "#c9ced8";
         g.textAlign = "center";
-        g.fillText(n.label, p.x, p.y - r - 6);
+        g.fillText(tr(n, "label"), p.x, p.y - r - 6);
       }
       g.globalAlpha = 1;
     });
@@ -186,7 +193,7 @@
     var box = $("g3-info");
     var n = GRAPH.nodes.filter(function (x) { return x.id === id; })[0];
     if (!n) {
-      box.innerHTML = '<p class="g3-empty">Drag to turn the model. Click any node to see what the map holds about it.</p>';
+      box.innerHTML = '<p class="g3-empty">' + esc(t("g3.empty")) + '</p>';
       return;
     }
     var all = allEvents();
@@ -208,30 +215,31 @@
     });
     var label = function (i) {
       var m = GRAPH.nodes.filter(function (x) { return x.id === i; })[0];
-      return m ? m.label : i;
+      return m ? tr(m, "label") : i;
     };
 
     var grp = GRAPH.groups[n.group] || {};
-    var html = '<h3>' + esc(n.label) + '</h3>' +
+    var html = '<h3>' + esc(tr(n, "label")) + '</h3>' +
       '<p class="g3-group"><i style="background:' + esc(grp.color || "#b8bcc2") + '"></i>' +
-      esc(grp.label || n.group) + '</p>';
+      esc(tr(grp, "label") || n.group) + '</p>';
 
     if (linked.length) {
-      html += '<p class="g3-count">' + linked.length + ' entr' + (linked.length === 1 ? "y" : "ies") +
-              ' on the map</p><ul class="g3-list">';
+      html += '<p class="g3-count">' +
+              esc(linked.length === 1 ? t("g3.entry") : t("g3.entries", { n: num(linked.length) })) +
+              '</p><ul class="g3-list">';
       linked.forEach(function (e) {
         html += '<li><button type="button" data-ev="' + esc(e.id) + '">' +
-                esc(e.title || e.id) +
-                (e.date ? ' <span>' + esc(String(e.date).slice(0, 4)) + '</span>' : "") +
+                esc(tr(e, "title") || e.id) +
+                (e.date ? ' <span>' + esc(num(String(e.date).slice(0, 4))) + '</span>' : "") +
                 '</button></li>';
       });
       html += '</ul>';
     } else {
-      html += '<p class="g3-none">Nothing linked here yet. The node is in the model so the material has somewhere to go — send me entries for it and they will appear here.</p>';
+      html += '<p class="g3-none">' + esc(t("g3.nothing")) + '</p>';
     }
 
     if (nbrs.length) {
-      html += '<p class="g3-count">Connected to</p><p class="g3-nbrs">' +
+      html += '<p class="g3-count">' + esc(t("g3.connected")) + '</p><p class="g3-nbrs">' +
         nbrs.map(function (i) {
           return '<button type="button" data-node="' + esc(i) + '">' + esc(label(i)) + '</button>';
         }).join("") + '</p>';
@@ -284,10 +292,17 @@
       }
     });
 
-    $("g3-legend").innerHTML = Object.keys(GRAPH.groups).map(function (k) {
-      return '<span><i style="background:' + esc(GRAPH.groups[k].color) + '"></i>' +
-             esc(GRAPH.groups[k].label) + '</span>';
-    }).join("");
+    function legend() {
+      $("g3-legend").innerHTML = Object.keys(GRAPH.groups).map(function (k) {
+        return '<span><i style="background:' + esc(GRAPH.groups[k].color) + '"></i>' +
+               esc(tr(GRAPH.groups[k], "label")) + '</span>';
+      }).join("");
+    }
+    legend();
+
+    /* The canvas redraws itself every frame, so only the HTML side needs
+       telling that the language changed. */
+    if (window.I18N) I18N.onChange(function () { legend(); describe(bigView.sel); });
 
     describe(null);
     loop();

@@ -27,6 +27,12 @@
   var $ = function (id) { return document.getElementById(id); };
   var D = null;
 
+  var t   = function (k, v) { return window.I18N ? I18N.t(k, v) : k; };
+  var tr  = function (o, f) { return window.I18N ? I18N.tr(o, f) : (o && o[f]) || ""; };
+  var trL = function (o, f) { return window.I18N ? I18N.trList(o, f) : (o && o[f]) || []; };
+  var num = function (n) { return window.I18N ? I18N.num(n) : String(n); };
+  var LANG = function () { return window.I18N ? I18N.lang : "en"; };
+
   /* The linked entries used to come only from window.YerevanMap, which app.js
      publishes when the map finishes booting. If the tiles are slow or blocked —
      a conference wifi, an offline demo — the map never boots, the API never
@@ -50,6 +56,12 @@
     left: "#8fb8d4", centre: "#b8bcc2", right: "#c9262c",
     dead: "#4a5058", axis: "rgba(150,157,168,.28)"
   };
+
+  /* A canvas caption has room for about twenty characters. */
+  function shortName(p) {
+    var n = tr(p, "name") || p.abbr || p.name || "";
+    return n.length > 22 ? n.slice(0, 21) + "…" : n;
+  }
 
   function colourFor(p) {
     if (p.spectrum <= -3) return COL.left;
@@ -113,10 +125,11 @@
         g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke();
       });
       var lab = [
-        [[-80, -75, 0], D.axes.x.minLabel], [[80, -75, 0], D.axes.x.maxLabel],
-        [[0, -75, -82], D.axes.z.minLabel], [[0, -75, 82], D.axes.z.maxLabel]
+        [[-80, -75, 0], tr(D.axes.x, "minLabel")], [[80, -75, 0], tr(D.axes.x, "maxLabel")],
+        [[0, -75, -82], tr(D.axes.z, "minLabel")], [[0, -75, 82], tr(D.axes.z, "maxLabel")]
       ];
-      g.font = "10px Inter, system-ui, sans-serif"; g.textAlign = "center";
+      g.font = '10px Inter, "Noto Sans Armenian", Vazirmatn, system-ui, sans-serif';
+      g.textAlign = "center";
       g.fillStyle = "rgba(150,157,168,.75)";
       lab.forEach(function (l) {
         var p = project(l[0], v, w, h, scale);
@@ -160,10 +173,14 @@
       }
       if (opts.labels && (lit || inPower || q.k > 0.75)) {
         g.globalAlpha = lit ? 1 : 0.75;
-        g.font = (lit ? "600 " : "") + "11px Inter, system-ui, sans-serif";
+        /* The abbreviation is a Latin acronym. In Armenian and Persian it
+           says nothing, so the translated name is drawn instead — shortened,
+           because a canvas has no room for a full party name. */
+        g.font = (lit ? "600 " : "") + '11px Inter, "Noto Sans Armenian", Vazirmatn, system-ui, sans-serif';
         g.fillStyle = lit ? "#fff" : "#c9ced8";
         g.textAlign = "center";
-        g.fillText(p.abbr || p.name, q.x, q.y - r - 6);
+        var cap = LANG() === "en" ? (p.abbr || p.name) : shortName(p);
+        g.fillText(cap, q.x, q.y - r - 6);
       }
       g.globalAlpha = 1;
     });
@@ -228,10 +245,8 @@
     var box = $("p3-info");
     var p = D.parties.filter(function (x) { return x.id === id; })[0];
     if (!p) {
-      box.innerHTML = '<p class="p3-empty">Drag the year slider and the landscape fills in. ' +
-        'Click a party for its dossier.</p>' +
-        '<p class="p3-caveat">Spectrum and stance placements are editorial, not measured. ' +
-        'Election figures without a check mark still need verifying against a source.</p>';
+      box.innerHTML = '<p class="p3-empty">' + esc(t("p3.empty")) + '</p>' +
+        '<p class="p3-caveat">' + esc(t("p3.caveat")) + '</p>';
       return;
     }
     var all = allEvents();
@@ -244,58 +259,69 @@
       });
     }
 
-    var h = '<h3>' + esc(p.name) + '</h3>';
-    if (p.hy) h += '<p class="p3-hy">' + esc(p.hy) + '</p>';
-    h += '<p class="p3-meta">' + esc(p.position) + ' &middot; founded ' + p.founded +
-         (p.dissolved ? ' &middot; dissolved ' + p.dissolved : "") + '</p>';
+    /* The heading is the party's name in the reader's language; underneath it
+       goes the name they did NOT just read, so the two are always tied
+       together — English under Armenian, Armenian under English. */
+    var primary = tr(p, "name") || p.name;
+    var secondary = LANG() === "en" ? (p.name_hy || p.hy) : p.name;
+    var h = '<h3>' + esc(primary) + '</h3>';
+    if (secondary && secondary !== primary) h += '<p class="p3-hy">' + esc(secondary) + '</p>';
+    h += '<p class="p3-meta">' + esc(tr(p, "position")) + ' &middot; ' +
+         esc(t("p3.founded")) + ' ' + num(p.founded) +
+         (p.dissolved ? ' &middot; ' + esc(t("p3.dissolved")) + ' ' + num(p.dissolved) : "") + '</p>';
 
-    if (p.ideology && p.ideology.length) {
-      h += '<p class="p3-tags">' + p.ideology.map(function (i) {
+    var ideo = trL(p, "ideology");
+    if (ideo.length) {
+      h += '<p class="p3-tags">' + ideo.map(function (i) {
         return '<span>' + esc(i) + '</span>';
       }).join("") + '</p>';
     }
-    if (p.note) h += '<p class="p3-note">' + esc(p.note) + '</p>';
+    var pnote = tr(p, "note");
+    if (pnote) h += '<p class="p3-note">' + esc(pnote) + '</p>';
 
     if (p.leaders && p.leaders.length) {
-      h += '<p class="p3-h">Figures</p><div class="p3-people">';
+      h += '<p class="p3-h">' + esc(t("p3.figures")) + '</p><div class="p3-people">';
       p.leaders.forEach(function (l) {
         h += '<div class="p3-person" data-wiki="' + esc(l.wiki || "") + '">' +
           '<span class="p3-nophoto"></span>' +
-          '<div><b>' + esc(l.name) + '</b><em>' + esc(l.role || "") + '</em></div></div>';
+          '<div><b>' + esc(tr(l, "name") || l.name) + '</b><em>' + esc(tr(l, "role")) + '</em></div></div>';
       });
       h += '</div>';
     }
 
     if (p.elections && p.elections.length) {
-      h += '<p class="p3-h">Elections</p><table class="p3-tbl"><tbody>';
+      h += '<p class="p3-h">' + esc(t("p3.elections")) + '</p><table class="p3-tbl"><tbody>';
       p.elections.slice().sort(function (a, b) { return a.year - b.year; }).forEach(function (e) {
-        h += '<tr><td>' + e.year + (e.verified ? ' <b title="checked against a source">&#10003;</b>' : "") +
-             '</td><td>' + (e.share != null ? e.share + "%" : "&mdash;") +
-             '</td><td>' + (e.seats != null ? e.seats + " seats" : "&mdash;") + '</td></tr>';
+        h += '<tr><td>' + num(e.year) +
+             (e.verified ? ' <b title="' + esc(t("p3.checked")) + '">&#10003;</b>' : "") +
+             '</td><td>' + (e.share != null ? num(e.share) + "%" : "&mdash;") +
+             '</td><td>' + (e.seats != null ? esc(t("p3.seats", { n: num(e.seats) })) : "&mdash;") +
+             '</td></tr>';
       });
       h += '</tbody></table>';
     }
 
     if (p.stances) {
-      h += '<p class="p3-h">Where it stands</p>';
+      h += '<p class="p3-h">' + esc(t("p3.stands")) + '</p>';
       D.issues.forEach(function (iss) {
         var v = p.stances[iss.id];
         if (v == null) return;
-        h += '<div class="p3-issue"><span>' + esc(iss.label) + '</span>' +
+        h += '<div class="p3-issue"><span>' + esc(tr(iss, "label")) + '</span>' +
              '<div class="p3-scale">' + bar(v) + '</div>' +
-             '<em>' + esc(v < 0 ? iss.neg : iss.pos) + '</em></div>';
+             '<em>' + esc(v < 0 ? tr(iss, "neg") : tr(iss, "pos")) + '</em></div>';
       });
     }
 
     if (linked.length) {
-      h += '<p class="p3-h">On this map</p><ul class="g3-list">';
+      h += '<p class="p3-h">' + esc(t("p3.onmap")) + '</p><ul class="g3-list">';
       linked.forEach(function (e) {
-        h += '<li><button type="button" data-ev="' + esc(e.id) + '">' + esc(e.title || e.id) +
-             (e.date ? ' <span>' + esc(String(e.date).slice(0, 4)) + '</span>' : "") + '</button></li>';
+        h += '<li><button type="button" data-ev="' + esc(e.id) + '">' + esc(tr(e, "title") || e.id) +
+             (e.date ? ' <span>' + esc(num(String(e.date).slice(0, 4))) + '</span>' : "") + '</button></li>';
       });
       h += '</ul>';
     } else {
-      h += '<p class="p3-h">On this map</p><p class="p3-none">Nothing linked yet.</p>';
+      h += '<p class="p3-h">' + esc(t("p3.onmap")) + '</p><p class="p3-none">' +
+           esc(t("p3.nothing")) + '</p>';
     }
     box.innerHTML = h;
     fillPhotos(box);
@@ -331,10 +357,11 @@
   function setYear(y) {
     year = y;
     var s = $("p3-year"); if (s && +s.value !== y) s.value = y;
-    $("p3-year-label").textContent = y;
+    $("p3-year-label").textContent = num(y);
     var ev = (D.elections || []).filter(function (e) { return e.year === y; })[0];
     $("p3-year-note").innerHTML = ev
-      ? '<b>' + esc(ev.kind) + " election" + (ev.verified ? ' &#10003;' : "") + '</b> ' + esc(ev.note)
+      ? '<b>' + esc(t("p3.electionOf", { kind: t("kind." + ev.kind) })) +
+        (ev.verified ? ' &#10003;' : "") + '</b> ' + esc(tr(ev, "note"))
       : "";
   }
 
@@ -367,7 +394,7 @@
   }
 
   function open() { $("p3-modal").hidden = false; view.spin = false; dossier(view.sel); }
-  function close() { $("p3-modal").hidden = true; playing = false; $("p3-play").textContent = "Play"; }
+  function close() { $("p3-modal").hidden = true; playing = false; $("p3-play").textContent = t("p3.play"); }
 
   function init() {
     $("p3-thumb").addEventListener("click", open);
@@ -379,10 +406,10 @@
 
     var s = $("p3-year");
     s.min = 1988; s.max = D.axes.y.max; s.value = D.axes.y.max;
-    s.addEventListener("input", function () { playing = false; $("p3-play").textContent = "Play"; setYear(+this.value); });
+    s.addEventListener("input", function () { playing = false; $("p3-play").textContent = t("p3.play"); setYear(+this.value); });
     $("p3-play").addEventListener("click", function () {
       playing = !playing;
-      this.textContent = playing ? "Pause" : "Play";
+      this.textContent = playing ? t("p3.pause") : t("p3.play");
       if (playing && year >= D.axes.y.max) setYear(1988);
     });
     $("p3-reset").addEventListener("click", function () {
@@ -397,11 +424,24 @@
       if (window.YerevanMap && window.YerevanMap.select) { close(); window.YerevanMap.select(b.dataset.ev); }
     });
 
-    $("p3-legend").innerHTML =
-      '<span><i style="background:' + COL.left + '"></i>Left</span>' +
-      '<span><i style="background:' + COL.centre + '"></i>Centre</span>' +
-      '<span><i style="background:' + COL.right + '"></i>Right</span>' +
-      '<span class="p3-hint">Solid = holding seats &middot; dashed line = rivalry</span>';
+    function legend() {
+      $("p3-legend").innerHTML =
+        '<span><i style="background:' + COL.left + '"></i>' + esc(t("p3.left")) + '</span>' +
+        '<span><i style="background:' + COL.centre + '"></i>' + esc(t("p3.centre")) + '</span>' +
+        '<span><i style="background:' + COL.right + '"></i>' + esc(t("p3.right")) + '</span>' +
+        '<span class="p3-hint">' + esc(t("p3.hint")) + '</span>';
+    }
+    legend();
+
+    /* The canvas repaints every frame; only the HTML around it needs telling. */
+    if (window.I18N) {
+      I18N.onChange(function () {
+        legend();
+        setYear(year);
+        dossier(view.sel);
+        $("p3-play").textContent = playing ? t("p3.pause") : t("p3.play");
+      });
+    }
 
     setYear(D.axes.y.max);
     dossier(null);
