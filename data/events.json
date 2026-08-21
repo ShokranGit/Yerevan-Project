@@ -1231,7 +1231,8 @@
         "۲۰۱۸",
         "میدان جمهوری",
         "پاشینیان"
-      ]
+      ],
+      "episode": "2018-revolution"
     },
     {
       "id": "musicians-arrest-2018",
@@ -1297,6 +1298,1527 @@
         "تنظیم فضای عمومی",
         "اوت ۲۰۱۸"
       ]
+    },
+    {
+      "id": "my-step-march-2018-03-31",
+      "title": "The My Step march sets out from Gyumri",
+      "date": "2018-03-31",
+      "dateEnd": "2018-04-13",
+      "datePrecision": "day",
+      "coordinates": [
+        43.8465,
+        40.7877
+      ],
+      "location": "Vardanants Square, Gyumri — then Vanadzor, Dilijan, Hrazdan, Abovyan",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Nikol Pashinyan left Gyumri on foot on 31 March 2018 with a handful of companions, walking toward Yerevan through Vanadzor, Dilijan, Hrazdan and Abovyan. The campaign was called Իմ քայլը — My Step. Its stated object was to stop Serzh Sargsyan, at the end of two presidential terms, from taking the prime ministership that Armenia's 2015 constitutional reform had turned into the seat of real power.\n\nThe walk took fourteen days and covered roughly 200 kilometres. It arrived in Yerevan on 13 April.",
+      "analysis": "Begin here and the geography of the revolution is already unusual. It does not start in a square. It starts as a line — a body moving through the country at walking pace, collecting people at each town, accumulating the right to speak by the distance covered.\n\nThat matters for what follows. A rally in a square is an event with a place; a march is an event with a route. The revolution's characteristic form was set two weeks before it reached the capital, and when Yerevan's own geography came into play it was used the same way: not as a stage to occupy but as a network to move through.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Civil Contract",
+        "Yelk alliance"
+      ],
+      "tags": [
+        "My Step",
+        "Իմ քայլը",
+        "Gyumri",
+        "march",
+        "2018"
+      ],
+      "sources": [
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "route and dates of the walk",
+          "note_hy": "քայլարշավի երթուղին և ամսաթվերը",
+          "note_fa": "مسیر و تاریخ‌های پیاده‌روی"
+        },
+        {
+          "title": "Global Nonviolent Action Database, Swarthmore College",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "campaign chronology",
+          "note_hy": "արշավի ժամանակագրություն",
+          "note_fa": "گاه‌شمار کارزار"
+        }
+      ],
+      "media": [],
+      "title_hy": "«Իմ քայլը» երթը մեկնարկում է Գյումրիից",
+      "location_hy": "Վարդանանց հրապարակ, Գյումրի — ապա Վանաձոր, Դիլիջան, Հրազդան, Աբովյան",
+      "summary_hy": "Նիկոլ Փաշինյանը 2018 թվականի մարտի 31-ին մի քանի ուղեկիցների հետ ոտքով դուրս եկավ Գյումրիից՝ Վանաձորով, Դիլիջանով, Հրազդանով և Աբովյանով քայլելով դեպի Երևան։ Արշավը կոչվում էր «Իմ քայլը»։ Հայտարարված նպատակն էր կանխել, որ երկու նախագահական ժամկետ լրացրած Սերժ Սարգսյանը զբաղեցնի վարչապետի պաշտոնը, որը Հայաստանի 2015 թվականի սահմանադրական բարեփոխումը վերածել էր իրական իշխանության աթոռի։\n\nՔայլարշավը տևեց տասնչորս օր և ընդգրկեց մոտ 200 կիլոմետր։ Այն Երևան հասավ ապրիլի 13-ին։",
+      "analysis_hy": "Սկսեք այստեղից, և հեղափոխության աշխարհագրությունն արդեն անսովոր է։ Այն չի սկսվում հրապարակից։ Այն սկսվում է որպես գիծ՝ քայլքի արագությամբ երկրի միջով շարժվող մարմին, որը յուրաքանչյուր քաղաքում մարդ է հավաքում և խոսելու իրավունքը կուտակում անցած ճանապարհով։\n\nԴա կարևոր է հետագայի համար։ Հրապարակում հանրահավաքը վայր ունեցող իրադարձություն է, երթը՝ երթուղի ունեցող։ Հեղափոխության բնորոշ ձևը սահմանվեց մայրաքաղաք հասնելուց երկու շաբաթ առաջ, և երբ Երևանի սեփական աշխարհագրությունը մտավ խաղի մեջ, այն օգտագործվեց նույն կերպ՝ ոչ թե որպես գրավելու բեմ, այլ որպես ցանց, որի միջով շարժվում են։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "«Քաղաքացիական պայմանագիր»",
+        "«Ելք» դաշինք"
+      ],
+      "tags_hy": [
+        "Իմ քայլը",
+        "Գյումրի",
+        "քայլարշավ",
+        "2018"
+      ],
+      "title_fa": "راهپیمایی «گام من» از گیومری آغاز می‌شود",
+      "location_fa": "میدان واردانانتس، گیومری — سپس واناتزور، دیلیجان، هرازدان، آبوویان",
+      "summary_fa": "نیکول پاشینیان در ۳۱ مارس ۲۰۱۸ با چند همراه پیاده از گیومری بیرون آمد و از راه واناتزور، دیلیجان، هرازدان و آبوویان به‌سوی ایروان رفت. این کارزار «گام من» (Իմ քայլը) نام داشت. هدف اعلام‌شده‌اش بازداشتن سرژ سرکیسیان — که دو دوره ریاست‌جمهوری‌اش پایان یافته بود — از تصاحب مقام نخست‌وزیری بود؛ مقامی که اصلاح قانون اساسی ۲۰۱۵ ارمنستان آن را به کرسی قدرت واقعی بدل کرده بود.\n\nاین پیاده‌روی چهارده روز طول کشید و نزدیک به ۲۰۰ کیلومتر را پیمود. در ۱۳ آوریل به ایروان رسید.",
+      "analysis_fa": "از اینجا آغاز کنید و جغرافیای انقلاب همین حالا نامتعارف است. از یک میدان شروع نمی‌شود. همچون یک خط شروع می‌شود: بدنی که با سرعت پیاده‌روی در کشور حرکت می‌کند، در هر شهر آدم جمع می‌کند و حق سخن‌گفتن را با مسافتِ پیموده‌شده می‌اندوزد.\n\nاین برای آنچه در پی می‌آید مهم است. تجمع در میدان رویدادی است با یک مکان؛ راهپیمایی رویدادی است با یک مسیر. شکل مشخصهٔ انقلاب دو هفته پیش از رسیدن به پایتخت تعیین شد، و وقتی جغرافیای خود ایروان به میان آمد، به همان شیوه به کار رفت: نه همچون صحنه‌ای برای اشغال، که همچون شبکه‌ای برای گذشتن.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "پیمان مدنی",
+        "ائتلاف یلک"
+      ],
+      "tags_fa": [
+        "گام من",
+        "گیومری",
+        "راهپیمایی",
+        "۲۰۱۸"
+      ]
+    },
+    {
+      "id": "freedom-square-arrival-2018-04-13",
+      "title": "The march reaches Yerevan and ends at Freedom Square",
+      "date": "2018-04-13",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Opera / Freedom Square",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Pashinyan's walk ended on 13 April with a rally at Freedom Square, the plaza in front of the Opera. The crowd was small — press accounts put the first night's encampment at about a hundred people. Within a day it was several thousand.",
+      "analysis": "The march came home to the old address. Freedom Square had been the site of Armenian contentious politics since 1988, and it is where a movement arriving from the provinces would naturally be expected to stop.\n\nHold this entry against what happens six days later. The revolution begins at Freedom Square and does not stay there — and the fact that its opening rally was held in the inherited place makes the move away from it a decision rather than an accident. This is the hinge of the argument the map is built to test.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Protesters"
+      ],
+      "tags": [
+        "Freedom Square",
+        "Opera",
+        "arrival",
+        "13 April"
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 15 April 2018",
+          "url": "https://armenianweekly.com/2018/04/15/political-protests-continue-in-armenia-highlights-from-our-correspondent/",
+          "note": "the march \"culminated in a gathering on April 13 in Freedom Square\"",
+          "note_hy": "երթը «ավարտվեց ապրիլի 13-ի հավաքով Ազատության հրապարակում»",
+          "note_fa": "راهپیمایی «در ۱۳ آوریل به گردهمایی در میدان آزادی انجامید»"
+        },
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "first-night numbers",
+          "note_hy": "առաջին գիշերվա թվերը",
+          "note_fa": "شمار شب نخست"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nikol_Pashinyan_13_Apr_2018.jpg/1400px-Nikol_Pashinyan_13_Apr_2018.jpg",
+          "mirror": "media/rev2018-nikol-pashinyan-13-apr-2018.jpg",
+          "caption": "Pashinyan at Freedom Square on the day the march arrived. The photographer's own caption reads: “Nikol Pashinyan, Freedom Sq (Opera), Yerevan”.",
+          "credit": "Photo: Yerevantsi, 13 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_13_Apr_2018.jpg",
+          "caption_hy": "Փաշինյանը Ազատության հրապարակում այն օրը, երբ երթը հասավ։ Լուսանկարչի սեփական մակագրությունն է․ «Nikol Pashinyan, Freedom Sq (Opera), Yerevan»։",
+          "caption_fa": "پاشینیان در میدان آزادی، روزی که راهپیمایی رسید. شرح خود عکاس: «Nikol Pashinyan, Freedom Sq (Opera), Yerevan»."
+        }
+      ],
+      "title_hy": "Երթը հասնում է Երևան և ավարտվում Ազատության հրապարակում",
+      "location_hy": "Օպերայի / Ազատության հրապարակ",
+      "summary_hy": "Փաշինյանի քայլարշավն ավարտվեց ապրիլի 13-ին՝ Օպերայի դիմացի Ազատության հրապարակում հանրահավաքով։ Բազմությունը փոքր էր․ մամուլի հաղորդումներով առաջին գիշերվա վրանաքաղաքում մոտ հարյուր մարդ էր։ Մեկ օրում այն դարձավ մի քանի հազար։",
+      "analysis_hy": "Երթը վերադարձավ հին հասցեին։ Ազատության հրապարակը 1988 թվականից ի վեր հայկական վիճելի քաղաքականության վայրն էր, և հենց այնտեղ է, որ մարզերից եկող շարժումը բնականաբար կկանգներ։\n\nՊահեք այս գրառումը վեց օր անց կատարվողի կողքին։ Հեղափոխությունը սկսվում է Ազատության հրապարակից և չի մնում այնտեղ, և այն, որ բացման հանրահավաքը կայացավ ժառանգված վայրում, դրանից հեռանալը դարձնում է որոշում, ոչ թե պատահականություն։ Սա այն ծխնին է, որը ստուգելու համար կառուցված է այս քարտեզը։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Ցուցարարներ"
+      ],
+      "tags_hy": [
+        "Ազատության հրապարակ",
+        "Օպերա",
+        "ժամանում",
+        "ապրիլի 13"
+      ],
+      "title_fa": "راهپیمایی به ایروان می‌رسد و در میدان آزادی پایان می‌گیرد",
+      "location_fa": "میدان اپرا / آزادی",
+      "summary_fa": "پیاده‌روی پاشینیان در ۱۳ آوریل با تجمعی در میدان آزادی، محوطهٔ روبه‌روی اپرا، پایان گرفت. جمعیت کم بود؛ گزارش‌های مطبوعاتی چادرهای شب نخست را حدود صد نفر برآورد کردند. ظرف یک روز چند هزار نفر شد.",
+      "analysis_fa": "راهپیمایی به نشانی قدیمی بازگشت. میدان آزادی از ۱۹۸۸ محل سیاست اعتراضی ارمنی بود، و جایی است که انتظار می‌رود جنبشی که از ولایات می‌رسد در آن بایستد.\n\nاین مدخل را کنار آنچه شش روز بعد رخ می‌دهد نگه دارید. انقلاب از میدان آزادی آغاز می‌شود و آنجا نمی‌ماند — و همین که نخستین تجمعش در مکان به‌ارث‌رسیده برگزار شد، دور شدن از آن را به یک تصمیم بدل می‌کند نه یک اتفاق. این همان لولایی است که این نقشه برای آزمودنش ساخته شده است.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "معترضان"
+      ],
+      "tags_fa": [
+        "میدان آزادی",
+        "اپرا",
+        "ورود",
+        "۱۳ آوریل"
+      ]
+    },
+    {
+      "id": "france-square-sit-in-2018-04-13",
+      "title": "The sit-in settles at France Square",
+      "date": "2018-04-13",
+      "dateEnd": "2018-04-23",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51492,
+        40.18785
+      ],
+      "location": "France Square, at the top of Northern Avenue",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "summary": "From 13 April the standing occupation was at France Square, the traffic circle where Northern Avenue's northern end meets Mashtots and Isahakyan. Correspondents describe it as the movement's base for the following ten days: tents, donation collections, the crowd that dispersed into the city in the morning and came back at night.",
+      "analysis": "France Square is a road junction, not a ceremonial space, and it is the point at which the pedestrian corridor built in 2007 empties into the traffic of the city. Choosing it as the base is a choice of a hinge rather than a stage.\n\nIt is also the northern doorway of Northern Avenue. For ten days the movement's fixed address sat at one end of the corridor and its mass rallies moved to the other; the avenue in between was the passage. The corridor built as a leisure promenade spent April 2018 as circulation for a revolution.",
+      "actors": [
+        "Protesters",
+        "Civil Contract"
+      ],
+      "tags": [
+        "France Square",
+        "occupation",
+        "Northern Avenue",
+        "tents"
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 15 April 2018",
+          "url": "https://armenianweekly.com/2018/04/15/political-protests-continue-in-armenia-highlights-from-our-correspondent/",
+          "note": "\"France Square ... occupied by protesters since April 13\"",
+          "note_hy": "«Ֆրանսիայի հրապարակը… ցուցարարների կողմից գրավված ապրիլի 13-ից»",
+          "note_fa": "«میدان فرانسه… از ۱۳ آوریل در اشغال معترضان»"
+        },
+        {
+          "title": "EVN Report, Civil Disobedience and Clashes in Yerevan",
+          "url": "https://evnreport.com/politics/civil-disobedience-and-clashes-in-yerevan/",
+          "note": "France Square as the main gathering point on 16 April",
+          "note_hy": "Ֆրանսիայի հրապարակը որպես ապրիլի 16-ի գլխավոր հավաքատեղի",
+          "note_fa": "میدان فرانسه به‌عنوان نقطهٔ اصلی تجمع در ۱۶ آوریل"
+        }
+      ],
+      "media": [],
+      "title_hy": "Նստացույցը հաստատվում է Ֆրանսիայի հրապարակում",
+      "location_hy": "Ֆրանսիայի հրապարակ, Հյուսիսային պողոտայի վերին ծայրին",
+      "summary_hy": "Ապրիլի 13-ից մշտական գրավումը Ֆրանսիայի հրապարակում էր՝ այն շրջանաձև խաչմերուկում, որտեղ Հյուսիսային պողոտայի հյուսիսային ծայրը հանդիպում է Մաշտոցին և Իսահակյանին։ Թղթակիցները նկարագրում են այն որպես շարժման հենակետը հաջորդ տասը օրվա ընթացքում․ վրաններ, նվիրատվությունների հավաքում, բազմություն, որը առավոտյան ցրվում է քաղաքով և գիշերը վերադառնում։",
+      "analysis_hy": "Ֆրանսիայի հրապարակը ճանապարհների հանգույց է, ոչ թե արարողակարգային տարածք, և հենց այն կետն է, որտեղ 2007 թվականին կառուցված հետիոտն միջանցքը թափվում է քաղաքի երթևեկության մեջ։ Այն որպես հենակետ ընտրելը ծխնի, ոչ թե բեմ ընտրելն է։\n\nԱյն նաև Հյուսիսային պողոտայի հյուսիսային դուռն է։ Տասը օր շարժման հաստատուն հասցեն նստած էր միջանցքի մի ծայրին, իսկ նրա զանգվածային հանրահավաքները տեղափոխվում էին մյուսը․ միջև ընկած պողոտան անցումն էր։ Հանգստի զբոսավայր կառուցված միջանցքը 2018 թվականի ապրիլն անցկացրեց որպես հեղափոխության շրջանառություն։",
+      "actors_hy": [
+        "Ցուցարարներ",
+        "«Քաղաքացիական պայմանագիր»"
+      ],
+      "tags_hy": [
+        "Ֆրանսիայի հրապարակ",
+        "գրավում",
+        "Հյուսիսային պողոտա",
+        "վրաններ"
+      ],
+      "title_fa": "تحصن در میدان فرانسه مستقر می‌شود",
+      "location_fa": "میدان فرانسه، در انتهای شمالی خیابان شمالی",
+      "summary_fa": "از ۱۳ آوریل، اشغال دائمی در میدان فرانسه بود؛ همان فلکه‌ای که انتهای شمالی خیابان شمالی با ماشتوتس و ایساهاکیان تلاقی می‌کند. خبرنگاران آن را پایگاه جنبش در ده روز بعد توصیف می‌کنند: چادرها، جمع‌آوری کمک، و جمعیتی که صبح در شهر پخش می‌شد و شب بازمی‌گشت.",
+      "analysis_fa": "میدان فرانسه یک تقاطع است، نه فضایی تشریفاتی، و همان نقطه‌ای است که کریدور پیادهٔ ساخته‌شده در ۲۰۰۷ در ترافیک شهر تخلیه می‌شود. برگزیدن آن به‌عنوان پایگاه، برگزیدن یک لولاست نه یک صحنه.\n\nهمچنین درِ شمالی خیابان شمالی است. ده روز، نشانی ثابت جنبش در یک سر کریدور نشست و تجمع‌های انبوهش به سر دیگر رفت؛ خیابانِ میان آن دو، گذرگاه بود. کریدوری که همچون گردشگاه فراغت ساخته شده بود، آوریل ۲۰۱۸ را در مقام گردشِ یک انقلاب گذراند.",
+      "actors_fa": [
+        "معترضان",
+        "پیمان مدنی"
+      ],
+      "tags_fa": [
+        "میدان فرانسه",
+        "اشغال",
+        "خیابان شمالی",
+        "چادر"
+      ]
+    },
+    {
+      "id": "baghramyan-razor-wire-2018-04-16",
+      "title": "Razor wire on Baghramyan Avenue; Pashinyan hurt, 46 injured",
+      "date": "2018-04-16",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5122,
+        40.19
+      ],
+      "location": "Marshal Baghramyan Avenue, below the National Assembly",
+      "categories": [
+        "protest",
+        "state"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Civil disobedience began at about 8:15 in the morning with protesters blocking intersections across the centre. Pashinyan's group moved up Baghramyan Avenue toward the National Assembly; police had already closed the street near the parliament and laid razor wire. Students blocked streets elsewhere, joining Pashinyan in front of the Medical University and calling out the Architecture University.\n\nAt the barricades police used batons and stun grenades. The Ministry of Health counted about 46 injured, police among them. Pashinyan was hurt, treated in hospital and returned to the crowd the same day. Baghramyan metro station shut early; by evening the whole metro was closed.",
+      "analysis": "The state's first serious answer was to cut the city. Razor wire on Baghramyan, a metro shut down, an avenue closed below the building it leads to — the response was territorial before it was political.\n\nBaghramyan is where Electric Yerevan had stood in 2015, and the choice to march on it repeats that precedent exactly. What is new is that the movement did not stay to be contained there. Within two days the crowd was working the other axis of the city instead.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Riot police",
+        "Students of Yerevan State Medical University",
+        "Yerevan State University students"
+      ],
+      "tags": [
+        "Baghramyan",
+        "razor wire",
+        "stun grenades",
+        "civil disobedience",
+        "16 April"
+      ],
+      "sources": [
+        {
+          "title": "EVN Report, Civil Disobedience and Clashes in Yerevan",
+          "url": "https://evnreport.com/politics/civil-disobedience-and-clashes-in-yerevan/",
+          "note": "times, streets, injuries, metro closure",
+          "note_hy": "ժամեր, փողոցներ, վիրավորներ, մետրոյի փակում",
+          "note_fa": "ساعت‌ها، خیابان‌ها، مجروحان، تعطیلی مترو"
+        },
+        {
+          "title": "Public Radio of Armenia, 16 April 2018",
+          "url": "https://en.armradio.am/2018/04/16/opposition-mp-nikol-pashinyan-discharged-from-hospital-joins-protesters/",
+          "note": "Pashinyan discharged and rejoining the rally",
+          "note_hy": "Փաշինյանը դուրս է գրվում և վերադառնում հանրահավաքին",
+          "note_fa": "ترخیص پاشینیان و بازگشتش به تجمع"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg/1400px-Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg",
+          "mirror": "media/rev2018-nikol-pashinyan-april-16-baghramyan-avenue.jpg",
+          "caption": "Pashinyan on Baghramyan Avenue, 16 April.",
+          "credit": "Photo: Yerevantsi, 16 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_April_16_Baghramyan_Avenue.jpg",
+          "caption_hy": "Փաշինյանը Բաղրամյան պողոտայում, ապրիլի 16։",
+          "caption_fa": "پاشینیان در خیابان باغرامیان، ۱۶ آوریل."
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg/1400px-16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg",
+          "mirror": "media/rev2018-16-04-2018-protest-demonstrations-yerevan.jpg",
+          "caption": "Yerevan on 16 April, the first day of open civil disobedience.",
+          "credit": "Photo: Ավետիսյան91, 16 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:16.04.2018_Protest_Demonstrations%2C_Yerevan.jpg",
+          "caption_hy": "Երևանը ապրիլի 16-ին՝ բացահայտ քաղաքացիական անհնազանդության առաջին օրը։",
+          "caption_fa": "ایروان در ۱۶ آوریل، نخستین روز نافرمانی مدنی آشکار."
+        }
+      ],
+      "title_hy": "Փշալար Բաղրամյան պողոտայում․ Փաշինյանը վիրավորվում է, 46 տուժած",
+      "location_hy": "Մարշալ Բաղրամյան պողոտա, Ազգային ժողովից ներքև",
+      "summary_hy": "Քաղաքացիական անհնազանդությունը սկսվեց առավոտյան մոտ 8:15-ին՝ ցուցարարները փակեցին կենտրոնի խաչմերուկները։ Փաշինյանի խումբը Բաղրամյան պողոտայով բարձրանում էր դեպի Ազգային ժողով․ ոստիկանությունն արդեն փակել էր փողոցը խորհրդարանի մոտ և փշալար էր փռել։ Ուսանողները փակում էին այլ փողոցներ, միանում Փաշինյանին Բժշկական համալսարանի դիմաց և կանչում Ճարտարապետական համալսարանին։\n\nԱրգելապատնեշների մոտ ոստիկանությունն օգտագործեց մահակներ և լուսաձայնային նռնակներ։ Առողջապահության նախարարությունը հաշվեց մոտ 46 վիրավոր, նրանց թվում՝ ոստիկաններ։ Փաշինյանը վիրավորվեց, բուժօգնություն ստացավ հիվանդանոցում և նույն օրը վերադարձավ բազմությանը։ Բաղրամյան մետրոկայարանը վաղ փակվեց․ երեկոյան փակվեց ամբողջ մետրոպոլիտենը։",
+      "analysis_hy": "Պետության առաջին լուրջ պատասխանը քաղաքը կտրելն էր։ Փշալար Բաղրամյանում, փակված մետրո, փակ պողոտա այն շենքից ներքև, դեպի որը այն տանում է․ արձագանքը տարածքային էր, նախքան քաղաքական լիներ։\n\nԲաղրամյանն այն վայրն է, որտեղ 2015 թվականին կանգնել էր Էլեկտրիկ Երևանը, և դրա վրա երթ գնալու ընտրությունը ճշգրտորեն կրկնում է այդ նախադեպը։ Նորն այն է, որ շարժումը չմնաց այնտեղ՝ զսպվելու։ Երկու օրվա ընթացքում բազմությունն արդեն աշխատում էր քաղաքի մյուս առանցքի վրա։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Հատուկ նշանակության ոստիկանություն",
+        "Երևանի պետական բժշկական համալսարանի ուսանողներ",
+        "Երևանի պետական համալսարանի ուսանողներ"
+      ],
+      "tags_hy": [
+        "Բաղրամյան",
+        "փշալար",
+        "լուսաձայնային նռնակներ",
+        "քաղաքացիական անհնազանդություն",
+        "ապրիլի 16"
+      ],
+      "title_fa": "سیم خاردار در خیابان باغرامیان؛ پاشینیان زخمی، ۴۶ مجروح",
+      "location_fa": "خیابان مارشال باغرامیان، پایین‌تر از مجلس ملی",
+      "summary_fa": "نافرمانی مدنی حدود ساعت ۸:۱۵ صبح با بستن تقاطع‌های مرکز شهر آغاز شد. گروه پاشینیان از خیابان باغرامیان به‌سوی مجلس ملی بالا رفت؛ پلیس پیشاپیش خیابان را نزدیک ساختمان مجلس بسته و سیم خاردار کشیده بود. دانشجویان خیابان‌های دیگر را می‌بستند، جلوی دانشگاه پزشکی به پاشینیان پیوستند و دانشگاه معماری را فراخواندند.\n\nپلیس پشت سنگرها از باتوم و نارنجک صوتی استفاده کرد. وزارت بهداشت حدود ۴۶ مجروح شمرد، از جمله ماموران پلیس. پاشینیان زخمی شد، در بیمارستان درمان شد و همان روز به میان جمعیت بازگشت. ایستگاه مترو باغرامیان زود بسته شد؛ تا شب کل مترو تعطیل بود.",
+      "analysis_fa": "نخستین پاسخ جدی دولت بریدن شهر بود. سیم خاردار روی باغرامیان، مترویی تعطیل، خیابانی بسته زیر ساختمانی که به آن می‌رسد — واکنش پیش از آنکه سیاسی باشد سرزمینی بود.\n\nباغرامیان همان جایی است که «ایروان برقی» در ۲۰۱۵ ایستاد، و انتخاب راهپیمایی روی آن دقیقاً همان سابقه را تکرار می‌کند. آنچه تازه است این است که جنبش برای مهارشدن آنجا نماند. ظرف دو روز، جمعیت روی محور دیگر شهر کار می‌کرد.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "پلیس ضدشورش",
+        "دانشجویان دانشگاه پزشکی ایروان",
+        "دانشجویان دانشگاه دولتی ایروان"
+      ],
+      "tags_fa": [
+        "باغرامیان",
+        "سیم خاردار",
+        "نارنجک صوتی",
+        "نافرمانی مدنی",
+        "۱۶ آوریل"
+      ]
+    },
+    {
+      "id": "sargsyan-elected-pm-2018-04-17",
+      "title": "Parliament makes Sargsyan prime minister",
+      "date": "2018-04-17",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51125,
+        40.19115
+      ],
+      "location": "National Assembly, Baghramyan Avenue",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Protesters tried to block the entrances to the National Assembly to prevent the vote. Inside, the chamber elected Serzh Sargsyan prime minister — the office that the 2015 constitutional referendum had made the country's most powerful, at the end of his two terms as president. Roughly eighty people were arrested that day.",
+      "analysis": "The grievance is precise and constitutional: a man completing the maximum term in one office moving into another that had been enlarged, by a referendum his own party ran, to hold the power he was leaving.\n\nThe vote is also the moment the protest stops being about prevention and becomes about removal. Everything before 17 April was an attempt to stop something happening. Everything after it had to undo something that had.",
+      "actors": [
+        "Serzh Sargsyan",
+        "Republican Party of Armenia",
+        "National Assembly"
+      ],
+      "tags": [
+        "National Assembly",
+        "constitutional reform",
+        "17 April",
+        "vote"
+      ],
+      "sources": [
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "the vote and the arrests",
+          "note_hy": "քվեարկությունը և ձերբակալությունները",
+          "note_fa": "رأی‌گیری و بازداشت‌ها"
+        },
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "~80 arrested on 17 April",
+          "note_hy": "ապրիլի 17-ին ~80 ձերբակալված",
+          "note_fa": "حدود ۸۰ بازداشت در ۱۷ آوریل"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg/1400px-17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg",
+          "mirror": "media/rev2018-17-04-2018-protest-demonstrations-yerevan-1.jpg",
+          "caption": "17 April. The photographer's caption places this at Republic Square — «Հանրապետության հրապարակ» — two days before the square became the movement's nightly centre.",
+          "credit": "Photo: Ավետիսյան91, 17 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:17.04.2018_Protest_Demonstrations%2C_Yerevan_1.jpg",
+          "caption_hy": "Ապրիլի 17։ Լուսանկարչի մակագրությունը սա տեղադրում է Հանրապետության հրապարակում՝ երկու օր առաջ, քան հրապարակը դարձավ շարժման ամենօրյա կենտրոնը։",
+          "caption_fa": "۱۷ آوریل. شرح عکاس این تصویر را در میدان جمهوری جای می‌دهد — دو روز پیش از آنکه میدان به مرکز شبانهٔ جنبش بدل شود."
+        }
+      ],
+      "title_hy": "Խորհրդարանը Սարգսյանին դարձնում է վարչապետ",
+      "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա",
+      "summary_hy": "Ցուցարարները փորձեցին փակել Ազգային ժողովի մուտքերը՝ քվեարկությունը կանխելու համար։ Ներսում պալատն ընտրեց Սերժ Սարգսյանին վարչապետ՝ այն պաշտոնը, որը 2015 թվականի սահմանադրական հանրաքվեն դարձրել էր երկրի ամենահզորը, նրա որպես նախագահ երկու ժամկետների ավարտին։ Այդ օրը ձերբակալվեց մոտ ութսուն մարդ։",
+      "analysis_hy": "Դժգոհությունը ճշգրիտ է և սահմանադրական․ մեկ պաշտոնում առավելագույն ժամկետը լրացնող մարդը տեղափոխվում է մեկ ուրիշի, որն ընդլայնվել էր՝ իր իսկ կուսակցության անցկացրած հանրաքվեով, որպեսզի պահի այն իշխանությունը, որը նա թողնում էր։\n\nՔվեարկությունը նաև այն պահն է, երբ բողոքը դադարում է կանխման մասին լինելուց և դառնում է հեռացման մասին։ Ապրիլի 17-ից առաջ ամեն ինչ փորձ էր կանխել ինչ-որ բանի կատարումը։ Դրանից հետո ամեն ինչ պետք է հետարկեր արդեն կատարվածը։",
+      "actors_hy": [
+        "Սերժ Սարգսյան",
+        "Հայաստանի Հանրապետական կուսակցություն",
+        "Ազգային ժողով"
+      ],
+      "tags_hy": [
+        "Ազգային ժողով",
+        "սահմանադրական բարեփոխում",
+        "ապրիլի 17",
+        "քվեարկություն"
+      ],
+      "title_fa": "مجلس، سرکیسیان را نخست‌وزیر می‌کند",
+      "location_fa": "مجلس ملی، خیابان باغرامیان",
+      "summary_fa": "معترضان کوشیدند ورودی‌های مجلس ملی را ببندند تا رأی‌گیری انجام نشود. درون ساختمان، مجلس سرژ سرکیسیان را نخست‌وزیر کرد — همان مقامی که همه‌پرسی قانون اساسی ۲۰۱۵ آن را به پرقدرت‌ترین جایگاه کشور بدل کرده بود، درست در پایان دو دورهٔ ریاست‌جمهوری او. آن روز حدود هشتاد نفر بازداشت شدند.",
+      "analysis_fa": "نارضایتی دقیق و قانون‌اساسی است: مردی که حداکثر دوره را در یک مقام تمام کرده، به مقامی دیگر می‌رود که با همه‌پرسی‌ای که حزب خودش برگزار کرد بزرگ شده بود تا همان قدرتی را نگه دارد که او داشت ترکش می‌کرد.\n\nاین رأی همچنین لحظه‌ای است که اعتراض از بازداشتن به برداشتن بدل می‌شود. هرچه پیش از ۱۷ آوریل بود، تلاشی بود برای جلوگیری از وقوع چیزی. هرچه پس از آن آمد، باید چیزی را که رخ داده بود بازمی‌گرداند.",
+      "actors_fa": [
+        "سرژ سرکیسیان",
+        "حزب جمهوری‌خواه ارمنستان",
+        "مجلس ملی"
+      ],
+      "tags_fa": [
+        "مجلس ملی",
+        "اصلاح قانون اساسی",
+        "۱۷ آوریل",
+        "رأی‌گیری"
+      ]
+    },
+    {
+      "id": "tigran-mets-march-2018-04-18",
+      "title": "The crowd marches down Tigran Mets",
+      "date": "2018-04-18",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5133,
+        40.169
+      ],
+      "location": "Tigran Mets Avenue, south of Republic Square",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "summary": "On 18 April the marches worked the southern axis. One of the day's photographs is captioned by its author, in Armenian, simply «Բողոքի երթ Տիգրան Մեծ փողոցում» — a protest march on Tigran Mets Street.",
+      "analysis": "Tigran Mets runs south from Republic Square, the continuation of the line that Tamanyan drew from the Opera down through the two squares. Until now the movement had worked the northern half of that line and the Baghramyan spur. On 18 April it walked the southern half.\n\nThis is a rehearsal for 22 April. When Pashinyan takes the same avenue four days later it is not an improvisation; the crowd had already learned that the axis continues past the ceremonial city and into the districts where people live.",
+      "actors": [
+        "Protesters",
+        "Nikol Pashinyan"
+      ],
+      "tags": [
+        "Tigran Mets",
+        "march",
+        "southern axis",
+        "18 April"
+      ],
+      "sources": [
+        {
+          "title": "Wikimedia Commons, 18.04.2018 Protest Demonstrations, Yerevan",
+          "url": "https://commons.wikimedia.org/wiki/File:18.04.2018,_Protest_Demonstrations,_Yerevan.jpg",
+          "note": "photographer's caption names Tigran Mets",
+          "note_hy": "լուսանկարչի մակագրությունը նշում է Տիգրան Մեծը",
+          "note_fa": "شرح عکاس نام تیگران متس را می‌آورد"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg/1400px-18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg",
+          "mirror": "media/rev2018-18-04-2018-protest-demonstrations-yerevan.jpg",
+          "caption": "The march on Tigran Mets Avenue, 18 April 2018.",
+          "credit": "Photo: Ավետիսյան91, 18 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:18.04.2018%2C_Protest_Demonstrations%2C_Yerevan.jpg",
+          "caption_hy": "Երթը Տիգրան Մեծի պողոտայում, 2018 թվականի ապրիլի 18։",
+          "caption_fa": "راهپیمایی در خیابان تیگران متس، ۱۸ آوریل ۲۰۱۸."
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg/1400px-Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg",
+          "mirror": "media/rev2018-nikol-pashinyan-april-18-tigran-mets-avenue.jpg",
+          "caption": "Pashinyan on Tigran Mets Avenue the same day.",
+          "credit": "Photo: Yerevantsi, 18 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Nikol_Pashinyan_April_18_Tigran_Mets_Avenue.jpg",
+          "caption_hy": "Փաշինյանը Տիգրան Մեծի պողոտայում նույն օրը։",
+          "caption_fa": "پاشینیان در خیابان تیگران متس همان روز."
+        }
+      ],
+      "title_hy": "Բազմությունը երթով իջնում է Տիգրան Մեծով",
+      "location_hy": "Տիգրան Մեծի պողոտա, Հանրապետության հրապարակից հարավ",
+      "summary_hy": "Ապրիլի 18-ին երթերն աշխատեցին հարավային առանցքի վրա։ Այդ օրվա լուսանկարներից մեկը հեղինակի կողմից հայերեն մակագրված է պարզապես՝ «Բողոքի երթ Տիգրան Մեծ փողոցում»։",
+      "analysis_hy": "Տիգրան Մեծը Հանրապետության հրապարակից հարավ է գնում՝ որպես այն գծի շարունակություն, որը Թամանյանը գծել էր Օպերայից ներքև՝ երկու հրապարակների միջով։ Մինչ այդ շարժումն աշխատել էր այդ գծի հյուսիսային կեսի և Բաղրամյանի ճյուղի վրա։ Ապրիլի 18-ին այն քայլեց հարավային կեսը։\n\nՍա ապրիլի 22-ի փորձն է։ Երբ Փաշինյանը չորս օր անց բռնում է նույն պողոտան, դա իմպրովիզացիա չէ․ բազմությունն արդեն սովորել էր, որ առանցքը շարունակվում է արարողակարգային քաղաքից այն կողմ և մտնում այն թաղամասերը, որտեղ մարդիկ ապրում են։",
+      "actors_hy": [
+        "Ցուցարարներ",
+        "Նիկոլ Փաշինյան"
+      ],
+      "tags_hy": [
+        "Տիգրան Մեծ",
+        "երթ",
+        "հարավային առանցք",
+        "ապրիլի 18"
+      ],
+      "title_fa": "جمعیت از تیگران مِتس پایین می‌رود",
+      "location_fa": "خیابان تیگران متس، جنوب میدان جمهوری",
+      "summary_fa": "در ۱۸ آوریل راهپیمایی‌ها روی محور جنوبی کار کردند. یکی از عکس‌های آن روز را خود عکاس به ارمنی چنین شرح داده است: «راهپیمایی اعتراضی در خیابان تیگران متس».",
+      "analysis_fa": "تیگران متس از میدان جمهوری به جنوب می‌رود، ادامهٔ همان خطی که تامانیان از اپرا پایین و از میان دو میدان کشید. تا اینجا جنبش نیمهٔ شمالی آن خط و انشعاب باغرامیان را به کار گرفته بود. در ۱۸ آوریل نیمهٔ جنوبی را پیمود.\n\nاین تمرینِ ۲۲ آوریل است. وقتی پاشینیان چهار روز بعد همان خیابان را می‌گیرد، بداهه‌سازی نیست؛ جمعیت پیشاپیش آموخته بود که محور از شهرِ تشریفاتی می‌گذرد و به محله‌هایی می‌رسد که مردم در آن‌ها زندگی می‌کنند.",
+      "actors_fa": [
+        "معترضان",
+        "نیکول پاشینیان"
+      ],
+      "tags_fa": [
+        "تیگران متس",
+        "راهپیمایی",
+        "محور جنوبی",
+        "۱۸ آوریل"
+      ]
+    },
+    {
+      "id": "republic-square-becomes-centre-2018-04-19",
+      "title": "The nightly rally moves to Republic Square",
+      "date": "2018-04-19",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5126,
+        40.1776
+      ],
+      "location": "Republic Square",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "episode": "2018-revolution",
+      "summary": "On the evening of 19 April Pashinyan addressed a crowd RFE/RL put at some 10,000 on Republic Square. Police cordoned off the government compound on the square; about 120 people were detained in the centre that day. From this point the square is the movement's nightly address, and the crowds counted there rise through 50,000 on 21 April, about 115,000 on 22 April and roughly 150,000 on 2 May.",
+      "analysis": "This is the entry the rest of the project has been arguing toward, and it deserves to be stated precisely rather than grandly.\n\nThe revolution did not begin at Republic Square. It began at Freedom Square on 13 April, kept its camp at France Square, and fought on Baghramyan. Republic Square became the centre on about the sixth day — and once it did, it stayed. The shift is real, it is datable, and because it happened *inside* the revolution rather than before it, it cannot be explained by long-run symbolism alone. Something in those six days made the square that had meant statehood usable as the people's place.\n\nWhat had changed since 2013 was not the square. It was the decade of ordinary use of the corridor between the two squares — and the fact that by 19 April the crowd had already walked Northern Avenue, Baghramyan and Tigran Mets and had no reason left to treat any part of the centre as belonging to someone else.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Protesters",
+        "Police"
+      ],
+      "tags": [
+        "Republic Square",
+        "19 April",
+        "pivot",
+        "crowd"
+      ],
+      "sources": [
+        {
+          "title": "RFE/RL, Armenian Opposition Protests Resume Despite Calls For Dialogue",
+          "url": "https://www.rferl.org/a/armenia-protests-yerevan-government-building-sarkisian-cabinet/29176265.html",
+          "note": "\"a rally of some 10,000 people on Yerevan's central Republic Square\", 19 April; 120 detained",
+          "note_hy": "«մոտ 10 000 մարդու հանրահավաք Երևանի կենտրոնական Հանրապետության հրապարակում», ապրիլի 19, 120 ձերբակալված",
+          "note_fa": "«تجمعی حدود ۱۰٬۰۰۰ نفر در میدان مرکزی جمهوری ایروان»، ۱۹ آوریل؛ ۱۲۰ بازداشت"
+        },
+        {
+          "title": "Eurasianet, Armenian opposition leader arrested, but protesters rally",
+          "url": "https://eurasianet.org/armenian-opposition-leader-arrested-but-protesters-rally",
+          "note": "~115,000 on Republic Square, 22 April",
+          "note_hy": "~115 000 Հանրապետության հրապարակում, ապրիլի 22",
+          "note_fa": "حدود ۱۱۵٬۰۰۰ نفر در میدان جمهوری، ۲۲ آوریل"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Republic_Square_During_the_2018_Armenian_protests_02.jpg/1400px-Republic_Square_During_the_2018_Armenian_protests_02.jpg",
+          "mirror": "media/rev2018-republic-square-during-the-2018-armenian-protests-02.jpg",
+          "caption": "Republic Square, 19 April 2018.",
+          "credit": "Photo: Narek75, 19 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Republic_Square_During_the_2018_Armenian_protests_02.jpg",
+          "caption_hy": "Հանրապետության հրապարակը, 2018 թվականի ապրիլի 19։",
+          "caption_fa": "میدان جمهوری، ۱۹ آوریل ۲۰۱۸."
+        }
+      ],
+      "title_hy": "Ամենօրյա հանրահավաքը տեղափոխվում է Հանրապետության հրապարակ",
+      "location_hy": "Հանրապետության հրապարակ",
+      "summary_hy": "Ապրիլի 19-ի երեկոյան Փաշինյանը դիմեց բազմությանը, որը «Ազատություն» ռադիոկայանը գնահատեց մոտ 10 000 մարդ Հանրապետության հրապարակում։ Ոստիկանությունը շրջափակեց հրապարակի կառավարական համալիրը․ այդ օրը կենտրոնում ձերբակալվեց մոտ 120 մարդ։ Այս պահից հրապարակը շարժման ամենօրյա հասցեն է, և այնտեղ հաշվված բազմությունները հասնում են 50 000-ի ապրիլի 21-ին, մոտ 115 000-ի ապրիլի 22-ին և մոտ 150 000-ի մայիսի 2-ին։",
+      "analysis_hy": "Սա այն գրառումն է, որին ձգտում էր ողջ նախագիծը, և այն արժանի է ճշգրիտ, ոչ թե շքեղ ձևակերպման։\n\nՀեղափոխությունը չսկսվեց Հանրապետության հրապարակից։ Այն սկսվեց Ազատության հրապարակից ապրիլի 13-ին, ճամբարը պահեց Ֆրանսիայի հրապարակում և կռվեց Բաղրամյանում։ Հանրապետության հրապարակը կենտրոն դարձավ մոտավորապես վեցերորդ օրը, և երբ դարձավ, մնաց։ Տեղաշարժն իրական է, թվագրելի է, և քանի որ այն տեղի ունեցավ հեղափոխության ներսում, ոչ թե դրանից առաջ, չի կարող բացատրվել միայն երկարաժամկետ խորհրդանշականությամբ։ Այդ վեց օրվա ընթացքում ինչ-որ բան պետականություն նշանակող հրապարակը դարձրեց ժողովրդի տեղը։\n\nԱյն, ինչ փոխվել էր 2013-ից ի վեր, հրապարակը չէր։ Դա երկու հրապարակների միջև ընկած միջանցքի սովորական օգտագործման տասնամյակն էր, և այն, որ ապրիլի 19-ին բազմությունն արդեն քայլել էր Հյուսիսային պողոտան, Բաղրամյանը և Տիգրան Մեծը և պատճառ չուներ կենտրոնի որևէ մասը ուրիշին պատկանող համարելու։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Ցուցարարներ",
+        "Ոստիկանություն"
+      ],
+      "tags_hy": [
+        "Հանրապետության հրապարակ",
+        "ապրիլի 19",
+        "շրջադարձ",
+        "բազմություն"
+      ],
+      "title_fa": "تجمع شبانه به میدان جمهوری منتقل می‌شود",
+      "location_fa": "میدان جمهوری",
+      "summary_fa": "شامگاه ۱۹ آوریل پاشینیان جمعیتی را خطاب کرد که رادیو آزادی حدود ۱۰٬۰۰۰ نفر برآورد کرد، در میدان جمهوری. پلیس مجتمع دولتی میدان را محاصره کرد؛ آن روز حدود ۱۲۰ نفر در مرکز بازداشت شدند. از این پس میدان نشانی شبانهٔ جنبش است، و شمار جمعیت آن تا ۵۰٬۰۰۰ در ۲۱ آوریل، حدود ۱۱۵٬۰۰۰ در ۲۲ آوریل و نزدیک ۱۵۰٬۰۰۰ در ۲ مه بالا می‌رود.",
+      "analysis_fa": "این همان مدخلی است که تمام پروژه به‌سویش استدلال می‌کرد، و شایستهٔ بیانی دقیق است نه پرطمطراق.\n\nانقلاب از میدان جمهوری آغاز نشد. از میدان آزادی در ۱۳ آوریل آغاز شد، اردوگاهش را در میدان فرانسه نگه داشت و در باغرامیان جنگید. میدان جمهوری تقریباً در روز ششم به مرکز بدل شد — و همین‌که شد، ماند. این جابه‌جایی واقعی است، تاریخ‌پذیر است، و چون *درون* انقلاب رخ داد نه پیش از آن، تنها با نمادگرایی درازمدت توضیح‌پذیر نیست. چیزی در آن شش روز، میدانی را که معنای دولت داشت به‌عنوان جای مردم قابل استفاده کرد.\n\nآنچه از ۲۰۱۳ تغییر کرده بود، میدان نبود. یک دهه استفادهٔ روزمره از کریدور میان دو میدان بود — و این واقعیت که تا ۱۹ آوریل جمعیت پیشاپیش خیابان شمالی، باغرامیان و تیگران متس را پیموده بود و دیگر دلیلی نداشت هیچ بخشی از مرکز را مالِ کسی دیگر بداند.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "معترضان",
+        "پلیس"
+      ],
+      "tags_fa": [
+        "میدان جمهوری",
+        "۱۹ آوریل",
+        "چرخش",
+        "جمعیت"
+      ]
+    },
+    {
+      "id": "marriott-meeting-2018-04-22",
+      "title": "Three minutes at the Marriott: “You have not learned the lesson from March 1”",
+      "date": "2018-04-22",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51134,
+        40.17791
+      ],
+      "location": "Marriott Armenia Hotel, Amiryan Street, on Republic Square",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "episode": "2018-revolution",
+      "summary": "At ten in the morning on 22 April Serzh Sargsyan and Nikol Pashinyan sat down in the Marriott Armenia on Republic Square, in front of dozens of journalists and live cameras. The meeting lasted about three minutes.\n\nSargsyan called it “not talks, not a dialogue — just an ultimatum, blackmail” of the state, told Pashinyan “you have not learned the lesson from March 1,” and walked out.",
+      "analysis": "March 1 is 1 March 2008: the morning police cleared the tents from Opera Square, and the evening ten people were killed near the end of Mashtots Avenue. Sargsyan was the president-elect that day. Invoking it across a table in 2018 was not a historical reference; it was the state naming, in public, the maximum it had previously been willing to do.\n\nThe geography is worth holding. The threat was issued in a hotel on Republic Square — the square that had symbolised the state — about a killing that happened after a square was cleared. Within the hour, Pashinyan answered it by walking out of the ceremonial centre altogether and heading south. The state had named a square; the movement declined to be held in one.",
+      "actors": [
+        "Serzh Sargsyan",
+        "Nikol Pashinyan",
+        "Armenian and international press"
+      ],
+      "tags": [
+        "Marriott",
+        "22 April",
+        "March 1 2008",
+        "ultimatum",
+        "threat"
+      ],
+      "sources": [
+        {
+          "title": "Eurasianet, Armenian opposition leader arrested, but protesters rally",
+          "url": "https://eurasianet.org/armenian-opposition-leader-arrested-but-protesters-rally",
+          "note": "Marriott on Republic Square; three minutes; both quotations",
+          "note_hy": "«Մարիոթ»-ը Հանրապետության հրապարակում, երեք րոպե, երկու մեջբերումները",
+          "note_fa": "ماریوت در میدان جمهوری؛ سه دقیقه؛ هر دو نقل‌قول"
+        },
+        {
+          "title": "Horizon Weekly, Serzh Sargsyan, Nikol Pashinyan meet, no agreement reached — Video",
+          "url": "https://horizonweekly.ca/en/serzh-sargsyan-nikol-pashinyan-meet-no-agreement-reached-video/",
+          "note": "televised footage of the meeting",
+          "note_hy": "հանդիպման հեռուստատեսային կադրերը",
+          "note_fa": "تصاویر تلویزیونی دیدار"
+        },
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "time of the meeting",
+          "note_hy": "հանդիպման ժամը",
+          "note_fa": "ساعت دیدار"
+        }
+      ],
+      "media": [],
+      "title_hy": "Երեք րոպե «Մարիոթում»․ «Դու մարտի 1-ի դասը չես քաղել»",
+      "location_hy": "«Մարիոթ Արմենիա» հյուրանոց, Ամիրյան փողոց, Հանրապետության հրապարակում",
+      "summary_hy": "Ապրիլի 22-ի առավոտյան ժամը տասին Սերժ Սարգսյանը և Նիկոլ Փաշինյանը նստեցին Հանրապետության հրապարակի «Մարիոթ Արմենիա» հյուրանոցում՝ տասնյակ լրագրողների և ուղիղ եթերի տեսախցիկների առջև։ Հանդիպումը տևեց մոտ երեք րոպե։\n\nՍարգսյանն այն անվանեց «ոչ բանակցություն, ոչ երկխոսություն, այլ պարզապես վերջնագիր, պետության շանտաժ», Փաշինյանին ասաց «դու մարտի 1-ի դասը չես քաղել» և դուրս եկավ։",
+      "analysis_hy": "Մարտի 1-ը 2008 թվականի մարտի 1-ն է․ առավոտը, երբ ոստիկանությունը վրանները մաքրեց Օպերայի հրապարակից, և երեկոն, երբ Մաշտոցի պողոտայի ծայրին տասը մարդ սպանվեց։ Այդ օրը Սարգսյանը նորընտիր նախագահն էր։ 2018 թվականին սեղանի շուրջ դա հիշեցնելը պատմական հղում չէր․ դա պետությունն էր՝ հրապարակավ անվանելով այն առավելագույնը, ինչին նախկինում պատրաստ էր։\n\nԱշխարհագրությունն արժե պահել։ Սպառնալիքը հնչեց Հանրապետության հրապարակի հյուրանոցում՝ պետությունը խորհրդանշող հրապարակում, մի սպանության մասին, որը տեղի ունեցավ հրապարակի մաքրումից հետո։ Մեկ ժամվա ընթացքում Փաշինյանը պատասխանեց՝ ընդհանրապես դուրս գալով արարողակարգային կենտրոնից և ուղղվելով հարավ։ Պետությունը հրապարակ էր անվանել․ շարժումը հրաժարվեց հրապարակում պահվելուց։",
+      "actors_hy": [
+        "Սերժ Սարգսյան",
+        "Նիկոլ Փաշինյան",
+        "Հայաստանյան և միջազգային մամուլ"
+      ],
+      "tags_hy": [
+        "Մարիոթ",
+        "ապրիլի 22",
+        "2008 թ. մարտի 1",
+        "վերջնագիր",
+        "սպառնալիք"
+      ],
+      "title_fa": "سه دقیقه در ماریوت: «درس ۱ مارس را نگرفته‌ای»",
+      "location_fa": "هتل ماریوت آرمنیا، خیابان آمیریان، در میدان جمهوری",
+      "summary_fa": "ساعت ده صبح ۲۲ آوریل، سرژ سرکیسیان و نیکول پاشینیان در هتل ماریوت آرمنیا در میدان جمهوری، پیش چشم ده‌ها خبرنگار و دوربین‌های زنده، نشستند. دیدار حدود سه دقیقه طول کشید.\n\nسرکیسیان آن را «نه مذاکره، نه گفت‌وگو — فقط یک اولتیماتوم، باج‌گیری» از دولت خواند، به پاشینیان گفت «تو درس ۱ مارس را نگرفته‌ای» و بیرون رفت.",
+      "analysis_fa": "۱ مارس یعنی ۱ مارس ۲۰۰۸: صبحی که پلیس چادرها را از میدان اپرا برچید، و شبی که ده نفر نزدیک انتهای خیابان ماشتوتس کشته شدند. سرکیسیان آن روز رئیس‌جمهور منتخب بود. یادآوری آن پشت میز، در ۲۰۱۸، ارجاعی تاریخی نبود؛ دولت بود که در ملأ عام بیشترین کاری را که پیش‌تر حاضر به انجامش بوده نام می‌برد.\n\nجغرافیا را نگه دارید. تهدید در هتلی در میدان جمهوری بیان شد — میدانی که نماد دولت بود — دربارهٔ کشتاری که پس از پاک‌سازی یک میدان رخ داد. ظرف یک ساعت، پاشینیان با بیرون‌رفتن از کل مرکز تشریفاتی و رفتن به جنوب پاسخ داد. دولت میدانی را نام برده بود؛ جنبش نپذیرفت که در میدانی نگه داشته شود.",
+      "actors_fa": [
+        "سرژ سرکیسیان",
+        "نیکول پاشینیان",
+        "مطبوعات ارمنی و بین‌المللی"
+      ],
+      "tags_fa": [
+        "ماریوت",
+        "۲۲ آوریل",
+        "۱ مارس ۲۰۰۸",
+        "اولتیماتوم",
+        "تهدید"
+      ]
+    },
+    {
+      "id": "pashinyan-march-2018-04-22",
+      "title": "The march south: Republic Square to Erebuni",
+      "date": "2018-04-22",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5111,
+        40.1578
+      ],
+      "location": "Republic Square → Tigran Mets Avenue → Artsakh Avenue → Erebuni",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "path": [
+        [
+          44.51318,
+          40.17699
+        ],
+        [
+          44.51332,
+          40.17685
+        ],
+        [
+          44.5138,
+          40.17628
+        ],
+        [
+          44.51384,
+          40.17615
+        ],
+        [
+          44.51373,
+          40.17423
+        ],
+        [
+          44.51341,
+          40.16973
+        ],
+        [
+          44.51312,
+          40.16655
+        ],
+        [
+          44.51305,
+          40.1654
+        ],
+        [
+          44.51282,
+          40.16289
+        ],
+        [
+          44.51276,
+          40.16249
+        ],
+        [
+          44.51272,
+          40.16234
+        ],
+        [
+          44.51196,
+          40.16033
+        ],
+        [
+          44.5111,
+          40.15785
+        ],
+        [
+          44.51027,
+          40.15558
+        ],
+        [
+          44.51019,
+          40.15513
+        ],
+        [
+          44.51017,
+          40.1549
+        ],
+        [
+          44.51008,
+          40.15272
+        ],
+        [
+          44.51001,
+          40.14891
+        ],
+        [
+          44.50994,
+          40.14609
+        ],
+        [
+          44.50995,
+          40.1459
+        ],
+        [
+          44.51031,
+          40.14453
+        ],
+        [
+          44.51084,
+          40.14271
+        ]
+      ],
+      "route": {
+        "from": "marriott-meeting-2018-04-22",
+        "to": "pashinyan-arrest-2018-04-22"
+      },
+      "summary": "Straight out of the Marriott, Pashinyan led a march from Republic Square southward — down Tigran Mets Avenue and then Artsakh Avenue — into the Erebuni district. Epress.am's live thread timestamps the march leaving Republic Square at about 12:30. It covered roughly 3.9 kilometres. He was detained at the far end of it, barely an hour after the meeting ended.\n\nThe line drawn here is real street geometry from OpenStreetMap, following the two avenues the reporting names, from the hotel on Republic Square to the intersection where the arrest happened.",
+      "analysis": "Every march before this one moved within the ceremonial city or up its western spur: Freedom Square, France Square, Northern Avenue, Baghramyan, Republic Square. This one leaves it.\n\nTamanyan's plan gave Yerevan a north–south spine through the two squares. Northern Avenue completed its upper half in 2007; Tigran Mets and Artsakh are its lower continuation, running out of the monumental centre into ordinary residential districts. On 22 April the movement walked the whole length of it in one afternoon — from the hotel where the state had just threatened it, through the square that symbolised the state, and out past the edge of the city that the plan had made representational.\n\nAnd the state stopped it there. Not on Baghramyan in front of the parliament, not on Republic Square in front of the cameras, but at a suburban crossroads four kilometres south, where the photographs show riot police and a few hundred people. The map makes the point better than a sentence can: the revolution's decisive confrontation happened off the ceremonial axis, at the place where the plan runs out.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Sasun Mikaelyan",
+        "Ararat Mirzoyan",
+        "Protesters",
+        "Police"
+      ],
+      "tags": [
+        "march",
+        "Tigran Mets",
+        "Artsakh Avenue",
+        "Erebuni",
+        "22 April"
+      ],
+      "sources": [
+        {
+          "title": "Epress.am live thread, 22 April 2018",
+          "url": "https://epress.am/en/2018/04/22/pashinyan-and-other-opposition-leaders-detained-police-use-force-and-special-means-against-demonstrators-live-thread.html",
+          "note": "12:30 — march from Republic Square to Erebuni; Artsakh street",
+          "note_hy": "12:30 — երթ Հանրապետության հրապարակից Էրեբունի, Արցախի փողոց",
+          "note_fa": "۱۲:۳۰ — راهپیمایی از میدان جمهوری به ارِبونی؛ خیابان آرتساخ"
+        },
+        {
+          "title": "Eurasianet",
+          "url": "https://eurasianet.org/armenian-opposition-leader-arrested-but-protesters-rally",
+          "note": "arrested \"barely an hour after the meeting\"",
+          "note_hy": "ձերբակալվել է «հանդիպումից հազիվ մեկ ժամ անց»",
+          "note_fa": "بازداشت «به‌سختی یک ساعت پس از دیدار»"
+        },
+        {
+          "title": "OpenStreetMap contributors",
+          "url": "https://www.openstreetmap.org/",
+          "note": "street geometry of Tigran Mets and Artsakh avenues, ODbL",
+          "note_hy": "Տիգրան Մեծի և Արցախի պողոտաների փողոցային երկրաչափությունը, ODbL",
+          "note_fa": "هندسهٔ خیابان‌های تیگران متس و آرتساخ، ODbL"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg",
+          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-03.jpg",
+          "caption": "During the march, 22 April 2018.",
+          "credit": "Photo: Pandukht, 22 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_03.jpg",
+          "caption_hy": "Երթի ընթացքում, 2018 թվականի ապրիլի 22։",
+          "caption_fa": "در جریان راهپیمایی، ۲۲ آوریل ۲۰۱۸."
+        }
+      ],
+      "title_hy": "Երթը դեպի հարավ․ Հանրապետության հրապարակից Էրեբունի",
+      "location_hy": "Հանրապետության հրապարակ → Տիգրան Մեծի պողոտա → Արցախի պողոտա → Էրեբունի",
+      "summary_hy": "Ուղիղ «Մարիոթից» դուրս գալով՝ Փաշինյանը երթ առաջնորդեց Հանրապետության հրապարակից դեպի հարավ՝ Տիգրան Մեծի պողոտայով, ապա Արցախի պողոտայով, դեպի Էրեբունի վարչական շրջան։ Epress.am-ի ուղիղ հաղորդումը երթի՝ Հանրապետության հրապարակից դուրս գալը նշում է մոտ ժամը 12:30-ին։ Այն ընդգրկեց մոտ 3,9 կիլոմետր։ Նա ձերբակալվեց դրա հեռավոր ծայրին՝ հանդիպման ավարտից հազիվ մեկ ժամ անց։\n\nԱյստեղ գծված գիծը OpenStreetMap-ից վերցված իրական փողոցային երկրաչափություն է՝ հետևելով այն երկու պողոտաներին, որոնք նշում են աղբյուրները՝ Հանրապետության հրապարակի հյուրանոցից մինչև այն խաչմերուկը, որտեղ տեղի ունեցավ ձերբակալությունը։",
+      "analysis_hy": "Մինչ այս բոլոր երթերը շարժվում էին արարողակարգային քաղաքի ներսում կամ նրա արևմտյան ճյուղով վեր․ Ազատության հրապարակ, Ֆրանսիայի հրապարակ, Հյուսիսային պողոտա, Բաղրամյան, Հանրապետության հրապարակ։ Այս մեկը լքում է այն։\n\nԹամանյանի հատակագիծը Երևանին տվեց հյուսիս-հարավ ողնաշար՝ երկու հրապարակների միջով։ Հյուսիսային պողոտան 2007 թվականին ավարտեց դրա վերին կեսը․ Տիգրան Մեծը և Արցախը դրա ստորին շարունակությունն են՝ մոնումենտալ կենտրոնից դուրս գալով դեպի սովորական բնակելի թաղամասեր։ Ապրիլի 22-ին շարժումը մեկ կեսօրում քայլեց դրա ողջ երկարությունը՝ այն հյուրանոցից, որտեղ պետությունը հենց նոր սպառնացել էր, պետությունը խորհրդանշող հրապարակի միջով և դուրս՝ հատակագծի ներկայացուցչական դարձրած քաղաքի եզրից այն կողմ։\n\nԵվ պետությունը կանգնեցրեց այն հենց այնտեղ։ Ոչ Բաղրամյանում՝ խորհրդարանի դիմաց, ոչ Հանրապետության հրապարակում՝ տեսախցիկների առջև, այլ չորս կիլոմետր հարավ ընկած արվարձանային խաչմերուկում, որտեղ լուսանկարները ցույց են տալիս հատուկ ջոկատայիններ և մի քանի հարյուր մարդ։ Քարտեզն այս միտքը հաղորդում է ավելի լավ, քան նախադասությունը․ հեղափոխության վճռական բախումը տեղի ունեցավ արարողակարգային առանցքից դուրս՝ այնտեղ, որտեղ հատակագիծն ավարտվում է։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Սասուն Միքայելյան",
+        "Արարատ Միրզոյան",
+        "Ցուցարարներ",
+        "Ոստիկանություն"
+      ],
+      "tags_hy": [
+        "երթ",
+        "Տիգրան Մեծ",
+        "Արցախի պողոտա",
+        "Էրեբունի",
+        "ապրիլի 22"
+      ],
+      "title_fa": "راهپیمایی به جنوب: از میدان جمهوری تا ارِبونی",
+      "location_fa": "میدان جمهوری ← خیابان تیگران متس ← خیابان آرتساخ ← ارِبونی",
+      "summary_fa": "پاشینیان مستقیم از ماریوت بیرون آمد و راهپیمایی‌ای را از میدان جمهوری به‌سوی جنوب رهبری کرد — از خیابان تیگران متس و سپس خیابان آرتساخ، به ناحیهٔ ارِبونی. گزارش زندهٔ Epress.am خروج راهپیمایی از میدان جمهوری را حدود ساعت ۱۲:۳۰ ثبت می‌کند. مسیر نزدیک به ۳٫۹ کیلومتر بود. او در انتهای آن بازداشت شد، به‌سختی یک ساعت پس از پایان دیدار.\n\nخطی که اینجا کشیده شده هندسهٔ واقعی خیابان‌ها از OpenStreetMap است و همان دو خیابانی را دنبال می‌کند که گزارش‌ها نام می‌برند: از هتلِ میدان جمهوری تا تقاطعی که بازداشت در آن رخ داد.",
+      "analysis_fa": "هر راهپیمایی پیش از این، درون شهرِ تشریفاتی یا بر انشعاب غربی آن حرکت می‌کرد: میدان آزادی، میدان فرانسه، خیابان شمالی، باغرامیان، میدان جمهوری. این یکی از آن بیرون می‌رود.\n\nطرح تامانیان به ایروان ستون فقراتی شمالی–جنوبی از میان دو میدان داد. خیابان شمالی در ۲۰۰۷ نیمهٔ بالایی آن را کامل کرد؛ تیگران متس و آرتساخ ادامهٔ پایینی‌اند که از مرکز یادمانی بیرون می‌روند و به محله‌های مسکونی عادی می‌رسند. در ۲۲ آوریل جنبش تمام طول آن را در یک بعدازظهر پیمود — از هتلی که دولت همان‌جا تهدیدش کرده بود، از میان میدانی که نماد دولت بود، و بیرون، از لبهٔ شهری که طرح، بازنمایانه‌اش کرده بود.\n\nو دولت همان‌جا متوقفش کرد. نه در باغرامیان روبه‌روی مجلس، نه در میدان جمهوری پیش چشم دوربین‌ها، بلکه در چهارراهی حومه‌ای چهار کیلومتر جنوب‌تر، جایی که عکس‌ها پلیس ضدشورش و چند صد نفر را نشان می‌دهند. نقشه این نکته را بهتر از یک جمله می‌رساند: رویارویی تعیین‌کنندهٔ انقلاب بیرون از محور تشریفاتی رخ داد، جایی که طرح تمام می‌شود.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "ساسون میکائلیان",
+        "آرارات میرزویان",
+        "معترضان",
+        "پلیس"
+      ],
+      "tags_fa": [
+        "راهپیمایی",
+        "تیگران متس",
+        "خیابان آرتساخ",
+        "ارِبونی",
+        "۲۲ آوریل"
+      ]
+    },
+    {
+      "id": "pashinyan-arrest-2018-04-22",
+      "title": "Arrest at the corner of Artsakh and Erebuni",
+      "date": "2018-04-22",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51098,
+        40.14252
+      ],
+      "location": "Artsakh Avenue × Erebuni Street, Erebuni district",
+      "categories": [
+        "state",
+        "protest"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Pashinyan was detained on Artsakh Avenue in Erebuni while speaking with the chief of the Yerevan police, Valery Osipyan. Two other members of parliament, Sasun Mikaelyan and Ararat Mirzoyan, were taken the same day; by evening about 230 people had been arrested. Pashinyan was taken to the Erebuni police station, the other two to Shengavit, where crowds gathered outside both.\n\nThe location is fixed by two independent records that agree: the photographs taken that afternoon are captioned «Արցախի և Էրեբունի փողոցների խաչմերուկ» — the intersection of Artsakh and Erebuni streets — and the street view Alireza supplied looks at the same crossroads. OpenStreetMap puts the intersection at 40.14252 N, 44.51098 E.",
+      "analysis": "An arrest is a claim about where the state's authority still holds, and this one was made at the edge of the represented city.\n\nIt failed within the day. By evening Republic Square held about 115,000 people — the largest crowd of the revolution to that point — and on 23 April Pashinyan was released at three in the afternoon and Sargsyan resigned at half past four. Detaining the leader four kilometres from the centre did not disperse the movement; it produced the crowd that ended the government.",
+      "actors": [
+        "Nikol Pashinyan",
+        "Valery Osipyan (chief of Yerevan police)",
+        "Sasun Mikaelyan",
+        "Ararat Mirzoyan",
+        "Riot police"
+      ],
+      "tags": [
+        "arrest",
+        "Erebuni",
+        "Artsakh Avenue",
+        "Osipyan",
+        "22 April"
+      ],
+      "sources": [
+        {
+          "title": "Epress.am live thread, 22 April 2018",
+          "url": "https://epress.am/en/2018/04/22/pashinyan-and-other-opposition-leaders-detained-police-use-force-and-special-means-against-demonstrators-live-thread.html",
+          "note": "detained on Artsakh street while speaking with police chief Osipyan; Erebuni and Shengavit stations",
+          "note_hy": "ձերբակալվել է Արցախի փողոցում՝ ոստիկանապետ Օսիպյանի հետ խոսելիս, Էրեբունու և Շենգավիթի բաժիններ",
+          "note_fa": "بازداشت در خیابان آرتساخ هنگام گفت‌وگو با رئیس پلیس اوسیپیان؛ کلانتری‌های ارِبونی و شنگاویت"
+        },
+        {
+          "title": "Armenpress, Opposition MP Nikol Pashinyan, two other lawmakers arrested",
+          "url": "https://armenpress.am/en/article/930978",
+          "note": "the three arrests",
+          "note_hy": "երեք ձերբակալությունները",
+          "note_fa": "سه بازداشت"
+        },
+        {
+          "title": "Wikimedia Commons, 22.04.2018 Protest Demonstration, Yerevan 26",
+          "url": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration,_Yerevan_26.jpg",
+          "note": "photographer's caption names the Artsakh–Erebuni intersection",
+          "note_hy": "լուսանկարչի մակագրությունը նշում է Արցախ-Էրեբունի խաչմերուկը",
+          "note_fa": "شرح عکاس نام تقاطع آرتساخ–ارِبونی را می‌آورد"
+        },
+        {
+          "title": "Video of the arrest, YouTube",
+          "url": "https://www.youtube.com/watch?v=KwXoSNu8AWc",
+          "note": "footage supplied by Alireza; cited, not mirrored",
+          "note_hy": "Ալիրեզայի տրամադրած կադրերը․ հղվում է, չի պատճենվում",
+          "note_fa": "تصاویری که علیرضا فرستاد؛ ارجاع داده شده، بازنشر نشده"
+        },
+        {
+          "title": "Google Earth street view of the site",
+          "url": "https://earth.google.com/web/search/Artsakh+Avenue,+Yerevan/@40.14266202,44.51088331,960.51047407a,0d,60y,286.16910936h,99.12306354t,0r",
+          "note": "the building the camera faces, supplied by Alireza",
+          "note_hy": "տեսախցիկի դիմաց գտնվող շենքը, տրամադրել է Ալիրեզան",
+          "note_fa": "ساختمانی که دوربین به آن نگاه می‌کند، فرستادهٔ علیرضا"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg",
+          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-26.jpg",
+          "caption": "Seconds after the clash between demonstrators and police at the Artsakh–Erebuni intersection, 22 April 2018.",
+          "credit": "Photo: Pandukht, 22 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_26.jpg",
+          "caption_hy": "Ցուցարարների և ոստիկանության բախումից վայրկյաններ անց՝ Արցախ-Էրեբունի խաչմերուկում, 2018 թվականի ապրիլի 22։",
+          "caption_fa": "ثانیه‌هایی پس از درگیری معترضان و پلیس در تقاطع آرتساخ–ارِبونی، ۲۲ آوریل ۲۰۱۸."
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg/1400px-22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg",
+          "mirror": "media/rev2018-22-04-2018-protest-demonstration-yerevan-29.jpg",
+          "caption": "Minutes later at the same crossroads: the police leave the site.",
+          "credit": "Photo: Pandukht, 22 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:22.04.2018_Protest_Demonstration%2C_Yerevan_29.jpg",
+          "caption_hy": "Րոպեներ անց նույն խաչմերուկում․ ոստիկանները լքում են վայրը։",
+          "caption_fa": "دقایقی بعد در همان چهارراه: پلیس محل را ترک می‌کند."
+        }
+      ],
+      "title_hy": "Ձերբակալություն Արցախի և Էրեբունու անկյունում",
+      "location_hy": "Արցախի պողոտա × Էրեբունու փողոց, Էրեբունի վարչական շրջան",
+      "summary_hy": "Փաշինյանը ձերբակալվեց Էրեբունիում՝ Արցախի պողոտայում, երբ խոսում էր Երևանի ոստիկանության պետ Վալերի Օսիպյանի հետ։ Նույն օրը տարվեցին ևս երկու պատգամավոր՝ Սասուն Միքայելյանը և Արարատ Միրզոյանը․ երեկոյան ձերբակալվածների թիվը հասավ մոտ 230-ի։ Փաշինյանին տարան Էրեբունու ոստիկանության բաժին, մյուս երկուսին՝ Շենգավիթ, և երկուսի դիմաց էլ բազմություն հավաքվեց։\n\nՎայրը հաստատվում է երկու անկախ գրառումով, որոնք համընկնում են․ այդ ցերեկը արված լուսանկարները մակագրված են «Արցախի և Էրեբունի փողոցների խաչմերուկ», իսկ Ալիրեզայի տրամադրած փողոցային տեսքը նայում է նույն խաչմերուկին։ OpenStreetMap-ը խաչմերուկը դնում է 40,14252 հս., 44,51098 արլ.։",
+      "analysis_hy": "Ձերբակալությունը պնդում է, թե որտեղ է դեռ գործում պետության իշխանությունը, և այս մեկը կատարվեց ներկայացված քաղաքի եզրին։\n\nԱյն ձախողվեց նույն օրը։ Երեկոյան Հանրապետության հրապարակում կար մոտ 115 000 մարդ՝ հեղափոխության ամենամեծ բազմությունն այդ պահի դրությամբ, իսկ ապրիլի 23-ին Փաշինյանն ազատ արձակվեց ցերեկվա ժամը երեքին, և Սարգսյանը հրաժարական տվեց չորսն անց կեսին։ Առաջնորդին կենտրոնից չորս կիլոմետր հեռու ձերբակալելը շարժումը չցրեց․ այն ծնեց այն բազմությունը, որը վերջ դրեց կառավարությանը։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Վալերի Օսիպյան (Երևանի ոստիկանապետ)",
+        "Սասուն Միքայելյան",
+        "Արարատ Միրզոյան",
+        "Հատուկ նշանակության ոստիկանություն"
+      ],
+      "tags_hy": [
+        "ձերբակալություն",
+        "Էրեբունի",
+        "Արցախի պողոտա",
+        "Օսիպյան",
+        "ապրիլի 22"
+      ],
+      "title_fa": "بازداشت در تقاطع آرتساخ و ارِبونی",
+      "location_fa": "خیابان آرتساخ × خیابان ارِبونی، ناحیهٔ ارِبونی",
+      "summary_fa": "پاشینیان در خیابان آرتساخ در ارِبونی، هنگام گفت‌وگو با والری اوسیپیان، رئیس پلیس ایروان، بازداشت شد. دو نمایندهٔ دیگر مجلس، ساسون میکائلیان و آرارات میرزویان، همان روز برده شدند؛ تا شب حدود ۲۳۰ نفر بازداشت شده بودند. پاشینیان به کلانتری ارِبونی و آن دو به شنگاویت برده شدند و مقابل هر دو جمعیت گرد آمد.\n\nمکان را دو سند مستقل که با هم می‌خوانند تثبیت می‌کند: عکس‌های آن بعدازظهر با عنوان «تقاطع خیابان‌های آرتساخ و ارِبونی» ثبت شده‌اند، و نمای خیابانی که علیرضا فرستاد به همان چهارراه نگاه می‌کند. OpenStreetMap تقاطع را در ۴۰٫۱۴۲۵۲ شمالی، ۴۴٫۵۱۰۹۸ شرقی می‌گذارد.",
+      "analysis_fa": "بازداشت ادعایی است دربارهٔ اینکه اقتدار دولت هنوز تا کجا برقرار است، و این یکی در لبهٔ شهرِ بازنمایی‌شده مطرح شد.\n\nهمان روز شکست خورد. تا شب میدان جمهوری حدود ۱۱۵٬۰۰۰ نفر را در خود داشت — بزرگ‌ترین جمعیت انقلاب تا آن لحظه — و در ۲۳ آوریل پاشینیان ساعت سه بعدازظهر آزاد شد و سرکیسیان چهار و نیم استعفا داد. بازداشت رهبر در چهار کیلومتری مرکز جنبش را پراکنده نکرد؛ همان جمعیتی را ساخت که به دولت پایان داد.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "والری اوسیپیان (رئیس پلیس ایروان)",
+        "ساسون میکائلیان",
+        "آرارات میرزویان",
+        "پلیس ضدشورش"
+      ],
+      "tags_fa": [
+        "بازداشت",
+        "ارِبونی",
+        "خیابان آرتساخ",
+        "اوسیپیان",
+        "۲۲ آوریل"
+      ]
+    },
+    {
+      "id": "sargsyan-resigns-2018-04-23",
+      "title": "Sargsyan resigns: “Nikol Pashinyan was right. I was mistaken.”",
+      "date": "2018-04-23",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5126,
+        40.1776
+      ],
+      "location": "Republic Square",
+      "categories": [
+        "politics",
+        "protest"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Pashinyan was released at three in the afternoon and spoke at Republic Square. At half past four Serzh Sargsyan published a resignation letter containing the sentence “Nikol Pashinyan was right. I was mistaken.” Karen Karapetyan became acting prime minister. Veterans of the armed forces had joined the demonstrations that morning.\n\nSix days after parliament had made him prime minister, and ten days after the march reached Yerevan, he was gone.",
+      "analysis": "The resignation names a person, not a movement, and that is part of why what followed was so unstable: the state conceded a man and tried to keep the arrangement. The next two weeks are spent forcing the second half.\n\nFor this map the important thing is where the sentence was received. The crowd that heard it was standing on Republic Square — in front of the government building, on the plaza the Soviet plan built to represent the state, holding it as its own. Whatever the square had meant since 1988, on 23 April 2018 it meant this.",
+      "actors": [
+        "Serzh Sargsyan",
+        "Nikol Pashinyan",
+        "Karen Karapetyan",
+        "Armed forces veterans"
+      ],
+      "tags": [
+        "resignation",
+        "23 April",
+        "Republic Square",
+        "Karapetyan"
+      ],
+      "sources": [
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "3 pm release, 4:30 pm resignation, wording of the letter",
+          "note_hy": "ժամը 15:00 ազատում, 16:30 հրաժարական, նամակի ձևակերպումը",
+          "note_fa": "آزادی ساعت ۱۵، استعفا ساعت ۱۶:۳۰، متن نامه"
+        },
+        {
+          "title": "Euronews, How 11 days of protests brought down Armenia's leader",
+          "url": "https://www.euronews.com/2018/04/23/how-11-days-of-protests-brought-down-armenia-s-leader-serzh-sargsyan",
+          "note": "same-day account",
+          "note_hy": "նույն օրվա հաղորդում",
+          "note_fa": "گزارش همان روز"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg/1400px-23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg",
+          "mirror": "media/rev2018-23-04-2018-protest-demonstration-yerevan-9.jpg",
+          "caption": "The rally at Republic Square on 23 April, the day of the resignation.",
+          "credit": "Photo: Ավետիսյան91, 23 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:23.04.2018_Protest_Demonstration%2C_Yerevan_9.jpg",
+          "caption_hy": "Հանրահավաքը Հանրապետության հրապարակում ապրիլի 23-ին՝ հրաժարականի օրը։",
+          "caption_fa": "تجمع در میدان جمهوری در ۲۳ آوریل، روز استعفا."
+        }
+      ],
+      "title_hy": "Սարգսյանը հրաժարական է տալիս․ «Նիկոլ Փաշինյանը ճիշտ էր։ Ես սխալվեցի»",
+      "location_hy": "Հանրապետության հրապարակ",
+      "summary_hy": "Փաշինյանն ազատ արձակվեց ցերեկվա ժամը երեքին և ելույթ ունեցավ Հանրապետության հրապարակում։ Չորսն անց կեսին Սերժ Սարգսյանը հրապարակեց հրաժարականի նամակ, որը պարունակում էր նախադասությունը՝ «Նիկոլ Փաշինյանը ճիշտ էր։ Ես սխալվեցի»։ Կարեն Կարապետյանը դարձավ վարչապետի պաշտոնակատար։ Այդ առավոտ ցույցերին միացել էին զինված ուժերի վետերանները։\n\nԽորհրդարանի կողմից վարչապետ նշանակվելուց վեց օր և երթի՝ Երևան հասնելուց տասը օր անց նա գնացել էր։",
+      "analysis_hy": "Հրաժարականը մարդ է անվանում, ոչ թե շարժում, և դա մասամբ բացատրում է, թե ինչու հետագան այդքան անկայուն էր․ պետությունը զիջեց մեկ մարդու և փորձեց պահել կարգը։ Հաջորդ երկու շաբաթն անցնում է երկրորդ կեսը հարկադրելու վրա։\n\nԱյս քարտեզի համար կարևորն այն է, թե որտեղ ընդունվեց այդ նախադասությունը։ Այն լսող բազմությունը կանգնած էր Հանրապետության հրապարակում՝ կառավարական շենքի դիմաց, այն հրապարակում, որը խորհրդային հատակագիծը կառուցել էր պետությունը ներկայացնելու համար, և պահում էր այն որպես իրենը։ Ինչ էլ որ հրապարակը նշանակած լիներ 1988-ից ի վեր, 2018 թվականի ապրիլի 23-ին այն նշանակում էր սա։",
+      "actors_hy": [
+        "Սերժ Սարգսյան",
+        "Նիկոլ Փաշինյան",
+        "Կարեն Կարապետյան",
+        "Զինված ուժերի վետերաններ"
+      ],
+      "tags_hy": [
+        "հրաժարական",
+        "ապրիլի 23",
+        "Հանրապետության հրապարակ",
+        "Կարապետյան"
+      ],
+      "title_fa": "سرکیسیان استعفا می‌دهد: «نیکول پاشینیان درست می‌گفت. من اشتباه کردم.»",
+      "location_fa": "میدان جمهوری",
+      "summary_fa": "پاشینیان ساعت سه بعدازظهر آزاد شد و در میدان جمهوری سخن گفت. ساعت چهار و نیم سرژ سرکیسیان نامهٔ استعفایی منتشر کرد که این جمله را داشت: «نیکول پاشینیان درست می‌گفت. من اشتباه کردم.» کارن کاراپتیان سرپرست نخست‌وزیری شد. آن صبح کهنه‌سربازان نیروهای مسلح به تظاهرات پیوسته بودند.\n\nشش روز پس از آنکه مجلس او را نخست‌وزیر کرد، و ده روز پس از رسیدن راهپیمایی به ایروان، رفته بود.",
+      "analysis_fa": "استعفا یک شخص را نام می‌برد نه یک جنبش را، و همین بخشی از دلیل بی‌ثباتی آنچه در پی آمد است: دولت یک مرد را واگذار کرد و کوشید ترتیبات را نگه دارد. دو هفتهٔ بعد صرف تحمیل نیمهٔ دوم می‌شود.\n\nبرای این نقشه، مهم آن است که این جمله کجا شنیده شد. جمعیتی که آن را شنید در میدان جمهوری ایستاده بود — روبه‌روی ساختمان دولت، بر محوطه‌ای که طرح شوروی برای بازنمایی دولت ساخته بود — و آن را از آنِ خود کرده بود. میدان از ۱۹۸۸ هرچه معنا داشت، در ۲۳ آوریل ۲۰۱۸ این را معنا می‌داد.",
+      "actors_fa": [
+        "سرژ سرکیسیان",
+        "نیکول پاشینیان",
+        "کارن کاراپتیان",
+        "کهنه‌سربازان نیروهای مسلح"
+      ],
+      "tags_fa": [
+        "استعفا",
+        "۲۳ آوریل",
+        "میدان جمهوری",
+        "کاراپتیان"
+      ]
+    },
+    {
+      "id": "genocide-day-2018-04-24",
+      "title": "24 April: no protest, and the whole crowd walks to Tsitsernakaberd",
+      "date": "2018-04-24",
+      "datePrecision": "day",
+      "coordinates": [
+        44.4917,
+        40.1911
+      ],
+      "location": "Tsitsernakaberd, the Armenian Genocide memorial",
+      "categories": [
+        "memory",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "summary": "The day after the resignation was 24 April, Armenian Genocide Remembrance Day. The movement did not demonstrate. The crowds walked instead, as the city does every year, up to the memorial at Tsitsernakaberd.",
+      "analysis": "A single day of deliberate silence, and it is one of the most legible things in the whole five weeks.\n\nThe movement had spent eleven days claiming the right to occupy the city's spaces, and then, on the one day the calendar had already assigned, it gave every one of them up and went where everybody else was going. The gesture insists that this was not a movement standing outside the nation and taking its ground from it — the same feet that had walked Baghramyan and Artsakh walked the memorial path.\n\nIt also puts the third of Yerevan's monumental sites into the sequence. Freedom Square, Republic Square, Tsitsernakaberd: the revolution used all three within twelve days, in each case the way that site is used.",
+      "actors": [
+        "Protesters",
+        "The public"
+      ],
+      "tags": [
+        "24 April",
+        "Tsitsernakaberd",
+        "genocide remembrance",
+        "pause"
+      ],
+      "sources": [
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "no protests on 24 April; masses proceed to Tsitsernakaberd",
+          "note_hy": "ապրիլի 24-ին բողոք չկա, բազմությունները գնում են Ծիծեռնակաբերդ",
+          "note_fa": "نبود اعتراض در ۲۴ آوریل؛ رفتن جمعیت به تسیتسرناکابرد"
+        }
+      ],
+      "media": [],
+      "title_hy": "Ապրիլի 24․ բողոք չկա, և ողջ բազմությունը քայլում է Ծիծեռնակաբերդ",
+      "location_hy": "Ծիծեռնակաբերդ, Հայոց ցեղասպանության հուշահամալիր",
+      "summary_hy": "Հրաժարականից հետո եկող օրը ապրիլի 24-ն էր՝ Հայոց ցեղասպանության զոհերի հիշատակի օրը։ Շարժումը ցույց չարեց։ Փոխարենը բազմությունները քայլեցին, ինչպես քաղաքն անում է ամեն տարի, դեպի Ծիծեռնակաբերդի հուշահամալիր։",
+      "analysis_hy": "Մեկ օր դիտավորյալ լռություն, և դա ողջ հինգ շաբաթվա ամենաընթեռնելի բաներից մեկն է։\n\nՇարժումը տասնմեկ օր անցկացրել էր քաղաքի տարածքները գրավելու իրավունքը պահանջելով, և հետո, այն մեկ օրը, որը օրացույցն արդեն նշանակել էր, հրաժարվեց դրանցից բոլորից և գնաց այնտեղ, ուր գնում էին բոլորը։ Ժեստը պնդում է, որ սա ազգից դուրս կանգնած և նրանից հող վերցնող շարժում չէր․ նույն ոտքերը, որ քայլել էին Բաղրամյանն ու Արցախը, քայլեցին հուշահամալիրի ճանապարհը։\n\nԱյն նաև Երևանի երրորդ մոնումենտալ վայրը դնում է հաջորդականության մեջ։ Ազատության հրապարակ, Հանրապետության հրապարակ, Ծիծեռնակաբերդ․ հեղափոխությունը տասներկու օրում օգտագործեց երեքն էլ, ամեն դեպքում այնպես, ինչպես այդ վայրն օգտագործվում է։",
+      "actors_hy": [
+        "Ցուցարարներ",
+        "Հանրություն"
+      ],
+      "tags_hy": [
+        "ապրիլի 24",
+        "Ծիծեռնակաբերդ",
+        "ցեղասպանության հիշատակ",
+        "դադար"
+      ],
+      "title_fa": "۲۴ آوریل: نه اعتراضی، و همهٔ جمعیت به تسیتسرناکابرد می‌رود",
+      "location_fa": "تسیتسرناکابرد، یادمان نسل‌کشی ارمنیان",
+      "summary_fa": "روز پس از استعفا ۲۴ آوریل بود، روز یادبود نسل‌کشی ارمنیان. جنبش تظاهرات نکرد. به‌جایش جمعیت‌ها راه افتادند، همان‌طور که شهر هر سال می‌کند، به‌سوی یادمان تسیتسرناکابرد.",
+      "analysis_fa": "یک روز سکوتِ عمدی، و یکی از خواناترین چیزهای تمام آن پنج هفته است.\n\nجنبش یازده روز را صرف مطالبهٔ حق اشغال فضاهای شهر کرده بود، و بعد، در تنها روزی که تقویم از پیش تعیین کرده بود، همهٔ آن‌ها را واگذاشت و به جایی رفت که همه می‌رفتند. این حرکت اصرار می‌کند که این جنبشی نبود که بیرون از ملت بایستد و زمینش را از آن بگیرد — همان پاهایی که باغرامیان و آرتساخ را پیموده بودند، مسیر یادمان را پیمودند.\n\nهمچنین سومین مکان یادمانی ایروان را وارد این توالی می‌کند. میدان آزادی، میدان جمهوری، تسیتسرناکابرد: انقلاب ظرف دوازده روز هر سه را به کار گرفت، هر بار به همان شیوه‌ای که آن مکان به کار می‌رود.",
+      "actors_fa": [
+        "معترضان",
+        "مردم"
+      ],
+      "tags_fa": [
+        "۲۴ آوریل",
+        "تسیتسرناکابرد",
+        "یادبود نسل‌کشی",
+        "مکث"
+      ]
+    },
+    {
+      "id": "northern-avenue-posters-2018-04-25",
+      "title": "“RPA go away” on Northern Avenue",
+      "date": "2018-04-25",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5138,
+        40.1808
+      ],
+      "location": "Northern Avenue, Kentron",
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "episode": "2018-revolution",
+      "summary": "Protests resumed on 25 April after Karen Karapetyan refused new elections. Pashinyan raised the demand: the Republican Party had to lose power, and a “candidate from the people” should lead the transition. Roads to Zvartnots airport and the Georgian border were blocked. In the centre, the day's photograph shows «ՀՀԿ հեռացիր» — RPA go away — posters on Northern Avenue.",
+      "analysis": "This is the entry the Northern Avenue paper was waiting for.\n\nThe avenue was built by the administration whose party these posters were telling to leave, financed by capital tied to it, and read for a decade as the most depoliticised surface in Yerevan — a promenade for shopping and being seen. Eleven years later the demand for that party's removal is pasted along it.\n\nThe avenue did not become political on 25 April. It had been carrying overflow protest since 2008 and street music since it opened. What changed is that the demand was now addressed to the avenue's own authors, on their own pavement, and nobody found that strange.",
+      "actors": [
+        "Protesters",
+        "Republican Party of Armenia",
+        "Karen Karapetyan",
+        "Nikol Pashinyan"
+      ],
+      "tags": [
+        "Northern Avenue",
+        "ՀՀԿ հեռացիր",
+        "posters",
+        "25 April",
+        "airport blockade"
+      ],
+      "sources": [
+        {
+          "title": "Wikimedia Commons, 25.04.2018 Protest Demonstration, Yerevan",
+          "url": "https://commons.wikimedia.org/wiki/File:25.04.2018_Protest_Demonstration,_Yerevan.jpg",
+          "note": "photographer's caption: «ՀՀԿ հեռացիր» posters on Northern Avenue",
+          "note_hy": "լուսանկարչի մակագրությունը․ «ՀՀԿ հեռացիր» պաստառները Հյուսիսային պողոտայում",
+          "note_fa": "شرح عکاس: پوسترهای «ՀՀԿ հեռացիր» روی خیابان شمالی"
+        },
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "25 April demands and the airport blockades",
+          "note_hy": "ապրիլի 25-ի պահանջները և օդանավակայանի փակումները",
+          "note_fa": "مطالبات ۲۵ آوریل و بستن راه فرودگاه"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25.04.2018_Protest_Demonstration%2C_Yerevan.jpg/1400px-25.04.2018_Protest_Demonstration%2C_Yerevan.jpg",
+          "mirror": "media/rev2018-25-04-2018-protest-demonstration-yerevan.jpg",
+          "caption": "«ՀՀԿ հեռացիր» — “RPA go away” — posters on Northern Avenue, 25 April 2018.",
+          "credit": "Photo: Ավետիսյան91, 25 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:25.04.2018_Protest_Demonstration%2C_Yerevan.jpg",
+          "caption_hy": "«ՀՀԿ հեռացիր» պաստառները Հյուսիսային պողոտայում, 2018 թվականի ապրիլի 25։",
+          "caption_fa": "پوسترهای «ՀՀԿ հեռացիր» — «حزب جمهوری‌خواه، برو» — روی خیابان شمالی، ۲۵ آوریل ۲۰۱۸."
+        }
+      ],
+      "title_hy": "«ՀՀԿ հեռացիր» Հյուսիսային պողոտայում",
+      "location_hy": "Հյուսիսային պողոտա, Կենտրոն",
+      "summary_hy": "Բողոքները վերսկսվեցին ապրիլի 25-ին, երբ Կարեն Կարապետյանը մերժեց նոր ընտրությունները։ Փաշինյանը բարձրացրեց պահանջը․ Հանրապետական կուսակցությունը պետք է կորցնի իշխանությունը, և անցումային շրջանը պետք է գլխավորի «ժողովրդի թեկնածուն»։ Փակվեցին Զվարթնոց օդանավակայան և վրացական սահման տանող ճանապարհները։ Կենտրոնում այդ օրվա լուսանկարը ցույց է տալիս «ՀՀԿ հեռացիր» պաստառներ Հյուսիսային պողոտայում։",
+      "analysis_hy": "Սա այն գրառումն է, որին սպասում էր Հյուսիսային պողոտայի հոդվածը։\n\nՊողոտան կառուցել էր այն վարչակազմը, որի կուսակցությանն այս պաստառներն ասում էին հեռանալ, ֆինանսավորվել էր դրա հետ կապված կապիտալով և մեկ տասնամյակ ընթերցվել էր որպես Երևանի ամենաապաքաղաքականացված մակերեսը՝ գնումների և տեսնված լինելու զբոսավայր։ Տասնմեկ տարի անց այդ կուսակցության հեռացման պահանջը փակցված է դրա երկայնքով։\n\nՊողոտան ապրիլի 25-ին քաղաքական չդարձավ։ Այն 2008 թվականից ի վեր կրում էր բողոքի արտահոսքը, իսկ բացումից ի վեր՝ փողոցային երաժշտություն։ Փոխվեց այն, որ պահանջն այժմ ուղղված էր պողոտայի սեփական հեղինակներին՝ նրանց իսկ մայթին, և ոչ ոք դա տարօրինակ չգտավ։",
+      "actors_hy": [
+        "Ցուցարարներ",
+        "Հայաստանի Հանրապետական կուսակցություն",
+        "Կարեն Կարապետյան",
+        "Նիկոլ Փաշինյան"
+      ],
+      "tags_hy": [
+        "Հյուսիսային պողոտա",
+        "ՀՀԿ հեռացիր",
+        "պաստառներ",
+        "ապրիլի 25",
+        "օդանավակայանի փակում"
+      ],
+      "title_fa": "«ՀՀԿ հեռացիր» — «حزب جمهوری‌خواه، برو» — روی خیابان شمالی",
+      "location_fa": "خیابان شمالی، کِنترون",
+      "summary_fa": "اعتراض‌ها در ۲۵ آوریل، پس از آنکه کارن کاراپتیان انتخابات زودهنگام را رد کرد، از سر گرفته شد. پاشینیان مطالبه را بالا برد: حزب جمهوری‌خواه باید قدرت را از دست بدهد و «نامزدی از میان مردم» دورهٔ گذار را رهبری کند. راه‌های فرودگاه زوارتنوتس و مرز گرجستان بسته شد. در مرکز شهر، عکس آن روز پوسترهای «ՀՀԿ հեռացիր» را روی خیابان شمالی نشان می‌دهد.",
+      "analysis_fa": "این همان مدخلی است که مقالهٔ خیابان شمالی چشم‌به‌راهش بود.\n\nخیابان را همان دولتی ساخت که این پوسترها به حزبش می‌گویند برود، با سرمایهٔ گره‌خورده به آن تأمین شد، و یک دهه همچون غیرسیاسی‌ترین سطح ایروان خوانده می‌شد — گردشگاهی برای خرید و دیده‌شدن. یازده سال بعد، خواستِ برکناری همان حزب در طول آن چسبانده شده است.\n\nخیابان در ۲۵ آوریل سیاسی نشد. از ۲۰۰۸ سرریز اعتراض را حمل می‌کرد و از روز گشایش موسیقی خیابانی را. آنچه تغییر کرد این بود که مطالبه اکنون خطاب به سازندگان خودِ خیابان بود، روی پیاده‌روی خودشان، و هیچ‌کس آن را عجیب نیافت.",
+      "actors_fa": [
+        "معترضان",
+        "حزب جمهوری‌خواه ارمنستان",
+        "کارن کاراپتیان",
+        "نیکول پاشینیان"
+      ],
+      "tags_fa": [
+        "خیابان شمالی",
+        "حزب جمهوری‌خواه برو",
+        "پوستر",
+        "۲۵ آوریل",
+        "بستن فرودگاه"
+      ]
+    },
+    {
+      "id": "parliament-rejects-pashinyan-2018-05-01",
+      "title": "Parliament refuses Pashinyan; 100,000 watch on Republic Square",
+      "date": "2018-05-01",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51125,
+        40.19115
+      ],
+      "location": "National Assembly, Baghramyan Avenue",
+      "categories": [
+        "politics",
+        "protest"
+      ],
+      "episode": "2018-revolution",
+      "summary": "On 1 May the National Assembly voted on a new prime minister. Pashinyan, nominated only by his own Civil Contract party, received 45 votes against 56, with 102 members present. More than a hundred thousand people watched the vote on screens at Republic Square.",
+      "analysis": "The most interesting thing about 1 May is the split screen: the decision was taken in a chamber on Baghramyan, and it was watched by a crowd of a hundred thousand on a square two kilometres away.\n\nThat is not a metaphor for the gap between institution and street; it is a description of it. The building where the vote happened had been sealed behind razor wire two weeks earlier. The square was open, full, and — after the following day — decisive.",
+      "actors": [
+        "Nikol Pashinyan",
+        "National Assembly",
+        "Republican Party of Armenia",
+        "Civil Contract"
+      ],
+      "tags": [
+        "1 May",
+        "vote",
+        "National Assembly",
+        "Republic Square"
+      ],
+      "sources": [
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "45 for, 56 against, 102 present; over 100,000 watching at Republic Square",
+          "note_hy": "45 կողմ, 56 դեմ, 102 ներկա, ավելի քան 100 000 դիտող Հանրապետության հրապարակում",
+          "note_fa": "۴۵ موافق، ۵۶ مخالف، ۱۰۲ حاضر؛ بیش از ۱۰۰٬۰۰۰ تماشاگر در میدان جمهوری"
+        }
+      ],
+      "media": [],
+      "title_hy": "Խորհրդարանը մերժում է Փաշինյանին․ 100 000 մարդ դիտում է Հանրապետության հրապարակում",
+      "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա",
+      "summary_hy": "Մայիսի 1-ին Ազգային ժողովը քվեարկեց նոր վարչապետի հարցով։ Փաշինյանը, առաջադրված միայն իր «Քաղաքացիական պայմանագիր» կուսակցության կողմից, ստացավ 45 կողմ և 56 դեմ ձայն՝ 102 ներկա պատգամավորի պայմաններում։ Ավելի քան հարյուր հազար մարդ քվեարկությունը դիտում էր էկրաններից Հանրապետության հրապարակում։",
+      "analysis_hy": "Մայիսի 1-ի ամենահետաքրքիր բանը կիսված էկրանն է․ որոշումն ընդունվեց Բաղրամյանի պալատում, և այն դիտում էր հարյուր հազարանոց բազմություն երկու կիլոմետր հեռու գտնվող հրապարակում։\n\nԴա ինստիտուտի և փողոցի միջև ընկած խզվածքի փոխաբերություն չէ․ դա դրա նկարագրությունն է։ Այն շենքը, որտեղ քվեարկությունը կայացավ, երկու շաբաթ առաջ փակվել էր փշալարի հետևում։ Հրապարակը բաց էր, լեփ-լեցուն, և հաջորդ օրվանից՝ վճռական։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Ազգային ժողով",
+        "Հայաստանի Հանրապետական կուսակցություն",
+        "«Քաղաքացիական պայմանագիր»"
+      ],
+      "tags_hy": [
+        "մայիսի 1",
+        "քվեարկություն",
+        "Ազգային ժողով",
+        "Հանրապետության հրապարակ"
+      ],
+      "title_fa": "مجلس پاشینیان را رد می‌کند؛ ۱۰۰٬۰۰۰ نفر در میدان جمهوری تماشا می‌کنند",
+      "location_fa": "مجلس ملی، خیابان باغرامیان",
+      "summary_fa": "در ۱ مه مجلس ملی دربارهٔ نخست‌وزیر جدید رأی گرفت. پاشینیان، که تنها حزب خودش پیمان مدنی نامزدش کرده بود، ۴۵ رأی موافق در برابر ۵۶ مخالف گرفت، با ۱۰۲ نمایندهٔ حاضر. بیش از صد هزار نفر رأی‌گیری را روی نمایشگرها در میدان جمهوری تماشا کردند.",
+      "analysis_fa": "جالب‌ترین چیز دربارهٔ ۱ مه، صفحهٔ دونیمه است: تصمیم در تالاری در باغرامیان گرفته شد، و جمعیتی صدهزار نفری آن را در میدانی دو کیلومتر آن‌سوتر تماشا کرد.\n\nاین استعاره‌ای برای شکاف نهاد و خیابان نیست؛ توصیف خود آن است. ساختمانی که رأی در آن گرفته شد، دو هفته پیش پشت سیم خاردار مهر و موم شده بود. میدان باز بود، پر بود، و — از روز بعد — تعیین‌کننده.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "مجلس ملی",
+        "حزب جمهوری‌خواه ارمنستان",
+        "پیمان مدنی"
+      ],
+      "tags_fa": [
+        "۱ مه",
+        "رأی‌گیری",
+        "مجلس ملی",
+        "میدان جمهوری"
+      ]
+    },
+    {
+      "id": "general-strike-2018-05-02",
+      "title": "The general strike stops the country",
+      "date": "2018-05-02",
+      "datePrecision": "day",
+      "coordinates": [
+        44.5126,
+        40.1776
+      ],
+      "location": "Republic Square and the whole road network",
+      "categories": [
+        "protest",
+        "infra"
+      ],
+      "episode": "2018-revolution",
+      "summary": "The day after the failed vote the movement called a general strike. Streets and highways were blocked across the country, the metro stopped, the roads to Zvartnots airport were closed, and about 150,000 people filled Republic Square in the evening — the largest gathering of the revolution.",
+      "analysis": "The strike is the moment the movement stops asking for a square and takes the network instead. Metro, highways, the airport road: the things that make a capital a capital.\n\nRead against 16 April this is an exact inversion. On the sixteenth the state closed the metro and wired an avenue to contain the movement; on 2 May the movement closed the same infrastructure to force the state. The instrument did not change hands so much as the city itself became the argument — which is the claim this whole map exists to make.",
+      "actors": [
+        "Protesters",
+        "Nikol Pashinyan",
+        "Transport workers"
+      ],
+      "tags": [
+        "general strike",
+        "2 May",
+        "blockade",
+        "metro",
+        "Zvartnots"
+      ],
+      "sources": [
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "~150,000 on Republic Square; nationwide blockades including airport roads and the metro",
+          "note_hy": "~150 000 Հանրապետության հրապարակում, համապետական փակումներ՝ ներառյալ օդանավակայանի ճանապարհները և մետրոն",
+          "note_fa": "حدود ۱۵۰٬۰۰۰ نفر در میدان جمهوری؛ انسداد سراسری از جمله راه‌های فرودگاه و مترو"
+        },
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "general strike, 2 May",
+          "note_hy": "համընդհանուր գործադուլ, մայիսի 2",
+          "note_fa": "اعتصاب عمومی، ۲ مه"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg/1400px-26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg",
+          "mirror": "media/rev2018-26-04-2018-protest-demonstration-yerevan-003.jpg",
+          "caption": "A march from the Lambada bridge toward Republic Square along Baghramyan Avenue, 26 April 2018, in the week between the resignation and the strike.",
+          "credit": "Photo: Pandukht, 26 April 2018",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:26.04.2018_Protest_Demonstration%2C_Yerevan_003.jpg",
+          "caption_hy": "Երթ Լամբադա կամրջից դեպի Հանրապետության հրապարակ Բաղրամյան պողոտայով, 2018 թվականի ապրիլի 26, հրաժարականի և գործադուլի միջև ընկած շաբաթում։",
+          "caption_fa": "راهپیمایی از پل لامبادا به‌سوی میدان جمهوری در خیابان باغرامیان، ۲۶ آوریل ۲۰۱۸، در هفتهٔ میان استعفا و اعتصاب."
+        }
+      ],
+      "title_hy": "Համընդհանուր գործադուլը կանգնեցնում է երկիրը",
+      "location_hy": "Հանրապետության հրապարակ և ողջ ճանապարհային ցանցը",
+      "summary_hy": "Ձախողված քվեարկությունից հաջորդ օրը շարժումը հայտարարեց համընդհանուր գործադուլ։ Ամբողջ երկրում փակվեցին փողոցներ և ավտոմայրուղիներ, կանգ առավ մետրոպոլիտենը, փակվեցին Զվարթնոց օդանավակայան տանող ճանապարհները, և երեկոյան Հանրապետության հրապարակը լցրեց մոտ 150 000 մարդ՝ հեղափոխության ամենամեծ հավաքը։",
+      "analysis_hy": "Գործադուլն այն պահն է, երբ շարժումը դադարում է հրապարակ խնդրելուց և փոխարենը վերցնում է ցանցը։ Մետրո, ավտոմայրուղիներ, օդանավակայանի ճանապարհ․ այն, ինչ մայրաքաղաքը դարձնում է մայրաքաղաք։\n\nԱպրիլի 16-ի հետ կողք կողքի կարդալիս սա ճշգրիտ շրջում է։ Տասնվեցին պետությունը փակեց մետրոն և փշալարեց պողոտան՝ շարժումը զսպելու համար․ մայիսի 2-ին շարժումը փակեց նույն ենթակառուցվածքը՝ պետությանը հարկադրելու համար։ Գործիքն այնքան չփոխեց տերը, որքան քաղաքն ինքը դարձավ փաստարկը, ինչը հենց այն պնդումն է, որի համար գոյություն ունի այս ողջ քարտեզը։",
+      "actors_hy": [
+        "Ցուցարարներ",
+        "Նիկոլ Փաշինյան",
+        "Տրանսպորտի աշխատողներ"
+      ],
+      "tags_hy": [
+        "համընդհանուր գործադուլ",
+        "մայիսի 2",
+        "փակում",
+        "մետրո",
+        "Զվարթնոց"
+      ],
+      "title_fa": "اعتصاب عمومی کشور را متوقف می‌کند",
+      "location_fa": "میدان جمهوری و کل شبکهٔ راه‌ها",
+      "summary_fa": "روز پس از رأی‌گیری ناکام، جنبش اعتصاب عمومی فراخواند. خیابان‌ها و بزرگراه‌ها در سراسر کشور بسته شد، مترو ایستاد، راه‌های فرودگاه زوارتنوتس بسته شد، و شامگاه حدود ۱۵۰٬۰۰۰ نفر میدان جمهوری را پر کردند — بزرگ‌ترین گردهمایی انقلاب.",
+      "analysis_fa": "اعتصاب لحظه‌ای است که جنبش از خواستنِ یک میدان دست می‌کشد و به‌جایش شبکه را می‌گیرد. مترو، بزرگراه‌ها، راه فرودگاه: چیزهایی که پایتخت را پایتخت می‌کنند.\n\nدر برابر ۱۶ آوریل، این وارونگی دقیقی است. در شانزدهم دولت مترو را بست و خیابانی را سیم‌خاردار کرد تا جنبش را مهار کند؛ در ۲ مه جنبش همان زیرساخت را بست تا دولت را وادار کند. ابزار چندان دست‌به‌دست نشد که خودِ شهر به استدلال بدل شد — و همین ادعایی است که تمام این نقشه برای آن هست.",
+      "actors_fa": [
+        "معترضان",
+        "نیکول پاشینیان",
+        "کارگران حمل‌ونقل"
+      ],
+      "tags_fa": [
+        "اعتصاب عمومی",
+        "۲ مه",
+        "انسداد",
+        "مترو",
+        "زوارتنوتس"
+      ]
+    },
+    {
+      "id": "pashinyan-elected-pm-2018-05-08",
+      "title": "Parliament elects Pashinyan; the revolution ends",
+      "date": "2018-05-08",
+      "datePrecision": "day",
+      "coordinates": [
+        44.51125,
+        40.19115
+      ],
+      "location": "National Assembly, Baghramyan Avenue",
+      "categories": [
+        "politics"
+      ],
+      "episode": "2018-revolution",
+      "summary": "At the second vote, on 8 May, the National Assembly elected Nikol Pashinyan prime minister, 59 to 42. Thirty-nine days after the walk left Gyumri, the campaign ended.",
+      "analysis": "It ends where 16 April was stopped — in the chamber on Baghramyan that razor wire had protected. The movement did not take that building; it made holding it untenable.\n\nWhat the map records between 31 March and 8 May is a sequence of places rather than a single site: a road from Gyumri, Freedom Square, France Square, Baghramyan, Tigran Mets, Republic Square, Artsakh Avenue, Erebuni, Tsitsernakaberd, Northern Avenue, the metro and the airport road. No previous Armenian movement used the city that way, and that — not the size of any one crowd — is what this project argues made the difference.",
+      "actors": [
+        "Nikol Pashinyan",
+        "National Assembly",
+        "Civil Contract"
+      ],
+      "tags": [
+        "8 May",
+        "election",
+        "prime minister",
+        "end of the revolution"
+      ],
+      "sources": [
+        {
+          "title": "2018 Armenian Revolution",
+          "url": "https://en.wikipedia.org/wiki/2018_Armenian_Revolution",
+          "note": "59–42 vote on 8 May",
+          "note_hy": "59–42 քվեարկություն մայիսի 8-ին",
+          "note_fa": "رأی ۵۹–۴۲ در ۸ مه"
+        },
+        {
+          "title": "Global Nonviolent Action Database",
+          "url": "https://nvdatabase.swarthmore.edu/content/armenians-protest-resignation-prime-minister-serzh-sargsyan-2018",
+          "note": "campaign end",
+          "note_hy": "արշավի ավարտ",
+          "note_fa": "پایان کارزار"
+        }
+      ],
+      "media": [],
+      "title_hy": "Խորհրդարանն ընտրում է Փաշինյանին․ հեղափոխությունն ավարտվում է",
+      "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա",
+      "summary_hy": "Երկրորդ քվեարկությամբ՝ մայիսի 8-ին, Ազգային ժողովն ընտրեց Նիկոլ Փաշինյանին վարչապետ՝ 59 կողմ, 42 դեմ։ Գյումրիից քայլարշավի մեկնելուց երեսունինը օր անց արշավն ավարտվեց։",
+      "analysis_hy": "Այն ավարտվում է այնտեղ, որտեղ կանգնեցվեց ապրիլի 16-ը՝ Բաղրամյանի այն պալատում, որը պաշտպանում էր փշալարը։ Շարժումը չվերցրեց այդ շենքը․ այն դարձրեց դրա պահելն անհնարին։\n\nԱյն, ինչ քարտեզն արձանագրում է մարտի 31-ի և մայիսի 8-ի միջև, մեկ վայրի փոխարեն վայրերի հաջորդականություն է․ Գյումրիից եկող ճանապարհ, Ազատության հրապարակ, Ֆրանսիայի հրապարակ, Բաղրամյան, Տիգրան Մեծ, Հանրապետության հրապարակ, Արցախի պողոտա, Էրեբունի, Ծիծեռնակաբերդ, Հյուսիսային պողոտա, մետրոն և օդանավակայանի ճանապարհը։ Ոչ մի նախորդ հայկական շարժում քաղաքն այդպես չէր օգտագործել, և հենց դա, ոչ թե որևէ մեկ բազմության չափը, այս նախագիծը համարում է տարբերությունը ստեղծած գործոնը։",
+      "actors_hy": [
+        "Նիկոլ Փաշինյան",
+        "Ազգային ժողով",
+        "«Քաղաքացիական պայմանագիր»"
+      ],
+      "tags_hy": [
+        "մայիսի 8",
+        "ընտրություն",
+        "վարչապետ",
+        "հեղափոխության ավարտ"
+      ],
+      "title_fa": "مجلس پاشینیان را برمی‌گزیند؛ انقلاب پایان می‌یابد",
+      "location_fa": "مجلس ملی، خیابان باغرامیان",
+      "summary_fa": "در رأی‌گیری دوم، در ۸ مه، مجلس ملی نیکول پاشینیان را با ۵۹ در برابر ۴۲ رأی نخست‌وزیر کرد. سی‌ونه روز پس از آنکه پیاده‌روی از گیومری بیرون آمد، کارزار پایان گرفت.",
+      "analysis_fa": "همان‌جا پایان می‌گیرد که ۱۶ آوریل متوقف شد — در تالاری در باغرامیان که سیم خاردار از آن محافظت می‌کرد. جنبش آن ساختمان را نگرفت؛ نگه‌داشتنش را ناممکن کرد.\n\nآنچه نقشه میان ۳۱ مارس و ۸ مه ثبت می‌کند، به‌جای یک مکان، توالی‌ای از مکان‌هاست: جاده‌ای از گیومری، میدان آزادی، میدان فرانسه، باغرامیان، تیگران متس، میدان جمهوری، خیابان آرتساخ، ارِبونی، تسیتسرناکابرد، خیابان شمالی، مترو و راه فرودگاه. هیچ جنبش ارمنی پیشینی شهر را این‌گونه به کار نگرفته بود، و همین — نه اندازهٔ هیچ جمعیت واحدی — چیزی است که این پژوهش آن را عامل تفاوت می‌داند.",
+      "actors_fa": [
+        "نیکول پاشینیان",
+        "مجلس ملی",
+        "پیمان مدنی"
+      ],
+      "tags_fa": [
+        "۸ مه",
+        "انتخاب",
+        "نخست‌وزیر",
+        "پایان انقلاب"
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "id": "2018-revolution",
+      "label": "2018 Revolution",
+      "label_hy": "2018-ի հեղափոխություն",
+      "label_fa": "انقلاب ۲۰۱۸",
+      "start": "2018-03-31",
+      "end": "2018-05-08",
+      "color": "#c9262c",
+      "note": "Thirty-nine days from the walk leaving Gyumri to the parliamentary vote that made Pashinyan prime minister."
     }
   ]
 }
