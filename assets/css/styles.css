@@ -1086,3 +1086,139 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
   font-style:normal; margin-inline-start:auto;
   color:var(--accent); font-weight:600; font-variant-numeric:tabular-nums;
 }
+
+/* ===================================================================
+   THE ANNUAL COMMEMORATION — 23 and 24 April, every year
+   -------------------------------------------------------------------
+   Purple here is not decoration. The forget-me-not adopted for the 1915
+   centenary is the flower the commemoration is worn as, and these two days
+   are the only recurring thing on this timeline; giving them their own
+   colour is what lets a reader see, at a glance, that the map's argument
+   has an annual pulse underneath its one-off events.
+   =================================================================== */
+#tl-commem{
+  position:absolute; top:0; left:0; right:0; height:26px;
+  pointer-events:none; z-index:4;
+}
+.tl-cm{
+  position:absolute; top:0; height:26px;
+  min-width:3px; padding:0; margin:0;
+  background:none; border:none; cursor:pointer; pointer-events:auto;
+}
+.tl-cm i{
+  position:absolute; left:0; right:0; top:3px; bottom:3px;
+  min-width:3px; display:block;
+  background:var(--cm); opacity:.62; border-radius:1.5px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.4);
+  transition:opacity .15s, box-shadow .15s;
+}
+.tl-cm:hover i, .tl-cm:focus-visible i{
+  opacity:1; box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 0 7px var(--cm);
+}
+
+.tl-commem-row{ margin-top:6px; }
+.tl-commem-key{
+  display:inline-flex; align-items:center; gap:8px;
+  height:24px; padding:0 10px;
+  background:var(--bg-3); color:var(--text-2);
+  border:1px solid var(--line); border-left:3px solid var(--cm, #7d5ba6);
+  border-radius:5px; cursor:pointer; font-size:12px; line-height:1;
+}
+.tl-commem-key:hover{ color:var(--text); border-color:var(--cm, #7d5ba6); background:var(--bg-2); }
+.tl-commem-key i{
+  width:9px; height:9px; border-radius:50%;
+  background:var(--cm, #7d5ba6); flex:0 0 auto;
+}
+
+/* ---- the two routes, in the entry panel ---- */
+.d-marches{ display:flex; flex-direction:column; gap:7px; margin:0 0 16px; }
+.d-march{
+  display:flex; align-items:center; gap:9px; width:100%;
+  padding:9px 12px; text-align:start;
+  background:var(--bg-3); border:1px solid var(--line);
+  border-inline-start:3px solid var(--mk); border-radius:7px;
+  cursor:pointer; color:var(--text-2); font-size:12.5px;
+}
+.d-march:hover{ color:var(--text); background:var(--bg-2); border-color:var(--mk); }
+.d-march i{
+  width:10px; height:10px; border-radius:50%;
+  background:var(--mk); flex:0 0 auto;
+}
+.d-march.past i{ background:none; box-shadow:0 0 0 2px var(--mk) inset; }
+.d-march.past{ opacity:.72; }
+.d-march b{ font-weight:600; color:var(--text); }
+.d-march span{
+  margin-inline-start:auto; font-variant-numeric:tabular-nums;
+  color:var(--mk); font-weight:600;
+}
+.d-march em{ font-style:normal; color:var(--text-3); font-size:11.5px; }
+
+/* ---- a note pinned to a route on the map ---- */
+.march-note{
+  transform:translateY(-6px);
+  display:flex; flex-direction:column; gap:1px;
+  padding:5px 9px; max-width:210px;
+  background:rgba(18,18,20,.92); color:#fff;
+  border:1px solid var(--mk); border-radius:6px;
+  font-size:11px; line-height:1.3; cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.45);
+}
+.march-note b{ font-weight:600; }
+.march-note span{ color:var(--mk); font-variant-numeric:tabular-nums; }
+.march-note.past{ opacity:.85; border-style:dashed; }
+.march-note:hover{ background:rgba(18,18,20,1); }
+
+/* ---- year by year ---- */
+.d-years{ display:flex; flex-direction:column; gap:2px; margin:2px 0 10px; }
+.d-year{
+  padding:10px 12px; border-radius:7px;
+  border-inline-start:3px solid var(--line);
+  background:var(--bg-3);
+  transition:background .3s, border-color .3s;
+}
+.d-year.fre{ border-inline-start-color:#6b8fa8; }
+.d-year.rep{ border-inline-start-color:#7d5ba6; }
+.d-year.hit{ background:var(--bg-2); box-shadow:0 0 0 1px #7d5ba6; }
+.d-year-head{
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:5px;
+}
+.d-year-head b{
+  font-size:14px; font-weight:700; color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.d-year-sq{ font-size:11.5px; color:var(--text-2); }
+.d-year-fl{
+  font-size:10.5px; padding:1px 6px; border-radius:3px;
+  background:rgba(201,38,44,.16); color:#e0574a;
+}
+.d-year-cf{
+  margin-inline-start:auto; font-size:10.5px;
+  padding:1px 6px; border-radius:3px; color:var(--text-3);
+  background:rgba(255,255,255,.06);
+}
+.d-year-cf.cf-confirmed{ color:#7fbf5e; }
+.d-year-cf.cf-partial{ color:#e8a13a; }
+.d-year .d-year-head + p{ margin:0; font-size:12.5px; color:var(--text-2); line-height:1.6; }
+.d-note{
+  margin:8px 0 0; font-size:11.5px; color:var(--text-3);
+  font-style:italic; line-height:1.55;
+}
+
+/* ---- the slogans ---- */
+.d-slogans{ display:flex; flex-direction:column; gap:10px; margin:2px 0 6px; }
+.d-slogan{
+  padding:9px 12px; border-radius:7px;
+  background:var(--bg-3); border:1px solid var(--line);
+}
+.d-slogan b{
+  display:block; font-size:14px; font-weight:600; color:var(--text);
+  direction:ltr; unicode-bidi:isolate;
+}
+.d-slogan i{
+  display:block; font-style:italic; font-size:11.5px; color:var(--text-3);
+  margin:1px 0 5px; direction:ltr; unicode-bidi:isolate;
+}
+.d-slogan p{ margin:0; font-size:12.5px; color:var(--text-2); line-height:1.6; }
+
+/* time runs left to right in every language, so the marks do too */
+[dir="rtl"] #tl-commem{ direction:ltr; }
