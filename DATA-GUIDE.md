@@ -252,3 +252,36 @@ Silence means clean.
 `**bold**` for the sentence a section turns on, and `*italic*` for a
 transliteration or a foreign word. Everything is HTML-escaped first, so nothing in
 the data can inject markup. Blank lines separate paragraphs.
+
+---
+
+## 10. Photographs the researcher took
+
+Alireza's own photographs are dropped into `Downloads/Yerevanphotosfor site` and are handled
+differently from anything found on the web.
+
+**Ship them unmodified.** Do not resize, do not re-encode, do not straighten, and above all
+do not crop. The frame is a decision he made when he stood there, and a research photograph
+that has been recomposed by a tool is no longer evidence of what he saw. The repository copy
+should be byte-identical to the file he supplied. Page weight is the lesser problem.
+
+**Credit him first.** Set `fieldnote: true` on the media item, which prints a "Fieldwork
+photograph" badge ahead of everything else, and fill in `credit` with his name and `license`
+with the project and date. Both are read through `tr()`, so they take `_hy` and `_fa`
+suffixes like any other field:
+
+```jsonc
+{
+  "type": "image",
+  "url": "media/lenin-headless-courtyard-2021.jpg",
+  "fieldnote": true,
+  "caption": "...", "caption_hy": "...", "caption_fa": "...",
+  "credit": "Photograph by Alireza Bahrani",
+  "credit_hy": "Լուսանկարը՝ Ալիրեզա Բահրանիի",
+  "credit_fa": "عکس از علیرضا بحرانی",
+  "license": "Yerevan Project fieldwork, 15 July 2021",
+  "license_hy": "...", "license_fa": "..."
+}
+```
+
+No `source` field: there is no external page to link to, because he is the source.
