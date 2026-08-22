@@ -282,3 +282,22 @@ There is no `license` field on his own photographs.
 ```
 
 No `source` field: there is no external page to link to, because he is the source.
+
+---
+
+## 11. Photographs never leave the page
+
+Clicking any image on this site opens it in the viewer (`#lightbox`): the picture at the
+largest size that fits, its caption underneath, a close button, a fullscreen button, and
+arrow keys to move through the photographs of the open entry. Escape closes it, `f` toggles
+fullscreen, and clicking the backdrop closes it.
+
+**Do not wrap an image in a link.** No `target="_blank"`, no anchor around a `<figure>`, no
+"open original" affordance. A reader following an argument must never be thrown into a
+browser tab holding a bare JPEG with no way back except the back button. `renderMedia()`
+wraps every image in a `button.d-zoom` and one delegated listener on `document` handles the
+rest, so media rendered anywhere (entry panel, year box, anything added later) works without
+extra wiring.
+
+The only external links in a caption are the licence and source links required by
+attribution. Those are text, not the photograph.
