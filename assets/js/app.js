@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — application logic
+   Yerevan Project, application logic
    -------------------------------------------------------------------
    Everything the map shows comes from data/events.json.
    You should not need to edit this file to add research material.
@@ -13,7 +13,7 @@
   /* Ways of seeing the same city. "kentron" is the figure-ground drawing from
      slide 10 of the proposal defence, rebuilt in 3D: grey fabric, red figure,
      dashed rings. The others are there for checking the drawing against the
-     world — satellite especially, when you want to see what is actually on a
+     world, satellite especially, when you want to see what is actually on a
      roof. Terrain and hillshade re-apply to whichever is chosen. */
   function rasterStyle(tiles, credit, maxzoom) {
     return {
@@ -38,7 +38,7 @@
   var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
   var HOME_FLAT = { center: [44.5136, 40.1830], zoom: 13.1, pitch: 0, bearing: 0 };
 
-  /* palette — red and grey, from the proposal deck */
+  /* palette; red and grey, from the proposal deck */
   var RED       = "#c9262c";
   /* forget-me-not purple: the flower adopted for the 1915 centenary, and the
      colour this map gives to 23-24 April of every year. */
@@ -93,8 +93,8 @@
 
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+.replace(/"/g, "&quot;");
   }
 
   function MONTH(i) { return window.I18N ? I18N.month(i) :
@@ -147,8 +147,8 @@
 
   function getJSON(u) {
     return fetch(u, { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; });
+.then(function (r) { return r.ok ? r.json() : null; })
+.catch(function () { return null; });
   }
 
   Promise.all([
@@ -156,14 +156,14 @@
     getJSON("data/figure.json"),
     getJSON("data/places.json")
   ])
-    .then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; })
-    .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
-    .then(function (r) {
+.then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; })
+.then(function () { return fetch("data/events.json", { cache: "no-store" }); })
+.then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
       return r.json();
     })
-    .then(init)
-    .catch(function (err) {
+.then(init)
+.catch(function (err) {
       $("loading").innerHTML =
         '<div style="text-align:center;max-width:420px;line-height:1.7">' +
         '<strong style="color:#e6e8ec">' + esc(t("err.load")) + '</strong><br>' +
@@ -203,7 +203,7 @@
         });
       });
       e._search = bag.join(" ").toLowerCase();
-      /* An entry can carry more than one route — the genocide ceremony
+      /* An entry can carry more than one route; the genocide ceremony
          walks two, in different decades. The first is the primary: it is
          what the camera frames and what the replay button draws. The rest
          are drawn beside it by buildRoutes(). */
@@ -220,7 +220,7 @@
        Several events share one address (the avenue itself, Opera Square).
        Drawn at their true coordinates they collapse into a single dot and
        all but one become unclickable. Entries sharing a location are fanned
-       out on a small circle — roughly 15 m — purely for display. The stored
+       out on a small circle, roughly 15 m, purely for display. The stored
        coordinates are untouched.
        ------------------------------------------------------------------ */
     var byLoc = {};
@@ -250,7 +250,7 @@
        timeline can hold open space for periods not yet filled in.
        ------------------------------------------------------------------ */
     var times = state.events.map(function (e) { return e._t; })
-      .concat(state.events.map(function (e) { return e._tEnd; }));
+.concat(state.events.map(function (e) { return e._tEnd; }));
     var dataMin = times.length ? Math.min.apply(null, times) : Date.UTC(2000, 0, 1);
     var dataMax = times.length ? Math.max.apply(null, times) : Date.UTC(2026, 0, 1);
     var pad = Math.max((dataMax - dataMin) * 0.02, 86400000 * 30);
@@ -263,7 +263,7 @@
     state.tMax = forcedMax !== null ? forcedMax : dataMax + pad;
 
     /* An entry falling outside an explicit range is not hidden: it is treated
-       as STANDING CONTEXT — a condition that predates (or outlasts) the mapped
+       as STANDING CONTEXT; a condition that predates (or outlasts) the mapped
        period rather than an event inside it. Context entries stay visible at
        every timeline position and do not compress the scale. */
 
@@ -298,7 +298,7 @@
       "backdrop-filter:blur(8px)";
     n.innerHTML = msg;
     $("map-wrap").appendChild(n);
-    setTimeout(function () { n.style.transition = "opacity .6s"; n.style.opacity = "0"; }, 9000);
+    setTimeout(function () { n.style.transition = "opacity.6s"; n.style.opacity = "0"; }, 9000);
     setTimeout(function () { n.remove(); }, 9800);
   }
 
@@ -316,7 +316,7 @@
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
-    /* Some styles never fire "load" — MapLibre only emits it after a first full
+    /* Some styles never fire "load"; MapLibre only emits it after a first full
        render, and a style whose sources are still settling can skip it. "idle"
        always arrives. Boot from whichever comes first, exactly once. */
     var booted = false;
@@ -336,7 +336,7 @@
 
       /* The small public surface other files talk to. graph3d.js uses it to
          list what the map holds about a node and to open an entry when one is
-         clicked. Keep it this narrow — three functions, no internals. */
+         clicked. Keep it this narrow, three functions, no internals. */
       window.YerevanMap = {
         events: function () { return state.events.slice(); },
         select: function (id) { selectEvent(id, true); },
@@ -419,7 +419,7 @@
       map.getCanvas().style.cursor = "pointer";
       var f = e.features[0];
       hoverPopup.setLngLat(f.geometry.coordinates)
-        .setHTML(
+.setHTML(
           '<div class="pop-date">' + esc(f.properties.dateLabel) + '</div>' +
           '<div class="pop-title">' + esc(f.properties.title) + '</div>'
         ).addTo(map);
@@ -513,7 +513,7 @@
   }
 
   /* Draw the march along its own length. Roughly a kilometre a second, so a
-     four-kilometre walk takes about four seconds — long enough to read as a
+     four-kilometre walk takes about four seconds; long enough to read as a
      journey, short enough that nobody waits for it. */
   function animateRoute(ev) {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
@@ -546,14 +546,14 @@
   }
 
   /* =================================================================
-     SCALE — when an entry is not in Yerevan
+     SCALE; when an entry is not in Yerevan
      -------------------------------------------------------------------
      Most of this map is one district of one city, and the camera flies
      to a point at street zoom. Some entries are not: the walk starts in
      Gyumri, the earthquake destroyed Spitak, the war was fought in
      Karabakh, and the axis Tamanyan drew points at a mountain in another
      country. Sending the reader there alone, at zoom 16, is worse than
-     useless — a screen of unfamiliar streets with no way to tell where
+     useless; a screen of unfamiliar streets with no way to tell where
      it is or how far from everything else in the argument.
 
      So an entry outside the city opens a bird's-eye view instead: north
@@ -613,7 +613,7 @@
     return list.length > 1 || far ? list : null;
   }
 
-  /* west, south, east, north over points, boxes and sightlines alike — a line
+  /* west, south, east, north over points, boxes and sightlines alike; a line
      that runs off the edge of the frame is a line the reader cannot compare */
   function framedBounds(places, e) {
     var w = 180, s = 90, e2 = -180, n = -90;
@@ -632,7 +632,7 @@
   }
 
   /* -----------------------------------------------------------------
-     MARCH NOTES — a label pinned to a route saying when it was walked
+     MARCH NOTES; a label pinned to a route saying when it was walked
      -----------------------------------------------------------------
      The genocide ceremony walks two routes that differ only in their first
      kilometre, and the whole argument is which years used which. A colour
@@ -667,7 +667,7 @@
       });
       marchNotes.push(
         new maplibregl.Marker({ element: el, anchor: "bottom" })
-          .setLngLat(at).addTo(map)
+.setLngLat(at).addTo(map)
       );
     });
   }
@@ -701,13 +701,13 @@
       if (note) el.title = note;
       placeMarkers.push(
         new maplibregl.Marker({ element: el, anchor: "bottom" })
-          .setLngLat(p.bbox ? [(p.bbox[0] + p.bbox[2]) / 2, (p.bbox[1] + p.bbox[3]) / 2] : p.at)
-          .addTo(map)
+.setLngLat(p.bbox ? [(p.bbox[0] + p.bbox[2]) / 2, (p.bbox[1] + p.bbox[3]) / 2] : p.at)
+.addTo(map)
       );
     });
 
     /* The connector. When the entry names several places it is drawn through
-       all of them in the order given — for the walk from Gyumri that is the
+       all of them in the order given, for the walk from Gyumri that is the
        towns it passed, in sequence. It is dashed and schematic on purpose:
        this is not the road, and a solid line would claim to be. */
     var anchor = anchorPlace();
@@ -737,7 +737,7 @@
       /* The chip is the straight-line distance, so it is only drawn when the
          line on the map IS that straight line. Where the connector runs through
          a chain of towns, a number floating beside it would be read as the
-         length of the chain, which it is not — the panel carries it instead. */
+         length of the chain, which it is not; the panel carries it instead. */
       if (chain.length === 2) {
         var km = metres(a, b) / 1000;
         var mid = document.createElement("div");
@@ -745,7 +745,7 @@
         mid.textContent = t("scale.apart", { d: num(km >= 100 ? Math.round(km) : km.toFixed(1)) });
         placeMarkers.push(
           new maplibregl.Marker({ element: mid, anchor: "center" })
-            .setLngLat([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]).addTo(map)
+.setLngLat([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]).addTo(map)
         );
       }
     }
@@ -779,7 +779,7 @@
     return (Math.atan2(y, x) / T + 360) % 360;
   }
 
-  /* the point `km` along a bearing from a point — spherical, because at
+  /* the point `km` along a bearing from a point; spherical, because at
      seventy kilometres a flat approximation is visibly wrong */
   function projectDeg(from, brg, km) {
     var T = Math.PI / 180, R = 6371.0088;
@@ -866,19 +866,19 @@
      dimensions from OpenStreetMap building heights.
 
      Which buildings are "figure" is decided by an explicit spatial rule
-     held in data/kentron.json — a 75 m buffer along the Opera–Republic
-     axis plus the two squares — not by a hand-picked list. Change the
+     held in data/kentron.json, a 75 m buffer along the Opera–Republic
+     axis plus the two squares, not by a hand-picked list. Change the
      rule there and the drawing follows.
      ================================================================= */
 
-  /* The figure is drawn on every basemap, not just the figure-ground one — the
+  /* The figure is drawn on every basemap, not just the figure-ground one; the
      point of switching to satellite is to check the red buildings against the
      real roofs, which only works if they are still there. */
   function addFigureGround() {
 
     /* The figure: the buildings Alireza marked dark on slide 10. These are real
        OpenStreetMap footprints with real heights, extracted once and stored in
-       data/figure.json — not selected at runtime. Deterministic, reviewable,
+       data/figure.json; not selected at runtime. Deterministic, reviewable,
        and identical for every reader. */
     if (FIGURE && !map.getSource("figure")) {
       map.addSource("figure", { type: "geojson", data: FIGURE });
@@ -886,7 +886,7 @@
          MapLibre anchors each extruded prism to a single ground elevation, so a
          low prism sitting on sloping ground gets swallowed by the hill on its
          uphill side. Republic Square falls 1.9 m across the Singing Fountains
-         basin — 3.4 m once the 1.8x terrain exaggeration is applied — so half
+         basin, 3.4 m once the 1.8x terrain exaggeration is applied, so half
          the pool disappeared at 0.5 m, and the height needed to survive would
          have made a shallow pool into a four-metre wall. A fill layer drapes
          over the terrain instead: every part of the pool is blue, and it
@@ -895,7 +895,7 @@
          the terrain, not by taste. Anything low sitting on a slope has to be
          DRAPED: a fill layer follows the hillside, while a short extrusion gets
          swallowed by the ground rising through it. So water, and any feature
-         carrying "flat": true — plazas, platforms, terraces — go in this layer,
+         carrying "flat": true; plazas, platforms, terraces; go in this layer,
          and what stands ON them is extruded separately.
          Tsitsernakaberd is the case that forced it: the memorial platform is
          draped, and the stele and the twelve pylons rise out of it. */
@@ -921,7 +921,7 @@
           "fill-extrusion-color": ["match", ["get", "zone"], "republic", RED, "accent", RED, GREY_MASS],
           "fill-extrusion-height": ["coalesce", ["get", "h"], 12],
           /* Per-feature base, so a shape can be built out of stacked slices.
-             A MapLibre extrusion is always a vertical prism with a flat top —
+             A MapLibre extrusion is always a vertical prism with a flat top; 
              it cannot taper and it cannot lean. Slicing is the way around that:
              ten short prisms, each one narrower and shifted, read as a tapering
              needle or a pylon leaning inward. See synthetic-monuments.md. */
@@ -962,8 +962,8 @@
      -------------------------------------------------------------------
      An entry with a "path" is not a point but a walk: a line of real
      street geometry, taken from OpenStreetMap, from where the march
-     started to where it ended. It is drawn permanently — a march that
-     only appears when you already know to look for it teaches nobody —
+     started to where it ended. It is drawn permanently, a march that
+     only appears when you already know to look for it teaches nobody, 
      and it draws itself along its own length when the entry is opened,
      because the thing being described took an hour and a route, not a
      place.
@@ -1010,7 +1010,7 @@
                                  path[path.length - 1][1] - path[path.length - 2][1]) };
   }
 
-  /* the first n metres of a path, as its own line — this is what animates */
+  /* the first n metres of a path, as its own line; this is what animates */
   function pathTo(path, target) {
     var out = [path[0]], run = 0;
     for (var i = 0; i < path.length - 1; i++) {
@@ -1040,8 +1040,8 @@
      viewport. Short moves keep easeTo, which looks better over a few
      streets and costs almost nothing.
      ----------------------------------------------------------------- */
-  /* Eight kilometres: every place in Yerevan animates as before — you want to
-     see the corridor go past — and only something genuinely outside the city,
+  /* Eight kilometres: every place in Yerevan animates as before; you want to
+     see the corridor go past, and only something genuinely outside the city,
      like the walk starting in Gyumri, jumps. */
   var JUMP_OVER_M = 8000;
 
@@ -1051,7 +1051,7 @@
     var opts = { center: target, zoom: zoom };
     if (pitch != null) opts.pitch = pitch;
     if (far > JUMP_OVER_M) {
-      /* flyTo is not the answer either — arcing out and back in crosses every
+      /* flyTo is not the answer either; arcing out and back in crosses every
          zoom level and asks for MORE tiles than the straight line did (measured
          693 against 309). Over this distance the animation is worthless anyway:
          nothing legible passes underneath. Jump, and load one viewport. */
@@ -1230,7 +1230,7 @@
   }
 
   /* =================================================================
-     PANEL — categories
+     PANEL; categories
      ================================================================= */
 
   function buildCategories() {
@@ -1274,7 +1274,7 @@
   }
 
   /* =================================================================
-     PANEL — results list
+     PANEL; results list
      ================================================================= */
 
   function renderResults(list) {
@@ -1305,7 +1305,7 @@
   }
 
   /* =================================================================
-     PANEL — detail view
+     PANEL; detail view
      ================================================================= */
 
   function selectEvent(id, fly) {
@@ -1332,12 +1332,12 @@
       }
     } else if (fly !== false && map) {
       /* Coming back from a bird's-eye view, the city is a 3D drawing again.
-         The tilt has to travel with the same easeTo — a separate one is simply
+         The tilt has to travel with the same easeTo; a separate one is simply
          cancelled by the move that follows it. */
       var back = (map.getPitch() < 1 && state.cityPitch) ? state.cityPitch : null;
       if (e.path && e.path.length > 1) {
         /* A march is not a place. Frame the whole walk, then draw it. An entry
-           with several routes is framed around all of them at once — the point
+           with several routes is framed around all of them at once, the point
            of drawing two is seeing them diverge. */
         var allPts = e.path;
         if (e.paths && e.paths.length > 1) {
@@ -1459,28 +1459,25 @@
 
     /* ---- year by year ----
        A recurring rite is not one event; it is a series in which one variable
-       moves. Rendering the series as a list, with the starting square and the
-       confidence beside each year, is the only honest way to show that the
-       square changed once and stayed changed. */
+       moves. Only the years that carry the argument are given a box: the
+       centenary, the year the rite fell inside a revolution, the year there
+       was no march at all, the last year of the old square, and the break.
+       The years between them are not silence; they are repetition, and
+       repetition is stated once. */
     if (e.years && e.years.length) {
       h += '<div class="d-sec"><h3>' + esc(t("detail.chronicle")) + '</h3>';
       h += '<div class="d-years">';
-      e.years.forEach(function (y) {
+      e.years.forEach(function (y, n) {
         var sk = "start." + (y.start || "unconfirmed");
         h += '<div class="d-year' + (y.start === "republic" ? " rep" : y.start === "freedom" ? " fre" : "") +
-             '" data-year="' + esc(y.year) + '" id="yr-' + esc(y.year) + '">' +
-             '<div class="d-year-head"><b>' + esc(num(y.year)) + '</b>' +
-             '<span class="d-year-sq">' + esc(t(sk)) + '</span>' +
-             (y.flags === true ? '<span class="d-year-fl">' + esc(t("flags.yes")) + '</span>' : "") +
-             '<span class="d-year-cf cf-' + esc(y.confidence || "unknown") + '">' +
-               esc(t("conf." + (y.confidence || "unknown"))) + '</span>' +
-             '</div>' +
-             '<p>' + para(tr(y, "note") || "") + '</p></div>';
+             '" data-yearidx="' + n + '" id="yr-' + esc(y.year) + '">' +
+             '<div class="d-year-head"><b>' + esc(num(y.label || y.year)) + '</b>' +
+             '<span class="d-year-sq">' + esc(t(sk)) + '</span></div>' +
+             '<p>' + para(tr(y, "note") || "") + '</p>';
+        (y.media || []).forEach(function (m) { h += renderMedia(m); });
+        h += '</div>';
       });
-      h += '</div>';
-      var cn = tr(e, "chronicleNote");
-      if (cn) h += '<p class="d-note">' + esc(cn) + '</p>';
-      h += '</div>';
+      h += '</div></div>';
     }
 
     /* ---- the words ----
@@ -1507,7 +1504,7 @@
            kws.map(function (k) { return '<span class="chip">' + esc(k) + '</span>'; }).join("") +
            '</div></div>';
     }
-    /* Bibliography stays in the script it was published in — that is how a
+    /* Bibliography stays in the script it was published in; that is how a
        reader looks it up. Only the note beside it is translated. */
     if (e.sources && e.sources.length) {
       h += '<div class="d-sec sources"><h3>' + esc(t("detail.sources")) + '</h3><ul>' + e.sources.map(function (s) {
@@ -1515,7 +1512,7 @@
         var note = tr(s, "note");
         return '<li><span dir="ltr">' + (s.url
           ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || s.url) + '</a>'
-          : esc(s.title || "")) + '</span>' + (note ? ' — ' + esc(note) : '') + '</li>';
+          : esc(s.title || "")) + '</span>' + (note ? '' + esc(note) : '') + '</li>';
       }).join("") + '</ul></div>';
     }
     var fieldnote = tr(e, "fieldnote");
@@ -1597,9 +1594,9 @@
 
   /* -----------------------------------------------------------------
      Media. Three kinds:
-       image  — a still, shown inline
-       video  — a self-hosted file (.webm/.mp4/.ogv), played inline
-       embed  — YouTube/Vimeo, loaded only when the reader clicks, so
+       image, a still, shown inline
+       video; a self-hosted file (.webm/.mp4/.ogv), played inline
+       embed; YouTube/Vimeo, loaded only when the reader clicks, so
                 no third-party request is made just by opening an entry
      Every item carries its own credit and licence, rendered under it.
      ----------------------------------------------------------------- */
@@ -1638,7 +1635,7 @@
              '</div>' + mediaMeta(m) + '</figure>';
     }
 
-    /* The local copy is the point — a link that rots takes the evidence with
+    /* The local copy is the point; a link that rots takes the evidence with
        it. But an image that has been added to the data and not yet mirrored
        should still show, so the remote original is kept as a fallback of last
        resort rather than as the source. */
@@ -1648,8 +1645,16 @@
            mediaMeta(m) + '</figure>';
   }
 
+  /* Research prose carries two marks and no more: **bold** for the sentence a
+     section turns on, and *italic* for a transliteration or a foreign word.
+     Escaping happens first, so nothing in the data can inject markup; the two
+     patterns are then re-admitted deliberately. Em dashes are not used
+     anywhere on this site, in any language, by rule. */
   function para(txt) {
-    return esc(txt).split(/\n{2,}/).join("</p><p>");
+    return esc(txt)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>")
+      .split(/\n{2,}/).join("</p><p>");
   }
 
   function closeDetail() {
@@ -1718,7 +1723,7 @@
   }
 
   /* -----------------------------------------------------------------
-     THE ANNUAL COMMEMORATION — 23 and 24 April, every year
+     THE ANNUAL COMMEMORATION; 23 and 24 April, every year
      -----------------------------------------------------------------
      An episode is one stretch of time with a beginning and an end. This is
      the other shape a political calendar takes: the same two days, returning,
@@ -1741,10 +1746,13 @@
     var html = "", key = $("tl-commem-key");
     evs.forEach(function (e) {
       var r = e.recurs, colour = r.color || COMMEM;
-      var y0 = Math.max(r.from || 1900, new Date(state.tMin).getUTCFullYear());
-      var y1 = Math.min(r.to || 3000, new Date(state.tMax).getUTCFullYear());
+      /* Only the years the entry actually carries. A mark for every year of
+         the axis is a calendar; a mark for the years that hold an argument is
+         a reading. */
+      var list = r.years || [];
       var d0 = r.days[0], d1 = r.days[r.days.length - 1];
-      for (var y = y0; y <= y1; y++) {
+      for (var q = 0; q < list.length; q++) {
+        var y = list[q];
         var a = Date.UTC(y, (r.month || 1) - 1, d0);
         var b = Date.UTC(y, (r.month || 1) - 1, d1 + 1);
         var f0 = (a - state.tMin) / (state.tMax - state.tMin);
@@ -1752,7 +1760,7 @@
         if (f1 < 0 || f0 > 1) continue;
         html += '<button type="button" class="tl-cm" data-commem="' + esc(e.id) + '"' +
                 ' data-year="' + y + '"' +
-                ' title="' + esc(num(y) + " — " + (tr(e, "title") || "")) + '"' +
+                ' title="' + esc(num(y) + ", " + (tr(e, "title") || "")) + '"' +
                 ' style="left:' + (Math.max(0, f0) * 100).toFixed(4) + '%;width:' +
                 (Math.max(0, (Math.min(1, f1) - Math.max(0, f0))) * 100).toFixed(4) +
                 '%;--cm:' + esc(colour) + '"><i></i></button>';
@@ -1784,11 +1792,11 @@
   }
 
   /* -----------------------------------------------------------------
-     EPISODES — a named stretch of time, marked on the track
+     EPISODES; a named stretch of time, marked on the track
      -----------------------------------------------------------------
      The 2018 revolution ran thirty-nine days inside a twenty-nine-year
      axis: four pixels wide at full range. So it is drawn as a marker
-     with a label tethered to it, not as a band you could read — and it
+     with a label tethered to it, not as a band you could read; and it
      becomes a real band as soon as you zoom the window into it, which
      is what clicking the label does. A sticky note, then a period.
      ----------------------------------------------------------------- */
@@ -1802,7 +1810,15 @@
     return { a: a, b: b, f0: Math.max(0, f0), f1: Math.min(1, f1) };
   }
 
+  /* The number on a chip is how many stops the period has, not how many
+     entries happen to fall inside its date range. For the commemoration those
+     are wildly different numbers: eleven years of rite, and everything else
+     the city did between 2015 and 2026. */
   function episodeCount(ep) {
+    if (ep.spur) {
+      var st = spurStops(ep);
+      if (st) return st.length;
+    }
     var a = parseDate(ep.start), b = parseDate(ep.end);
     return state.events.filter(function (e) {
       return e.episode === ep.id || (e._t >= a && e._t <= b);
@@ -1874,7 +1890,7 @@
           var tryLeft = Math.max(rows[r], want);
           if (tryLeft + cw <= w) { row = r; left = tryLeft; break; }
         }
-        if (row < 0) {                       /* nothing fits — use the emptiest row */
+        if (row < 0) {                       /* nothing fits; use the emptiest row */
           row = 0;
           for (r = 1; r < MAX_ROWS; r++) if (rows[r] < rows[row]) row = r;
           left = rows[row];
@@ -1909,6 +1925,129 @@
     markActiveEpisode();
   }
 
+  /* -----------------------------------------------------------------
+     THE SPUR: a period's own timeline, opened on demand
+     -----------------------------------------------------------------
+     A rail chip names a period. Clicking it used to do one thing, zoom the
+     main window onto that period, which is right but silent about what is
+     inside. So it now also unfolds a second, temporary axis directly under
+     the rail: the revolution as its thirty-nine days, the commemoration as
+     its years. Each stop opens its own entry and moves the map, and the
+     strip closes again on Escape or on the close button.
+
+     The two periods are different shapes and the spur reads them from data
+     rather than from a special case: episode.spur.kind is "events" (every
+     entry that belongs to the period, in date order) or "years" (the year
+     list carried by one recurring entry).
+     ----------------------------------------------------------------- */
+
+  var spurEp = null;
+
+  function eventById(id) {
+    for (var i = 0; i < state.events.length; i++) if (state.events[i].id === id) return state.events[i];
+    return null;
+  }
+
+  function shortDate(ev) {
+    var p = String(ev.date || "").split("-");
+    if (p.length < 2) return num(p[0] || "");
+    if (p.length < 3) return MONTH(+p[1] - 1);
+    return num(+p[2]) + " " + MONTH(+p[1] - 1);
+  }
+
+  function openYear(host, n) {
+    var y = (host.years || [])[n];
+    if (!y) return;
+    selectEvent(host.id, false);
+    if (map) {
+      var pp = null;
+      (host.paths || []).forEach(function (x) { if (x.id === y.route) pp = x; });
+      if (pp && pp.path && pp.path.length > 1) {
+        map.fitBounds(pathBounds(pp.path), {
+          padding: { top: 90, bottom: 210, left: 60, right: 60 }, duration: 1000
+        });
+        setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len }); }, 650);
+      } else {
+        goTo(host._display || host.coordinates, Math.max(map.getZoom(), 15));
+      }
+    }
+    var row = document.getElementById("yr-" + y.year);
+    if (row) {
+      row.classList.add("hit");
+      setTimeout(function () { row.scrollIntoView({ block: "center", behavior: "smooth" }); }, 80);
+      setTimeout(function () { row.classList.remove("hit"); }, 2600);
+    }
+  }
+
+  function spurStops(ep) {
+    var sp = ep && ep.spur;
+    if (!sp) return null;
+    if (sp.kind === "years") {
+      var host = eventById(sp.entry);
+      if (!host || !host.years || !host.years.length) return null;
+      return host.years.map(function (y, n) {
+        return { key: String(y.year), head: num(y.label || y.year),
+                 sub: t("start." + (y.start || "unconfirmed")),
+                 go: function () { openYear(host, n); } };
+      });
+    }
+    var list = state.events.filter(function (e) { return e.episode === ep.id; })
+.sort(function (a, b) { return a._t - b._t; });
+    if (!list.length) return null;
+    return list.map(function (e) {
+      return { key: e.id, head: shortDate(e), sub: tr(e, "title"),
+               go: function () { selectEvent(e.id, true); } };
+    });
+  }
+
+  function closeSpur() {
+    var box = $("tl-spur");
+    spurEp = null;
+    if (box) { box.hidden = true; box.innerHTML = ""; }
+    var rail = $("tl-rail");
+    if (rail) rail.querySelectorAll(".tl-rail-chip").forEach(function (c) { c.classList.remove("open"); });
+  }
+
+  function openSpur(ep) {
+    var box = $("tl-spur");
+    if (!box) return;
+    var stops = spurStops(ep);
+    if (!stops) { closeSpur(); return; }
+    if (spurEp === ep.id) { closeSpur(); return; }
+    spurEp = ep.id;
+
+    var colour = ep.color || RED;
+    var h = '<div class="tl-spur-head" style="--ep:' + esc(colour) + '">' +
+            '<b>' + esc(tr(ep, "label")) + '</b>' +
+            '<span>' + esc(num(stops.length)) + '</span>' +
+            '<button type="button" class="tl-spur-x" aria-label="' + esc(t("spur.close")) + '">&times;</button>' +
+            '</div><div class="tl-spur-track" style="--ep:' + esc(colour) + '">';
+    stops.forEach(function (st, i) {
+      h += '<button type="button" class="tl-spur-stop" data-stop="' + i + '">' +
+           '<i></i><b>' + esc(st.head) + '</b><span>' + esc(st.sub || "") + '</span></button>';
+    });
+    h += '</div>';
+    box.innerHTML = h;
+    box.hidden = false;
+
+    box.querySelectorAll("[data-stop]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        box.querySelectorAll("[data-stop]").forEach(function (o) { o.classList.remove("on"); });
+        b.classList.add("on");
+        stops[+b.dataset.stop].go();
+      });
+    });
+    var x = box.querySelector(".tl-spur-x");
+    if (x) x.addEventListener("click", closeSpur);
+
+    var rail = $("tl-rail");
+    if (rail) {
+      rail.querySelectorAll(".tl-rail-chip").forEach(function (c) {
+        c.classList.toggle("open", state.episodes[+c.dataset.ep] === ep);
+      });
+    }
+  }
+
   /* Which period, if any, the window is currently sitting inside. */
   function markActiveEpisode() {
     var rail = $("tl-rail"), box = $("tl-episodes");
@@ -1929,6 +2068,7 @@
      on each side so its edges are visible rather than flush with the track. */
   function showEpisode(ep) {
     if (!ep) return;
+    openSpur(ep);
     var a = parseDate(ep.start), b = parseDate(ep.end);
     if (a === null || b === null) return;
     var pad = Math.max(7 * 864e5, (b - a) * 0.35);
@@ -2049,7 +2189,7 @@
     var desc = tr(m, "description"), note = tr(m, "note");
     if (desc) h += "<p>" + para(desc) + "</p>";
     if (m.author) h += "<p><strong>" + esc(tr(m, "author") || m.author) + "</strong>" +
-                       (m.affiliation ? " — " + esc(tr(m, "affiliation") || m.affiliation) : "") + "</p>";
+                       (m.affiliation ? "" + esc(tr(m, "affiliation") || m.affiliation) : "") + "</p>";
     if (note) h += "<p>" + para(note) + "</p>";
     h += '<p style="font-size:12px;color:#6b7280;margin-top:22px">' +
          esc(t("about.mapped", { n: num(state.events.length) })) + " · " + esc(t("about.credit")) +
@@ -2196,6 +2336,7 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
         if (!$("about-modal").hidden) $("about-modal").hidden = true;
+        else if (spurEp) closeSpur();
         else if (!$("detail-view").hidden) closeDetail();
       }
       if (e.key === " " && e.target === document.body) { e.preventDefault(); togglePlay(); }
@@ -2217,6 +2358,7 @@
         renderTicks();
         buildEpisodes();
         buildCommem();
+        if (spurEp) { var _e = episodeById(spurEp); spurEp = null; if (_e) openSpur(_e); }
         buildAbout();
         updateTimelineUI();
         updateCenturyUI();

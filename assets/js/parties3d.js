@@ -1,17 +1,17 @@
 /* ===================================================================
-   Yerevan Project — THE POLITICAL LANDSCAPE, 1887 TO NOW
+   Yerevan Project; THE POLITICAL LANDSCAPE, 1887 TO NOW
    -------------------------------------------------------------------
    Every party sits at a point in a space with three real axes:
 
      x   left  <-> right
      z   Moscow <-> Brussels
-     y   time — when the party was founded, running bottom to top
+     y   time; when the party was founded, running bottom to top
 
    so the model IS the timeline. Drag the year slider and the space
    fills in: parties appear at their founding, fade when they dissolve,
    and swell or shrink with the seats they held at that moment.
 
-   Click one for the dossier — leaders with photographs, its elections,
+   Click one for the dossier; leaders with photographs, its elections,
    where it stands on five running arguments, and whatever this map
    already holds that touches it.
 
@@ -34,8 +34,8 @@
   var LANG = function () { return window.I18N ? I18N.lang : "en"; };
 
   /* The linked entries used to come only from window.YerevanMap, which app.js
-     publishes when the map finishes booting. If the tiles are slow or blocked —
-     a conference wifi, an offline demo — the map never boots, the API never
+     publishes when the map finishes booting. If the tiles are slow or blocked, 
+     a conference wifi, an offline demo; the map never boots, the API never
      appears, and every node here silently reported nothing linked. The entries
      live in a flat file; read it directly and stop depending on the map. */
   var EVENTS = null;
@@ -45,9 +45,9 @@
     return EVENTS || [];
   }
   fetch("data/events.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) { EVENTS = (j && j.events) || []; })
-    .catch(function () { EVENTS = []; });
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (j) { EVENTS = (j && j.events) || []; })
+.catch(function () { EVENTS = []; });
   var view = { yaw: 0.5, pitch: -0.18, zoom: 1, spin: true, sel: null, hover: null };
   var thumb = { yaw: 0.5, pitch: -0.18, zoom: 1, spin: true, sel: null, hover: null };
   var year = 2026, playing = false, playT = 0;
@@ -174,7 +174,7 @@
       if (opts.labels && (lit || inPower || q.k > 0.75)) {
         g.globalAlpha = lit ? 1 : 0.75;
         /* The abbreviation is a Latin acronym. In Armenian and Persian it
-           says nothing, so the translated name is drawn instead — shortened,
+           says nothing, so the translated name is drawn instead; shortened,
            because a canvas has no room for a full party name. */
         g.font = (lit ? "600 " : "") + '11px Inter, "Noto Sans Armenian", Vazirmatn, system-ui, sans-serif';
         g.fillStyle = lit ? "#fff" : "#c9ced8";
@@ -261,7 +261,7 @@
 
     /* The heading is the party's name in the reader's language; underneath it
        goes the name they did NOT just read, so the two are always tied
-       together — English under Armenian, Armenian under English. */
+       together; English under Armenian, Armenian under English. */
     var primary = tr(p, "name") || p.name;
     var secondary = LANG() === "en" ? (p.name_hy || p.hy) : p.name;
     var h = '<h3>' + esc(primary) + '</h3>';
@@ -344,13 +344,13 @@
       };
       if (photoCache[title] !== undefined) { put(photoCache[title]); return; }
       fetch("https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(title))
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (j) {
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (j) {
           var u = j && j.thumbnail && j.thumbnail.source;
           photoCache[title] = u || null;
           put(u);
         })
-        .catch(function () { photoCache[title] = null; });
+.catch(function () { photoCache[title] = null; });
     });
   }
 
@@ -449,8 +449,8 @@
   }
 
   fetch("data/parties.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) { if (j && $("p3-thumb")) { D = j; init(); } })
-    .catch(function (err) { console.warn("parties3d:", err); });
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (j) { if (j && $("p3-thumb")) { D = j; init(); } })
+.catch(function (err) { console.warn("parties3d:", err); });
 
 })();

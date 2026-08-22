@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — THREE LANGUAGES
+   Yerevan Project; THREE LANGUAGES
    -------------------------------------------------------------------
    English, Armenian, Persian. One dictionary, one switch, one rule:
 
@@ -10,7 +10,7 @@
 
    The suffix convention is deliberate. Nothing already written had to
    move, English is always the fallback, and adding a language later
-   means adding a suffix — not restructuring 200 features. To translate
+   means adding a suffix; not restructuring 200 features. To translate
    a new entry, add "title_hy" next to its "title". Nothing else.
 
    Persian is right-to-left, so the switch also flips <html dir>, and
@@ -33,12 +33,12 @@
   /* ---------------- the dictionary ----------------
      Keep the three blocks in the same order so a missing string is
      visible by eye. A key with no translation falls back to English
-     rather than showing the key — a reader should never see plumbing. */
+     rather than showing the key, a reader should never see plumbing. */
 
   var STR = {
 
   en: {
-    "doc.title": "Yerevan Project — An Interactive Research Map",
+    "doc.title": "Yerevan Project; An Interactive Research Map",
     "doc.desc": "Mapping urban space, social movements, and political events in Yerevan, Armenia.",
     "brand.title": "Yerevan Project",
     "brand.sub": "Urban space · social movements · political events",
@@ -113,22 +113,16 @@
 
     "tl.play": "Play through time",
     "tl.full": "full range",
-    "tl.commem": "1915 ceremony",
-    "commem.key": "23–24 April, every year",
-    "commem.open": "The 1915 Genocide Ceremony",
+    "spur.close": "close",
+    "spur.open": "open this period",
     "detail.chronicle": "Year by year",
     "detail.slogans": "What is chanted",
     "march.years": "active {y}",
     "march.replay": "Walk this route",
-    "conf.confirmed": "confirmed",
-    "conf.partial": "partial",
-    "conf.unknown": "not established",
     "start.freedom": "Freedom Square",
     "start.republic": "Republic Square",
     "start.unconfirmed": "starting square unconfirmed",
     "start.none": "no march",
-    "flags.yes": "flags burned",
-    "flags.no": "no flag burning recorded",
     "tl.periods": "Periods",
     "tl.century": "The century",
     "tl.fullCentury": "full century",
@@ -147,7 +141,7 @@
     "g3.empty": "Drag to turn the model. Click any node to see what the map holds about it.",
     "g3.entries": "{n} entries on the map",
     "g3.entry": "1 entry on the map",
-    "g3.nothing": "Nothing linked here yet. The node is in the model so the material has somewhere to go — send me entries for it and they will appear here.",
+    "g3.nothing": "Nothing linked here yet. The node is in the model so the material has somewhere to go, send me entries for it and they will appear here.",
     "g3.connected": "Connected to",
 
     "p3.thumb": "Parties",
@@ -188,7 +182,7 @@
   },
 
   hy: {
-    "doc.title": "Երևանի նախագիծ — ինտերակտիվ հետազոտական քարտեզ",
+    "doc.title": "Երևանի նախագիծ; ինտերակտիվ հետազոտական քարտեզ",
     "doc.desc": "Քաղաքային տարածքի, հասարակական շարժումների և քաղաքական իրադարձությունների քարտեզագրում Երևանում։",
     "brand.title": "Երևանի նախագիծ",
     "brand.sub": "Քաղաքային տարածք · հասարակական շարժումներ · քաղաքական իրադարձություններ",
@@ -263,22 +257,16 @@
 
     "tl.play": "Նվագարկել ժամանակի ընթացքում",
     "tl.full": "ամբողջ միջակայքը",
-    "tl.commem": "1915-ի արարողություն",
-    "commem.key": "Ապրիլի 23–24, ամեն տարի",
-    "commem.open": "1915 թվականի Ցեղասպանության արարողությունը",
+    "spur.close": "փակել",
+    "spur.open": "բացել այս ժամանակաշրջանը",
     "detail.chronicle": "Տարի առ տարի",
     "detail.slogans": "Ինչ է վանկարկվում",
     "march.years": "գործում է {y}",
     "march.replay": "Անցնել այս ճանապարհը",
-    "conf.confirmed": "հաստատված",
-    "conf.partial": "մասնակի",
-    "conf.unknown": "հաստատված չէ",
     "start.freedom": "Ազատության հրապարակ",
     "start.republic": "Հանրապետության հրապարակ",
     "start.unconfirmed": "մեկնարկի հրապարակը հաստատված չէ",
     "start.none": "երթ չի եղել",
-    "flags.yes": "դրոշներն այրվել են",
-    "flags.no": "դրոշի այրում չի արձանագրվել",
     "tl.periods": "Ժամանակաշրջաններ",
     "tl.century": "Դարը",
     "tl.fullCentury": "ամբողջ դարը",
@@ -297,7 +285,7 @@
     "g3.empty": "Քաշեք՝ մոդելը պտտելու համար։ Սեղմեք ցանկացած հանգույցի վրա՝ տեսնելու, թե քարտեզն ինչ ունի դրա մասին։",
     "g3.entries": "{n} գրառում քարտեզի վրա",
     "g3.entry": "1 գրառում քարտեզի վրա",
-    "g3.nothing": "Այստեղ դեռ ոչինչ կապված չէ։ Հանգույցը մոդելում է, որպեսզի նյութն ունենա իր տեղը — ուղարկեք համապատասխան գրառումներ, և դրանք կհայտնվեն այստեղ։",
+    "g3.nothing": "Այստեղ դեռ ոչինչ կապված չէ։ Հանգույցը մոդելում է, որպեսզի նյութն ունենա իր տեղը; ուղարկեք համապատասխան գրառումներ, և դրանք կհայտնվեն այստեղ։",
     "g3.connected": "Կապված է",
 
     "p3.thumb": "Կուսակցություններ",
@@ -338,7 +326,7 @@
   },
 
   fa: {
-    "doc.title": "پروژهٔ ایروان — نقشهٔ پژوهشی تعاملی",
+    "doc.title": "پروژهٔ ایروان; نقشهٔ پژوهشی تعاملی",
     "doc.desc": "نقشه‌نگاری فضای شهری، جنبش‌های اجتماعی و رویدادهای سیاسی در ایروانِ ارمنستان.",
     "brand.title": "پروژهٔ ایروان",
     "brand.sub": "فضای شهری · جنبش‌های اجتماعی · رویدادهای سیاسی",
@@ -413,22 +401,16 @@
 
     "tl.play": "پخش در طول زمان",
     "tl.full": "کل بازه",
-    "tl.commem": "آیین ۱۹۱۵",
-    "commem.key": "۲۳–۲۴ آوریل، هر سال",
-    "commem.open": "آیین یادبود نسل‌کشی ۱۹۱۵",
+    "spur.close": "بستن",
+    "spur.open": "گشودن این دوره",
     "detail.chronicle": "سال به سال",
     "detail.slogans": "چه شعاری داده می‌شود",
     "march.years": "فعال {y}",
     "march.replay": "این مسیر را بپیما",
-    "conf.confirmed": "تأییدشده",
-    "conf.partial": "جزئی",
-    "conf.unknown": "نامعلوم",
     "start.freedom": "میدان آزادی",
     "start.republic": "میدان جمهوری",
     "start.unconfirmed": "میدان آغاز نامعلوم",
     "start.none": "راهپیمایی برگزار نشد",
-    "flags.yes": "پرچم‌ها سوزانده شد",
-    "flags.no": "سوزاندن پرچم ثبت نشده",
     "tl.periods": "دوره‌ها",
     "tl.century": "آن سده",
     "tl.fullCentury": "کل سده",
@@ -447,7 +429,7 @@
     "g3.empty": "برای چرخاندن مدل بکشید. روی هر گره کلیک کنید تا ببینید نقشه دربارهٔ آن چه دارد.",
     "g3.entries": "{n} مدخل روی نقشه",
     "g3.entry": "۱ مدخل روی نقشه",
-    "g3.nothing": "هنوز چیزی به اینجا پیوند نخورده است. گره در مدل هست تا مطالب جایی برای نشستن داشته باشند — مدخل‌هایش را بفرستید تا اینجا ظاهر شوند.",
+    "g3.nothing": "هنوز چیزی به اینجا پیوند نخورده است. گره در مدل هست تا مطالب جایی برای نشستن داشته باشند, مدخل‌هایش را بفرستید تا اینجا ظاهر شوند.",
     "g3.connected": "پیوسته به",
 
     "p3.thumb": "احزاب",
@@ -564,7 +546,7 @@
   var FA_DIGITS = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
 
   /* Persian readers expect Persian-Indic digits in running text. Coordinates
-     and zoom levels stay Latin — they are read as machine values and get
+     and zoom levels stay Latin; they are read as machine values and get
      copied into other tools. */
   /* Decimal separators differ too, and a stray full stop in a Persian or
      Armenian number is the kind of small wrongness a reader notices before

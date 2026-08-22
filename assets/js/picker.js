@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — COORDINATE PICK
+   Yerevan Project; COORDINATE PICK
    -------------------------------------------------------------------
    A crosshair button attached to the coordinate readout. Switch it on,
    click anywhere on the map, and that one coordinate is held in a
@@ -7,7 +7,7 @@
 
    One at a time, on purpose. The live readout keeps following the
    cursor; the picked coordinate stays put until you pick another or
-   clear it. Nothing is looked up, nothing is stored — it is a pair of
+   clear it. Nothing is looked up, nothing is stored; it is a pair of
    numbers you can paste into a message.
    =================================================================== */
 

@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — TOPOGRAPHY
+   Yerevan Project; TOPOGRAPHY
    -------------------------------------------------------------------
    Yerevan is not a city on a plane. It sits in an amphitheatre: the
    Hrazdan cuts a gorge through it, Kond and Kanaker stand above the
@@ -13,7 +13,7 @@
    HILLSHADE is what you actually see: the elevation drawn as light and
    shadow, lying flat on the ground, under the streets and buildings.
    TERRAIN is the surface itself bending, which only reads once the
-   camera is tilted and pulled back — Kentron's own relief is a few
+   camera is tilted and pulled back; Kentron's own relief is a few
    tens of metres over a couple of kilometres, so looking straight down
    at one square, no amount of bending will look like anything.
 
@@ -22,7 +22,7 @@
 
    Elevation: AWS Terrain Tiles (terrarium encoding, SRTM/NASADEM,
    ~30 m), keyless and CORS-open. Landform resolution, not street
-   furniture — the gorge and the ridges read clearly, the individual
+   furniture; the gorge and the ridges read clearly, the individual
    steps of the Cascade do not.
 
    window.__terrain reports what actually got applied. If Alireza says
@@ -123,7 +123,7 @@
       map.on("sourcedata", safeApply);
     } else if (++waited > 200) {
       clearInterval(timer);
-      window.__terrainErr = "window.__map never appeared — the map never booted";
+      window.__terrainErr = "window.__map never appeared; the map never booted";
     }
   }, 150);
 

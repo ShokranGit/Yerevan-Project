@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — THE RELATIONAL MODEL, IN 3D
+   Yerevan Project; THE RELATIONAL MODEL, IN 3D
    -------------------------------------------------------------------
    The diagram from the proposal defence, rebuilt as something you can
    turn around: concepts on the inner spine, places around them, events
@@ -7,11 +7,11 @@
 
    Drag to rotate, wheel to zoom, click a node to see what the map
    already holds about it. A node with no entries yet still exists and
-   still says so — the point is that the structure is there first and
+   still says so, the point is that the structure is there first and
    the material fills in behind it.
 
    No 3D library. Nodes are points, links are segments, and all this
-   needs is a rotation matrix and a perspective divide — about eighty
+   needs is a rotation matrix and a perspective divide; about eighty
    lines of the four hundred here. A dependency would cost more than it
    would save, and this file has no build step, like everything else.
    =================================================================== */
@@ -27,8 +27,8 @@
   var num = function (n) { return window.I18N ? I18N.num(n) : String(n); };
 
   /* The linked entries used to come only from window.YerevanMap, which app.js
-     publishes when the map finishes booting. If the tiles are slow or blocked —
-     a conference wifi, an offline demo — the map never boots, the API never
+     publishes when the map finishes booting. If the tiles are slow or blocked, 
+     a conference wifi, an offline demo; the map never boots, the API never
      appears, and every node here silently reported nothing linked. The entries
      live in a flat file; read it directly and stop depending on the map. */
   var EVENTS = null;
@@ -38,9 +38,9 @@
     return EVENTS || [];
   }
   fetch("data/events.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) { EVENTS = (j && j.events) || []; })
-    .catch(function () { EVENTS = []; });
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (j) { EVENTS = (j && j.events) || []; })
+.catch(function () { EVENTS = []; });
 
   function makeView() {
     return { yaw: 0.6, pitch: -0.25, zoom: 1, spin: true, hover: null, sel: null };
@@ -309,8 +309,8 @@
   }
 
   fetch("data/graph.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) { if (j && $("g3-thumb")) { GRAPH = j; init(); } })
-    .catch(function (err) { console.warn("graph3d:", err); });
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (j) { if (j && $("g3-thumb")) { GRAPH = j; init(); } })
+.catch(function (err) { console.warn("graph3d:", err); });
 
 })();
