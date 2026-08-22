@@ -37,7 +37,7 @@
   <h1>Get the media</h1>
   <p class="sub">Yerevan Project · a utility page, not part of the map</p>
 
-  <p>This packs the <b>6 photographs of the 23–24 April commemoration</b>; all Creative Commons or public domain,
+  <p>This packs the <b>6 photographs of the Lenin monument</b>; all Creative Commons or public domain,
   from Wikimedia Commons; into a single file and saves it
   to your Downloads folder.</p>
 
@@ -46,7 +46,7 @@
 
   <button id="go">↓&nbsp; Save the photographs</button>
   <div id="bar"><i></i></div>
-  <p id="say">Ready. 6 files, about 5 MB.</p>
+  <p id="say">Ready. 6 files, about 6 MB.</p>
 
   <p class="note">If nothing appears in Downloads, look at the right-hand end of Chrome's
   address bar for a small download arrow with a red dot, or a crossed-out arrow. That is
@@ -73,13 +73,16 @@
 
   /* The genocide-ceremony set. The thirteen 2018 revolution photographs this
      page fetched before are already in media/ and are not repeated here. */
+  /* The Lenin monument set. Earlier batches (the 2018 revolution photographs
+     and the 23-24 April commemoration set) are already in media/ and are not
+     repeated here. */
   var FILES = [
-    { t: "Jaherov ert.jpg",                                              f: "genocide-torchlight-2019.jpg" },
-    { t: "Armenian genocide memorial torchlight procession.jpg",         f: "genocide-torchlight-2023-presidents-residence.jpg" },
-    { t: "Armenian Genocide Memorial, Yerevan 01.jpg",                   f: "genocide-2019-04-24-memorial-01.jpg" },
-    { t: "Armenian Genocide Memorial, Yerevan 23.jpg",                   f: "genocide-2019-04-24-memorial-23.jpg" },
-    { t: "100th anniversary of Armenian Genocide in Tsitsernakaberd 01.jpg", f: "genocide-2015-centenary-01.jpg" },
-    { t: "100th anniversary of Armenian Genocide in Tsitsernakaberd 03.jpg", f: "genocide-2015-centenary-03.jpg" }
+    { t: "Lenin Statue in Yerevan Lenin Square.jpg",        f: "lenin-monument-1940s.jpg" },
+    { t: "The Soviet Union 1978 CPA 4889 stamp (Armenian Architecture. Lenin statue and Government House, Lenin Square, Yerevan).jpg", f: "lenin-stamp-1978.jpg" },
+    { t: "Lenin Statue Removal in Yerevan 05.jpg",          f: "lenin-removal-1991-05.jpg" },
+    { t: "Lenin Statue Removal in Yerevan 03.jpg",          f: "lenin-removal-1991-03.jpg" },
+    { t: "Lenin Statue Removal in Yerevan 01.jpg",          f: "lenin-removal-1991-01.jpg" },
+    { t: "Lenin Statue Removal in Yerevan 06.jpg",          f: "lenin-removal-1991-06.jpg" }
   ];
   var API = "https://commons.wikimedia.org/w/api.php";
 
@@ -172,12 +175,12 @@
       var blob = new Blob(parts, { type: "application/octet-stream" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "genocide-media.tar";
+      a.download = "lenin-media.tar";
       document.body.appendChild(a);
       a.click();
       a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 20000);
-      say("Saved genocide-media.tar (" + (blob.size / 1048576).toFixed(1) +
+      say("Saved lenin-media.tar (" + (blob.size / 1048576).toFixed(1) +
           " MB). Check your Downloads folder.", true);
       $("go").disabled = false;
       $("go").textContent = "↓  Save it again";
