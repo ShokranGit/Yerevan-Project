@@ -301,3 +301,65 @@ extra wiring.
 
 The only external links in a caption are the licence and source links required by
 attribution. Those are text, not the photograph.
+
+## 12. `data/geography.json`, where this is, at four scales
+
+Added 22 August 2026. One file, three parts.
+
+`features` is a FeatureCollection with four kinds:
+
+| `kind` | what | source |
+|---|---|---|
+| `country` | Armenia, Georgia, Azerbaijan, Türkiye, Iran, Russia | Natural Earth 10m admin 0, clipped to 36–56 E / 33.5–47.5 N, simplified (Armenia 0.0035°, the rest 0.012°) |
+| `karabakh` | `nk-1994`, the 11,900 km² held from 1994; `nk-2020`, the 3,140 km² left after the 2020 war | Natural Earth 10m disputed areas, **release v4.1.0** for the 1994 extent and the current release for the remnant |
+| `city` | the Yerevan municipal boundary | OpenStreetMap relation 364087, read 2026-08-22 |
+| `district` | Kentron | OpenStreetMap relation 13404218, read 2026-08-22 |
+| `ring` | the ring boulevard around the historic core | solved on the OSM street graph, see below |
+
+Every feature carries `label`, `label_hy`, `label_fa` and an `at`, which is
+where its name is drawn. `at` is a **design decision, not a centroid**: it is
+chosen so the names do not collide with each other or with the subject.
+
+`spaces` is the named public space of the centre: eighteen entries, each with
+`at`, a `kind` (`square`, `street`, `water`, `park`, `quarter`, `site`) that
+decides how it is set, and a `rank` that decides the zoom at which it appears.
+Positions are OpenStreetMap, except Republic Square and Tsitsernakaberd, which
+keep the values this project had already verified.
+
+**Since September 2023 the whole of Nagorno-Karabakh is under Azerbaijani
+control and the Armenian population has left.** The map draws two historical
+outlines and says so under the name; it does not draw a current polity.
+
+### The ring
+
+Not a circle. A route solved with Dijkstra on the OpenStreetMap street graph
+of the centre, through thirteen anchors placed on Mashtots Avenue, Isahakyan,
+Khanjyan and the streets south of Republic Square, then de-spurred (any loop
+under 1.2 km that returns within 25 m of a point already passed is cut),
+simplified, and smoothed with two Chaikin passes. Closed, 6.44 km, and it sits
+a mean of 1.2 m and at most 26 m off the centreline it was traced from.
+
+The circle it replaced was drawn from a guessed centre and a 1,150 m radius and
+was, as Alireza pointed out, in the wrong place. The dashed red circles that
+used to ring the two squares were removed at the same time: a square is a shape
+the figure-ground already draws.
+
+### Zoom bands
+
+Each layer and each name owns a band, `[fade in, full, full until, fade out]`,
+in `GEO_BAND` in `app.js`. **Every band must be strictly ascending.** A repeated
+stop makes MapLibre reject the interpolate, and it reports that on the error
+event rather than throwing, so the layer is simply absent with nothing in the
+console to say why.
+
+### Two MapLibre traps recorded here
+
+- A **zoom expression may only be the input of a top-level interpolate or
+  step**. `["*", 0.6, ["interpolate", ["linear"], ["zoom"], ...]]` is rejected.
+  Bake the constant into the stops, and split the layer when two features want
+  different constants.
+- **MapLibre owns the inline `opacity` of a marker element.** With terrain on it
+  writes `0.2` there every frame to fade markers standing behind a hillside.
+  Anything else written to the same property is gone within a frame, silently.
+  The names therefore carry their fade on an inner element, and pass
+  `opacityWhenCovered: "0.55"` so the occlusion fade is gentler than the default.
