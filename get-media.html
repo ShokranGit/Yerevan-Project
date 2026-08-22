@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<title>Get the media — Yerevan Project</title>
+<title>Get the media; Yerevan Project</title>
 <style>
   :root{ --bg:#0f1115; --bg2:#161920; --line:#2a2f3a; --text:#e6e8ec; --t2:#9aa1ad; --t3:#6b7280; --red:#c9262c; --ok:#7fbf5e; }
   *{box-sizing:border-box}
@@ -12,21 +12,21 @@
     font:16px/1.65 Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
   main{max-width:760px;margin:0 auto;padding:56px 24px 90px}
   h1{font:600 30px/1.25 Georgia,"Times New Roman",serif;margin:0 0 8px}
-  .sub{color:var(--t3);font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 26px}
+.sub{color:var(--t3);font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 26px}
   p{color:var(--t2);margin:0 0 14px}
   b{color:var(--text)}
   button{font:inherit}
   #go{display:flex;align-items:center;justify-content:center;gap:12px;
     width:100%;max-width:560px;min-height:120px;margin:30px 0 8px;
     background:var(--red);color:#fff;font:700 26px/1.2 inherit;border:none;border-radius:14px;
-    cursor:pointer;box-shadow:0 10px 34px rgba(201,38,44,.32);transition:transform .12s,filter .12s}
+    cursor:pointer;box-shadow:0 10px 34px rgba(201,38,44,.32);transition:transform.12s,filter.12s}
   #go:hover{filter:brightness(1.08)} #go:active{transform:translateY(1px)}
   #go[disabled]{background:var(--bg2);color:var(--t3);box-shadow:none;cursor:default}
   #bar{height:5px;background:var(--bg2);border-radius:3px;overflow:hidden;max-width:560px;margin:0 0 8px}
-  #bar i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+  #bar i{display:block;height:100%;width:0;background:var(--red);transition:width.2s}
   #say{font-size:14px;color:var(--t2);min-height:24px;margin:0 0 26px}
   #say.ok{color:var(--ok)}
-  .note{border-left:2px solid var(--line);padding:2px 0 2px 14px;font-size:14px;color:var(--t3);margin-top:32px}
+.note{border-left:2px solid var(--line);padding:2px 0 2px 14px;font-size:14px;color:var(--t3);margin-top:32px}
   ul{color:var(--t2);font-size:14px;padding-left:20px}
   li{margin-bottom:5px}
   code{color:#d8873f;font-size:14px}
@@ -37,8 +37,8 @@
   <h1>Get the media</h1>
   <p class="sub">Yerevan Project · a utility page, not part of the map</p>
 
-  <p>This packs the <b>6 photographs of the 23–24 April commemoration</b> — all Creative Commons or public domain,
-  from Wikimedia Commons — into a single file and saves it
+  <p>This packs the <b>6 photographs of the 23–24 April commemoration</b>; all Creative Commons or public domain,
+  from Wikimedia Commons; into a single file and saves it
   to your Downloads folder.</p>
 
   <p>Nothing is installed and nothing is uploaded. The images are fetched from Commons
@@ -90,7 +90,7 @@
   function slug(t) {
     for (var i = 0; i < FILES.length; i++) if (FILES[i].t === t) return FILES[i].f;
     return t.replace(/\.jpg$/i, "").replace(/[^A-Za-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "").toLowerCase() + ".jpg";
+.replace(/^-|-$/g, "").toLowerCase() + ".jpg";
   }
 
   function header(name, size) {
@@ -139,7 +139,7 @@
       });
       meta.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
       $("list").innerHTML = meta.map(function (m) {
-        return "<li>" + m.date + " — " + m.name +
+        return "<li>" + m.date + "" + m.name +
                " <span style='color:#4d525c'>· " + m.author + " · " + m.license + "</span></li>";
       }).join("");
       say("Ready. " + meta.length + " files, about 9 MB.");
@@ -152,7 +152,7 @@
 
     function next(i) {
       if (i >= meta.length) return Promise.resolve();
-      say("Fetching " + (i + 1) + " of " + meta.length + " — " + meta[i].name);
+      say("Fetching " + (i + 1) + " of " + meta.length + "" + meta[i].name);
       return fetch(meta[i].url).then(function (r) {
         if (!r.ok) throw new Error(meta[i].name + " → HTTP " + r.status);
         return r.arrayBuffer();
@@ -182,13 +182,13 @@
       $("go").disabled = false;
       $("go").textContent = "↓  Save it again";
     }).catch(function (err) {
-      say("Failed: " + err.message + " — reload the page and try once more.");
+      say("Failed: " + err.message + "; reload the page and try once more.");
       $("go").disabled = false;
     });
   }
 
   $("go").addEventListener("click", function () {
-    if (!meta) { say("Still loading the list — try again in a second."); return; }
+    if (!meta) { say("Still loading the list; try again in a second."); return; }
     build();
   });
 

@@ -36,17 +36,17 @@ Everything lives in **`data/events.json`**. That file has three parts: `meta`,
 
 | Field | Notes |
 |---|---|
-| `id` | Unique, lowercase, hyphenated. Becomes the permalink (`#your-id`). Never reuse or reorder — once cited, it should stay stable. |
+| `id` | Unique, lowercase, hyphenated. Becomes the permalink (`#your-id`). Never reuse or reorder, once cited, it should stay stable. |
 | `title` | Short. It appears in the list, the hover label, and the detail heading. |
 | `date` | `YYYY-MM-DD`, `YYYY-MM`, or `YYYY`. |
-| `coordinates` | **`[longitude, latitude]` — longitude first.** This trips everyone up. For Yerevan longitude is ~44.5, latitude is ~40.1. If a point lands in the ocean off Somalia, they're swapped. |
+| `coordinates` | **`[longitude, latitude]`; longitude first.** This trips everyone up. For Yerevan longitude is ~44.5, latitude is ~40.1. If a point lands in the ocean off Somalia, they're swapped. |
 | `categories` | One or more ids from the `categories` list. The **first one** sets the point's colour on the map. |
 
 ### Optional
 
 | Field | Notes |
 |---|---|
-| `dateEnd` | For anything with a duration — a movement, an occupation, a construction phase. The point stays visible for the whole span as the timeline moves. |
+| `dateEnd` | For anything with a duration, a movement, an occupation, a construction phase. The point stays visible for the whole span as the timeline moves. |
 | `datePrecision` | `"day"`, `"month"`, or `"year"`. Controls how the date is *displayed*, so you're not forced to invent a day you don't have. Inferred from `date` if omitted. |
 | `location` | Human-readable place name, shown under the title. |
 | `summary` | Description. Two consecutive newlines (`\n\n`) start a new paragraph. |
@@ -63,7 +63,7 @@ Everything lives in **`data/events.json`**. That file has three parts: `meta`,
 
 Right-click any spot on [openstreetmap.org](https://www.openstreetmap.org/#map=14/40.1830/44.5136)
 → "Show address", and read the numbers off the URL. OSM shows them as
-`latitude/longitude` — **reverse them** for this file.
+`latitude/longitude`, **reverse them** for this file.
 
 Rough anchors:
 
@@ -83,8 +83,8 @@ Rough anchors:
 
 By default the timeline runs from your earliest entry to your latest, and it
 re-scales every time you add something. To hold it open across a period you
-haven't filled in yet — so the shape of the research is visible before the
-research is finished — set either end in `meta`:
+haven't filled in yet, so the shape of the research is visible before the
+research is finished, set either end in `meta`:
 
 ```json
 "meta": {
@@ -98,7 +98,7 @@ the end at **December 2028** and lets the start follow your earliest entry.
 
 ### Entries outside the range become "context"
 
-An entry dated outside an explicit range isn't hidden — it's treated as
+An entry dated outside an explicit range isn't hidden, it's treated as
 **standing context**: a condition that predates (or outlasts) the mapped period
 rather than an event inside it. Context entries stay visible at every timeline
 position, are marked `context` in the results list, and don't compress the scale.
@@ -112,7 +112,7 @@ the track.
 
 ## 3a. Entries at the same address
 
-Several entries legitimately share one location — five of them sit on Northern
+Several entries legitimately share one location, five of them sit on Northern
 Avenue itself. Drawn at identical coordinates they collapse into a single dot and
 all but one become unclickable, so entries sharing a location are **fanned out on
 a small circle, roughly 18 metres, for display only**. The coordinates in the file
@@ -132,13 +132,13 @@ Edit the `categories` array. Each needs `id`, `label`, and `color`:
 
 Then use that `id` in any entry's `categories`. Filters, legend swatches, colours,
 and counts all update on their own. Pick colours that stay legible on the dark
-basemap — mid-tone and saturated works; very dark or very pale does not.
+basemap, mid-tone and saturated works; very dark or very pale does not.
 
 ---
 
 ## 5. Before committing
 
-JSON is unforgiving — one trailing comma and the whole map goes blank. Check first:
+JSON is unforgiving, one trailing comma and the whole map goes blank. Check first:
 
 ```bash
 python3 -m json.tool data/events.json > /dev/null && echo "valid"
@@ -152,7 +152,7 @@ If the map shows an error screen instead of loading, that's almost always the ca
 
 The `analysis` field is what makes this a research instrument rather than a
 gazetteer. A point with a date, a place, and no argument is a pin. The map becomes
-an argument when the entries start speaking to each other — which is also why
+an argument when the entries start speaking to each other, which is also why
 `tags` and `actors` are worth filling in consistently: they're how you'll later
 find the threads running across events you catalogued months apart.
 
@@ -161,7 +161,7 @@ find the threads running across events you catalogued months apart.
 ## 7. Recurring rites: `recurs`, `paths`, `years`, `slogans`
 
 Most entries happened once. A few things in this city happen every year, and an
-annual rite is not a series of near-identical entries — sixteen of those would
+annual rite is not a series of near-identical entries; sixteen of those would
 drown the timeline. It is one entry with an internal calendar.
 
 ```jsonc
@@ -207,7 +207,7 @@ drown the timeline. It is one entry with an internal calendar.
 }
 ```
 
-`active: false` draws a route fainter and gives its note a dashed border — the
+`active: false` draws a route fainter and gives its note a dashed border; the
 route is still there, it is just no longer walked. (MapLibre will not accept a
 data expression for `line-dasharray`, so that difference is carried by opacity;
 do not try to switch the dash pattern per feature.)

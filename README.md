@@ -1,6 +1,6 @@
 # Yerevan Project
 
-An interactive research map of Yerevan — urban space, social movements, and political events.
+An interactive research map of Yerevan, urban space, social movements, and political events.
 Built around the Northern Avenue project and extending to the 2018 revolution, the
 Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.
 
@@ -12,7 +12,7 @@ isolate one thread of the argument at a time.
 
 ## Running it
 
-The map loads its data with `fetch()`, so it needs to be served over HTTP —
+The map loads its data with `fetch()`, so it needs to be served over HTTP; 
 opening `index.html` by double-clicking will not work.
 
 ```bash
@@ -29,7 +29,7 @@ Any static server works (`npx serve`, VS Code Live Server, etc.).
 
 ```
 index.html                 the page structure
-assets/css/styles.css      all styling — palette variables at the top
+assets/css/styles.css      all styling; palette variables at the top
 assets/js/app.js           map, timeline, filters, detail panel
 data/events.json           ← the research lives here
 media/                     images referenced by entries
@@ -57,8 +57,8 @@ its entry in the results list, and its detail page. Nothing in the code has to c
 
 ## Technical notes
 
-- **MapLibre GL JS** (v4.7.1, from unpkg) — open source, no account, no API key, no billing.
-- **Basemaps** — CARTO dark-matter / positron vector styles, free and key-free, © OpenStreetMap contributors.
+- **MapLibre GL JS** (v4.7.1, from unpkg); open source, no account, no API key, no billing.
+- **Basemaps**; CARTO dark-matter / positron vector styles, free and key-free, © OpenStreetMap contributors.
 - **No build step, no framework, no dependencies to install.** Three files and a JSON document.
 - Works as a static site, so it can be hosted on GitHub Pages, Netlify, or any university web space whenever you want it public.
 
@@ -67,7 +67,7 @@ its entry in the results list, and its detail page. Nothing in the code has to c
 ## Status
 
 Scaffold complete. `data/events.json` currently holds three entries marked
-`EXAMPLE` that exist only to demonstrate the format — delete them as real
+`EXAMPLE` that exist only to demonstrate the format, delete them as real
 research goes in.
 
 See **[DATA-GUIDE.md](DATA-GUIDE.md)** for the full field reference.

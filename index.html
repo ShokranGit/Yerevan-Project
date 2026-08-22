@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Yerevan Project — An Interactive Research Map</title>
+<title>Yerevan Project; An Interactive Research Map</title>
 <meta name="description" content="Mapping urban space, social movements, and political events in Yerevan, Armenia." />
 <link rel="preconnect" href="https://basemaps.cartocdn.com" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,7 +12,7 @@
      back to the system stack in styles.css if the network refuses them. -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600&family=Noto+Serif+Armenian:wght@400;600&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css?v=20260822a" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260822b" rel="stylesheet" />
 </head>
 <body>
 
@@ -96,8 +96,8 @@
           <path d="M8 0v3.2M8 12.8V16M0 8h3.2M12.8 8H16" stroke="currentColor" stroke-width="1.3"/>
         </svg>
       </button>
-      <span id="coord-lat">—</span><span id="coord-lng">—</span><span id="coord-zoom"></span>
-      <span id="scale"><i id="scale-bar"></i><b id="scale-label">—</b></span>
+      <span id="coord-lat">, </span><span id="coord-lng">, </span><span id="coord-zoom"></span>
+      <span id="scale"><i id="scale-bar"></i><b id="scale-label">, </b></span>
     </div>
 
     <div id="map-controls">
@@ -172,9 +172,9 @@
       <div class="tl-row">
         <button id="play-btn" class="play-btn" data-i18n-title="tl.play" data-i18n-aria-label="tl.play" title="Play through time" aria-label="Play">&#9654;</button>
         <div class="tl-label">
-          <span id="tl-from">—</span>
+          <span id="tl-from">; </span>
           <span class="tl-dash">→</span>
-          <span id="tl-to">—</span>
+          <span id="tl-to">, </span>
         </div>
         <button id="tl-reset" class="link-btn" data-i18n="tl.full">full range</button>
       </div>
@@ -199,24 +199,19 @@
         <div id="tl-rail"></div>
       </div>
 
-      <!-- ---- THE ANNUAL COMMEMORATION ----
-           Two days a year, every year, in the colour of the forget-me-not.
-           The marks themselves are on the track above; this is the key. -->
-      <div class="tl-rail-row tl-commem-row">
-        <span class="tl-era" data-i18n="tl.commem">1915 ceremony</span>
-        <button type="button" id="tl-commem-key" class="tl-commem-key">
-          <i></i><span data-i18n="commem.key">23&#8211;24 April, every year</span>
-        </button>
-      </div>
+      <!-- ---- A PERIOD'S OWN TIMELINE ----
+           Opened by clicking a chip in the rail above. The revolution unfolds
+           as its days, the commemoration as its years. -->
+      <div id="tl-spur" hidden></div>
 
       <!-- the long view: one century, by decade -->
       <div class="tl-sep"></div>
       <div class="tl-row tl-row-century">
         <span class="tl-era" data-i18n="tl.century">The century</span>
         <div class="tl-label">
-          <span id="cn-from">—</span>
+          <span id="cn-from">; </span>
           <span class="tl-dash">→</span>
-          <span id="cn-to">—</span>
+          <span id="cn-to">, </span>
         </div>
         <button id="cn-reset" class="link-btn" data-i18n="tl.fullCentury">full century</button>
       </div>
@@ -247,12 +242,12 @@
 <script src="assets/vendor/maplibre-gl.js"></script>
 <!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
      and without it readers keep running yesterday's code.
-     i18n.js loads first — every other file asks it for its words. -->
-<script src="assets/js/i18n.js?v=20260822a"></script>
-<script src="assets/js/app.js?v=20260822a"></script>
-<script src="assets/js/picker.js?v=20260822a"></script>
-<script src="assets/js/terrain.js?v=20260822a"></script>
-<script src="assets/js/graph3d.js?v=20260822a"></script>
-<script src="assets/js/parties3d.js?v=20260822a"></script>
+     i18n.js loads first; every other file asks it for its words. -->
+<script src="assets/js/i18n.js?v=20260822b"></script>
+<script src="assets/js/app.js?v=20260822b"></script>
+<script src="assets/js/picker.js?v=20260822b"></script>
+<script src="assets/js/terrain.js?v=20260822b"></script>
+<script src="assets/js/graph3d.js?v=20260822b"></script>
+<script src="assets/js/parties3d.js?v=20260822b"></script>
 </body>
 </html>
