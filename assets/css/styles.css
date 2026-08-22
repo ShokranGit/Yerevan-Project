@@ -1696,3 +1696,118 @@ body.is-phone .tl-cm::before,
 body.is-phone .tl-ep::before{
   content:""; position:absolute; top:-6px; bottom:-6px; left:-9px; right:-9px;
 }
+
+
+/* ===================================================================
+   THE NAMES OF PLACES, AT FOUR SCALES
+   -------------------------------------------------------------------
+   Country, city, district, and the named spaces of the centre. They are
+   HTML markers, so they inherit the Armenian and Persian faces and the
+   page direction, and they carry no box: a label with a border reads as
+   a pin, something you are meant to click. These are not pins. They are
+   the names the ground already has, set in the map rather than on it,
+   so the type has to survive a satellite photograph and a white basemap
+   with nothing but a shadow.
+   =================================================================== */
+
+/* The marker element MapLibre owns; the fade lives on the child. */
+.geo-mk{ pointer-events:none; }
+.geo-name{
+  pointer-events:none; user-select:none; text-align:center;
+  transition:opacity .28s ease;
+  text-shadow:0 1px 2px rgba(8,10,13,.95), 0 0 7px rgba(8,10,13,.9), 0 0 16px rgba(8,10,13,.55);
+}
+.geo-name b{ display:block; font-weight:500; white-space:nowrap; }
+.geo-name span{
+  display:block; margin-top:3px; font-size:9.5px; font-weight:400;
+  letter-spacing:.04em; color:#c2c7ce; opacity:.9; white-space:nowrap;
+}
+
+/* --- the region --- */
+.geo-n-country b{
+  font-size:12px; letter-spacing:.34em; text-transform:uppercase;
+  color:#d6dae0; padding-inline-start:.34em;
+}
+.geo-n-country.is-am b{ color:#e8a2a5; }
+
+.geo-n-karabakh b{
+  font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:#d8bc74; padding-inline-start:.16em;
+}
+.geo-n-karabakh span{ color:#bfa878; font-size:9.5px; max-width:170px; margin-inline:auto; white-space:normal; line-height:1.35; }
+.geo-n-karabakh.karabakh-1994 b{ opacity:.72; font-size:9.5px; }
+
+/* --- the city, and the district --- */
+.geo-n-city b{
+  font-family:var(--font-serif); font-size:15px; font-weight:600;
+  letter-spacing:.22em; color:#e6e8ec; padding-inline-start:.22em;
+}
+.geo-n-district b{
+  font-size:10.5px; letter-spacing:.28em; text-transform:uppercase;
+  color:#a8aeb8; padding-inline-start:.28em;
+}
+.geo-n-ring b{
+  font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:#8b929c; padding-inline-start:.2em;
+}
+
+/* --- the named spaces of the centre ---
+   A square gets the serif, because a square is a place with a name and a
+   history; a street gets the sans and runs along itself; water and parks
+   are quieter still. The small rule under a square name is the only
+   ornament, and it is there to separate the word from the ground. */
+.geo-n-space b{
+  font-family:var(--font-serif); font-size:13px; font-weight:600;
+  letter-spacing:.06em; color:#f2f4f7;
+}
+.geo-n-space.space-square b::after{
+  content:""; display:block; height:1px; width:26px; margin:3px auto 0;
+  background:linear-gradient(90deg, transparent, rgba(201,38,44,.85), transparent);
+}
+.geo-n-space.space-street b{
+  font-family:var(--font-ui); font-size:10.5px; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase; color:#cfd3d9;
+  padding-inline-start:.2em;
+}
+.geo-n-space.space-water b{ color:#a9cde6; font-style:italic; font-weight:500; }
+.geo-n-space.space-park b{ font-size:11.5px; color:#c3cfc4; font-weight:500; }
+.geo-n-space.space-quarter b{
+  font-family:var(--font-ui); font-size:10px; letter-spacing:.24em;
+  text-transform:uppercase; color:#b6a998; padding-inline-start:.24em;
+}
+.geo-n-space.space-site b{ font-size:11.5px; color:#e0e3e8; }
+
+/* Armenian and Persian do not letter-space or uppercase: both destroy the
+   shaping. They get size and weight instead. */
+html.lang-hy .geo-name b, html.lang-fa .geo-name b{
+  letter-spacing:0 !important; text-transform:none !important; padding-inline-start:0 !important;
+}
+html.lang-hy .geo-n-country b, html.lang-fa .geo-n-country b{ font-size:13px; }
+html.lang-hy .geo-n-space.space-street b, html.lang-fa .geo-n-space.space-street b{ font-size:11.5px; }
+
+/* On a light basemap the shadow has to become a halo instead. */
+#map-wrap.on-light .geo-name{
+  text-shadow:0 0 4px #fff, 0 0 10px #fff, 0 1px 2px rgba(255,255,255,.9);
+}
+#map-wrap.on-light .geo-n-country b{ color:#5a616b; }
+#map-wrap.on-light .geo-n-country.is-am b{ color:#a3272c; }
+#map-wrap.on-light .geo-n-city b{ color:#1a1c20; }
+#map-wrap.on-light .geo-n-district b,
+#map-wrap.on-light .geo-n-ring b{ color:#6d747e; }
+#map-wrap.on-light .geo-n-space b{ color:#15171b; }
+#map-wrap.on-light .geo-n-space.space-street b{ color:#4a5058; }
+#map-wrap.on-light .geo-n-space.space-water b{ color:#3d7ba6; }
+#map-wrap.on-light .geo-n-space.space-park b{ color:#3f6b48; }
+#map-wrap.on-light .geo-n-space.space-quarter b{ color:#7a6a55; }
+#map-wrap.on-light .geo-n-karabakh b{ color:#8a6f2a; }
+#map-wrap.on-light .geo-n-karabakh span{ color:#8a7c55; }
+#map-wrap.on-light .geo-name span{ color:#6d747e; }
+
+/* A phone is narrower than the names are wide. */
+@media (max-width: 860px){
+  .geo-n-country b{ font-size:10.5px; letter-spacing:.24em; }
+  .geo-n-city b{ font-size:13px; }
+  .geo-n-space b{ font-size:11.5px; }
+  .geo-n-space.space-street b{ font-size:9.5px; letter-spacing:.14em; }
+  .geo-n-karabakh span{ max-width:120px; }
+}
