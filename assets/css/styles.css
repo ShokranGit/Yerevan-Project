@@ -1452,3 +1452,247 @@ body.lb-open{ overflow:hidden; }
 }
 #perf-note button:hover{ color:var(--text); border-color:var(--accent); }
 #perf-note #perf-dismiss{ padding:2px 7px; font-size:15px; line-height:1; }
+
+
+/* ===================================================================
+   THE PHONE
+   -------------------------------------------------------------------
+   Everything below is scoped to body.is-phone, a class mobile.js adds
+   only while the viewport is genuinely a phone, so the desktop rules
+   above stay untouched and nothing here has to be undone by hand.
+
+   The arrangement: the map is the whole screen; the panel is a sheet
+   over it at one of three heights, driven by --sheet-h; the timeline
+   is a bar docked above the sheet, collapsed to its window until it is
+   asked to open; and the map furniture that used to float over the
+   drawing lives in a second sheet behind one button.
+   =================================================================== */
+
+body.is-phone{ overflow:hidden; }
+
+body.is-phone #app{
+  display:block; position:relative;
+  height:100dvh; height:100vh;
+  --sheet-h:148px;
+}
+
+/* ---- the map takes the screen ---- */
+body.is-phone #map-wrap{
+  position:fixed; inset:0; flex:none; width:100%; height:100%;
+}
+
+/* ---- the panel becomes a sheet ---- */
+body.is-phone #panel{
+  position:fixed; left:0; right:0; bottom:0; z-index:30;
+  width:100%; flex:none; margin:0 !important;
+  height:var(--sheet-h);
+  max-height:94dvh; max-height:94vh;
+  border:none; border-top:1px solid var(--line);
+  border-radius:16px 16px 0 0;
+  box-shadow:0 -10px 34px rgba(0,0,0,.55);
+  transition:none;
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+}
+body.is-phone #app.m-anim #panel{ transition:height .26s cubic-bezier(.4,0,.2,1); }
+body.is-phone #panel-toggle{ display:none; }
+
+/* the grip: the whole bar is the target, the pill is only the sign of it */
+body.is-phone #m-grip{
+  flex:0 0 auto; display:flex; align-items:center; justify-content:center;
+  width:100%; height:30px; padding:0; margin:0;
+  background:none; border:none; cursor:grab;
+  touch-action:none; -webkit-tap-highlight-color:transparent;
+}
+body.is-phone #m-grip i{
+  display:block; width:42px; height:4px; border-radius:3px;
+  background:var(--line); transition:background .15s;
+}
+body.is-phone #m-grip:active i{ background:var(--accent); }
+
+/* a shallower head, so the peek height shows the title and not a crop */
+body.is-phone #panel-head{ padding:2px 14px 12px; align-items:center; }
+body.is-phone .brand h1{ font-size:18px; }
+body.is-phone .brand-sub{ font-size:9.5px; letter-spacing:.05em; }
+body.is-phone #browse-view,
+body.is-phone #detail-view{ padding:12px 14px 30px; -webkit-overflow-scrolling:touch; }
+
+/* at peek nothing below the head is reachable, so do not let it scroll */
+body.is-phone #app.m-peek #browse-view,
+body.is-phone #app.m-peek #detail-view{ overflow:hidden; }
+
+/* ---- back to the map from a raised sheet ---- */
+body.is-phone #m-map-btn{
+  position:absolute; top:30px; right:14px; z-index:3;
+  display:none; align-items:center; gap:6px;
+  height:34px; padding:0 12px;
+  background:var(--bg-3); border:1px solid var(--line); border-radius:18px;
+  color:var(--text-2); font-size:11.5px; cursor:pointer;
+}
+body.is-phone #m-map-btn svg{ width:15px; height:15px; }
+body.is-phone #app.m-full #m-map-btn{ display:inline-flex; }
+body.is-phone #app.m-full #panel-head{ padding-top:8px; }
+
+/* At peek and at full the head is a title bar, not a masthead: the strapline
+   goes, and the title stays on one line, so peek can show the search box and
+   full can show the reading. At half the masthead comes back. */
+body.is-phone .brand-sub{ display:none; }
+body.is-phone .brand{ min-width:0; flex:1; }
+body.is-phone .brand h1{
+  font-size:17px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+body.is-phone #app.m-full #lang-switch{ margin-inline-end:104px; }
+
+/* The map is behind the sheet at full height; its furniture goes with it. */
+body.is-phone #app.m-full #timeline,
+body.is-phone #app.m-full #m-controls-btn,
+body.is-phone #app.m-full .maplibregl-ctrl-top-right,
+body.is-phone #app.m-full #north{ display:none; }
+[dir="rtl"] body.is-phone #m-map-btn{ right:auto; left:14px; }
+[dir="rtl"] body.is-phone #m-controls-btn{ left:auto; right:12px; }
+[dir="rtl"] body.is-phone #m-tl-toggle{ right:auto; left:0; }
+
+/* ---- the timeline, docked above the sheet ---- */
+body.is-phone #timeline{
+  position:fixed; left:8px; right:8px; bottom:calc(var(--sheet-h) + 10px);
+  top:auto; z-index:25;
+  padding:8px 12px 6px; border-radius:10px;
+  max-height:46px; overflow:hidden;
+}
+/* The timeline does NOT animate with the sheet. Raising the sheet often
+   happens in the same frame as a map flight, and a transition that cannot
+   start until the main thread is free leaves the bar sitting under the sheet
+   for as long as the flight takes. It moves at once instead. */
+body.is-phone #app.m-tl-open #timeline{
+  max-height:min(58dvh, calc(100dvh - var(--sheet-h) - 90px));
+  overflow-y:auto; padding-bottom:10px;
+}
+/* Collapsed, only the window row shows. The rest is not switched off, it is
+   simply clipped by the max-height above: touching `display` here would flatten
+   the flex rows underneath, which is what bunched the tick labels into one word
+   the first time this was tried. */
+
+body.is-phone #m-tl-toggle{
+  position:absolute; top:0; right:0;
+  width:44px; height:46px; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  background:none; border:none; color:var(--text-3); cursor:pointer;
+}
+body.is-phone #m-tl-toggle svg{ width:18px; height:18px; transition:transform .2s; }
+body.is-phone #m-tl-toggle.open svg{ transform:rotate(180deg); }
+body.is-phone #timeline .tl-row:first-child{ padding-inline-end:40px; margin-bottom:0; }
+
+/* ---- the map furniture, gathered behind one button ---- */
+body.is-phone #m-controls-btn{
+  position:fixed; top:calc(12px + env(safe-area-inset-top, 0px)); left:12px; z-index:26;
+  width:44px; height:44px; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(22,25,32,.92); backdrop-filter:blur(8px);
+  border:1px solid var(--line); border-radius:10px;
+  color:var(--text-2); cursor:pointer;
+}
+body.is-phone #m-controls-btn svg{ width:20px; height:20px; }
+body.is-phone #map-wrap.on-light #m-controls-btn{
+  background:rgba(255,255,255,.92); border-color:#d5d8de; color:#4a5058;
+}
+
+body.is-phone #m-sheet{
+  position:fixed; left:0; right:0; bottom:0; z-index:40;
+  max-height:82dvh; max-height:82vh; overflow-y:auto;
+  background:var(--bg-2); border-top:1px solid var(--line);
+  border-radius:16px 16px 0 0;
+  box-shadow:0 -10px 34px rgba(0,0,0,.55);
+  padding:0 14px calc(18px + env(safe-area-inset-bottom, 0px));
+}
+body.is-phone #m-sheet[hidden]{ display:none; }
+body.is-phone .m-sheet-head{
+  position:sticky; top:0; z-index:2; background:var(--bg-2);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0 10px; border-bottom:1px solid var(--line-soft);
+}
+body.is-phone .m-sheet-head b{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-3); }
+body.is-phone .m-close{
+  width:44px; height:44px; margin:-8px -10px -8px 0; padding:0;
+  background:none; border:none; color:var(--text-2); font-size:24px; line-height:1; cursor:pointer;
+}
+body.is-phone .m-sheet-body{ display:flex; flex-direction:column; gap:14px; padding:14px 0 0; }
+
+/* the moved nodes stop floating and become rows */
+body.is-phone #m-sheet #map-controls{
+  position:static; display:flex; flex-wrap:wrap; gap:8px;
+}
+body.is-phone #m-sheet .map-btn,
+body.is-phone #m-sheet .map-select{ min-height:44px; font-size:13px; padding:0 14px; }
+body.is-phone #m-sheet .map-select{ flex:1 1 100%; padding:0 34px; text-align:start; }
+body.is-phone #m-sheet #coords{
+  position:static; pointer-events:auto; flex-wrap:wrap; font-size:11px;
+  padding:10px 12px; background:var(--bg-3); border-color:var(--line);
+}
+body.is-phone #m-sheet #g3-thumb,
+body.is-phone #m-sheet #p3-thumb{
+  position:static; width:100%; height:104px; margin:0;
+}
+body.is-phone #m-sheet #g3-thumb b,
+body.is-phone #m-sheet #p3-thumb b{ font-size:10.5px; }
+
+/* ---- what is left floating over the map ---- */
+body.is-phone #north{ top:calc(66px + env(safe-area-inset-top, 0px)); left:12px; right:auto; width:30px; height:39px; }
+[dir="rtl"] body.is-phone #north{ left:auto; right:12px; }
+body.is-phone .maplibregl-ctrl-top-right{ top:calc(8px + env(safe-area-inset-top, 0px)); }
+body.is-phone .maplibregl-ctrl-group button{ width:44px !important; height:44px !important; }
+body.is-phone #pick-out{
+  left:10px; right:10px; bottom:auto;
+  top:calc(66px + env(safe-area-inset-top, 0px));
+}
+body.is-phone #perf-note{ top:auto; bottom:calc(var(--sheet-h) + 58px); max-width:calc(100% - 20px); font-size:11.5px; }
+body.is-phone #g3-modal, body.is-phone #p3-modal{ padding:0; }
+
+/* ---- forty-four pixels, everywhere something is touched ---- */
+body.is-phone #lang-switch{ gap:2px; }
+body.is-phone #lang-switch button{ min-width:44px; min-height:40px; font-size:12px; padding:0 6px; }
+body.is-phone .link-btn{ min-height:40px; padding:0 8px; display:inline-flex; align-items:center; }
+body.is-phone .block-head{ gap:2px; }
+body.is-phone #sort{ min-height:40px; padding:0 26px 0 10px; font-size:12px; }
+body.is-phone .back-btn{ min-height:44px; }
+body.is-phone .play-btn{ width:40px; height:40px; font-size:12px; }
+body.is-phone #pick-btn{ width:40px; height:40px; margin:-8px 0; }
+body.is-phone #search{ min-height:44px; }
+body.is-phone #categories label,
+body.is-phone .cat,
+body.is-phone .cat-row{ min-height:44px; }
+body.is-phone #results li > *{ min-height:44px; }
+body.is-phone .tl-rail-chip{ height:30px; font-size:12px; padding:0 10px; }
+body.is-phone .tl-spur-stop{ min-height:40px; }
+body.is-phone .d-year{ min-height:40px; }
+body.is-phone .d-zoom{ cursor:zoom-in; }
+body.is-phone .lb-nav{ width:44px; height:64px; }
+body.is-phone .lb-close, body.is-phone .lb-full{ min-width:44px; min-height:44px; }
+body.is-phone .modal-close{ min-width:44px; min-height:44px; }
+body.is-phone .d-actions button{ min-height:40px; }
+body.is-phone .g3-head-btns .map-btn{ min-height:40px; }
+
+/* Persian flips the sheet furniture with the rest of the layout */
+[dir="rtl"] body.is-phone .m-close{ margin:-8px 0 -8px -10px; }
+[dir="rtl"] body.is-phone .maplibregl-ctrl-top-right{ right:auto; left:0; }
+
+/* the period rail: the era word goes above, so the chips get the full width */
+body.is-phone #app.m-tl-open .tl-rail-row{ flex-direction:column; align-items:stretch; gap:2px; }
+body.is-phone #app.m-tl-open .tl-rail-row .tl-era{ padding:0; }
+body.is-phone .tl-rail-chip{ max-width:66%; }
+body.is-phone #app.m-tl-open #tl-rail{ min-height:60px; }
+body.is-phone .cat{ align-items:flex-start; }
+body.is-phone .cat .swatch{ margin-top:3px; }
+body.is-phone .cat .swatch{ width:14px; height:14px; }
+
+/* ---- the timeline's own small parts, given a thumb-sized target ---- */
+body.is-phone .tl-slider{ height:34px; }
+body.is-phone .tl-slider-century{ height:30px; }
+body.is-phone .tl-slider input[type=range]::-webkit-slider-thumb,
+body.is-phone .tl-slider-century input[type=range]::-webkit-slider-thumb{
+  width:24px; height:24px;
+}
+/* A day mark is three pixels wide because that is how wide a day is on a
+   twenty-nine-year axis. The mark stays that width; the target does not. */
+body.is-phone .tl-cm::before,
+body.is-phone .tl-ep::before{
+  content:""; position:absolute; top:-6px; bottom:-6px; left:-9px; right:-9px;
+}
