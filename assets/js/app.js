@@ -213,7 +213,7 @@
 
     /* Marches. Built here rather than at draw time: the chevrons are real
        geometry and there is no reason to recompute them on every repaint. */
-    try { buildRoutes(); }
+    try { buildRoutes(); buildDispersal(); }
     catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
 
     /* --- co-located entries -------------------------------------------
@@ -328,7 +328,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
-      try { addRoutes(); addGeoLink(); }
+      try { addRoutes(); addDispersal(); addGeoLink(); }
       catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
       refresh();
       hideLoader();
@@ -358,7 +358,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
-      try { addRoutes(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+      try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
       if (state.selectedId) {
         var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
         if (sel) showPlaces(frameFor(sel), sel);      /* a style swap wipes the markers */
@@ -629,6 +629,148 @@
       eat(c[0]); eat(c[c.length - 1]);
     });
     return [[w, s], [e2, n]];
+  }
+
+  /* -----------------------------------------------------------------
+     DISPERSAL: one object, several addresses
+     -----------------------------------------------------------------
+     A march is a line a crowd walked. This is the other kind of line a
+     city draws: the path an object took after it stopped being a
+     monument. The Lenin of Republic Square is now a body in a museum
+     courtyard, a pedestal in a municipal yard eight kilometres away,
+     and a head nobody will name an address for. None of that is visible
+     from any single photograph, and all of it is visible on a map.
+
+     So: one origin, several destinations, an arc from the origin to each
+     destination that has coordinates, and a station with no coordinates
+     rendered as a row in the panel and nothing on the map. A missing
+     address is data too, and drawing it anywhere would be a lie.
+     ----------------------------------------------------------------- */
+
+  var DISPERSE = null, dispMarkers = [];
+
+  /* A gentle arc, so the link reads as a relation and not as a street.
+     Longitude is scaled by cos(latitude) for the offset, otherwise the bend
+     leans east at Yerevan's latitude. */
+  function arcBetween(a, b, bend) {
+    var k = Math.cos(((a[1] + b[1]) / 2) * Math.PI / 180);
+    var dx = (b[0] - a[0]) * k, dy = b[1] - a[1];
+    var L = Math.sqrt(dx * dx + dy * dy) || 1e-9;
+    var cx = (a[0] + b[0]) / 2 + (-dy / L) * bend * L / k;
+    var cy = (a[1] + b[1]) / 2 + ( dx / L) * bend * L;
+    var out = [], i, t;
+    for (i = 0; i <= 48; i++) {
+      t = i / 48;
+      out.push([
+        (1 - t) * (1 - t) * a[0] + 2 * (1 - t) * t * cx + t * t * b[0],
+        (1 - t) * (1 - t) * a[1] + 2 * (1 - t) * t * cy + t * t * b[1]
+      ]);
+    }
+    return out;
+  }
+
+  function buildDispersal() {
+    var lines = [], dots = [];
+    state.events.forEach(function (e) {
+      var dsp = e.dispersal;
+      if (!dsp || !dsp.stations || !dsp.stations.length) return;
+      var origin = dsp.stations[0];
+      if (!origin.at) return;
+      var colour = dsp.color || RED;
+      dsp.stations.forEach(function (st, n) {
+        if (!st.at) return;
+        dots.push({ type: "Feature",
+          properties: { id: e.id, sid: st.id, kind: st.kind || "now", colour: colour },
+          geometry: { type: "Point", coordinates: st.at } });
+        if (n === 0) return;
+        lines.push({ type: "Feature",
+          properties: { id: e.id, sid: st.id, colour: colour },
+          geometry: { type: "LineString", coordinates: arcBetween(origin.at, st.at, 0.18) } });
+      });
+    });
+    DISPERSE = { lines: { type: "FeatureCollection", features: lines },
+                 dots:  { type: "FeatureCollection", features: dots } };
+    window.__dispersal = { lines: lines.length, dots: dots.length };
+  }
+
+  function addDispersal() {
+    if (!DISPERSE || !DISPERSE.lines.features.length) return;
+    if (map.getSource("disp-line")) return;
+    map.addSource("disp-line", { type: "geojson", data: emptyFC() });
+    map.addSource("disp-dot",  { type: "geojson", data: emptyFC() });
+    map.addLayer({
+      id: "disp-line", type: "line", source: "disp-line",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": ["coalesce", ["get", "colour"], RED],
+        "line-opacity": 0.9,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 1.6, 17, 3.4],
+        "line-dasharray": [1.6, 1.4]
+      }
+    });
+    map.addLayer({
+      id: "disp-dot", type: "circle", source: "disp-dot",
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 4, 17, 8],
+        "circle-color": ["case", ["==", ["get", "kind"], "origin"], "#ffffff",
+                         ["coalesce", ["get", "colour"], RED]],
+        "circle-stroke-width": 2.2,
+        "circle-stroke-color": ["case", ["==", ["get", "kind"], "origin"],
+                                ["coalesce", ["get", "colour"], RED], "#ffffff"],
+        "circle-opacity": 0.98
+      }
+    });
+  }
+
+  function clearDispersal() {
+    dispMarkers.forEach(function (m) { m.remove(); });
+    dispMarkers = [];
+    if (map && map.getSource("disp-line")) map.getSource("disp-line").setData(emptyFC());
+    if (map && map.getSource("disp-dot"))  map.getSource("disp-dot").setData(emptyFC());
+  }
+
+  function showDispersal(e) {
+    clearDispersal();
+    if (!map || !e.dispersal || !DISPERSE) return;
+    var pick = function (fc) {
+      return { type: "FeatureCollection",
+               features: fc.features.filter(function (f) { return f.properties.id === e.id; }) };
+    };
+    if (map.getSource("disp-line")) map.getSource("disp-line").setData(pick(DISPERSE.lines));
+    if (map.getSource("disp-dot"))  map.getSource("disp-dot").setData(pick(DISPERSE.dots));
+
+    var colour = e.dispersal.color || RED;
+    e.dispersal.stations.forEach(function (st, n) {
+      if (!st.at) return;
+      var el = document.createElement("div");
+      el.className = "disp-note" + (st.kind === "origin" ? " origin" : "");
+      el.style.setProperty("--mk", colour);
+      el.innerHTML = '<b>' + esc(tr(st, "label") || "") + '</b>' +
+                     '<span>' + esc(num(st.years || "")) + '</span>' +
+                     '<i>' + esc(tr(st, "what") || "") + '</i>';
+      el.addEventListener("click", function (evt) { evt.stopPropagation(); });
+      /* The square and the courtyard are 260 m apart, which is close enough
+         at street zoom for two labels to collide. So the origin hangs below
+         its dot and the destinations sit above theirs. */
+      dispMarkers.push(new maplibregl.Marker({
+        element: el, anchor: st.kind === "origin" ? "top" : "bottom"
+      }).setLngLat(st.at).addTo(map));
+    });
+  }
+
+  /* The near stations are the ones worth opening on: framing all of them at
+     once would put a courtyard 220 m away and a yard 8 km away in the same
+     view, and the courtyard would vanish. The far ones are one click away in
+     the panel. */
+  function dispersalBounds(e, all) {
+    var sts = (e.dispersal.stations || []).filter(function (s) { return s.at; });
+    if (!sts.length) return null;
+    var o = sts[0].at, pts = [];
+    sts.forEach(function (s) {
+      if (all || metres(o, s.at) < 1500) pts.push(s.at);
+    });
+    if (pts.length < 2) pts = [o, [o[0] + 0.002, o[1] + 0.0015]];
+    return pathBounds(pts);
   }
 
   /* -----------------------------------------------------------------
@@ -1315,7 +1457,7 @@
     applySelectionState();
     history.replaceState(null, "", "#" + encodeURIComponent(id));
 
-    if (map) { clearRouteAnim(); clearPlaces(); }
+    if (map) { clearRouteAnim(); clearPlaces(); clearDispersal(); }
 
     /* Not in Yerevan? Then the answer is not "go there", it is "show where
        there is". North up, flat, both places named, the distance between. */
@@ -1335,7 +1477,16 @@
          The tilt has to travel with the same easeTo; a separate one is simply
          cancelled by the move that follows it. */
       var back = (map.getPitch() < 1 && state.cityPitch) ? state.cityPitch : null;
-      if (e.path && e.path.length > 1) {
+      if (e.dispersal) {
+        /* An object that came apart is framed around the pieces still near
+           each other; the far ones are a click away in the panel. */
+        var db = dispersalBounds(e, false);
+        if (db) map.fitBounds(db, {
+          padding: { top: 110, bottom: 210, left: 70, right: 70 },
+          duration: 1100, maxZoom: 17,
+          pitch: back != null ? Math.min(back, 40) : Math.min(map.getPitch(), 40)
+        });
+      } else if (e.path && e.path.length > 1) {
         /* A march is not a place. Frame the whole walk, then draw it. An entry
            with several routes is framed around all of them at once, the point
            of drawing two is seeing them diverge. */
@@ -1358,7 +1509,7 @@
       animateRoute(e);
     }
 
-    if (map) showMarchNotes(e);
+    if (map) { showMarchNotes(e); showDispersal(e); }
 
     var h = "";
     h += '<div class="d-date">' + esc(fmtDate(e)) + '</div>';
@@ -1416,6 +1567,26 @@
       }
     }
 
+    if (e.dispersal && e.dispersal.stations) {
+      /* The list is the argument: one object, four addresses, one of them
+         missing. The missing one gets a row and no dot. */
+      h += '<div class="d-marches d-dispersal">';
+      e.dispersal.stations.forEach(function (st, n) {
+        var far = (st.at && n > 0) ? metres(e.dispersal.stations[0].at, st.at) : 0;
+        var away = far >= 1000 ? num((far / 1000).toFixed(1)) + " " + t("unit.km")
+                 : far ? num(Math.round(far)) + " " + t("unit.m") : "";
+        h += '<button type="button" class="d-march d-station' +
+             (st.kind === "origin" ? " origin" : "") + (st.at ? "" : " lost") + '"' +
+             ' data-station="' + n + '"' + (st.at ? "" : " disabled") +
+             ' style="--mk:' + esc(e.dispersal.color || RED) + '">' +
+             '<i></i><b>' + esc(tr(st, "label") || "") + '</b>' +
+             '<span>' + esc(num(st.years || "")) + '</span>' +
+             '<em>' + esc(tr(st, "what") || "") + (away ? ", " + away : "") + '</em>' +
+             '</button>';
+      });
+      h += '</div>';
+    }
+
     if (e.paths && e.paths.length) {
       /* Two routes, one ritual. The list is the argument: same destination,
          same organisers, different first kilometre, different decades. */
@@ -1455,6 +1626,19 @@
     }
     if (analysis) {
       h += '<div class="d-sec analysis"><h3>' + esc(t("detail.analysis")) + '</h3><p>' + para(analysis) + '</p></div>';
+    }
+
+    /* ---- a chronology, where the argument is a sequence of decisions ----
+       Different from the year boxes above: those are one rite returning, this
+       is one object being made and then taken apart. Dates on the left, in the
+       reader's own language and numerals. */
+    if (e.chronology && e.chronology.length) {
+      h += '<div class="d-sec"><h3>' + esc(t("detail.chronology")) + '</h3><div class="d-chron">';
+      e.chronology.forEach(function (c) {
+        h += '<div class="d-chron-row"><b>' + esc(num(c.when || "")) + '</b>' +
+             '<p>' + para(tr(c, "note") || "") + '</p></div>';
+      });
+      h += '</div></div>';
     }
 
     /* ---- year by year ----
@@ -1544,6 +1728,26 @@
 
     $("detail-body").querySelectorAll("[data-go]").forEach(function (b) {
       b.addEventListener("click", function () { selectEvent(b.dataset.go, true); });
+    });
+
+    /* One button per address. Clicking the far one widens the frame to hold
+       both it and the square, which is the only way to see how far a piece of
+       a monument can travel and still be in the same city. */
+    $("detail-body").querySelectorAll("[data-station]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var sts = e.dispersal.stations, st = sts[+b.dataset.station];
+        if (!st || !st.at || !map) return;
+        var o = sts[0].at;
+        if (metres(o, st.at) > 1500) {
+          map.fitBounds(pathBounds([o, st.at]), {
+            padding: { top: 110, bottom: 220, left: 80, right: 80 }, duration: 1200, maxZoom: 15
+          });
+        } else {
+          goTo(st.at, Math.max(map.getZoom(), 17.6));
+        }
+        b.parentNode.querySelectorAll(".d-station").forEach(function (o2) { o2.classList.remove("on"); });
+        b.classList.add("on");
+      });
     });
 
     /* One button per route: frame that route alone and walk it. */
