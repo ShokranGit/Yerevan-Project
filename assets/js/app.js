@@ -314,6 +314,13 @@
       attributionControl: { compact: true }
     });
 
+    /* Published immediately, not on load. Terrain and the coordinate picker
+       both wait on this handle, and if the style is slow or a style never
+       fires "load" they used to wait forever. It is also the only way to ask a
+       real browser what the map is doing, which matters because this project's
+       own automation tab is hidden and never renders a frame. */
+    window.__map = map;
+
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
     /* Some styles never fire "load"; MapLibre only emits it after a first full
@@ -324,7 +331,6 @@
       if (booted) return;
       booted = true;
       mapLoaded = true;
-      window.__map = map;                 /* handy in the console */
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
@@ -353,16 +359,26 @@
     map.on("load", boot);
     map.on("idle", function () { boot(); hideLoader(); });
 
+    /* Adding a layer fires "styledata", and this handler adds layers, so it
+       feeds itself. Every call is guarded by an existence check, but rebuilding
+       the place markers was not, and it ran on every event. Debounced, and the
+       markers are only rebuilt when a style swap has actually wiped them. */
+    var styleJob = 0;
     map.on("styledata", function () {
-      if (!map.isStyleLoaded()) return;
-      try { addFigureGround(); }
-      catch (err) { window.__fgErr = String(err && err.message || err); }
-      if (!map.getSource(SRC)) { addLayers(); refresh(); }
-      try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
-      if (state.selectedId) {
-        var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
-        if (sel) showPlaces(frameFor(sel), sel);      /* a style swap wipes the markers */
-      }
+      if (styleJob) return;
+      styleJob = setTimeout(function () {
+        styleJob = 0;
+        if (!map.isStyleLoaded()) return;
+        try { addFigureGround(); }
+        catch (err) { window.__fgErr = String(err && err.message || err); }
+        if (!map.getSource(SRC)) { addLayers(); refresh(); }
+        try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+        if (state.selectedId && !placeMarkers.length) {
+          var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
+          var wide = sel ? frameFor(sel) : null;
+          if (wide) showPlaces(wide, sel);            /* a style swap wipes the markers */
+        }
+      }, 120);
     });
 
 
@@ -646,6 +662,38 @@
      rendered as a row in the panel and nothing on the map. A missing
      address is data too, and drawing it anywhere would be a lie.
      ----------------------------------------------------------------- */
+
+  /* One line to ask a real browser what happened. Claude's automation tab is
+     hidden, never runs requestAnimationFrame and therefore never finishes
+     loading a map, so when Alireza says the map is frozen the only reliable
+     evidence is what HIS browser reports. In the console: __health() */
+  window.__health = function () {
+    var m = window.__map, out = {
+      mapConstructed: !!m,
+      styleLoaded: m ? m.isStyleLoaded() : false,
+      booted: mapLoaded,
+      entries: state.events.length,
+      rendered: document.querySelectorAll(".res").length,
+      visibility: document.visibilityState,
+      terrain: window.__terrain || null,
+      terrainErr: window.__terrainErr || null,
+      medianFrameMs: window.__frameMs || null,
+      figureErr: window.__fgErr || null,
+      routeErr: window.__routeErr || null
+    };
+    if (m) {
+      out.zoom = +m.getZoom().toFixed(2);
+      out.pitch = Math.round(m.getPitch());
+      out.bearing = Math.round(m.getBearing());
+      out.handlers = {
+        drag: m.dragPan.isEnabled(), scroll: m.scrollZoom.isEnabled(),
+        rotate: m.dragRotate.isEnabled(), touch: m.touchZoomRotate.isEnabled(),
+        keyboard: m.keyboard.isEnabled()
+      };
+      out.layers = (m.getStyle() && m.getStyle().layers || []).length;
+    }
+    return out;
+  };
 
   /* -----------------------------------------------------------------
      THE IMAGE VIEWER

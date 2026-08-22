@@ -95,6 +95,9 @@
     "pick.copy": "Copy",
     "pick.clear": "Clear",
     "map.basemap": "Basemap",
+    "map.terrain": "3D terrain on or off",
+    "perf.dropped": "3D terrain was turned off so the map stays usable on this machine. The landform is still drawn as light and shadow.",
+    "perf.undo": "Turn it back on",
     "map.reset": "Reset view",
     "map.about": "About",
 
@@ -246,6 +249,9 @@
     "pick.copy": "Պատճենել",
     "pick.clear": "Մաքրել",
     "map.basemap": "Հիմնաքարտեզ",
+    "map.terrain": "3D ռելիեֆը միացնել կամ անջատել",
+    "perf.dropped": "3D ռելիեֆն անջատվեց, որպեսզի քարտեզը այս մեքենայի վրա մնա օգտագործելի։ Լանդշաֆտը դեռ գծվում է լույսով և ստվերով։",
+    "perf.undo": "Նորից միացնել",
     "map.reset": "Վերականգնել տեսքը",
     "map.about": "Մասին",
 
@@ -397,6 +403,9 @@
     "pick.copy": "کپی",
     "pick.clear": "پاک کردن",
     "map.basemap": "نقشهٔ پایه",
+    "map.terrain": "روشن یا خاموش کردن ناهمواری سه‌بعدی",
+    "perf.dropped": "ناهمواری سه‌بعدی خاموش شد تا نقشه روی این دستگاه قابل استفاده بماند. شکل زمین همچنان با نور و سایه رسم می‌شود.",
+    "perf.undo": "دوباره روشن کن",
     "map.reset": "بازنشانی نما",
     "map.about": "درباره",
 
