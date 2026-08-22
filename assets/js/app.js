@@ -143,7 +143,7 @@
      LOAD
      ================================================================= */
 
-  var KENTRON = null, FIGURE = null, GAZ = null;
+  var KENTRON = null, FIGURE = null, GAZ = null, GEO = null;
 
   function getJSON(u) {
     return fetch(u, { cache: "no-store" })
@@ -154,9 +154,10 @@
   Promise.all([
     getJSON("data/kentron.json"),
     getJSON("data/figure.json"),
-    getJSON("data/places.json")
+    getJSON("data/places.json"),
+    getJSON("data/geography.json")
   ])
-.then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; })
+.then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; GEO = all[3]; })
 .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
 .then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
@@ -336,6 +337,8 @@
       addLayers();
       try { addRoutes(); addDispersal(); addGeoLink(); }
       catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
+      try { addGeography(); }
+      catch (err) { window.__geoErr = String(err && err.message || err); console.warn("geography:", err); }
       refresh();
       hideLoader();
       wireMapFurniture();
@@ -373,6 +376,7 @@
         catch (err) { window.__fgErr = String(err && err.message || err); }
         if (!map.getSource(SRC)) { addLayers(); refresh(); }
         try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+        try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
         if (state.selectedId && !placeMarkers.length) {
           var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
           var wide = sel ? frameFor(sel) : null;
@@ -679,7 +683,9 @@
       terrainErr: window.__terrainErr || null,
       medianFrameMs: window.__frameMs || null,
       figureErr: window.__fgErr || null,
-      routeErr: window.__routeErr || null
+      routeErr: window.__routeErr || null,
+      geo: window.__geo || null,
+      geoErr: window.__geoErr || null
     };
     if (m) {
       out.zoom = +m.getZoom().toFixed(2);
@@ -1239,18 +1245,14 @@
       });
     }
 
+    /* Only the avenue keeps a ring. The dashed circles that used to sit around
+       the two squares are gone: a square is a shape the figure-ground already
+       draws, and a circle drawn at a guessed centre and a guessed radius said
+       something about the drawing rather than about the city. The circle that
+       used to stand for downtown is gone for the same reason and has been
+       replaced by the ring boulevard itself, in addGeography below. */
     if (KENTRON && KENTRON.rings && !map.getSource("rings")) {
       map.addSource("rings", { type: "geojson", data: KENTRON.rings });
-      map.addLayer({
-        id: "ring-kentron", type: "line", source: "rings",
-        filter: ["==", ["get", "kind"], "kentron"],
-        paint: { "line-color": "#3d4148", "line-width": 2.4, "line-dasharray": [3, 2.4], "line-opacity": 0.85 }
-      });
-      map.addLayer({
-        id: "ring-squares", type: "line", source: "rings",
-        filter: ["==", ["get", "kind"], "square"],
-        paint: { "line-color": RED, "line-width": 2.6, "line-dasharray": [2.4, 2], "line-opacity": 0.95 }
-      });
       map.addLayer({
         id: "ring-axis", type: "line", source: "rings",
         filter: ["==", ["get", "kind"], "axis"],
@@ -1258,6 +1260,268 @@
       });
     }
     window.__fg = { figure: FIGURE ? FIGURE.features.length : 0 };
+  }
+
+
+  /* =================================================================
+     GEOGRAPHY, AT FOUR SCALES
+     -------------------------------------------------------------------
+     A research map about Yerevan has to be able to answer "where is
+     this" at more than one distance. Four rings of context are drawn
+     here and each one owns a band of zoom, so pulling back is not a
+     loss of detail but a change of subject:
+
+       the region   Armenia among its neighbours, and Karabakh drawn
+                    twice, what was held from 1994 and what was left
+                    after 2020, because the difference is the period
+                    this map is about
+       the city     the municipal boundary of Yerevan
+       the district Kentron
+       the core     the ring boulevard, on the street, not a circle
+
+     Nothing is clickable and nothing has to be switched on. Names are
+     HTML markers rather than symbol layers for the same reason as the
+     gazetteer: one of the five basemaps is a bare raster with no glyph
+     server, and HTML inherits the Armenian and Persian faces and the
+     page direction for free.
+     ================================================================= */
+
+  var geoNames = [];
+
+  /* Zoom bands. Each is [fade-in start, full, full until, fade-out end]. */
+  /* Every band is STRICTLY ascending. A repeated stop, [0, 0, 7.4, 8.6] for
+     something meant to start already visible, is not a rounding detail: an
+     interpolate whose inputs do not increase is rejected, MapLibre reports it
+     on the error event rather than throwing, and the layer is silently absent.
+     That is how the first version of this shipped with only two of its ten
+     layers on the map and nothing in the console to say so. */
+  var GEO_BAND = {
+    country:  [0,    0.5,  7.4,  8.6],
+    karabakh: [0,    0.5,  7.4,  8.6],
+    city:     [7.6,  8.8,  12.2, 13.4],
+    district: [10.4, 11.4, 13.8, 14.8],
+    ring:     [11.6, 12.6, 23,   24],
+    space1:   [12.9, 13.6, 23,   24],
+    space2:   [13.9, 14.6, 23,   24],
+    space3:   [15.0, 15.7, 23,   24]
+  };
+
+  /* MapLibre allows a zoom expression only as the input of a top-level
+     interpolate or step, so an opacity cannot be written as "a constant times
+     a zoom curve". The constant is baked into the stops instead, and where two
+     features in one layer want different constants they get two layers. */
+  function bandOpacity(b, max) {
+    var m = (max === undefined) ? 1 : max;
+    return ["interpolate", ["linear"], ["zoom"], b[0], 0, b[1], m, b[2], m, b[3], 0];
+  }
+
+  function addGeography() {
+    if (!GEO || !GEO.features || map.getSource("geo")) return;
+    map.addSource("geo", { type: "geojson", data: GEO.features });
+
+    var REG = GEO_BAND.country;
+
+    /* Land first, and barely there. A country fill at full strength would
+       replace the basemap; at five percent it only separates land from sea
+       and from its neighbours, which is all a locator has to do. Armenia is
+       the exception: it is the subject, and it gets a red wash. */
+    map.addLayer({
+      id: "geo-country-fill", type: "fill", source: "geo",
+      filter: ["all", ["==", ["get", "kind"], "country"], ["!=", ["get", "id"], "am"]],
+      paint: { "fill-color": "#8b929c", "fill-opacity": bandOpacity(REG, 0.05) }
+    });
+    map.addLayer({
+      id: "geo-am-fill", type: "fill", source: "geo",
+      filter: ["==", ["get", "id"], "am"],
+      paint: { "fill-color": RED, "fill-opacity": bandOpacity(REG, 0.13) }
+    });
+    map.addLayer({
+      id: "geo-country-line", type: "line", source: "geo",
+      filter: ["all", ["==", ["get", "kind"], "country"], ["!=", ["get", "id"], "am"]],
+      paint: {
+        "line-color": "#6d747e",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.6, 6, 1.1, 9, 1.8],
+        "line-opacity": bandOpacity(REG, 0.5)
+      }
+    });
+    map.addLayer({
+      id: "geo-am-line", type: "line", source: "geo",
+      filter: ["==", ["get", "id"], "am"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": RED,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 6, 1.7, 9, 2.6],
+        "line-opacity": bandOpacity(REG, 0.95)
+      }
+    });
+
+    /* Karabakh, twice. The 1994 line is the larger claim and is drawn as a
+       claim: dashed, unfilled, faint. The 2020 remnant is drawn solid inside
+       it. Since September 2023 neither is administered from Stepanakert, and
+       the line under the name says so rather than the map pretending. */
+    map.addLayer({
+      id: "geo-nk-1994", type: "line", source: "geo",
+      filter: ["==", ["get", "id"], "nk-1994"],
+      paint: {
+        "line-color": "#c2a25a", "line-width": 1.3, "line-dasharray": [3, 2.6],
+        "line-opacity": bandOpacity(REG, 0.6)
+      }
+    });
+    map.addLayer({
+      id: "geo-nk-2020-fill", type: "fill", source: "geo",
+      filter: ["==", ["get", "id"], "nk-2020"],
+      paint: { "fill-color": "#c2a25a", "fill-opacity": bandOpacity(REG, 0.1) }
+    });
+    map.addLayer({
+      id: "geo-nk-2020", type: "line", source: "geo",
+      filter: ["==", ["get", "id"], "nk-2020"],
+      paint: {
+        "line-color": "#c2a25a", "line-width": 1.5,
+        "line-opacity": bandOpacity(REG, 0.85)
+      }
+    });
+
+    /* The city, then the district. Outlines only: a filled administrative
+       area reads as a subject, and neither of these is one. */
+    map.addLayer({
+      id: "geo-city", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "city"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#c8ccd3",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1, 13, 2.2],
+        "line-opacity": bandOpacity(GEO_BAND.city, 0.6)
+      }
+    });
+    map.addLayer({
+      id: "geo-district", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "district"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#9aa1ab", "line-width": 1.4, "line-dasharray": [4, 3],
+        "line-opacity": bandOpacity(GEO_BAND.district, 0.55)
+      }
+    });
+
+    /* The ring boulevard. Two lines, not one: a wide soft bed under a narrow
+       firm stroke, so it reads as something seated on the ground rather than
+       drawn over it. */
+    map.addLayer({
+      id: "geo-ring-bed", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "ring"],
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#0d0f13",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 7, 15, 17, 17, 30],
+        "line-blur": ["interpolate", ["linear"], ["zoom"], 12, 3, 17, 9],
+        "line-opacity": bandOpacity(GEO_BAND.ring, 0.5)
+      }
+    });
+    map.addLayer({
+      id: "geo-ring", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "ring"],
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#4a5058",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 3, 15, 8.5, 17, 15],
+        "line-opacity": bandOpacity(GEO_BAND.ring, 0.9)
+      }
+    });
+
+    buildGeoNames();
+    window.__geo = { features: GEO.features.features.length, names: geoNames.length };
+    window.__geoNames = geoNames;
+  }
+
+  /* -----------------------------------------------------------------
+     THE NAMES
+     -----------------------------------------------------------------
+     One marker per name, made once and then only shown or hidden. The
+     alternative, adding and removing markers on every zoom event, costs
+     a DOM write per name per frame of a pinch. */
+
+  /* Two elements, and the reason is not decoration. MapLibre owns the inline
+     opacity of a marker element: with terrain on it writes 0.2 there every
+     frame to fade whatever the hillside is standing in front of. Anything this
+     file writes to the same property is overwritten within one frame, silently.
+     So the marker element is left to MapLibre and the fade is carried by an
+     inner element, which nothing else touches. */
+  function geoNameEl(kind, label, sub) {
+    var wrap = document.createElement("div");
+    wrap.className = "geo-mk";
+    var el = document.createElement("div");
+    el.className = "geo-name geo-n-" + kind;
+    el.innerHTML = '<b>' + esc(label) + '</b>' + (sub ? '<span>' + esc(sub) + '</span>' : "");
+    wrap.appendChild(el);
+    wrap.inner = el;
+    return wrap;
+  }
+
+  function clearGeoNames() {
+    geoNames.forEach(function (g) { g.marker.remove(); });
+    geoNames = [];
+  }
+
+  function buildGeoNames() {
+    clearGeoNames();
+    if (!GEO) return;
+
+    function add(at, kind, band, label, sub) {
+      if (!at || !label) return;
+      var wrap = geoNameEl(kind, label, sub);
+      geoNames.push({
+        band: band,
+        /* opacityWhenCovered: MapLibre fades a marker to 0.2 when terrain puts a
+           hillside in front of it. For a pin that is right; for the name of a
+           district it makes the map look dirty, so these fade only a little. */
+        marker: new maplibregl.Marker({
+          element: wrap, anchor: "center", opacityWhenCovered: "0.55"
+        }).setLngLat(at).addTo(map),
+        el: wrap.inner
+      });
+    }
+
+    GEO.features.features.forEach(function (f) {
+      var p = f.properties;
+      if (!p.at) return;
+      if (p.kind === "country") {
+        add(p.at, "country" + (p.home ? " is-am" : ""), GEO_BAND.country, tr(p, "label"));
+      }
+      else if (p.kind === "karabakh") {
+        add(p.at, "karabakh karabakh-" + (p.phase || ""), GEO_BAND.karabakh, tr(p, "label"),
+            t(p.id === "nk-2020" ? "geo.nkNote" : "geo.nk1994"));
+      }
+      else if (p.kind === "city") add(p.at, "city", GEO_BAND.city, tr(p, "label"));
+      else if (p.kind === "district") add(p.at, "district", GEO_BAND.district, tr(p, "label"));
+      else if (p.kind === "ring") add(p.at, "ring", GEO_BAND.ring, tr(p, "label"));
+    });
+
+    (GEO.spaces || []).forEach(function (sp) {
+      add(sp.at, "space space-" + (sp.kind || "site"),
+          GEO_BAND["space" + (sp.rank || 2)], tr(sp, "label"));
+    });
+
+    paintGeoNames();
+  }
+
+  /* A name is on when the zoom is inside its band, and it crosses over
+     rather than blinking, using the same numbers the layers use. */
+  function paintGeoNames() {
+    if (!map || !geoNames.length) return;
+    var z = map.getZoom();
+    geoNames.forEach(function (g) {
+      var b = g.band, o = 0;
+      if (z >= b[0] && z <= b[3]) {
+        o = 1;
+        if (z < b[1]) o = (z - b[0]) / Math.max(0.001, b[1] - b[0]);
+        else if (z > b[2]) o = 1 - (z - b[2]) / Math.max(0.001, b[3] - b[2]);
+      }
+      o = Math.max(0, Math.min(1, o));
+      if (g.o === o) return;
+      g.o = o;
+      g.el.style.opacity = o;
+      g.el.style.visibility = o < 0.02 ? "hidden" : "visible";
+    });
   }
 
   function resetFigureGround() { /* nothing cached any more */ }
@@ -2646,6 +2910,13 @@
     }
     map.on("move", updateScale);
     map.on("zoom", updateScale);
+    /* zoom alone is not enough: it fires DURING a flight, so the last value
+       written can be an intermediate one from halfway through an easeTo. The
+       end events are what guarantee the names settle on the zoom the reader
+       actually arrives at. */
+    map.on("zoom", paintGeoNames);
+    map.on("zoomend", paintGeoNames);
+    map.on("moveend", paintGeoNames);
     updateScale();
 
     map.on("mousemove", function (e) { show(e.lngLat); });
@@ -2751,6 +3022,7 @@
         renderTicks();
         buildEpisodes();
         buildCommem();
+        buildGeoNames();
         if (spurEp) { var _e = episodeById(spurEp); spurEp = null; if (_e) openSpur(_e); }
         lightboxLabels();
         buildAbout();
