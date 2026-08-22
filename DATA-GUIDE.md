@@ -265,10 +265,11 @@ do not crop. The frame is a decision he made when he stood there, and a research
 that has been recomposed by a tool is no longer evidence of what he saw. The repository copy
 should be byte-identical to the file he supplied. Page weight is the lesser problem.
 
-**Credit him first.** Set `fieldnote: true` on the media item, which prints a "Fieldwork
-photograph" badge ahead of everything else, and fill in `credit` with his name and `license`
-with the project and date. Both are read through `tr()`, so they take `_hy` and `_fa`
-suffixes like any other field:
+**Credit is the word `Author`, nothing more.** Set `fieldnote: true` on the media item, which
+prints a "Fieldwork photograph" badge ahead of everything else, and set `credit` to `Author`.
+Not his name, not the project, not a date: the academic convention, and his preference.
+`credit` is read through `tr()`, so it takes `_hy` and `_fa` suffixes like any other field.
+There is no `license` field on his own photographs.
 
 ```jsonc
 {
@@ -276,11 +277,7 @@ suffixes like any other field:
   "url": "media/lenin-headless-courtyard-2021.jpg",
   "fieldnote": true,
   "caption": "...", "caption_hy": "...", "caption_fa": "...",
-  "credit": "Photograph by Alireza Bahrani",
-  "credit_hy": "Լուսանկարը՝ Ալիրեզա Բահրանիի",
-  "credit_fa": "عکس از علیرضا بحرانی",
-  "license": "Yerevan Project fieldwork, 15 July 2021",
-  "license_hy": "...", "license_fa": "..."
+  "credit": "Author", "credit_hy": "Հեղինակ", "credit_fa": "نگارنده"
 }
 ```
 
