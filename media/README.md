@@ -2,7 +2,7 @@
 
 Photographs referenced from `data/events.json`.
 
-Everything here is **openly licensed** — Creative Commons or public domain — and
+Everything here is **openly licensed**; Creative Commons or public domain, and
 mirrored from its source so the map does not break when a link dies. Each file's
 photographer, date, licence and source page live beside it in `events.json`, on
 the media item: `credit`, `license`, `source`, and `remote` (the URL the copy was
@@ -12,7 +12,7 @@ Files are resized to 1200 px on the long edge for the entry panel. The full
 resolution stays at the `source` link; nothing here is the only copy of anything.
 
 **Copyrighted material is not mirrored.** Press photographs and video are cited
-in an entry's `sources` and, where useful, embedded — never republished from this
+in an entry's `sources` and, where useful, embedded; never republished from this
 repository.
 
 ---
@@ -30,7 +30,7 @@ Added 2026-08-22, for the entry `genocide-ceremony`.
 | `genocide-2015-centenary-01.jpg` | Presidential Press and Information Office of Armenia | 24 Apr 2015 | CC BY-SA 3.0 |
 | `genocide-2015-centenary-03.jpg` | Presidential Press and Information Office of Armenia | 24 Apr 2015 | CC BY-SA 3.0 |
 
-The 2023 photograph is geotagged at 40.19189, 44.50602 — on Baghramyan Avenue in
+The 2023 photograph is geotagged at 40.19189, 44.50602; on Baghramyan Avenue in
 front of the President's Residence. That point falls on the routed line drawn for
 the Republic Square march, which is an independent check on the geometry.
 
