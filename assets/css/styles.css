@@ -1276,3 +1276,58 @@ html.lang-fa.geo-mark.geo-mountain b, html.lang-hy.geo-mark.geo-mountain b{
 /* a year box carries its own photographs */
 .d-year.d-media{ margin:10px 0 2px; }
 .d-year.d-media img{ border-radius:5px; }
+
+/* ===================================================================
+   DISPERSAL: one object, several addresses
+   -------------------------------------------------------------------
+   Copper, because the object is copper. The origin is drawn hollow and
+   the destinations solid, the same grammar the marches use for start and
+   end. A station with no coordinates gets a row in the panel and nothing
+   on the map: an address nobody will name is a finding, and putting a dot
+   somewhere plausible would destroy it.
+   =================================================================== */
+.disp-note{
+  transform:translateY(-8px);
+  pointer-events:none;
+  display:flex; flex-direction:column; gap:1px;
+  padding:5px 9px; max-width:200px;
+  background:rgba(18,18,20,.93); color:#fff;
+  border:1px solid var(--mk); border-radius:6px;
+  font-size:11px; line-height:1.32;
+  box-shadow:0 4px 14px rgba(0,0,0,.45);
+}
+.disp-note b{ font-weight:600; }
+.disp-note span{ color:var(--mk); font-variant-numeric:tabular-nums; }
+.disp-note i{ font-style:normal; color:#b9bcc2; font-size:10.5px; }
+.disp-note.origin{ border-style:dashed; transform:translateY(8px); }
+
+.d-dispersal .d-station.origin i{ background:none; box-shadow:0 0 0 2px var(--mk) inset; }
+.d-dispersal .d-station em{
+  flex:1 0 100%; color:var(--text-3); font-size:11.5px; margin-top:2px;
+}
+.d-dispersal .d-station{ flex-wrap:wrap; }
+.d-dispersal .d-station.on{ background:var(--bg-2); border-color:var(--mk); color:var(--text); }
+.d-dispersal .d-station.lost{
+  opacity:.75; cursor:default; border-style:dashed;
+}
+.d-dispersal .d-station.lost i{
+  background:none; box-shadow:0 0 0 1.5px var(--text-3) inset;
+}
+.d-dispersal .d-station.lost:hover{ background:var(--bg-3); border-color:var(--line); }
+
+/* ---- a chronology ---- */
+.d-chron{ display:flex; flex-direction:column; gap:0; margin:2px 0 6px; }
+.d-chron-row{
+  display:flex; gap:14px; padding:9px 0;
+  border-top:1px solid var(--line);
+}
+.d-chron-row:first-child{ border-top:none; }
+.d-chron-row b{
+  flex:0 0 116px; font-size:11.5px; font-weight:600; color:var(--mk, var(--accent));
+  color:var(--text-2); letter-spacing:.02em; padding-top:1px;
+}
+.d-chron-row p{ margin:0; flex:1; font-size:12.5px; color:var(--text-2); line-height:1.6; }
+@media (max-width: 860px){
+  .d-chron-row{ flex-direction:column; gap:3px; }
+  .d-chron-row b{ flex:none; }
+}
