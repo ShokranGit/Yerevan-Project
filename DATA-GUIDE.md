@@ -161,58 +161,94 @@ find the threads running across events you catalogued months apart.
 ## 7. Recurring rites: `recurs`, `paths`, `years`, `slogans`
 
 Most entries happened once. A few things in this city happen every year, and an
-annual rite is not a series of near-identical entries; sixteen of those would
-drown the timeline. It is one entry with an internal calendar.
+annual rite is not a series of near-identical entries; sixteen of those would drown
+the timeline. It is one entry with an internal calendar.
 
 ```jsonc
 {
   "id": "genocide-ceremony",
-  "date": "1999-04-23", "dateEnd": "2026-04-24",
+  "date": "2015-04-23", "dateEnd": "2026-04-24",
   "datePrecision": "recurring",
+  "episode": "genocide-commemoration",
 
-  // Two days of every year, marked on the timeline in their own colour.
-  // Clicking any year's mark opens this entry and highlights that year below.
-  "recurs": { "month": 4, "days": [23, 24], "from": 1999, "color": "#7d5ba6" },
+  // Marks on the main track, in the rite's own colour. `years` lists only the
+  // years the entry gives a box to. A mark for every year of the axis is a
+  // calendar; a mark for the years that hold an argument is a reading.
+  "recurs": { "month": 4, "days": [23, 24], "color": "#7d5ba6",
+              "years": [2015, 2018, 2020, 2021, 2022] },
 
   // More than one route. The FIRST is the primary: it is what the camera
-  // frames and what the entry's replay button walks. Every one of them is
-  // drawn, each with a note on the map naming the years it was used.
+  // frames and what the entry's replay button walks. Every one is drawn, each
+  // with a note on the map naming the years it was used. `active: false` draws
+  // it fainter and dashes its note.
   "pathColor": "#7d5ba6",
   "paths": [
-    { "id": "genocide-march-republic",
-      "label": "Republic Square → Tsitsernakaberd",
-      "years": "2022–2026", "active": true,  "path": [[lng, lat], …] },
-    { "id": "genocide-march-freedom",
-      "label": "Freedom Square → Tsitsernakaberd",
-      "years": "1999–2021", "active": false, "path": [[lng, lat], …] }
+    { "id": "genocide-march-republic", "label": "Republic Square to Tsitsernakaberd",
+      "years": "2022–2026", "active": true,  "path": [[lng, lat]] },
+    { "id": "genocide-march-freedom",  "label": "Freedom Square to Tsitsernakaberd",
+      "years": "1999–2021", "active": false, "path": [[lng, lat]] }
   ],
 
-  // The year-by-year chronicle rendered under the analysis.
-  // `confidence` is rendered, not footnoted: half the argument rests on
-  // which years are actually known, so a reader must see the gaps.
+  // The boxes under the analysis, and the stops on the period spur.
+  // `route` names one of the paths above: clicking that year frames and walks
+  // it. `media` is the year's own photographs, rendered inside its box.
   "years": [
-    { "year": 2022, "date": "2022-04-23",
-      "start": "republic",            // republic | freedom | unconfirmed | none
-      "actor": "ARF Youth Union",
-      "flags": true,                  // true | false | null (unrecorded)
-      "confidence": "confirmed",      // confirmed | partial | unknown
-      "note": "…", "note_hy": "…", "note_fa": "…" }
+    { "year": "2022", "label": "2022–2026", "date": "2022-04-23",
+      "start": "republic",          // republic | freedom | unconfirmed | none
+      "route": "genocide-march-republic",
+      "note": "...", "note_hy": "...", "note_fa": "...",
+      "media": [ ] }
   ],
 
   // Chants and formulas, Armenian first, transliterated, then glossed.
   "slogans": [
-    { "hy": "Զարթնի՛ր լաօ", "latin": "Zartnir lao",
-      "gloss": "…", "gloss_hy": "…", "gloss_fa": "…" }
+    { "hy": "Զարթնի́ր լաօ", "latin": "Zartnir lao",
+      "gloss": "...", "gloss_hy": "...", "gloss_fa": "..." }
   ]
 }
 ```
 
-`active: false` draws a route fainter and gives its note a dashed border; the
-route is still there, it is just no longer walked. (MapLibre will not accept a
-data expression for `line-dasharray`, so that difference is carried by opacity;
-do not try to switch the dash pattern per feature.)
+An episode can carry a **spur**, its own temporary timeline, opened by clicking its
+chip in the Periods rail:
+
+```jsonc
+{ "id": "2018-revolution",         "spur": { "kind": "events" } }
+{ "id": "genocide-commemoration",  "spur": { "kind": "years",
+                                             "entry": "genocide-ceremony" } }
+```
+
+`"events"` lists every entry whose `episode` is this one, in date order.
+`"years"` lists the `years` array of the entry named. Either way a stop opens its
+entry, moves the camera and, where there is a route, walks it.
 
 A media item may carry `remote` alongside `url`. `url` is the mirrored local copy
-and is what should normally be shown; `remote` is a fallback the panel uses only
-if the local file is missing, so an image added to the data before it has been
-mirrored still appears.
+and is what should normally be shown; `remote` is a fallback the panel uses only if
+the local file is missing, so an image added to the data before it has been mirrored
+still appears.
+
+---
+
+## 8. House rule: no em dashes
+
+**Do not use an em dash (the long one) anywhere in this project, in English,
+Armenian or Persian, in data, interface strings, code comments or documentation.**
+Use a comma, a semicolon, a colon or parentheses instead. En dashes stay where they
+belong, in numeric ranges such as `2022–2026`.
+
+To check before committing:
+
+```bash
+grep -rn $'\u2014' . --include='*.json' --include='*.js' --include='*.css' \
+  --include='*.html' --include='*.md' | grep -v vendor
+```
+
+Silence means clean.
+
+---
+
+## 9. Prose marks
+
+`summary`, `analysis` and a year's `note` accept two marks and no more:
+`**bold**` for the sentence a section turns on, and `*italic*` for a
+transliteration or a foreign word. Everything is HTML-escaped first, so nothing in
+the data can inject markup. Blank lines separate paragraphs.
