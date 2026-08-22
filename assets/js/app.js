@@ -2209,6 +2209,8 @@
     }).length;
   }
 
+  window.__rebuildTimeline = function () { try { buildEpisodes(); } catch (e) {} };
+
   function buildEpisodes() {
     var box = $("tl-episodes"), rail = $("tl-rail");
     if (!box) return;
