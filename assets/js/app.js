@@ -647,6 +647,123 @@
      address is data too, and drawing it anywhere would be a lie.
      ----------------------------------------------------------------- */
 
+  /* -----------------------------------------------------------------
+     THE IMAGE VIEWER
+     -----------------------------------------------------------------
+     Every photograph on this site opens here and nowhere else. One overlay,
+     built once and reused: the image at the largest size that fits, its
+     caption underneath, a close button and a real fullscreen button. Arrow
+     keys move between the photographs of the open entry, because an entry
+     carrying six frames of one afternoon in 1991 is a sequence and should be
+     readable as one.
+
+     The rule it enforces: a click on an image never navigates. Nothing on
+     this map should cost a reader their place in it.
+     ----------------------------------------------------------------- */
+
+  var lightbox = null, lbIndex = -1, lbShots = [];
+
+  function buildLightbox() {
+    if (lightbox) return lightbox;
+    var el = document.createElement("div");
+    el.id = "lightbox";
+    el.hidden = true;
+    el.innerHTML =
+      '<div class="lb-bar">' +
+        '<span class="lb-count"></span>' +
+        '<button type="button" class="lb-btn lb-full" title="">&#9974;</button>' +
+        '<button type="button" class="lb-btn lb-close" title="">&times;</button>' +
+      '</div>' +
+      '<button type="button" class="lb-nav lb-prev" aria-label="">&#8249;</button>' +
+      '<button type="button" class="lb-nav lb-next" aria-label="">&#8250;</button>' +
+      '<div class="lb-stage"><img alt=""></div>' +
+      '<div class="lb-cap"></div>';
+    document.body.appendChild(el);
+    lightbox = el;
+
+    el.querySelector(".lb-close").addEventListener("click", closeLightbox);
+    el.querySelector(".lb-full").addEventListener("click", toggleLightboxFull);
+    el.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(-1); });
+    el.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(1); });
+    /* the backdrop closes; the image and the caption do not */
+    el.addEventListener("click", function (e) {
+      if (e.target === el || (e.target.className || "") === "lb-stage") closeLightbox();
+    });
+    return el;
+  }
+
+  function lightboxLabels() {
+    if (!lightbox) return;
+    lightbox.querySelector(".lb-close").title = t("media.close");
+    lightbox.querySelector(".lb-full").title = t("media.fullscreen");
+    lightbox.querySelector(".lb-prev").setAttribute("aria-label", t("media.prev"));
+    lightbox.querySelector(".lb-next").setAttribute("aria-label", t("media.next"));
+  }
+
+  function openLightbox(fig) {
+    var host = (fig.closest && fig.closest("#detail-body")) || document;
+    lbShots = Array.prototype.slice.call(host.querySelectorAll(".d-media img"));
+    var img = fig.querySelector("img");
+    lbIndex = lbShots.indexOf(img);
+    if (lbIndex < 0) { lbShots = [img]; lbIndex = 0; }
+    buildLightbox();
+    lightboxLabels();
+    paintLightbox();
+    lightbox.hidden = false;
+    document.body.classList.add("lb-open");
+    lightbox.querySelector(".lb-close").focus();
+  }
+
+  function paintLightbox() {
+    var img = lbShots[lbIndex];
+    if (!img || !lightbox) return;
+    var big = lightbox.querySelector(".lb-stage img");
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt || "";
+    var figure = img.closest ? img.closest("figure") : null;
+    var figcap = figure ? figure.querySelector("figcaption") : null;
+    lightbox.querySelector(".lb-cap").innerHTML = figcap ? figcap.innerHTML : "";
+    var many = lbShots.length > 1;
+    lightbox.querySelector(".lb-count").textContent =
+      many ? num(lbIndex + 1) + " / " + num(lbShots.length) : "";
+    lightbox.querySelector(".lb-prev").hidden = !many;
+    lightbox.querySelector(".lb-next").hidden = !many;
+  }
+
+  function stepLightbox(d) {
+    if (!lbShots.length) return;
+    lbIndex = (lbIndex + d + lbShots.length) % lbShots.length;
+    paintLightbox();
+  }
+
+  function closeLightbox() {
+    if (!lightbox || lightbox.hidden) return;
+    if (document.fullscreenElement) { try { document.exitFullscreen(); } catch (e) {} }
+    lightbox.hidden = true;
+    lightbox.querySelector(".lb-stage img").removeAttribute("src");
+    document.body.classList.remove("lb-open");
+  }
+
+  function toggleLightboxFull(e) {
+    if (e) e.stopPropagation();
+    if (document.fullscreenElement) { try { document.exitFullscreen(); } catch (er) {} return; }
+    if (lightbox && lightbox.requestFullscreen) {
+      try { lightbox.requestFullscreen(); } catch (er) {}
+    }
+  }
+
+  function lightboxOpen() { return lightbox && !lightbox.hidden; }
+
+  /* One listener for the whole document: media is rendered into the panel and
+     into year boxes, and new markup arrives every time an entry opens. */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".d-zoom") : null;
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openLightbox(btn);
+  });
+
   var DISPERSE = null, dispMarkers = [];
 
   /* A gentle arc, so the link reads as a relation and not as a street.
@@ -1853,8 +1970,14 @@
        should still show, so the remote original is kept as a fallback of last
        resort rather than as the source. */
     var fb = m.remote ? ' data-fb="' + esc(m.remote) + '" onerror="if(this.dataset.fb){var u=this.dataset.fb;this.dataset.fb=\'\';this.src=u;}"' : "";
-    return '<figure class="d-media"><a href="' + esc(m.source || m.url) + '" target="_blank" rel="noopener">' +
-           '<img src="' + esc(m.url) + '"' + fb + ' alt="' + esc(tr(m, "caption")) + '" loading="lazy"></a>' +
+    /* No photograph on this site leaves the page. Clicking one opens it in the
+       viewer, and that is the rule for every image here: a reader following an
+       argument should never be thrown into a browser tab holding a bare JPEG
+       with no way back except the back button. */
+    return '<figure class="d-media"><button type="button" class="d-zoom" aria-label="' +
+           esc(t("media.enlarge")) + '">' +
+           '<img src="' + esc(m.url) + '"' + fb + ' alt="' + esc(tr(m, "caption")) + '" loading="lazy">' +
+           '<i class="d-zoom-hint" aria-hidden="true"></i></button>' +
            mediaMeta(m) + '</figure>';
   }
 
@@ -2548,9 +2671,16 @@
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
+        if (lightboxOpen()) { closeLightbox(); return; }
         if (!$("about-modal").hidden) $("about-modal").hidden = true;
         else if (spurEp) closeSpur();
         else if (!$("detail-view").hidden) closeDetail();
+      }
+      if (lightboxOpen()) {
+        if (e.key === "ArrowRight") { e.preventDefault(); stepLightbox(1); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); stepLightbox(-1); }
+        else if (e.key === "f" || e.key === "F") { e.preventDefault(); toggleLightboxFull(); }
+        return;
       }
       if (e.key === " " && e.target === document.body) { e.preventDefault(); togglePlay(); }
     });
@@ -2572,6 +2702,7 @@
         buildEpisodes();
         buildCommem();
         if (spurEp) { var _e = episodeById(spurEp); spurEp = null; if (_e) openSpur(_e); }
+        lightboxLabels();
         buildAbout();
         updateTimelineUI();
         updateCenturyUI();
