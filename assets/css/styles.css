@@ -1,5 +1,5 @@
 /* ===================================================================
-   Yerevan Project — interface styles
+   Yerevan Project, interface styles
    Palette is defined once here. Change these variables to re-skin.
    =================================================================== */
 
@@ -46,7 +46,7 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   border-right:1px solid var(--line);
   display:flex; flex-direction:column;
   overflow:hidden;
-  transition:margin-left .28s cubic-bezier(.4,0,.2,1);
+  transition:margin-left.28s cubic-bezier(.4,0,.2,1);
   z-index:5;
 }
 #app.panel-closed #panel{ margin-left:calc(-1 * var(--panel-w)); }
@@ -72,7 +72,7 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   background:var(--bg-3); border:1px solid var(--line);
   color:var(--text-2); cursor:pointer; font-size:11px; line-height:1;
   display:flex; align-items:center; justify-content:center;
-  transition:left .28s cubic-bezier(.4,0,.2,1), transform .28s, background .15s;
+  transition:left.28s cubic-bezier(.4,0,.2,1), transform.28s, background.15s;
   z-index:20;
 }
 #app.panel-closed #panel-toggle{ left:10px; }
@@ -133,15 +133,15 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
 }
 .cat:hover{ background:var(--bg-3); }
 .cat input{ display:none; }
-.cat .swatch{
+.cat.swatch{
   width:11px; height:11px; border-radius:3px; flex:0 0 auto;
   border:1px solid rgba(255,255,255,.18);
-  transition:opacity .15s, transform .15s;
+  transition:opacity.15s, transform.15s;
 }
-.cat.off .swatch{ opacity:.22; transform:scale(.8); }
-.cat .cat-label{ flex:1; font-size:13.5px; }
-.cat.off .cat-label{ color:var(--text-3); }
-.cat .cat-count{ font-size:11px; color:var(--text-3); font-variant-numeric:tabular-nums; }
+.cat.off.swatch{ opacity:.22; transform:scale(.8); }
+.cat.cat-label{ flex:1; font-size:13.5px; }
+.cat.off.cat-label{ color:var(--text-3); }
+.cat.cat-count{ font-size:11px; color:var(--text-3); font-variant-numeric:tabular-nums; }
 
 /* ---- result list ---- */
 #results{ list-style:none; margin:0; padding:0; }
@@ -149,7 +149,7 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   padding:10px 10px 10px 12px; margin:0 -10px 2px;
   border-radius:7px; cursor:pointer;
   border-left:2px solid transparent;
-  transition:background .12s;
+  transition:background.12s;
 }
 .res:hover{ background:var(--bg-3); }
 .res.active{ background:var(--bg-3); border-left-color:var(--accent); }
@@ -206,22 +206,22 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
 .d-sec li{ margin-bottom:6px; }
 .d-sec a{ color:var(--focus); text-decoration:none; }
 .d-sec a:hover{ text-decoration:underline; }
-.d-media img, .d-media video{
+.d-media img,.d-media video{
   width:100%; border-radius:7px; display:block; border:1px solid var(--line);
   background:var(--bg);
 }
 .d-media a{ display:block; }
-.d-media a img{ transition:opacity .15s; }
+.d-media a img{ transition:opacity.15s; }
 .d-media a:hover img{ opacity:.85; }
 
 /* click-to-load embed: nothing is requested from YouTube until the play button */
-.d-media .embed{
+.d-media.embed{
   position:relative; width:100%; aspect-ratio:16/9;
   background:var(--bg); border:1px solid var(--line); border-radius:7px;
   overflow:hidden; display:flex; align-items:center; justify-content:center;
 }
-.d-media .embed img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; }
-.d-media .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.d-media.embed img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; }
+.d-media.embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 .embed-play{
   position:relative; z-index:2; width:52px; height:52px; border-radius:50%;
   background:rgba(201,38,44,.92); border:none; color:#fff; font-size:16px;
@@ -285,26 +285,26 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   border-radius:0 0 5px 5px;
   backdrop-filter:blur(8px);
 }
-#map-wrap.on-light ~ * .maplibregl-ctrl-scale,
-body.light .maplibregl-ctrl-scale{
+#map-wrap.on-light ~ *.maplibregl-ctrl-scale,
+body.light.maplibregl-ctrl-scale{
   background:rgba(255,255,255,.9) !important;
   border-color:#d5d8de !important;
   color:#6d737b !important;
 }
 .maplibregl-ctrl-bottom-right,.maplibregl-ctrl-bottom-left{ z-index:3; }
 .maplibregl-ctrl-bottom-left{ display:none; }
-.maplibregl-ctrl-bottom-left .maplibregl-ctrl{ margin:0; }
+.maplibregl-ctrl-bottom-left.maplibregl-ctrl{ margin:0; }
 
 /* clear the custom button row that sits at top:14px */
 .maplibregl-ctrl-top-right{ top:38px; }
 
-#map-wrap.on-light .map-btn{
+#map-wrap.on-light.map-btn{
   background:rgba(255,255,255,.92); border-color:#d5d8de; color:#4a5058;
 }
-#map-wrap.on-light .map-btn:hover{ color:#111; border-color:var(--accent); }
-body.light .maplibregl-ctrl-group{ background:rgba(255,255,255,.94) !important; border-color:#d5d8de !important; }
-body.light .maplibregl-ctrl-group button span{ filter:none; opacity:.75; }
-body.light .maplibregl-ctrl-group button:hover{ background:#eef0f3 !important; }
+#map-wrap.on-light.map-btn:hover{ color:#111; border-color:var(--accent); }
+body.light.maplibregl-ctrl-group{ background:rgba(255,255,255,.94) !important; border-color:#d5d8de !important; }
+body.light.maplibregl-ctrl-group button span{ filter:none; opacity:.75; }
+body.light.maplibregl-ctrl-group button:hover{ background:#eef0f3 !important; }
 .maplibregl-popup-content{
   background:var(--bg-2); color:var(--text);
   border:1px solid var(--line); border-radius:7px;
@@ -329,7 +329,7 @@ body.light .maplibregl-ctrl-group button:hover{ background:#eef0f3 !important; }
 /* ---------------- TIMELINE ---------------- */
 
 #timeline{
-  /* The right edge clears the two 132 px thumbnails parked at right:14px —
+  /* The right edge clears the two 132 px thumbnails parked at right:14px; 
      otherwise the last years of the axis, and any period chip that lands
      there, sit underneath them and cannot be read or clicked. */
   position:absolute; left:20px; right:162px; bottom:52px; z-index:4;
@@ -416,13 +416,13 @@ body.light .maplibregl-ctrl-group button:hover{ background:#eef0f3 !important; }
   position:fixed; inset:0; z-index:100; background:var(--bg);
   display:flex; align-items:center; justify-content:center;
   color:var(--text-3); font-size:13px; letter-spacing:.06em;
-  transition:opacity .4s; 
+  transition:opacity.4s; 
 }
 #loading.done{ opacity:0; pointer-events:none; }
 
 /* ---------------- LIGHT BASEMAP MODE ---------------- */
-body.light .maplibregl-popup-content{ background:#fff; color:#1a1a1a; border-color:#ddd; }
-body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-bottom-color:#fff !important; }
+body.light.maplibregl-popup-content{ background:#fff; color:#1a1a1a; border-color:#ddd; }
+body.light.maplibregl-popup-tip{ border-top-color:#fff !important; border-bottom-color:#fff !important; }
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 860px){
@@ -436,7 +436,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 }
 
 /* ===================================================================
-   MAP FURNITURE — north arrow, coordinate readout, century timeline
+   MAP FURNITURE; north arrow, coordinate readout, century timeline
    =================================================================== */
 
 #north{
@@ -445,16 +445,16 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
   background:none; border:none; cursor:pointer;
   filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));
 }
-#north svg{ width:100%; height:100%; transform-origin:50% 62%; transition:transform .15s linear; }
-#north .n-dark{ fill:var(--accent); }
-#north .n-light{ fill:#8d939b; }
-#north .n-label{ font:700 13px var(--font-ui); fill:#8d939b; letter-spacing:.05em; }
-#north:hover .n-light{ fill:#b6bcc4; }
-#north.off-north .n-label{ fill:var(--accent); }
+#north svg{ width:100%; height:100%; transform-origin:50% 62%; transition:transform.15s linear; }
+#north.n-dark{ fill:var(--accent); }
+#north.n-light{ fill:#8d939b; }
+#north.n-label{ font:700 13px var(--font-ui); fill:#8d939b; letter-spacing:.05em; }
+#north:hover.n-light{ fill:#b6bcc4; }
+#north.off-north.n-label{ fill:var(--accent); }
 
 #map-wrap.on-light #north{ filter:drop-shadow(0 1px 4px rgba(0,0,0,.22)); }
-#map-wrap.on-light #north .n-light{ fill:#6d737b; }
-#map-wrap.on-light #north .n-label{ fill:#4a5058; }
+#map-wrap.on-light #north.n-light{ fill:#6d737b; }
+#map-wrap.on-light #north.n-label{ fill:#4a5058; }
 
 #coords{
   position:absolute; left:20px; bottom:13px; z-index:4;
@@ -470,7 +470,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 #scale-bar{
   display:block; height:6px; width:60px;
   border:1px solid var(--text-3); border-top:none;
-  transition:width .1s linear;
+  transition:width.1s linear;
 }
 #scale-label{ font-weight:400; color:var(--text-3); }
 #map-wrap.on-light #scale{ border-left-color:#d5d8de; }
@@ -483,7 +483,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 
 /* ---- century track ---- */
 .tl-sep{ height:1px; background:var(--line-soft); margin:10px 0 8px; }
-.tl-row-century .tl-era{
+.tl-row-century.tl-era{
   font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
   color:var(--text-3); flex:0 0 auto; padding-right:2px;
 }
@@ -521,7 +521,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 
 
 /* ===================================================================
-   COORDINATE PICK — attached to the readout it belongs to
+   COORDINATE PICK; attached to the readout it belongs to
    =================================================================== */
 
 /* The strip itself is click-through; only the button inside it is not. */
@@ -589,15 +589,15 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 .map-select:focus{ outline:none; border-color:var(--accent); }
 .map-select option{ background:#161920; color:#e6e8ec; }
 
-#map-wrap.on-light .map-select{
+#map-wrap.on-light.map-select{
   background-color:rgba(255,255,255,.92); border-color:#d5d8de; color:#4a5058;
 }
-#map-wrap.on-light .map-select:hover{ color:#111; border-color:var(--accent); }
-#map-wrap.on-light .map-select option{ background:#fff; color:#111; }
+#map-wrap.on-light.map-select:hover{ color:#111; border-color:var(--accent); }
+#map-wrap.on-light.map-select option{ background:#fff; color:#111; }
 
 
 /* ===================================================================
-   THE RELATIONAL MODEL IN 3D — thumbnail, and the window it opens
+   THE RELATIONAL MODEL IN 3D; thumbnail, and the window it opens
    =================================================================== */
 
 #g3-thumb{
@@ -646,7 +646,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
   font-size:10.5px; color:var(--text-3); pointer-events:none;
 }
 #g3-legend span{ display:flex; align-items:center; gap:5px; }
-#g3-legend i, .g3-group i{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+#g3-legend i,.g3-group i{ width:8px; height:8px; border-radius:50%; display:inline-block; }
 
 .g3-side{
   flex:0 0 316px; border-left:1px solid var(--line);
@@ -655,7 +655,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 .g3-side h3{ margin:0 0 6px; font-size:15px; font-weight:500; color:var(--text); line-height:1.3; }
 .g3-group{ display:flex; align-items:center; gap:6px; margin:0 0 14px;
   font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-3); }
-.g3-empty, .g3-none{ font-size:12.5px; line-height:1.6; color:var(--text-2); margin:0; }
+.g3-empty,.g3-none{ font-size:12.5px; line-height:1.6; color:var(--text-2); margin:0; }
 .g3-none{ color:var(--text-3); }
 .g3-count{ margin:16px 0 7px; font-size:10.5px; letter-spacing:.06em;
   text-transform:uppercase; color:var(--text-3); }
@@ -677,14 +677,14 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 
 @media (max-width:900px){
   #g3-modal{ padding:12px; }
-  .g3-shell{ flex-direction:column; }
-  .g3-side{ flex:0 0 auto; max-height:44%; border-left:none; border-top:1px solid var(--line); }
+.g3-shell{ flex-direction:column; }
+.g3-side{ flex:0 0 auto; max-height:44%; border-left:none; border-top:1px solid var(--line); }
   #g3-thumb{ width:96px; height:96px; bottom:132px; right:10px; }
 }
 
 
 /* ===================================================================
-   THE POLITICAL LANDSCAPE — second thumbnail, its own window
+   THE POLITICAL LANDSCAPE; second thumbnail, its own window
    =================================================================== */
 
 #p3-thumb{
@@ -748,7 +748,7 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
 
 .p3-people{ display:flex; flex-direction:column; gap:9px; }
 .p3-person{ display:flex; align-items:center; gap:10px; }
-.p3-person img, .p3-nophoto{
+.p3-person img,.p3-nophoto{
   width:44px; height:44px; flex:0 0 44px; border-radius:50%;
   object-fit:cover; background:var(--bg-3); border:1px solid var(--line);
 }
@@ -782,8 +782,8 @@ body.light .maplibregl-popup-tip{ border-top-color:#fff !important; border-botto
    THREE LANGUAGES
    -------------------------------------------------------------------
    English and Armenian read left to right; Persian reads right to
-   left. Rather than rewrite every rule above into logical properties —
-   a large diff across working layout — the physical rules that would
+   left. Rather than rewrite every rule above into logical properties, 
+   a large diff across working layout, the physical rules that would
    land on the wrong side are flipped here, in one block, keyed off the
    dir attribute i18n.js sets on <html>.
 
@@ -815,10 +815,10 @@ html.lang-fa{
 /* Persian and Armenian both sit lower and need a little more air than
    Inter at the same size. */
 html.lang-fa body{ line-height:1.85; }
-html.lang-fa .brand-sub{ letter-spacing:0; text-transform:none; }
-html.lang-hy .brand-sub{ letter-spacing:.02em; text-transform:none; }
-html.lang-fa .d-sec h3, html.lang-fa .block-head h2,
-html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
+html.lang-fa.brand-sub{ letter-spacing:0; text-transform:none; }
+html.lang-hy.brand-sub{ letter-spacing:.02em; text-transform:none; }
+html.lang-fa.d-sec h3, html.lang-fa.block-head h2,
+html.lang-hy.d-sec h3, html.lang-hy.block-head h2{ letter-spacing:0; }
 
 /* ---- the switch ---- */
 #lang-switch{
@@ -829,7 +829,7 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
 #lang-switch button{
   background:none; border:none; cursor:pointer;
   padding:3px 7px; font-size:11px; line-height:1.5;
-  color:var(--text-3); transition:background .15s, color .15s;
+  color:var(--text-3); transition:background.15s, color.15s;
 }
 #lang-switch button:hover{ color:var(--text); background:var(--bg); }
 #lang-switch button.on{ background:var(--accent); color:#fff; }
@@ -838,9 +838,9 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
 
 /* ---- things that never flip ---- */
 #coord-lat, #coord-lng, #coord-zoom, #pick-val, #scale-label{ direction:ltr; unicode-bidi:isolate; }
-.tl-slider, .tl-slider input[type=range],
+.tl-slider,.tl-slider input[type=range],
 #tl-density, #cn-density, #tl-ticks, #cn-ticks,
-.p3-bar, .p3-bar input[type=range], .p3-scale{ direction:ltr; }
+.p3-bar,.p3-bar input[type=range],.p3-scale{ direction:ltr; }
 .d-sec.sources li span[dir="ltr"]{ unicode-bidi:isolate; }
 
 .g3-head-btns{ display:flex; gap:6px; }
@@ -857,36 +857,36 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
 [dir="rtl"] #panel-toggle{
   left:auto; right:calc(var(--panel-w) - 14px);
   transform:rotate(180deg);
-  transition:right .28s cubic-bezier(.4,0,.2,1), transform .28s, background .15s;
+  transition:right.28s cubic-bezier(.4,0,.2,1), transform.28s, background.15s;
 }
 [dir="rtl"] #app.panel-closed #panel-toggle{ left:auto; right:10px; transform:rotate(0deg); }
 
 [dir="rtl"] #lang-switch{ margin:2px 0 0 34px; }
 
-[dir="rtl"] .count{ margin-left:0; margin-right:4px; }
-[dir="rtl"] .ctx{ margin-left:0; margin-right:5px; }
-[dir="rtl"] .res{ border-left:none; border-right:2px solid transparent; }
-[dir="rtl"] .res.active{ border-left-color:transparent; border-right-color:var(--accent); }
-[dir="rtl"] .d-sec.analysis{ border-left:none; border-right:2px solid var(--accent); }
-[dir="rtl"] .d-sec ul{ padding-left:0; padding-right:18px; }
-[dir="rtl"] .embed-play{ padding-left:0; padding-right:3px; }
-[dir="rtl"] .back-caret{ display:inline-block; transform:scaleX(-1); }
-[dir="rtl"] .tl-dash{ display:inline-block; transform:scaleX(-1); }
+[dir="rtl"].count{ margin-left:0; margin-right:4px; }
+[dir="rtl"].ctx{ margin-left:0; margin-right:5px; }
+[dir="rtl"].res{ border-left:none; border-right:2px solid transparent; }
+[dir="rtl"].res.active{ border-left-color:transparent; border-right-color:var(--accent); }
+[dir="rtl"].d-sec.analysis{ border-left:none; border-right:2px solid var(--accent); }
+[dir="rtl"].d-sec ul{ padding-left:0; padding-right:18px; }
+[dir="rtl"].embed-play{ padding-left:0; padding-right:3px; }
+[dir="rtl"].back-caret{ display:inline-block; transform:scaleX(-1); }
+[dir="rtl"].tl-dash{ display:inline-block; transform:scaleX(-1); }
 
 [dir="rtl"] #map-controls{ right:auto; left:14px; }
-[dir="rtl"] .modal-close{ right:auto; left:16px; }
+[dir="rtl"].modal-close{ right:auto; left:16px; }
 [dir="rtl"] #north{ right:auto; left:17px; }
 [dir="rtl"] #coords{ left:auto; right:20px; }
 [dir="rtl"] #scale{ padding-left:0; padding-right:12px; border-left:none; border-right:1px solid var(--line); }
-[dir="rtl"] .tl-era{ padding-right:0; padding-left:2px; }
+[dir="rtl"].tl-era{ padding-right:0; padding-left:2px; }
 [dir="rtl"] #pick-out{ left:auto; right:20px; }
 
 [dir="rtl"] #timeline{ left:162px; right:20px; }
 [dir="rtl"] #g3-thumb{ right:auto; left:14px; }
 [dir="rtl"] #p3-thumb{ right:auto; left:14px; }
-[dir="rtl"] .g3-side{ border-left:none; border-right:1px solid var(--line); }
-[dir="rtl"] .g3-head{ left:18px; right:18px; }
-[dir="rtl"] .p3-caveat{
+[dir="rtl"].g3-side{ border-left:none; border-right:1px solid var(--line); }
+[dir="rtl"].g3-head{ left:18px; right:18px; }
+[dir="rtl"].p3-caveat{
   border-left:none; border-right:2px solid var(--line);
   padding-left:0; padding-right:10px;
 }
@@ -901,7 +901,7 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
   [dir="rtl"] #timeline{ left:118px; right:10px; }
   [dir="rtl"] #g3-thumb{ right:auto; left:10px; }
   [dir="rtl"] #p3-thumb{ right:auto; left:10px; }
-  [dir="rtl"] .g3-side{ border-right:none; }
+  [dir="rtl"].g3-side{ border-right:none; }
 }
 
 /* ===================================================================
@@ -910,7 +910,7 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
 
 /* ---- a named stretch of time, marked on the main track ----
    Thirty-nine days inside twenty-nine years is four pixels. So the mark is a
-   thin stem with a label tethered above it — a sticky note — and it only
+   thin stem with a label tethered above it, a sticky note, and it only
    becomes a readable band once the window is zoomed into the period, which is
    what clicking the note does. */
 #tl-episodes{
@@ -928,9 +928,9 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
   min-width:3px; display:block;
   background:var(--ep); opacity:.55; border-radius:2px;
   box-shadow:0 0 0 1px rgba(0,0,0,.35);
-  transition:opacity .18s;
+  transition:opacity.18s;
 }
-.tl-ep:hover .tl-ep-band{ opacity:.95; }
+.tl-ep:hover.tl-ep-band{ opacity:.95; }
 /* the floating note over the track was replaced by the periods rail below */
 
 /* ---- the episode badge inside an entry ---- */
@@ -953,14 +953,14 @@ html.lang-hy .d-sec h3, html.lang-hy .block-head h2{ letter-spacing:0; }
   flex:1 0 100%; font-size:12px; letter-spacing:.05em;
   text-transform:uppercase; color:var(--text-3);
 }
-html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; letter-spacing:0; }
-.d-route-end, .d-route-replay{
+html.lang-fa.d-route-head, html.lang-hy.d-route-head{ text-transform:none; letter-spacing:0; }
+.d-route-end,.d-route-replay{
   display:inline-flex; align-items:center; gap:6px;
   font-size:12px; color:var(--text-2);
   background:var(--bg-2); border:1px solid var(--line);
   border-radius:5px; padding:4px 9px; cursor:pointer;
 }
-.d-route-end:hover, .d-route-replay:hover{ color:var(--text); border-color:var(--accent); }
+.d-route-end:hover,.d-route-replay:hover{ color:var(--text); border-color:var(--accent); }
 .d-route-end i{ width:9px; height:9px; border-radius:50%; flex:0 0 auto; }
 .d-route-end i.rs{ background:#fff; box-shadow:0 0 0 2px var(--accent) inset; }
 .d-route-end i.re{ background:var(--accent); box-shadow:0 0 0 1.5px #fff; }
@@ -979,7 +979,7 @@ html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; let
 #tl-rail{
   position:relative; flex:1; min-width:0;
   height:26px;                       /* grows to 56px when the chips need two rows */
-  transition:height .15s;
+  transition:height.15s;
   direction:ltr;                    /* time runs left to right in every language */
 }
 .tl-rail-chip{
@@ -990,7 +990,7 @@ html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; let
   background:var(--bg-3); color:var(--text-2);
   border:1px solid var(--line); border-left:3px solid var(--ep);
   border-radius:5px; cursor:pointer; font-size:12px; line-height:1;
-  transition:color .15s, border-color .15s, background .15s;
+  transition:color.15s, border-color.15s, background.15s;
 }
 .tl-rail-chip:hover{ color:var(--text); background:var(--bg-2); border-color:var(--ep); }
 .tl-rail-chip.on{ color:#fff; background:var(--ep); border-color:var(--ep); }
@@ -1005,19 +1005,19 @@ html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; let
   position:absolute; bottom:100%; width:1px; height:9px;
   background:var(--ep); opacity:.6;
 }
-.tl-rail-chip:hover .tl-rail-tick, .tl-rail-chip.on .tl-rail-tick{ opacity:1; }
+.tl-rail-chip:hover.tl-rail-tick,.tl-rail-chip.on.tl-rail-tick{ opacity:1; }
 
 /* the span on the main track: no words, just the place */
 .tl-ep{ cursor:pointer; }
 .tl-ep-band{ opacity:.5; }
-.tl-ep:hover .tl-ep-band, .tl-ep.on .tl-ep-band{ opacity:1; }
+.tl-ep:hover.tl-ep-band,.tl-ep.on.tl-ep-band{ opacity:1; }
 
 @media (max-width: 860px){
-  .tl-rail-chip{ font-size:11px; height:22px; padding:0 7px 0 8px; }
+.tl-rail-chip{ font-size:11px; height:22px; padding:0 7px 0 8px; }
 }
 
 /* ===================================================================
-   GEOGRAPHIC SCALE — places named on the map
+   GEOGRAPHIC SCALE; places named on the map
    -------------------------------------------------------------------
    HTML markers rather than symbol layers: a symbol layer needs the
    basemap's glyph server and one of the five basemaps here is a bare
@@ -1041,16 +1041,16 @@ html.lang-fa .d-route-head, html.lang-hy .d-route-head{ text-transform:none; let
 }
 /* the anchor city reads as the place you came from, not another destination */
 .geo-mark.geo-city i{ background:#fff; border-color:var(--accent); }
-.geo-mark.geo-region b, .geo-mark.geo-mountain b{
+.geo-mark.geo-region b,.geo-mark.geo-mountain b{
   background:rgba(22,25,32,.8); font-weight:500; letter-spacing:.06em;
   text-transform:uppercase; font-size:11px;
 }
-.geo-mark.geo-region i, .geo-mark.geo-mountain i{
+.geo-mark.geo-region i,.geo-mark.geo-mountain i{
   width:7px; height:7px; border-radius:1px; transform:rotate(45deg);
   background:var(--text-2); border-color:#fff;
 }
-html.lang-fa .geo-mark.geo-region b, html.lang-hy .geo-mark.geo-region b,
-html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
+html.lang-fa.geo-mark.geo-region b, html.lang-hy.geo-mark.geo-region b,
+html.lang-fa.geo-mark.geo-mountain b, html.lang-hy.geo-mark.geo-mountain b{
   text-transform:none; letter-spacing:0; font-size:12px;
 }
 .geo-dist{
@@ -1080,15 +1080,15 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
 .d-axis b{ color:var(--text); font-variant-numeric:tabular-nums; }
 .d-axis span{ display:inline-flex; align-items:center; gap:7px; }
 .d-axis i{ width:16px; height:0; border-top:2px solid; flex:0 0 auto; }
-.d-axis .ax-built i{ border-color:#ffffff; }
-.d-axis .ax-target i{ border-top-style:dotted; border-color:var(--accent); }
+.d-axis.ax-built i{ border-color:#ffffff; }
+.d-axis.ax-target i{ border-top-style:dotted; border-color:var(--accent); }
 .d-axis em{
   font-style:normal; margin-inline-start:auto;
   color:var(--accent); font-weight:600; font-variant-numeric:tabular-nums;
 }
 
 /* ===================================================================
-   THE ANNUAL COMMEMORATION — 23 and 24 April, every year
+   THE ANNUAL COMMEMORATION; 23 and 24 April, every year
    -------------------------------------------------------------------
    Purple here is not decoration. The forget-me-not adopted for the 1915
    centenary is the flower the commemoration is worn as, and these two days
@@ -1110,25 +1110,16 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
   min-width:3px; display:block;
   background:var(--cm); opacity:.62; border-radius:1.5px;
   box-shadow:0 0 0 1px rgba(0,0,0,.4);
-  transition:opacity .15s, box-shadow .15s;
+  transition:opacity.15s, box-shadow.15s;
 }
-.tl-cm:hover i, .tl-cm:focus-visible i{
+.tl-cm:hover i,.tl-cm:focus-visible i{
   opacity:1; box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 0 7px var(--cm);
 }
 
-.tl-commem-row{ margin-top:6px; }
-.tl-commem-key{
-  display:inline-flex; align-items:center; gap:8px;
-  height:24px; padding:0 10px;
-  background:var(--bg-3); color:var(--text-2);
-  border:1px solid var(--line); border-left:3px solid var(--cm, #7d5ba6);
-  border-radius:5px; cursor:pointer; font-size:12px; line-height:1;
-}
-.tl-commem-key:hover{ color:var(--text); border-color:var(--cm, #7d5ba6); background:var(--bg-2); }
-.tl-commem-key i{
-  width:9px; height:9px; border-radius:50%;
-  background:var(--cm, #7d5ba6); flex:0 0 auto;
-}
+
+
+
+
 
 /* ---- the two routes, in the entry panel ---- */
 .d-marches{ display:flex; flex-direction:column; gap:7px; margin:0 0 16px; }
@@ -1174,7 +1165,7 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
   padding:10px 12px; border-radius:7px;
   border-inline-start:3px solid var(--line);
   background:var(--bg-3);
-  transition:background .3s, border-color .3s;
+  transition:background.3s, border-color.3s;
 }
 .d-year.fre{ border-inline-start-color:#6b8fa8; }
 .d-year.rep{ border-inline-start-color:#7d5ba6; }
@@ -1187,18 +1178,11 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
   font-variant-numeric:tabular-nums;
 }
 .d-year-sq{ font-size:11.5px; color:var(--text-2); }
-.d-year-fl{
-  font-size:10.5px; padding:1px 6px; border-radius:3px;
-  background:rgba(201,38,44,.16); color:#e0574a;
-}
-.d-year-cf{
-  margin-inline-start:auto; font-size:10.5px;
-  padding:1px 6px; border-radius:3px; color:var(--text-3);
-  background:rgba(255,255,255,.06);
-}
-.d-year-cf.cf-confirmed{ color:#7fbf5e; }
-.d-year-cf.cf-partial{ color:#e8a13a; }
-.d-year .d-year-head + p{ margin:0; font-size:12.5px; color:var(--text-2); line-height:1.6; }
+
+
+
+
+.d-year.d-year-head + p{ margin:0; font-size:12.5px; color:var(--text-2); line-height:1.6; }
 .d-note{
   margin:8px 0 0; font-size:11.5px; color:var(--text-3);
   font-style:italic; line-height:1.55;
@@ -1222,3 +1206,73 @@ html.lang-fa .geo-mark.geo-mountain b, html.lang-hy .geo-mark.geo-mountain b{
 
 /* time runs left to right in every language, so the marks do too */
 [dir="rtl"] #tl-commem{ direction:ltr; }
+
+/* ===================================================================
+   THE SPUR: a period's own timeline
+   -------------------------------------------------------------------
+   The main track can only show WHERE a period sits. Clicking its chip
+   unfolds this strip, which shows what is INSIDE it: the revolution as
+   thirty-nine days, the commemoration as its years. It is temporary on
+   purpose. A second permanent axis would compete with the first.
+   =================================================================== */
+#tl-spur{
+  margin:10px 0 0; padding:9px 10px 8px;
+  background:var(--bg-3); border:1px solid var(--line); border-radius:8px;
+}
+#tl-spur[hidden]{ display:none; }
+.tl-spur-head{
+  display:flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:12px; color:var(--text-2);
+}
+.tl-spur-head b{ color:var(--text); font-weight:600; }
+.tl-spur-head span{
+  font-size:10.5px; padding:1px 6px; border-radius:3px;
+  background:var(--ep); color:#fff; font-variant-numeric:tabular-nums;
+}
+.tl-spur-x{
+  margin-inline-start:auto; width:22px; height:22px; line-height:1;
+  background:none; border:1px solid var(--line); border-radius:5px;
+  color:var(--text-3); cursor:pointer; font-size:15px;
+}
+.tl-spur-x:hover{ color:var(--text); border-color:var(--ep); }
+.tl-spur-track{
+  position:relative; display:flex; gap:6px;
+  overflow-x:auto; overflow-y:hidden; padding:8px 2px 4px;
+  direction:ltr;                      /* time runs left to right in every language */
+  scrollbar-width:thin;
+}
+.tl-spur-track::before{
+  content:""; position:absolute; left:0; right:0; top:4px; height:1px;
+  background:var(--ep); opacity:.35;
+}
+.tl-spur-stop{
+  position:relative; flex:0 0 auto; max-width:190px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  padding:7px 10px 6px; text-align:start;
+  background:var(--bg-2); color:var(--text-2);
+  border:1px solid var(--line); border-radius:6px;
+  cursor:pointer; font-size:11.5px; line-height:1.25;
+}
+.tl-spur-stop i{
+  position:absolute; left:12px; bottom:100%; width:1px; height:8px;
+  background:var(--ep); opacity:.5;
+}
+.tl-spur-stop b{
+  font-size:12.5px; font-weight:700; color:var(--text);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.tl-spur-stop span{
+  color:var(--text-3); overflow:hidden; text-overflow:ellipsis;
+  white-space:nowrap; max-width:170px;
+}
+.tl-spur-stop:hover{ border-color:var(--ep); color:var(--text); }
+.tl-spur-stop:hover i,.tl-spur-stop.on i{ opacity:1; }
+.tl-spur-stop.on{
+  background:var(--ep); border-color:var(--ep); color:#fff;
+}
+.tl-spur-stop.on b,.tl-spur-stop.on span{ color:#fff; }
+.tl-rail-chip.open{ box-shadow:0 0 0 2px var(--ep) inset; }
+
+/* a year box carries its own photographs */
+.d-year.d-media{ margin:10px 0 2px; }
+.d-year.d-media img{ border-radius:5px; }
