@@ -12,7 +12,7 @@
      back to the system stack in styles.css if the network refuses them. -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600&family=Noto+Serif+Armenian:wght@400;600&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css?v=20260822f" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260822g" rel="stylesheet" />
 </head>
 <body>
 
@@ -89,6 +89,13 @@
       <button id="pick-clear" data-i18n-title="pick.clear" title="Clear">&#215;</button>
     </div>
 
+    <!-- Said only when the map has had to give something up to stay usable. -->
+    <div id="perf-note" hidden>
+      <span></span>
+      <button type="button" id="perf-undo"></button>
+      <button type="button" id="perf-dismiss" aria-label="Close">&#215;</button>
+    </div>
+
     <div id="coords" aria-live="off">
       <button id="pick-btn" type="button" aria-pressed="false" data-i18n-title="pick.title" title="Pick a coordinate from the map">
         <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -102,6 +109,7 @@
 
     <div id="map-controls">
       <select class="map-select" id="basemap-select" data-i18n-title="map.basemap" data-i18n-aria-label="map.basemap" title="Basemap" aria-label="Basemap"></select>
+      <button class="map-btn" id="terrain-btn" type="button" aria-pressed="true" data-i18n-title="map.terrain" title="Terrain">3D</button>
       <button class="map-btn" id="reset-btn" data-i18n="map.reset" data-i18n-title="map.reset" title="Reset view">Reset view</button>
       <button class="map-btn" id="about-btn" data-i18n="map.about" data-i18n-title="about.title" title="About this map">About</button>
     </div>
@@ -243,11 +251,11 @@
 <!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
      and without it readers keep running yesterday's code.
      i18n.js loads first; every other file asks it for its words. -->
-<script src="assets/js/i18n.js?v=20260822f"></script>
-<script src="assets/js/app.js?v=20260822f"></script>
-<script src="assets/js/picker.js?v=20260822f"></script>
-<script src="assets/js/terrain.js?v=20260822f"></script>
-<script src="assets/js/graph3d.js?v=20260822f"></script>
-<script src="assets/js/parties3d.js?v=20260822f"></script>
+<script src="assets/js/i18n.js?v=20260822g"></script>
+<script src="assets/js/app.js?v=20260822g"></script>
+<script src="assets/js/picker.js?v=20260822g"></script>
+<script src="assets/js/terrain.js?v=20260822g"></script>
+<script src="assets/js/graph3d.js?v=20260822g"></script>
+<script src="assets/js/parties3d.js?v=20260822g"></script>
 </body>
 </html>
