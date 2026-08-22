@@ -1804,16 +1804,25 @@
                 no third-party request is made just by opening an entry
      Every item carries its own credit and licence, rendered under it.
      ----------------------------------------------------------------- */
+  /* Attribution. Credit and licence are read through tr(), so a photographer's
+     name and the terms it is used under can be given in all three languages.
+
+     A photograph taken by the researcher is marked as such before anything
+     else. It is not a found image; it is fieldwork, it is evidence, and the
+     person who stood in that courtyard is the source. */
   function mediaMeta(m) {
     var bits = [];
     var cap = tr(m, "caption");
     if (cap) bits.push(esc(cap));
     var attrib = [];
-    if (m.credit) attrib.push(esc(m.credit));
-    if (m.license) {
+    if (m.fieldnote) attrib.push('<b class="own">' + esc(t("media.fieldwork")) + '</b>');
+    var credit = tr(m, "credit");
+    if (credit) attrib.push(esc(credit));
+    var lic = tr(m, "license");
+    if (lic) {
       attrib.push(m.source
-        ? '<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(m.license) + '</a>'
-        : esc(m.license));
+        ? '<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(lic) + '</a>'
+        : esc(lic));
     } else if (m.source) {
       attrib.push('<a href="' + esc(m.source) + '" target="_blank" rel="noopener">' + esc(t("media.source")) + '</a>');
     }
