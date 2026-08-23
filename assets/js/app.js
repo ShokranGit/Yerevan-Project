@@ -339,6 +339,7 @@
       catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
       try { addGeography(); }
       catch (err) { window.__geoErr = String(err && err.message || err); console.warn("geography:", err); }
+      applyGround();
       refresh();
       hideLoader();
       wireMapFurniture();
@@ -380,6 +381,7 @@
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
       try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
       try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
+      applyGround();
       return !!map.getSource("geo");
     }
 
@@ -400,6 +402,7 @@
         if (!map.getSource(SRC)) { addLayers(); refresh(); }
         try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
         try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
+        applyGround();
         if (state.selectedId && !placeMarkers.length) {
           var sel = state.events.filter(function (x) { return x.id === state.selectedId; })[0];
           var wide = sel ? frameFor(sel) : null;
@@ -492,8 +495,8 @@
       id: "route-halo", type: "line", source: "routes",
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
-        "line-color": "#000000", "line-opacity": 0.22, "line-blur": 2,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 5, 16, 11]
+        "line-color": "#07080a", "line-opacity": 0.34, "line-blur": 2.5,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 8, 16, 17]
       }
     });
     map.addLayer({
@@ -505,9 +508,9 @@
            line-dasharray is the one paint property MapLibre will not accept an
            expression for, so the difference has to be carried by opacity. */
         "line-opacity": ["case",
-          ["==", ["get", "past"], 1], 0.42,
-          ["boolean", ["feature-state", "selected"], false], 0.95, 0.6],
-        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 2, 16, 5],
+          ["==", ["get", "past"], 1], 0.6,
+          ["boolean", ["feature-state", "selected"], false], 1, 0.85],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 3, 16, 7.5],
         "line-dasharray": [2.2, 1.4]
       }
     });
@@ -519,14 +522,44 @@
         "line-width": ["interpolate", ["linear"], ["zoom"], 12, 1, 16, 2.4]
       }
     });
-    /* the walk itself, drawn as it is described */
+    /* The walk itself, drawn as it is described.
+
+       Three things this used to get wrong. It was white, so a purple march
+       turned white the moment it moved and stopped being the same thing the
+       timeline had just named. It was thin, so on a busy basemap it was hard
+       to find at all. And it ran at about a kilometre a second, which is fine
+       if you already know where to look and useless if you are trying to find
+       the line and then follow it. It is now the route's own colour, twice as
+       wide, half the speed, and it carries a head, because the eye follows a
+       moving dot far more easily than a growing line. */
     map.addLayer({
-      id: "route-anim", type: "line", source: "route-anim",
+      id: "route-anim-halo", type: "line", source: "route-anim",
+      filter: ["!=", ["geometry-type"], "Point"],
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
-        "line-color": "#ffffff",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 3, 16, 7],
-        "line-opacity": 0.95, "line-blur": 0.4
+        "line-color": "#07080a", "line-opacity": 0.5, "line-blur": 3,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 11, 16, 21]
+      }
+    });
+    map.addLayer({
+      id: "route-anim", type: "line", source: "route-anim",
+      filter: ["!=", ["geometry-type"], "Point"],
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": ["coalesce", ["get", "color"], "#ffffff"],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 5, 16, 11],
+        "line-opacity": 1, "line-blur": 0.2
+      }
+    });
+    map.addLayer({
+      id: "route-anim-head", type: "circle", source: "route-anim",
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 6, 16, 11],
+        "circle-color": ["coalesce", ["get", "color"], "#ffffff"],
+        "circle-stroke-width": 2.6, "circle-stroke-color": "#ffffff",
+        "circle-opacity": 0.98,
+        "circle-pitch-alignment": "map"
       }
     });
 
@@ -558,37 +591,95 @@
     });
   }
 
-  /* Draw the march along its own length. Roughly a kilometre a second, so a
-     four-kilometre walk takes about four seconds; long enough to read as a
-     journey, short enough that nobody waits for it. */
+  /* Draw the march along its own length, at about four hundred and fifty
+     metres a second, so a six-kilometre march takes twelve seconds. Slow
+     enough to find the line and then follow it, which is the whole point of
+     drawing it rather than just showing it. The easing is gentle at both ends
+     rather than only at the start: a walk does not begin at full speed.
+
+     The drawn line then STAYS for three seconds at full strength before it
+     fades, instead of vanishing the instant it arrives. */
+  function routeColour(ev) {
+    if (ev && ev.color) return ev.color;
+    if (ev && ev.pathColor) return ev.pathColor;
+    if (ev && ev.categories && ev.categories.length) {
+      var c = catById(ev.categories[0]);
+      if (c && c.color) return c.color;
+    }
+    return "#ffffff";
+  }
+
   function animateRoute(ev) {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
     var src = map.getSource("route-anim");
     if (!src || !ev.path) return;
     var L = ev._pathLen || pathLength(ev.path);
-    var dur = Math.max(1600, Math.min(6000, L));
+    var colour = routeColour(ev);
+    var dur = Math.max(3200, Math.min(13000, L * 2.2));
     var t0 = performance.now();
+
+    function draw(f) {
+      var line = pathTo(ev.path, L * f);
+      var head = line[line.length - 1];
+      src.setData({ type: "FeatureCollection", features: [
+        { type: "Feature", properties: { color: colour },
+          geometry: { type: "LineString", coordinates: line } },
+        { type: "Feature", properties: { color: colour },
+          geometry: { type: "Point", coordinates: head } }
+      ] });
+    }
+
     function frame(now) {
       var f = Math.min(1, (now - t0) / dur);
-      var eased = 1 - Math.pow(1 - f, 2);
-      src.setData({ type: "FeatureCollection", features: [{
-        type: "Feature", properties: {},
-        geometry: { type: "LineString", coordinates: pathTo(ev.path, L * eased) }
-      }] });
+      /* ease in and out, so the head sets off and arrives rather than
+         appearing already at speed */
+      var eased = f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
+      draw(eased);
       if (f < 1) routeRAF = requestAnimationFrame(frame);
       else {
         routeRAF = null;
         setTimeout(function () {
-          if (!routeRAF && map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
-        }, 900);
+          if (routeRAF || !map.getSource("route-anim")) return;
+          fadeRouteAnim();
+        }, 3000);
       }
     }
     routeRAF = requestAnimationFrame(frame);
   }
 
+  /* The line does not blink out. It goes down over a second, which reads as
+     the drawing settling rather than the map losing something. */
+  var routeFade = 0;
+  function fadeRouteAnim() {
+    if (routeFade) { clearInterval(routeFade); routeFade = 0; }
+    var o = 1;
+    routeFade = setInterval(function () {
+      o -= 0.08;
+      if (o <= 0 || !map.getLayer("route-anim")) {
+        clearInterval(routeFade); routeFade = 0;
+        if (map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
+        if (map.getLayer("route-anim")) {
+          map.setPaintProperty("route-anim", "line-opacity", 1);
+          map.setPaintProperty("route-anim-halo", "line-opacity", 0.5);
+          map.setPaintProperty("route-anim-head", "circle-opacity", 0.98);
+        }
+        return;
+      }
+      map.setPaintProperty("route-anim", "line-opacity", o);
+      map.setPaintProperty("route-anim-halo", "line-opacity", o * 0.5);
+      map.setPaintProperty("route-anim-head", "circle-opacity", o);
+    }, 60);
+  }
+
   function clearRouteAnim() {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
+    if (routeFade) { clearInterval(routeFade); routeFade = 0; }
     if (map && map.getSource("route-anim")) map.getSource("route-anim").setData(emptyFC());
+    if (map && map.getLayer("route-anim")) {
+      map.setPaintProperty("route-anim", "line-opacity", 1);
+      map.setPaintProperty("route-anim-halo", "line-opacity", 0.5);
+      map.setPaintProperty("route-anim-head", "circle-opacity", 0.98);
+    }
   }
 
   /* =================================================================
@@ -711,6 +802,7 @@
       figureErr: window.__fgErr || null,
       routeErr: window.__routeErr || null,
       geo: window.__geo || null,
+      ground: window.__ground || null,
       geoErr: window.__geoErr || null,
       drawErr: window.__drawErr || null,
       shapes: window.DRAW ? DRAW.shapes().length : null
@@ -1552,6 +1644,117 @@
     });
   }
 
+  /* =================================================================
+     ONE PALETTE PER GROUND
+     -------------------------------------------------------------------
+     THE RULE, AND IT HOLDS FOR EVERYTHING ADDED FROM NOW ON: every layer
+     this project draws must appear on every basemap, and must be legible
+     on every basemap. Those are two different obligations and only the
+     first one is automatic.
+
+     Being present is handled by the restore in the styledata handler. Being
+     LEGIBLE is not: a grey mass at #b8bcc2 is the figure-ground drawing on
+     its own dark ground and an almost invisible ghost on a white one, and a
+     white chevron on a white street disappears completely.
+
+     So the ground is asked one question, what kind of ground is this, and
+     the answer has three values:
+
+       dark   the figure-ground drawing and the dark basemap
+       light  the light and streets basemaps
+       photo  the satellite imagery, which is busy as well as mid-toned
+
+     The dark column is exactly what the map has always looked like; it is
+     the reference, not a new design. The other two columns bring the other
+     grounds up to it.
+
+     ADDING A LAYER MEANS ADDING A ROW HERE. If a new layer carries a colour
+     that is not one of the accents, it belongs in this table.
+     ================================================================= */
+
+  var GROUND = {
+    dark: {
+      mass: "#b8bcc2",
+      chev: "#ffffff",       chevOp: 0.8,
+      halo: "#07080a",       haloOp: 0.34,
+      animHalo: "#07080a",   animHaloOp: 0.5,
+      headRing: "#ffffff",
+      dotRing: "#22262c",    dotRingOp: 0.9,   glowOp: 0.13,
+      cityLine: "#c8ccd3",   distLine: "#9aa1ab",
+      ringLine: "#4a5058",   ringBed: "#0d0f13", ringBedOp: 0.5,
+      countryLine: "#6d747e"
+    },
+    light: {
+      mass: "#6f767f",
+      chev: "#2e333a",       chevOp: 0.85,
+      halo: "#ffffff",       haloOp: 0.9,
+      animHalo: "#ffffff",   animHaloOp: 0.85,
+      headRing: "#14161a",
+      dotRing: "#14161a",    dotRingOp: 0.55,  glowOp: 0.2,
+      cityLine: "#5a616b",   distLine: "#767d87",
+      ringLine: "#333941",   ringBed: "#ffffff", ringBedOp: 0.85,
+      countryLine: "#8a919b"
+    },
+    photo: {
+      mass: "#e4e7ec",
+      chev: "#ffffff",       chevOp: 0.95,
+      halo: "#07080a",       haloOp: 0.6,
+      animHalo: "#07080a",   animHaloOp: 0.7,
+      headRing: "#ffffff",
+      dotRing: "#ffffff",    dotRingOp: 0.9,   glowOp: 0.22,
+      cityLine: "#ffffff",   distLine: "#e8eaee",
+      ringLine: "#eef0f3",   ringBed: "#07080a", ringBedOp: 0.7,
+      countryLine: "#ffffff"
+    }
+  };
+
+  function groundKind() {
+    if (state.basemap === "light" || state.basemap === "streets") return "light";
+    if (state.basemap === "satellite") return "photo";
+    return "dark";
+  }
+
+  function applyGround() {
+    if (!map || !map.isStyleLoaded) return;
+    var g = GROUND[groundKind()];
+
+    function P(layer, prop, val) {
+      if (!map.getLayer(layer)) return;
+      try { map.setPaintProperty(layer, prop, val); } catch (e) { /* mid swap */ }
+    }
+
+    /* the figure-ground itself; the mass is the only colour that moves,
+       the red figure and the blue water are accents and stay put */
+    P("figure-buildings", "fill-extrusion-color",
+      ["match", ["get", "zone"], "republic", RED, "accent", RED, g.mass]);
+    P("figure-water", "fill-color",
+      ["match", ["get", "zone"], "water", WATER, "republic", RED, "accent", RED, g.mass]);
+
+    /* the marches */
+    P("route-halo", "line-color", g.halo);
+    P("route-halo", "line-opacity", g.haloOp);
+    P("route-marks", "line-color", g.chev);
+    P("route-marks", "line-opacity", g.chevOp);
+    P("route-anim-halo", "line-color", g.animHalo);
+    P("route-anim-halo", "line-opacity", g.animHaloOp);
+    P("route-anim-head", "circle-stroke-color", g.headRing);
+
+    /* the entries */
+    P("ev-dot", "circle-stroke-color", g.dotRing);
+    P("ev-dot", "circle-stroke-opacity", g.dotRingOp);
+    P("ev-glow", "circle-opacity", g.glowOp);
+
+    /* the geography */
+    P("geo-city", "line-color", g.cityLine);
+    P("geo-district", "line-color", g.distLine);
+    P("geo-ring", "line-color", g.ringLine);
+    P("geo-ring-bed", "line-color", g.ringBed);
+    P("geo-ring-bed", "line-opacity", bandOpacity(GEO_BAND.ring, g.ringBedOp));
+    P("geo-country-line", "line-color", g.countryLine);
+
+    window.__ground = groundKind();
+  }
+
   function resetFigureGround() { /* nothing cached any more */ }
 
   function emptyFC() { return { type: "FeatureCollection", features: [] }; }
@@ -2216,7 +2419,7 @@
           padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
         });
         setTimeout(function () {
-          animateRoute({ path: pp.path, _pathLen: pp._len });
+          animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(e) });
         }, 600);
       });
     });
@@ -2644,7 +2847,7 @@
         map.fitBounds(pathBounds(pp.path), {
           padding: { top: 90, bottom: 210, left: 60, right: 60 }, duration: 1000
         });
-        setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len }); }, 650);
+        setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(host) }); }, 650);
       } else {
         goTo(host._display || host.coordinates, Math.max(map.getZoom(), 15));
       }
@@ -3025,6 +3228,7 @@
         $("map-wrap").classList.toggle("on-light", !dark);
         setLightBasemap();
         map.setStyle(BASEMAPS[state.basemap]);
+        applyGround();          /* again from the restore, once the layers exist */
       });
     }
 
