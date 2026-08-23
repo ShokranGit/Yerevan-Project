@@ -47,7 +47,21 @@
 
   /* ---------------- the switch ---------------- */
 
+  /* ?tl=horizontal is an escape hatch that beats anything remembered, so a
+     rail that has gone wrong on someone's machine can always be stepped out
+     of from the address bar without clearing site data. */
+  function urlWants() {
+    try {
+      var v = new URLSearchParams(location.search).get("tl");
+      if (v === "horizontal" || v === "off" || v === "0") return "horizontal";
+      if (v === "vertical" || v === "1") return "vertical";
+    } catch (e) { /* older browser */ }
+    return null;
+  }
+
   function saved() {
+    var u = urlWants();
+    if (u) return u;
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
   }
   function remember(v) {
@@ -311,6 +325,38 @@
     tl.appendChild(cap);
   }
 
+  /* ---------------- the guard ----------------
+     The rail is CSS and JavaScript together: the script moves nodes, the
+     stylesheet rotates them and narrows them to a line. If a browser ends up
+     holding one half and not the other, the sliders stay full width, lie
+     across the map and swallow every drag and click, and the map reads as
+     frozen. That is a bad failure because the control that would undo it is
+     underneath the thing that is broken.
+
+     So the arrangement checks itself: a rail slider is a narrow column, and
+     if it is not, the stylesheet in use does not know about the rail. Fall
+     back to the horizontal bar and say why. A timeline in the wrong place
+     beats a map that cannot be touched. */
+  function railIsSane() {
+    var els = [document.querySelector(".tl-slider"),
+               document.querySelector(".tl-slider-century")];
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (!el) continue;
+      var r = el.getBoundingClientRect();
+      if (r.width > 150 && r.height < r.width) return false;
+    }
+    return true;
+  }
+
+  function guard() {
+    if (!on || !built) return;
+    if (railIsSane()) return;
+    window.__railErr = "the stylesheet does not know the rail; fell back to the horizontal timeline";
+    if (window.console) console.warn("rail: " + window.__railErr);
+    setVertical(false, false);
+  }
+
   /* ---------------- switching ---------------- */
 
   function setVertical(v, byUser) {
@@ -325,6 +371,7 @@
         layout();
         watch();
         if (map) map.resize();
+        setTimeout(guard, 400);
       });
     } else {
       unwatch();
