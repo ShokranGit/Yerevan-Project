@@ -22,7 +22,7 @@
 
    So the slider is ROTATED instead: transform rotate(-90deg) maps the
    left edge to the bottom and the right edge to the top, which is
-   exactly the direction Alireza asked for, and every percentage keeps
+   exactly the direction Shokran asked for, and every percentage keeps
    meaning what it meant. Nothing inside the slider carries text, so
    nothing ends up sideways.
 
@@ -148,6 +148,17 @@
     cy.id = "rail-cent-years";
     tl.appendChild(cy);
 
+    /* THE PERIODS, standing up.
+       The horizontal timeline carries a rail of named chips under the track,
+       one per period, each under its own span. Standing the timeline up left
+       the periods as coloured lengths of line with their names only on hover,
+       which is a name you have to go looking for. This is the same rail,
+       turned: one chip per period, at the middle of its own band, on the far
+       side of the line from the years. */
+    var eras = document.createElement("div");
+    eras.id = "rail-eras";
+    tl.appendChild(eras);
+
     /* The century's own slider is rotated exactly like the main one, so it
        is moved out to the rail and NOT into any container: the rotation is
        measured against the timeline. Its row of words and its tick row stay
@@ -191,7 +202,7 @@
       if (el && h && h.parent) h.parent.insertBefore(el, h.next);
     });
     home = {};
-    ["rail-years", "rail-lo", "rail-hi", "rail-plate", "rail-band",
+    ["rail-years", "rail-lo", "rail-hi", "rail-plate", "rail-band", "rail-eras",
      "rail-cn-band", "rail-cn-lo", "rail-cn-hi", "rail-cent-years",
      "rail-cn-cap", "rail-foot"].forEach(function (id) {
       var el = $(id); if (el) el.remove();
@@ -219,6 +230,50 @@
               '<i></i>' + escapeHTML(kids[i].textContent) + "</span>";
     }
     box.innerHTML = html;
+  }
+
+  /* Each .tl-ep on the track carries its span as left% and width% and its
+     colour as --ep, exactly as the horizontal rail reads it. The chip goes at
+     the middle of the band; where two would print over each other the later
+     one steps up, which is the same rule the horizontal rail uses sideways. */
+  function mirrorEras() {
+    var src = $("tl-episodes"), box = $("rail-eras"), tl = $("timeline");
+    if (!src || !box || !tl) return;
+    var bands = src.querySelectorAll(".tl-ep");
+    if (!bands.length) { box.innerHTML = ""; return; }
+
+    var h = parseFloat(getComputedStyle(tl).getPropertyValue("--rail-h")) || 400;
+    var html = "", used = [], MIN = 30;
+    Array.prototype.forEach.call(bands, function (b) {
+      var l = parseFloat(b.style.left || "0");
+      var w = parseFloat(b.style.width || "0");
+      if (isNaN(l)) l = 0;
+      if (isNaN(w)) w = 0;
+      var mid = l + w / 2;
+      var y = (mid / 100) * h;                 /* px up from the foot */
+      for (var i = 0; i < used.length; i++) {
+        if (Math.abs(used[i] - y) < MIN) { y = used[i] + MIN; i = -1; }
+      }
+      used.push(y);
+      var name = b.getAttribute("title") || b.getAttribute("aria-label") || "";
+      var count = b.dataset ? b.dataset.count : "";
+      html += '<button type="button" class="rail-era" data-ep="' +
+              escapeHTML(b.dataset.ep) + '" style="bottom:' +
+              ((y / h) * 100).toFixed(3) + '%;--ep:' +
+              escapeHTML(b.style.getPropertyValue("--ep") || "#c9262c") + '">' +
+              '<i></i><span>' + escapeHTML(name) + '</span></button>';
+    });
+    box.innerHTML = html;
+
+    /* The band on the track is the real control; the chip forwards to it, so
+       there is one implementation of what opening a period does. */
+    box.querySelectorAll("[data-ep]").forEach(function (chip) {
+      chip.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        var band = src.querySelector('.tl-ep[data-ep="' + chip.dataset.ep + '"]');
+        if (band) band.click();
+      });
+    });
   }
 
   function escapeHTML(s) {
@@ -309,6 +364,7 @@
     placeDates();
     mirrorTicks("tl-ticks", "rail-years");
     mirrorTicks("cn-ticks", "rail-cent-years");
+    mirrorEras();
     capOnce();
   }
 

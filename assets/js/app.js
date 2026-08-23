@@ -383,6 +383,7 @@
       try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
       applyGround();
       applyPins(pinsWanted());
+      applyDistricts(districtsWanted());
       return !!map.getSource("geo");
     }
 
@@ -1713,6 +1714,25 @@
       }
     });
 
+    /* A precinct: a walled ground that matters even though the building on it
+       is not mapped. Drawn as an outline with a faint wash, in the same
+       language as the city and the districts, and it keeps its own band so it
+       only appears when you are close enough for it to mean something. */
+    map.addLayer({
+      id: "geo-precinct-fill", type: "fill", source: "geo",
+      filter: ["==", ["get", "kind"], "precinct"],
+      paint: { "fill-color": "#c8ccd3", "fill-opacity": bandOpacity(GEO_BAND.borough, 0.09) }
+    });
+    map.addLayer({
+      id: "geo-precinct", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "precinct"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#c8ccd3", "line-width": 1.4, "line-dasharray": [2.4, 1.8],
+        "line-opacity": bandOpacity(GEO_BAND.borough, 0.8)
+      }
+    });
+
     /* The city, then the district. Outlines only: a filled administrative
        area reads as a subject, and neither of these is one. */
     /* The territory of Yerevan. It used to be a hairline that faded out at
@@ -2634,9 +2654,22 @@
         goTo(e._display || e.coordinates, Math.max(map.getZoom(), 16), back);
       }
     } else if (map && walkOf(e)) {
-      var w2 = walkOf(e);
-      animateRoute({ path: w2.path, _pathLen: w2._len,
-                     color: w2.color || routeColour(e), persist: !!e.trailOnly });
+      /* An entry whose ROUTE CHANGED between years must not draw one of them
+         on opening. The commemoration has two: Freedom Square until 2021 and
+         Republic Square from 2022, and walkOf() returns whichever is marked
+         active, which is the Republic one. So opening the entry drew the
+         Republic march, and then clicking 2021 drew the Freedom march on top
+         of a trail that was already there and, being trailOnly, stayed. The
+         reader saw a 2021 march setting out from the wrong square.
+
+         With more than one route and a year list to choose from, the map
+         waits: the panel offers both marches and every year opens its own. */
+      var multi = (e.paths || []).length > 1 && (e.years || []).length;
+      if (!multi) {
+        var w2 = walkOf(e);
+        animateRoute({ path: w2.path, _pathLen: w2._len,
+                       color: w2.color || routeColour(e), persist: !!e.trailOnly });
+      }
     }
 
     if (map) { showMarchNotes(e); showDispersal(e); }
@@ -2881,6 +2914,25 @@
     });
 
     /* One button per route: frame that route alone and walk it. */
+    /* The year rows carried data-yearidx and nothing ever read it: clicking a
+       year in the entry did nothing at all, and what the reader saw was the
+       march that had been drawn automatically when the entry opened, which
+       was always the Republic Square one. Hence "2021 starts from the wrong
+       square". Each row now walks its own year's route. */
+    $("detail-body").querySelectorAll("[data-yearidx]").forEach(function (row) {
+      row.classList.add("is-clickable");
+      row.setAttribute("role", "button");
+      row.setAttribute("tabindex", "0");
+      function go() { openYear(e, +row.dataset.yearidx); }
+      row.addEventListener("click", function (evt) {
+        if (evt.target.closest("a, button, .d-media, img")) return;
+        go();
+      });
+      row.addEventListener("keydown", function (evt) {
+        if (evt.key === "Enter" || evt.key === " ") { evt.preventDefault(); go(); }
+      });
+    });
+
     $("detail-body").querySelectorAll("[data-march]").forEach(function (b) {
       b.addEventListener("click", function () {
         var pp = (e.paths || [])[+b.dataset.march];
@@ -3087,7 +3139,19 @@
      centenary. Clicking any year opens the entry that explains all of them.
      ----------------------------------------------------------------- */
 
+  /* THE ANNUAL STEMS ARE OFF, 24 August 2026.
+     A stem for every year an annual rite took place reads as an unbroken
+     presence: twelve purple marks down the axis say the commemoration is
+     what those twelve years were about, which is not the claim either entry
+     makes. Both entries already sit on the axis at their own date, and the
+     commemoration's year list is inside it where the argument is.
+
+     The mechanism is kept, and `recurs` is still read: it is one return away
+     if a rite ever needs its own comb again. */
+  var ANNUAL_STEMS = false;
+
   function commemEvents() {
+    if (!ANNUAL_STEMS) return [];
     return state.events.filter(function (e) {
       return e.recurs && (e.recurs.days || e.recurs.dates);
     });
@@ -3209,6 +3273,13 @@
        A thirty-nine-day episode is four pixels wide on a twenty-nine-year
        axis. It can show WHEN, and nothing else; the words go in the rail. */
     box.innerHTML = state.episodes.map(function (ep, i) {
+      /* A period can belong to entries without owning a length of the axis.
+         The commemoration runs 2015 to 2026 in the data because that is the
+         span of the years it records, and drawn as a band it says eleven
+         years of continuous commemoration, which is not the claim: the rite
+         is two days in April. `axis: false` keeps the period and drops the
+         band, on the horizontal track and on the rail alike. */
+      if (ep.axis === false) return "";
       var sp = episodeSpan(ep);
       if (!sp) return "";
       return '<button type="button" class="tl-ep" data-ep="' + i + '"' +
@@ -3226,6 +3297,7 @@
       var w = rail.clientWidth || 1000;
       var items = [];
       state.episodes.forEach(function (ep, i) {
+        if (ep.axis === false) return;
         var sp = episodeSpan(ep);
         if (sp) items.push({ ep: ep, i: i, sp: sp });
       });
@@ -3334,6 +3406,10 @@
       var pp = null;
       (host.paths || []).forEach(function (x) { if (x.id === y.route) pp = x; });
       if (pp && pp.path && pp.path.length > 1) {
+        /* One year, one trail. A persistent trail from the year opened before
+           this one would otherwise still be lying on the map, and two marches
+           from two different squares read as one march that forked. */
+        clearRouteAnim();
         map.fitBounds(pathBounds(pp.path), {
           padding: walkPad(), duration: 1000
         });
@@ -3653,9 +3729,19 @@
 
   /* The two basemaps a reader would call light. Everything else, including
      the figure-ground drawing and the satellite photograph, is dark ground. */
+  /* THE GROUND CLASS, and why there are three of them.
+     Every piece of TEXT on this map is HTML over WebGL, so it cannot be set
+     from the GROUND table the layers use: it is set in the stylesheet, and
+     the stylesheet needs to know which of the three grounds it is writing on.
+     Two classes were not enough. A satellite photograph is not a light
+     basemap and it is not a dark one; it is busy, and text on it needs both
+     a bright face and a real halo. Without bm-photo the names over the
+     satellite were being drawn in the figure-ground colours. */
   function setLightBasemap() {
-    var on = state.basemap === "light" || state.basemap === "streets";
-    $("map-wrap").classList.toggle("bm-light", on);
+    var kind = groundKind();
+    var wrap = $("map-wrap");
+    wrap.classList.toggle("bm-light", kind === "light");
+    wrap.classList.toggle("bm-photo", kind === "photo");
   }
 
   /* ---- the event pins ----
@@ -3663,6 +3749,48 @@
      Kentron looks like, and while the places and the buildings are being
      built they are in the way. The switch is in the map controls and the
      state is remembered, so this is a preference and not a decision. */
+  /* ---- the districts, on a switch ----
+     The mosaic is context: useful when you are asking where in the city
+     something happened, in the way when you are reading one square. It is on
+     by default because that is the reading the map argues for, and it is one
+     click away from gone. Everything the layer draws goes together, including
+     the twelve names, which are HTML and not layers. */
+  var DIST_KEY = "yerevan.districts";
+  var DIST_LAYERS = ["geo-borough-fill", "geo-borough-home",
+                     "geo-borough-case", "geo-borough"];
+
+  function districtsWanted() {
+    try {
+      var v = localStorage.getItem(DIST_KEY);
+      return v === null ? true : v === "on";
+    } catch (e) { return true; }
+  }
+
+  function applyDistricts(on) {
+    if (!map) return;
+    DIST_LAYERS.forEach(function (id) {
+      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
+    });
+    var wrap = $("map-wrap");
+    if (wrap) wrap.classList.toggle("no-districts", !on);
+    var b = $("districts-btn");
+    if (b) {
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("on", on);
+    }
+  }
+
+  function wireDistricts() {
+    var b = $("districts-btn");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var next = !districtsWanted();
+      try { localStorage.setItem(DIST_KEY, next ? "on" : "off"); } catch (e) { /* private */ }
+      applyDistricts(next);
+    });
+    applyDistricts(districtsWanted());
+  }
+
   var PIN_KEY = "yerevan.pins";
 
   function pinsWanted() {
@@ -3697,6 +3825,7 @@
 
   function wireUI() {
     wirePins();
+    wireDistricts();
     wireCategoryMenu();
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
