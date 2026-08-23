@@ -1728,6 +1728,7 @@ body.is-phone .tl-ep::before{
   font-size:12px; letter-spacing:.34em; text-transform:uppercase;
   color:#d6dae0; padding-inline-start:.34em;
 }
+.geo-n-country b{ color:var(--cc, #d6dae0); }
 .geo-n-country.is-am b{ color:#e8a2a5; }
 
 .geo-n-karabakh b{
@@ -1742,13 +1743,27 @@ body.is-phone .tl-ep::before{
   font-family:var(--font-serif); font-size:15px; font-weight:600;
   letter-spacing:.22em; color:#e6e8ec; padding-inline-start:.22em;
 }
-.geo-n-district b{
-  font-size:10.5px; letter-spacing:.28em; text-transform:uppercase;
-  color:#a8aeb8; padding-inline-start:.28em;
+/* one of twelve; the subject's own district is the only one in the accent */
+.geo-n-borough b{
+  font-size:9.5px; letter-spacing:.24em; text-transform:uppercase;
+  color:#98a0ab; padding-inline-start:.24em; font-weight:500;
 }
-.geo-n-ring b{
-  font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
-  color:#8b929c; padding-inline-start:.2em;
+.geo-n-borough.is-home b{ color:#e8a2a5; font-size:10.5px; }
+
+/* the mountain the avenue was aimed at */
+.geo-n-peak b{
+  font-family:var(--font-serif); font-size:13px; font-weight:600;
+  letter-spacing:.05em; color:#f0e8d6;
+}
+.geo-n-peak.is-masis b{ font-size:16px; }
+.geo-n-peak span{ color:#c7b58d; letter-spacing:.1em; }
+.geo-n-peak b::before{
+  content:""; display:block; width:0; height:0; margin:0 auto 4px;
+  border-left:7px solid transparent; border-right:7px solid transparent;
+  border-bottom:9px solid #ece4cf;
+}
+.geo-n-peak.is-masis b::before{
+  border-left-width:10px; border-right-width:10px; border-bottom-width:13px;
 }
 
 /* --- the named spaces of the centre ---
@@ -1792,8 +1807,11 @@ html.lang-hy .geo-n-space.space-street b, html.lang-fa .geo-n-space.space-street
 #map-wrap.bm-light .geo-n-country b{ color:#5a616b; }
 #map-wrap.bm-light .geo-n-country.is-am b{ color:#a3272c; }
 #map-wrap.bm-light .geo-n-city b{ color:#1a1c20; }
-#map-wrap.bm-light .geo-n-district b,
-#map-wrap.bm-light .geo-n-ring b{ color:#6d747e; }
+#map-wrap.bm-light .geo-n-borough b{ color:#6d747e; }
+#map-wrap.bm-light .geo-n-borough.is-home b{ color:#a3272c; }
+#map-wrap.bm-light .geo-n-peak b{ color:#4a4132; }
+#map-wrap.bm-light .geo-n-peak span{ color:#7a6e56; }
+#map-wrap.bm-light .geo-n-peak b::before{ border-bottom-color:#7a6a52; }
 #map-wrap.bm-light .geo-n-space b{ color:#15171b; }
 #map-wrap.bm-light .geo-n-space.space-street b{ color:#4a5058; }
 #map-wrap.bm-light .geo-n-space.space-water b{ color:#3d7ba6; }
