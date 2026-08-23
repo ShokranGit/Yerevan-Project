@@ -16,7 +16,7 @@
    a mesh, every frame.
 
    THIS FILE USED TO SAY "there is no switch, this is the map." That was
-   wrong, and it cost Alireza a working map more than once. On a machine
+   wrong, and it cost Shokran a working map more than once. On a machine
    whose GPU cannot afford terrain, an always-on 3D surface does not
    degrade into a slower map; it degrades into a map you cannot drag,
    zoom or rotate at all, which is exactly what he reported. A research
@@ -65,7 +65,18 @@
   /* A frame slower than this, sustained, is a map you cannot drag. 55 ms is
      about 18 frames a second: sluggish but still usable, so the watchdog only
      fires below that, and only after two separate movements agree. */
-  var SLOW_MS = 55, STRIKES = 2;
+  /* 55 ms was too lenient and it cost him the map. Measured in his own browser
+     while he was dragging it: 50 ms a frame, twenty frames a second, which is
+     already a map you fight rather than use, and the watchdog sat there and did
+     nothing because fifty is less than fifty five. 34 ms is about thirty frames
+     a second, which is the lowest rate at which dragging a map still feels like
+     dragging something. Below that the terrain goes. */
+  var SLOW_MS = 34, STRIKES = 2;
+
+  /* A frozen map cannot be recovered from inside the map: every control is on
+     the far side of the freeze. It can always be recovered from the address
+     bar. ?3d=off beats the remembered preference and writes the opposite one,
+     so the next plain load is also safe. */
   var KEY = "yerevan.terrain";
 
   var map = null, want = true, done = false, strikes = 0, dropped = false;
@@ -76,8 +87,17 @@
   }
   function remember(v) { try { localStorage.setItem(KEY, v ? "1" : "0"); } catch (e) {} }
 
+  function urlWants() {
+    var m = /[?&]3d=(off|on|0|1)/i.exec(location.search);
+    if (!m) return null;
+    var v = m[1].toLowerCase();
+    return (v === "on" || v === "1");
+  }
+
   var pref = remembered();
   if (pref !== null) want = pref;
+  var forced = urlWants();
+  if (forced !== null) { want = forced; remember(forced); }
 
   /* The shading has to sit under the streets and buildings, or it draws over
      the figure-ground drawing. Everything below the first line / symbol /
@@ -274,6 +294,102 @@
     if (box) box.hidden = true;
   }
 
+  /* ---------------- the freeze watch ----------------
+     THE HOLE IN THE WATCHDOG ABOVE, WHICH IS WHY THIS EXISTS.
+     That watchdog samples frame times between movestart and moveend, and it
+     only ever reaches a verdict when a movement COMPLETES. A map that has
+     stopped responding does not complete movements. The drag produces no
+     moveend, or no movestart at all, so endSample never runs, no strike is
+     recorded, and the one mechanism built to rescue the reader sleeps through
+     exactly the failure it was built for. It can measure slow. It could not
+     see dead.
+
+     This watch does not depend on the map's own events agreeing to fire. It
+     asks two questions every second, and only while the document is actually
+     visible, because a hidden tab does not run requestAnimationFrame at all
+     and every measurement taken in one is a lie:
+
+       1. Has a movement been running for more than six seconds?
+       2. Did input arrive, and has the map not drawn a frame since?
+
+     Either answer is a map the reader cannot use. Terrain goes at once,
+     without waiting for a second strike: there is no second chance to
+     collect, because the reader is already stuck.
+
+     It also watches for a transform that has gone non finite. Once a NaN gets
+     into the centre or the zoom, every later interaction computes NaN from
+     NaN, the camera never moves again, and every handler still reports itself
+     enabled, which is the most confusing version of this failure to diagnose
+     from the outside. The last camera known to be finite is kept so it can be
+     put back. */
+
+  var lastRender = 0, lastInput = 0, lastGood = null, freezeTimer = 0, stuckTicks = 0;
+
+  function camFinite() {
+    if (!map) return true;
+    var c = map.getCenter();
+    return isFinite(c.lng) && isFinite(c.lat) && isFinite(map.getZoom()) &&
+           isFinite(map.getBearing()) && isFinite(map.getPitch());
+  }
+
+  function noteInput() { lastInput = performance.now(); }
+
+  function freezeDrop(why) {
+    dropped = true;
+    strikes = 0;
+    setTerrain(false);
+    remember(false);
+    report(window.__terrain ? window.__terrain.under : undefined);
+    window.__froze = { why: why, at: new Date().toISOString(), frameMs: window.__frameMs || null };
+    showNote(window.__frameMs || 0);
+    /* A map that stopped drawing needs to be told to draw again once the load
+       that stopped it is gone. */
+    try { map.resize(); map.triggerRepaint(); } catch (e) {}
+  }
+
+  function startFreezeWatch() {
+    if (freezeTimer || !map) return;
+
+    map.on("render", function () { lastRender = performance.now(); });
+    map.on("moveend", function () { if (camFinite()) lastGood = {
+      center: map.getCenter(), zoom: map.getZoom(),
+      bearing: map.getBearing(), pitch: map.getPitch()
+    }; });
+
+    var el = map.getCanvasContainer ? map.getCanvasContainer() : map.getCanvas();
+    ["wheel", "pointerdown", "mousedown", "touchstart"].forEach(function (ev) {
+      el.addEventListener(ev, noteInput, { passive: true });
+    });
+
+    freezeTimer = setInterval(function () {
+      if (!map || document.visibilityState !== "visible") return;
+
+      if (!camFinite()) {
+        window.__nanCam = true;
+        if (lastGood) { try { map.jumpTo(lastGood); } catch (e) {} }
+        if (map.getTerrain() && !dropped) freezeDrop("non finite camera");
+        return;
+      }
+
+      if (!map.getTerrain() || dropped) return;
+
+      /* Both conditions below require that the map has ALSO stopped drawing.
+         A long camera animation is a movement that legitimately runs for many
+         seconds: fitBounds across the country, a route walked along its own
+         length. Those keep rendering the whole time, so the render clock stays
+         fresh and nothing is dropped. A map that is stuck renders nothing, and
+         that is the difference the render clock measures. */
+      var now = performance.now();
+      var noFrames = lastRender && now - lastRender > 1500;
+      if (!noFrames) { stuckTicks = 0; return; }
+      /* One second without a frame can be a garbage collection pause on any
+         machine. Two consecutive checks cannot. */
+      if (++stuckTicks < 2) return;
+      if (sampling && now - sampleStart > 6000) { freezeDrop("movement never ended"); return; }
+      if (lastInput && now - lastInput < 4000) freezeDrop("input with no frame drawn");
+    }, 1000);
+  }
+
   /* ---------------- wiring ---------------- */
 
   var retry = 0, retries = 0;
@@ -304,6 +420,7 @@
       map.on("styledata", function () { done = false; startRetry(); });
       map.on("movestart", startSample);
       map.on("moveend", endSample);
+      startFreezeWatch();
       syncButton();
 
       var b = document.getElementById("terrain-btn");
