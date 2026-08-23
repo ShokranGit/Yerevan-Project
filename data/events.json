@@ -1855,10 +1855,10 @@
       "date": "2014",
       "datePrecision": "year",
       "coordinates": [
-        44.5119,
-        40.1799
+        44.51351,
+        40.18228
       ],
-      "location": "Afrikana building, Kentron (coordinates approximate; verify)",
+      "location": "Teryan Street 11-13",
       "categories": [
         "protest",
         "demolition"
@@ -1884,12 +1884,36 @@
           "note": "walking interview, fieldwork",
           "note_hy": "քայլող հարցազրույց, դաշտային աշխատանք",
           "note_fa": "مصاحبهٔ قدم‌زنان، کار میدانی"
+        },
+        {
+          "title": "Hetq, 'Yerevan's Afrikyan Building: Just Another Business Venture for Minister Khachatryan and Sons'",
+          "url": "https://hetq.am/en/article/55439",
+          "note": "11 Teryan Street; the Afrikyan family; listed 2004; the facade to be rebuilt elsewhere and a hotel raised in its place"
+        },
+        {
+          "title": "Hetq, 'March to Save Historic Afrikyan Building in Central Yerevan'",
+          "url": "https://hetq.am/en/article/55259"
+        },
+        {
+          "title": "CivilNet, 'New Developments in Afrikyan Building Court Case'",
+          "url": "https://www.civilnet.am/en/news/389863/new-developments-in-afrikyan-building-court-case/",
+          "note": "dismantled summer 2014; the lot left empty; the Transparency International case"
+        },
+        {
+          "title": "Epress.am, 'Activists Protesting Dismantling of Historic Afrikyan House Detained'",
+          "url": "https://epress.am/en/2014/06/10/activists-protesting-dismantling-of-historic-afrikyan-house-detained-newspaper.html",
+          "note": "detentions, 10 June 2014"
+        },
+        {
+          "title": "Wikidata Q16372142",
+          "url": "https://www.wikidata.org/wiki/Q16372142",
+          "note": "address Տերյան փող. 11-13"
         }
       ],
       "media": [],
-      "fieldnote": "COORDINATES APPROXIMATE. Placed in the Kentron block west of Northern Avenue pending a precise address, worth fixing, since the site anchors a key claim in the argument.",
+      "fieldnote": "Address, not a guess. Wikidata Q16372142 gives Տերյան փող. 11-13 and Hetq gives 11 Teryan Street. The building itself is not in OpenStreetMap, so the point is interpolated along Teryan between the two nearest OSM addresses on the same run, number 5 at 44.51311, 40.18198 and number 19 at 44.51392, 40.18258. Good to about 40 m. The previous point was a guess and was 250 m south west of this. The building is the Afrikyans' Club (Աֆրիկյանների ակումբ); the Northern Avenue article calls it Afrikana. The map now carries the building's own name with Afrikana kept beside it. Say the word if you want your term as the label.",
       "title_hy": "Դիմադրություն Աֆրիկանա շենքի քանդմանը",
-      "location_hy": "Աֆրիկանա շենք, Կենտրոն (կոորդինատները մոտավոր են; ստուգել)",
+      "location_hy": "Տերյան փողոց 11-13",
       "summary_hy": "Շարունակելով Հյուսիսային պողոտայի շրջակա քաղաքային հյուսվածքի զարգացումը՝ Millennium Construction Company-ն գնեց Աֆրիկանա շենքը՝ քանդելու և դրա տեղում հյուրանոց կառուցելու համար։ Շենքը եղել էր մշակութային կենտրոն և հավաքատեղի քաղաքացիական հասարակության բազմաթիվ խմբերի համար, և հայտարարությունը ցնցեց դրա օգտվողներին։\n\nԵրիտասարդ ակտիվիստները երթեր կազմակերպեցին Հյուսիսային պողոտայով և ամբողջ Կենտրոնով՝ հագած Երևանի ուրվագիծը կրող շապիկներ, երաժշտություն նվագելով, աղմուկ բարձրացնելով, թերթիկներ բաժանելով և տեղանքի ալիքավոր մետաղյա ցանկապատին գրելով «Հիշողության վայրը» և «Դու չես կարող փոխարինել ինձ»։ Րաֆֆի Հովհաննիսյանը միացավ ցուցարարներին՝ լրատվամիջոցներին ասելով, որ «Հայաստանն ունի այնպիսի իշխանություններ, որոնք ոչնչացնում են պատմական հուշարձանները»։",
       "analysis_hy": "Ծխնին։ Մոբիլիզացիան համախմբվում է հենց քաղաքային տարածքի պաշտպանության շուրջ, և ոչ թե ազգային մասշտաբի քաղաքական խզման, և ակտիվիզմը կարողանում է գործել մասշտաբների միջև՝ տեղափոխվելով քաղաքայինի և ազգայինի, ֆորմալ և ոչ ֆորմալ քաղաքականության միջև։\n\nՈւշադրություն դարձրեք, թե ինչի՛ համար էին երթերն օգտագործում պողոտան․ պերֆորմատիվ երթուղի՝ ընտրված տեսանելիության և արձագանքի համար։ Միջանցքը կարդացվում է, և ճիշտ է կարդացվում, որպես այն վայրը, որտեղ քեզ տեսնում են։\n\nՔայլող հարցազրույցի ժամանակ, տեղանքի կողքով անցնելիս, իմ զրուցակիցն ասաց․ «Ամեն ինչ սկսվեց այստեղից»։ Նրա և շատ ուրիշների համար Աֆրիկանան պահպանելու պայքարն այն պահն էր, երբ նրանք իրենց ճանաչեցին որպես քաղաքական սուբյեկտներ և որպես հանրություն։",
       "actors_hy": [
@@ -1906,7 +1930,7 @@
         "Դու չես կարող փոխարինել ինձ"
       ],
       "title_fa": "مقاومت در برابر تخریب ساختمان آفریکانا",
-      "location_fa": "ساختمان آفریکانا، کِنترون (مختصات تقریبی, نیازمند بررسی)",
+      "location_fa": "خیابان تریان ۱۱-۱۳",
       "summary_fa": "در ادامهٔ توسعهٔ بافت شهری پیرامون خیابان شمالی، شرکت ساختمانی میلنیوم ساختمان آفریکانا را خرید تا آن را تخریب کند و به‌جایش هتلی برپا کند. این ساختمان مرکزی فرهنگی و محل گردهمایی بسیاری از گروه‌های جامعهٔ مدنی بود و این خبر کاربرانش را شوکه کرد.\n\nکنشگران جوان راهپیمایی‌هایی در خیابان شمالی و سراسر کِنترون برگزار کردند, با تی‌شرت‌هایی که نقش خط آسمان ایروان را داشت، با نواختن موسیقی، سروصدا، پخش اعلامیه، و نوشتن «جای حافظه» و «تو نمی‌توانی جای مرا بگیری» روی حصار حلبی محل. رافی هوانسیان به معترضان پیوست و به رسانه‌ها گفت «ارمنستان حاکمانی از آن دست دارد که بناهای تاریخی را نابود می‌کنند.»",
       "analysis_fa": "لولا. بسیج گرد حفاظت از خودِ فضای شهری منسجم می‌شود، نه گرد گسست سیاسی در مقیاس ملی، و کنشگری توان کار در مقیاس‌های گوناگون می‌یابد, رفت‌وبرگشت میان شهری و ملی، و میان سیاست رسمی و غیررسمی.\n\nتوجه کنید راهپیمایی‌ها خیابان را برای چه به کار گرفتند: مسیری اجرایی، برگزیده برای دیده‌شدن و طنین‌انداختن. کریدور درست خوانده می‌شود: جایی که دیده می‌شوی.\n\nدر یک مصاحبهٔ قدم‌زنان، هنگام گذر از محل، مصاحبه‌شوندهٔ من گفت: «همه‌چیز از اینجا شروع شد.» برای او و بسیاری دیگر، مبارزه برای حفظ آفریکانا همان لحظه‌ای بود که خود را سوژهٔ سیاسی و یک عموم شناختند.",
       "actors_fa": [
