@@ -187,6 +187,8 @@
 
     "tl.play": "Play through time",
     "tl.full": "full range",
+    "tl.here": "entries here",
+    "tl.close": "Close",
     "spur.close": "close",
     "spur.open": "open this period",
     "detail.chronology": "Chronology",
@@ -404,6 +406,8 @@
 
     "tl.play": "Նվագարկել ժամանակի ընթացքում",
     "tl.full": "ամբողջ միջակայքը",
+    "tl.here": "գրառում այստեղ",
+    "tl.close": "Փակել",
     "spur.close": "փակել",
     "spur.open": "բացել այս ժամանակաշրջանը",
     "detail.chronology": "Ժամանակագրություն",
@@ -621,6 +625,8 @@
 
     "tl.play": "پخش در طول زمان",
     "tl.full": "کل بازه",
+    "tl.here": "مدخل اینجا",
+    "tl.close": "بستن",
     "spur.close": "بستن",
     "spur.open": "گشودن این دوره",
     "detail.chronology": "گاه‌شمار",

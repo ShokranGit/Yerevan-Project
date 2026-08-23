@@ -421,6 +421,9 @@
     document.body.classList.toggle("tl-vertical", on);
     if (on) { build(); } else { teardown(); }
     labelSwitch();
+    /* The entry marks are grouped in pixels, and this flip changes the length
+       of the track by hundreds of them. */
+    if (window.__remark) window.__remark();
     if (byUser) remember(on ? "vertical" : "horizontal");
     if (on) {
       requestAnimationFrame(function () {

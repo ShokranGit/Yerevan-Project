@@ -2724,7 +2724,9 @@
       applySelectionState();
     }
 
+    state._vis = vis;
     renderResults(vis);
+    buildMarks(vis);
     updateCategoryCounts();
     $("result-count").textContent = num(vis.length);
   }
@@ -2737,6 +2739,7 @@
   }
 
   function applySelectionState() {
+    paintMarkState();
     if (!map || !map.getSource(SRC)) return;
     Object.keys(idMap).forEach(function (k) {
       map.setFeatureState({ source: SRC, id: idMap[k] }, { selected: k === state.selectedId });
@@ -2834,6 +2837,219 @@
     });
   }
 
+
+  /* =================================================================
+     THE MARKS; every entry, on the rail, always reachable
+     -------------------------------------------------------------------
+     The rail carried periods and a density histogram and never carried a
+     single entry, which is why 1 March 2008 could not be found on it: not
+     because it was too small to see, but because it was not drawn. There
+     was no scale at which it appeared.
+
+     THE ARITHMETIC THIS HAS TO SURVIVE. Forty three entries across a
+     hundred and two years, of which eighteen fall in 2018 and twelve in
+     April 2018 alone. April 2018 is three tenths of one per cent of the
+     axis and holds a quarter of the map: about two and a half pixels on a
+     nine hundred pixel rail. A proportional axis cannot give twelve
+     entries two and a half pixels and still be clicked.
+
+     So marks that would collide are merged into ONE counter carrying the
+     number of entries standing there, and the counter opens them as a
+     list. Nothing is hidden by this: a dot reading twelve is a plainer
+     statement about density than twelve overlapping hairlines, and the
+     rail goes on telling the truth about time because the positions are
+     still proportional.
+
+     The marks are drawn from the SAME list the panel shows, so a search or
+     a category filter thins the rail exactly as it thins the results. That
+     is the whole of the binding between the two: not a message passed
+     between them, but one source of truth used twice.
+
+     One inheritance makes this cheap. The vertical rail is this same
+     element rotated ninety degrees by CSS, so a mark placed by percentage
+     lands correctly in both arrangements and only the counter's digits
+     need turning back the right way up.
+     ================================================================= */
+
+  var MARK_MIN_PX = 12;
+
+  /* The grouping is done in pixels, so the rail has to be redrawn whenever the
+     pixels change: a resized window, and the flip between the horizontal track
+     and the vertical rail, which are the same element at two different
+     lengths. */
+  var markRedraw = 0;
+  function remarkSoon() {
+    clearTimeout(markRedraw);
+    markRedraw = setTimeout(function () {
+      closeStack();
+      buildMarks(state._vis || []);
+    }, 120);
+  }
+  window.addEventListener("resize", remarkSoon);
+  /* rail.js flips the arrangement without any resize event, and the flip
+     changes the length of the track by hundreds of pixels. */
+  window.__remark = remarkSoon;
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest || (!e.target.closest("#tl-stack") && !e.target.closest(".tl-mk"))) closeStack();
+  });
+
+  /* TWO TRACKS, and the five entries that fell between them.
+     The main track runs 2000 to 2028 and the century track 1900 to 2000, so
+     an entry from 1924 or 1965 or 1988 has no position on the main one at
+     all. Drawing marks on the main track alone would have left five entries
+     with no mark anywhere, which is the same absence this whole change
+     exists to repair, just moved earlier in the century. Each track is
+     therefore marked over its own span. */
+  function buildMarks(vis) {
+    markOne(vis, "tl-marks", state.tMin, state.tMax);
+    markOne(vis, "cn-marks", state.cMin, state.cMax);
+  }
+
+  function markOne(vis, boxId, tMin, tMax) {
+    var box = $(boxId);
+    if (!box) return;
+    var slider = box.parentNode;
+    var W = (slider && slider.offsetWidth) || 900;
+
+    var pts = [];
+    (vis || []).forEach(function (e) {
+      var T = parseDate(e.date);
+      if (T === null) return;
+      var f = (T - tMin) / (tMax - tMin);
+      if (f < 0 || f > 1) return;
+      pts.push({ e: e, f: f });
+    });
+    pts.sort(function (a, b) { return a.f - b.f; });
+
+    /* Grouped on pixels, not on time: what matters is whether two marks
+       would touch on this screen at this width. */
+    var groups = [];
+    pts.forEach(function (p) {
+      var g = groups[groups.length - 1];
+      if (g && (p.f - g.f) * W < MARK_MIN_PX) {
+        g.items.push(p.e);
+        g.f = (g.f * (g.items.length - 1) + p.f) / g.items.length;
+      } else {
+        groups.push({ f: p.f, items: [p.e] });
+      }
+    });
+    box.innerHTML = groups.map(function (g, i) {
+      var left = (g.f * 100).toFixed(4);
+      if (g.items.length === 1) {
+        var e = g.items[0];
+        var col = catById(e.categories[0]).color;
+        return '<button type="button" class="tl-mk" data-mk="' + i + '"' +
+               ' data-id="' + esc(e.id) + '"' +
+               ' title="' + esc(fmtDate(e) + " · " + (tr(e, "title") || "")) + '"' +
+               ' style="left:' + left + '%;--mk:' + esc(col) + '"><i></i></button>';
+      }
+      /* A counter carries the ids of everything standing under it, so the
+         entry the reader is pointing at, or has open, can light the crowd it
+         belongs to rather than nothing at all. */
+      return '<button type="button" class="tl-mk tl-mk-c" data-mk="' + i + '"' +
+             ' data-ids="' + esc(g.items.map(function (x) { return x.id; }).join(" ")) + '"' +
+             ' title="' + esc(num(g.items.length) + " " + t("tl.here")) + '"' +
+             ' style="left:' + left + '%"><i></i><b>' + esc(num(g.items.length)) + '</b></button>';
+    }).join("");
+
+    box.querySelectorAll("[data-mk]").forEach(function (b) {
+      var g = groups[+b.dataset.mk];
+      b.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        closeStack();
+        if (g.items.length === 1) { selectEvent(g.items[0].id, true); return; }
+        openStack(b, g);
+      });
+      b.addEventListener("mouseenter", function () {
+        g.items.forEach(function (x) { hotRow(x.id, true); });
+      });
+      b.addEventListener("mouseleave", function () {
+        g.items.forEach(function (x) { hotRow(x.id, false); });
+      });
+    });
+    paintMarkState();
+  }
+
+  function paintMarkState() {
+    var id = state.selectedId;
+    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk").forEach(function (b) {
+      var mine = b.dataset.id ? (b.dataset.id === id)
+               : (b.dataset.ids || "").split(" ").indexOf(id) >= 0;
+      b.classList.toggle("on", !!id && mine);
+    });
+  }
+
+  /* ---- the stack a counter opens ---- */
+
+  function closeStack() {
+    var s = $("tl-stack");
+    if (!s) return;
+    s.hidden = true;
+    s.innerHTML = "";
+    document.querySelectorAll(".tl-mk.open").forEach(function (b) { b.classList.remove("open"); });
+  }
+
+  function openStack(btn, g) {
+    var s = $("tl-stack"), host = $("timeline");
+    if (!s || !host) return;
+    btn.classList.add("open");
+
+    s.innerHTML = '<div class="tl-stack-head">' +
+        '<b>' + esc(num(g.items.length) + " " + t("tl.here")) + '</b>' +
+        '<button type="button" class="tl-stack-x" aria-label="' + esc(t("tl.close")) + '">&#215;</button>' +
+      '</div>' +
+      g.items.map(function (e) {
+        return '<button type="button" class="tl-stack-row" data-go="' + esc(e.id) + '">' +
+               '<span class="s-d">' + esc(fmtDate(e)) + '</span>' +
+               '<i style="background:' + esc(catById(e.categories[0]).color) + '"></i>' +
+               '<span class="s-t">' + esc(tr(e, "title") || t("res.untitled")) + '</span>' +
+               '</button>';
+      }).join("");
+    s.hidden = false;
+
+    /* Placed against the button on screen, because in the vertical
+       arrangement the rail is rotated and its own coordinates are sideways;
+       the two bounding boxes are not. */
+    var hr = host.getBoundingClientRect(), br = btn.getBoundingClientRect();
+    var x = br.left + br.width / 2 - hr.left;
+    var y = br.top - hr.top;
+    var w = s.offsetWidth || 260, h = s.offsetHeight || 160;
+    s.style.left = Math.max(8, Math.min(hr.width - w - 8, x - w / 2)) + "px";
+    s.style.top  = Math.max(8, Math.min(hr.height - h - 8, y - h - 10)) + "px";
+
+    s.querySelector(".tl-stack-x").addEventListener("click", function (evt) {
+      evt.stopPropagation(); closeStack();
+    });
+    s.querySelectorAll("[data-go]").forEach(function (r) {
+      r.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        closeStack();
+        selectEvent(r.dataset.go, true);
+      });
+      r.addEventListener("mouseenter", function () { hotRow(r.dataset.go, true); });
+      r.addEventListener("mouseleave", function () { hotRow(r.dataset.go, false); });
+    });
+  }
+
+  /* ---- the panel and the rail, pointing at each other ---- */
+
+  function hotRow(id, on) {
+    var ul = $("results");
+    if (!ul) return;
+    var li = ul.querySelector('[data-id="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]');
+    if (li) li.classList.toggle("hot", !!on);
+  }
+  /* An entry is not always its own mark: in a crowd it is one of several
+     under a counter, and pointing at it should light the counter. */
+  function hotMark(id, on) {
+    if (!id) return;
+    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk").forEach(function (b) {
+      var mine = b.dataset.id ? (b.dataset.id === id)
+               : (b.dataset.ids || "").split(" ").indexOf(id) >= 0;
+      if (mine) b.classList.toggle("hot", !!on);
+    });
+  }
+
   /* =================================================================
      PANEL; results list
      ================================================================= */
@@ -2849,6 +3065,9 @@
     list.forEach(function (e) {
       var li = document.createElement("li");
       li.className = "res" + (e.id === state.selectedId ? " active" : "");
+      li.dataset.id = e.id;
+      li.addEventListener("mouseenter", function () { hotMark(e.id, true); });
+      li.addEventListener("mouseleave", function () { hotMark(e.id, false); });
       li.innerHTML =
         '<div class="res-date">' + esc(fmtDate(e)) +
           (isContext(e) ? ' <span class="ctx">' + esc(t("res.context")) + '</span>' : '') + '</div>' +
