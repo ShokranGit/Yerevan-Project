@@ -335,7 +335,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); console.warn("figure-ground:", err); }
       addLayers();
-      try { addRoutes(); addDispersal(); addGeoLink(); }
+      try { addRoutes(); addDispersal(); addFatal(); addGeoLink(); }
       catch (err) { window.__routeErr = String(err && err.message || err); console.warn("routes:", err); }
       try { addGeography(); }
       catch (err) { window.__geoErr = String(err && err.message || err); console.warn("geography:", err); }
@@ -379,7 +379,7 @@
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
-      try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+      try { addRoutes(); addDispersal(); addFatal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
       try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
       applyGround();
       applyPins(pinsWanted());
@@ -402,7 +402,7 @@
         try { addFigureGround(); }
         catch (err) { window.__fgErr = String(err && err.message || err); }
         if (!map.getSource(SRC)) { addLayers(); refresh(); }
-        try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+        try { addRoutes(); addDispersal(); addFatal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
         try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
         applyGround();
         if (state.selectedId && !placeMarkers.length) {
@@ -1074,6 +1074,83 @@
     });
   }
 
+  /* -----------------------------------------------------------------
+     THE KILL MAP; ten points read off a published sheet
+     -----------------------------------------------------------------
+     For 1 March 2008 the question the reader actually asks is where the
+     shooting happened, and the honest answer is not in any of the prose
+     accounts: it is in the small map printed with the Wikipedia article,
+     captioned "black dots denote the locations of the fatalities". The
+     dots were read off the full resolution image and fixed to the ground
+     against three landmarks drawn on the same sheet, so each point here
+     carries about a street's width of error and no claim beyond that.
+     The layer is deliberately anonymous. The sheet does not say which
+     dot is whose death, so neither does this.
+     ----------------------------------------------------------------- */
+  var FATAL_RED = "#b0111b";
+
+  function addFatal() {
+    if (!map || map.getSource("fatal-pt")) return;
+    map.addSource("fatal-pt", { type: "geojson", data: emptyFC() });
+    map.addLayer({
+      id: "fatal-glow", type: "circle", source: "fatal-pt",
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 8, 17, 22],
+        "circle-color": FATAL_RED, "circle-opacity": 0.16, "circle-blur": 0.65
+      }
+    });
+    map.addLayer({
+      id: "fatal-dot", type: "circle", source: "fatal-pt",
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 3.6, 17, 7.6],
+        "circle-color": FATAL_RED,
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#ffffff",
+        "circle-opacity": 1
+      }
+    });
+    paintFatal();
+  }
+
+  /* The rule for anything drawn on this map: it has to be legible on every
+     basemap, so the dot changes colour with the ground and the ring is the
+     ground's own opposite. The near white figure ground takes a dark ring,
+     the dark and the photograph take a white one. */
+  function paintFatal() {
+    if (!map || !map.getLayer || !map.getLayer("fatal-dot")) return;
+    var k = groundKind();
+    var dot = k === "light" ? "#b0111b" : k === "dark" ? "#ff5f63" : "#ff4d55";
+    var ring = k === "light" ? "#3a0a0e" : "#ffffff";
+    map.setPaintProperty("fatal-dot", "circle-color", dot);
+    map.setPaintProperty("fatal-dot", "circle-stroke-color", ring);
+    map.setPaintProperty("fatal-glow", "circle-color", dot);
+    map.setPaintProperty("fatal-glow", "circle-opacity", k === "light" ? 0.16 : 0.24);
+  }
+
+  function clearFatal() {
+    if (map && map.getSource("fatal-pt")) map.getSource("fatal-pt").setData(emptyFC());
+  }
+
+  function fatalPoints(e) {
+    return (e && e.fatalities && e.fatalities.points) || null;
+  }
+
+  function showFatal(e) {
+    clearFatal();
+    var pts = fatalPoints(e);
+    if (!map || !pts || !pts.length) return;
+    addFatal();
+    if (!map.getSource("fatal-pt")) return;
+    map.getSource("fatal-pt").setData({
+      type: "FeatureCollection",
+      features: pts.map(function (pt, i) {
+        return { type: "Feature", properties: { n: i + 1 },
+                 geometry: { type: "Point", coordinates: pt } };
+      })
+    });
+    paintFatal();
+  }
+
   /* The near stations are the ones worth opening on: framing all of them at
      once would put a courtyard 220 m away and a yard 8 km away in the same
      view, and the courtyard would vanish. The far ones are one click away in
@@ -1084,6 +1161,11 @@
     var o = sts[0].at, pts = [];
     sts.forEach(function (s) {
       if (all || metres(o, s.at) < 1500) pts.push(s.at);
+    });
+    /* the ten fatality points belong in the opening frame: they are the
+       part of this entry the reader came for */
+    (fatalPoints(e) || []).forEach(function (pt) {
+      if (all || metres(o, pt) < 1500) pts.push(pt);
     });
     if (pts.length < 2) pts = [o, [o[0] + 0.002, o[1] + 0.0015]];
     return pathBounds(pts);
@@ -2146,6 +2228,7 @@
     P("geo-ideal", "fill-color",
       ["case", ["==", ["get", "tone"], "accent"], RED, g.idealGrey]);
 
+    paintFatal();
     window.__ground = groundKind();
   }
 
@@ -2646,7 +2729,7 @@
     applySelectionState();
     history.replaceState(null, "", "#" + encodeURIComponent(id));
 
-    if (map) { clearRouteAnim(); clearPlaces(); clearDispersal(); }
+    if (map) { clearRouteAnim(); clearPlaces(); clearDispersal(); clearFatal(); }
 
     /* Not in Yerevan? Then the answer is not "go there", it is "show where
        there is". North up, flat, both places named, the distance between. */
@@ -2712,7 +2795,7 @@
       }
     }
 
-    if (map) { showMarchNotes(e); showDispersal(e); }
+    if (map) { showMarchNotes(e); showDispersal(e); showFatal(e); }
 
     var h = "";
     h += '<div class="d-date">' + esc(fmtDate(e)) + '</div>';
@@ -2788,6 +2871,18 @@
              '</button>';
       });
       h += '</div>';
+    }
+
+    if (e.fatalities && e.fatalities.points && e.fatalities.points.length) {
+      /* The count is the fact. The method is the caveat, and it belongs
+         beside the fact rather than in a footnote nobody opens. */
+      var fa = e.fatalities;
+      h += '<div class="d-fatal" style="--mk:' + esc(fa.color || RED) + '">' +
+           '<b><i></i>' + esc(tr(fa, "label") || "") + '</b>' +
+           '<span>' + esc(tr(fa, "note") || "") + '</span>' +
+           (tr(fa, "source") ? '<u>' + esc(tr(fa, "source")) + '</u>' : '') +
+           (tr(fa, "method") ? '<em>' + esc(tr(fa, "method")) + '</em>' : '') +
+           '</div>';
     }
 
     if (e.paths && e.paths.length) {
