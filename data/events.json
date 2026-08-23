@@ -4790,7 +4790,9 @@
         "kind": "years",
         "entry": "genocide-ceremony"
       },
-      "note": "The annual rite, and the one variable that moves inside it: the square the torch starts from."
+      "note": "The annual rite, and the one variable that moves inside it: the square the torch starts from.",
+      "axis": false,
+      "axisNote": "Not drawn as a band on the timeline. A purple length running from 2015 to 2026 reads as eleven years of continuous commemoration, which is not the claim: the rite is two days in April and the entry is about where those two days start from. The episode is kept because entries belong to it."
     }
   ]
 }
