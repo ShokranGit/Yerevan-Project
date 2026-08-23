@@ -1561,6 +1561,7 @@
      layers on the map and nothing in the console to say so. */
   var GEO_BAND = {
     precinct: [12.4, 13.4, 23, 24],
+    landmark: [14.4, 15.1, 23, 24],
     country:  [0,    0.5,  7.4,  8.6],
     karabakh: [0,    0.5,  7.4,  8.6],
     city:     [7.6,  8.8,  12.2, 13.4],
@@ -1817,6 +1818,39 @@
       paint: {
         "line-color": "#5b626d", "line-width": 1.8, "line-dasharray": [2.4, 1.8],
         "line-opacity": bandOpacity(GEO_BAND.precinct, 0.9)
+      }
+    });
+
+    /* -----------------------------------------------------------------
+       THE LANDMARKS
+       -----------------------------------------------------------------
+       The map published with the Wikipedia account of 1 March 2008 does
+       not only mark where people died. It marks what they died near: the
+       Russian embassy, the Blue Mosque, the city hall, Myasnikyan Square,
+       English Park, the French and Italian embassies, Government House on
+       Republic Square. A death 150 m from an embassy and a death 1.1 km
+       from the seat of government are different facts, and neither can be
+       read off a bare scatter of dots. So the buildings are on the map as
+       real footprints from OpenStreetMap, not as the source map's boxes.
+       They come in at street zoom, under the names the spaces already
+       carry, and their colour is the one warm note on an otherwise grey
+       map, which is also what keeps them apart from the districts.
+       ----------------------------------------------------------------- */
+    map.addLayer({
+      id: "geo-landmark-fill", type: "fill", source: "geo",
+      filter: ["==", ["get", "kind"], "landmark"],
+      paint: {
+        "fill-color": "#a8763f",
+        "fill-opacity": bandOpacity(GEO_BAND.landmark, 0.28)
+      }
+    });
+    map.addLayer({
+      id: "geo-landmark", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "landmark"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#7a5230", "line-width": 1.4,
+        "line-opacity": bandOpacity(GEO_BAND.landmark, 0.95)
       }
     });
 
@@ -2085,6 +2119,7 @@
   var GROUND = {
     dark: {
       precinctLine: "#c8ccd3", precinctFill: "#c8ccd3",
+      landmarkLine: "#e0a55f", landmarkFill: "#c08a4a", landmarkFillOp: 0.30,
       countryFillOp: 0.30, boroughFillOp: 0.17, boroughLineOp: 0.95,
       boroughCaseOp: 0.40, boroughLineW: 1.6, cityLineOp: 0.9, cityFillOp: 0.05,
       mass: "#b8bcc2",
@@ -2105,6 +2140,7 @@
     },
     light: {
       precinctLine: "#4a5058", precinctFill: "#6f767f",
+      landmarkLine: "#7a4d22", landmarkFill: "#b07b3c", landmarkFillOp: 0.34,
       countryFillOp: 0.34, boroughFillOp: 0.20, boroughLineOp: 1,
       boroughCaseOp: 0.55, boroughLineW: 1.8, cityLineOp: 1, cityFillOp: 0.07,
       mass: "#6f767f",
@@ -2125,6 +2161,7 @@
     },
     photo: {
       precinctLine: "#ffffff", precinctFill: "#e4e7ec",
+      landmarkLine: "#ffd9a0", landmarkFill: "#ffc477", landmarkFillOp: 0.38,
       countryFillOp: 0.44, boroughFillOp: 0.27, boroughLineOp: 1,
       boroughCaseOp: 0.65, boroughLineW: 2.2, cityLineOp: 1, cityFillOp: 0.11,
       mass: "#e4e7ec",
@@ -2216,6 +2253,9 @@
     P("geo-borough-case", "line-opacity", bandOpacity(GEO_BAND.borough, g.boroughCaseOp));
     P("geo-precinct", "line-color", g.precinctLine);
     P("geo-precinct-fill", "fill-color", g.precinctFill);
+    P("geo-landmark", "line-color", g.landmarkLine);
+    P("geo-landmark-fill", "fill-color", g.landmarkFill);
+    P("geo-landmark-fill", "fill-opacity", bandOpacity(GEO_BAND.landmark, g.landmarkFillOp));
     P("geo-city", "line-opacity", bandOpacity(GEO_BAND.city, g.cityLineOp));
     P("geo-city-fill", "fill-opacity", bandOpacity(GEO_BAND.city, g.cityFillOp));
     P("geo-nk-1994", "line-color", g.karabakh);
