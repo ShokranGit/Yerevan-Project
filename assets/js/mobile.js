@@ -265,7 +265,16 @@
   function watchTaps() {
     document.addEventListener("click", function (e) {
       if (!on || !e.target || !e.target.closest) return;
-      if (e.target.closest(".tl-spur-stop")) {
+      /* Every control whose whole purpose is to make the map do something.
+         The year stops on a period's own timeline were the first case found;
+         the march buttons inside an entry are the one he actually used, and
+         they are the worst of them, because a march is six kilometres long
+         and was being drawn behind a sheet covering all but a strip of the
+         screen. Replay and zoom belong here for the same reason. */
+      if (e.target.closest(".tl-spur-stop") ||
+          e.target.closest("[data-march]") ||
+          e.target.closest('[data-act="replay"]') ||
+          e.target.closest('[data-act="zoom"]')) {
         fromStop = true; stopAt = Date.now();
         showTheMap();
       }

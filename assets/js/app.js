@@ -617,6 +617,16 @@
     return "#ffffff";
   }
 
+  /* A walk is framed inside the part of the screen the reader can actually
+     see. On the phone the sheet sits over the bottom of the map even at its
+     lowest rest, so the room a 6.5 km route gets is not the canvas, it is the
+     canvas minus the sheet. One place to say that, four callers. */
+  function walkPad() {
+    return document.body.classList.contains("is-phone")
+      ? { top: 76, bottom: 214, left: 26, right: 26 }
+      : { top: 90, bottom: 190, left: 60, right: 60 };
+  }
+
   function animateRoute(ev) {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
     var src = map.getSource("route-anim");
@@ -1087,17 +1097,48 @@
      walked is drawn in the past tense of the same colour.
      ----------------------------------------------------------------- */
   var marchNotes = [];
+  var marchAt = [];
 
   function clearMarchNotes() {
     marchNotes.forEach(function (m) { m.remove(); });
     marchNotes = [];
+    marchAt = [];
+  }
+
+  /* A note is centred on a point of the route, and a point of the route can
+     be two metres from the edge of a phone screen. Then half the label is
+     outside the map and the reader sees a broken box rather than a name.
+     The marker still owns the point; the box inside it slides inward. */
+  function placeMarchNotes() {
+    if (!map || !marchAt.length) return;
+    var w = map.getContainer().clientWidth;
+    marchAt.forEach(function (rec) {
+      var el = rec.marker.getElement();
+      var box = el.firstChild;
+      if (!box) return;
+      var half = (box.offsetWidth || 120) / 2;
+      var x = map.project(rec.at).x;
+      el.classList.toggle("edge-r", x + half > w - 8);
+      el.classList.toggle("edge-l", x - half < 8);
+    });
   }
 
   function showMarchNotes(e) {
     clearMarchNotes();
     if (!map || !e || !e.paths || !e.paths.length) return;
     var colour = e.pathColor || catById(e.categories[0]).color;
+    /* On a 390 pixel screen two notes cannot both be read. One of them is
+       always clipped by the edge of the map, and the pair reads as damage
+       rather than as two routes. The phone gets the route that is current,
+       and the panel still lists every route in full. */
+    var phone = document.body.classList.contains("is-phone");
+    var only = -1;
+    if (phone) {
+      e.paths.forEach(function (p, n) { if (only < 0 && p.active !== false) only = n; });
+      if (only < 0) only = 0;
+    }
     e.paths.forEach(function (p, n) {
+      if (phone && n !== only) return;
       if (!p.path || p.path.length < 2) return;
       var L = p._len || pathLength(p.path);
       /* Staggered along the walk, not all at the same fraction. Two notes at
@@ -1109,17 +1150,19 @@
       var el = document.createElement("div");
       el.className = "march-note" + (p.active === false ? " past" : "");
       el.style.setProperty("--mk", colour);
-      el.innerHTML = '<b>' + esc(tr(p, "label") || "") + '</b>' +
-                     '<span>' + esc(t("march.years", { y: num(p.years || "") })) + '</span>';
+      el.innerHTML = '<div class="mn-box"><b>' + esc(tr(p, "label") || "") + '</b>' +
+                     '<span>' + esc(t("march.years", { y: num(p.years || "") })) + '</span></div>';
       el.addEventListener("click", function (evt) {
         evt.stopPropagation();
         selectEvent(e.id, false);
       });
-      marchNotes.push(
-        new maplibregl.Marker({ element: el, anchor: "bottom" })
-.setLngLat(at).addTo(map)
-      );
+      var mk = new maplibregl.Marker({ element: el, anchor: "bottom" })
+        .setLngLat(at).addTo(map);
+      marchNotes.push(mk);
+      marchAt.push({ marker: mk, at: at });
     });
+    placeMarchNotes();
+    requestAnimationFrame(placeMarchNotes);
   }
 
   function clearPlaces() {
@@ -2470,7 +2513,7 @@
            is the one that gets walked on opening. */
         var allPts = allWalkPoints(e);
         map.fitBounds(pathBounds(allPts), {
-          padding: { top: 90, bottom: 190, left: 60, right: 60 },
+          padding: walkPad(),
           duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
         });
         setTimeout(function () {
@@ -2734,7 +2777,7 @@
         var pp = (e.paths || [])[+b.dataset.march];
         if (!pp || !pp.path || !map) return;
         map.fitBounds(pathBounds(pp.path), {
-          padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
+          padding: walkPad(), duration: 900
         });
         setTimeout(function () {
           animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(e), persist: !!e.trailOnly });
@@ -2748,7 +2791,7 @@
           var rw = walkOf(e);
           if (!rw) return;
           map.fitBounds(pathBounds(rw.path), {
-            padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
+            padding: walkPad(), duration: 900
           });
           setTimeout(function () {
             animateRoute({ path: rw.path, _pathLen: rw._len,
@@ -3183,7 +3226,7 @@
       (host.paths || []).forEach(function (x) { if (x.id === y.route) pp = x; });
       if (pp && pp.path && pp.path.length > 1) {
         map.fitBounds(pathBounds(pp.path), {
-          padding: { top: 90, bottom: 210, left: 60, right: 60 }, duration: 1000
+          padding: walkPad(), duration: 1000
         });
         setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(host), persist: !!host.trailOnly }); }, 650);
       } else {
@@ -3486,6 +3529,8 @@
     map.on("zoom", paintGeoNames);
     map.on("zoomend", paintGeoNames);
     map.on("moveend", paintGeoNames);
+    map.on("moveend", placeMarchNotes);
+    map.on("move", placeMarchNotes);
     updateScale();
 
     map.on("mousemove", function (e) { show(e.lngLat); });
