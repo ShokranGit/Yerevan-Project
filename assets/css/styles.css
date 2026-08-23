@@ -2741,3 +2741,52 @@ body.tl-vertical .rb-state{ text-align:start; }
 @media (max-width:900px){
   .rb-state{ max-width:min(360px, 60vw); }
 }
+
+/* ---- the same three groups inside the phone settings sheet ---- */
+body.is-phone #m-sheet #map-controls.rb-phone{
+  display:flex; flex-direction:column; align-items:stretch; gap:6px;
+}
+body.is-phone #m-sheet .rb-mhead{
+  padding:12px 2px 2px; font-size:10px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--text-3);
+}
+body.is-phone #m-sheet .rb-mhead:first-child{ padding-top:2px; }
+body.is-phone #m-sheet #map-controls.rb-phone .map-btn{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  width:100%; text-align:start; border-radius:8px;
+}
+/* a dot instead of a word, because a word would need translating and the
+   state is already in the line above */
+body.is-phone #m-sheet #map-controls.rb-phone .map-btn[aria-pressed]::after{
+  content:""; flex:0 0 auto; width:9px; height:9px; border-radius:50%;
+  border:1px solid var(--text-3); background:transparent;
+}
+body.is-phone #m-sheet #map-controls.rb-phone .map-btn[aria-pressed="true"]::after{
+  background:var(--accent); border-color:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+/* the timeline switch is an icon; its own title is already translated */
+body.is-phone #m-sheet #tl-mode{ gap:10px; }
+body.is-phone #m-sheet #tl-mode::before{
+  content:attr(title); order:-1; flex:1 1 auto; text-align:start;
+}
+body.is-phone #m-sheet #tl-mode svg{ width:16px; height:16px; order:-2; }
+body.is-phone #m-sheet #about-btn{ opacity:.75; }
+.rb-state-phone{
+  text-align:start; padding:2px 2px 8px; max-width:none;
+  border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+
+/* The video box never appeared, and the reason was one selector: renderMedia
+   writes <figure class="d-media"><div class="embed">, so `.d-media.embed`
+   matched nothing and the play button floated on the page with no frame
+   around it. This is the same rule, aimed at the element that exists. */
+.d-media > .embed{
+  position:relative; width:100%; aspect-ratio:16/9;
+  background:linear-gradient(160deg, #1a1e26 0%, #12151b 100%);
+  border:1px solid var(--line); border-radius:7px;
+  overflow:hidden; display:flex; align-items:center; justify-content:center;
+}
+.d-media > .embed img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; }
+.d-media > .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+#map-wrap.bm-light .d-media > .embed{ background:linear-gradient(160deg,#1a1e26 0%, #12151b 100%); }
