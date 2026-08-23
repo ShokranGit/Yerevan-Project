@@ -1785,6 +1785,81 @@ body.is-phone .cat{ align-items:flex-start; }
 body.is-phone .cat .swatch{ margin-top:3px; }
 body.is-phone .cat .swatch{ width:14px; height:14px; }
 
+/* ===================================================================
+   THE PHONE TIMELINE, IN THE LANGUAGE OF THE RAIL
+   -------------------------------------------------------------------
+   The desktop timeline became a line: no box, no panel ground, a thin
+   red thread up the right edge. The phone kept the old card, and a card
+   is expensive here. Opened, it was 317 px of an 844 px screen, most of
+   it spent on furniture rather than on time: a panel background, a
+   border, a shadow, a heading that says "Periods", and three stacked
+   blocks each with its own padding.
+
+   This is the same information with the box taken away. The ground is a
+   gradient that fades up into the map instead of a bordered panel, the
+   tracks are two pixels, the headings go, and the parts sit closer
+   together. The touch targets do NOT shrink: a thumb is still 22 px of
+   real target over a small visible handle, which is the same trick the
+   day marks already use.
+   =================================================================== */
+body.is-phone #timeline{
+  /* The ground is the element's own background, not a pseudo-element: a
+     negative z-index child inside a scrolling box is not a reliable way to
+     put anything behind text, and the map's place names came through it. */
+  background:linear-gradient(to top,
+    rgb(15,17,21) 0, rgb(15,17,21) calc(100% - 13px),
+    rgba(15,17,21,0) 100%);
+  backdrop-filter:none;
+  border:none; box-shadow:none; border-radius:0;
+  /* the top padding clears the fade, so no line of the bar is ever set
+     over a half-transparent strip of map */
+  padding:13px 12px 2px;
+  max-height:41px;
+}
+body.is-phone #map-wrap.bm-light #timeline{
+  background:linear-gradient(to top,
+    rgb(246,247,249) 0, rgb(246,247,249) calc(100% - 13px),
+    rgba(246,247,249,0) 100%);
+}
+body.is-phone #app.m-tl-open #timeline{
+  max-height:min(34dvh, calc(100dvh - var(--sheet-h) - 150px));
+  padding-bottom:8px;
+}
+
+/* the window row: smaller play, smaller type, and the toggle keeps its
+   forty-four pixels because it is the control that opens the whole thing */
+body.is-phone #timeline .tl-row:first-child{ gap:9px; }
+body.is-phone #timeline .play-btn{ width:26px; height:26px; font-size:9px; }
+body.is-phone #timeline .tl-label{ font-size:12px; letter-spacing:.02em; }
+body.is-phone #timeline .link-btn{ font-size:10.5px; min-height:32px; padding:0 4px; }
+body.is-phone #m-tl-toggle{ height:34px; }
+
+/* two pixels of track, and a handle that reads as a handle rather than a slab */
+body.is-phone .tl-slider{ height:24px; margin:0; }
+body.is-phone .tl-slider-century{ height:22px; margin:0; }
+body.is-phone #tl-track, body.is-phone #tl-fill{ top:11px; height:2px; }
+body.is-phone #cn-track, body.is-phone #cn-fill{ top:10px; height:2px; }
+body.is-phone #tl-density{ bottom:14px; height:13px; opacity:.4; }
+body.is-phone #cn-density{ bottom:13px; height:11px; opacity:.4; }
+body.is-phone .tl-slider input[type=range]::-webkit-slider-thumb,
+body.is-phone .tl-slider-century input[type=range]::-webkit-slider-thumb{
+  width:22px; height:22px;
+}
+body.is-phone #tl-ticks, body.is-phone #cn-ticks{ font-size:8.5px; letter-spacing:.03em; }
+
+/* the periods: the word "Periods" is a heading over two chips that already
+   say what they are, and it cost a line plus sixty pixels of reserved rail */
+body.is-phone #app.m-tl-open .tl-rail-row .tl-era{ display:none; }
+body.is-phone .tl-rail-row{ margin:4px 0 0; min-height:0; }
+body.is-phone #app.m-tl-open #tl-rail{ min-height:28px; }
+body.is-phone .tl-rail-chip{ height:26px; font-size:11px; padding:0 8px; max-width:74%; }
+
+/* the century: one line for its name, window and reset, then its own thread */
+body.is-phone .tl-sep{ margin:8px 0 5px; }
+body.is-phone .tl-row-century{ gap:8px; margin-bottom:1px; }
+body.is-phone .tl-row-century .tl-era{ font-size:9px; letter-spacing:.1em; }
+body.is-phone .tl-row-century .tl-label{ font-size:11px; }
+
 /* ---- the timeline's own small parts, given a thumb-sized target ---- */
 body.is-phone .tl-slider{ height:34px; }
 body.is-phone .tl-slider-century{ height:30px; }
