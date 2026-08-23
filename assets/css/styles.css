@@ -1786,22 +1786,22 @@ html.lang-hy .geo-n-country b, html.lang-fa .geo-n-country b{ font-size:13px; }
 html.lang-hy .geo-n-space.space-street b, html.lang-fa .geo-n-space.space-street b{ font-size:11.5px; }
 
 /* On a light basemap the shadow has to become a halo instead. */
-#map-wrap.on-light .geo-name{
+#map-wrap.bm-light .geo-name{
   text-shadow:0 0 4px #fff, 0 0 10px #fff, 0 1px 2px rgba(255,255,255,.9);
 }
-#map-wrap.on-light .geo-n-country b{ color:#5a616b; }
-#map-wrap.on-light .geo-n-country.is-am b{ color:#a3272c; }
-#map-wrap.on-light .geo-n-city b{ color:#1a1c20; }
-#map-wrap.on-light .geo-n-district b,
-#map-wrap.on-light .geo-n-ring b{ color:#6d747e; }
-#map-wrap.on-light .geo-n-space b{ color:#15171b; }
-#map-wrap.on-light .geo-n-space.space-street b{ color:#4a5058; }
-#map-wrap.on-light .geo-n-space.space-water b{ color:#3d7ba6; }
-#map-wrap.on-light .geo-n-space.space-park b{ color:#3f6b48; }
-#map-wrap.on-light .geo-n-space.space-quarter b{ color:#7a6a55; }
-#map-wrap.on-light .geo-n-karabakh b{ color:#8a6f2a; }
-#map-wrap.on-light .geo-n-karabakh span{ color:#8a7c55; }
-#map-wrap.on-light .geo-name span{ color:#6d747e; }
+#map-wrap.bm-light .geo-n-country b{ color:#5a616b; }
+#map-wrap.bm-light .geo-n-country.is-am b{ color:#a3272c; }
+#map-wrap.bm-light .geo-n-city b{ color:#1a1c20; }
+#map-wrap.bm-light .geo-n-district b,
+#map-wrap.bm-light .geo-n-ring b{ color:#6d747e; }
+#map-wrap.bm-light .geo-n-space b{ color:#15171b; }
+#map-wrap.bm-light .geo-n-space.space-street b{ color:#4a5058; }
+#map-wrap.bm-light .geo-n-space.space-water b{ color:#3d7ba6; }
+#map-wrap.bm-light .geo-n-space.space-park b{ color:#3f6b48; }
+#map-wrap.bm-light .geo-n-space.space-quarter b{ color:#7a6a55; }
+#map-wrap.bm-light .geo-n-karabakh b{ color:#8a6f2a; }
+#map-wrap.bm-light .geo-n-karabakh span{ color:#8a7c55; }
+#map-wrap.bm-light .geo-name span{ color:#6d747e; }
 
 /* A phone is narrower than the names are wide. */
 @media (max-width: 860px){
@@ -1811,3 +1811,172 @@ html.lang-hy .geo-n-space.space-street b, html.lang-fa .geo-n-space.space-street
   .geo-n-space.space-street b{ font-size:9.5px; letter-spacing:.14em; }
   .geo-n-karabakh span{ max-width:120px; }
 }
+
+
+/* ===================================================================
+   THE DRAWING TOOLBAR
+   -------------------------------------------------------------------
+   A rail of tools down the left of the map and a panel of named shapes
+   beside it. The panel is the important half: a shape with no name is
+   something to look at, and a shape with a name is something you can
+   say a sentence about.
+   =================================================================== */
+
+#draw-rail{
+  position:absolute; left:14px; top:14px; z-index:6;
+  display:none; flex-direction:column; gap:3px;
+  padding:5px; border-radius:9px;
+  background:rgba(22,25,32,.94); backdrop-filter:blur(10px);
+  border:1px solid var(--line); box-shadow:0 8px 26px rgba(0,0,0,.45);
+}
+#app.drawing #draw-rail{ display:flex; }
+.draw-tool{
+  width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center;
+  background:none; border:1px solid transparent; border-radius:7px;
+  color:var(--text-2); cursor:pointer;
+}
+.draw-tool svg{ width:20px; height:20px; }
+.draw-tool:hover{ color:var(--text); background:var(--bg-3); }
+.draw-tool.on{ color:#fff; background:var(--accent); border-color:var(--accent); }
+.draw-tool.draw-clear:hover{ color:#ff8b8b; }
+.draw-sep{ height:1px; margin:3px 4px; background:var(--line); }
+
+#draw-panel{
+  position:absolute; left:62px; top:14px; z-index:6; width:302px;
+  display:none; flex-direction:column;
+  max-height:min(560px, calc(100% - 120px));
+  background:rgba(22,25,32,.96); backdrop-filter:blur(10px);
+  border:1px solid var(--line); border-radius:10px;
+  box-shadow:0 10px 34px rgba(0,0,0,.5); overflow:hidden;
+}
+#app.drawing #draw-panel{ display:flex; }
+.draw-head{
+  display:flex; align-items:center; gap:8px; padding:11px 12px 10px;
+  border-bottom:1px solid var(--line-soft);
+}
+.draw-head b{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); }
+html.lang-hy .draw-head b, html.lang-fa .draw-head b{ letter-spacing:0; text-transform:none; font-size:12.5px; }
+.draw-n{
+  min-width:20px; padding:1px 6px; border-radius:20px; font-size:10.5px;
+  background:var(--bg-3); color:var(--text-2); font-variant-numeric:tabular-nums;
+}
+.draw-x{
+  margin-inline-start:auto; width:26px; height:26px; padding:0;
+  background:none; border:none; color:var(--text-3); font-size:19px; line-height:1; cursor:pointer;
+}
+.draw-x:hover{ color:var(--text); }
+
+#draw-list{ flex:1; overflow-y:auto; padding:6px; }
+.draw-empty{ margin:14px 10px; font-size:12px; color:var(--text-3); line-height:1.6; }
+
+.draw-item{
+  display:flex; gap:8px; align-items:flex-start;
+  padding:8px; border-radius:8px; border:1px solid transparent; cursor:pointer;
+}
+.draw-item:hover{ background:var(--bg-3); }
+.draw-item.on{ background:var(--bg-3); border-color:var(--accent); }
+.draw-item.off{ opacity:.45; }
+.draw-swatch{ width:10px; height:10px; border-radius:3px; flex:0 0 auto; margin-top:6px; }
+.draw-meta{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.draw-name{
+  width:100%; padding:2px 4px; margin:0 -4px;
+  background:none; border:1px solid transparent; border-radius:4px;
+  font-size:13px; font-weight:600; color:var(--text);
+}
+.draw-name:hover{ border-color:var(--line); }
+.draw-name:focus{ outline:none; border-color:var(--accent); background:var(--bg); }
+.draw-item small{ font-size:10.5px; color:var(--text-3); font-variant-numeric:tabular-nums; }
+.draw-note{
+  width:100%; padding:2px 4px; margin:1px -4px 0;
+  background:none; border:1px solid transparent; border-radius:4px;
+  font-size:11.5px; color:var(--text-2);
+}
+.draw-note:hover{ border-color:var(--line); }
+.draw-note:focus{ outline:none; border-color:var(--accent); background:var(--bg); }
+.draw-note::placeholder{ color:var(--text-3); opacity:.7; }
+
+.draw-row-btns{ display:flex; flex-direction:column; gap:2px; }
+.draw-mini{
+  width:22px; height:22px; padding:0; display:flex; align-items:center; justify-content:center;
+  background:none; border:none; border-radius:4px; color:var(--text-3); cursor:pointer;
+}
+.draw-mini svg{ width:13px; height:13px; }
+.draw-mini span{ width:11px; height:11px; border-radius:3px; display:block; }
+.draw-mini:hover{ color:var(--text); background:var(--bg); }
+.draw-mini.danger:hover{ color:#ff8b8b; }
+
+.draw-foot{
+  display:flex; gap:6px; padding:9px 10px; border-top:1px solid var(--line-soft);
+}
+.draw-act{
+  flex:1; padding:7px 8px; font-size:11.5px; cursor:pointer;
+  background:var(--bg-3); border:1px solid var(--line); border-radius:6px; color:var(--text-2);
+}
+.draw-act:hover{ color:var(--text); border-color:var(--accent); }
+.draw-act.primary{ flex:1.5; background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+.draw-act.primary:hover{ filter:brightness(1.1); }
+.draw-act.ok{ background:#2f7d4f; border-color:#2f7d4f; color:#fff; }
+
+/* the measurement that follows the cursor while a shape is being drawn */
+#draw-live{
+  position:absolute; left:50%; transform:translateX(-50%); bottom:auto; top:16px; z-index:7;
+  padding:6px 13px; border-radius:20px; pointer-events:none;
+  background:rgba(15,17,21,.94); border:1px solid var(--line);
+  font-size:11.5px; color:var(--text); letter-spacing:.02em;
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+  box-shadow:0 4px 18px rgba(0,0,0,.5);
+}
+
+/* the name that sits on the shape */
+.draw-label{
+  display:flex; flex-direction:column; align-items:center; gap:1px;
+  pointer-events:auto; cursor:pointer; text-align:center;
+  filter:drop-shadow(0 2px 7px rgba(0,0,0,.7));
+}
+.draw-label b{
+  font-size:11.5px; font-weight:600; color:#fff; white-space:nowrap;
+  padding:2px 8px; border-radius:5px;
+  background:rgba(15,17,21,.9); border:1px solid var(--dc, var(--accent));
+  border-inline-start-width:3px;
+}
+.draw-label span{
+  font-size:9.5px; color:var(--text-3); white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.draw-label.on b{ background:var(--dc, var(--accent)); color:#0f1115; }
+
+#map-wrap.bm-light #draw-rail,
+#map-wrap.bm-light #draw-panel{ background:rgba(255,255,255,.96); border-color:#d5d8de; }
+#map-wrap.bm-light .draw-tool{ color:#4a5058; }
+#map-wrap.bm-light .draw-tool:hover{ color:#111; background:#eef0f3; }
+#map-wrap.bm-light .draw-item:hover,
+#map-wrap.bm-light .draw-item.on{ background:#eef0f3; }
+#map-wrap.bm-light .draw-name{ color:#15171b; }
+#map-wrap.bm-light .draw-note{ color:#4a5058; }
+#map-wrap.bm-light .draw-act{ background:#f2f4f6; border-color:#d5d8de; color:#4a5058; }
+#map-wrap.bm-light .draw-act.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+#map-wrap.bm-light .draw-head b, #map-wrap.bm-light .draw-item small{ color:#6d747e; }
+#map-wrap.bm-light #draw-live{ background:rgba(255,255,255,.95); border-color:#d5d8de; color:#15171b; }
+
+/* ---- the phone ----
+   The rail runs along the bottom of the map instead of down its side,
+   and the panel becomes a sheet above the reading sheet. Drawing with a
+   finger is coarse, so every tool is a full forty-four pixels. */
+body.is-phone #draw-rail{
+  left:8px; right:8px; top:auto; bottom:calc(var(--sheet-h) + 62px);
+  flex-direction:row; justify-content:center; gap:2px; padding:4px;
+}
+body.is-phone .draw-tool{ width:44px; height:44px; }
+body.is-phone .draw-sep{ width:1px; height:auto; margin:4px 3px; }
+body.is-phone #draw-panel{
+  left:8px; right:8px; top:auto; bottom:calc(var(--sheet-h) + 116px);
+  width:auto; max-height:44vh;
+}
+body.is-phone #draw-live{ top:auto; bottom:calc(var(--sheet-h) + 116px); font-size:12px; }
+body.is-phone #app.m-full #draw-rail,
+body.is-phone #app.m-full #draw-panel,
+body.is-phone #app.m-full #draw-live{ display:none; }
+body.is-phone .draw-mini{ width:30px; height:30px; }
+body.is-phone .draw-name{ font-size:14px; padding:5px 4px; }
+body.is-phone .draw-note{ font-size:12.5px; padding:5px 4px; }
+body.is-phone .draw-act{ min-height:40px; }
