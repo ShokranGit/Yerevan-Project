@@ -172,6 +172,11 @@
 
   /* ---------------- the state line ---------------- */
 
+  function setHTML(el, html) {
+    if (!el || el.innerHTML === html) return;
+    el.innerHTML = html;
+  }
+
   function stateLine() {
     var bits = [];
     var bm = basemapNow();
@@ -215,8 +220,8 @@
   }
 
   function render() {
-    var line = $("rb-state");
-    if (line) line.innerHTML = stateLine();
+    dressPhone();
+    setHTML($("rb-state"), stateLine());
     var m = $("rb-map"), t = $("rb-tools"), a = $("rb-about");
     if (m) m.firstChild.nodeValue = s("map") + " ";
     if (t) t.firstChild.nodeValue = s("tools") + " ";
@@ -277,6 +282,84 @@
     render();
   }
 
+  /* ---------------- the same order, on a phone ----------------
+     mobile.js moves the old row bodily into the settings sheet, and left to
+     itself it arrives as eight identical pills in the order they happened to
+     be written: exactly the fault the ribbon was built to cure, surviving on
+     the one screen where space is scarcest.
+
+     The ribbon does not build here, so this does the next best thing and
+     dresses what is already there. The buttons are not replaced, rewired or
+     copied. They are put in the same three groups the desktop menus use, the
+     same headings are inserted above them, and the state line is prepended so
+     a phone reader can see what is on without opening anything either. */
+
+  var dressed = false, dressing = false;
+
+  function dressPhone() {
+    /* Re-entrancy is not a theoretical worry here: this runs from a
+       MutationObserver on the sheet and its whole job is to mutate the sheet,
+       so without a guard it calls itself until the tab stops answering. It
+       also returns early once the order is already right, which makes the
+       observer cost nothing on every later change. */
+    if (dressing) return;
+    var sheet = $("m-sheet"), ctl = $("map-controls");
+    if (!sheet || !ctl || !sheet.contains(ctl)) return;
+
+    if (!dressed) {
+      dressed = true;
+      ctl.classList.add("rb-phone");
+
+      var line = document.createElement("div");
+      line.id = "rb-state-m";
+      line.className = "rb-state rb-state-phone";
+      ctl.parentNode.insertBefore(line, ctl);
+    }
+
+    /* Rebuilt from scratch each time, because the order is the whole point and
+       a late arrival (draw.js is late) must land in its group rather than at
+       the end. Moving a node inside its own parent keeps every listener. */
+    var groups = [
+      ["basemap", ["basemap-select"]],
+      ["layers",  ["districts-btn", "pins-btn", "terrain-btn"]],
+      ["instruments", ["draw-btn", "tl-mode", "reset-btn"]],
+      ["",        ["about-btn"]]
+    ];
+    /* What the sheet should read like, top to bottom, as a single string. If
+       it already reads like that, there is nothing to do. */
+    var want = [];
+    groups.forEach(function (g) {
+      var got = g[1].filter(function (id) { return $(id); });
+      if (!got.length) return;
+      if (g[0]) want.push("h:" + s(g[0]));
+      got.forEach(function (id) { want.push(id); });
+    });
+    var have = Array.prototype.map.call(ctl.children, function (el) {
+      return el.classList.contains("rb-mhead") ? "h:" + el.textContent : el.id;
+    });
+    if (have.join(">") === want.join(">")) {
+      setHTML($("rb-state-m"), stateLine());
+      return;
+    }
+
+    dressing = true;
+    Array.prototype.slice.call(ctl.querySelectorAll(".rb-mhead")).forEach(function (h) { h.remove(); });
+    groups.forEach(function (g) {
+      var present = g[1].filter(function (id) { return $(id); });
+      if (!present.length) return;
+      if (g[0]) {
+        var h = document.createElement("div");
+        h.className = "rb-head rb-mhead";
+        h.textContent = s(g[0]);
+        ctl.appendChild(h);
+      }
+      present.forEach(function (id) { ctl.appendChild($(id)); });
+    });
+
+    setHTML($("rb-state-m"), stateLine());
+    setTimeout(function () { dressing = false; }, 0);
+  }
+
   /* draw.js and rail.js insert their buttons after this file runs, so the
      first build waits for them, and a bounded retry keeps the menus honest
      if either one is late. */
@@ -285,10 +368,30 @@
     if ($("map-controls") && $("map-wrap")) {
       build();
       render();
-      if ($("draw-btn") && $("tl-mode")) { clearInterval(timer); return; }
+      /* On a phone the sheet is built lazily by mobile.js, so the loop keeps
+         going until the old row has actually arrived in it. */
+      var phoneReady = !document.body.classList.contains("is-phone") ||
+                       ($("m-sheet") && $("m-sheet").contains($("map-controls")));
+      if ($("draw-btn") && $("tl-mode") && phoneReady) { clearInterval(timer); return; }
     }
     if (++tries > 40) clearInterval(timer);
   }, 250);
 
-  window.RIBBON = { render: render, close: close };
+  /* The sheet is created and filled when it is first opened, and its contents
+     can be moved again when the phone rotates, so the dressing is re-applied
+     on any change to the sheet rather than once. */
+  var sheetObs = null;
+  function watchSheet() {
+    var sheet = $("m-sheet");
+    if (!sheet || sheetObs) return;
+    sheetObs = new MutationObserver(function () { dressPhone(); });
+    sheetObs.observe(sheet, { childList: true, subtree: true });
+  }
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("#m-controls-btn")) {
+      setTimeout(function () { watchSheet(); dressPhone(); render(); }, 60);
+    }
+  }, true);
+
+  window.RIBBON = { render: render, close: close, dressPhone: dressPhone };
 })();
