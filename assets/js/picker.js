@@ -81,6 +81,7 @@
 
     map.on("click", function (e) {
       if (!picking) return;
+      if (window.DRAW && DRAW.active()) return;   /* a draw tool owns the click */
       showPick(e.lngLat);
     });
   }

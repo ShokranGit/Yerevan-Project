@@ -366,8 +366,31 @@
        feeds itself. Every call is guarded by an existence check, but rebuilding
        the place markers was not, and it ran on every event. Debounced, and the
        markers are only rebuilt when a style swap has actually wiped them. */
-    var styleJob = 0;
+    /* The early return on isStyleLoaded is the trap terrain.js already paid
+       for: styledata usually fires while the style is still settling, so a
+       single debounced attempt can miss entirely and nothing puts the drawing
+       back after a basemap swap. One debounce for the common case, and a
+       bounded retry behind it for the case where the debounce was too early. */
+    var styleJob = 0, styleRetry = 0, styleTries = 0;
+
+    function restoreAfterStyle() {
+      if (!map.isStyleLoaded()) return false;
+      try { addFigureGround(); }
+      catch (err) { window.__fgErr = String(err && err.message || err); }
+      if (!map.getSource(SRC)) { addLayers(); refresh(); }
+      try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
+      try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
+      return !!map.getSource("geo");
+    }
+
+    map.on("style.load", function () { styleTries = 0; restoreAfterStyle(); });
     map.on("styledata", function () {
+      if (!styleRetry) {
+        styleTries = 0;
+        styleRetry = setInterval(function () {
+          if (++styleTries > 80 || restoreAfterStyle()) { clearInterval(styleRetry); styleRetry = 0; }
+        }, 150);
+      }
       if (styleJob) return;
       styleJob = setTimeout(function () {
         styleJob = 0;
@@ -449,6 +472,7 @@
       hoverPopup.remove();
     });
     map.on("click", "ev-dot", function (e) {
+      if (window.DRAW && DRAW.active()) return;   /* a draw tool owns the click */
       selectEvent(e.features[0].properties.id, false);
     });
   }
@@ -522,12 +546,14 @@
     map.on("mouseenter", "route-end", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "route-end", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "route-end", function (e) {
+      if (window.DRAW && DRAW.active()) return;
       var go = e.features[0].properties.go;
       if (go) selectEvent(go, true);
     });
     map.on("mouseenter", "route-line", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "route-line", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "route-line", function (e) {
+      if (window.DRAW && DRAW.active()) return;
       selectEvent(e.features[0].properties.id, true);
     });
   }
@@ -685,7 +711,9 @@
       figureErr: window.__fgErr || null,
       routeErr: window.__routeErr || null,
       geo: window.__geo || null,
-      geoErr: window.__geoErr || null
+      geoErr: window.__geoErr || null,
+      drawErr: window.__drawErr || null,
+      shapes: window.DRAW ? DRAW.shapes().length : null
     };
     if (m) {
       out.zoom = +m.getZoom().toFixed(2);
@@ -2928,9 +2956,23 @@
     show(map.getCenter());
   }
 
+  /* The two basemaps a reader would call light. Everything else, including
+     the figure-ground drawing and the satellite photograph, is dark ground. */
+  function setLightBasemap() {
+    var on = state.basemap === "light" || state.basemap === "streets";
+    $("map-wrap").classList.toggle("bm-light", on);
+  }
+
   function wireUI() {
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
+    /* on-light has meant "not the dark basemap" since the beginning, which
+       counts the figure-ground drawing as light although it is dark, and
+       several of the rules keyed to it were written without the descendant
+       space and so never matched anything. Rather than rewrite that and change
+       how the map has looked for months, anything new asks a narrower question:
+       is the basemap actually a light one. */
+    setLightBasemap();
     $("search").addEventListener("input", function () {
       state.query = this.value; refresh();
     });
@@ -2981,6 +3023,7 @@
         var dark = state.basemap === "dark" || state.basemap === "satellite";
         document.body.classList.toggle("light", !dark);
         $("map-wrap").classList.toggle("on-light", !dark);
+        setLightBasemap();
         map.setStyle(BASEMAPS[state.basemap]);
       });
     }
