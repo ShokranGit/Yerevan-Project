@@ -112,26 +112,32 @@
     plate.hidden = true;
     tl.appendChild(plate);
 
-    /* the century, in a drawer that opens to the left */
-    var drawer = document.createElement("div");
-    drawer.id = "rail-century";
-    var tab = document.createElement("button");
-    tab.id = "rail-cent-tab";
-    tab.type = "button";
-    tab.innerHTML = '<span></span><i>&#8249;</i>';
-    tab.addEventListener("click", function () {
-      tl.classList.toggle("cent-open");
-      tab.classList.toggle("open", tl.classList.contains("cent-open"));
-      if (tl.classList.contains("cent-open")) requestAnimationFrame(layout);
-    });
-    tl.appendChild(tab);
-    tl.appendChild(drawer);
+    /* Two bands, so a percentage means the same thing in both. Each band
+       is exactly the length of a rail, which is what the handle dates and
+       the year labels are positioned inside. */
+    var band = document.createElement("div");
+    band.id = "rail-band";
+    band.appendChild(lo); band.appendChild(hi);
+    tl.appendChild(band);
+
+    /* THE CENTURY, a second line of its own to the right of the first.
+       It used to be a drawer behind a tab, and a drawer is a thing you have
+       to find. Two lines side by side are a thing you can see. */
+    var cband = document.createElement("div");
+    cband.id = "rail-cn-band";
+    var clo = document.createElement("b"); clo.id = "rail-cn-lo"; clo.className = "rail-date rail-date-cn";
+    var chi = document.createElement("b"); chi.id = "rail-cn-hi"; chi.className = "rail-date rail-date-cn";
+    cband.appendChild(clo); cband.appendChild(chi);
+    tl.appendChild(cband);
 
     var cy = document.createElement("div");
     cy.id = "rail-cent-years";
-    drawer.appendChild(cy);
+    tl.appendChild(cy);
 
-    ["tl-sep-node", "cn-row", "cn-slider", "cn-ticks"].forEach(function () {});
+    /* The century's own slider is rotated exactly like the main one, so it
+       is moved out to the rail and NOT into any container: the rotation is
+       measured against the timeline. Its row of words and its tick row stay
+       in the DOM as sources and are hidden by the stylesheet. */
     var sep = tl.querySelector(".tl-sep");
     var crow = tl.querySelector(".tl-row-century");
     var cslide = tl.querySelector(".tl-slider-century");
@@ -139,7 +145,7 @@
     [sep, crow, cslide, ctick].forEach(function (el, i) {
       if (!el) return;
       if (!el.id) el.id = "rail-tmp-" + i;
-      take(el, drawer);
+      take(el, tl);
     });
 
     /* the play button and the reset link go to the foot of the rail,
@@ -149,17 +155,17 @@
     tl.appendChild(foot);
     take($("play-btn"), foot);
     take($("tl-reset"), foot);
+    /* The century's reset lived in a row of words that the rail hides. With
+       the drawer gone it would have had no way back to the full hundred
+       years, so it joins the foot under its own line. */
+    take($("cn-reset"), foot);
 
     labelChrome();
   }
 
   function labelChrome() {
-    var tab = $("rail-cent-tab");
-    if (tab) {
-      tab.querySelector("span").textContent = t("tl.century");
-      tab.title = t("tl.centuryOpen");
-      tab.setAttribute("aria-label", tab.title);
-    }
+    var cap = $("rail-cn-cap");
+    if (cap) cap.textContent = t("tl.century");
     labelSwitch();
   }
 
@@ -171,8 +177,9 @@
       if (el && h && h.parent) h.parent.insertBefore(el, h.next);
     });
     home = {};
-    ["rail-years", "rail-lo", "rail-hi", "rail-plate", "rail-century",
-     "rail-cent-tab", "rail-foot"].forEach(function (id) {
+    ["rail-years", "rail-lo", "rail-hi", "rail-plate", "rail-band",
+     "rail-cn-band", "rail-cn-lo", "rail-cn-hi", "rail-cent-years",
+     "rail-cn-cap", "rail-foot"].forEach(function (id) {
       var el = $(id); if (el) el.remove();
     });
     var tl = $("timeline");
@@ -210,17 +217,33 @@
      window as left% and width%, so the handles are its two ends and no
      second reading of the range inputs is needed. */
   function placeDates() {
-    var fill = $("tl-fill"), lo = $("rail-lo"), hi = $("rail-hi");
+    pair("tl-fill", "rail-lo", "rail-hi", "tl-from", "tl-to");
+    pair("cn-fill", "rail-cn-lo", "rail-cn-hi", "cn-from", "cn-to");
+  }
+
+  /* A fill carries its window as left% and width%, so its two ends are the
+     two handles and no second reading of the range inputs is needed. The
+     labels sit inside a band the same length as the rail, so the percentage
+     lands where the handle is rather than approximately near it. */
+  function pair(fillId, loId, hiId, fromId, toId) {
+    var fill = $(fillId), lo = $(loId), hi = $(hiId);
     if (!fill || !lo || !hi) return;
     var l = parseFloat(fill.style.left || "0");
     var w = parseFloat(fill.style.width || "0");
     if (isNaN(l)) l = 0;
     if (isNaN(w)) w = 0;
+    var top = Math.min(100, l + w);
     lo.style.bottom = l.toFixed(3) + "%";
-    hi.style.bottom = Math.min(100, l + w).toFixed(3) + "%";
-    var from = $("tl-from"), to = $("tl-to");
+    hi.style.bottom = top.toFixed(3) + "%";
+    var from = $(fromId), to = $(toId);
     lo.textContent = from ? from.textContent : "";
     hi.textContent = to ? to.textContent : "";
+    /* When the window is nearly shut the two labels would print over each
+       other. The lower one steps down and the upper one steps up, which is
+       the only place the rail lets a label leave its handle. */
+    var tight = (top - l) < 11;
+    lo.classList.toggle("tight-lo", tight);
+    hi.classList.toggle("tight-hi", tight);
   }
 
   /* A period is a coloured length of the rail. Its name is not printed
@@ -272,6 +295,20 @@
     placeDates();
     mirrorTicks("tl-ticks", "rail-years");
     mirrorTicks("cn-ticks", "rail-cent-years");
+    capOnce();
+  }
+
+  /* The second line needs to say what it is once. It is not a control and
+     it does not repeat: one word at the foot of the century, under its
+     lowest year. */
+  function capOnce() {
+    if ($("rail-cn-cap") || !on) return;
+    var tl = $("timeline");
+    if (!tl) return;
+    var cap = document.createElement("span");
+    cap.id = "rail-cn-cap";
+    cap.textContent = t("tl.century");
+    tl.appendChild(cap);
   }
 
   /* ---------------- switching ---------------- */
@@ -296,10 +333,14 @@
   }
 
   function watch() {
-    var fill = $("tl-fill");
+    /* Both fills, not just the first. The century's own window moved and its
+       two end years went on saying 1900 and 2000, because nothing was
+       watching the line that had changed. */
+    var fill = $("tl-fill"), cfill = $("cn-fill");
     if (fill && !fillObs) {
       fillObs = new MutationObserver(placeDates);
       fillObs.observe(fill, { attributes: true, attributeFilter: ["style"] });
+      if (cfill) fillObs.observe(cfill, { attributes: true, attributeFilter: ["style"] });
     }
     var ticks = $("tl-ticks");
     if (ticks && !epObs) {
