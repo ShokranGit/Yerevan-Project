@@ -590,8 +590,12 @@
     map.on("mouseleave", "route-end", function () { map.getCanvas().style.cursor = ""; });
     map.on("click", "route-end", function (e) {
       if (window.DRAW && DRAW.active()) return;
-      var go = e.features[0].properties.go;
-      if (go) selectEvent(go, true);
+      var f = e.features[0].properties;
+      /* The head of a route walks THAT route, named, so an entry carrying two
+         marches sets off from the square that was clicked. The far end still
+         opens whatever the route arrived at. */
+      if (f.kind === "start") { selectEvent(f.id, true, f.route || ""); return; }
+      if (f.go) selectEvent(f.go, true);
     });
     map.on("mouseenter", "route-line", function () { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "route-line", function () { map.getCanvas().style.cursor = ""; });
@@ -2487,9 +2491,19 @@
          solid dot at the far end keeps `route.to`, because arriving somewhere
          and asking what happened there is the gesture that end actually
          invites. */
+      /* AND WHICH route the ring at the head belongs to, which is the half
+         that was missing. An entry with two marches has two rings, one at
+         each square, and both of them used to say only "open this entry".
+         Opening the entry walks whichever route is marked active, so the ring
+         at the Opera set off a march from Republic Square: the reader clicked
+         one square and watched a line leave from the other. A ring now names
+         its own route, and clicking it walks that one. */
       var route = e.route || {};
+      var mainSub = "";
+      (e.paths || []).forEach(function (p) { if (p.path === e.path) mainSub = p.id || ""; });
       ends.push({ type: "Feature",
-        properties: { id: e.id, go: e.id, from: route.from || "", kind: "start" },
+        properties: { id: e.id, go: e.id, route: mainSub,
+                      from: route.from || "", kind: "start" },
         geometry: { type: "Point", coordinates: e.path[0] } });
       ends.push({ type: "Feature",
         properties: { id: e.id, go: route.to || e.id, kind: "end" },
@@ -2498,7 +2512,7 @@
         e.paths.forEach(function (p) {
           if (!p.path || p.path.length < 2 || p.path === e.path) return;
           ends.push({ type: "Feature",
-            properties: { id: e.id, go: e.id, kind: "start" },
+            properties: { id: e.id, go: e.id, route: p.id || "", kind: "start" },
             geometry: { type: "Point", coordinates: p.path[0] } });
         });
       }
@@ -2788,9 +2802,14 @@
     if (window.MOBILE && MOBILE.active && MOBILE.active()) { /* the sheet is already the reader */ }
   }
 
-  function selectEvent(id, fly) {
+  /* routeId names one of an entry's several routes. It is how a click on the
+     ring at a square says "this march, from here", rather than "this entry,
+     whichever march is current". */
+  function selectEvent(id, fly, routeId) {
     var e = state.events.filter(function (x) { return x.id === id; })[0];
     if (!e) return;
+    var pick = null;
+    if (routeId) (e.paths || []).forEach(function (p) { if (p.id === routeId) pick = p; });
     state.selectedId = id;
     applySelectionState();
     history.replaceState(null, "", "#" + encodeURIComponent(id));
@@ -2829,13 +2848,20 @@
            with several routes is framed around all of them at once, the point
            of drawing two is seeing them diverge; the one that is still walked
            is the one that gets walked on opening. */
-        var allPts = allWalkPoints(e);
+        /* Framed on the named route when there is one, so a march chosen at
+           its own square fills the view instead of sharing it with the other
+           march it diverges from. */
+        var allPts = pick ? pick.path : allWalkPoints(e);
         map.fitBounds(pathBounds(allPts), {
           padding: walkPad(),
           duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
         });
         setTimeout(function () {
-          var w = walkOf(e);
+          /* Same rule as the branch below: an entry with several routes and a
+             year list draws none of them by itself. A named route is not by
+             itself, it is an instruction, so it draws. */
+          var many = (e.paths || []).length > 1 && (e.years || []).length;
+          var w = pick || (many ? null : walkOf(e));
           if (w) animateRoute({ path: w.path, _pathLen: w._len,
                                 color: w.color || routeColour(e), persist: !!e.trailOnly });
         }, 700);
@@ -2854,8 +2880,8 @@
          With more than one route and a year list to choose from, the map
          waits: the panel offers both marches and every year opens its own. */
       var multi = (e.paths || []).length > 1 && (e.years || []).length;
-      if (!multi) {
-        var w2 = walkOf(e);
+      var w2 = pick || (multi ? null : walkOf(e));
+      if (w2) {
         animateRoute({ path: w2.path, _pathLen: w2._len,
                        color: w2.color || routeColour(e), persist: !!e.trailOnly });
       }
