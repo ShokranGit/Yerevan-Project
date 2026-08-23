@@ -1097,10 +1097,14 @@
     clearMarchNotes();
     if (!map || !e || !e.paths || !e.paths.length) return;
     var colour = e.pathColor || catById(e.categories[0]).color;
-    e.paths.forEach(function (p) {
+    e.paths.forEach(function (p, n) {
       if (!p.path || p.path.length < 2) return;
       var L = p._len || pathLength(p.path);
-      var hit = alongPath(p.path, L * 0.42);
+      /* Staggered along the walk, not all at the same fraction. Two notes at
+         42 per cent of two routes that share a destination land on top of each
+         other, which on a phone means one march is illegible and the other is
+         hidden. */
+      var hit = alongPath(p.path, L * (0.30 + (n % 3) * 0.24));
       var at = (hit && hit.at) || p.path[Math.floor(p.path.length / 2)];
       var el = document.createElement("div");
       el.className = "march-note" + (p.active === false ? " past" : "");
@@ -1618,25 +1622,50 @@
        claim: dashed, unfilled, faint. The 2020 remnant is drawn solid inside
        it. Since September 2023 neither is administered from Stepanakert, and
        the line under the name says so rather than the map pretending. */
+    /* Karabakh, twice. It was drawn in a muted ochre at a tenth opacity and
+       laid over Azerbaijan's green, and the two colours cancelled: the thing
+       most of this map's period was argued about could not be found on it.
+
+       It is now the brightest thing in the region, on purpose. The remnant
+       carries a real fill, a dark casing and a bright edge so it separates
+       from whatever is underneath, and the 1994 line is a wide dashed claim
+       around it. Neither is a national colour and neither belongs to the
+       palette of the states around it; that is the point. */
+    map.addLayer({
+      id: "geo-nk-1994-case", type: "line", source: "geo",
+      filter: ["==", ["get", "id"], "nk-1994"],
+      paint: {
+        "line-color": "#07080a", "line-width": 4, "line-blur": 2,
+        "line-opacity": bandOpacity(REG, 0.45)
+      }
+    });
     map.addLayer({
       id: "geo-nk-1994", type: "line", source: "geo",
       filter: ["==", ["get", "id"], "nk-1994"],
       paint: {
-        "line-color": "#c2a25a", "line-width": 1.3, "line-dasharray": [3, 2.6],
-        "line-opacity": bandOpacity(REG, 0.6)
+        "line-color": "#e8b93f", "line-width": 2, "line-dasharray": [3.4, 2.6],
+        "line-opacity": bandOpacity(REG, 0.95)
       }
     });
     map.addLayer({
       id: "geo-nk-2020-fill", type: "fill", source: "geo",
       filter: ["==", ["get", "id"], "nk-2020"],
-      paint: { "fill-color": "#c2a25a", "fill-opacity": bandOpacity(REG, 0.1) }
+      paint: { "fill-color": "#e8b93f", "fill-opacity": bandOpacity(REG, 0.34) }
+    });
+    map.addLayer({
+      id: "geo-nk-2020-case", type: "line", source: "geo",
+      filter: ["==", ["get", "id"], "nk-2020"],
+      paint: {
+        "line-color": "#07080a", "line-width": 5, "line-blur": 2,
+        "line-opacity": bandOpacity(REG, 0.5)
+      }
     });
     map.addLayer({
       id: "geo-nk-2020", type: "line", source: "geo",
       filter: ["==", ["get", "id"], "nk-2020"],
       paint: {
-        "line-color": "#c2a25a", "line-width": 1.5,
-        "line-opacity": bandOpacity(REG, 0.85)
+        "line-color": "#ffd166", "line-width": 2.6,
+        "line-opacity": bandOpacity(REG, 1)
       }
     });
 
@@ -1665,23 +1694,46 @@
        point is that the city is divided, not that the divisions are the
        subject, so they must be legible and must not swallow the map.
        Kentron carries a slightly stronger wash because it is the subject. */
+    /* The twelve districts. The first attempt was a three per cent wash and a
+       one pixel dash, which is invisible on a real basemap at city zoom: the
+       instruction was "visible, but not so dominant that it swallows every
+       other thing", and only the second half had been obeyed.
+
+       What makes a division legible without making it the subject is not more
+       ink, it is ALTERNATION. Each district takes a faint wash from a short
+       ring of cool tones, so neighbours never share one, and the mosaic reads
+       at a glance while no single tile shouts. The border is a real dashed
+       line with a dark casing under it, so it survives a white basemap and a
+       satellite photograph alike. */
     map.addLayer({
       id: "geo-borough-fill", type: "fill", source: "geo",
       filter: ["all", ["==", ["get", "kind"], "borough"], ["!=", ["get", "home"], true]],
-      paint: { "fill-color": "#8b929c", "fill-opacity": bandOpacity(GEO_BAND.borough, 0.03) }
+      paint: {
+        "fill-color": ["coalesce", ["get", "tint"], "#8b929c"],
+        "fill-opacity": bandOpacity(GEO_BAND.borough, 0.1)
+      }
     });
     map.addLayer({
       id: "geo-borough-home", type: "fill", source: "geo",
       filter: ["all", ["==", ["get", "kind"], "borough"], ["==", ["get", "home"], true]],
-      paint: { "fill-color": RED, "fill-opacity": bandOpacity(GEO_BAND.borough, 0.05) }
+      paint: { "fill-color": RED, "fill-opacity": bandOpacity(GEO_BAND.borough, 0.13) }
+    });
+    map.addLayer({
+      id: "geo-borough-case", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "borough"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#07080a", "line-width": 3, "line-blur": 1.5,
+        "line-opacity": bandOpacity(GEO_BAND.borough, 0.35)
+      }
     });
     map.addLayer({
       id: "geo-borough", type: "line", source: "geo",
       filter: ["==", ["get", "kind"], "borough"],
       layout: { "line-join": "round" },
       paint: {
-        "line-color": "#9aa1ab", "line-width": 1, "line-dasharray": [3, 2.4],
-        "line-opacity": bandOpacity(GEO_BAND.borough, 0.5)
+        "line-color": "#b6bdc7", "line-width": 1.5, "line-dasharray": [3.2, 2.2],
+        "line-opacity": bandOpacity(GEO_BAND.borough, 0.9)
       }
     });
 
@@ -1851,8 +1903,10 @@
       ringLine: "#4a5058",   ringBed: "#0d0f13", ringBedOp: 0.5,
       countryLine: "#6d747e",
       idealGrey: "#b8bcc2",
+      boroughCase: "#07080a",
+      karabakh: "#e8b93f",
       cityFill: "#dfe3e9",
-      boroughLine: "#9aa1ab",
+      boroughLine: "#b6bdc7",
       massifOp: 0.5
     },
     light: {
@@ -1866,8 +1920,10 @@
       ringLine: "#333941",   ringBed: "#ffffff", ringBedOp: 0.85,
       countryLine: "#8a919b",
       idealGrey: "#5f666f",
+      boroughCase: "#ffffff",
+      karabakh: "#c98f16",
       cityFill: "#4a5058",
-      boroughLine: "#767d87",
+      boroughLine: "#4d545e",
       massifOp: 0.55
     },
     photo: {
@@ -1881,6 +1937,8 @@
       ringLine: "#eef0f3",   ringBed: "#07080a", ringBedOp: 0.7,
       countryLine: "#ffffff",
       idealGrey: "#eef0f3",
+      boroughCase: "#07080a",
+      karabakh: "#ffd166",
       cityFill: "#ffffff",
       boroughLine: "#e8eaee",
       massifOp: 0.6
@@ -1927,7 +1985,9 @@
     P("geo-city", "line-color", g.cityLine);
     P("geo-city-fill", "fill-color", g.cityFill);
     P("geo-borough", "line-color", g.boroughLine);
-    P("geo-borough-fill", "fill-color", g.boroughLine);
+    P("geo-borough-case", "line-color", g.boroughCase);
+    P("geo-nk-1994", "line-color", g.karabakh);
+    P("geo-nk-2020-fill", "fill-color", g.karabakh);
     P("geo-massif", "fill-opacity", bandOpacity(GEO_BAND.massif, g.massifOp));
     P("geo-ring", "line-color", g.ringLine);
     P("geo-ring-bed", "line-color", g.ringBed);
@@ -2275,9 +2335,53 @@
     Array.prototype.forEach.call(document.querySelectorAll(".cat"), function (el) {
       el.classList.toggle("off", !state.activeCats.has(el.dataset.cat));
     });
+    syncCategorySummary();
+  }
+
+  /* The closed dropdown has to say what it is hiding, or it is just a lid.
+     All nine, none, a count, or the single theme's own name when exactly one
+     is on, which is the case a reader most wants to see confirmed. */
+  function syncCategorySummary() {
+    var sum = $("cat-sum"), btn = $("cat-menu");
+    if (!sum) return;
+    var total = state.categories.length, n = state.activeCats.size;
+    var txt, one = null;
+    if (n === total) txt = t("cat.all");
+    else if (n === 0) txt = t("cat.none");
+    else if (n === 1) {
+      state.categories.forEach(function (c) { if (state.activeCats.has(c.id)) one = c; });
+      txt = one ? tr(one, "label") : t("cat.some", { n: num(n), total: num(total) });
+    } else txt = t("cat.some", { n: num(n), total: num(total) });
+    sum.textContent = txt;
+    if (btn) btn.classList.toggle("filtered", n !== total);
+    sum.style.setProperty("--one", one ? one.color : "transparent");
+    sum.classList.toggle("has-one", !!one);
+  }
+
+  function wireCategoryMenu() {
+    var btn = $("cat-menu"), pan = $("cat-panel");
+    if (!btn || !pan) return;
+    function open(v) {
+      pan.hidden = !v;
+      btn.setAttribute("aria-expanded", v ? "true" : "false");
+      btn.classList.toggle("open", v);
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      open(pan.hidden);
+    });
+    document.addEventListener("click", function (e) {
+      if (pan.hidden) return;
+      if (e.target.closest && (e.target.closest("#cat-panel") || e.target.closest("#cat-menu"))) return;
+      open(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !pan.hidden) { open(false); btn.focus(); }
+    });
   }
 
   function updateCategoryCounts() {
+    syncCategorySummary();
     var counts = {};
     state.events.forEach(function (e) {
       if (!inWindow(e)) return;
@@ -2832,7 +2936,9 @@
      ----------------------------------------------------------------- */
 
   function commemEvents() {
-    return state.events.filter(function (e) { return e.recurs && e.recurs.days; });
+    return state.events.filter(function (e) {
+      return e.recurs && (e.recurs.days || e.recurs.dates);
+    });
   }
 
   function buildCommem() {
@@ -2847,12 +2953,25 @@
       /* Only the years the entry actually carries. A mark for every year of
          the axis is a calendar; a mark for the years that hold an argument is
          a reading. */
-      var list = r.years || [];
-      var d0 = r.days[0], d1 = r.days[r.days.length - 1];
+      /* Two shapes of annual. A fixed calendar date returns on the same
+         day every year, so month + days is enough. A movable feast does
+         not: Vardavar is ninety-eight days after Easter and wanders from
+         3 July to 28 July. For those, recurs.dates carries the real day of
+         each year and month/days are not consulted at all. */
+      var moves = !!r.dates;
+      var list = r.years || (moves ? Object.keys(r.dates).map(Number).sort() : []);
+      var d0 = r.days ? r.days[0] : 1;
+      var d1 = r.days ? r.days[r.days.length - 1] : 1;
       for (var q = 0; q < list.length; q++) {
-        var y = list[q];
-        var a = Date.UTC(y, (r.month || 1) - 1, d0);
-        var b = Date.UTC(y, (r.month || 1) - 1, d1 + 1);
+        var y = list[q], a, b;
+        if (moves) {
+          a = parseDate(r.dates[y]);
+          if (a === null) continue;
+          b = a + 86400000;
+        } else {
+          a = Date.UTC(y, (r.month || 1) - 1, d0);
+          b = Date.UTC(y, (r.month || 1) - 1, d1 + 1);
+        }
         var f0 = (a - state.tMin) / (state.tMax - state.tMin);
         var f1 = (b - state.tMin) / (state.tMax - state.tMin);
         if (f1 < 0 || f0 > 1) continue;
@@ -2863,7 +2982,7 @@
                 (Math.max(0, (Math.min(1, f1) - Math.max(0, f0))) * 100).toFixed(4) +
                 '%;--cm:' + esc(colour) + '"><i></i></button>';
       }
-      if (key) key.style.setProperty("--cm", colour);
+      if (key && !key._coloured) { key._coloured = true; key.style.setProperty("--cm", colour); }
     });
     box.innerHTML = html;
 
@@ -3386,6 +3505,7 @@
   }
 
   function wireUI() {
+    wireCategoryMenu();
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
     /* on-light has meant "not the dark basemap" since the beginning, which

@@ -108,6 +108,7 @@
     if (on) return;
     on = true;
     var app = $("app"), panel = $("panel");
+    function wrapEl() { return $("map-wrap"); }
 
     /* the grip */
     var grip = document.createElement("button");
@@ -138,6 +139,16 @@
     sheet.querySelector("b").textContent = label("m.controls");
     sheet.querySelector(".m-close").addEventListener("click", function () { sheet.hidden = true; });
     btn.addEventListener("click", function () { sheet.hidden = !sheet.hidden; });
+
+    /* The language switch lives at the top right of the page on a desktop.
+       A phone has no top right: the map is the whole screen and the corner is
+       where the zoom control is. It goes back into the sheet header, which is
+       the only header a phone has. */
+    var lang = $("lang-switch"), head = $("panel-head");
+    if (lang && head) {
+      home["lang-switch"] = { parent: lang.parentNode, next: lang.nextSibling };
+      head.insertBefore(lang, head.lastElementChild);
+    }
 
     /* move, never copy: the listeners app.js attached come with the nodes */
     var body = sheet.querySelector(".m-sheet-body");
@@ -171,6 +182,16 @@
       tl.appendChild(t);
     }
 
+    /* a way back to the words, once the map has had its turn */
+    var read = document.createElement("button");
+    read.id = "m-read-btn";
+    read.type = "button";
+    read.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"' +
+      ' stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"/>' +
+      '<path d="M20 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg><span></span>';
+    read.addEventListener("click", function () { setSnap(FULL); });
+    wrapEl().appendChild(read);
+
     /* a way back to the map from a full sheet */
     var back = document.createElement("button");
     back.id = "m-map-btn";
@@ -180,6 +201,8 @@
       '<path d="M9 4v13M15 6.5v13"/></svg><span>' + label("m.map") + "</span>";
     back.addEventListener("click", function () { setSnap(PEEK); });
     panel.appendChild(back);
+    var rb = $("m-read-btn");
+    if (rb) rb.querySelector("span").textContent = label("m.read");
 
     document.body.classList.add("is-phone");
     setSnap(PEEK, false);
@@ -189,16 +212,16 @@
   function teardown() {
     if (!on) return;
     on = false;
-    ["map-controls", "g3-thumb", "p3-thumb", "coords"].forEach(function (id) {
+    ["map-controls", "g3-thumb", "p3-thumb", "coords", "lang-switch"].forEach(function (id) {
       var el = $(id), h = home[id];
       if (el && h && h.parent) h.parent.insertBefore(el, h.next);
     });
-    ["m-grip", "m-controls-btn", "m-sheet", "m-map-btn", "m-tl-toggle"].forEach(function (id) {
+    ["m-grip", "m-controls-btn", "m-sheet", "m-map-btn", "m-tl-toggle", "m-read-btn"].forEach(function (id) {
       var el = $(id); if (el) el.remove();
     });
     var app = $("app");
     app.style.removeProperty("--sheet-h");
-    app.classList.remove("m-peek", "m-full", "m-tl-open", "m-anim");
+    app.classList.remove("m-peek", "m-full", "m-tl-open", "m-anim", "has-entry");
     document.body.classList.remove("is-phone");
     window.removeEventListener("resize", onResize);
   }
@@ -217,17 +240,61 @@
 
   /* Opening an entry raises the sheet; closing it drops back to peek so the
      map, which is the point, is the thing left on screen. */
+  /* THE MARCH PROBLEM, and what it taught.
+
+     Picking a year from a period's timeline used to leave the phone with an
+     open timeline bar, an open sheet and about ninety pixels of map between
+     them, at the exact moment the map was drawing a six kilometre walk. The
+     reader had asked to be shown something and the interface answered by
+     covering it.
+
+     So a stop is now understood as a request to LOOK, not to read: the
+     timeline folds, the sheet drops to peek, and the map gets the screen for
+     as long as the walk takes. The words are one drag away and the sheet
+     remembers nothing, so pulling it back up costs a gesture.
+
+     Tapping an entry in the list is still a request to READ, and still opens
+     the sheet full. The difference is where the tap came from, which is what
+     fromStop records. */
+  var fromStop = false, stopAt = 0;
+
+  function cameFromStop() {
+    return fromStop && (Date.now() - stopAt) < 4000;
+  }
+
+  function watchTaps() {
+    document.addEventListener("click", function (e) {
+      if (!on || !e.target || !e.target.closest) return;
+      if (e.target.closest(".tl-spur-stop")) {
+        fromStop = true; stopAt = Date.now();
+        showTheMap();
+      }
+    }, true);
+  }
+
+  /* Fold everything away and leave the map. */
+  function showTheMap() {
+    var app = $("app"), t = $("m-tl-toggle");
+    if (app.classList.contains("m-tl-open")) {
+      app.classList.remove("m-tl-open");
+      if (t) t.classList.remove("open");
+    }
+    setSnap(PEEK);
+    var sheet = $("m-sheet");
+    if (sheet && !sheet.hidden) sheet.hidden = true;
+  }
+
   function watchDetail() {
     var dv = $("detail-view");
     if (!dv) return;
     new MutationObserver(function () {
       if (!on) return;
-      /* If the reader came from the timeline, leave the timeline reachable:
-         the half sheet keeps both the rail and the entry on the screen. */
-      if (!dv.hidden && snap === PEEK) {
-        setSnap($("app").classList.contains("m-tl-open") ? HALF : FULL);
+      $("app").classList.toggle("has-entry", !dv.hidden);
+      if (!dv.hidden) {
+        if (cameFromStop()) { fromStop = false; showTheMap(); return; }
+        if (snap === PEEK) setSnap(FULL);
       }
-      else if (dv.hidden && snap === FULL) setSnap(HALF);
+      else if (snap === FULL) setSnap(HALF);
     }).observe(dv, { attributes: true, attributeFilter: ["hidden"] });
   }
 
@@ -252,11 +319,13 @@
     if (MQ.matches) build(); else teardown();
     watchDetail();
     watchSpur();
+    watchTaps();
     if (MQ.addEventListener) MQ.addEventListener("change", function () { MQ.matches ? build() : teardown(); });
     else if (MQ.addListener) MQ.addListener(function () { MQ.matches ? build() : teardown(); });
     if (window.I18N) window.I18N.onChange(function () {
       var s = $("m-sheet"); if (s) s.querySelector("b").textContent = label("m.controls");
       var b = $("m-map-btn"); if (b) b.querySelector("span").textContent = label("m.map");
+      var r = $("m-read-btn"); if (r) r.querySelector("span").textContent = label("m.read");
     });
   }
 
