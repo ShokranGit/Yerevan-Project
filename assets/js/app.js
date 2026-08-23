@@ -382,6 +382,7 @@
       try { addRoutes(); addDispersal(); addGeoLink(); } catch (err) { window.__routeErr = String(err && err.message || err); }
       try { addGeography(); } catch (err) { window.__geoErr = String(err && err.message || err); }
       applyGround();
+      applyPins(pinsWanted());
       return !!map.getSource("geo");
     }
 
@@ -809,7 +810,7 @@
 
   /* One line to ask a real browser what happened. Claude's automation tab is
      hidden, never runs requestAnimationFrame and therefore never finishes
-     loading a map, so when Alireza says the map is frozen the only reliable
+     loading a map, so when Shokran says the map is frozen the only reliable
      evidence is what HIS browser reports. In the console: __health() */
   window.__health = function () {
     var m = window.__map, out = {
@@ -1369,7 +1370,7 @@
      real roofs, which only works if they are still there. */
   function addFigureGround() {
 
-    /* The figure: the buildings Alireza marked dark on slide 10. These are real
+    /* The figure: the buildings Shokran marked dark on slide 10. These are real
        OpenStreetMap footprints with real heights, extracted once and stored in
        data/figure.json; not selected at runtime. Deterministic, reviewable,
        and identical for every reader. */
@@ -1878,9 +1879,32 @@
       }
     });
 
+    /* A named place is now a thing you can open, not only a thing you can
+       read. The pin and the name are one marker and one target: pointing at
+       either lights both, and clicking either opens the same dossier. */
     (GEO.spaces || []).forEach(function (sp) {
-      add(sp.at, "space space-" + (sp.kind || "site"),
-          GEO_BAND["space" + (sp.rank || 2)], tr(sp, "label"));
+      var g = add(sp.at, "space space-" + (sp.kind || "site"),
+                  GEO_BAND["space" + (sp.rank || 2)], tr(sp, "label"));
+      if (!g) return;
+      var open = sp.dossier || sp.opens;
+      if (!open) return;
+      var wrap = g.marker.getElement();
+      wrap.classList.add("is-place");
+      g.el.classList.add("has-dossier");
+      var pin = document.createElement("i");
+      pin.className = "place-pin";
+      g.el.insertBefore(pin, g.el.firstChild);
+      wrap.style.pointerEvents = "auto";
+      wrap.style.cursor = "pointer";
+      wrap.setAttribute("role", "button");
+      wrap.setAttribute("tabindex", "0");
+      wrap.addEventListener("click", function (evt) {
+        evt.stopPropagation();
+        openPlace(sp);
+      });
+      wrap.addEventListener("keydown", function (evt) {
+        if (evt.key === "Enter" || evt.key === " ") { evt.preventDefault(); openPlace(sp); }
+      });
     });
 
     paintGeoNames();
@@ -1936,6 +1960,8 @@
 
   var GROUND = {
     dark: {
+      countryFillOp: 0.30, boroughFillOp: 0.17, boroughLineOp: 0.95,
+      boroughCaseOp: 0.40, boroughLineW: 1.6, cityLineOp: 0.9, cityFillOp: 0.05,
       mass: "#b8bcc2",
       chev: "#ffffff",       chevOp: 0.8,
       halo: "#07080a",       haloOp: 0.34,
@@ -1953,6 +1979,8 @@
       massifOp: 0.5
     },
     light: {
+      countryFillOp: 0.34, boroughFillOp: 0.20, boroughLineOp: 1,
+      boroughCaseOp: 0.55, boroughLineW: 1.8, cityLineOp: 1, cityFillOp: 0.07,
       mass: "#6f767f",
       chev: "#2e333a",       chevOp: 0.85,
       halo: "#ffffff",       haloOp: 0.9,
@@ -1970,6 +1998,8 @@
       massifOp: 0.55
     },
     photo: {
+      countryFillOp: 0.44, boroughFillOp: 0.27, boroughLineOp: 1,
+      boroughCaseOp: 0.65, boroughLineW: 2.2, cityLineOp: 1, cityFillOp: 0.11,
       mass: "#e4e7ec",
       chev: "#ffffff",       chevOp: 0.95,
       halo: "#07080a",       haloOp: 0.6,
@@ -2029,6 +2059,23 @@
     P("geo-city-fill", "fill-color", g.cityFill);
     P("geo-borough", "line-color", g.boroughLine);
     P("geo-borough-case", "line-color", g.boroughCase);
+
+    /* THE RULE, from 23 August 2026: nothing is drawn once and hoped for.
+       Every added element carries a number per ground, because "visible" is
+       not a property of a colour, it is a relation between a colour and what
+       is underneath it. A district boundary that reads on the figure ground
+       disappears on a satellite photograph at the same opacity.
+
+       So the boundaries, the washes and the country fills are all set here,
+       from the same three column table as everything else. */
+    P("geo-country-fill", "fill-opacity", bandOpacity(GEO_BAND.country, g.countryFillOp));
+    P("geo-borough-fill", "fill-opacity", bandOpacity(GEO_BAND.borough, g.boroughFillOp));
+    P("geo-borough-home", "fill-opacity", bandOpacity(GEO_BAND.borough, g.boroughFillOp + 0.04));
+    P("geo-borough", "line-opacity", bandOpacity(GEO_BAND.borough, g.boroughLineOp));
+    P("geo-borough", "line-width", g.boroughLineW);
+    P("geo-borough-case", "line-opacity", bandOpacity(GEO_BAND.borough, g.boroughCaseOp));
+    P("geo-city", "line-opacity", bandOpacity(GEO_BAND.city, g.cityLineOp));
+    P("geo-city-fill", "fill-opacity", bandOpacity(GEO_BAND.city, g.cityFillOp));
     P("geo-nk-1994", "line-color", g.karabakh);
     P("geo-nk-2020-fill", "fill-color", g.karabakh);
     P("geo-massif", "fill-opacity", bandOpacity(GEO_BAND.massif, g.massifOp));
@@ -2469,6 +2516,68 @@
   /* =================================================================
      PANEL; detail view
      ================================================================= */
+
+  /* ---- a place dossier ----
+     A place is not an event and does not belong in events.json: it has no
+     date and it does not end. It is a standing thing the entries happen at,
+     so it gets its own small view, built from the gazetteer, with a slot for
+     whatever is written about it later.
+
+     Two of them do not open a dossier at all. The Swan Lake and the fountain
+     basins on Republic Square open the Vardavar entry, because what there is
+     to say about them is that once a year people take the water out of them
+     and throw it at each other. A place whose `opens` names an entry is a way
+     into that entry. */
+  function openPlace(sp) {
+    if (!sp) return;
+    if (sp.opens) { selectEvent(sp.opens, true); return; }
+    var body = $("detail-body");
+    if (!body) return;
+
+    var related = state.events.filter(function (e) {
+      if (!e.coordinates || !sp.at) return false;
+      var dx = (e.coordinates[0] - sp.at[0]) * Math.cos(sp.at[1] * Math.PI / 180);
+      var dy = e.coordinates[1] - sp.at[1];
+      return Math.sqrt(dx * dx + dy * dy) * 111320 < 170;
+    });
+
+    var h = '<div class="d-place">' + esc(t("place.kind." + (sp.kind || "site"))) + '</div>' +
+            '<h2>' + esc(tr(sp, "label")) + '</h2>';
+
+    if (typeof sp.mentions === "number") {
+      h += '<p class="d-mentions">' +
+           esc(t(sp.mentions === 1 ? "place.mention1" : "place.mentions",
+                 { n: num(sp.mentions) })) + '</p>';
+    }
+    if (tr(sp, "dossier")) {
+      h += '<h3 class="d-h">' + esc(t("place.about")) + '</h3>' +
+           '<div class="d-sec"><p>' + para(tr(sp, "dossier")) + '</p></div>';
+    }
+    if (related.length) {
+      h += '<h3 class="d-h">' + esc(t("place.here")) + '</h3><ul class="d-here">';
+      related.forEach(function (e) {
+        h += '<li><button type="button" data-goto="' + esc(e.id) + '">' +
+             '<span class="d-here-date">' + esc(fmtDate(e)) + '</span>' +
+             '<span class="d-here-title">' + esc(tr(e, "title")) + '</span></button></li>';
+      });
+      h += '</ul>';
+    }
+    h += '<p class="d-open-note">' + esc(t("place.open")) + '</p>';
+
+    body.innerHTML = h;
+    body.querySelectorAll("[data-goto]").forEach(function (b) {
+      b.addEventListener("click", function () { selectEvent(b.dataset.goto, true); });
+    });
+
+    state.selectedId = null;
+    $("browse-view").hidden = true;
+    $("detail-view").hidden = false;
+    $("detail-view").scrollTop = 0;
+    if (map && sp.at) {
+      map.easeTo({ center: sp.at, zoom: Math.max(map.getZoom(), 15.2), duration: 900 });
+    }
+    if (window.MOBILE && MOBILE.active && MOBILE.active()) { /* the sheet is already the reader */ }
+  }
 
   function selectEvent(id, fly) {
     var e = state.events.filter(function (x) { return x.id === id; })[0];
@@ -3549,7 +3658,45 @@
     $("map-wrap").classList.toggle("bm-light", on);
   }
 
+  /* ---- the event pins ----
+     Forty theme-coloured dots over one square kilometre is most of what the
+     Kentron looks like, and while the places and the buildings are being
+     built they are in the way. The switch is in the map controls and the
+     state is remembered, so this is a preference and not a decision. */
+  var PIN_KEY = "yerevan.pins";
+
+  function pinsWanted() {
+    try {
+      var v = localStorage.getItem(PIN_KEY);
+      return v === null ? false : v === "on";
+    } catch (e) { return false; }
+  }
+
+  function applyPins(on) {
+    if (!map) return;
+    ["ev-dot", "ev-glow"].forEach(function (id) {
+      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
+    });
+    var b = $("pins-btn");
+    if (b) {
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("on", on);
+    }
+  }
+
+  function wirePins() {
+    var b = $("pins-btn");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var next = !pinsWanted();
+      try { localStorage.setItem(PIN_KEY, next ? "on" : "off"); } catch (e) { /* private */ }
+      applyPins(next);
+    });
+    applyPins(pinsWanted());
+  }
+
   function wireUI() {
+    wirePins();
     wireCategoryMenu();
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
