@@ -2246,19 +2246,37 @@ html.lang-hy #rail-cent-tab span, html.lang-fa #rail-cent-tab span{
 #rail-cent-tab.open i{ transform:rotate(180deg); }
 body:not(.tl-vertical) #rail-cent-tab{ display:none; }
 
+/* The drawer opens over the map, so it carries its own ground. Without one
+   the decade labels are read against whatever the basemap happens to put
+   behind them, which on the satellite and the street map is nothing legible.
+   A gradient rather than a panel: it fades out to the left so the drawer
+   still reads as an edge of the rail and not as a floating box. */
 #rail-century{
   position:absolute; right:132px; top:16px; bottom:76px; width:104px;
+  background:linear-gradient(to left, rgba(15,17,21,.88) 0%, rgba(15,17,21,.72) 62%, rgba(15,17,21,0) 100%);
   opacity:0; visibility:hidden; transform:translateX(14px);
   transition:opacity .22s cubic-bezier(.4,0,.2,1), transform .22s cubic-bezier(.4,0,.2,1), visibility .22s;
   border-right:1px solid var(--line-soft);
 }
 #timeline.cent-open #rail-century{ opacity:1; visibility:visible; transform:none; }
 #rail-century .tl-sep, #rail-century .tl-row-century .tl-era{ display:none; }
+/* #cn-ticks is the SOURCE that #rail-cent-years mirrors, so it has to stay in
+   the DOM. It must not be drawn: left visible it lays its six decades out as
+   a horizontal row across the top of the drawer, on top of the years. */
+#rail-century #cn-ticks{ display:none; }
+/* The window read-out and the reset go under the column, not over it. At the
+   top they sit exactly where the first decade label is. */
 #rail-century .tl-row-century{
-  position:absolute; left:0; top:0; gap:6px;
-  font-size:10px; color:var(--text-3);
+  position:absolute; left:0; right:0; top:auto; bottom:-38px;
+  display:flex; flex-direction:column; align-items:center; gap:1px;
+  font-size:10px; color:var(--text-3); white-space:nowrap;
 }
-#rail-century .tl-row-century .tl-label{ font-size:10px; }
+#rail-century .tl-row-century .tl-label{
+  font-size:9.5px; display:flex; gap:4px; font-variant-numeric:tabular-nums;
+}
+#rail-century .tl-row-century .link-btn{
+  font-size:9px; letter-spacing:.09em; color:var(--text-3);
+}
 #rail-century .tl-slider-century{
   position:absolute;
   width:var(--rail-h, 400px); height:22px;
@@ -2325,6 +2343,12 @@ body.tl-vertical #pick-out{ left:20px; bottom:246px; }
 }
 #map-wrap.bm-light #rail-years span,
 #map-wrap.bm-light #rail-cent-years span{ color:#6d747e; }
+#map-wrap.bm-light #rail-century{
+  background:linear-gradient(to left, rgba(248,249,250,.9) 0%, rgba(248,249,250,.74) 62%, rgba(248,249,250,0) 100%);
+  border-right-color:rgba(0,0,0,.14);
+}
+#map-wrap.bm-light #rail-century .tl-row-century,
+#map-wrap.bm-light #rail-century .tl-row-century .link-btn{ color:#6d747e; }
 #map-wrap.bm-light #rail-plate{ background:rgba(255,255,255,.96); color:#15171b; }
 
 /* a phone keeps the docked bar it already has */
