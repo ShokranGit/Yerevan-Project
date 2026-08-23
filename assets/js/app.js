@@ -1722,29 +1722,71 @@
      slices are: a shape that looks surveyed and is not would be a lie
      told in the map's own voice.
      ----------------------------------------------------------------- */
-  var MASSIF_RAMP = ["#7a6a52", "#96825f", "#b09a6f", "#cdbb8f", "#ece4cf"];
+  /* Six tones for six contours, so every band is a step and none of them
+     collides with its neighbour. Earth colours: the mountain is the one
+     thing on this map that is neither built nor drawn by anybody. */
+  var MASSIF_RAMP = ["#7a6a52", "#96825f", "#b09a6f", "#bfa87f", "#cdbb8f", "#ece4cf"];
 
+  /* -----------------------------------------------------------------
+     ARARAT, AND WHY IT IS NO LONGER TWO SETS OF CIRCLES
+     -----------------------------------------------------------------
+     The mountain used to be drawn as concentric rings of perfect circles
+     around each summit, five for Masis and four for Sis, radii chosen by
+     hand. It was honest about being schematic, and it was still the wrong
+     drawing. Two graded circles side by side, one large and one small,
+     do not read as a mountain. Somebody looking at this map said what
+     they read instead, and once it has been seen it cannot be unseen.
+     That is reason enough on its own; the research reason is better.
+
+     Ararat is the one landform this whole project keeps pointing at: the
+     axis the city is built to see, the thing on the horizon that is not
+     in the country. A shape that carries no information about the actual
+     mountain cannot carry that argument. Circles say only "something
+     tall is here". Contours say where the massif begins, that it has two
+     cones, where the saddle between them sits, and that Sis stands on
+     the flank of Masis rather than beside it.
+
+     So the geometry is now measured. Elevation from the AWS Terrain
+     Tiles service, terrarium encoding, SRTM and NASADEM at about 30 m,
+     sampled at zoom 10 which is roughly 110 m to the pixel. For each of
+     1,800, 2,400, 3,000, 3,600, 4,200 and 4,800 m, the region above that
+     height containing the summit was flood filled and its boundary
+     traced, then simplified. 1,800 m is the lowest line that closes:
+     below it the massif runs continuously into the highlands to the
+     south east and stops being one mountain. Above 3,000 m Sis separates
+     and becomes its own outline, which is exactly the fact the old
+     drawing asserted at every height and the ground only supports above
+     three thousand metres.
+     ----------------------------------------------------------------- */
   function massifFC() {
     if (!GEO || !GEO.features) return null;
-    var out = [];
-    (GEO.features.features || []).forEach(function (f) {
-      var p = f.properties;
-      if (!p || p.kind !== "massif" || !p.bands) return;
-      var n = p.bands.length, i;
-      for (i = 0; i < n; i++) {
-        var rOut = p.bands[i];
-        var rIn = (i === n - 1) ? 0 : p.bands[i + 1];
-        var tone = MASSIF_RAMP[Math.min(MASSIF_RAMP.length - 1,
-                     Math.round(i * (MASSIF_RAMP.length - 1) / Math.max(1, n - 1)))];
-        out.push({
-          type: "Feature",
-          properties: { id: p.id, step: i, tone: tone },
-          geometry: { type: "Polygon",
-            coordinates: [annulusSector(p.summit, rIn, rOut, 0, 360, 4)] }
-        });
-      }
+    var rings = (GEO.features.features || []).filter(function (f) {
+      return f.properties && f.properties.kind === "contour" && f.geometry;
     });
-    return out.length ? { type: "FeatureCollection", features: out } : null;
+    if (!rings.length) return null;
+
+    /* Lowest first, so each band is painted over the one below it and the
+       ramp reads as height rather than as a stack of separate shapes. */
+    rings.sort(function (a, b) { return a.properties.level - b.properties.level; });
+
+    var levels = [];
+    rings.forEach(function (f) {
+      if (levels.indexOf(f.properties.level) < 0) levels.push(f.properties.level);
+    });
+    var span = Math.max(1, levels.length - 1);
+
+    var out = rings.map(function (f) {
+      var i = levels.indexOf(f.properties.level);
+      var tone = MASSIF_RAMP[Math.min(MASSIF_RAMP.length - 1,
+                   Math.round(i * (MASSIF_RAMP.length - 1) / span))];
+      return {
+        type: "Feature",
+        properties: { id: f.properties.peak || f.properties.id,
+                      step: i, level: f.properties.level, tone: tone },
+        geometry: f.geometry
+      };
+    });
+    return { type: "FeatureCollection", features: out };
   }
 
   function idealRingFC() {
