@@ -2315,6 +2315,23 @@ body.tl-vertical .maplibregl-ctrl-bottom-right{ right:288px; }
 #tl-mode{ width:34px; padding:0; display:inline-flex; align-items:center; justify-content:center; }
 #tl-mode svg{ width:16px; height:16px; }
 body.tl-vertical #timeline > *{ pointer-events:auto; }
+/* ...but that rule carries an id AND a class, so it OUTRANKS a plain #id
+   selector, and every `pointer-events:none` written on one of the passive
+   columns below was being silently overridden. Two of them are full rail
+   height and up to 124 px wide, and they lie exactly over the period spur:
+   its close button, its two arrows and its scrollbar took no clicks at all,
+   while the wheel still reached the track underneath because a wheel falls
+   through to the nearest scrollable ancestor. Anything that only prints
+   something is named here, where the specificity is high enough to win. */
+body.tl-vertical #timeline > #rail-years,
+body.tl-vertical #timeline > #rail-cent-years,
+body.tl-vertical #timeline > #rail-eras,
+body.tl-vertical #timeline > #rail-band,
+body.tl-vertical #timeline > #rail-cn-band,
+body.tl-vertical #timeline > #rail-plate,
+body.tl-vertical #timeline > #rail-cn-cap{ pointer-events:none; }
+/* and the spur is a reader, so it sits above the columns whatever else moves */
+body.tl-vertical #tl-spur{ z-index:8; }
 
 /* the parts of the horizontal arrangement the rail does not use */
 body.tl-vertical #timeline > .tl-row:first-child,
