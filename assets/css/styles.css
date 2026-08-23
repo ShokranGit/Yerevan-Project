@@ -2790,3 +2790,99 @@ body.is-phone #m-sheet #about-btn{ opacity:.75; }
 .d-media > .embed img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; }
 .d-media > .embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 #map-wrap.bm-light .d-media > .embed{ background:linear-gradient(160deg,#1a1e26 0%, #12151b 100%); }
+
+/* -----------------------------------------------------------------
+   THE MARKS, and the stack a counter opens
+   -----------------------------------------------------------------
+   One mark per entry on the track, in the colour of its first theme.
+   Where marks would touch they become a counter carrying the number of
+   entries standing there. Placed by percentage inside .tl-slider, which
+   is the same element the vertical rail rotates, so both arrangements
+   are served by one set of rules and only the counter's digits are
+   turned back upright.
+   ----------------------------------------------------------------- */
+#tl-marks, #cn-marks{
+  position:absolute; top:0; left:0; right:0; height:26px;
+  pointer-events:none; z-index:5;
+}
+.tl-mk{
+  position:absolute; top:0; height:26px; width:9px; margin-left:-4.5px;
+  padding:0; background:none; border:none; cursor:pointer; pointer-events:auto;
+}
+.tl-mk i{
+  position:absolute; left:3px; width:3px; top:5px; bottom:5px;
+  background:var(--mk, var(--text-2)); border-radius:2px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.45);
+  transition:transform .12s ease, opacity .12s ease;
+  opacity:.78;
+}
+.tl-mk:hover i, .tl-mk.hot i{ opacity:1; transform:scaleX(1.9); }
+.tl-mk.on i{
+  opacity:1; transform:scaleX(2.2);
+  box-shadow:0 0 0 1px rgba(0,0,0,.5), 0 0 8px var(--mk, var(--accent));
+}
+/* a crowd */
+.tl-mk-c{ width:17px; margin-left:-8.5px; }
+.tl-mk-c i{
+  left:0; width:17px; top:4.5px; bottom:4.5px; border-radius:9px;
+  background:color-mix(in srgb, var(--accent) 22%, var(--bg-2));
+  box-shadow:inset 0 0 0 1px var(--accent);
+  opacity:1;
+}
+.tl-mk-c b{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:9.5px; font-weight:600; color:var(--text); font-variant-numeric:tabular-nums;
+  pointer-events:none;
+}
+.tl-mk-c:hover i, .tl-mk-c.open i, .tl-mk-c.hot i{ background:color-mix(in srgb, var(--accent) 48%, var(--bg-2)); }
+.tl-mk-c.on i{ background:var(--accent); box-shadow:inset 0 0 0 1px var(--accent), 0 0 9px rgba(201,38,44,.6); }
+.tl-mk-c.on b{ color:#fff; }
+.tl-mk-c:hover i{ transform:none; }
+
+/* the rail is rotated, so the digits have to be turned back */
+body.tl-vertical .tl-mk-c b{ transform:rotate(90deg); }
+body.tl-vertical .tl-mk i{ box-shadow:0 0 0 1px rgba(0,0,0,.55); }
+
+/* the panel row that belongs to the mark under the pointer */
+.res.hot{ background:var(--bg-3); border-color:var(--line); }
+
+/* the stack */
+#tl-stack{
+  /* A fixed width, because the vertical arrangement gives the timeline
+     container only a couple of hundred pixels and a stack squeezed into that
+     wraps every title over five lines. */
+  position:absolute; z-index:30; width:min(320px, 78vw);
+  max-height:270px; overflow-y:auto;
+  background:rgba(18,21,27,.985); border:1px solid var(--line);
+  border-radius:9px; padding:6px; backdrop-filter:blur(10px);
+  box-shadow:0 20px 46px -18px rgba(0,0,0,.92);
+}
+.tl-stack-head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:5px 6px 7px; border-bottom:1px solid var(--line-soft); margin-bottom:4px;
+}
+.tl-stack-head b{
+  font-size:9.5px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--text-3); font-weight:600;
+}
+.tl-stack-x{
+  background:none; border:none; color:var(--text-3); font-size:16px; line-height:1;
+  cursor:pointer; padding:0 2px;
+}
+.tl-stack-x:hover{ color:var(--text); }
+.tl-stack-row{
+  display:flex; align-items:baseline; gap:9px; width:100%; text-align:start;
+  background:none; border:0; border-radius:6px; padding:7px 8px; cursor:pointer;
+}
+.tl-stack-row:hover{ background:rgba(255,255,255,.055); }
+.tl-stack-row .s-d{
+  flex:0 0 auto; font-size:10px; color:var(--text-3);
+  font-variant-numeric:tabular-nums; letter-spacing:.02em;
+}
+.tl-stack-row i{ flex:0 0 auto; width:5px; height:5px; border-radius:3px; }
+.tl-stack-row .s-t{ font-size:12.5px; color:var(--text-2); line-height:1.35; }
+.tl-stack-row:hover .s-t{ color:var(--text); }
+
+body.is-phone .tl-mk{ width:13px; margin-left:-6.5px; }
+body.is-phone .tl-mk i{ left:5px; }
+body.is-phone #tl-stack{ left:12px !important; right:12px; width:auto; max-width:none; }
