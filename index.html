@@ -12,7 +12,7 @@
      back to the system stack in styles.css if the network refuses them. -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;600&family=Noto+Serif+Armenian:wght@400;600&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet" />
 <link href="assets/vendor/maplibre-gl.css" rel="stylesheet" />
-<link href="assets/css/styles.css?v=20260823f" rel="stylesheet" />
+<link href="assets/css/styles.css?v=20260823k" rel="stylesheet" />
 </head>
 <body>
 
@@ -27,7 +27,6 @@
         <p class="brand-sub" data-i18n="brand.sub">Urban space · social movements · political events</p>
       </div>
       <!-- English · Armenian · Persian. Persian also flips the whole layout. -->
-      <div id="lang-switch" role="group" data-i18n-aria-label="lang.title" aria-label="Language"></div>
       <button id="panel-toggle" class="icon-btn" data-i18n-title="panel.collapse" data-i18n-aria-label="panel.collapse" title="Collapse panel" aria-label="Collapse panel">&#10094;</button>
     </header>
 
@@ -38,13 +37,23 @@
         <input id="search" type="search" data-i18n-placeholder="search.ph" placeholder="Search events, places, actors…" autocomplete="off" />
       </div>
 
-      <section class="block">
-        <div class="block-head">
-          <h2 data-i18n="themes">Themes</h2>
-          <button id="cat-all" class="link-btn" data-i18n="all">all</button>
-          <button id="cat-none" class="link-btn" data-i18n="none">none</button>
+      <!-- The themes were a standing list of nine rows, about a third of the
+           panel, permanently spending height on a filter that is usually left
+           alone. They are a dropdown now: a summary you can read at a glance,
+           and the nine only when you want them. -->
+      <section class="block block-themes">
+        <button id="cat-menu" type="button" aria-expanded="false" aria-controls="cat-panel">
+          <span class="cat-menu-label" data-i18n="themes">Themes</span>
+          <span class="cat-menu-sum" id="cat-sum"></span>
+          <i class="cat-menu-caret" aria-hidden="true"></i>
+        </button>
+        <div id="cat-panel" hidden>
+          <div class="block-head">
+            <button id="cat-all" class="link-btn" data-i18n="all">all</button>
+            <button id="cat-none" class="link-btn" data-i18n="none">none</button>
+          </div>
+          <div id="categories"></div>
         </div>
-        <div id="categories"></div>
       </section>
 
       <section class="block">
@@ -72,6 +81,11 @@
   <!-- ============ MAP ============ -->
   <main id="map-wrap">
     <div id="map"></div>
+
+    <!-- Language sits where a reader looks for it: the top right corner of
+         the page. On a phone it goes back into the sheet header, which is the
+         only header a phone has. -->
+    <div id="lang-switch" role="group" data-i18n-aria-label="lang.title" aria-label="Language"></div>
 
     <!-- north arrow: rotates with the map, click to face north again -->
     <button id="north" data-i18n-title="north.title" data-i18n-aria-label="north.title" title="Reset bearing to north" aria-label="Reset bearing to north">
@@ -251,13 +265,14 @@
 <!-- ?v= is bumped on every deploy: GitHub Pages caches assets hard,
      and without it readers keep running yesterday's code.
      i18n.js loads first; every other file asks it for its words. -->
-<script src="assets/js/i18n.js?v=20260823f"></script>
-<script src="assets/js/app.js?v=20260823f"></script>
-<script src="assets/js/picker.js?v=20260823f"></script>
-<script src="assets/js/terrain.js?v=20260823f"></script>
-<script src="assets/js/graph3d.js?v=20260823f"></script>
-<script src="assets/js/parties3d.js?v=20260823f"></script>
-<script src="assets/js/draw.js?v=20260823f"></script>
-<script src="assets/js/mobile.js?v=20260823f"></script>
+<script src="assets/js/i18n.js?v=20260823k"></script>
+<script src="assets/js/app.js?v=20260823k"></script>
+<script src="assets/js/picker.js?v=20260823k"></script>
+<script src="assets/js/terrain.js?v=20260823k"></script>
+<script src="assets/js/graph3d.js?v=20260823k"></script>
+<script src="assets/js/parties3d.js?v=20260823k"></script>
+<script src="assets/js/rail.js?v=20260823k"></script>
+<script src="assets/js/draw.js?v=20260823k"></script>
+<script src="assets/js/mobile.js?v=20260823k"></script>
 </body>
 </html>
