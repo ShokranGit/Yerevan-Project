@@ -502,7 +502,12 @@
     });
     map.addLayer({
       id: "route-line", type: "line", source: "routes",
-      /* Some marches are drawn only as they are walked; see trailOnly. */
+      /* A march is drawn only as it is walked; see trailOnly on the entry.
+         As of 23 August 2026 both marches on this map are trail-only, so this
+         layer and its halo and chevrons hold nothing. They are kept rather
+         than deleted because the choice belongs to the entry: a future route
+         that should sit on the map permanently only has to leave the flag
+         off. */
       filter: ["!=", ["get", "trail"], 1],
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
