@@ -2229,12 +2229,20 @@ body.tl-vertical #rail-foot .link-btn{
 }
 
 /* ---- the century, in a drawer that opens to the left ---- */
+/* This was a hairline and a word in map-label grey, and it read as part of
+   the map rather than as a control: Alireza could not find it on the desktop
+   either. It is a tab now, with its own ground, hinged on the rail and
+   opening to the left. */
 #rail-cent-tab{
-  position:absolute; right:112px; top:50%; transform:translateY(-50%);
-  display:flex; flex-direction:column; align-items:center; gap:8px;
-  padding:14px 6px; background:none; cursor:pointer;
-  border:none; border-left:1px solid var(--line);
-  color:var(--text-3);
+  position:absolute; right:104px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:7px;
+  padding:14px 6px 12px; cursor:pointer;
+  background:rgba(22,25,32,.94);
+  border:1px solid var(--line); border-right-color:transparent;
+  border-radius:8px 0 0 8px;
+  color:var(--text-2);
+  box-shadow:-4px 0 14px rgba(0,0,0,.4);
+  transition:color .15s, border-color .15s, background .15s;
 }
 #rail-cent-tab span{
   writing-mode:vertical-rl; text-orientation:mixed;
@@ -2247,8 +2255,19 @@ html.lang-hy #rail-cent-tab span, html.lang-fa #rail-cent-tab span{
   writing-mode:horizontal-tb; transform:rotate(-90deg); white-space:nowrap;
   letter-spacing:0; text-transform:none; font-size:11px;
 }
-#rail-cent-tab i{ font-style:normal; font-size:13px; transition:transform .2s; }
-#rail-cent-tab:hover{ color:var(--text-2); border-left-color:var(--accent); }
+#rail-cent-tab i{
+  font-style:normal; font-size:12px; line-height:1;
+  transition:transform .2s; opacity:.9;
+}
+#rail-cent-tab:hover, #rail-cent-tab:focus-visible{
+  color:var(--text); border-color:var(--accent); border-right-color:transparent;
+  background:var(--bg-3);
+}
+#rail-cent-tab:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+#rail-cent-tab.open{
+  color:var(--text); border-color:var(--accent); border-right-color:transparent;
+  background:var(--bg-3);
+}
 #rail-cent-tab.open i{ transform:rotate(180deg); }
 body:not(.tl-vertical) #rail-cent-tab{ display:none; }
 
@@ -2349,6 +2368,13 @@ body.tl-vertical #pick-out{ left:20px; bottom:246px; }
 }
 #map-wrap.bm-light #rail-years span,
 #map-wrap.bm-light #rail-cent-years span{ color:#6d747e; }
+#map-wrap.bm-light #rail-cent-tab{
+  background:rgba(248,249,250,.95); border-color:rgba(0,0,0,.14);
+  border-right-color:transparent; color:#5b626c;
+  box-shadow:-4px 0 14px rgba(0,0,0,.12);
+}
+#map-wrap.bm-light #rail-cent-tab:hover,
+#map-wrap.bm-light #rail-cent-tab.open{ color:#14161a; border-color:var(--accent); border-right-color:transparent; }
 #map-wrap.bm-light #rail-century{
   background:linear-gradient(to left, rgba(248,249,250,.9) 0%, rgba(248,249,250,.74) 62%, rgba(248,249,250,0) 100%);
   border-right-color:rgba(0,0,0,.14);
