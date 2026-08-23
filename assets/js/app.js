@@ -2475,9 +2475,21 @@
            arrow. The head of the animation is the direction. */
         if (!e.trailOnly) chevrons(p.path, e.id).forEach(function (c) { marks.push(c); });
       });
+      /* WHAT THE RING AT THE HEAD OF A ROUTE IS FOR, and what it used to do.
+         It used to carry `route.from`, so clicking the ring at the start of
+         the march opened the meeting that set the march off and moved the
+         camera to it. That is a defensible link and it is the wrong gesture:
+         a reader who clicks the dot sitting at the head of a line expects the
+         line to be walked, and instead the map left for somewhere else and
+         the march never moved. The ring now opens its own entry, which draws
+         the walk from this point along its whole length; the meeting it came
+         from is still one click away, on the button inside the entry. The
+         solid dot at the far end keeps `route.to`, because arriving somewhere
+         and asking what happened there is the gesture that end actually
+         invites. */
       var route = e.route || {};
       ends.push({ type: "Feature",
-        properties: { id: e.id, go: route.from || e.id, kind: "start" },
+        properties: { id: e.id, go: e.id, from: route.from || "", kind: "start" },
         geometry: { type: "Point", coordinates: e.path[0] } });
       ends.push({ type: "Feature",
         properties: { id: e.id, go: route.to || e.id, kind: "end" },
