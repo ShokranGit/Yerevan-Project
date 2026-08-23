@@ -627,11 +627,98 @@
      see. On the phone the sheet sits over the bottom of the map even at its
      lowest rest, so the room a 6.5 km route gets is not the canvas, it is the
      canvas minus the sheet. One place to say that, four callers. */
-  function walkPad() {
-    return document.body.classList.contains("is-phone")
-      ? { top: 76, bottom: 214, left: 26, right: 26 }
-      : { top: 90, bottom: 190, left: 60, right: 60 };
+  /* -----------------------------------------------------------------
+     HOW MUCH OF THE MAP IS ACTUALLY MAP
+     -----------------------------------------------------------------
+     The padding for framing a march used to be four constants, and the
+     constants were guesses about a window nobody had measured. They were
+     wrong in the one arrangement that matters most: with the horizontal
+     timeline the panel is 217 px tall and floats 269 px up from the
+     bottom of the map, while the two thumbnails on the right take 146 px,
+     against a bottom guess of 190 and a right guess of 60. So the head of
+     the Freedom Square march, which is the whole point of clicking the
+     ring at the Opera, was framed underneath the timeline.
+
+     Nothing here is guessed any more. Every floating child of the map is
+     measured at the moment the frame is computed, which means this stays
+     right when the timeline is switched from horizontal to vertical, when
+     it is collapsed, on a phone, and if a panel is added later that
+     nobody remembers to add a constant for.
+
+     Assigning a box to an edge: a box that spans most of the width is a
+     band across the top or the bottom, a box that spans most of the
+     height is a column at the left or the right, and anything smaller
+     belongs to whichever edge it hugs. The timeline is the case that
+     makes the rule necessary: it sits 20 px from the left, which would
+     make a nearest-edge test call it a left hand panel. It is not one.
+     ----------------------------------------------------------------- */
+  function uiInsets() {
+    var pad = { top: 0, bottom: 0, left: 0, right: 0 };
+    var wrap = $("map-wrap");
+    if (!wrap) return pad;
+    var M = wrap.getBoundingClientRect();
+    if (!M.width || !M.height) return pad;
+
+    Array.prototype.forEach.call(wrap.children, function (el) {
+      if (el.id === "map") return;
+      var cs = window.getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden" ||
+          parseFloat(cs.opacity || "1") < 0.05) return;
+      var r = el.getBoundingClientRect();
+      if (r.width < 8 || r.height < 8) return;
+
+      var top = r.top - M.top, left = r.left - M.left;
+      var bottom = M.bottom - r.bottom, right = M.right - r.right;
+      var wide = r.width / M.width > 0.6, tall = r.height / M.height > 0.6;
+
+      function take(edge, v) { if (v > pad[edge]) pad[edge] = v; }
+
+      if (wide && !tall) {
+        if (top <= bottom) take("top", r.bottom - M.top);
+        else take("bottom", M.bottom - r.top);
+        return;
+      }
+      if (tall && !wide) {
+        if (left <= right) take("left", r.right - M.left);
+        else take("right", M.right - r.left);
+        return;
+      }
+      var near = Math.min(top, bottom, left, right);
+      if (near === top)         take("top", r.bottom - M.top);
+      else if (near === bottom) take("bottom", M.bottom - r.top);
+      else if (near === left)   take("left", r.right - M.left);
+      else                      take("right", M.right - r.left);
+    });
+    return pad;
   }
+
+  /* The measured furniture plus a margin, so the line is not drawn hard
+     against the edge of what it is allowed to occupy, and never so much
+     that fitBounds is left with no room to fit anything into. */
+  function uiPad(margin) {
+    var wrap = $("map-wrap"), pad = uiInsets();
+    var m = margin == null ? 20 : margin;
+    var W = wrap ? wrap.getBoundingClientRect().width : 900;
+    var H = wrap ? wrap.getBoundingClientRect().height : 700;
+    var out = { top: pad.top + m, bottom: pad.bottom + m,
+                left: pad.left + m, right: pad.right + m };
+    function fit(a, b, span) {
+      var room = span * 0.8;
+      if (out[a] + out[b] <= room) return;
+      var k = room / (out[a] + out[b]);
+      out[a] = Math.round(out[a] * k); out[b] = Math.round(out[b] * k);
+    }
+    fit("top", "bottom", H);
+    fit("left", "right", W);
+    return out;
+  }
+
+  /* The margin is not decoration. The ends of a route carry a name in a box
+     about 120 px wide, centred on the point, so a route framed hard against
+     the clear rectangle has its first and last names cut in half by whatever
+     is beyond it. Forty pixels on a desktop keeps the point clear and most of
+     its name with it. */
+  function walkPad() { return uiPad(document.body.classList.contains("is-phone") ? 16 : 40); }
 
   function animateRoute(ev) {
     if (routeRAF) { cancelAnimationFrame(routeRAF); routeRAF = null; }
@@ -2838,10 +2925,12 @@
         /* An object that came apart is framed around the pieces still near
            each other; the far ones are a click away in the panel. */
         var db = dispersalBounds(e, false);
+        /* Flat for the same reason as the walk below: these are points on the
+           ground and the padding that keeps them clear of the furniture is a
+           flat inset. */
         if (db) map.fitBounds(db, {
-          padding: { top: 110, bottom: 210, left: 70, right: 70 },
-          duration: 1100, maxZoom: 17,
-          pitch: back != null ? Math.min(back, 40) : Math.min(map.getPitch(), 40)
+          padding: walkPad(),
+          duration: 1100, maxZoom: 17, pitch: 0, bearing: 0
         });
       } else if (walkOf(e)) {
         /* A march is not a place. Frame the whole walk, then draw it. An entry
@@ -2851,10 +2940,23 @@
         /* Framed on the named route when there is one, so a march chosen at
            its own square fills the view instead of sharing it with the other
            march it diverges from. */
+        /* AND FLAT, which is the other half of why the head of this march kept
+           ending up under the timeline. The padding above is a flat inset,
+           measured in screen pixels off the edges of the container. A pitched
+           camera does not honour it: the far half of a tilted view is
+           compressed toward the horizon, so the bounds land somewhere other
+           than where a flat inset says they will. Measured on the same bounds
+           and the same padding, at 45 degrees the start of the Freedom Square
+           march sat 134 px from the right edge against a 170 px inset, and
+           flat it sits at exactly 170.
+
+           A march is a plan, not a view: it is a line through streets, and
+           nothing about it is better understood from an angle. So a walk is
+           framed flat, and the city keeps its tilt for everything else. */
         var allPts = pick ? pick.path : allWalkPoints(e);
         map.fitBounds(pathBounds(allPts), {
           padding: walkPad(),
-          duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
+          duration: 1100, pitch: 0, bearing: 0
         });
         setTimeout(function () {
           /* Same rule as the branch below: an entry with several routes and a
