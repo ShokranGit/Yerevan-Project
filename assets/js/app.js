@@ -1420,6 +1420,8 @@
     karabakh: [0,    0.5,  7.4,  8.6],
     city:     [7.6,  8.8,  12.2, 13.4],
     district: [10.4, 11.4, 13.8, 14.8],
+    massif:   [0,    0.5,  10.4, 11.6],
+    borough:  [9.6,  10.6, 14.4, 15.4],
     ring:     [11.6, 12.6, 23,   24],
     space1:   [12.9, 13.6, 23,   24],
     space2:   [13.9, 14.6, 23,   24],
@@ -1467,6 +1469,47 @@
     return ring;
   }
 
+  /* -----------------------------------------------------------------
+     ARARAT
+     -----------------------------------------------------------------
+     The mountain the avenue was aimed at. It is fifty kilometres away
+     and in another country, and it is the reason the sightline layer
+     exists at all, so it should be visible as a mountain rather than
+     implied by a line pointing off the edge.
+
+     The summits are real: OpenStreetMap positions and elevations. The
+     bands are NOT contours. They are concentric rings whose radii come
+     from the massif's published base extent, spaced so the implied
+     slope is even from the plain to the summit. They are marked
+     synthetic in the data for the same reason the Tsitsernakaberd
+     slices are: a shape that looks surveyed and is not would be a lie
+     told in the map's own voice.
+     ----------------------------------------------------------------- */
+  var MASSIF_RAMP = ["#7a6a52", "#96825f", "#b09a6f", "#cdbb8f", "#ece4cf"];
+
+  function massifFC() {
+    if (!GEO || !GEO.features) return null;
+    var out = [];
+    (GEO.features.features || []).forEach(function (f) {
+      var p = f.properties;
+      if (!p || p.kind !== "massif" || !p.bands) return;
+      var n = p.bands.length, i;
+      for (i = 0; i < n; i++) {
+        var rOut = p.bands[i];
+        var rIn = (i === n - 1) ? 0 : p.bands[i + 1];
+        var tone = MASSIF_RAMP[Math.min(MASSIF_RAMP.length - 1,
+                     Math.round(i * (MASSIF_RAMP.length - 1) / Math.max(1, n - 1)))];
+        out.push({
+          type: "Feature",
+          properties: { id: p.id, step: i, tone: tone },
+          geometry: { type: "Polygon",
+            coordinates: [annulusSector(p.summit, rIn, rOut, 0, 360, 4)] }
+        });
+      }
+    });
+    return out.length ? { type: "FeatureCollection", features: out } : null;
+  }
+
   function idealRingFC() {
     if (!GEO || !GEO.features) return null;
     var f = null;
@@ -1496,27 +1539,55 @@
 
     var REG = GEO_BAND.country;
 
+    /* Ararat first, so everything else is drawn over it. */
+    var mass = massifFC();
+    if (mass) {
+      map.addSource("geo-massif", { type: "geojson", data: mass });
+      map.addLayer({
+        id: "geo-massif", type: "fill", source: "geo-massif",
+        paint: {
+          "fill-color": ["get", "tone"],
+          "fill-opacity": bandOpacity(GEO_BAND.massif, 0.5),
+          "fill-antialias": true
+        }
+      });
+      map.addLayer({
+        id: "geo-massif-edge", type: "line", source: "geo-massif",
+        paint: {
+          "line-color": "#5d5443", "line-width": 0.6,
+          "line-opacity": bandOpacity(GEO_BAND.massif, 0.5)
+        }
+      });
+    }
+
     /* Land first, and barely there. A country fill at full strength would
        replace the basemap; at five percent it only separates land from sea
        and from its neighbours, which is all a locator has to do. Armenia is
        the exception: it is the subject, and it gets a red wash. */
+    /* Each neighbour gets its own hue, because "the countries around
+       Armenia" is not one thing, and a single grey said it was. The hues are
+       held down in saturation so that Armenia, at nearly twice the fill and a
+       full-strength outline, is still plainly the subject of the drawing. */
     map.addLayer({
       id: "geo-country-fill", type: "fill", source: "geo",
       filter: ["all", ["==", ["get", "kind"], "country"], ["!=", ["get", "id"], "am"]],
-      paint: { "fill-color": "#8b929c", "fill-opacity": bandOpacity(REG, 0.05) }
+      paint: {
+        "fill-color": ["coalesce", ["get", "colour"], "#8b929c"],
+        "fill-opacity": bandOpacity(REG, 0.13)
+      }
     });
     map.addLayer({
       id: "geo-am-fill", type: "fill", source: "geo",
       filter: ["==", ["get", "id"], "am"],
-      paint: { "fill-color": RED, "fill-opacity": bandOpacity(REG, 0.13) }
+      paint: { "fill-color": RED, "fill-opacity": bandOpacity(REG, 0.26) }
     });
     map.addLayer({
       id: "geo-country-line", type: "line", source: "geo",
       filter: ["all", ["==", ["get", "kind"], "country"], ["!=", ["get", "id"], "am"]],
       paint: {
-        "line-color": "#6d747e",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.6, 6, 1.1, 9, 1.8],
-        "line-opacity": bandOpacity(REG, 0.5)
+        "line-color": ["coalesce", ["get", "colour"], "#6d747e"],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 6, 1.4, 9, 2.2],
+        "line-opacity": bandOpacity(REG, 0.7)
       }
     });
     map.addLayer({
@@ -1525,8 +1596,8 @@
       layout: { "line-join": "round" },
       paint: {
         "line-color": RED,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 6, 1.7, 9, 2.6],
-        "line-opacity": bandOpacity(REG, 0.95)
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1.4, 6, 2.6, 9, 4],
+        "line-opacity": bandOpacity(REG, 1)
       }
     });
 
@@ -1558,50 +1629,55 @@
 
     /* The city, then the district. Outlines only: a filled administrative
        area reads as a subject, and neither of these is one. */
+    /* The territory of Yerevan. It used to be a hairline that faded out at
+       city zoom, which is exactly the zoom at which someone asks where the
+       city ends, so it now carries a faint wash and stays until the street
+       scale. */
+    map.addLayer({
+      id: "geo-city-fill", type: "fill", source: "geo",
+      filter: ["==", ["get", "kind"], "city"],
+      paint: { "fill-color": "#c8ccd3", "fill-opacity": bandOpacity(GEO_BAND.city, 0.03) }
+    });
     map.addLayer({
       id: "geo-city", type: "line", source: "geo",
       filter: ["==", ["get", "kind"], "city"],
       layout: { "line-join": "round" },
       paint: {
-        "line-color": "#c8ccd3",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1, 13, 2.2],
-        "line-opacity": bandOpacity(GEO_BAND.city, 0.6)
+        "line-color": "#dfe3e9",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1.4, 13, 3, 15, 4],
+        "line-opacity": bandOpacity(GEO_BAND.city, 0.85)
       }
     });
+    /* The twelve districts. A hairline and a fill of a few per cent: the
+       point is that the city is divided, not that the divisions are the
+       subject, so they must be legible and must not swallow the map.
+       Kentron carries a slightly stronger wash because it is the subject. */
     map.addLayer({
-      id: "geo-district", type: "line", source: "geo",
-      filter: ["==", ["get", "kind"], "district"],
+      id: "geo-borough-fill", type: "fill", source: "geo",
+      filter: ["all", ["==", ["get", "kind"], "borough"], ["!=", ["get", "home"], true]],
+      paint: { "fill-color": "#8b929c", "fill-opacity": bandOpacity(GEO_BAND.borough, 0.03) }
+    });
+    map.addLayer({
+      id: "geo-borough-home", type: "fill", source: "geo",
+      filter: ["all", ["==", ["get", "kind"], "borough"], ["==", ["get", "home"], true]],
+      paint: { "fill-color": RED, "fill-opacity": bandOpacity(GEO_BAND.borough, 0.05) }
+    });
+    map.addLayer({
+      id: "geo-borough", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "borough"],
       layout: { "line-join": "round" },
       paint: {
-        "line-color": "#9aa1ab", "line-width": 1.4, "line-dasharray": [4, 3],
-        "line-opacity": bandOpacity(GEO_BAND.district, 0.55)
+        "line-color": "#9aa1ab", "line-width": 1, "line-dasharray": [3, 2.4],
+        "line-opacity": bandOpacity(GEO_BAND.borough, 0.5)
       }
     });
 
-    /* The ring boulevard. Two lines, not one: a wide soft bed under a narrow
-       firm stroke, so it reads as something seated on the ground rather than
-       drawn over it. */
-    map.addLayer({
-      id: "geo-ring-bed", type: "line", source: "geo",
-      filter: ["==", ["get", "kind"], "ring"],
-      layout: { "line-cap": "round", "line-join": "round" },
-      paint: {
-        "line-color": "#0d0f13",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 7, 15, 17, 17, 30],
-        "line-blur": ["interpolate", ["linear"], ["zoom"], 12, 3, 17, 9],
-        "line-opacity": bandOpacity(GEO_BAND.ring, 0.5)
-      }
-    });
-    map.addLayer({
-      id: "geo-ring", type: "line", source: "geo",
-      filter: ["==", ["get", "kind"], "ring"],
-      layout: { "line-cap": "round", "line-join": "round" },
-      paint: {
-        "line-color": "#4a5058",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 3, 15, 8.5, 17, 15],
-        "line-opacity": bandOpacity(GEO_BAND.ring, 0.9)
-      }
-    });
+    /* The routed ring boulevard was removed on 23 August 2026. Closed through
+       the streets south of Republic Square it read as a half circle shut by a
+       straight chord, which is a fact about the routing and not about the
+       city. What stands in its place is the ideal ring below: the figure the
+       boulevard is an approximation of, drawn as an abstraction and admitting
+       it. */
 
     /* The abstraction the boulevard approximates, drawn UNDER it. The
        figure is the argument; the street is the evidence, and evidence
@@ -1658,7 +1734,7 @@
     if (!GEO) return;
 
     function add(at, kind, band, label, sub) {
-      if (!at || !label) return;
+      if (!at || !label) return null;
       var wrap = geoNameEl(kind, label, sub);
       geoNames.push({
         band: band,
@@ -1670,21 +1746,28 @@
         }).setLngLat(at).addTo(map),
         el: wrap.inner
       });
+      return geoNames[geoNames.length - 1];
     }
 
     GEO.features.features.forEach(function (f) {
       var p = f.properties;
       if (!p.at) return;
       if (p.kind === "country") {
-        add(p.at, "country" + (p.home ? " is-am" : ""), GEO_BAND.country, tr(p, "label"));
+        var g = add(p.at, "country" + (p.home ? " is-am" : ""), GEO_BAND.country, tr(p, "label"));
+        if (g && p.colour && !p.home) g.el.style.setProperty("--cc", p.colour);
       }
       else if (p.kind === "karabakh") {
         add(p.at, "karabakh karabakh-" + (p.phase || ""), GEO_BAND.karabakh, tr(p, "label"),
             t(p.id === "nk-2020" ? "geo.nkNote" : "geo.nk1994"));
       }
       else if (p.kind === "city") add(p.at, "city", GEO_BAND.city, tr(p, "label"));
-      else if (p.kind === "district") add(p.at, "district", GEO_BAND.district, tr(p, "label"));
-      else if (p.kind === "ring") add(p.at, "ring", GEO_BAND.ring, tr(p, "label"));
+      else if (p.kind === "borough") {
+        add(p.at, "borough" + (p.home ? " is-home" : ""), GEO_BAND.borough, tr(p, "label"));
+      }
+      else if (p.kind === "massif") {
+        add(p.at, "peak" + (p.id === "masis" ? " is-masis" : ""), GEO_BAND.massif,
+            tr(p, "label"), num(p.ele) + " " + t("unit.m"));
+      }
     });
 
     (GEO.spaces || []).forEach(function (sp) {
@@ -1751,10 +1834,13 @@
       animHalo: "#07080a",   animHaloOp: 0.5,
       headRing: "#ffffff",
       dotRing: "#22262c",    dotRingOp: 0.9,   glowOp: 0.13,
-      cityLine: "#c8ccd3",   distLine: "#9aa1ab",
+      cityLine: "#dfe3e9",   distLine: "#9aa1ab",
       ringLine: "#4a5058",   ringBed: "#0d0f13", ringBedOp: 0.5,
       countryLine: "#6d747e",
-      idealGrey: "#b8bcc2"
+      idealGrey: "#b8bcc2",
+      cityFill: "#dfe3e9",
+      boroughLine: "#9aa1ab",
+      massifOp: 0.5
     },
     light: {
       mass: "#6f767f",
@@ -1766,7 +1852,10 @@
       cityLine: "#5a616b",   distLine: "#767d87",
       ringLine: "#333941",   ringBed: "#ffffff", ringBedOp: 0.85,
       countryLine: "#8a919b",
-      idealGrey: "#5f666f"
+      idealGrey: "#5f666f",
+      cityFill: "#4a5058",
+      boroughLine: "#767d87",
+      massifOp: 0.55
     },
     photo: {
       mass: "#e4e7ec",
@@ -1778,7 +1867,10 @@
       cityLine: "#ffffff",   distLine: "#e8eaee",
       ringLine: "#eef0f3",   ringBed: "#07080a", ringBedOp: 0.7,
       countryLine: "#ffffff",
-      idealGrey: "#eef0f3"
+      idealGrey: "#eef0f3",
+      cityFill: "#ffffff",
+      boroughLine: "#e8eaee",
+      massifOp: 0.6
     }
   };
 
@@ -1820,7 +1912,10 @@
 
     /* the geography */
     P("geo-city", "line-color", g.cityLine);
-    P("geo-district", "line-color", g.distLine);
+    P("geo-city-fill", "fill-color", g.cityFill);
+    P("geo-borough", "line-color", g.boroughLine);
+    P("geo-borough-fill", "fill-color", g.boroughLine);
+    P("geo-massif", "fill-opacity", bandOpacity(GEO_BAND.massif, g.massifOp));
     P("geo-ring", "line-color", g.ringLine);
     P("geo-ring-bed", "line-color", g.ringBed);
     P("geo-ring-bed", "line-opacity", bandOpacity(GEO_BAND.ring, g.ringBedOp));
