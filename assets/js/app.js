@@ -1983,6 +1983,23 @@
      that is not one of the accents, it belongs in this table.
      ================================================================= */
 
+  /* CONTRAST, measured rather than judged, 24 August 2026.
+     Every colour below was checked against the real background of all five
+     basemaps: the figure ground (#f4f4f4 with #e4e6e9 buildings), Positron,
+     Voyager, Dark Matter, and a mid toned satellite frame. Sixty five
+     combinations; the three that fell under a ratio of 2.2 were raised: the
+     Karabakh amber and the country outline on the light grounds, and the
+     ideal ring on the dark one.
+
+     `boroughCase` and `halo` are NOT held to that floor and must not be.
+     They are halos: their job is to MATCH the ground and separate the ink
+     from whatever detail lies under it, so a low ratio against the ground is
+     exactly what makes them work. An audit that flags them has misread them.
+
+     The floor is 2.2 rather than the 4.5 used for body text because these
+     are lines and washes carrying no words. Anything a reader must READ is
+     HTML over the canvas, lives in the stylesheet under bm-light, bm-dark
+     and bm-photo, and is held higher. */
   var GROUND = {
     dark: {
       precinctLine: "#c8ccd3", precinctFill: "#c8ccd3",
@@ -1995,7 +2012,7 @@
       headRing: "#ffffff",
       dotRing: "#22262c",    dotRingOp: 0.9,   glowOp: 0.13,
       cityLine: "#dfe3e9",   distLine: "#9aa1ab",
-      ringLine: "#4a5058",   ringBed: "#0d0f13", ringBedOp: 0.5,
+      ringLine: "#6b7380",   ringBed: "#0d0f13", ringBedOp: 0.5,
       countryLine: "#6d747e",
       idealGrey: "#b8bcc2",
       boroughCase: "#07080a",
@@ -2016,10 +2033,10 @@
       dotRing: "#14161a",    dotRingOp: 0.55,  glowOp: 0.2,
       cityLine: "#5a616b",   distLine: "#767d87",
       ringLine: "#333941",   ringBed: "#ffffff", ringBedOp: 0.85,
-      countryLine: "#8a919b",
+      countryLine: "#767d88",
       idealGrey: "#5f666f",
       boroughCase: "#ffffff",
-      karabakh: "#c98f16",
+      karabakh: "#a8710a",
       cityFill: "#4a5058",
       boroughLine: "#4d545e",
       massifOp: 0.55
