@@ -2197,7 +2197,7 @@ body.is-phone .draw-act{ min-height:40px; }
 
 body.tl-vertical #timeline{
   left:auto; right:12px; top:60px; bottom:78px;
-  width:154px; padding:0;
+  width:246px; padding:0;
   background:none; backdrop-filter:none;
   border:none; border-radius:0; box-shadow:none;
   z-index:4; pointer-events:none;
@@ -2205,8 +2205,8 @@ body.tl-vertical #timeline{
 /* Not a box: a breath of ground under the type, so the rail survives a
    satellite photograph without being framed. */
 body.tl-vertical #timeline::before{
-  content:""; position:absolute; right:-12px; top:-60px; bottom:-62px; width:186px;
-  background:linear-gradient(270deg, rgba(15,17,21,.62), rgba(15,17,21,.34) 46%, rgba(15,17,21,0));
+  content:""; position:absolute; right:-12px; top:-60px; bottom:-62px; width:282px;
+  background:linear-gradient(270deg, rgba(15,17,21,.66), rgba(15,17,21,.38) 52%, rgba(15,17,21,0));
   pointer-events:none;
 }
 #map-wrap.bm-light body.tl-vertical #timeline::before,
@@ -2221,7 +2221,7 @@ body.tl-vertical #map-controls{ right:auto; left:14px; top:14px; }
 body.tl-vertical .maplibregl-ctrl-top-right{ right:auto; left:14px; top:56px; }
 body.tl-vertical #north{ top:auto; bottom:206px; right:auto; left:18px; }
 /* the credit line moves off the foot of the rail */
-body.tl-vertical .maplibregl-ctrl-bottom-right{ right:196px; }
+body.tl-vertical .maplibregl-ctrl-bottom-right{ right:288px; }
 
 /* the switch itself */
 #tl-mode{ width:34px; padding:0; display:inline-flex; align-items:center; justify-content:center; }
@@ -2237,7 +2237,7 @@ body.tl-vertical #tl-ticks{ display:none; }
 body.tl-vertical .tl-slider{
   position:absolute;
   width:var(--rail-h, 400px); height:26px;
-  left:88px; top:calc(50% - 40px);
+  left:104px; top:calc(50% - 40px);
   margin:0;
   transform:translate(-50%, -50%) rotate(-90deg);
   transform-origin:50% 50%;
@@ -2259,17 +2259,36 @@ body.tl-vertical .tl-cm i{ top:8px; bottom:8px; opacity:.85; }
 
 /* ---- the two handles carry their own dates, so no header row ---- */
 .rail-date{
-  position:absolute; right:74px; transform:translateY(50%);
-  font-size:10.5px; font-weight:500; white-space:nowrap; color:var(--text);
-  font-variant-numeric:tabular-nums; letter-spacing:.04em;
+  position:absolute; right:100%; margin-right:12px; transform:translateY(50%);
+  font-size:11.5px; font-weight:600; white-space:nowrap; color:var(--text);
+  font-variant-numeric:tabular-nums; letter-spacing:.03em;
   text-shadow:0 1px 4px rgba(15,17,21,.95), 0 0 10px rgba(15,17,21,.85);
   pointer-events:none;
 }
+/* the two ends of a window, each inside a band exactly as long as its rail */
+#rail-band, #rail-cn-band{
+  position:absolute;
+  top:calc(50% - 40px - var(--rail-h, 400px) / 2);
+  height:var(--rail-h, 400px);
+  pointer-events:none;
+}
+#rail-band{ left:104px; width:0; }
+#rail-cn-band{ left:196px; width:0; }
+/* The century's window ends print in the gap between the two rails, hard
+   against its own line, so they never reach the decade column on its right
+   nor the main rail's years on its left. */
+.rail-date-cn{
+  right:100%; margin-right:10px; left:auto;
+  font-size:11px; color:var(--cn-ink, #9fc0dc);
+}
+/* a shut window would print both ends on one line */
+.rail-date.tight-lo{ transform:translateY(120%); }
+.rail-date.tight-hi{ transform:translateY(-20%); }
 body:not(.tl-vertical) .rail-date{ display:none; }
 
 /* ---- the years, in the gutter to the right of the line ---- */
 #rail-years{
-  position:absolute; left:96px; right:0;
+  position:absolute; left:112px; right:96px;
   top:calc(50% - 40px - var(--rail-h, 400px) / 2);
   height:var(--rail-h, 400px);
   pointer-events:none;
@@ -2302,101 +2321,70 @@ body.tl-vertical #rail-foot .play-btn{ width:28px; height:28px; }
 body.tl-vertical #rail-foot .link-btn{
   font-size:9.5px; letter-spacing:.09em; color:var(--text-3);
 }
+body.tl-vertical #rail-foot #cn-reset{ color:var(--cn-ink, #9fc0dc); opacity:.85; }
+body.tl-vertical #rail-foot #cn-reset:hover{ opacity:1; color:var(--cn-ink, #9fc0dc); }
 
-/* ---- the century, in a drawer that opens to the left ---- */
-/* This was a hairline and a word in map-label grey, and it read as part of
-   the map rather than as a control: Alireza could not find it on the desktop
-   either. It is a tab now, with its own ground, hinged on the rail and
-   opening to the left. */
-#rail-cent-tab{
-  position:absolute; right:104px; top:50%; transform:translateY(-50%);
-  display:flex; flex-direction:column; align-items:center; gap:7px;
-  padding:14px 6px 12px; cursor:pointer;
-  background:rgba(22,25,32,.94);
-  border:1px solid var(--line); border-right-color:transparent;
-  border-radius:8px 0 0 8px;
-  color:var(--text-2);
-  box-shadow:-4px 0 14px rgba(0,0,0,.4);
-  transition:color .15s, border-color .15s, background .15s;
-}
-#rail-cent-tab span{
-  writing-mode:vertical-rl; text-orientation:mixed;
-  font-size:9.5px; letter-spacing:.26em; text-transform:uppercase;
-}
-/* Armenian and Persian must not be set with writing-mode: vertical. It breaks
-   the shaping, and Persian in particular comes out as a column of unjoined
-   letters. A horizontal line rotated as a whole keeps every join. */
-html.lang-hy #rail-cent-tab span, html.lang-fa #rail-cent-tab span{
-  writing-mode:horizontal-tb; transform:rotate(-90deg); white-space:nowrap;
-  letter-spacing:0; text-transform:none; font-size:11px;
-}
-#rail-cent-tab i{
-  font-style:normal; font-size:12px; line-height:1;
-  transition:transform .2s; opacity:.9;
-}
-#rail-cent-tab:hover, #rail-cent-tab:focus-visible{
-  color:var(--text); border-color:var(--accent); border-right-color:transparent;
-  background:var(--bg-3);
-}
-#rail-cent-tab:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
-#rail-cent-tab.open{
-  color:var(--text); border-color:var(--accent); border-right-color:transparent;
-  background:var(--bg-3);
-}
-#rail-cent-tab.open i{ transform:rotate(180deg); }
-body:not(.tl-vertical) #rail-cent-tab{ display:none; }
-
-/* The drawer opens over the map, so it carries its own ground. Without one
-   the decade labels are read against whatever the basemap happens to put
-   behind them, which on the satellite and the street map is nothing legible.
-   A gradient rather than a panel: it fades out to the left so the drawer
-   still reads as an edge of the rail and not as a floating box. */
-#rail-century{
-  position:absolute; right:132px; top:16px; bottom:76px; width:104px;
-  background:linear-gradient(to left, rgba(15,17,21,.88) 0%, rgba(15,17,21,.72) 62%, rgba(15,17,21,0) 100%);
-  opacity:0; visibility:hidden; transform:translateX(14px);
-  transition:opacity .22s cubic-bezier(.4,0,.2,1), transform .22s cubic-bezier(.4,0,.2,1), visibility .22s;
-  border-right:1px solid var(--line-soft);
-}
-#timeline.cent-open #rail-century{ opacity:1; visibility:visible; transform:none; }
-#rail-century .tl-sep, #rail-century .tl-row-century .tl-era{ display:none; }
-/* #cn-ticks is the SOURCE that #rail-cent-years mirrors, so it has to stay in
-   the DOM. It must not be drawn: left visible it lays its six decades out as
-   a horizontal row across the top of the drawer, on top of the years. */
-#rail-century #cn-ticks{ display:none; }
-/* The window read-out and the reset go under the column, not over it. At the
-   top they sit exactly where the first decade label is. */
-#rail-century .tl-row-century{
-  position:absolute; left:0; right:0; top:auto; bottom:-38px;
-  display:flex; flex-direction:column; align-items:center; gap:1px;
-  font-size:10px; color:var(--text-3); white-space:nowrap;
-}
-#rail-century .tl-row-century .tl-label{
-  font-size:9.5px; display:flex; gap:4px; font-variant-numeric:tabular-nums;
-}
-#rail-century .tl-row-century .link-btn{
-  font-size:9px; letter-spacing:.09em; color:var(--text-3);
-}
-#rail-century .tl-slider-century{
+/* ---- THE CENTURY: a second line, parallel to the first ----
+   It was a drawer behind a tab. A drawer is a thing you have to find, and
+   it was not found. This is the same information as a second rail standing
+   beside the first, in its own colour, always there. The main rail is red
+   and runs 2000 to 2028; this one is slate blue and runs the century. */
+body.tl-vertical{ --cn: #5d8bb3; --cn-ink: #9fc0dc; }
+body.tl-vertical .tl-slider-century{
   position:absolute;
   width:var(--rail-h, 400px); height:22px;
-  right:26px; top:50%;
-  transform:translate(50%, -50%) rotate(-90deg);
+  left:196px; top:calc(50% - 40px);
+  transform:translate(-50%, -50%) rotate(-90deg);
+  transform-origin:50% 50%;
   margin:0;
 }
+body.tl-vertical #cn-track{ height:1px; top:10px; background:var(--line); }
+body.tl-vertical #cn-fill{
+  height:2px; top:9.5px; border-radius:2px;
+  background:var(--cn); box-shadow:0 0 9px rgba(93,139,179,.45);
+}
+body.tl-vertical #cn-density{ opacity:.36; bottom:12px; height:22px; }
+body.tl-vertical #cn-density span{ border-radius:0 1px 1px 0; }
+body.tl-vertical .tl-slider-century input[type=range]::-webkit-slider-thumb{
+  border-color:var(--cn);
+}
+body.tl-vertical .tl-slider-century input[type=range]::-moz-range-thumb{
+  border-color:var(--cn);
+}
+/* its decades, on its own side */
 #rail-cent-years{
-  position:absolute; left:0; right:34px;
-  top:calc(50% - var(--rail-h, 400px) / 2); height:var(--rail-h, 400px);
+  position:absolute; left:204px; right:0;
+  top:calc(50% - 40px - var(--rail-h, 400px) / 2);
+  height:var(--rail-h, 400px);
   pointer-events:none;
 }
 #rail-cent-years span{
-  position:absolute; right:0; transform:translateY(50%);
+  position:absolute; left:0; transform:translateY(50%);
   font-size:9px; letter-spacing:.12em; color:var(--text-3);
-  font-variant-numeric:tabular-nums; white-space:nowrap; padding-right:9px;
+  font-variant-numeric:tabular-nums; white-space:nowrap; padding-left:10px;
 }
 #rail-cent-years span i{
-  position:absolute; right:0; top:50%; width:5px; height:1px; background:var(--line-soft);
+  position:absolute; left:0; top:50%; width:5px; height:1px; background:var(--line-soft);
 }
+/* one word, once, at the foot of the second line */
+#rail-cn-cap{
+  position:absolute; left:168px;
+  top:calc(50% - 40px + var(--rail-h, 400px) / 2 + 14px);
+  font-size:8.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--cn-ink); opacity:.75; white-space:nowrap;
+  pointer-events:none;
+}
+html.lang-hy #rail-cn-cap, html.lang-fa #rail-cn-cap{
+  letter-spacing:0; text-transform:none; font-size:10px;
+}
+/* the sources the two mirrored columns are read from: present, never drawn */
+body.tl-vertical #cn-ticks,
+body.tl-vertical .tl-row-century,
+body.tl-vertical .tl-sep{ display:none; }
+body:not(.tl-vertical) #rail-cent-years,
+body:not(.tl-vertical) #rail-cn-cap,
+body:not(.tl-vertical) #rail-band,
+body:not(.tl-vertical) #rail-cn-band{ display:none; }
 
 /* ---- a period's own timeline, opened to the left ---- */
 /* [hidden] must still win: the vertical rule below is more specific than the
@@ -2443,19 +2431,9 @@ body.tl-vertical #pick-out{ left:20px; bottom:246px; }
 }
 #map-wrap.bm-light #rail-years span,
 #map-wrap.bm-light #rail-cent-years span{ color:#6d747e; }
-#map-wrap.bm-light #rail-cent-tab{
-  background:rgba(248,249,250,.95); border-color:rgba(0,0,0,.14);
-  border-right-color:transparent; color:#5b626c;
-  box-shadow:-4px 0 14px rgba(0,0,0,.12);
-}
-#map-wrap.bm-light #rail-cent-tab:hover,
-#map-wrap.bm-light #rail-cent-tab.open{ color:#14161a; border-color:var(--accent); border-right-color:transparent; }
-#map-wrap.bm-light #rail-century{
-  background:linear-gradient(to left, rgba(248,249,250,.9) 0%, rgba(248,249,250,.74) 62%, rgba(248,249,250,0) 100%);
-  border-right-color:rgba(0,0,0,.14);
-}
-#map-wrap.bm-light #rail-century .tl-row-century,
-#map-wrap.bm-light #rail-century .tl-row-century .link-btn{ color:#6d747e; }
+#map-wrap.bm-light body.tl-vertical,
+body.tl-vertical #map-wrap.bm-light{ --cn:#3f6b91; --cn-ink:#3f6b91; }
+#map-wrap.bm-light #rail-cn-cap{ color:#3f6b91; opacity:.85; }
 #map-wrap.bm-light #rail-plate{ background:rgba(255,255,255,.96); color:#15171b; }
 
 /* a phone keeps the docked bar it already has */
