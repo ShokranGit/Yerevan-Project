@@ -314,7 +314,9 @@ Added 22 August 2026. One file, three parts.
 | `karabakh` | `nk-1994`, the 11,900 km² held from 1994; `nk-2020`, the 3,140 km² left after the 2020 war | Natural Earth 10m disputed areas, **release v4.1.0** for the 1994 extent and the current release for the remnant |
 | `city` | the Yerevan municipal boundary | OpenStreetMap relation 364087, read 2026-08-22 |
 | `district` | Kentron | OpenStreetMap relation 13404218, read 2026-08-22 |
-| `ring` | the ring boulevard around the historic core | solved on the OSM street graph, see below |
+| `borough` | Yerevan's twelve administrative districts | OSM relations, admin_level 5, read 2026-08-23 |
+| `massif` | Ararat and Lesser Ararat | real OSM summits, schematic bands, marked `synthetic` |
+| `ideal-ring` | the circle the core is an approximation of | drawn by hand, see below |
 
 Every feature carries `label`, `label_hy`, `label_fa` and an `at`, which is
 where its name is drawn. `at` is a **design decision, not a centroid**: it is
@@ -330,19 +332,24 @@ keep the values this project had already verified.
 control and the Armenian population has left.** The map draws two historical
 outlines and says so under the name; it does not draw a current polity.
 
-### The ring
+### The ring boulevard, removed
 
-Not a circle. A route solved with Dijkstra on the OpenStreetMap street graph
-of the centre, through thirteen anchors placed on Mashtots Avenue, Isahakyan,
-Khanjyan and the streets south of Republic Square, then de-spurred (any loop
-under 1.2 km that returns within 25 m of a point already passed is cut),
-simplified, and smoothed with two Chaikin passes. Closed, 6.44 km, and it sits
-a mean of 1.2 m and at most 26 m off the centreline it was traced from.
+A route solved with Dijkstra on the OSM street graph used to stand for the
+core. It was taken out on 23 August 2026: closed through the streets south
+of Republic Square it read as a half circle shut by a straight chord, which
+is a fact about the routing and not about the city. The ideal ring stands
+in its place. The routing method is written up in `commemoration-and-routing.md`
+and is still the way any march path gets drawn.
 
-The circle it replaced was drawn from a guessed centre and a 1,150 m radius and
-was, as Alireza pointed out, in the wrong place. The dashed red circles that
-used to ring the two squares were removed at the same time: a square is a shape
-the figure-ground already draws.
+### Ararat
+
+Two `massif` features. The **summits are real**, OpenStreetMap positions and
+elevations: Ararat 44.2984 / 39.7019 at 5,137 m, Lesser Ararat 44.4138 /
+39.6482 at 3,887 m. The **bands are not contours**. They are concentric
+rings whose radii come from the massif's published base extent, spaced so
+the implied slope is even from the plain to the summit, and every feature
+carries `synthetic: true` and a note saying so. `massifFC()` builds them
+with the same `annulusSector` the ideal ring uses.
 
 ### The ideal ring
 
