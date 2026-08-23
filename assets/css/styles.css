@@ -2043,6 +2043,49 @@ html.lang-hy .geo-n-space.space-street b, html.lang-fa .geo-n-space.space-street
 #map-wrap.bm-light .geo-n-karabakh span{ color:#8a7c55; }
 #map-wrap.bm-light .geo-name span{ color:#6d747e; }
 
+/* --- ON A PHOTOGRAPH ---
+   The standing rule from 24 August 2026: every piece of text on the map is
+   checked against every basemap and given a colour there. A satellite image
+   is mid-toned everywhere and busy everywhere, so neither the dark ground's
+   pale type nor the light ground's dark type survives on its own. What works
+   is a bright face plus a real halo: the halo does the separating and the
+   colour only has to carry the kind of thing the name is. */
+#map-wrap.bm-photo .geo-name{
+  text-shadow:
+    0 0 3px rgba(8,10,13,1), 0 0 7px rgba(8,10,13,.95),
+    0 0 15px rgba(8,10,13,.8), 0 1px 2px rgba(8,10,13,1);
+}
+#map-wrap.bm-photo .geo-name b{ color:#ffffff; }
+#map-wrap.bm-photo .geo-name span{ color:#dfe3e9; }
+#map-wrap.bm-photo .geo-n-country b{ color:#f0f2f5; }
+#map-wrap.bm-photo .geo-n-country.is-am b{ color:#ff9ea1; }
+#map-wrap.bm-photo .geo-n-city b{ color:#ffffff; }
+#map-wrap.bm-photo .geo-n-borough b{ color:#eef1f5; }
+#map-wrap.bm-photo .geo-n-borough.is-home b{ color:#ff9ea1; }
+#map-wrap.bm-photo .geo-n-peak b{ color:#ffeec9; }
+#map-wrap.bm-photo .geo-n-peak span{ color:#e6d5ab; }
+#map-wrap.bm-photo .geo-n-space b{ color:#ffffff; }
+#map-wrap.bm-photo .geo-n-space.space-street b{ color:#e8ecf1; }
+#map-wrap.bm-photo .geo-n-space.space-water b{ color:#bfe0f5; }
+#map-wrap.bm-photo .geo-n-space.space-park b{ color:#cfe6d2; }
+#map-wrap.bm-photo .geo-n-space.space-quarter b{ color:#ecdcc4; }
+#map-wrap.bm-photo .geo-n-karabakh b{ color:#ffd166; }
+#map-wrap.bm-photo .geo-n-karabakh span{ color:#f0dca8; }
+#map-wrap.bm-photo .march-note .mn-box{ background:rgba(10,11,13,.96); }
+
+/* The district names were the dimmest text on the map on the figure ground:
+   a grey at 9.5 px with wide tracking disappears into a dark basemap. */
+.geo-n-borough b{ color:#b9c1cc; }
+#map-wrap.bm-light .geo-n-borough b{ color:#535a64; }
+
+.d-year.is-clickable{ cursor:pointer; transition:border-color .15s, background .15s; }
+.d-year.is-clickable:hover{ background:var(--bg-3); }
+.d-year.is-clickable:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+body.is-phone .d-year.is-clickable{ min-height:44px; }
+
+/* the twelve names go with the twelve shapes */
+#map-wrap.no-districts .geo-n-borough{ display:none; }
+
 /* A phone is narrower than the names are wide. */
 @media (max-width: 860px){
   .geo-n-country b{ font-size:10.5px; letter-spacing:.24em; }
@@ -2346,6 +2389,48 @@ body:not(.tl-vertical) .rail-date{ display:none; }
 #rail-years span i{
   position:absolute; left:0; top:50%; width:6px; height:1px; background:var(--line);
 }
+
+/* ---- the periods, as a column beside the line ----
+   The horizontal timeline's chip rail, stood up. Same idiom as the rest of
+   the rail: no box, a colour bar and a word, sitting at the middle of the
+   length of line the period occupies. */
+#rail-eras{
+  position:absolute; left:-34px; width:124px;
+  top:calc(50% - 40px - var(--rail-h, 400px) / 2);
+  height:var(--rail-h, 400px);
+  pointer-events:none;
+}
+.rail-era{
+  position:absolute; right:0; transform:translateY(50%);
+  display:flex; align-items:center; gap:6px;
+  max-width:124px; padding:2px 0; margin:0;
+  background:none; border:none; cursor:pointer; pointer-events:auto;
+  font-family:inherit; font-size:10px; line-height:1.2; text-align:end;
+  color:var(--text-3);
+  transition:color .15s;
+}
+/* The chip sits over the map, where a place name can be directly behind it.
+   A shadow is not enough against a bright serif label, so the word carries a
+   small ground of its own: the least ink that makes it readable anywhere. */
+.rail-era span{
+  flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  padding:2px 6px; border-radius:4px;
+  background:rgba(15,17,21,.72);
+}
+.rail-era i{
+  order:2; flex:0 0 auto; width:3px; height:13px; border-radius:2px;
+  background:var(--ep, var(--accent)); opacity:.85;
+  transition:height .15s, opacity .15s;
+}
+.rail-era:hover, .rail-era:focus-visible{ color:var(--text); }
+.rail-era:hover i, .rail-era:focus-visible i{ height:19px; opacity:1; }
+.rail-era:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; border-radius:3px; }
+body:not(.tl-vertical) #rail-eras{ display:none; }
+#map-wrap.bm-light .rail-era{ color:#6d747e; }
+#map-wrap.bm-light .rail-era span{ background:rgba(248,249,250,.82); }
+#map-wrap.bm-light .rail-era:hover{ color:#14161a; }
+#map-wrap.bm-photo .rail-era{ color:#e8ecf1; }
+#map-wrap.bm-photo .rail-era span{ background:rgba(8,10,13,.82); }
 
 /* ---- the name of a period, flown out to the left ---- */
 #rail-plate{
