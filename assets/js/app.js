@@ -1844,6 +1844,19 @@
         "fill-opacity": bandOpacity(GEO_BAND.landmark, 0.28)
       }
     });
+    /* On a photograph a warm hairline can land on a bright roof and vanish.
+       So the photo ground gets a dark casing under the line; on the drawn
+       basemaps the casing is switched off, where it would only muddy the
+       outline. */
+    map.addLayer({
+      id: "geo-landmark-case", type: "line", source: "geo",
+      filter: ["==", ["get", "kind"], "landmark"],
+      layout: { "line-join": "round" },
+      paint: {
+        "line-color": "#241505", "line-width": 3.4,
+        "line-opacity": bandOpacity(GEO_BAND.landmark, 0)
+      }
+    });
     map.addLayer({
       id: "geo-landmark", type: "line", source: "geo",
       filter: ["==", ["get", "kind"], "landmark"],
@@ -2119,7 +2132,7 @@
   var GROUND = {
     dark: {
       precinctLine: "#c8ccd3", precinctFill: "#c8ccd3",
-      landmarkLine: "#e0a55f", landmarkFill: "#c08a4a", landmarkFillOp: 0.30,
+      landmarkLine: "#e0a55f", landmarkFill: "#c08a4a", landmarkFillOp: 0.30, landmarkCaseOp: 0,
       countryFillOp: 0.30, boroughFillOp: 0.17, boroughLineOp: 0.95,
       boroughCaseOp: 0.40, boroughLineW: 1.6, cityLineOp: 0.9, cityFillOp: 0.05,
       mass: "#b8bcc2",
@@ -2140,7 +2153,7 @@
     },
     light: {
       precinctLine: "#4a5058", precinctFill: "#6f767f",
-      landmarkLine: "#7a4d22", landmarkFill: "#b07b3c", landmarkFillOp: 0.34,
+      landmarkLine: "#7a4d22", landmarkFill: "#b07b3c", landmarkFillOp: 0.34, landmarkCaseOp: 0,
       countryFillOp: 0.34, boroughFillOp: 0.20, boroughLineOp: 1,
       boroughCaseOp: 0.55, boroughLineW: 1.8, cityLineOp: 1, cityFillOp: 0.07,
       mass: "#6f767f",
@@ -2161,7 +2174,7 @@
     },
     photo: {
       precinctLine: "#ffffff", precinctFill: "#e4e7ec",
-      landmarkLine: "#ffd9a0", landmarkFill: "#ffc477", landmarkFillOp: 0.38,
+      landmarkLine: "#ffd9a0", landmarkFill: "#ffc477", landmarkFillOp: 0.44, landmarkCaseOp: 0.85,
       countryFillOp: 0.44, boroughFillOp: 0.27, boroughLineOp: 1,
       boroughCaseOp: 0.65, boroughLineW: 2.2, cityLineOp: 1, cityFillOp: 0.11,
       mass: "#e4e7ec",
@@ -2254,6 +2267,7 @@
     P("geo-precinct", "line-color", g.precinctLine);
     P("geo-precinct-fill", "fill-color", g.precinctFill);
     P("geo-landmark", "line-color", g.landmarkLine);
+    P("geo-landmark-case", "line-opacity", bandOpacity(GEO_BAND.landmark, g.landmarkCaseOp));
     P("geo-landmark-fill", "fill-color", g.landmarkFill);
     P("geo-landmark-fill", "fill-opacity", bandOpacity(GEO_BAND.landmark, g.landmarkFillOp));
     P("geo-city", "line-opacity", bandOpacity(GEO_BAND.city, g.cityLineOp));
