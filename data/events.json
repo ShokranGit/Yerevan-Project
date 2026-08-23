@@ -2,7 +2,7 @@
   "meta": {
     "title": "Yerevan Project",
     "subtitle": "An interactive research map of urban space, social movements, and political events",
-    "author": "Alireza Bahrani",
+    "author": "Shokran Rahiminezhad",
     "affiliation": "",
     "description": "This map presents an ongoing research project on Yerevan's urban space, beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
     "timelineStart": "2000-01-01",
@@ -11,12 +11,12 @@
     "updated": "2026-08-19",
     "title_hy": "Երևանի նախագիծ",
     "subtitle_hy": "Քաղաքային տարածքի, հասարակական շարժումների և քաղաքական իրադարձությունների ինտերակտիվ հետազոտական քարտեզ",
-    "author_hy": "Ալիրեզա Բահրանի",
+    "author_hy": "Շոկրան Ռահիմինեժադ",
     "description_hy": "Այս քարտեզը ներկայացնում է Երևանի քաղաքային տարածքի շուրջ ընթացող հետազոտություն՝ սկսած Հյուսիսային պողոտայի կառուցումից և տարածվելով դեպի 2000-ականների ու 2010-ականների հասարակական շարժումները, 2018 թվականի հեղափոխությունը, Լեռնային Ղարաբաղի հակամարտությունը և քաղաքի հանրային տարածքների առօրյա հասարակական կյանքը։\n\nՅուրաքանչյուր կետ ժամանակի և վայրի մեջ ամրագրված իրադարձություն է։ Օգտվեք ժամանակագրությունից՝ տեսնելու, թե ինչպես է կուտակվում քաղաքի քաղաքական աշխարհագրությունը, և թեմաներից՝ փաստարկի մեկ թելը միանգամից առանձնացնելու համար։",
     "note_hy": "Աշխատանքային հետազոտական գործիք է, ոչ թե ավարտուն հրապարակում։ Գրառումները բխում են Հյուսիսային պողոտայի մասին հոդվածից (խմբագրված՝ 2025 թ. նոյեմբեր) և կրում են դրա հղումները։ Լուսանկարներն ազատ արտոնագրված են (Wikimedia Commons)․ յուրաքանչյուրը կրում է իր հեղինակին, թվականը և արտոնագիրը և հղվում է իր սկզբնաղբյուրին։",
     "title_fa": "پروژهٔ ایروان",
     "subtitle_fa": "نقشهٔ پژوهشی تعاملی فضای شهری، جنبش‌های اجتماعی و رویدادهای سیاسی",
-    "author_fa": "علیرضا بحرانی",
+    "author_fa": "شکران رحیمی‌نژاد",
     "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
     "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد."
   },
@@ -616,10 +616,10 @@
       ],
       "sources": [
         {
-          "title": "Proposal deck (Bahrani), slide 17, 'Social movements in Opera Square'"
+          "title": "Proposal deck (Rahiminezhad), slide 17, 'Social movements in Opera Square'"
         },
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -689,7 +689,7 @@
       ],
       "sources": [
         {
-          "title": "Proposal deck (Bahrani), slide 17, 'Social movements in Opera Square'"
+          "title": "Proposal deck (Rahiminezhad), slide 17, 'Social movements in Opera Square'"
         },
         {
           "title": "Abrahamyan (2012)",
@@ -760,7 +760,7 @@
       ],
       "sources": [
         {
-          "title": "Proposal deck (Bahrani), slide 17, 'Social movements in Opera Square'"
+          "title": "Proposal deck (Rahiminezhad), slide 17, 'Social movements in Opera Square'"
         },
         {
           "title": "Abrahamyan (2012)"
@@ -830,10 +830,10 @@
       ],
       "sources": [
         {
-          "title": "Proposal deck (Bahrani), slide 17, 'Social movements in Opera Square'"
+          "title": "Proposal deck (Rahiminezhad), slide 17, 'Social movements in Opera Square'"
         },
         {
-          "title": "Proposal deck (Bahrani), slide 14",
+          "title": "Proposal deck (Rahiminezhad), slide 14",
           "note": "dates the ARF protest to 1994; slide 17 gives 1995. The suspension order is 28 December 1994 and the demonstrations run across both years."
         }
       ],
@@ -1012,7 +1012,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The Rise of Northern Avenue'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The Rise of Northern Avenue'"
         }
       ],
       "media": [],
@@ -1319,7 +1319,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -1366,7 +1366,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -1419,7 +1419,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [
@@ -1468,6 +1468,194 @@
       ]
     },
     {
+      "id": "march-first-2008",
+      "title": "1 March 2008: the night ten people were killed",
+      "date": "2008-03-01",
+      "dateEnd": "2008-03-02",
+      "datePrecision": "day",
+      "coordinates": [
+        44.50606,
+        40.17474
+      ],
+      "location": "Freedom Square at dawn, then Myasnikyan Square and the streets around it",
+      "categories": [
+        "state",
+        "protest",
+        "politics"
+      ],
+      "dispersal": {
+        "color": "#b0373d",
+        "stations": [
+          {
+            "id": "freedom-square",
+            "at": [
+              44.5152,
+              40.1859
+            ],
+            "kind": "origin",
+            "label": "Freedom Square",
+            "label_hy": "Ազատության հրապարակ",
+            "label_fa": "میدان آزادی",
+            "what": "07:30, the sit-in is broken up",
+            "what_hy": "07:30՝ նստացույցը ցրվում է",
+            "what_fa": "۰۷:۳۰، تحصن درهم شکسته می‌شود",
+            "years": "dawn"
+          },
+          {
+            "id": "myasnikyan",
+            "at": [
+              44.50606,
+              40.17474
+            ],
+            "kind": "now",
+            "label": "Myasnikyan Square",
+            "label_hy": "Մյասնիկյանի հրապարակ",
+            "label_fa": "میدان میاسنیکیان",
+            "what": "where the crowd re-formed, by the French embassy",
+            "what_hy": "ուր բազմությունը վերախմբվեց՝ Ֆրանսիայի դեսպանատան մոտ",
+            "what_fa": "جایی که جمعیت دوباره گرد آمد، کنار سفارت فرانسه",
+            "years": "from midday"
+          },
+          {
+            "id": "mashtots-lusavorich",
+            "at": [
+              44.50329,
+              40.17716
+            ],
+            "kind": "now",
+            "label": "Mashtots and Grigor Lusavorich",
+            "label_hy": "Մաշտոց և Գրիգոր Լուսավորիչ",
+            "label_fa": "ماشتوتس و گریگور لوساوریچ",
+            "what": "Hovhannes Hovhannisyan, shot at the top of the bridge",
+            "what_hy": "Հովհաննես Հովհաննիսյան՝ կրակոց կամրջի վերևում",
+            "what_fa": "هوهانس هوهانیسیان، با گلوله بر بالای پل",
+            "years": "1 March"
+          },
+          {
+            "id": "leo-paronyan",
+            "at": [
+              44.50178,
+              40.1793
+            ],
+            "kind": "now",
+            "label": "Leo and Paronyan",
+            "label_hy": "Լեո և Պարոնյան",
+            "label_fa": "لئو و پارونیان",
+            "what": "Grigor Gevorgyan, 21:30, a sniper's shot",
+            "what_hy": "Գրիգոր Գևորգյան, 21:30, դիպուկահարի կրակոց",
+            "what_fa": "گریگور گورگیان، ۲۱:۳۰، شلیک تک‌تیرانداز",
+            "years": "21:30"
+          },
+          {
+            "id": "covered-market",
+            "at": [
+              44.50142,
+              40.18318
+            ],
+            "kind": "now",
+            "label": "Outside the Covered Market",
+            "label_hy": "Ծածկած շուկայի դիմաց",
+            "label_fa": "بیرون بازار سرپوشیده",
+            "what": "Zakar Hovhannisyan, 01:30, a Makarov shot",
+            "what_hy": "Զաքար Հովհաննիսյան, 01:30, մակարովի կրակոց",
+            "what_fa": "زاکار هوهانیسیان، ۰۱:۳۰، شلیک ماکاروف",
+            "years": "01:30, 2 March",
+            "approx": true
+          }
+        ]
+      },
+      "summary": "The presidential election of 19 February 2008 gave Serzh Sargsyan 53 per cent and Levon Ter-Petrosyan 22. The next morning Ter-Petrosyan's supporters occupied Freedom Square, in front of the Opera, and stayed for ten days. At the peak the square held tens of thousands and people slept there.\n\nAt about 07:30 on 1 March the police cleared it. Between seven hundred and a thousand people were in the square overnight; witnesses describe batons and electric shockers. Ter-Petrosyan was taken from the square and put under house arrest, and by eleven the square was sealed.\n\nThe crowd did not go home. It re-formed around midday at Myasnikyan Square, by the French embassy, a kilometre and a half to the south west, and by the afternoon it was very large again. That evening the confrontation there turned lethal. Security forces fired tracer rounds over the crowd for more than forty minutes; barricades went up, cars and buses burned, shops on Mashtots were looted. **Ten people died: eight demonstrators, one police captain and one serviceman.** The prosecutor general's own account was that three civilians died of tear gas cartridges and four of bullets.\n\nAt about 22:30 President Robert Kocharyan declared a twenty day state of emergency. Assembly, strikes and demonstrations were banned, broadcasting was restricted to official statements, and A1+, Haykakan Zhamanak and other outlets were shut. More than a hundred opposition figures were arrested over the following weeks.",
+      "analysis": "**This is the day the map's two squares change hands.**\n\nEvery other entry here treats Freedom Square as the address of Armenian contentious politics, held continuously since 1988. On 1 March 2008 the state took it back by force at dawn and then physically closed it, and for the next two years it stayed closed, dug up for an underground car park. The movement was not defeated so much as evicted from its address.\n\n**And the crowd's answer was to go somewhere with no history at all.** Myasnikyan Square is not a political square. It is a traffic node by an embassy, a kilometre and a half from the Opera, and it had never been used for this. That is what makes the choice legible: with the square that carried the meaning sealed off, the crowd took the nearest large open space it could actually reach and hold. The violence happened there rather than at the Opera because the Opera had already been taken.\n\n**The deaths are not clustered where the crowd was.** They are strung along the streets that lead away from it, north and east: the bridge where Mashtots crosses Grigor Lusavorich, the corner of Leo and Paronyan, the front of the Covered Market at half past one in the morning. That is the geography of a dispersal rather than of a battle, and it is why the marks on this map are a scatter rather than a point.\n\n**What the map cannot settle.** Whether the shots came from the police, from interior troops, or from people the opposition called provocateurs is exactly what eighteen years of investigation have not established to anyone's satisfaction. The Council of Europe's human rights commissioner found excessive force and called for an independent inquiry; the government called the night an attempted coup. Nine families have taken their cases to the European Court of Human Rights. This entry marks where people died and states who says what; it does not adjudicate.",
+      "actors": [
+        "Levon Ter-Petrosyan and his supporters",
+        "President Robert Kocharyan",
+        "Serzh Sargsyan",
+        "Armenian police and interior troops",
+        "Council of Europe Commissioner for Human Rights",
+        "European Court of Human Rights"
+      ],
+      "tags": [
+        "1 March",
+        "2008",
+        "state violence",
+        "state of emergency",
+        "Freedom Square",
+        "Myasnikyan Square",
+        "election protest",
+        "ten dead"
+      ],
+      "sources": [
+        {
+          "title": "2008 Armenian presidential election protests, Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/2008_Armenian_presidential_election_protests"
+        },
+        {
+          "title": "Epress.am, 'The victims of March 1, 2008', 1 March 2014",
+          "url": "https://epress.am/en/2014/03/01/the-victims-of-march-1-2008.html",
+          "note": "the ten names, causes of death and the three located street sites"
+        },
+        {
+          "title": "EHRAC, 'Ten years on, families of those killed during 1 March protests in Yerevan need answers'",
+          "url": "https://ehrac.org.uk/en_gb/ten-years-1-march-protests/",
+          "note": "the cases before the European Court of Human Rights"
+        },
+        {
+          "title": "Human Rights Watch, 'Democracy on Rocky Ground', 25 February 2009",
+          "url": "https://www.hrw.org/report/2009/02/25/democracy-rocky-ground/armenias-disputed-2008-presidential-election-post-election"
+        },
+        {
+          "title": "OpenStreetMap, read 2026-08-23",
+          "note": "Leo and Paronyan share a node at 44.50178, 40.17930; Mashtots and Grigor Lusavorich pass within 17 m at 44.50329, 40.17716, which is the grade separation the accounts call the bridge; the Myasnikyan monument is at 44.50606, 40.17474"
+        }
+      ],
+      "media": [],
+      "fieldnote": "Three of the ten deaths have a street named in the sources and are marked. The Covered Market point is placed on Mashtots from the address and is flagged approximate; you know the building, so correct it if it is wrong. The other seven are recorded in the text without a point, because no source I found places them. The underground pedestrian tunnel where Samvel Harutyunyan was shot is unidentified. Sources also disagree on two names: Epress gives Gor Qloyan and Hovhannes Hovhannisyan where EHRAC gives Gor Kloyan and Hovhannes Minasyan.",
+      "title_hy": "2008 թվականի մարտի 1․ գիշերը, երբ տասը մարդ սպանվեց",
+      "location_hy": "Ազատության հրապարակը լուսադեմին, ապա Մյասնիկյանի հրապարակը և շրջակա փողոցները",
+      "summary_hy": "2008 թվականի փետրվարի 19-ի նախագահական ընտրությունը Սերժ Սարգսյանին տվեց 53 տոկոս, Լևոն Տեր-Պետրոսյանին՝ 22։ Հաջորդ առավոտ Տեր-Պետրոսյանի կողմնակիցները զբաղեցրին Օպերայի դիմացի Ազատության հրապարակը և մնացին տասը օր։\n\nՄարտի 1-ին, մոտավորապես ժամը 07:30-ին, ոստիկանությունը ցրեց հրապարակը։ Գիշերել էր յոթ հարյուրից հազար մարդ; վկաները նկարագրում են մահակներ և էլեկտրաշոկեր։ Տեր-Պետրոսյանին հրապարակից տարան և տնային կալանքի տակ դրեցին, իսկ ժամը 11-ին հրապարակը փակ էր։\n\nԲազմությունը տուն չգնաց։ Կեսօրին այն վերախմբվեց Ֆրանսիայի դեսպանատան մոտ՝ Մյասնիկյանի հրապարակում, մեկուկես կիլոմետր հարավ-արևմուտք։ Այդ երեկո այնտեղ բախումը դարձավ մահաբեր։ Ուժայինները քառասուն րոպեից ավելի բազմության վրայով կրակեցին հետագծային փամփուշտներ; բարիկադներ բարձրացան, մեքենաներ և ավտոբուսներ այրվեցին, Մաշտոցի խանութները թալանվեցին։ **Տասը մարդ զոհվեց՝ ութ ցուցարար, մեկ ոստիկան և մեկ զինծառայող։**\n\nԺամը 22:30-ի սահմաններում նախագահ Ռոբերտ Քոչարյանը հայտարարեց քսանօրյա արտակարգ դրություն։ Արգելվեցին հավաքները, գործադուլները և ցույցերը, հեռարձակումը սահմանափակվեց պաշտոնական հաղորդագրություններով, փակվեցին «Ա1+»-ը, «Հայկական ժամանակը» և այլ լրատվամիջոցներ։",
+      "analysis_hy": "**Սա այն օրն է, երբ քարտեզի երկու հրապարակները ձեռք են փոխում։**\n\nԱյստեղի մյուս բոլոր գրառումները Ազատության հրապարակը դիտում են որպես հայկական բողոքի քաղաքականության հասցե՝ 1988-ից անընդհատ պահված։ 2008 թվականի մարտի 1-ին պետությունը լուսադեմին ուժով վերցրեց այն և հետո ֆիզիկապես փակեց, և հաջորդ երկու տարի այն մնաց փակ՝ փորված ստորգետնյա ավտոկայանատեղիի համար։ Շարժումը ոչ այնքան պարտվեց, որքան վտարվեց իր հասցեից։\n\n**Իսկ բազմության պատասխանը եղավ գնալ մի տեղ, որը պատմություն չուներ։** Մյասնիկյանի հրապարակը քաղաքական հրապարակ չէ։ Այն երթևեկային հանգույց է դեսպանատան կողքին, Օպերայից մեկուկես կիլոմետր հեռու, և երբեք այսպես չէր օգտագործվել։ Դա է ընտրությունը դարձնում ընթեռնելի․ երբ իմաստը կրող հրապարակը փակված է, բազմությունը վերցնում է ամենամոտ մեծ բաց տարածքը, որին կարող է հասնել և պահել։\n\n**Զոհերը կուտակված չեն այնտեղ, ուր բազմությունն էր։** Նրանք ձգված են դեպի հյուսիս և արևելք տանող փողոցներով․ կամուրջը, որտեղ Մաշտոցը հատում է Գրիգոր Լուսավորիչը, Լեոյի և Պարոնյանի անկյունը, Ծածկած շուկայի դիմացը՝ գիշերվա մեկն անց կես։ Դա ցրման, ոչ թե ճակատամարտի աշխարհագրություն է։\n\n**Այն, ինչ քարտեզը չի կարող լուծել։** Թե ումից են եկել կրակոցները՝ ոստիկանությունից, ներքին զորքերից, թե նրանցից, ում ընդդիմությունն անվանում էր սադրիչ, հենց այն է, ինչ տասնութ տարվա քննությունը չի պարզել։ Եվրոպայի խորհրդի մարդու իրավունքների հանձնակատարը արձանագրեց ուժի չափազանց կիրառում; կառավարությունը գիշերն անվանեց հեղաշրջման փորձ։ Ինը ընտանիք դիմել է Մարդու իրավունքների եվրոպական դատարան։",
+      "actors_hy": [
+        "Լևոն Տեր-Պետրոսյան և իր կողմնակիցները",
+        "Նախագահ Ռոբերտ Քոչարյան",
+        "Սերժ Սարգսյան",
+        "Հայաստանի ոստիկանություն և ներքին զորքեր",
+        "Եվրոպայի խորհրդի մարդու իրավունքների հանձնակատար",
+        "Մարդու իրավունքների եվրոպական դատարան"
+      ],
+      "tags_hy": [
+        "մարտի 1",
+        "2008",
+        "պետական բռնություն",
+        "արտակարգ դրություն",
+        "Ազատության հրապարակ",
+        "Մյասնիկյանի հրապարակ",
+        "ընտրական բողոք",
+        "տասը զոհ"
+      ],
+      "title_fa": "اول مارس ۲۰۰۸: شبی که ده نفر کشته شدند",
+      "location_fa": "میدان آزادی در سپیده‌دم، سپس میدان میاسنیکیان و خیابان‌های پیرامون آن",
+      "summary_fa": "انتخابات ریاست‌جمهوری ۱۹ فوریهٔ ۲۰۰۸ به سرژ سرکیسیان ۵۳ درصد و به لوون تر-پطروسیان ۲۲ درصد داد. صبح روز بعد هواداران تر-پطروسیان میدان آزادی، روبه‌روی اپرا، را اشغال کردند و ده روز ماندند.\n\nحدود ساعت ۰۷:۳۰ روز اول مارس پلیس میدان را خالی کرد. میان هفتصد تا هزار نفر شب را آنجا مانده بودند؛ شاهدان از باتوم و شوکر می‌گویند. تر-پطروسیان را از میدان بردند و در حبس خانگی گذاشتند، و تا ساعت یازده میدان بسته شد.\n\nجمعیت به خانه نرفت. حوالی ظهر در میدان میاسنیکیان، کنار سفارت فرانسه، یک‌ونیم کیلومتر جنوب‌غربی، دوباره گرد آمد. آن شب رویارویی در آنجا مرگبار شد. نیروهای امنیتی بیش از چهل دقیقه گلولهٔ رسام بر فراز جمعیت شلیک کردند؛ سنگر برپا شد، خودرو و اتوبوس سوخت، مغازه‌های ماشتوتس غارت شد. **ده نفر کشته شدند: هشت معترض، یک سروان پلیس و یک سرباز.**\n\nحدود ساعت ۲۲:۳۰ رئیس‌جمهور روبرت کوچاریان بیست روز وضعیت اضطراری اعلام کرد. تجمع، اعتصاب و تظاهرات ممنوع شد، پخش رسانه‌ای به بیانیه‌های رسمی محدود شد و A1+ و هایکاکان ژاماناک و رسانه‌های دیگر بسته شدند.",
+      "analysis_fa": "**این روزی است که دو میدانِ این نقشه دست به دست می‌شوند.**\n\nهر مدخل دیگری اینجا میدان آزادی را نشانی سیاست اعتراضی ارمنی می‌داند که از ۱۹۸۸ پیوسته نگه داشته شده است. در اول مارس ۲۰۰۸ دولت آن را سپیده‌دم به زور پس گرفت و سپس فیزیکاً بست، و دو سال بعد بسته ماند، کنده‌شده برای پارکینگ زیرزمینی. جنبش آن‌قدر که از نشانی‌اش رانده شد، شکست نخورد.\n\n**و پاسخ جمعیت رفتن به جایی بود که هیچ تاریخی نداشت.** میدان میاسنیکیان میدانی سیاسی نیست. گره‌ای ترافیکی کنار یک سفارت است، یک‌ونیم کیلومتر دورتر از اپرا، و هرگز این‌گونه به کار نرفته بود. همین انتخاب را خوانا می‌کند: وقتی میدانی که معنا را حمل می‌کرد مهر و موم شده است، جمعیت نزدیک‌ترین فضای باز بزرگی را می‌گیرد که واقعاً می‌تواند به آن برسد و نگهش دارد.\n\n**کشته‌ها آنجا که جمعیت بود متمرکز نیستند.** در خیابان‌هایی پراکنده‌اند که از آن دور می‌شوند: پلی که ماشتوتس از روی گریگور لوساوریچ می‌گذرد، نبش لئو و پارونیان، جلوی بازار سرپوشیده در ساعت یک‌ونیم بامداد. این جغرافیای یک پراکندن است، نه یک نبرد.\n\n**آنچه نقشه نمی‌تواند فیصله دهد.** اینکه شلیک‌ها از پلیس بود، از نیروهای داخلی، یا از کسانی که اپوزیسیون آنان را عامل تحریک می‌خواند، دقیقاً همان چیزی است که هجده سال تحقیق روشن نکرده است. کمیسر حقوق بشر شورای اروپا کاربرد بیش از حد زور را تأیید کرد؛ دولت آن شب را کودتا خواند. نه خانواده پرونده‌شان را به دادگاه اروپایی حقوق بشر برده‌اند.",
+      "actors_fa": [
+        "لوون تر-پطروسیان و هوادارانش",
+        "رئیس‌جمهور روبرت کوچاریان",
+        "سرژ سرکیسیان",
+        "پلیس و نیروهای داخلی ارمنستان",
+        "کمیسر حقوق بشر شورای اروپا",
+        "دادگاه اروپایی حقوق بشر"
+      ],
+      "tags_fa": [
+        "اول مارس",
+        "۲۰۰۸",
+        "خشونت دولتی",
+        "وضعیت اضطراری",
+        "میدان آزادی",
+        "میدان میاسنیکیان",
+        "اعتراض انتخاباتی",
+        "ده کشته"
+      ]
+    },
+    {
       "id": "mashtots-park-2012",
       "title": "Mashtots Park movement",
       "date": "2012",
@@ -1501,7 +1689,7 @@
           "note_fa": "حجم ساخت‌وساز و افت فضای سبز"
         },
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [
@@ -1581,7 +1769,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -1635,7 +1823,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -1692,7 +1880,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'",
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'",
           "note": "walking interview, fieldwork",
           "note_hy": "քայլող հարցազրույց, դաշտային աշխատանք",
           "note_fa": "مصاحبهٔ قدم‌زنان، کار میدانی"
@@ -1761,7 +1949,7 @@
           "title": "Ter-Ghazaryan (2013)"
         },
         {
-          "title": "Northern Avenue paper (Bahrani)"
+          "title": "Northern Avenue paper (Rahiminezhad)"
         }
       ],
       "media": [],
@@ -1813,10 +2001,10 @@
       ],
       "sources": [
         {
-          "title": "Proposal deck (Bahrani), slide 17, 'Social movements in Opera Square'"
+          "title": "Proposal deck (Rahiminezhad), slide 17, 'Social movements in Opera Square'"
         },
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [],
@@ -2696,7 +2884,7 @@
         }
       ],
       "trailOnly": true,
-      "trailNote": "The march is not drawn until it is walked. Selecting the entry, clicking a year, or pressing replay sends a moving head from the square it started in, and the purple line is what it leaves behind. Alireza's instruction, 23 August 2026: a permanent line plus a ball running over it says the route is a thing; a line that only exists where the head has already been says it is a walk."
+      "trailNote": "The march is not drawn until it is walked. Selecting the entry, clicking a year, or pressing replay sends a moving head from the square it started in, and the purple line is what it leaves behind. Shokran's instruction, 23 August 2026: a permanent line plus a ball running over it says the route is a thing; a line that only exists where the head has already been says it is a walk."
     },
     {
       "id": "electric-yerevan-2015",
@@ -2724,7 +2912,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), 'The emergence of urban movements'"
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
         }
       ],
       "media": [
@@ -2758,160 +2946,6 @@
         "تعرفهٔ برق",
         "باغرامیان",
         "اشغال"
-      ]
-    },
-    {
-      "id": "vardavar",
-      "title": "Vardavar: the day the squares are used for water",
-      "date": "2015-07-12",
-      "dateEnd": "2026-07-12",
-      "datePrecision": "recurring",
-      "recurs": {
-        "color": "#41b8d5",
-        "years": [
-          2015,
-          2016,
-          2017,
-          2018,
-          2019,
-          2020,
-          2021,
-          2022,
-          2023,
-          2024,
-          2025,
-          2026
-        ],
-        "dates": {
-          "2015": "2015-07-12",
-          "2016": "2016-07-03",
-          "2017": "2017-07-23",
-          "2018": "2018-07-08",
-          "2019": "2019-07-28",
-          "2020": "2020-07-19",
-          "2021": "2021-07-11",
-          "2022": "2022-07-24",
-          "2023": "2023-07-16",
-          "2024": "2024-07-07",
-          "2025": "2025-07-27",
-          "2026": "2026-07-12"
-        },
-        "rule": "Ninety-eight days (fourteen weeks) after Easter, so it moves between 3 July and 28 July.",
-        "note": "Marked from 2015, where the map's other Republic Square material begins. The festival is far older than the marks."
-      },
-      "coordinates": [
-        44.5126,
-        40.1776
-      ],
-      "location": "Republic Square and Freedom Square (Opera), and the streets between them",
-      "categories": [
-        "publiclife",
-        "memory"
-      ],
-      "summary": "Vardavar (Վարդավառ) is the summer water festival, and for one Sunday in July the rule in Yerevan is that anyone may throw water at anyone. Children work from balconies with buckets, adults with bottles and water guns, and nobody is exempt: strangers, tourists, the well dressed, the police.\n\nThe church calls the day the Feast of the Transfiguration and fixes it at ninety-eight days after Easter, which is why it wanders across July, from the 3rd to the 28th. The practice underneath it is older than the church. It is generally attached to Astghik, the pre-Christian goddess of water, beauty and love, whose name gives the rose that gives the festival its name (vard, rose), and a second tradition ties the water and the released doves to Noah after the flood. A rite that survived Christianisation and then survived the Soviet Union, in which it was tolerated as folk custom rather than religion.\n\nIn Yerevan the two squares on this map are the two main sites. Republic Square, where the singing fountains are, is the epicentre; the Swan Lake in front of the Opera at Freedom Square is the other. **People take the water from the pools themselves**, out of the fountain basins on Republic Square and out of the Swan Lake, filling buckets and bottles straight from the civic water features and throwing it at each other. Northern Avenue between the two becomes a long corridor of the same thing.",
-      "analysis": "**The one day a year the squares are used for what they physically are.**\n\nEverything else on this map treats these two squares as political instruments: places to assemble, to be counted, to be dispersed from. Vardavar treats them as water and stone. The fountain on Republic Square is an ornament of state architecture, built to be looked at from the perimeter; on this day it is a supply, and the crowd stands in it. The Swan Lake, which is a mirror for the Opera, becomes a bucket. The transgression is small and completely licensed, and that is what makes it worth mapping: it shows the ordinary, unpoliced version of the same behaviour that in April is called occupation.\n\n**It is also the strongest evidence on this map for the everyday half of the argument.** Northern Avenue is usually read through what was demolished to build it and what it was used for in 2018. On Vardavar it is used the way its designers might have wanted and never intended: as a continuous pedestrian surface with no traffic to interrupt a running child, connecting one water source to another. The avenue works best on the day nobody is making a political claim on it.\n\n**And the participation is unconditional.** No permit, no organiser, no route, no leader, no demand. Vardavar is the baseline against which every organised crowd in this archive should be read: the city already knows how to fill its squares with people who do not know each other, and does it once a year for no reason at all.\n\n**And the state is the water supply.** The second photograph, twenty minutes after the first, is municipal tankers on the roundabout in front of the Government House, arcing water over the crowd. The vehicles are the ones that wash the streets. On every other day in this archive, a state directing water at a crowd in this square would be the definition of dispersal; here it is the service the city provides, and people position themselves under the arc. The same equipment, the same square, the same gesture, and the meaning inverted by the calendar alone.",
-      "actors": [
-        "Yerevan residents of every age",
-        "Tourists and visitors",
-        "Armenian Apostolic Church (as the Feast of the Transfiguration)",
-        "Yerevan Municipality"
-      ],
-      "tags": [
-        "Vardavar",
-        "water",
-        "festival",
-        "Republic Square",
-        "Swan Lake",
-        "Astghik",
-        "Transfiguration",
-        "everyday life"
-      ],
-      "sources": [
-        {
-          "title": "Fieldwork photographs (Bahrani), Republic Square",
-          "note": "the water taken from the fountain pool"
-        },
-        {
-          "title": "Vardavar, Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Vardavar",
-          "note": "origins, Astghik, the ninety-eight day rule"
-        },
-        {
-          "title": "Armenia Travel, 'Vardavar: Armenia's epic summer water fight'",
-          "url": "https://armenia.travel/articles/vardavar-armenian-water-festival/"
-        },
-        {
-          "title": "MassisPost, 'Vardavar celebrations fill Yerevan's streets with water and festivity', July 2026",
-          "url": "https://massispost.com/2026/07/vardavar-celebrations-fill-yerevans-streets-with-water-and-festivity/",
-          "note": "Republic Square and Swan Lake named as the two gathering points"
-        }
-      ],
-      "media": [
-        {
-          "type": "image",
-          "url": "media/vardavar-2021-republic-square-fountains.jpg",
-          "caption": "Republic Square, 11 July 2021 at 11:48. The fountain basins in front of the History Museum with people standing in them, filling buckets and water guns from the pool and throwing it at each other. This is the frame the entry's claim rests on: the water is not carried to the square, it is taken out of the square's own fountains.",
-          "caption_hy": "Հանրապետության հրապարակ, 2021 թվականի հուլիսի 11, ժամը 11:48։ Պատմության թանգարանի դիմացի շատրվանի ավազանները՝ մարդկանցով, որոնք կանգնած են դրանց մեջ, ավազանից լցնում են դույլերն ու ջրային ատրճանակները և լցնում միմյանց վրա։ Սա այն կադրն է, որի վրա հենվում է գրառման պնդումը․ ջուրը հրապարակ չեն բերում, այն վերցնում են հենց հրապարակի շատրվաններից։",
-          "caption_fa": "میدان جمهوری، ۱۱ ژوئیهٔ ۲۰۲۱، ساعت ۱۱:۴۸. حوض‌های فواره روبه‌روی موزهٔ تاریخ، با مردمی که درونشان ایستاده‌اند، سطل و تفنگ آبی را از حوض پر می‌کنند و به هم می‌پاشند. ادعای این مدخل بر همین کادر استوار است: آب را به میدان نمی‌آورند، از فواره‌های خودِ میدان برمی‌دارند.",
-          "credit": "Author",
-          "credit_hy": "Հեղինակ",
-          "credit_fa": "نگارنده",
-          "date": "2021-07-11",
-          "fieldnote": true
-        },
-        {
-          "type": "image",
-          "url": "media/vardavar-2021-republic-square-tankers.jpg",
-          "caption": "The same square twenty minutes later, 12:08. Municipal water tankers parked on the roundabout in front of the Government House, arcing water over the traffic and the crowd. The city does not police the day, it supplies it: the same vehicles that wash the streets are turned on the people, and the people stand in the arc on purpose.",
-          "caption_hy": "Նույն հրապարակը քսան րոպե անց, ժամը 12:08։ Կառավարության տան դիմացի շրջանաձև հատվածում կանգնած քաղաքային ջրատար մեքենաները ջուր են նետում երթևեկության և բազմության վրայով։ Քաղաքը օրը չի ոստիկանացնում, այլ մատակարարում է այն․ նույն մեքենաները, որոնք լվանում են փողոցները, ուղղվում են մարդկանց վրա, և մարդիկ միտումնավոր կանգնում են ջրի աղեղի տակ։",
-          "caption_fa": "همان میدان بیست دقیقه بعد، ساعت ۱۲:۰۸. تانکرهای آب شهرداری در میدانگاهِ روبه‌روی ساختمان دولت ایستاده‌اند و آب را بر فراز ترافیک و جمعیت کمان می‌کنند. شهر این روز را پلیسی نمی‌کند، تأمینش می‌کند: همان خودروهایی که خیابان‌ها را می‌شویند به سوی مردم گرفته می‌شوند، و مردم عمداً زیر آن کمان می‌ایستند.",
-          "credit": "Author",
-          "credit_hy": "Հեղինակ",
-          "credit_fa": "نگارنده",
-          "date": "2021-07-11",
-          "fieldnote": true
-        }
-      ],
-      "fieldnote": "The two Republic Square photographs are Alireza's own, 11 July 2021, which is exactly ninety-eight days after Easter that year. The fieldwork and the rule agree.",
-      "title_hy": "Վարդավառ․ օրը, երբ հրապարակներն օգտագործվում են ջրի համար",
-      "location_hy": "Հանրապետության հրապարակ և Ազատության հրապարակ (Օպերա), և դրանց միջև ընկած փողոցները",
-      "summary_hy": "Վարդավառը ամառային ջրի տոնն է, և հուլիսյան մեկ կիրակի Երևանում կանոնն այն է, որ ցանկացած մեկը կարող է ջուր լցնել ցանկացած մեկի վրա։ Երեխաները աշխատում են պատշգամբներից՝ դույլերով, մեծերը՝ շշերով և ջրային ատրճանակներով, և ոչ ոք բացառված չէ․ ո՛չ անծանոթները, ո՛չ զբոսաշրջիկները, ո՛չ լավ հագնվածները, ո՛չ ոստիկանները։\n\nԵկեղեցին օրն անվանում է Այլակերպության տոն և սահմանում է Զատիկից իննսունութ օր անց, ինչի պատճառով այն թափառում է հուլիսի 3-ից մինչև 28-ը։ Դրա տակ ընկած սովորույթն ավելի հին է, քան եկեղեցին։ Այն սովորաբար կապվում է Աստղիկի՝ ջրի, գեղեցկության և սիրո նախաքրիստոնեական աստվածուհու հետ, որի հետ կապված վարդն էլ տալիս է տոնի անունը, իսկ մեկ այլ ավանդույթ ջուրն ու բաց թողնված աղավնիները կապում է ջրհեղեղից հետո Նոյի հետ։\n\nԵրևանում այս քարտեզի երկու հրապարակները հիմնական վայրերն են։ Հանրապետության հրապարակը, որտեղ երգող շատրվաններն են, կենտրոնն է, իսկ Օպերայի դիմացի Կարապի լիճը՝ մյուսը։ **Մարդիկ ջուրը վերցնում են հենց ավազաններից**․ Հանրապետության հրապարակի շատրվանի ավազանից և Կարապի լճից, դույլերն ու շշերը լցնում են ուղիղ քաղաքային ջրային կառույցներից և լցնում միմյանց վրա։ Դրանց միջև ընկած Հյուսիսային պողոտան դառնում է նույն բանի երկար միջանցքը։",
-      "analysis_hy": "**Տարվա միակ օրը, երբ հրապարակներն օգտագործվում են այնպես, ինչպես դրանք ֆիզիկապես կան։**\n\nԱյս քարտեզի մնացած ամեն ինչ այս երկու հրապարակները դիտում է որպես քաղաքական գործիք․ վայրեր, ուր հավաքվում են, հաշվվում են, ցրվում են։ Վարդավառը դրանք վերաբերվում է որպես ջուր և քար։ Հանրապետության հրապարակի շատրվանը պետական ճարտարապետության զարդ է՝ կառուցված եզրից նայելու համար; այս օրը այն մատակարարում է, և բազմությունը կանգնում է դրա մեջ։ Կարապի լիճը, որը Օպերայի հայելին է, դառնում է դույլ։ Խախտումը փոքր է և լիովին թույլատրված, և հենց դա է այն արժեքավոր դարձնում քարտեզի համար․ այն ցույց է տալիս նույն վարքի սովորական, չոստիկանացված տարբերակը, որն ապրիլին կոչվում է գրավում։\n\n**Սա նաև այս քարտեզի ամենաուժեղ վկայությունն է փաստարկի առօրյա կեսի համար։** Հյուսիսային պողոտան սովորաբար կարդացվում է այն ամենի միջով, ինչ քանդվեց այն կառուցելու համար, և այն, ինչի համար օգտագործվեց 2018-ին։ Վարդավառին այն օգտագործվում է այնպես, ինչպես նրա նախագծողները թերևս կցանկանային և երբեք չնախատեսեցին․ որպես անընդհատ հետիոտնային մակերես՝ առանց երթևեկության, որը կապում է մեկ ջրի աղբյուրը մյուսին։ Պողոտան լավագույնս աշխատում է այն օրը, երբ ոչ ոք դրա վրա քաղաքական պահանջ չի ներկայացնում։\n\n**Եվ մասնակցությունն անվերապահ է։** Ոչ թույլտվություն, ոչ կազմակերպիչ, ոչ երթուղի, ոչ առաջնորդ, ոչ պահանջ։ Վարդավառն այն ելակետն է, որի դեմ պետք է կարդալ այս արխիվի ամեն կազմակերպված բազմություն․ քաղաքն արդեն գիտի, թե ինչպես լցնել իր հրապարակները միմյանց չճանաչող մարդկանցով, և դա անում է տարին մեկ անգամ՝ առանց որևէ պատճառի։\n\n**Եվ պետությունն է ջրի աղբյուրը։** Երկրորդ լուսանկարը, առաջինից քսան րոպե անց, ցույց է տալիս քաղաքային ջրատար մեքենաները Կառավարության տան դիմաց՝ ջուրը բազմության վրայով նետելիս։ Դրանք այն մեքենաներն են, որոնք լվանում են փողոցները։ Այս արխիվի ցանկացած այլ օր պետությունը, որ ջուր է ուղղում այս հրապարակի բազմության վրա, ցրման սահմանումը կլիներ; այստեղ դա քաղաքի մատուցած ծառայությունն է, և մարդիկ իրենք են կանգնում ջրի աղեղի տակ։ Նույն տեխնիկան, նույն հրապարակը, նույն ժեստը, և իմաստը շրջված է միայն օրացույցով։",
-      "actors_hy": [
-        "Երևանի ամեն տարիքի բնակիչներ",
-        "Զբոսաշրջիկներ և այցելուներ",
-        "Հայ առաքելական եկեղեցի (որպես Այլակերպության տոն)",
-        "Երևանի քաղաքապետարան"
-      ],
-      "tags_hy": [
-        "Վարդավառ",
-        "ջուր",
-        "տոն",
-        "Հանրապետության հրապարակ",
-        "Կարապի լիճ",
-        "Աստղիկ",
-        "Այլակերպություն",
-        "առօրյա կյանք"
-      ],
-      "title_fa": "واردآوار: روزی که میدان‌ها برای آب به کار می‌روند",
-      "location_fa": "میدان جمهوری و میدان آزادی (اپرا)، و خیابان‌های میان آن دو",
-      "summary_fa": "واردآوار جشن آب تابستانی است، و برای یک یکشنبهٔ ژوئیه قاعده در ایروان این است که هرکس می‌تواند به هرکس آب بپاشد. بچه‌ها از بالکن‌ها با سطل کار می‌کنند، بزرگ‌ترها با بطری و تفنگ آبی، و هیچ‌کس مستثنا نیست: نه غریبه‌ها، نه گردشگران، نه خوش‌پوش‌ها، نه پلیس.\n\nکلیسا این روز را عید تجلی می‌نامد و آن را نود و هشت روز پس از عید پاک قرار می‌دهد، و به همین دلیل میان سوم تا بیست‌وهشتم ژوئیه جابه‌جا می‌شود. اما رسمِ زیرِ آن از کلیسا کهن‌تر است. معمولاً آن را به آستغیک، الههٔ پیشامسیحی آب و زیبایی و عشق، نسبت می‌دهند؛ گلِ سرخ (vard) که نام جشن از آن می‌آید به او پیوند دارد، و روایتی دیگر آب و کبوترهای رهاشده را به نوح پس از توفان می‌بندد.\n\nدر ایروان دو میدانِ این نقشه دو کانون اصلی‌اند. میدان جمهوری، جایی که فواره‌های آوازخوان است، مرکز ماجراست؛ دریاچهٔ قو روبه‌روی اپرا در میدان آزادی، کانون دیگر. **مردم آب را از خودِ حوض‌ها برمی‌دارند**: از حوض فوارهٔ میدان جمهوری و از دریاچهٔ قو، سطل و بطری را مستقیم از همین آب‌نماهای شهری پر می‌کنند و به هم می‌پاشند. خیابان شمالی میان آن دو به دالانی بلند از همین کار بدل می‌شود.",
-      "analysis_fa": "**تنها روز سال که میدان‌ها همان‌گونه به کار می‌روند که فیزیکاً هستند.**\n\nهر چیز دیگری در این نقشه این دو میدان را ابزار سیاسی می‌بیند: جایی برای گردآمدن، شمرده‌شدن، و پراکنده‌شدن. واردآوار با آن‌ها همچون آب و سنگ رفتار می‌کند. فوارهٔ میدان جمهوری زینتی از معماری دولتی است، ساخته‌شده برای آنکه از حاشیه تماشا شود؛ در این روز منبع است و جمعیت درونش می‌ایستد. دریاچهٔ قو، که آینهٔ اپراست، سطل می‌شود. تخطی کوچک است و کاملاً مجاز، و همین آن را برای نقشه ارزشمند می‌کند: نسخهٔ عادی و بی‌پلیسِ همان رفتاری را نشان می‌دهد که در آوریل اشغال نامیده می‌شود.\n\n**این همچنین قوی‌ترین شاهد این نقشه برای نیمهٔ روزمرهٔ استدلال است.** خیابان شمالی معمولاً از خلال آنچه برای ساختش ویران شد و آنچه در ۲۰۱۸ برایش به کار رفت خوانده می‌شود. در واردآوار همان‌گونه به کار می‌رود که طراحانش شاید می‌خواستند و هرگز پیش‌بینی نکردند: سطحی پیوستهٔ پیاده، بدون ترافیکی که دویدن کودکی را قطع کند، که یک منبع آب را به منبع دیگر وصل می‌کند. خیابان در روزی بهترین کارکرد را دارد که هیچ‌کس ادعای سیاسی بر آن ندارد.\n\n**و مشارکت بی‌قیدوشرط است.** نه مجوزی، نه سازمان‌دهنده‌ای، نه مسیری، نه رهبری، نه خواسته‌ای. واردآوار خط مبنایی است که باید هر جمعیت سازمان‌یافتهٔ این بایگانی را در برابر آن خواند: شهر از پیش می‌داند چگونه میدان‌هایش را از مردمی پر کند که یکدیگر را نمی‌شناسند، و سالی یک‌بار این کار را بی‌هیچ دلیلی انجام می‌دهد.\n\n**و دولت همان منبع آب است.** عکس دوم، بیست دقیقه پس از اولی، تانکرهای شهرداری را روبه‌روی ساختمان دولت نشان می‌دهد که آب را بر فراز جمعیت کمان می‌کنند. این‌ها همان خودروهایی‌اند که خیابان‌ها را می‌شویند. در هر روز دیگری از این بایگانی، دولتی که در این میدان آب به سوی جمعیت بگیرد تعریفِ سرکوب و پراکنده‌کردن است؛ اینجا خدمتی است که شهر ارائه می‌دهد، و مردم خودشان زیر آن کمان می‌ایستند. همان تجهیزات، همان میدان، همان حرکت، و معنا تنها با تقویم وارونه می‌شود.",
-      "actors_fa": [
-        "ساکنان ایروان در هر سنی",
-        "گردشگران و بازدیدکنندگان",
-        "کلیسای رسولی ارمنی (به‌عنوان عید تجلی)",
-        "شهرداری ایروان"
-      ],
-      "tags_fa": [
-        "واردآوار",
-        "آب",
-        "جشن",
-        "میدان جمهوری",
-        "دریاچهٔ قو",
-        "آستغیک",
-        "عید تجلی",
-        "زندگی روزمره"
       ]
     },
     {
@@ -3912,7 +3946,7 @@
         "۲۲ آوریل"
       ],
       "trailOnly": true,
-      "trailNote": "Drawn only as it is walked. Alireza's instruction, 23 August 2026, extending the rule he set for the commemoration march the same day: a route that is permanently on the map is a thing, and this was an afternoon. The head sets off from Republic Square and the line is what it leaves behind, as far as Erebuni, where he was taken."
+      "trailNote": "Drawn only as it is walked. Shokran's instruction, 23 August 2026, extending the rule he set for the commemoration march the same day: a route that is permanently on the map is a thing, and this was an afternoon. The head sets off from Republic Square and the line is what it leaves behind, as far as Erebuni, where he was taken."
     },
     {
       "id": "pashinyan-arrest-2018-04-22",
@@ -3929,7 +3963,7 @@
         "protest"
       ],
       "episode": "2018-revolution",
-      "summary": "Pashinyan was detained on Artsakh Avenue in Erebuni while speaking with the chief of the Yerevan police, Valery Osipyan. Two other members of parliament, Sasun Mikaelyan and Ararat Mirzoyan, were taken the same day; by evening about 230 people had been arrested. Pashinyan was taken to the Erebuni police station, the other two to Shengavit, where crowds gathered outside both.\n\nThe location is fixed by two independent records that agree: the photographs taken that afternoon are captioned «Արցախի և Էրեբունի փողոցների խաչմերուկ»; the intersection of Artsakh and Erebuni streets, and the street view Alireza supplied looks at the same crossroads. OpenStreetMap puts the intersection at 40.14252 N, 44.51098 E.",
+      "summary": "Pashinyan was detained on Artsakh Avenue in Erebuni while speaking with the chief of the Yerevan police, Valery Osipyan. Two other members of parliament, Sasun Mikaelyan and Ararat Mirzoyan, were taken the same day; by evening about 230 people had been arrested. Pashinyan was taken to the Erebuni police station, the other two to Shengavit, where crowds gathered outside both.\n\nThe location is fixed by two independent records that agree: the photographs taken that afternoon are captioned «Արցախի և Էրեբունի փողոցների խաչմերուկ»; the intersection of Artsakh and Erebuni streets, and the street view Shokran supplied looks at the same crossroads. OpenStreetMap puts the intersection at 40.14252 N, 44.51098 E.",
       "analysis": "An arrest is a claim about where the state's authority still holds, and this one was made at the edge of the represented city.\n\nIt failed within the day. By evening Republic Square held about 115,000 people; the largest crowd of the revolution to that point, and on 23 April Pashinyan was released at three in the afternoon and Sargsyan resigned at half past four. Detaining the leader four kilometres from the centre did not disperse the movement; it produced the crowd that ended the government.",
       "actors": [
         "Nikol Pashinyan",
@@ -3970,16 +4004,16 @@
         {
           "title": "Video of the arrest, YouTube",
           "url": "https://www.youtube.com/watch?v=KwXoSNu8AWc",
-          "note": "footage supplied by Alireza; cited, not mirrored",
-          "note_hy": "Ալիրեզայի տրամադրած կադրերը․ հղվում է, չի պատճենվում",
-          "note_fa": "تصاویری که علیرضا فرستاد؛ ارجاع داده شده، بازنشر نشده"
+          "note": "footage supplied by Shokran; cited, not mirrored",
+          "note_hy": "Շոկրանի տրամադրած կադրերը․ հղվում է, չի պատճենվում",
+          "note_fa": "تصاویری که شکران فرستاد؛ ارجاع داده شده، بازنشر نشده"
         },
         {
           "title": "Google Earth street view of the site",
           "url": "https://earth.google.com/web/search/Artsakh+Avenue,+Yerevan/@40.14266202,44.51088331,960.51047407a,0d,60y,286.16910936h,99.12306354t,0r",
-          "note": "the building the camera faces, supplied by Alireza",
-          "note_hy": "տեսախցիկի դիմաց գտնվող շենքը, տրամադրել է Ալիրեզան",
-          "note_fa": "ساختمانی که دوربین به آن نگاه می‌کند، فرستادهٔ علیرضا"
+          "note": "the building the camera faces, supplied by Shokran",
+          "note_hy": "տեսախցիկի դիմաց գտնվող շենքը, տրամադրել է Շոկրանը",
+          "note_fa": "ساختمانی که دوربین به آن نگاه می‌کند، فرستادهٔ شکران"
         }
       ],
       "media": [
@@ -4008,7 +4042,7 @@
       ],
       "title_hy": "Ձերբակալություն Արցախի և Էրեբունու անկյունում",
       "location_hy": "Արցախի պողոտա × Էրեբունու փողոց, Էրեբունի վարչական շրջան",
-      "summary_hy": "Փաշինյանը ձերբակալվեց Էրեբունիում՝ Արցախի պողոտայում, երբ խոսում էր Երևանի ոստիկանության պետ Վալերի Օսիպյանի հետ։ Նույն օրը տարվեցին ևս երկու պատգամավոր՝ Սասուն Միքայելյանը և Արարատ Միրզոյանը․ երեկոյան ձերբակալվածների թիվը հասավ մոտ 230-ի։ Փաշինյանին տարան Էրեբունու ոստիկանության բաժին, մյուս երկուսին՝ Շենգավիթ, և երկուսի դիմաց էլ բազմություն հավաքվեց։\n\nՎայրը հաստատվում է երկու անկախ գրառումով, որոնք համընկնում են․ այդ ցերեկը արված լուսանկարները մակագրված են «Արցախի և Էրեբունի փողոցների խաչմերուկ», իսկ Ալիրեզայի տրամադրած փողոցային տեսքը նայում է նույն խաչմերուկին։ OpenStreetMap-ը խաչմերուկը դնում է 40,14252 հս., 44,51098 արլ.։",
+      "summary_hy": "Փաշինյանը ձերբակալվեց Էրեբունիում՝ Արցախի պողոտայում, երբ խոսում էր Երևանի ոստիկանության պետ Վալերի Օսիպյանի հետ։ Նույն օրը տարվեցին ևս երկու պատգամավոր՝ Սասուն Միքայելյանը և Արարատ Միրզոյանը․ երեկոյան ձերբակալվածների թիվը հասավ մոտ 230-ի։ Փաշինյանին տարան Էրեբունու ոստիկանության բաժին, մյուս երկուսին՝ Շենգավիթ, և երկուսի դիմաց էլ բազմություն հավաքվեց։\n\nՎայրը հաստատվում է երկու անկախ գրառումով, որոնք համընկնում են․ այդ ցերեկը արված լուսանկարները մակագրված են «Արցախի և Էրեբունի փողոցների խաչմերուկ», իսկ Շոկրանի տրամադրած փողոցային տեսքը նայում է նույն խաչմերուկին։ OpenStreetMap-ը խաչմերուկը դնում է 40,14252 հս., 44,51098 արլ.։",
       "analysis_hy": "Ձերբակալությունը պնդում է, թե որտեղ է դեռ գործում պետության իշխանությունը, և այս մեկը կատարվեց ներկայացված քաղաքի եզրին։\n\nԱյն ձախողվեց նույն օրը։ Երեկոյան Հանրապետության հրապարակում կար մոտ 115 000 մարդ՝ հեղափոխության ամենամեծ բազմությունն այդ պահի դրությամբ, իսկ ապրիլի 23-ին Փաշինյանն ազատ արձակվեց ցերեկվա ժամը երեքին, և Սարգսյանը հրաժարական տվեց չորսն անց կեսին։ Առաջնորդին կենտրոնից չորս կիլոմետր հեռու ձերբակալելը շարժումը չցրեց․ այն ծնեց այն բազմությունը, որը վերջ դրեց կառավարությանը։",
       "actors_hy": [
         "Նիկոլ Փաշինյան",
@@ -4026,7 +4060,7 @@
       ],
       "title_fa": "بازداشت در تقاطع آرتساخ و ارِبونی",
       "location_fa": "خیابان آرتساخ × خیابان ارِبونی، ناحیهٔ ارِبونی",
-      "summary_fa": "پاشینیان در خیابان آرتساخ در ارِبونی، هنگام گفت‌وگو با والری اوسیپیان، رئیس پلیس ایروان، بازداشت شد. دو نمایندهٔ دیگر مجلس، ساسون میکائلیان و آرارات میرزویان، همان روز برده شدند؛ تا شب حدود ۲۳۰ نفر بازداشت شده بودند. پاشینیان به کلانتری ارِبونی و آن دو به شنگاویت برده شدند و مقابل هر دو جمعیت گرد آمد.\n\nمکان را دو سند مستقل که با هم می‌خوانند تثبیت می‌کند: عکس‌های آن بعدازظهر با عنوان «تقاطع خیابان‌های آرتساخ و ارِبونی» ثبت شده‌اند، و نمای خیابانی که علیرضا فرستاد به همان چهارراه نگاه می‌کند. OpenStreetMap تقاطع را در ۴۰٫۱۴۲۵۲ شمالی، ۴۴٫۵۱۰۹۸ شرقی می‌گذارد.",
+      "summary_fa": "پاشینیان در خیابان آرتساخ در ارِبونی، هنگام گفت‌وگو با والری اوسیپیان، رئیس پلیس ایروان، بازداشت شد. دو نمایندهٔ دیگر مجلس، ساسون میکائلیان و آرارات میرزویان، همان روز برده شدند؛ تا شب حدود ۲۳۰ نفر بازداشت شده بودند. پاشینیان به کلانتری ارِبونی و آن دو به شنگاویت برده شدند و مقابل هر دو جمعیت گرد آمد.\n\nمکان را دو سند مستقل که با هم می‌خوانند تثبیت می‌کند: عکس‌های آن بعدازظهر با عنوان «تقاطع خیابان‌های آرتساخ و ارِبونی» ثبت شده‌اند، و نمای خیابانی که شکران فرستاد به همان چهارراه نگاه می‌کند. OpenStreetMap تقاطع را در ۴۰٫۱۴۲۵۲ شمالی، ۴۴٫۵۱۰۹۸ شرقی می‌گذارد.",
       "analysis_fa": "بازداشت ادعایی است دربارهٔ اینکه اقتدار دولت هنوز تا کجا برقرار است، و این یکی در لبهٔ شهرِ بازنمایی‌شده مطرح شد.\n\nهمان روز شکست خورد. تا شب میدان جمهوری حدود ۱۱۵٬۰۰۰ نفر را در خود داشت, بزرگ‌ترین جمعیت انقلاب تا آن لحظه, و در ۲۳ آوریل پاشینیان ساعت سه بعدازظهر آزاد شد و سرکیسیان چهار و نیم استعفا داد. بازداشت رهبر در چهار کیلومتری مرکز جنبش را پراکنده نکرد؛ همان جمعیتی را ساخت که به دولت پایان داد.",
       "actors_fa": [
         "نیکول پاشینیان",
@@ -4561,7 +4595,7 @@
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Bahrani), everyday life section",
+          "title": "Northern Avenue paper (Rahiminezhad), everyday life section",
           "note": "fieldwork",
           "note_hy": "դաշտային աշխատանք",
           "note_fa": "کار میدانی"
@@ -4595,6 +4629,138 @@
         "موسیقی خیابانی",
         "تنظیم فضای عمومی",
         "اوت ۲۰۱۸"
+      ]
+    },
+    {
+      "id": "vardavar",
+      "title": "Vardavar: the day the squares are used for water",
+      "date": "2021-07-11",
+      "dateEnd": "2021-07-11",
+      "datePrecision": "recurring",
+      "recurs": {
+        "color": "#41b8d5",
+        "years": [
+          2021
+        ],
+        "dates": {
+          "2021": "2021-07-11"
+        },
+        "rule": "Ninety-eight days (fourteen weeks) after Easter, so it moves between 3 July and 28 July.",
+        "note": "Only 2021 is marked. The rite is annual and much older, but a mark for every year turned the axis into a comb and said nothing the entry does not already say. 2021 is the year with fieldwork behind it."
+      },
+      "coordinates": [
+        44.5126,
+        40.1776
+      ],
+      "location": "Republic Square and Freedom Square (Opera), and the streets between them",
+      "categories": [
+        "publiclife",
+        "memory"
+      ],
+      "summary": "Vardavar (Վարդավառ) is the summer water festival, and for one Sunday in July the rule in Yerevan is that anyone may throw water at anyone. Children work from balconies with buckets, adults with bottles and water guns, and nobody is exempt: strangers, tourists, the well dressed, the police.\n\nThe church calls the day the Feast of the Transfiguration and fixes it at ninety-eight days after Easter, which is why it wanders across July, from the 3rd to the 28th. The practice underneath it is older than the church. It is generally attached to Astghik, the pre-Christian goddess of water, beauty and love, whose name gives the rose that gives the festival its name (vard, rose), and a second tradition ties the water and the released doves to Noah after the flood. A rite that survived Christianisation and then survived the Soviet Union, in which it was tolerated as folk custom rather than religion.\n\nIn Yerevan the two squares on this map are the two main sites. Republic Square, where the singing fountains are, is the epicentre; the Swan Lake in front of the Opera at Freedom Square is the other. **People take the water from the pools themselves**, out of the fountain basins on Republic Square and out of the Swan Lake, filling buckets and bottles straight from the civic water features and throwing it at each other. Northern Avenue between the two becomes a long corridor of the same thing.",
+      "analysis": "**The one day a year the squares are used for what they physically are.**\n\nEverything else on this map treats these two squares as political instruments: places to assemble, to be counted, to be dispersed from. Vardavar treats them as water and stone. The fountain on Republic Square is an ornament of state architecture, built to be looked at from the perimeter; on this day it is a supply, and the crowd stands in it. The Swan Lake, which is a mirror for the Opera, becomes a bucket. The transgression is small and completely licensed, and that is what makes it worth mapping: it shows the ordinary, unpoliced version of the same behaviour that in April is called occupation.\n\n**It is also the strongest evidence on this map for the everyday half of the argument.** Northern Avenue is usually read through what was demolished to build it and what it was used for in 2018. On Vardavar it is used the way its designers might have wanted and never intended: as a continuous pedestrian surface with no traffic to interrupt a running child, connecting one water source to another. The avenue works best on the day nobody is making a political claim on it.\n\n**And the participation is unconditional.** No permit, no organiser, no route, no leader, no demand. Vardavar is the baseline against which every organised crowd in this archive should be read: the city already knows how to fill its squares with people who do not know each other, and does it once a year for no reason at all.\n\n**And the state is the water supply.** The second photograph, twenty minutes after the first, is municipal tankers on the roundabout in front of the Government House, arcing water over the crowd. The vehicles are the ones that wash the streets. On every other day in this archive, a state directing water at a crowd in this square would be the definition of dispersal; here it is the service the city provides, and people position themselves under the arc. The same equipment, the same square, the same gesture, and the meaning inverted by the calendar alone.",
+      "actors": [
+        "Yerevan residents of every age",
+        "Tourists and visitors",
+        "Armenian Apostolic Church (as the Feast of the Transfiguration)",
+        "Yerevan Municipality"
+      ],
+      "tags": [
+        "Vardavar",
+        "water",
+        "festival",
+        "Republic Square",
+        "Swan Lake",
+        "Astghik",
+        "Transfiguration",
+        "everyday life"
+      ],
+      "sources": [
+        {
+          "title": "Fieldwork photographs (Rahiminezhad), Republic Square",
+          "note": "the water taken from the fountain pool"
+        },
+        {
+          "title": "Vardavar, Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Vardavar",
+          "note": "origins, Astghik, the ninety-eight day rule"
+        },
+        {
+          "title": "Armenia Travel, 'Vardavar: Armenia's epic summer water fight'",
+          "url": "https://armenia.travel/articles/vardavar-armenian-water-festival/"
+        },
+        {
+          "title": "MassisPost, 'Vardavar celebrations fill Yerevan's streets with water and festivity', July 2026",
+          "url": "https://massispost.com/2026/07/vardavar-celebrations-fill-yerevans-streets-with-water-and-festivity/",
+          "note": "Republic Square and Swan Lake named as the two gathering points"
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "media/vardavar-2021-republic-square-fountains.jpg",
+          "caption": "Republic Square, 11 July 2021 at 11:48. The fountain basins in front of the History Museum with people standing in them, filling buckets and water guns from the pool and throwing it at each other. This is the frame the entry's claim rests on: the water is not carried to the square, it is taken out of the square's own fountains.",
+          "caption_hy": "Հանրապետության հրապարակ, 2021 թվականի հուլիսի 11, ժամը 11:48։ Պատմության թանգարանի դիմացի շատրվանի ավազանները՝ մարդկանցով, որոնք կանգնած են դրանց մեջ, ավազանից լցնում են դույլերն ու ջրային ատրճանակները և լցնում միմյանց վրա։ Սա այն կադրն է, որի վրա հենվում է գրառման պնդումը․ ջուրը հրապարակ չեն բերում, այն վերցնում են հենց հրապարակի շատրվաններից։",
+          "caption_fa": "میدان جمهوری، ۱۱ ژوئیهٔ ۲۰۲۱، ساعت ۱۱:۴۸. حوض‌های فواره روبه‌روی موزهٔ تاریخ، با مردمی که درونشان ایستاده‌اند، سطل و تفنگ آبی را از حوض پر می‌کنند و به هم می‌پاشند. ادعای این مدخل بر همین کادر استوار است: آب را به میدان نمی‌آورند، از فواره‌های خودِ میدان برمی‌دارند.",
+          "credit": "Author",
+          "credit_hy": "Հեղինակ",
+          "credit_fa": "نگارنده",
+          "date": "2021-07-11",
+          "fieldnote": true
+        },
+        {
+          "type": "image",
+          "url": "media/vardavar-2021-republic-square-tankers.jpg",
+          "caption": "The same square twenty minutes later, 12:08. Municipal water tankers parked on the roundabout in front of the Government House, arcing water over the traffic and the crowd. The city does not police the day, it supplies it: the same vehicles that wash the streets are turned on the people, and the people stand in the arc on purpose.",
+          "caption_hy": "Նույն հրապարակը քսան րոպե անց, ժամը 12:08։ Կառավարության տան դիմացի շրջանաձև հատվածում կանգնած քաղաքային ջրատար մեքենաները ջուր են նետում երթևեկության և բազմության վրայով։ Քաղաքը օրը չի ոստիկանացնում, այլ մատակարարում է այն․ նույն մեքենաները, որոնք լվանում են փողոցները, ուղղվում են մարդկանց վրա, և մարդիկ միտումնավոր կանգնում են ջրի աղեղի տակ։",
+          "caption_fa": "همان میدان بیست دقیقه بعد، ساعت ۱۲:۰۸. تانکرهای آب شهرداری در میدانگاهِ روبه‌روی ساختمان دولت ایستاده‌اند و آب را بر فراز ترافیک و جمعیت کمان می‌کنند. شهر این روز را پلیسی نمی‌کند، تأمینش می‌کند: همان خودروهایی که خیابان‌ها را می‌شویند به سوی مردم گرفته می‌شوند، و مردم عمداً زیر آن کمان می‌ایستند.",
+          "credit": "Author",
+          "credit_hy": "Հեղինակ",
+          "credit_fa": "نگارنده",
+          "date": "2021-07-11",
+          "fieldnote": true
+        }
+      ],
+      "fieldnote": "The two Republic Square photographs are Shokran's own, 11 July 2021, which is exactly ninety-eight days after Easter that year. The fieldwork and the rule agree.",
+      "title_hy": "Վարդավառ․ օրը, երբ հրապարակներն օգտագործվում են ջրի համար",
+      "location_hy": "Հանրապետության հրապարակ և Ազատության հրապարակ (Օպերա), և դրանց միջև ընկած փողոցները",
+      "summary_hy": "Վարդավառը ամառային ջրի տոնն է, և հուլիսյան մեկ կիրակի Երևանում կանոնն այն է, որ ցանկացած մեկը կարող է ջուր լցնել ցանկացած մեկի վրա։ Երեխաները աշխատում են պատշգամբներից՝ դույլերով, մեծերը՝ շշերով և ջրային ատրճանակներով, և ոչ ոք բացառված չէ․ ո՛չ անծանոթները, ո՛չ զբոսաշրջիկները, ո՛չ լավ հագնվածները, ո՛չ ոստիկանները։\n\nԵկեղեցին օրն անվանում է Այլակերպության տոն և սահմանում է Զատիկից իննսունութ օր անց, ինչի պատճառով այն թափառում է հուլիսի 3-ից մինչև 28-ը։ Դրա տակ ընկած սովորույթն ավելի հին է, քան եկեղեցին։ Այն սովորաբար կապվում է Աստղիկի՝ ջրի, գեղեցկության և սիրո նախաքրիստոնեական աստվածուհու հետ, որի հետ կապված վարդն էլ տալիս է տոնի անունը, իսկ մեկ այլ ավանդույթ ջուրն ու բաց թողնված աղավնիները կապում է ջրհեղեղից հետո Նոյի հետ։\n\nԵրևանում այս քարտեզի երկու հրապարակները հիմնական վայրերն են։ Հանրապետության հրապարակը, որտեղ երգող շատրվաններն են, կենտրոնն է, իսկ Օպերայի դիմացի Կարապի լիճը՝ մյուսը։ **Մարդիկ ջուրը վերցնում են հենց ավազաններից**․ Հանրապետության հրապարակի շատրվանի ավազանից և Կարապի լճից, դույլերն ու շշերը լցնում են ուղիղ քաղաքային ջրային կառույցներից և լցնում միմյանց վրա։ Դրանց միջև ընկած Հյուսիսային պողոտան դառնում է նույն բանի երկար միջանցքը։",
+      "analysis_hy": "**Տարվա միակ օրը, երբ հրապարակներն օգտագործվում են այնպես, ինչպես դրանք ֆիզիկապես կան։**\n\nԱյս քարտեզի մնացած ամեն ինչ այս երկու հրապարակները դիտում է որպես քաղաքական գործիք․ վայրեր, ուր հավաքվում են, հաշվվում են, ցրվում են։ Վարդավառը դրանք վերաբերվում է որպես ջուր և քար։ Հանրապետության հրապարակի շատրվանը պետական ճարտարապետության զարդ է՝ կառուցված եզրից նայելու համար; այս օրը այն մատակարարում է, և բազմությունը կանգնում է դրա մեջ։ Կարապի լիճը, որը Օպերայի հայելին է, դառնում է դույլ։ Խախտումը փոքր է և լիովին թույլատրված, և հենց դա է այն արժեքավոր դարձնում քարտեզի համար․ այն ցույց է տալիս նույն վարքի սովորական, չոստիկանացված տարբերակը, որն ապրիլին կոչվում է գրավում։\n\n**Սա նաև այս քարտեզի ամենաուժեղ վկայությունն է փաստարկի առօրյա կեսի համար։** Հյուսիսային պողոտան սովորաբար կարդացվում է այն ամենի միջով, ինչ քանդվեց այն կառուցելու համար, և այն, ինչի համար օգտագործվեց 2018-ին։ Վարդավառին այն օգտագործվում է այնպես, ինչպես նրա նախագծողները թերևս կցանկանային և երբեք չնախատեսեցին․ որպես անընդհատ հետիոտնային մակերես՝ առանց երթևեկության, որը կապում է մեկ ջրի աղբյուրը մյուսին։ Պողոտան լավագույնս աշխատում է այն օրը, երբ ոչ ոք դրա վրա քաղաքական պահանջ չի ներկայացնում։\n\n**Եվ մասնակցությունն անվերապահ է։** Ոչ թույլտվություն, ոչ կազմակերպիչ, ոչ երթուղի, ոչ առաջնորդ, ոչ պահանջ։ Վարդավառն այն ելակետն է, որի դեմ պետք է կարդալ այս արխիվի ամեն կազմակերպված բազմություն․ քաղաքն արդեն գիտի, թե ինչպես լցնել իր հրապարակները միմյանց չճանաչող մարդկանցով, և դա անում է տարին մեկ անգամ՝ առանց որևէ պատճառի։\n\n**Եվ պետությունն է ջրի աղբյուրը։** Երկրորդ լուսանկարը, առաջինից քսան րոպե անց, ցույց է տալիս քաղաքային ջրատար մեքենաները Կառավարության տան դիմաց՝ ջուրը բազմության վրայով նետելիս։ Դրանք այն մեքենաներն են, որոնք լվանում են փողոցները։ Այս արխիվի ցանկացած այլ օր պետությունը, որ ջուր է ուղղում այս հրապարակի բազմության վրա, ցրման սահմանումը կլիներ; այստեղ դա քաղաքի մատուցած ծառայությունն է, և մարդիկ իրենք են կանգնում ջրի աղեղի տակ։ Նույն տեխնիկան, նույն հրապարակը, նույն ժեստը, և իմաստը շրջված է միայն օրացույցով։",
+      "actors_hy": [
+        "Երևանի ամեն տարիքի բնակիչներ",
+        "Զբոսաշրջիկներ և այցելուներ",
+        "Հայ առաքելական եկեղեցի (որպես Այլակերպության տոն)",
+        "Երևանի քաղաքապետարան"
+      ],
+      "tags_hy": [
+        "Վարդավառ",
+        "ջուր",
+        "տոն",
+        "Հանրապետության հրապարակ",
+        "Կարապի լիճ",
+        "Աստղիկ",
+        "Այլակերպություն",
+        "առօրյա կյանք"
+      ],
+      "title_fa": "واردآوار: روزی که میدان‌ها برای آب به کار می‌روند",
+      "location_fa": "میدان جمهوری و میدان آزادی (اپرا)، و خیابان‌های میان آن دو",
+      "summary_fa": "واردآوار جشن آب تابستانی است، و برای یک یکشنبهٔ ژوئیه قاعده در ایروان این است که هرکس می‌تواند به هرکس آب بپاشد. بچه‌ها از بالکن‌ها با سطل کار می‌کنند، بزرگ‌ترها با بطری و تفنگ آبی، و هیچ‌کس مستثنا نیست: نه غریبه‌ها، نه گردشگران، نه خوش‌پوش‌ها، نه پلیس.\n\nکلیسا این روز را عید تجلی می‌نامد و آن را نود و هشت روز پس از عید پاک قرار می‌دهد، و به همین دلیل میان سوم تا بیست‌وهشتم ژوئیه جابه‌جا می‌شود. اما رسمِ زیرِ آن از کلیسا کهن‌تر است. معمولاً آن را به آستغیک، الههٔ پیشامسیحی آب و زیبایی و عشق، نسبت می‌دهند؛ گلِ سرخ (vard) که نام جشن از آن می‌آید به او پیوند دارد، و روایتی دیگر آب و کبوترهای رهاشده را به نوح پس از توفان می‌بندد.\n\nدر ایروان دو میدانِ این نقشه دو کانون اصلی‌اند. میدان جمهوری، جایی که فواره‌های آوازخوان است، مرکز ماجراست؛ دریاچهٔ قو روبه‌روی اپرا در میدان آزادی، کانون دیگر. **مردم آب را از خودِ حوض‌ها برمی‌دارند**: از حوض فوارهٔ میدان جمهوری و از دریاچهٔ قو، سطل و بطری را مستقیم از همین آب‌نماهای شهری پر می‌کنند و به هم می‌پاشند. خیابان شمالی میان آن دو به دالانی بلند از همین کار بدل می‌شود.",
+      "analysis_fa": "**تنها روز سال که میدان‌ها همان‌گونه به کار می‌روند که فیزیکاً هستند.**\n\nهر چیز دیگری در این نقشه این دو میدان را ابزار سیاسی می‌بیند: جایی برای گردآمدن، شمرده‌شدن، و پراکنده‌شدن. واردآوار با آن‌ها همچون آب و سنگ رفتار می‌کند. فوارهٔ میدان جمهوری زینتی از معماری دولتی است، ساخته‌شده برای آنکه از حاشیه تماشا شود؛ در این روز منبع است و جمعیت درونش می‌ایستد. دریاچهٔ قو، که آینهٔ اپراست، سطل می‌شود. تخطی کوچک است و کاملاً مجاز، و همین آن را برای نقشه ارزشمند می‌کند: نسخهٔ عادی و بی‌پلیسِ همان رفتاری را نشان می‌دهد که در آوریل اشغال نامیده می‌شود.\n\n**این همچنین قوی‌ترین شاهد این نقشه برای نیمهٔ روزمرهٔ استدلال است.** خیابان شمالی معمولاً از خلال آنچه برای ساختش ویران شد و آنچه در ۲۰۱۸ برایش به کار رفت خوانده می‌شود. در واردآوار همان‌گونه به کار می‌رود که طراحانش شاید می‌خواستند و هرگز پیش‌بینی نکردند: سطحی پیوستهٔ پیاده، بدون ترافیکی که دویدن کودکی را قطع کند، که یک منبع آب را به منبع دیگر وصل می‌کند. خیابان در روزی بهترین کارکرد را دارد که هیچ‌کس ادعای سیاسی بر آن ندارد.\n\n**و مشارکت بی‌قیدوشرط است.** نه مجوزی، نه سازمان‌دهنده‌ای، نه مسیری، نه رهبری، نه خواسته‌ای. واردآوار خط مبنایی است که باید هر جمعیت سازمان‌یافتهٔ این بایگانی را در برابر آن خواند: شهر از پیش می‌داند چگونه میدان‌هایش را از مردمی پر کند که یکدیگر را نمی‌شناسند، و سالی یک‌بار این کار را بی‌هیچ دلیلی انجام می‌دهد.\n\n**و دولت همان منبع آب است.** عکس دوم، بیست دقیقه پس از اولی، تانکرهای شهرداری را روبه‌روی ساختمان دولت نشان می‌دهد که آب را بر فراز جمعیت کمان می‌کنند. این‌ها همان خودروهایی‌اند که خیابان‌ها را می‌شویند. در هر روز دیگری از این بایگانی، دولتی که در این میدان آب به سوی جمعیت بگیرد تعریفِ سرکوب و پراکنده‌کردن است؛ اینجا خدمتی است که شهر ارائه می‌دهد، و مردم خودشان زیر آن کمان می‌ایستند. همان تجهیزات، همان میدان، همان حرکت، و معنا تنها با تقویم وارونه می‌شود.",
+      "actors_fa": [
+        "ساکنان ایروان در هر سنی",
+        "گردشگران و بازدیدکنندگان",
+        "کلیسای رسولی ارمنی (به‌عنوان عید تجلی)",
+        "شهرداری ایروان"
+      ],
+      "tags_fa": [
+        "واردآوار",
+        "آب",
+        "جشن",
+        "میدان جمهوری",
+        "دریاچهٔ قو",
+        "آستغیک",
+        "عید تجلی",
+        "زندگی روزمره"
       ]
     }
   ],
