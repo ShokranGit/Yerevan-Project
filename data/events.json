@@ -4593,19 +4593,19 @@
     {
       "id": "musicians-arrest-2018",
       "title": "Police arrest a Ukrainian band; musicians gather in protest",
-      "date": "2018-08",
-      "datePrecision": "month",
+      "date": "2018-08-29",
+      "datePrecision": "day",
       "coordinates": [
-        44.5138,
-        40.1808
+        44.51472,
+        40.18256
       ],
-      "location": "Northern Avenue, Kentron",
+      "location": "Northern Avenue, between Burger King and the Ecco shop",
       "categories": [
         "protest",
         "publiclife",
         "state"
       ],
-      "summary": "Police arrested members of a Ukrainian music band performing on Northern Avenue. The next day, hundreds of people and dozens of Armenian musicians gathered to demand their release.",
+      "summary": "On the evening of 29 August 2018 police stopped a Ukrainian street musician, Ilyan, from playing on Northern Avenue and detained him. He had arrived in Armenia in July and was touring the country.\n\nThe next evening, 30 August, hundreds of Yerevan residents and dozens of Armenian musicians came to the avenue and played. Guitars, a violin, a duduk, a drum, on the benches and the planters and the paving, along the whole pedestrian run. One placard, in Russian, read «Наше счастье жить такой судьбою», our happiness is to live such a fate. Ilyan said that given the turnout they would stay a little longer and play on Northern Avenue again.",
       "analysis": "Three months after the revolution, the avenue produces its own protest; over the right to play music on it.\n\nStreet music is not incidental here: musicians are forbidden to play in the main spaces of Opera and Republic Square, so they position themselves at those squares' edges or on Northern Avenue. The corridor absorbs what the squares exclude. That is the mechanism the paper calls exfoliation, caught in a single incident; and this time the response is immediate, collective, and self-consciously about the street.",
       "actors": [
         "Street musicians",
@@ -4623,12 +4623,21 @@
           "note": "fieldwork",
           "note_hy": "դաշտային աշխատանք",
           "note_fa": "کار میدانی"
+        },
+        {
+          "title": "Hetq, Narek Aleksanyan, 'Yerevan: Solidarity for Street Musicians', 30 August 2018",
+          "url": "https://hetq.am/en/article/92621",
+          "note": "thirty-nine photographs of the gathering; the shopfronts in them are what fixes the location"
+        },
+        {
+          "title": "OpenStreetMap, read 2026-08-24",
+          "note": "Burger King, Northern Avenue 12, at 44.51485, 40.18148; Ecco at 44.51466, 40.18364; the avenue centreline runs 44.51446, 40.18006 to 44.51504, 40.18554"
         }
       ],
       "media": [],
       "title_hy": "Ոստիկանությունը ձերբակալում է ուկրաինական խումբը, երաժիշտները հավաքվում են բողոքի",
-      "location_hy": "Հյուսիսային պողոտա, Կենտրոն",
-      "summary_hy": "Ոստիկանությունը ձերբակալեց Հյուսիսային պողոտայում ելույթ ունեցող ուկրաինական երաժշտական խմբի անդամներին։ Հաջորդ օրը հարյուրավոր մարդիկ և տասնյակ հայ երաժիշտներ հավաքվեցին՝ պահանջելով նրանց ազատ արձակումը։",
+      "location_hy": "Հյուսիսային պողոտա, «Բուրգեր Քինգ»-ի և «Էկո»-ի միջև",
+      "summary_hy": "2018 թվականի օգոստոսի 29-ի երեկոյան ոստիկանությունը Հյուսիսային պողոտայում արգելեց ուկրաինացի փողոցային երաժիշտ Իլյանին նվագել և բերման ենթարկեց նրան։ Նա Հայաստան էր եկել հուլիսին։\n\nՀաջորդ երեկո՝ օգոստոսի 30-ին, հարյուրավոր երևանցիներ և տասնյակ հայ երաժիշտներ եկան պողոտա և նվագեցին։ Կիթառներ, ջութակ, դուդուկ, թմբուկ՝ նստարաններին, ծաղկամաններին և սալահատակին, ողջ հետիոտնային հատվածով մեկ։",
       "analysis_hy": "Հեղափոխությունից երեք ամիս անց պողոտան ծնում է իր սեփական բողոքը՝ դրա վրա երաժշտություն նվագելու իրավունքի շուրջ։\n\nՓողոցային երաժշտությունն այստեղ պատահական չէ․ երաժիշտներին արգելված է նվագել Օպերայի և Հանրապետության հրապարակների գլխավոր տարածքներում, ուստի նրանք տեղավորվում են այդ հրապարակների եզրերին կամ Հյուսիսային պողոտայում։ Միջանցքը կլանում է այն, ինչ հրապարակները դուրս են մղում։ Դա հենց այն մեխանիզմն է, որը հոդվածն անվանում է շերտազատում՝ բռնված մեկ դեպքի մեջ, և այս անգամ արձագանքն անմիջական է, հավաքական և գիտակցաբար հենց փողոցի մասին։",
       "actors_hy": [
         "Փողոցային երաժիշտներ",
@@ -4641,8 +4650,8 @@
         "2018 թ. օգոստոս"
       ],
       "title_fa": "پلیس گروهی اوکراینی را بازداشت می‌کند؛ نوازندگان به اعتراض گرد می‌آیند",
-      "location_fa": "خیابان شمالی، کِنترون",
-      "summary_fa": "پلیس اعضای یک گروه موسیقی اوکراینی را که در خیابان شمالی اجرا می‌کردند بازداشت کرد. روز بعد صدها نفر و ده‌ها نوازندهٔ ارمنی گرد آمدند و خواستار آزادی آن‌ها شدند.",
+      "location_fa": "خیابان شمالی، میان برگر کینگ و فروشگاه اکو",
+      "summary_fa": "عصر ۲۹ اوت ۲۰۱۸ پلیس مانع نوازندگی ایلیان، نوازندهٔ خیابانی اوکراینی، در خیابان شمالی شد و او را بازداشت کرد. او در ژوئیه به ارمنستان آمده بود.\n\nعصر روز بعد، ۳۰ اوت، صدها نفر از ساکنان ایروان و ده‌ها نوازندهٔ ارمنی به خیابان آمدند و نواختند. گیتار، ویولن، دودوک و طبل، روی نیمکت‌ها و گلدان‌ها و سنگفرش، در سراسر مسیر پیاده.",
       "analysis_fa": "سه ماه پس از انقلاب، خیابان اعتراض خودش را می‌زاید, بر سر حق نواختن موسیقی روی همان خیابان.\n\nموسیقی خیابانی اینجا حاشیه‌ای نیست: نوازندگان از نواختن در فضاهای اصلی میدان اپرا و میدان جمهوری منع‌اند، پس در حاشیهٔ آن میدان‌ها یا در خیابان شمالی مستقر می‌شوند. کریدور آنچه را میدان‌ها بیرون می‌گذارند در خود جذب می‌کند. این همان سازوکاری است که پژوهش آن را پوسته‌ریزی می‌نامد، در یک رویداد واحد گرفتار شده, و این بار واکنش بی‌درنگ، جمعی و آگاهانه دربارهٔ خودِ خیابان است.",
       "actors_fa": [
         "نوازندگان خیابانی",
@@ -4653,7 +4662,9 @@
         "موسیقی خیابانی",
         "تنظیم فضای عمومی",
         "اوت ۲۰۱۸"
-      ]
+      ],
+      "dateEnd": "2018-08-30",
+      "fieldnote": "Located from the photographs, not from the text: the article carries thirty-nine pictures and no captions. Three shopfronts are legible in them and two are in OpenStreetMap. «ԲՈՒՐԳԵՐ ՔԻՆԳ» is Burger King at Northern Avenue 12, 44.51485, 40.18148; the Ecco shoe shop is at 44.51466, 40.18364; Desigual appears too but is not mapped. The two mapped anchors are 241 m apart, which is most of the avenue's pedestrian run, so the crowd filled it rather than standing at a point. The pin is the midpoint on the centreline, 121 m from one and 120 m from the other. The previous point was 64 m west of the avenue, inside the block."
     },
     {
       "id": "vardavar",
