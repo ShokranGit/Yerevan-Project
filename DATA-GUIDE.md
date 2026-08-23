@@ -363,3 +363,66 @@ console to say why.
   Anything else written to the same property is gone within a frame, silently.
   The names therefore carry their fade on an inner element, and pass
   `opacityWhenCovered: "0.55"` so the occlusion fade is gentler than the default.
+
+## 13. The drawing toolbar, and `data/drawings.json`
+
+Added 23 August 2026. `assets/js/draw.js`.
+
+Five tools: point, line, area, rectangle, radius. Every shape has a
+**name**, and that is the point of the tool. A shape with no name is
+something to look at; a shape with a name is something you can write a
+sentence about. "Copy for Claude" writes the whole set out as text,
+names and measurements and coordinates, ready to paste into a message.
+
+Shapes live in `localStorage["yerevan.drawings"]` in the reader's own
+browser. Nothing is sent anywhere and nothing is shared. To make a
+shape part of the map for every reader, save the GeoJSON as
+**`data/drawings.json`** and commit it: `draw.js` loads that file once
+at startup and adds anything whose `name` is not already present.
+
+`data/drawings.json` is an ordinary FeatureCollection. Per feature:
+
+| property | meaning |
+|---|---|
+| `name` | what the shape is called, and how it is referred to |
+| `kind` | `point`, `line`, `area`, `rect`, `circle` |
+| `colour` | any CSS colour |
+| `note` | a sentence about it |
+| `radius_m` | present on a circle; a circle is stored as a Polygon plus this |
+| `length_m`, `area_m2` | written on export, recomputed on load |
+
+Measurements are geodesic: haversine for length, spherical excess for
+area. A length in degrees is not a length, and one degree of longitude
+at this latitude is 850 m shorter than one of latitude.
+
+### Two things the toolbar had to be taught
+
+**A list that rebuilds itself destroys what is being typed in it.**
+Rendering the shape list on every frame of a vertex drag both wasted
+work and, worse, replaced the input the reader had focus in. There are
+now two levels: `paintGeom` for the geometry, `paint` for geometry plus
+labels plus list, and `renderList` refuses to rebuild while an input
+inside it holds focus.
+
+**`isStyleLoaded()` is not a gate you can poll.** It goes false and
+true several times while a style settles, and a poll that only acts on
+a true sample can miss every one; measured, it missed on two runs in
+three, leaving the drawing and the geography absent after a basemap
+change. Adding a source either works or throws, so the retry now just
+tries. The same fix was applied to the figure-ground and route restore
+in `app.js`, which had the same flaw and had had it for longer.
+
+Layer order matters too: whoever rebuilds first after a style change
+ends up at the bottom, and `draw.js` has the fastest retry, so it moves
+its own layers back to the top afterwards. Nothing the reader draws
+should be hidden by the map.
+
+### `bm-light`
+
+`on-light` has meant "not the dark basemap" since the beginning, which
+counts the dark figure-ground drawing as light, and several rules keyed
+to it were written without the descendant space (`#map-wrap.on-light
+.map-btn` as `#map-wrap.on-light.map-btn`) and so never matched
+anything. Rather than rewrite that, anything new asks the narrower
+question through **`bm-light`**, set only for the `light` and `streets`
+basemaps.
