@@ -1478,6 +1478,7 @@
      That is how the first version of this shipped with only two of its ten
      layers on the map and nothing in the console to say so. */
   var GEO_BAND = {
+    precinct: [12.4, 13.4, 23, 24],
     country:  [0,    0.5,  7.4,  8.6],
     karabakh: [0,    0.5,  7.4,  8.6],
     city:     [7.6,  8.8,  12.2, 13.4],
@@ -1718,18 +1719,22 @@
        is not mapped. Drawn as an outline with a faint wash, in the same
        language as the city and the districts, and it keeps its own band so it
        only appears when you are close enough for it to mean something. */
+    /* A precinct is a building scale thing and must not fade out at the zoom
+       where you finally get close enough to look at the building. It used the
+       district band, which ends at 15.4, so at street zoom it was gone: the
+       one zoom at which someone asks where the parliament is. */
     map.addLayer({
       id: "geo-precinct-fill", type: "fill", source: "geo",
       filter: ["==", ["get", "kind"], "precinct"],
-      paint: { "fill-color": "#c8ccd3", "fill-opacity": bandOpacity(GEO_BAND.borough, 0.09) }
+      paint: { "fill-color": "#8d94a0", "fill-opacity": bandOpacity(GEO_BAND.precinct, 0.10) }
     });
     map.addLayer({
       id: "geo-precinct", type: "line", source: "geo",
       filter: ["==", ["get", "kind"], "precinct"],
       layout: { "line-join": "round" },
       paint: {
-        "line-color": "#c8ccd3", "line-width": 1.4, "line-dasharray": [2.4, 1.8],
-        "line-opacity": bandOpacity(GEO_BAND.borough, 0.8)
+        "line-color": "#5b626d", "line-width": 1.8, "line-dasharray": [2.4, 1.8],
+        "line-opacity": bandOpacity(GEO_BAND.precinct, 0.9)
       }
     });
 
@@ -1980,6 +1985,7 @@
 
   var GROUND = {
     dark: {
+      precinctLine: "#c8ccd3", precinctFill: "#c8ccd3",
       countryFillOp: 0.30, boroughFillOp: 0.17, boroughLineOp: 0.95,
       boroughCaseOp: 0.40, boroughLineW: 1.6, cityLineOp: 0.9, cityFillOp: 0.05,
       mass: "#b8bcc2",
@@ -1999,6 +2005,7 @@
       massifOp: 0.5
     },
     light: {
+      precinctLine: "#4a5058", precinctFill: "#6f767f",
       countryFillOp: 0.34, boroughFillOp: 0.20, boroughLineOp: 1,
       boroughCaseOp: 0.55, boroughLineW: 1.8, cityLineOp: 1, cityFillOp: 0.07,
       mass: "#6f767f",
@@ -2018,6 +2025,7 @@
       massifOp: 0.55
     },
     photo: {
+      precinctLine: "#ffffff", precinctFill: "#e4e7ec",
       countryFillOp: 0.44, boroughFillOp: 0.27, boroughLineOp: 1,
       boroughCaseOp: 0.65, boroughLineW: 2.2, cityLineOp: 1, cityFillOp: 0.11,
       mass: "#e4e7ec",
@@ -2038,10 +2046,23 @@
     }
   };
 
+  /* WHICH GROUND IS THIS, and the mistake that ran for days.
+     The figure ground was classified here as a DARK ground, and it is not.
+     Read assets/style-kentron.json: the background is #f4f4f4, the buildings
+     #e4e6e9, the water #e2e5e7, the roads #d8dade. It is a near white map,
+     and it is the DEFAULT basemap.
+
+     So everything the GROUND table paints for a dark ground, which is to say
+     pale greys and near whites, was being painted onto white. The district
+     boundaries at #b6bdc7, the city outline at #dfe3e9, the National Assembly
+     precinct at #c8ccd3: all of them light on light, all of them invisible,
+     on the basemap the map opens with.
+
+     Only the `dark` basemap is a dark ground. */
   function groundKind() {
-    if (state.basemap === "light" || state.basemap === "streets") return "light";
     if (state.basemap === "satellite") return "photo";
-    return "dark";
+    if (state.basemap === "dark") return "dark";
+    return "light";
   }
 
   function applyGround() {
@@ -2094,6 +2115,8 @@
     P("geo-borough", "line-opacity", bandOpacity(GEO_BAND.borough, g.boroughLineOp));
     P("geo-borough", "line-width", g.boroughLineW);
     P("geo-borough-case", "line-opacity", bandOpacity(GEO_BAND.borough, g.boroughCaseOp));
+    P("geo-precinct", "line-color", g.precinctLine);
+    P("geo-precinct-fill", "fill-color", g.precinctFill);
     P("geo-city", "line-opacity", bandOpacity(GEO_BAND.city, g.cityLineOp));
     P("geo-city-fill", "fill-opacity", bandOpacity(GEO_BAND.city, g.cityFillOp));
     P("geo-nk-1994", "line-color", g.karabakh);
@@ -3740,8 +3763,11 @@
   function setLightBasemap() {
     var kind = groundKind();
     var wrap = $("map-wrap");
+    /* one source of truth: the class follows groundKind, so the stylesheet
+       and the paint table can never disagree about what is underneath */
     wrap.classList.toggle("bm-light", kind === "light");
     wrap.classList.toggle("bm-photo", kind === "photo");
+    wrap.classList.toggle("bm-dark", kind === "dark");
   }
 
   /* ---- the event pins ----
