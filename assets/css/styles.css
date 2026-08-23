@@ -125,6 +125,50 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
   padding:2px 4px; font-size:11px; color:var(--text-2); cursor:pointer;
 }
 
+/* ---- themes dropdown ----
+   The nine themes used to stand open all the time. The button below is the
+   whole block when it is closed: the word Themes, then a summary of what is
+   currently on. The list opens underneath it. */
+.block-themes{ margin-bottom:22px; }
+#cat-menu{
+  width:100%; display:flex; align-items:center; gap:8px;
+  padding:8px 10px; cursor:pointer; text-align:start;
+  background:var(--bg-2); border:1px solid var(--line); border-radius:8px;
+  color:var(--text-2); font-family:inherit; font-size:12px; line-height:1.3;
+  transition:border-color .15s, background .15s;
+}
+#cat-menu:hover{ border-color:#3a4150; background:var(--bg-3); }
+#cat-menu:focus-visible{ outline:2px solid var(--focus); outline-offset:1px; }
+.cat-menu-label{
+  font-size:11px; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--text-3); flex:0 0 auto;
+}
+.cat-menu-sum{
+  flex:1; min-width:0; color:var(--text); font-size:12px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:end;
+}
+/* when exactly one theme is on, the summary carries that theme's dot */
+.cat-menu-sum.has-one::before{
+  content:""; display:inline-block; width:8px; height:8px; border-radius:3px;
+  margin-inline-end:6px; vertical-align:baseline;
+  background:var(--one); border:1px solid rgba(255,255,255,.18);
+}
+#cat-menu.filtered{ border-color:#3e4552; }
+#cat-menu.filtered .cat-menu-label{ color:var(--text-2); }
+.cat-menu-caret{
+  flex:0 0 auto; width:7px; height:7px; margin-inline-start:2px;
+  border-right:1.5px solid var(--text-3); border-bottom:1.5px solid var(--text-3);
+  transform:rotate(45deg) translate(-2px,-2px);
+  transition:transform .18s ease;
+}
+#cat-menu.open .cat-menu-caret{ transform:rotate(-135deg) translate(-2px,-2px); }
+#cat-panel{
+  margin-top:8px; padding:10px 12px 6px;
+  background:var(--bg-2); border:1px solid var(--line); border-radius:8px;
+}
+#cat-panel[hidden]{ display:none; }
+#cat-panel .block-head{ margin-bottom:4px; justify-content:flex-end; }
+
 /* ---- category checkboxes ---- */
 .cat{
   display:flex; align-items:center; gap:9px;
@@ -315,7 +359,7 @@ body.light.maplibregl-ctrl-group button:hover{ background:#eef0f3 !important; }
 .pop-title{ margin-top:2px; max-width:230px; line-height:1.35; }
 
 #map-controls{
-  position:absolute; top:14px; right:14px; z-index:4;
+  position:absolute; top:14px; right:132px; z-index:4;
   display:flex; gap:6px;
 }
 .map-btn{
@@ -821,18 +865,30 @@ html.lang-fa.d-sec h3, html.lang-fa.block-head h2,
 html.lang-hy.d-sec h3, html.lang-hy.block-head h2{ letter-spacing:0; }
 
 /* ---- the switch ---- */
+/* Top right of the page, which is where a reader looks for it. It used to
+   sit beside the title in the panel header, which on a left sidebar means the
+   middle of the screen.
+
+   The chosen language used to be red, and red is the accent this map spends
+   on Armenia, on Republic Square, on the figure in the figure-ground and on
+   the window of the timeline. A fifth red thing, on a control, was competing
+   with all of them for the same meaning. The selection is now simply
+   INVERTED: near-white ground, dark type, no hue at all. It reads as chosen
+   at a glance and costs the palette nothing. */
 #lang-switch{
-  display:flex; gap:2px; margin:2px 34px 0 0;
-  border:1px solid var(--line); border-radius:6px; overflow:hidden;
-  background:var(--bg-3); flex:0 0 auto;
+  position:absolute; top:14px; right:16px; z-index:6;
+  display:flex; gap:2px; margin:0;
+  border:1px solid var(--line); border-radius:7px; overflow:hidden;
+  background:rgba(22,25,32,.92); backdrop-filter:blur(8px);
+  flex:0 0 auto;
 }
 #lang-switch button{
   background:none; border:none; cursor:pointer;
-  padding:3px 7px; font-size:11px; line-height:1.5;
+  padding:4px 9px; font-size:11px; line-height:1.6;
   color:var(--text-3); transition:background.15s, color.15s;
 }
-#lang-switch button:hover{ color:var(--text); background:var(--bg); }
-#lang-switch button.on{ background:var(--accent); color:#fff; }
+#lang-switch button:hover{ color:var(--text); background:rgba(255,255,255,.07); }
+#lang-switch button.on{ background:var(--text); color:var(--bg); font-weight:600; }
 #lang-switch button[data-lang="hy"]{ font-family:"Noto Sans Armenian", inherit; }
 #lang-switch button[data-lang="fa"]{ font-family:"Vazirmatn", inherit; font-size:12px; }
 
@@ -861,7 +917,8 @@ html.lang-hy.d-sec h3, html.lang-hy.block-head h2{ letter-spacing:0; }
 }
 [dir="rtl"] #app.panel-closed #panel-toggle{ left:auto; right:10px; transform:rotate(0deg); }
 
-[dir="rtl"] #lang-switch{ margin:2px 0 0 34px; }
+[dir="rtl"] #lang-switch{ margin:0; right:auto; left:16px; }
+[dir="rtl"] #map-controls{ right:auto; left:132px; }
 
 [dir="rtl"].count{ margin-left:0; margin-right:4px; }
 [dir="rtl"].ctx{ margin-left:0; margin-right:5px; }
@@ -1530,6 +1587,26 @@ body.is-phone #m-map-btn{
 }
 body.is-phone #m-map-btn svg{ width:15px; height:15px; }
 body.is-phone #app.m-full #m-map-btn{ display:inline-flex; }
+
+/* The counterpart of the map button: once the map has shown the walk, this
+   is how the words come back. It is only there when the sheet is down. */
+body.is-phone #m-read-btn{
+  position:absolute; z-index:7;
+  left:50%; transform:translateX(-50%);
+  bottom:calc(var(--sheet-h) + 66px);
+  display:none; align-items:center; gap:7px;
+  height:36px; padding:0 15px;
+  background:rgba(22,25,32,.95); backdrop-filter:blur(8px);
+  border:1px solid var(--line); border-radius:19px;
+  color:var(--text); font-size:12.5px; cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+}
+body.is-phone #m-read-btn svg{ width:15px; height:15px; color:var(--text-2); }
+body.is-phone #app.m-peek.has-entry #m-read-btn{ display:inline-flex; }
+#map-wrap.bm-light body.is-phone #m-read-btn,
+body.is-phone #map-wrap.bm-light #m-read-btn{
+  background:rgba(255,255,255,.95); border-color:#d5d8de; color:#15171b;
+}
 body.is-phone #app.m-full #panel-head{ padding-top:8px; }
 
 /* At peek and at full the head is a title bar, not a masthead: the strapline
@@ -1543,6 +1620,7 @@ body.is-phone .brand h1{
 body.is-phone #app.m-full #lang-switch{ margin-inline-end:104px; }
 
 /* The map is behind the sheet at full height; its furniture goes with it. */
+body.is-phone #app.m-full #m-read-btn,
 body.is-phone #app.m-full #timeline,
 body.is-phone #app.m-full #m-controls-btn,
 body.is-phone #app.m-full .maplibregl-ctrl-top-right,
@@ -1563,9 +1641,16 @@ body.is-phone #timeline{
    start until the main thread is free leaves the bar sitting under the sheet
    for as long as the flight takes. It moves at once instead. */
 body.is-phone #app.m-tl-open #timeline{
-  max-height:min(58dvh, calc(100dvh - var(--sheet-h) - 90px));
+  max-height:min(46dvh, calc(100dvh - var(--sheet-h) - 150px));
   overflow-y:auto; padding-bottom:10px;
 }
+/* While a period's own timeline is open, the century is the first thing to
+   go: it is the tallest block in the bar and the least likely to be what the
+   reader came for. */
+body.is-phone #app.m-tl-open #timeline:has(#tl-spur:not([hidden])) .tl-sep,
+body.is-phone #app.m-tl-open #timeline:has(#tl-spur:not([hidden])) .tl-row-century,
+body.is-phone #app.m-tl-open #timeline:has(#tl-spur:not([hidden])) .tl-slider-century,
+body.is-phone #app.m-tl-open #timeline:has(#tl-spur:not([hidden])) #cn-ticks{ display:none; }
 /* Collapsed, only the window row shows. The rest is not switched off, it is
    simply clipped by the max-height above: touching `display` here would flatten
    the flex rows underneath, which is what bunched the tick labels into one word
@@ -1643,11 +1728,20 @@ body.is-phone #pick-out{
   left:10px; right:10px; bottom:auto;
   top:calc(66px + env(safe-area-inset-top, 0px));
 }
-body.is-phone #perf-note{ top:auto; bottom:calc(var(--sheet-h) + 58px); max-width:calc(100% - 20px); font-size:11.5px; }
+/* On a phone this used to squeeze its sentence into a column two words wide,
+   standing in the middle of the map. It is a strip at the top now, and it
+   wraps. */
+body.is-phone #perf-note{
+  left:10px; right:10px; transform:none; max-width:none;
+  top:calc(66px + env(safe-area-inset-top, 0px)); bottom:auto;
+  flex-wrap:wrap; gap:8px; font-size:11.5px; line-height:1.45;
+}
+body.is-phone #perf-note span{ flex:1 1 100%; }
+body.is-phone #app.m-full #perf-note{ display:none; }
 body.is-phone #g3-modal, body.is-phone #p3-modal{ padding:0; }
 
 /* ---- forty-four pixels, everywhere something is touched ---- */
-body.is-phone #lang-switch{ gap:2px; }
+body.is-phone #lang-switch{ position:static; gap:2px; background:var(--bg-3); backdrop-filter:none; }
 body.is-phone #lang-switch button{ min-width:44px; min-height:40px; font-size:12px; padding:0 6px; }
 body.is-phone .link-btn{ min-height:40px; padding:0 8px; display:inline-flex; align-items:center; }
 body.is-phone .block-head{ gap:2px; }
@@ -1656,6 +1750,8 @@ body.is-phone .back-btn{ min-height:44px; }
 body.is-phone .play-btn{ width:40px; height:40px; font-size:12px; }
 body.is-phone #pick-btn{ width:40px; height:40px; margin:-8px 0; }
 body.is-phone #search{ min-height:44px; }
+body.is-phone #cat-menu{ min-height:44px; font-size:13px; }
+body.is-phone .cat-menu-sum{ font-size:13px; }
 body.is-phone #categories label,
 body.is-phone .cat,
 body.is-phone .cat-row{ min-height:44px; }
@@ -2040,6 +2136,7 @@ body.tl-vertical #map-wrap.bm-light #timeline::before{
 /* The right edge belongs to time, so everything that used to live there
    moves to the left of the map. */
 body.tl-vertical #map-controls{ right:auto; left:14px; top:14px; }
+[dir="rtl"] body.tl-vertical #map-controls{ left:auto; right:14px; }
 body.tl-vertical .maplibregl-ctrl-top-right{ right:auto; left:14px; top:56px; }
 body.tl-vertical #north{ top:auto; bottom:206px; right:auto; left:18px; }
 /* the credit line moves off the foot of the rail */
@@ -2217,6 +2314,11 @@ body.tl-vertical #coords{ left:20px; bottom:162px; }
 body.tl-vertical #pick-out{ left:20px; bottom:246px; }
 [dir="rtl"] body.tl-vertical #coords{ left:20px; right:auto; }
 
+#map-wrap.bm-light #lang-switch{ background:rgba(255,255,255,.92); border-color:#d5d8de; }
+#map-wrap.bm-light #lang-switch button{ color:#6d747e; }
+#map-wrap.bm-light #lang-switch button:hover{ color:#111; background:rgba(0,0,0,.06); }
+#map-wrap.bm-light #lang-switch button.on{ background:#15171b; color:#f2f4f7; }
+
 #map-wrap.bm-light .rail-date{
   color:#15171b;
   text-shadow:0 0 4px #fff, 0 0 10px #fff;
@@ -2233,3 +2335,10 @@ body.tl-vertical #pick-out{ left:20px; bottom:246px; }
   }
   #tl-mode{ display:none; }
 }
+
+
+/* A march's sticky note is a plate the width of its own sentence, which on a
+   390 px screen means two of them cover the walk they are naming. */
+body.is-phone .march-note{ max-width:158px; }
+body.is-phone .march-note b{ font-size:10px; line-height:1.25; white-space:normal; }
+body.is-phone .march-note span{ font-size:9px; }
