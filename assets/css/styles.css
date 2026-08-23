@@ -1202,19 +1202,25 @@ html.lang-fa.geo-mark.geo-mountain b, html.lang-hy.geo-mark.geo-mountain b{
 .d-march em{ font-style:normal; color:var(--text-3); font-size:11.5px; }
 
 /* ---- a note pinned to a route on the map ---- */
-.march-note{
-  transform:translateY(-6px);
+/* The marker owns the point; .mn-box is the label, and it is the box that
+   slides inward when the point is against an edge of the map. Everything
+   visual therefore lives on .mn-box, not on the marker element. */
+.march-note{ transform:translateY(-6px); cursor:pointer; }
+.march-note .mn-box{
   display:flex; flex-direction:column; gap:1px;
   padding:5px 9px; max-width:210px;
   background:rgba(18,18,20,.92); color:#fff;
   border:1px solid var(--mk); border-radius:6px;
-  font-size:11px; line-height:1.3; cursor:pointer;
+  font-size:11px; line-height:1.3;
   box-shadow:0 4px 14px rgba(0,0,0,.45);
+  transition:transform .12s ease;
 }
+.march-note.edge-r .mn-box{ transform:translateX(-44%); }
+.march-note.edge-l .mn-box{ transform:translateX(44%); }
 .march-note b{ font-weight:600; }
 .march-note span{ color:var(--mk); font-variant-numeric:tabular-nums; }
-.march-note.past{ opacity:.85; border-style:dashed; }
-.march-note:hover{ background:rgba(18,18,20,1); }
+.march-note.past .mn-box{ opacity:.85; border-style:dashed; }
+.march-note:hover .mn-box{ background:rgba(18,18,20,1); }
 
 /* ---- year by year ---- */
 .d-years{ display:flex; flex-direction:column; gap:2px; margin:2px 0 10px; }
@@ -2363,6 +2369,6 @@ body.tl-vertical #pick-out{ left:20px; bottom:246px; }
 
 /* A march's sticky note is a plate the width of its own sentence, which on a
    390 px screen means two of them cover the walk they are naming. */
-body.is-phone .march-note{ max-width:158px; }
+body.is-phone .march-note .mn-box{ max-width:152px; }
 body.is-phone .march-note b{ font-size:10px; line-height:1.25; white-space:normal; }
 body.is-phone .march-note span{ font-size:9px; }
