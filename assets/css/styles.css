@@ -1900,6 +1900,51 @@ body.is-phone .tl-ep::before{
   letter-spacing:.04em; color:#c2c7ce; opacity:.9; white-space:nowrap;
 }
 
+/* ---- a named place is a target ----
+   The pin and the name are one marker, so the whole thing lights on hover
+   and the whole thing is the click. The pin is small on purpose: the name is
+   the label, the pin only says the label is attached to a point. */
+.geo-mk.is-place{ pointer-events:auto; }
+.geo-name.has-dossier{ cursor:pointer; }
+.place-pin{
+  display:block; width:7px; height:7px; margin:0 auto 3px;
+  border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.9), 0 1px 4px rgba(0,0,0,.6);
+  transition:transform .15s, box-shadow .15s;
+}
+.geo-mk.is-place:hover .place-pin,
+.geo-mk.is-place:focus-visible .place-pin{
+  transform:scale(1.5);
+  box-shadow:0 0 0 2px #fff, 0 0 12px rgba(201,38,44,.9);
+}
+.geo-mk.is-place:hover .geo-name b{ text-decoration:underline; text-underline-offset:3px; }
+.geo-mk.is-place:focus-visible{ outline:2px solid var(--focus); outline-offset:4px; border-radius:4px; }
+#map-wrap.bm-light .place-pin{ box-shadow:0 0 0 1.5px rgba(255,255,255,.95), 0 1px 5px rgba(0,0,0,.35); }
+
+/* ---- the place dossier ---- */
+.d-mentions{
+  margin:2px 0 14px; font-size:11.5px; color:var(--text-3);
+  font-variant-numeric:tabular-nums;
+}
+.d-h{
+  margin:18px 0 6px; font-size:11px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--text-3);
+}
+.d-here{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
+.d-here button{
+  width:100%; text-align:start; cursor:pointer;
+  background:none; border:none; border-inline-start:2px solid var(--line);
+  padding:6px 0 6px 10px; color:var(--text-2); font-family:inherit; font-size:12.5px;
+  display:flex; flex-direction:column; gap:1px;
+}
+.d-here button:hover{ border-inline-start-color:var(--accent); color:var(--text); }
+.d-here-date{ font-size:10.5px; color:var(--text-3); font-variant-numeric:tabular-nums; }
+.d-open-note{
+  margin-top:20px; padding-top:12px; border-top:1px solid var(--line-soft);
+  font-size:11.5px; color:var(--text-3); font-style:italic;
+}
+body.is-phone .d-here button{ min-height:44px; }
+
 /* --- the region --- */
 .geo-n-country b{
   font-size:12px; letter-spacing:.34em; text-transform:uppercase;
