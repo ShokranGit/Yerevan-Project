@@ -344,6 +344,32 @@ was, as Alireza pointed out, in the wrong place. The dashed red circles that
 used to ring the two squares were removed at the same time: a square is a shape
 the figure-ground already draws.
 
+### The ideal ring
+
+A second entry of `kind: "ideal-ring"` carries a centre and two radii
+rather than geometry:
+
+```json
+{"kind":"ideal-ring","centre":[44.51458,40.181065],
+ "r_inner":801,"r_outer":920,"dashes":20,"gap_deg":4}
+```
+
+The app builds the dashed band from that at runtime, as twenty annulus
+sectors, alternating grey and red at 40 per cent, drawn **under** the
+routed ring because the figure is the argument and the street is the
+evidence. Sectors rather than a thick line: a line width is in pixels
+and would stop meaning 801 to 920 m the moment you zoomed, while a
+polygon is the same ground at every scale and drapes over the terrain.
+
+The two radii are Alireza's, drawn with the radius tool. Measured
+against the routed ring, 399 points sampled every 15 m: the mean radius
+from that centre is **859 m**, almost exactly the middle of his band;
+**32 per cent** of the real ring falls inside it and 65 per cent within
+700 to 1050 m. It fits east, south-east and south (means 785 to 876 m).
+It fails north-west, where the ring cuts in to 428 m at the Matenadaran,
+and south-west, where it bulges to 1090 m around the government quarter
+and the gorge.
+
 ### Zoom bands
 
 Each layer and each name owns a band, `[fade in, full, full until, fade out]`,
