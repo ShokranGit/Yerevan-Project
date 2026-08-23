@@ -493,6 +493,7 @@
     /* a soft halo, so the line survives a busy basemap */
     map.addLayer({
       id: "route-halo", type: "line", source: "routes",
+      filter: ["!=", ["get", "trail"], 1],
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": "#07080a", "line-opacity": 0.34, "line-blur": 2.5,
@@ -501,6 +502,8 @@
     });
     map.addLayer({
       id: "route-line", type: "line", source: "routes",
+      /* Some marches are drawn only as they are walked; see trailOnly. */
+      filter: ["!=", ["get", "trail"], 1],
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": ["coalesce", ["get", "color"], RED],
@@ -538,7 +541,7 @@
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": "#07080a", "line-opacity": 0.5, "line-blur": 3,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 11, 16, 21]
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 9, 16, 17]
       }
     });
     map.addLayer({
@@ -547,7 +550,7 @@
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": ["coalesce", ["get", "color"], "#ffffff"],
-        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 5, 16, 11],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 4, 16, 8.5],
         "line-opacity": 1, "line-blur": 0.2
       }
     });
@@ -555,9 +558,9 @@
       id: "route-anim-head", type: "circle", source: "route-anim",
       filter: ["==", ["geometry-type"], "Point"],
       paint: {
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 6, 16, 11],
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 11, 5, 16, 8.5],
         "circle-color": ["coalesce", ["get", "color"], "#ffffff"],
-        "circle-stroke-width": 2.6, "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 2.2, "circle-stroke-color": "#ffffff",
         "circle-opacity": 0.98,
         "circle-pitch-alignment": "map"
       }
@@ -638,6 +641,11 @@
       if (f < 1) routeRAF = requestAnimationFrame(frame);
       else {
         routeRAF = null;
+        /* Where the march has no permanent line, the trail IS the drawing and
+           must stay: it is cleared when another entry is opened or this one is
+           closed. Where a permanent line exists underneath, the trail is a
+           passing overlay and fades so as not to double the line. */
+        if (ev.persist) return;
         setTimeout(function () {
           if (routeRAF || !map.getSource("route-anim")) return;
           fadeRouteAnim();
@@ -2035,6 +2043,31 @@
     }
   }
 
+  /* The walk an entry opens with. Most entries carry one path on e.path.
+     The commemoration carries two on e.paths and none on e.path, because
+     the route changed in 2022; the one still walked is the one to walk. */
+  function walkOf(e) {
+    if (e.path && e.path.length > 1) {
+      return { path: e.path, _len: e._pathLen || pathLength(e.path) };
+    }
+    var set = e.paths || [], live = null, first = null;
+    set.forEach(function (p) {
+      if (!p.path || p.path.length < 2) return;
+      if (!first) first = p;
+      if (!live && p.active !== false) live = p;
+    });
+    return live || first || null;
+  }
+
+  function allWalkPoints(e) {
+    var out = [];
+    if (e.paths && e.paths.length) {
+      e.paths.forEach(function (p) { if (p.path) out = out.concat(p.path); });
+    }
+    if (!out.length && e.path) out = e.path;
+    return out;
+  }
+
   function pathBounds(path) {
     var w = path[0][0], e = w, s2 = path[0][1], n = s2;
     path.forEach(function (p) {
@@ -2081,10 +2114,14 @@
           type: "Feature",
           id: hashId(p.id || (e.id + "-" + n)),
           properties: { id: e.id, sub: p.id || "", color: p.color || colour,
-                        past: p.active === false ? 1 : 0 },
+                        past: p.active === false ? 1 : 0,
+                        trail: e.trailOnly ? 1 : 0 },
           geometry: { type: "LineString", coordinates: p.path }
         });
-        chevrons(p.path, e.id).forEach(function (c) { marks.push(c); });
+        /* A trail-only march has no permanent line, so it has no permanent
+           chevrons either: an arrow pointing along nothing is worse than no
+           arrow. The head of the animation is the direction. */
+        if (!e.trailOnly) chevrons(p.path, e.id).forEach(function (c) { marks.push(c); });
       });
       var route = e.route || {};
       ends.push({ type: "Feature",
@@ -2317,27 +2354,28 @@
           duration: 1100, maxZoom: 17,
           pitch: back != null ? Math.min(back, 40) : Math.min(map.getPitch(), 40)
         });
-      } else if (e.path && e.path.length > 1) {
+      } else if (walkOf(e)) {
         /* A march is not a place. Frame the whole walk, then draw it. An entry
            with several routes is framed around all of them at once, the point
-           of drawing two is seeing them diverge. */
-        var allPts = e.path;
-        if (e.paths && e.paths.length > 1) {
-          allPts = [];
-          e.paths.forEach(function (pp) {
-            if (pp.path) allPts = allPts.concat(pp.path);
-          });
-        }
+           of drawing two is seeing them diverge; the one that is still walked
+           is the one that gets walked on opening. */
+        var allPts = allWalkPoints(e);
         map.fitBounds(pathBounds(allPts), {
           padding: { top: 90, bottom: 190, left: 60, right: 60 },
           duration: 1100, pitch: back != null ? Math.min(back, 45) : Math.min(map.getPitch(), 45)
         });
-        setTimeout(function () { animateRoute(e); }, 700);
+        setTimeout(function () {
+          var w = walkOf(e);
+          if (w) animateRoute({ path: w.path, _pathLen: w._len,
+                                color: w.color || routeColour(e), persist: !!e.trailOnly });
+        }, 700);
       } else {
         goTo(e._display || e.coordinates, Math.max(map.getZoom(), 16), back);
       }
-    } else if (map && e.path && e.path.length > 1) {
-      animateRoute(e);
+    } else if (map && walkOf(e)) {
+      var w2 = walkOf(e);
+      animateRoute({ path: w2.path, _pathLen: w2._len,
+                     color: w2.color || routeColour(e), persist: !!e.trailOnly });
     }
 
     if (map) { showMarchNotes(e); showDispersal(e); }
@@ -2590,7 +2628,7 @@
           padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
         });
         setTimeout(function () {
-          animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(e) });
+          animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(e), persist: !!e.trailOnly });
         }, 600);
       });
     });
@@ -2598,10 +2636,15 @@
     $("detail-body").querySelectorAll("[data-act]").forEach(function (b) {
       b.addEventListener("click", function () {
         if (b.dataset.act === "replay") {
-          map.fitBounds(pathBounds(e.path), {
+          var rw = walkOf(e);
+          if (!rw) return;
+          map.fitBounds(pathBounds(rw.path), {
             padding: { top: 90, bottom: 190, left: 60, right: 60 }, duration: 900
           });
-          setTimeout(function () { animateRoute(e); }, 600);
+          setTimeout(function () {
+            animateRoute({ path: rw.path, _pathLen: rw._len,
+                           color: rw.color || routeColour(e), persist: !!e.trailOnly });
+          }, 600);
         } else if (b.dataset.act === "zoom") {
           var w2 = frameFor(e);
           if (w2) {
@@ -3018,7 +3061,7 @@
         map.fitBounds(pathBounds(pp.path), {
           padding: { top: 90, bottom: 210, left: 60, right: 60 }, duration: 1000
         });
-        setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(host) }); }, 650);
+        setTimeout(function () { animateRoute({ path: pp.path, _pathLen: pp._len, color: pp.color || routeColour(host), persist: !!host.trailOnly }); }, 650);
       } else {
         goTo(host._display || host.coordinates, Math.max(map.getZoom(), 15));
       }
