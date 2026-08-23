@@ -1435,6 +1435,61 @@
     return ["interpolate", ["linear"], ["zoom"], b[0], 0, b[1], m, b[2], m, b[3], 0];
   }
 
+  /* -----------------------------------------------------------------
+     THE IDEAL RING
+     -----------------------------------------------------------------
+     Two circles drawn on the map by hand, sharing a centre, with the
+     real ring boulevard running through the space between them for a
+     good part of its length. That band is the circle the city is an
+     approximation OF, and drawing it says something the routed line
+     cannot: that there was a figure, and that the ground only partly
+     kept it.
+
+     It is dashed because it is an abstraction. It is built as annulus
+     sectors rather than as a thick line because a line width is in
+     pixels and would stop meaning 801 to 920 metres the moment you
+     zoomed; a polygon is the same ground at every scale, and it drapes
+     over the terrain instead of floating above it.
+     ----------------------------------------------------------------- */
+  function annulusSector(c, rIn, rOut, a0, a1, step) {
+    step = step || 1.5;
+    var latM = 110540, lngM = 111320 * Math.cos(c[1] * Math.PI / 180);
+    var ring = [], a, t;
+    for (a = a0; a <= a1 + 0.0001; a += step) {
+      t = a * Math.PI / 180;
+      ring.push([c[0] + Math.sin(t) * rOut / lngM, c[1] + Math.cos(t) * rOut / latM]);
+    }
+    for (a = a1; a >= a0 - 0.0001; a -= step) {
+      t = a * Math.PI / 180;
+      ring.push([c[0] + Math.sin(t) * rIn / lngM, c[1] + Math.cos(t) * rIn / latM]);
+    }
+    ring.push(ring[0]);
+    return ring;
+  }
+
+  function idealRingFC() {
+    if (!GEO || !GEO.features) return null;
+    var f = null;
+    (GEO.features.features || []).forEach(function (x) {
+      if (x.properties && x.properties.kind === "ideal-ring") f = x;
+    });
+    if (!f) return null;
+    var p = f.properties;
+    var n = p.dashes || 20, gap = (p.gap_deg == null) ? 4 : p.gap_deg;
+    var span = 360 / n, dash = span - gap;
+    var out = [], i;
+    for (i = 0; i < n; i++) {
+      var a0 = i * span;
+      out.push({
+        type: "Feature",
+        properties: { i: i, tone: (i % 2) ? "accent" : "grey" },
+        geometry: { type: "Polygon",
+          coordinates: [annulusSector(p.centre, p.r_inner, p.r_outer, a0, a0 + dash)] }
+      });
+    }
+    return { type: "FeatureCollection", features: out };
+  }
+
   function addGeography() {
     if (!GEO || !GEO.features || map.getSource("geo")) return;
     map.addSource("geo", { type: "geojson", data: GEO.features });
@@ -1547,6 +1602,22 @@
         "line-opacity": bandOpacity(GEO_BAND.ring, 0.9)
       }
     });
+
+    /* The abstraction the boulevard approximates, drawn UNDER it. The
+       figure is the argument; the street is the evidence, and evidence
+       goes on top of the thing it is evidence for. */
+    var ideal = idealRingFC();
+    if (ideal && !map.getSource("geo-ideal")) {
+      map.addSource("geo-ideal", { type: "geojson", data: ideal });
+      map.addLayer({
+        id: "geo-ideal", type: "fill", source: "geo-ideal",
+        paint: {
+          "fill-color": ["case", ["==", ["get", "tone"], "accent"], RED, GREY_MASS],
+          "fill-opacity": bandOpacity(GEO_BAND.ring, 0.4),
+          "fill-antialias": true
+        }
+      }, map.getLayer("geo-ring-bed") ? "geo-ring-bed" : undefined);
+    }
 
     buildGeoNames();
     window.__geo = { features: GEO.features.features.length, names: geoNames.length };
@@ -1682,7 +1753,8 @@
       dotRing: "#22262c",    dotRingOp: 0.9,   glowOp: 0.13,
       cityLine: "#c8ccd3",   distLine: "#9aa1ab",
       ringLine: "#4a5058",   ringBed: "#0d0f13", ringBedOp: 0.5,
-      countryLine: "#6d747e"
+      countryLine: "#6d747e",
+      idealGrey: "#b8bcc2"
     },
     light: {
       mass: "#6f767f",
@@ -1693,7 +1765,8 @@
       dotRing: "#14161a",    dotRingOp: 0.55,  glowOp: 0.2,
       cityLine: "#5a616b",   distLine: "#767d87",
       ringLine: "#333941",   ringBed: "#ffffff", ringBedOp: 0.85,
-      countryLine: "#8a919b"
+      countryLine: "#8a919b",
+      idealGrey: "#5f666f"
     },
     photo: {
       mass: "#e4e7ec",
@@ -1704,7 +1777,8 @@
       dotRing: "#ffffff",    dotRingOp: 0.9,   glowOp: 0.22,
       cityLine: "#ffffff",   distLine: "#e8eaee",
       ringLine: "#eef0f3",   ringBed: "#07080a", ringBedOp: 0.7,
-      countryLine: "#ffffff"
+      countryLine: "#ffffff",
+      idealGrey: "#eef0f3"
     }
   };
 
@@ -1751,6 +1825,8 @@
     P("geo-ring-bed", "line-color", g.ringBed);
     P("geo-ring-bed", "line-opacity", bandOpacity(GEO_BAND.ring, g.ringBedOp));
     P("geo-country-line", "line-color", g.countryLine);
+    P("geo-ideal", "fill-color",
+      ["case", ["==", ["get", "tone"], "accent"], RED, g.idealGrey]);
 
     window.__ground = groundKind();
   }
