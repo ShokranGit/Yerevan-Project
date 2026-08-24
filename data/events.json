@@ -9948,6 +9948,1015 @@
       "media": [],
       "episode": "karabakh-movement",
       "datePrecision": "day"
+    },
+    {
+      "id": "first-war-dark-years",
+      "title": "The first war, and the dark years",
+      "title_hy": "Առաջին պատերազմը և մութ տարիները",
+      "title_fa": "جنگ نخست، و سال‌های تاریک",
+      "date": "1991-04-30",
+      "dateEnd": "1995-10-31",
+      "coordinates": [
+        44.5136,
+        40.1818
+      ],
+      "location": "Nagorno-Karabakh, and a city with two hours of electricity a day",
+      "location_hy": "Լեռնային Ղարաբաղ և քաղաք՝ օրական երկու ժամ էլեկտրականությամբ",
+      "location_fa": "قره‌باغ کوهستانی، و شهری با روزی دو ساعت برق",
+      "categories": [
+        "state",
+        "politics",
+        "infra",
+        "publiclife",
+        "memory"
+      ],
+      "summary": "The war ran from the deportations of Operation Ring in the spring of 1991 to the ceasefire that took effect at one minute past midnight on 12 May 1994. Karabakh voted for independence on 10 December 1991; Stepanakert was shelled through that winter; Khojaly fell on 26 February 1992 with at least 161 Azerbaijani civilians killed, by the count of Human Rights Watch; Shushi was taken on 8 and 9 May 1992 and the Lachin corridor opened on the 18th; Kelbajar followed in April 1993 and Aghdam in July. Around 724,000 Azerbaijanis and between 300,000 and 500,000 Armenians were displaced.\n\nIn Yerevan the war was felt as darkness. Azerbaijan and then Turkey closed the borders, the rail line stopped, Metsamor had been shut after the 1988 earthquake, and from 1992 to 1995 the city had one or two hours of electricity a day, by district, on a rota. The Ministry of Ecology estimated that eight hundred thousand trees were cut for fuel across the country in the first two winters. Between 676,000 and 800,000 people, a sixth to a third of the population, left. The reactor at Metsamor was restarted in October 1995, the only reactor in the world ever restarted after closure, and the lights came back to ten or twelve hours a day.",
+      "summary_hy": "Պատերազմը տևեց 1991 թվականի գարնան «Օղակ» գործողության բռնագաղթից մինչև 1994 թվականի մայիսի 12-ի կեսգիշերից մեկ րոպե անց ուժի մեջ մտած հրադադարը։ Ղարաբաղը անկախության օգտին քվեարկեց 1991 թվականի դեկտեմբերի 10-ին, Ստեփանակերտը ռմբակոծվում էր ողջ ձմեռ, Խոջալուն ընկավ 1992 թվականի փետրվարի 26-ին՝ Human Rights Watch-ի հաշվարկով առնվազն 161 ադրբեջանցի խաղաղ բնակչի մահով, Շուշին վերցվեց մայիսի 8-ին և 9-ին, Լաչինի միջանցքը բացվեց 18-ին, ապա 1993-ի ապրիլին՝ Քարվաճառը և հուլիսին՝ Աղդամը։ Տեղահանվեց մոտ 724 000 ադրբեջանցի և 300-500 հազար հայ։\n\nԵրևանում պատերազմն զգացվում էր որպես խավար։ Ադրբեջանը, ապա Թուրքիան փակեցին սահմանները, երկաթուղին կանգ առավ, Մեծամորը փակված էր 1988-ի երկրաշարժից հետո, և 1992-ից 1995 թվականները քաղաքն ուներ օրական մեկ-երկու ժամ էլեկտրականություն՝ ըստ թաղամասերի, հերթականությամբ։ Բնապահպանության նախարարությունը գնահատեց, որ առաջին երկու ձմռանը երկրում վառելիքի համար հատվել է ութ հարյուր հազար ծառ։ Հեռացավ 676 000-ից 800 000 մարդ՝ բնակչության մեկ վեցերորդից մեկ երրորդը։ Մեծամորի ռեակտորը վերագործարկվեց 1995 թվականի հոկտեմբերին՝ աշխարհում միակ ռեակտորը, որ փակվելուց հետո վերագործարկվել է, և լույսը վերադարձավ օրական տասը-տասներկու ժամ։",
+      "summary_fa": "جنگ از تبعیدهای عملیات حلقه در بهار ۱۹۹۱ تا آتش‌بسی که یک دقیقه پس از نیمه‌شب ۱۲ مه ۱۹۹۴ اجرایی شد ادامه داشت. قره‌باغ در ۱۰ دسامبر ۱۹۹۱ به استقلال رأی داد؛ استپاناکرت تمام آن زمستان گلوله‌باران شد؛ خوجالی در ۲۶ فوریهٔ ۱۹۹۲ سقوط کرد و به شمارش دیده‌بان حقوق بشر دست‌کم ۱۶۱ غیرنظامی آذربایجانی کشته شدند؛ شوشی در ۸ و ۹ مه ۱۹۹۲ گرفته شد و کریدور لاچین در ۱۸ مه باز شد؛ کلبجر در آوریل ۱۹۹۳ و آغدام در ژوئیه. حدود ۷۲۴٬۰۰۰ آذربایجانی و میان ۳۰۰ تا ۵۰۰ هزار ارمنی آواره شدند.\n\nدر ایروان جنگ به شکل تاریکی حس شد. آذربایجان و سپس ترکیه مرزها را بستند، خط آهن ایستاد، متسامور پس از زمین‌لرزهٔ ۱۹۸۸ تعطیل بود، و از ۱۹۹۲ تا ۱۹۹۵ شهر روزی یک تا دو ساعت برق داشت، محله به محله و نوبتی. وزارت محیط‌زیست برآورد کرد در دو زمستان نخست هشتصد هزار درخت در سراسر کشور برای سوخت بریده شد. میان ۶۷۶٬۰۰۰ تا ۸۰۰٬۰۰۰ نفر، یک‌ششم تا یک‌سوم جمعیت، رفتند. رآکتور متسامور در اکتبر ۱۹۹۵ دوباره راه افتاد، تنها رآکتور جهان که پس از تعطیلی بازراه‌اندازی شده، و روشنایی به ده تا دوازده ساعت در روز بازگشت.",
+      "analysis": "This dossier exists to put a war that happened elsewhere back into the city, and the instrument for doing that is the electricity.\n\nEverything else on this map before 1991 is about assembly: who stands where, and what a square is for. The dark years are the opposite. Nobody is assembling; the city is in its flats, in the cold, waiting for its two hours. And the mark it leaves is physical and still visible: eight hundred thousand trees, which is the beginning of the collapse of Yerevan's green space from thirty per cent in 1986 to under four by 2006, the statistic this map already carries in the Mashtots Park entry. The 2012 park movement is the direct descendant of a winter when people burned the parks.\n\nThe second thread is the energy question itself. A country that spent three winters without power privatised its grid, sold it, and in June 2015 filled Baghramyan Avenue over a rise of 6.93 drams. Electric Yerevan is not a small movement about a tariff; it is what happens when a population that remembers the dark is asked to pay more for the light.\n\nAnd the third is Yerablur. The hill in the west that received the dead of this war is the same hill that filled again in November 2020, and this map holds both.",
+      "analysis_hy": "Այս թղթապանակը գոյություն ունի, որպեսզի այլուր տեղի ունեցած պատերազմը վերադարձնի քաղաք, և դա անելու գործիքը էլեկտրականությունն է։\n\nԱյս քարտեզի մնացած ամեն ինչ մինչև 1991 թվականը հավաքի մասին է. ով որտեղ է կանգնում և ինչի համար է հրապարակը։ Մութ տարիները հակառակն են։ Ոչ ոք չի հավաքվում, քաղաքը իր բնակարաններում է, ցրտին, սպասում է իր երկու ժամին։ Եվ նրա թողած հետքը ֆիզիկական է և մինչ օրս տեսանելի՝ ութ հարյուր հազար ծառ, ինչը Երևանի կանաչ տարածքի փլուզման սկիզբն է՝ 1986-ի երեսուն տոկոսից մինչև 2006-ի չորսից պակասը, այն վիճակագրությունը, որը այս քարտեզն արդեն կրում է Մաշտոցի այգու գրառման մեջ։ 2012-ի այգու շարժումը այն ձմռան ուղիղ ժառանգն է, երբ մարդիկ այրում էին այգիները։\n\nԵրկրորդ թելը հենց էներգետիկ հարցն է։ Երկիրը, որ երեք ձմեռ անցկացրեց առանց հոսանքի, մասնավորեցրեց իր ցանցը, վաճառեց այն, և 2015 թվականի հունիսին լցրեց Բաղրամյան պողոտան 6,93 դրամ բարձրացման պատճառով։ «Էլեկտրիկ Երևանը» սակագնի մասին փոքր շարժում չէ, այն այն է, ինչ տեղի է ունենում, երբ խավարը հիշող բնակչությանն ասում են ավելի շատ վճարել լույսի համար։\n\nԵրրորդը Եռաբլուրն է։ Արևմուտքի բլուրը, որ ընդունեց այս պատերազմի զոհերին, նույն բլուրն է, որ նորից լցվեց 2020 թվականի նոյեմբերին, և այս քարտեզը պահում է երկուսն էլ։",
+      "analysis_fa": "این پرونده هست تا جنگی را که جای دیگری رخ داد به شهر بازگرداند، و ابزار این کار برق است.\n\nهر چیز دیگرِ این نقشه پیش از ۱۹۹۱ دربارهٔ تجمع است: چه کسی کجا می‌ایستد، و میدان به چه کار می‌آید. سال‌های تاریک وارونهٔ آن‌اند. کسی تجمع نمی‌کند؛ شهر در آپارتمان‌هایش است، در سرما، منتظر دو ساعتش. و ردی که به جا می‌گذارد فیزیکی و هنوز دیدنی است: هشتصد هزار درخت، که آغازِ فروپاشی فضای سبز ایروان است، از سی درصد در ۱۹۸۶ تا کمتر از چهار درصد در ۲۰۰۶، همان آماری که این نقشه در مدخل پارک ماشتوتس دارد. جنبش پارکِ ۲۰۱۲ فرزند مستقیم زمستانی است که مردم پارک‌ها را سوزاندند.\n\nرشتهٔ دوم خودِ پرسش انرژی است. کشوری که سه زمستان بی‌برق ماند، شبکه‌اش را خصوصی کرد، فروخت، و در ژوئن ۲۰۱۵ به‌خاطر افزایش ۶٫۹۳ درامی خیابان باغرامیان را پر کرد. ایروانِ برقی جنبش کوچکی دربارهٔ تعرفه نیست؛ همان چیزی است که وقتی از جمعیتی که تاریکی را به یاد دارد بخواهند برای روشنایی بیشتر بپردازد، رخ می‌دهد.\n\nو سوم یرابلور است. تپه‌ای در غرب که کشتگان این جنگ را پذیرفت، همان تپه‌ای است که در نوامبر ۲۰۲۰ دوباره پر شد، و این نقشه هر دو را نگه می‌دارد.",
+      "actors": [
+        "Republic of Artsakh",
+        "Armenia",
+        "Azerbaijan",
+        "Metsamor nuclear plant"
+      ],
+      "actors_hy": [
+        "Արցախի Հանրապետություն",
+        "Հայաստան",
+        "Ադրբեջան",
+        "Մեծամորի ատոմակայան"
+      ],
+      "actors_fa": [
+        "جمهوری آرتساخ",
+        "ارمنستان",
+        "آذربایجان",
+        "نیروگاه هسته‌ای متسامور"
+      ],
+      "tags": [
+        "first war",
+        "blockade",
+        "dark years",
+        "energy",
+        "Yerablur",
+        "displacement"
+      ],
+      "tags_hy": [
+        "առաջին պատերազմ",
+        "շրջափակում",
+        "մութ տարիներ",
+        "էներգետիկա",
+        "Եռաբլուր",
+        "տեղահանում"
+      ],
+      "tags_fa": [
+        "جنگ نخست",
+        "محاصره",
+        "سال‌های تاریک",
+        "انرژی",
+        "یرابلور",
+        "آوارگی"
+      ],
+      "chronology": [
+        {
+          "when": "1989",
+          "note": "Azerbaijan begins the blockade; the rail line that carries most of Armenia's supplies stops.",
+          "note_hy": "Ադրբեջանը սկսում է շրջափակումը, կանգ է առնում երկաթուղին, որով գալիս է Հայաստանի մատակարարումների մեծ մասը։",
+          "note_fa": "آذربایجان محاصره را آغاز می‌کند؛ خط آهنی که بیشتر تدارکات ارمنستان را می‌آورد می‌ایستد."
+        },
+        {
+          "when": "Spring 1991",
+          "note": "Operation Ring: Soviet and Azerbaijani forces deport Armenian villages in the Shahumyan region.",
+          "note_hy": "«Օղակ» գործողություն. խորհրդային և ադրբեջանական ուժերը բռնագաղթում են Շահումյանի շրջանի հայկական գյուղերը։",
+          "note_fa": "عملیات حلقه: نیروهای شوروی و آذربایجانی روستاهای ارمنی منطقهٔ شاهومیان را تبعید می‌کنند."
+        },
+        {
+          "when": "10 Dec 1991",
+          "note": "The referendum in Nagorno-Karabakh: 99.89 per cent for independence on an 82.2 per cent turnout, boycotted by the Azerbaijani population.",
+          "note_hy": "Հանրաքվե Լեռնային Ղարաբաղում. 99,89 տոկոս անկախության օգտին, 82,2 տոկոս մասնակցությամբ, ադրբեջանական բնակչության բոյկոտով։",
+          "note_fa": "همه‌پرسی در قره‌باغ کوهستانی: ۹۹٫۸۹ درصد به استقلال، با مشارکت ۸۲٫۲ درصد، با تحریم جمعیت آذربایجانی."
+        },
+        {
+          "when": "Winter 1991-92",
+          "note": "Stepanakert under Grad fire from the heights; 169 dead between October and April by the count of the interior ministry.",
+          "note_hy": "Ստեփանակերտը բարձունքներից «Գրադի» կրակի տակ. ներքին գործերի նախարարության հաշվարկով հոկտեմբերից ապրիլ՝ 169 զոհ։",
+          "note_fa": "استپاناکرت زیر آتش گراد از بلندی‌ها؛ به شمارش وزارت کشور، از اکتبر تا آوریل ۱۶۹ کشته."
+        },
+        {
+          "when": "26 Feb 1992",
+          "note": "Khojaly.",
+          "note_hy": "Խոջալու։",
+          "note_fa": "خوجالی."
+        },
+        {
+          "when": "8-9 May 1992",
+          "note": "Shushi is taken.",
+          "note_hy": "Վերցվում է Շուշին։",
+          "note_fa": "شوشی گرفته می‌شود."
+        },
+        {
+          "when": "18 May 1992",
+          "note": "Lachin is taken and the corridor to Armenia opens.",
+          "note_hy": "Վերցվում է Լաչինը, բացվում է միջանցքը դեպի Հայաստան։",
+          "note_fa": "لاچین گرفته می‌شود و کریدور به ارمنستان باز می‌شود."
+        },
+        {
+          "when": "1992-1995",
+          "note": "One to two hours of electricity a day in Yerevan; eight hundred thousand trees cut in the first two winters.",
+          "note_hy": "Երևանում օրական մեկ-երկու ժամ էլեկտրականություն, առաջին երկու ձմռանը հատվում է ութ հարյուր հազար ծառ։",
+          "note_fa": "روزی یک تا دو ساعت برق در ایروان؛ هشتصد هزار درخت در دو زمستان نخست بریده شد."
+        },
+        {
+          "when": "2-3 Apr 1993",
+          "note": "Kelbajar.",
+          "note_hy": "Քարվաճառ։",
+          "note_fa": "کلبجر."
+        },
+        {
+          "when": "Jul 1993",
+          "note": "Aghdam.",
+          "note_hy": "Աղդամ։",
+          "note_fa": "آغدام."
+        },
+        {
+          "when": "5 and 12 May 1994",
+          "note": "The Bishkek Protocol is signed and the ceasefire takes effect.",
+          "note_hy": "Ստորագրվում է Բիշքեքի արձանագրությունը և ուժի մեջ է մտնում հրադադարը։",
+          "note_fa": "پروتکل بیشکک امضا می‌شود و آتش‌بس اجرایی می‌گردد."
+        },
+        {
+          "when": "Oct 1995",
+          "note": "Metsamor unit two is restarted and the darkness ends.",
+          "note_hy": "Վերագործարկվում է Մեծամորի երկրորդ բլոկը, և խավարն ավարտվում է։",
+          "note_fa": "واحد دوم متسامور بازراه‌اندازی می‌شود و تاریکی پایان می‌یابد."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        },
+        {
+          "title": "Wikipedia, '1990s Armenian energy crisis'",
+          "url": "https://en.wikipedia.org/wiki/1990s_Armenian_energy_crisis"
+        },
+        {
+          "title": "Human Rights Watch",
+          "note": "the count at Khojaly",
+          "note_hy": "Խոջալուի հաշվարկը",
+          "note_fa": "شمارش خوجالی"
+        },
+        {
+          "title": "Ter-Ghazaryan (2010), pp. 79, 94",
+          "note": "green space and construction volume in Yerevan",
+          "note_hy": "կանաչ տարածք և շինարարության ծավալ Երևանում",
+          "note_fa": "فضای سبز و حجم ساخت‌وساز در ایروان"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "operation-ring-1991-04-30",
+      "title": "Spring 1991: Operation Ring",
+      "title_hy": "1991 թ. գարուն. «Օղակ» գործողություն",
+      "title_fa": "بهار ۱۹۹۱: عملیات حلقه",
+      "date": "1991-04-30",
+      "datePrecision": "month",
+      "coordinates": [
+        46.55,
+        39.85
+      ],
+      "location": "The villages of the Shahumyan and Hadrut regions",
+      "location_hy": "Շահումյանի և Հադրութի շրջանների գյուղերը",
+      "location_fa": "روستاهای مناطق شاهومیان و هادروت",
+      "categories": [
+        "state"
+      ],
+      "summary": "Soviet interior ministry troops and Azerbaijani OMON units, with armour and artillery, deported the inhabitants of a series of Armenian villages. It is the point at which the dispute stopped being a matter of demonstrations and became a war.",
+      "summary_hy": "ԽՍՀՄ ներքին զորքերը և ադրբեջանական ՕՄՕՆ-ի ստորաբաժանումները, զրահատեխնիկայով և հրետանիով, բռնագաղթեցին մի շարք հայկական գյուղերի բնակիչներին։ Սա այն կետն է, երբ վեճը դադարեց ցույցերի հարց լինելուց և դարձավ պատերազմ։",
+      "summary_fa": "نیروهای وزارت کشور شوروی و یگان‌های اومون آذربایجان، با زره و توپخانه، ساکنان مجموعه‌ای از روستاهای ارمنی را تبعید کردند. این همان نقطه‌ای است که مناقشه از موضوع تظاهرات بودن دست کشید و جنگ شد.",
+      "analysis": "The coordinate here is the frame of the region, not a village: this project has not verified the location of each settlement, and it would rather draw an area honestly than a false point precisely. The dates are the month.",
+      "analysis_hy": "Այստեղ կոորդինատը տարածաշրջանի շրջանակն է, ոչ թե գյուղը. այս նախագիծը չի ստուգել յուրաքանչյուր բնակավայրի դիրքը և նախընտրում է ազնվորեն գծել տարածք, քան ճշգրիտ՝ կեղծ կետ։ Ամսաթվերը ամսվա ճշտությամբ են։",
+      "analysis_fa": "مختصات اینجا قاب منطقه است، نه یک روستا: این پروژه محل هر آبادی را راستی‌آزمایی نکرده و ترجیح می‌دهد ناحیه‌ای را صادقانه بکشد تا نقطه‌ای نادرست را با دقت. تاریخ‌ها در حد ماه‌اند.",
+      "actors": [
+        "Soviet interior ministry troops",
+        "Azerbaijani OMON",
+        "the deported villages"
+      ],
+      "actors_hy": [
+        "ԽՍՀՄ ներքին զորքեր",
+        "Ադրբեջանական ՕՄՕՆ",
+        "բռնագաղթված գյուղերը"
+      ],
+      "actors_fa": [
+        "نیروهای وزارت کشور شوروی",
+        "اومون آذربایجان",
+        "روستاهای تبعیدشده"
+      ],
+      "tags": [
+        "Operation Ring",
+        "1991",
+        "deportation"
+      ],
+      "tags_hy": [
+        "«Օղակ» գործողություն",
+        "1991",
+        "բռնագաղթ"
+      ],
+      "tags_fa": [
+        "عملیات حلقه",
+        "۱۹۹۱",
+        "تبعید"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "blockade-1991-09",
+      "title": "1991: the rail line stops",
+      "title_hy": "1991. երկաթուղին կանգ է առնում",
+      "title_fa": "۱۹۹۱: خط آهن می‌ایستد",
+      "date": "1991-09-01",
+      "datePrecision": "month",
+      "coordinates": [
+        44.50784,
+        40.15538
+      ],
+      "location": "Yerevan railway station, Sasuntsi Davit Square",
+      "location_hy": "Երևանի երկաթուղային կայարան, Սասունցի Դավթի հրապարակ",
+      "location_fa": "ایستگاه راه‌آهن ایروان، میدان ساسونتسی داویت",
+      "categories": [
+        "infra",
+        "state"
+      ],
+      "summary": "Azerbaijan had been tightening a blockade since 1989; after independence in September 1991 the borders with Azerbaijan and then Turkey were closed and a fuel embargo followed. About eighty five per cent of what the country consumed had come in by rail, through Azerbaijan. The station in the south of Yerevan is where that stopped.",
+      "summary_hy": "Ադրբեջանը 1989 թվականից սեղմում էր շրջափակումը, իսկ 1991 թվականի սեպտեմբերին անկախությունից հետո փակվեցին սահմաններն Ադրբեջանի, ապա Թուրքիայի հետ, և հետևեց վառելիքի էմբարգոն։ Երկրի սպառածի մոտ ութսունհինգ տոկոսը մտնում էր երկաթուղով՝ Ադրբեջանով։ Երևանի հարավում գտնվող կայարանն այն վայրն է, որտեղ դա կանգ առավ։",
+      "summary_fa": "آذربایجان از ۱۹۸۹ محاصره را تنگ‌تر کرده بود؛ پس از استقلال در سپتامبر ۱۹۹۱ مرزها با آذربایجان و سپس ترکیه بسته شد و تحریم سوخت در پی آمد. حدود هشتادوپنج درصد آنچه کشور مصرف می‌کرد با راه‌آهن و از مسیر آذربایجان می‌آمد. ایستگاه جنوب ایروان همان جایی است که این جریان ایستاد.",
+      "analysis": "A blockade has no photograph and no crowd, so a map has to choose an address for it. This one is chosen deliberately: the station is where the country's supply physically arrived, and its silence is the beginning of the dark years.",
+      "analysis_hy": "Շրջափակումը լուսանկար չունի և ամբոխ չունի, ուստի քարտեզը պետք է դրա համար հասցե ընտրի։ Սա ընտրված է դիտավորյալ. կայարանն այն վայրն է, ուր ֆիզիկապես հասնում էր երկրի մատակարարումը, և նրա լռությունը մութ տարիների սկիզբն է։",
+      "analysis_fa": "محاصره نه عکسی دارد نه جمعیتی، پس نقشه باید برایش نشانی‌ای انتخاب کند. این یکی آگاهانه انتخاب شده: ایستگاه جایی است که تدارکات کشور به‌طور فیزیکی می‌رسید، و سکوتش آغاز سال‌های تاریک است.",
+      "actors": [
+        "Azerbaijan",
+        "Turkey",
+        "Armenian Railways"
+      ],
+      "actors_hy": [
+        "Ադրբեջան",
+        "Թուրքիա",
+        "Հայկական երկաթուղի"
+      ],
+      "actors_fa": [
+        "آذربایجان",
+        "ترکیه",
+        "راه‌آهن ارمنستان"
+      ],
+      "tags": [
+        "blockade",
+        "railway",
+        "1991",
+        "fuel"
+      ],
+      "tags_hy": [
+        "շրջափակում",
+        "երկաթուղի",
+        "1991",
+        "վառելիք"
+      ],
+      "tags_fa": [
+        "محاصره",
+        "راه‌آهن",
+        "۱۹۹۱",
+        "سوخت"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '1990s Armenian energy crisis'",
+          "url": "https://en.wikipedia.org/wiki/1990s_Armenian_energy_crisis"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "nkr-referendum-1991-12-10",
+      "title": "10 December 1991: the referendum",
+      "title_hy": "1991 թ. դեկտեմբերի 10. հանրաքվեն",
+      "title_fa": "۱۰ دسامبر ۱۹۹۱: همه‌پرسی",
+      "date": "1991-12-10",
+      "coordinates": [
+        46.75106,
+        39.81822
+      ],
+      "location": "Stepanakert",
+      "location_hy": "Ստեփանակերտ",
+      "location_fa": "استپاناکرت",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "summary": "Nagorno-Karabakh held a referendum on independence, boycotted by its Azerbaijani population: 99.89 per cent in favour on a turnout of 82.2 per cent. Independence was declared on 6 January 1992. Nine days earlier the Soviet Union had ceased to exist, which is what made the question unanswerable by any authority above the two republics.",
+      "summary_hy": "Լեռնային Ղարաբաղն անցկացրեց անկախության հանրաքվե, որը բոյկոտեց ադրբեջանական բնակչությունը. 99,89 տոկոս կողմ, 82,2 տոկոս մասնակցությամբ։ Անկախությունը հռչակվեց 1992 թվականի հունվարի 6-ին։ Ինը օր առաջ Խորհրդային Միությունը դադարել էր գոյություն ունենալուց, և հենց դա հարցը դարձրեց երկու հանրապետություններից վեր որևէ իշխանության համար անպատասխանելի։",
+      "summary_fa": "قره‌باغ کوهستانی همه‌پرسی استقلال برگزار کرد که جمعیت آذربایجانی‌اش تحریمش کرد: ۹۹٫۸۹ درصد موافق با مشارکت ۸۲٫۲ درصد. استقلال در ۶ ژانویهٔ ۱۹۹۲ اعلام شد. نُه روز پیش‌تر اتحاد شوروی از میان رفته بود، و همین بود که پرسش را برای هر قدرتی بالاتر از آن دو جمهوری بی‌پاسخ کرد.",
+      "analysis": "The vote of 20 February 1988, which this map holds in the previous dossier, asked a state to move a border. This one asks nobody: there is no longer a union to ask. Between the two entries, three hundred metres apart in Stepanakert, the whole legal frame of the question disappears.",
+      "analysis_hy": "1988 թվականի փետրվարի 20-ի քվեարկությունը, որը այս քարտեզը պահում է նախորդ թղթապանակում, պետությանը խնդրում էր տեղափոխել սահմանը։ Սա ոչ մեկին չի խնդրում. այլևս չկա միություն, ում խնդրել։ Երկու գրառման միջև՝ Ստեփանակերտում երեք հարյուր մետր հեռավորության վրա, անհետանում է հարցի ողջ իրավական շրջանակը։",
+      "analysis_fa": "رأی ۲۰ فوریهٔ ۱۹۸۸، که این نقشه در پروندهٔ پیشین نگهش داشته، از دولتی می‌خواست مرزی را جابه‌جا کند. این یکی از هیچ‌کس نمی‌خواهد: دیگر اتحادی نیست که از آن بخواهند. میان این دو مدخل، با سیصد متر فاصله در استپاناکرت، تمام چارچوب حقوقی پرسش ناپدید می‌شود.",
+      "actors": [
+        "Nagorno-Karabakh Republic"
+      ],
+      "actors_hy": [
+        "Լեռնային Ղարաբաղի Հանրապետություն"
+      ],
+      "actors_fa": [
+        "جمهوری قره‌باغ کوهستانی"
+      ],
+      "tags": [
+        "referendum",
+        "1991",
+        "independence"
+      ],
+      "tags_hy": [
+        "հանրաքվե",
+        "1991",
+        "անկախություն"
+      ],
+      "tags_fa": [
+        "همه‌پرسی",
+        "۱۹۹۱",
+        "استقلال"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "stepanakert-shelled-1991-10",
+      "title": "Winter 1991 to 1992: Stepanakert under fire",
+      "title_hy": "1991-92 ձմեռ. Ստեփանակերտը կրակի տակ",
+      "title_fa": "زمستان ۱۹۹۱ تا ۱۹۹۲: استپاناکرت زیر آتش",
+      "date": "1991-10-01",
+      "dateEnd": "1992-05-08",
+      "datePrecision": "month",
+      "coordinates": [
+        46.75106,
+        39.81822
+      ],
+      "location": "Stepanakert",
+      "location_hy": "Ստեփանակերտ",
+      "location_fa": "استپاناکرت",
+      "categories": [
+        "state",
+        "memory"
+      ],
+      "summary": "Through the winter the city was shelled from the heights around it, above all from Shushi, with as many as four hundred Grad rockets in a day falling on apartment blocks. The interior ministry counted 169 dead between October 1991 and April 1992. The shelling stopped when Shushi was taken in May.",
+      "summary_hy": "Ողջ ձմեռ քաղաքը ռմբակոծվում էր շրջակա բարձունքներից, առաջին հերթին Շուշիից. օրական մինչև չորս հարյուր «Գրադի» հրթիռ էր ընկնում բնակելի շենքերի վրա։ Ներքին գործերի նախարարությունը 1991 թվականի հոկտեմբերից մինչև 1992 թվականի ապրիլ հաշվեց 169 զոհ։ Ռմբակոծությունը դադարեց, երբ մայիսին վերցվեց Շուշին։",
+      "summary_fa": "تمام زمستان شهر از بلندی‌های پیرامون، بیش از همه از شوشی، گلوله‌باران شد، با روزی تا چهارصد موشک گراد بر بلوک‌های مسکونی. وزارت کشور از اکتبر ۱۹۹۱ تا آوریل ۱۹۹۲، ۱۶۹ کشته شمرد. گلوله‌باران وقتی متوقف شد که شوشی در مه گرفته شد.",
+      "analysis": "The geometry is the same one that ended the war of 2020 in reverse: whoever holds the height above the road holds the city below it. Eleven kilometres, twice, thirty years apart.",
+      "analysis_hy": "Երկրաչափությունը նույնն է, ինչ 2020-ի պատերազմն ավարտածը, բայց հակառակ ուղղությամբ. ով պահում է ճանապարհից վեր բարձունքը, պահում է նրանից ներքև գտնվող քաղաքը։ Տասնմեկ կիլոմետր, երկու անգամ, երեսուն տարվա տարբերությամբ։",
+      "analysis_fa": "هندسه همان است که جنگ ۲۰۲۰ را تمام کرد، فقط وارونه: هر که بلندیِ مشرف به جاده را دارد، شهرِ زیرش را دارد. یازده کیلومتر، دو بار، به فاصلهٔ سی سال.",
+      "actors": [
+        "Stepanakert",
+        "Azerbaijani forces"
+      ],
+      "actors_hy": [
+        "Ստեփանակերտ",
+        "ադրբեջանական ուժեր"
+      ],
+      "actors_fa": [
+        "استپاناکرت",
+        "نیروهای آذربایجان"
+      ],
+      "tags": [
+        "Stepanakert",
+        "shelling",
+        "1991",
+        "1992"
+      ],
+      "tags_hy": [
+        "Ստեփանակերտ",
+        "ռմբակոծություն",
+        "1991",
+        "1992"
+      ],
+      "tags_fa": [
+        "استپاناکرت",
+        "گلوله‌باران",
+        "۱۹۹۱",
+        "۱۹۹۲"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "khojaly-1992-02-26",
+      "title": "26 February 1992: Khojaly",
+      "title_hy": "1992 թ. փետրվարի 26. Խոջալու",
+      "title_fa": "۲۶ فوریهٔ ۱۹۹۲: خوجالی",
+      "date": "1992-02-26",
+      "coordinates": [
+        46.79439,
+        39.9097
+      ],
+      "location": "Khojaly, north of Stepanakert",
+      "location_hy": "Խոջալու, Ստեփանակերտից հյուսիս",
+      "location_fa": "خوجالی، شمال استپاناکرت",
+      "categories": [
+        "state",
+        "memory"
+      ],
+      "summary": "Armenian forces took Khojaly, which held the region's only airport and the guns that had been firing on Stepanakert. Human Rights Watch found that at least 161 Azerbaijani civilians and a number of unarmed soldiers were killed as people fled; Azerbaijani authorities give 613 civilian dead. It is the largest single killing of the war and it is commemorated in Azerbaijan every year.",
+      "summary_hy": "Հայկական ուժերը վերցրին Խոջալուն, որտեղ էին տարածաշրջանի միակ օդանավակայանը և Ստեփանակերտի վրա կրակող հրանոթները։ Human Rights Watch-ը արձանագրեց, որ փախչելիս սպանվել է առնվազն 161 ադրբեջանցի խաղաղ բնակիչ և մի շարք անզեն զինվորներ, ադրբեջանական իշխանությունները տալիս են 613 խաղաղ զոհ։ Սա պատերազմի ամենամեծ միանվագ սպանությունն է և ամեն տարի ոգեկոչվում է Ադրբեջանում։",
+      "summary_fa": "نیروهای ارمنی خوجالی را گرفتند، جایی که تنها فرودگاه منطقه و توپ‌هایی که استپاناکرت را می‌زدند در آن بود. دیده‌بان حقوق بشر دریافت که دست‌کم ۱۶۱ غیرنظامی آذربایجانی و شماری سرباز بی‌سلاح هنگام گریز کشته شدند؛ مقامات آذربایجان ۶۱۳ کشتهٔ غیرنظامی می‌گویند. بزرگ‌ترین کشتار واحدِ آن جنگ است و هر سال در آذربایجان یادآوری می‌شود.",
+      "analysis": "This map is written from Yerevan and says so. That is exactly why this entry is here, with the figure from Human Rights Watch rather than from either government, and with the Azerbaijani figure given beside it. A map of a conflict that records only its own side's dead is not a map, it is a monument.",
+      "analysis_hy": "Այս քարտեզը գրված է Երևանից և ասում է դա։ Հենց դրա համար է այս գրառումն այստեղ՝ Human Rights Watch-ի թվով, ոչ թե որևէ կառավարության, և կողքին տրված ադրբեջանական թվով։ Հակամարտության քարտեզը, որ գրանցում է միայն իր կողմի զոհերին, քարտեզ չէ, այլ հուշարձան։",
+      "analysis_fa": "این نقشه از ایروان نوشته شده و همین را می‌گوید. دقیقاً برای همین این مدخل اینجاست، با رقم دیده‌بان حقوق بشر نه با رقم هیچ‌کدام از دو دولت، و با رقم آذربایجانی در کنارش. نقشهٔ یک منازعه که تنها کشتگان طرف خودش را ثبت کند، نقشه نیست، یادمان است.",
+      "actors": [
+        "the people of Khojaly",
+        "Armenian forces",
+        "Human Rights Watch"
+      ],
+      "actors_hy": [
+        "Խոջալուի բնակիչները",
+        "հայկական ուժեր",
+        "Human Rights Watch"
+      ],
+      "actors_fa": [
+        "مردم خوجالی",
+        "نیروهای ارمنی",
+        "دیده‌بان حقوق بشر"
+      ],
+      "tags": [
+        "Khojaly",
+        "1992",
+        "civilian deaths"
+      ],
+      "tags_hy": [
+        "Խոջալու",
+        "1992",
+        "խաղաղ բնակիչների զոհեր"
+      ],
+      "tags_fa": [
+        "خوجالی",
+        "۱۹۹۲",
+        "کشتگان غیرنظامی"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Khojaly massacre'",
+          "url": "https://en.wikipedia.org/wiki/Khojaly_massacre"
+        },
+        {
+          "title": "Human Rights Watch",
+          "note": "at least 161 civilians",
+          "note_hy": "առնվազն 161 խաղաղ բնակիչ",
+          "note_fa": "دست‌کم ۱۶۱ غیرنظامی"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "shushi-taken-1992-05-08",
+      "title": "8 and 9 May 1992: Shushi",
+      "title_hy": "1992 թ. մայիսի 8-9. Շուշի",
+      "title_fa": "۸ و ۹ مه ۱۹۹۲: شوشی",
+      "date": "1992-05-08",
+      "dateEnd": "1992-05-09",
+      "coordinates": [
+        46.75115,
+        39.76326
+      ],
+      "location": "Shushi",
+      "location_hy": "Շուշի",
+      "location_fa": "شوشی",
+      "categories": [
+        "state",
+        "memory"
+      ],
+      "summary": "Armenian forces took the town on the height above Stepanakert in two days of fighting. The shelling of the city below stopped. In Armenia 9 May is also the Soviet victory day, and the coincidence fixed the date in the calendar of the republic.",
+      "summary_hy": "Հայկական ուժերը երկօրյա մարտերով վերցրին Ստեփանակերտից վեր բարձունքի քաղաքը։ Ներքևի քաղաքի ռմբակոծությունը դադարեց։ Հայաստանում մայիսի 9-ը նաև խորհրդային Հաղթանակի օրն է, և այդ համընկնումը ամսաթիվը ամրագրեց հանրապետության օրացույցում։",
+      "summary_fa": "نیروهای ارمنی در دو روز نبرد شهرِ روی بلندیِ مشرف به استپاناکرت را گرفتند. گلوله‌باران شهرِ پایین متوقف شد. در ارمنستان ۹ مه روز پیروزی شوروی هم هست، و این هم‌زمانی تاریخ را در تقویم جمهوری تثبیت کرد.",
+      "analysis": "Twenty-eight years and six months later, on 8 November 2020, the same town changed hands the other way and ended that war too. The map holds both entries at the same coordinates, and the pair is the clearest statement it can make about this conflict without saying anything about who is right.",
+      "analysis_hy": "Քսանութ տարի և վեց ամիս անց՝ 2020 թվականի նոյեմբերի 8-ին, նույն քաղաքը ձեռք փոխեց հակառակ ուղղությամբ և ավարտեց նաև այդ պատերազմը։ Քարտեզը երկու գրառումն էլ պահում է նույն կոորդինատներում, և այդ զույգը ամենապարզ բանն է, որ այն կարող է ասել այս հակամարտության մասին՝ առանց որևէ բան ասելու այն մասին, թե ով է իրավացի։",
+      "analysis_fa": "بیست‌وهشت سال و شش ماه بعد، در ۸ نوامبر ۲۰۲۰، همان شهر در جهت مخالف دست به دست شد و آن جنگ را هم تمام کرد. نقشه هر دو مدخل را در همان مختصات نگه می‌دارد، و این جفت روشن‌ترین چیزی است که می‌تواند دربارهٔ این منازعه بگوید، بی‌آنکه چیزی دربارهٔ حق‌به‌جانب بودن کسی بگوید.",
+      "actors": [
+        "Armenian forces",
+        "Azerbaijani forces"
+      ],
+      "actors_hy": [
+        "հայկական ուժեր",
+        "ադրբեջանական ուժեր"
+      ],
+      "actors_fa": [
+        "نیروهای ارمنی",
+        "نیروهای آذربایجان"
+      ],
+      "tags": [
+        "Shushi",
+        "1992",
+        "turning point"
+      ],
+      "tags_hy": [
+        "Շուշի",
+        "1992",
+        "շրջադարձ"
+      ],
+      "tags_fa": [
+        "شوشی",
+        "۱۹۹۲",
+        "نقطهٔ چرخش"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "lachin-opened-1992-05-18",
+      "title": "18 May 1992: the corridor opens",
+      "title_hy": "1992 թ. մայիսի 18. բացվում է միջանցքը",
+      "title_fa": "۱۸ مه ۱۹۹۲: کریدور باز می‌شود",
+      "date": "1992-05-18",
+      "coordinates": [
+        46.54884,
+        39.64018
+      ],
+      "location": "Lachin, Berdzor",
+      "location_hy": "Լաչին, Բերձոր",
+      "location_fa": "لاچین، بردزور",
+      "categories": [
+        "state",
+        "infra"
+      ],
+      "summary": "Nine days after Shushi, Armenian forces took Lachin and opened the road between Armenia and Nagorno-Karabakh. For twenty-eight years that corridor was the fact on the ground that made everything else possible, and in December 2022 it closed.",
+      "summary_hy": "Շուշիից ինը օր անց հայկական ուժերը վերցրին Լաչինը և բացեցին ճանապարհը Հայաստանի և Լեռնային Ղարաբաղի միջև։ Քսանութ տարի այդ միջանցքն այն փաստն էր, որը հնարավոր էր դարձնում մնացած ամեն ինչ, իսկ 2022 թվականի դեկտեմբերին այն փակվեց։",
+      "summary_fa": "نُه روز پس از شوشی، نیروهای ارمنی لاچین را گرفتند و جادهٔ میان ارمنستان و قره‌باغ کوهستانی را باز کردند. بیست‌وهشت سال آن کریدور واقعیتی روی زمین بود که هر چیز دیگر را ممکن می‌کرد، و در دسامبر ۲۰۲۲ بسته شد.",
+      "analysis": "The same five kilometres appear twice in this project: opened here by force in 1992, and in November 2020 reduced to a corridor held by Russian peacekeepers. One road, thirty years, two entries, and the whole question of whether a place can be reached.",
+      "analysis_hy": "Նույն հինգ կիլոմետրը այս նախագծում հայտնվում է երկու անգամ. այստեղ բացված ուժով 1992-ին, և 2020 թվականի նոյեմբերին վերածված ռուս խաղաղապահների պահած միջանցքի։ Մեկ ճանապարհ, երեսուն տարի, երկու գրառում և ամբողջ հարցը՝ արդյոք հնարավոր է հասնել մի վայր։",
+      "analysis_fa": "همان پنج کیلومتر دو بار در این پروژه ظاهر می‌شود: اینجا در ۱۹۹۲ با زور باز شد، و در نوامبر ۲۰۲۰ به کریدوری فروکاسته شد که صلح‌بانان روس نگهش می‌داشتند. یک جاده، سی سال، دو مدخل، و تمام پرسشِ اینکه آیا می‌توان به جایی رسید.",
+      "actors": [
+        "Armenian forces"
+      ],
+      "actors_hy": [
+        "հայկական ուժեր"
+      ],
+      "actors_fa": [
+        "نیروهای ارمنی"
+      ],
+      "tags": [
+        "Lachin",
+        "corridor",
+        "1992"
+      ],
+      "tags_hy": [
+        "Լաչին",
+        "միջանցք",
+        "1992"
+      ],
+      "tags_fa": [
+        "لاچین",
+        "کریدور",
+        "۱۹۹۲"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "kelbajar-1993-04-03",
+      "title": "April 1993: Kelbajar",
+      "title_hy": "1993 թ. ապրիլ. Քարվաճառ",
+      "title_fa": "آوریل ۱۹۹۳: کلبجر",
+      "date": "1993-04-03",
+      "coordinates": [
+        46.03835,
+        40.10664
+      ],
+      "location": "Kelbajar, between Karabakh and Armenia",
+      "location_hy": "Քարվաճառ, Ղարաբաղի և Հայաստանի միջև",
+      "location_fa": "کلبجر، میان قره‌باغ و ارمنستان",
+      "categories": [
+        "state"
+      ],
+      "summary": "Armenian forces took the district between Nagorno-Karabakh and Armenia, widening the connection far beyond the Lachin corridor and displacing its population. The United Nations Security Council passed the first of four resolutions demanding withdrawal.",
+      "summary_hy": "Հայկական ուժերը վերցրին Լեռնային Ղարաբաղի և Հայաստանի միջև ընկած շրջանը՝ կապը լայնացնելով Լաչինի միջանցքից շատ ավելի և տեղահանելով նրա բնակչությանը։ ՄԱԿ-ի Անվտանգության խորհուրդն ընդունեց դուրսբերում պահանջող չորս բանաձևերից առաջինը։",
+      "summary_fa": "نیروهای ارمنی منطقهٔ میان قره‌باغ کوهستانی و ارمنستان را گرفتند، ارتباط را بسیار فراتر از کریدور لاچین گشودند و جمعیتش را آواره کردند. شورای امنیت سازمان ملل نخستین قطعنامه از چهار قطعنامهٔ خواستار عقب‌نشینی را تصویب کرد.",
+      "analysis": "From here the war stops being about Nagorno-Karabakh and becomes about the districts around it, which is what the statement of 9 November 2020 gave back in three weeks.",
+      "analysis_hy": "Այստեղից պատերազմն այլևս Լեռնային Ղարաբաղի մասին չէ, այլ դրա շուրջ ընկած շրջանների, և հենց դրանք վերադարձրեց 2020 թվականի նոյեմբերի 9-ի հայտարարությունը՝ երեք շաբաթում։",
+      "analysis_fa": "از اینجا جنگ دیگر دربارهٔ قره‌باغ کوهستانی نیست، دربارهٔ مناطق پیرامون آن است، همان‌ها که بیانیهٔ ۹ نوامبر ۲۰۲۰ در سه هفته بازگرداند.",
+      "actors": [
+        "Armenian forces",
+        "UN Security Council"
+      ],
+      "actors_hy": [
+        "հայկական ուժեր",
+        "ՄԱԿ-ի Անվտանգության խորհուրդ"
+      ],
+      "actors_fa": [
+        "نیروهای ارمنی",
+        "شورای امنیت سازمان ملل"
+      ],
+      "tags": [
+        "Kelbajar",
+        "1993",
+        "occupied districts"
+      ],
+      "tags_hy": [
+        "Քարվաճառ",
+        "1993",
+        "զբաղեցված շրջաններ"
+      ],
+      "tags_fa": [
+        "کلبجر",
+        "۱۹۹۳",
+        "مناطق اشغالی"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "aghdam-1993-07",
+      "title": "July 1993: Aghdam",
+      "title_hy": "1993 թ. հուլիս. Աղդամ",
+      "title_fa": "ژوئیهٔ ۱۹۹۳: آغدام",
+      "date": "1993-07-23",
+      "datePrecision": "month",
+      "coordinates": [
+        46.93048,
+        39.99324
+      ],
+      "location": "Aghdam",
+      "location_hy": "Աղդամ",
+      "location_fa": "آغدام",
+      "categories": [
+        "state"
+      ],
+      "summary": "A town of tens of thousands was bombarded, evacuated and then largely destroyed; for the next twenty-seven years it was an empty grid of ruins, one of the most photographed abandoned places in the region. It was returned to Azerbaijan on 20 November 2020 under the ceasefire statement.",
+      "summary_hy": "Տասնյակ հազարավոր բնակիչ ունեցող քաղաքը ռմբակոծվեց, տարհանվեց և հետո մեծ մասամբ ավերվեց. հաջորդ քսանյոթ տարիներին այն ավերակների դատարկ ցանց էր՝ տարածաշրջանի ամենալուսանկարված լքված վայրերից մեկը։ Այն վերադարձվեց Ադրբեջանին 2020 թվականի նոյեմբերի 20-ին՝ հրադադարի հայտարարությամբ։",
+      "summary_fa": "شهری با ده‌ها هزار نفر بمباران، تخلیه و سپس تا حد زیادی ویران شد؛ بیست‌وهفت سال بعد شبکه‌ای خالی از ویرانه بود، از پرعکس‌ترین جاهای متروکِ منطقه. در ۲۰ نوامبر ۲۰۲۰ طبق بیانیهٔ آتش‌بس به آذربایجان بازگردانده شد.",
+      "analysis": "An urban project has to look at this one directly. Aghdam is what a city looks like when it is emptied and left: the plan survives, the buildings do not, and it stays legible from the air for a generation. Every argument in this map about demolition and rebuilding in Yerevan is small beside it.",
+      "analysis_hy": "Քաղաքային նախագիծը պետք է ուղղակի նայի սրան։ Աղդամն այն է, ինչ նման է քաղաքը, երբ այն դատարկվում և թողնվում է. հատակագիծը գոյատևում է, շենքերը՝ ոչ, և այն սերնդի ընթացքում ընթեռնելի է մնում օդից։ Երևանում քանդման և վերակառուցման մասին այս քարտեզի բոլոր վեճերը փոքր են դրա կողքին։",
+      "analysis_fa": "پروژه‌ای شهری باید مستقیم به این نگاه کند. آغدام همان چیزی است که شهر وقتی خالی و رها می‌شود به آن می‌ماند: پلان می‌ماند، ساختمان‌ها نه، و یک نسل از آسمان خوانا می‌ماند. همهٔ بحث‌های این نقشه دربارهٔ تخریب و بازسازی در ایروان کنار آن کوچک‌اند.",
+      "actors": [
+        "the people of Aghdam",
+        "Armenian forces"
+      ],
+      "actors_hy": [
+        "Աղդամի բնակիչները",
+        "հայկական ուժեր"
+      ],
+      "actors_fa": [
+        "مردم آغدام",
+        "نیروهای ارمنی"
+      ],
+      "tags": [
+        "Aghdam",
+        "1993",
+        "ruins",
+        "displacement"
+      ],
+      "tags_hy": [
+        "Աղդամ",
+        "1993",
+        "ավերակներ",
+        "տեղահանում"
+      ],
+      "tags_fa": [
+        "آغدام",
+        "۱۹۹۳",
+        "ویرانه",
+        "آوارگی"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "dark-years-1992-1995",
+      "title": "1992 to 1995: two hours of light",
+      "title_hy": "1992-1995. երկու ժամ լույս",
+      "title_fa": "۱۹۹۲ تا ۱۹۹۵: دو ساعت روشنایی",
+      "date": "1992-01-01",
+      "dateEnd": "1995-10-31",
+      "datePrecision": "month",
+      "coordinates": [
+        44.5136,
+        40.1818
+      ],
+      "location": "Yerevan, district by district, on a rota",
+      "location_hy": "Երևան՝ թաղամաս առ թաղամաս, հերթականությամբ",
+      "location_fa": "ایروان، محله به محله، به نوبت",
+      "categories": [
+        "infra",
+        "publiclife",
+        "memory"
+      ],
+      "summary": "With the borders closed, the fuel gone and Metsamor shut since 1989, Yerevan lived for three winters on one or two hours of electricity a day, allocated to each district in turn. Flats were heated with wood and with anything that burned; the Ministry of Ecology estimated eight hundred thousand trees cut across the country in the first two winters alone, and the parks and boulevards of the capital were part of that. Lifts stopped, so the upper floors of the Soviet blocks emptied first. Between 676,000 and 800,000 people left the country, between a sixth and a third of the population.",
+      "summary_hy": "Փակ սահմաններով, առանց վառելիքի և 1989-ից անջատված Մեծամորով՝ Երևանը երեք ձմեռ ապրեց օրական մեկ-երկու ժամ էլեկտրականությամբ, որը հերթով բաշխվում էր թաղամասերի միջև։ Բնակարանները տաքացնում էին փայտով և ամեն այրվողով. Բնապահպանության նախարարությունը գնահատեց, որ միայն առաջին երկու ձմռանը երկրում հատվել է ութ հարյուր հազար ծառ, և մայրաքաղաքի այգիներն ու պողոտաները դրա մասն էին։ Վերելակները կանգ առան, ուստի խորհրդային շենքերի վերին հարկերն առաջինը դատարկվեցին։ Երկրից հեռացավ 676 000-ից 800 000 մարդ՝ բնակչության մեկ վեցերորդից մեկ երրորդը։",
+      "summary_fa": "با مرزهای بسته، سوختِ تمام‌شده و متسامورِ خاموش از ۱۹۸۹، ایروان سه زمستان با روزی یک تا دو ساعت برق زندگی کرد که به نوبت میان محله‌ها تقسیم می‌شد. آپارتمان‌ها با چوب و هر چیز سوختنی گرم می‌شد؛ وزارت محیط‌زیست برآورد کرد تنها در دو زمستان نخست هشتصد هزار درخت در کشور بریده شد، و پارک‌ها و بلوارهای پایتخت بخشی از آن بودند. آسانسورها ایستادند، پس طبقات بالای بلوک‌های شوروی زودتر از همه خالی شد. میان ۶۷۶٬۰۰۰ تا ۸۰۰٬۰۰۰ نفر کشور را ترک کردند، میان یک‌ششم و یک‌سوم جمعیت.",
+      "analysis": "This is the entry that explains a third of the rest of the map.\n\nThe green space: Yerevan went from 30.6 per cent green in 1986 to 3.6 per cent by 2006, and the first cut was made in the dark. When the Mashtots Park movement occupied a strip of trees in 2012, and when the forests campaigns trained the networks that later stopped a bus fare, the thing being defended had already been eaten once.\n\nThe electricity: a population that queued for two hours of light does not read a 6.93 dram rise in 2015 as an accounting question.\n\nThe emigration: a third of the people left. The city that argues in the squares of this map from 2008 onward is a city that had already lost a generation and knew it.",
+      "analysis_hy": "Սա այն գրառումն է, որ բացատրում է քարտեզի մնացածի մեկ երրորդը։\n\nԿանաչ տարածքը. Երևանը 1986-ի 30,6 տոկոս կանաչից հասավ 2006-ի 3,6 տոկոսի, և առաջին հատումը կատարվեց խավարում։ Երբ 2012-ին Մաշտոցի այգու շարժումը գրավեց ծառերի շերտը, և երբ անտառների արշավները մարզեցին այն ցանցերը, որոնք հետո կանգնեցրին տրանսպորտի սակագինը, պաշտպանվողն արդեն մեկ անգամ կերված էր։\n\nԷլեկտրականությունը. բնակչությունը, որ հերթ էր կանգնում երկու ժամ լույսի համար, 2015-ի 6,93 դրամի բարձրացումը հաշվապահական հարց չի կարդում։\n\nԱրտագաղթը. մարդկանց մեկ երրորդը հեռացավ։ Այն քաղաքը, որ 2008 թվականից այս քարտեզի հրապարակներում վիճում է, արդեն կորցրել էր մեկ սերունդ և գիտեր դա։",
+      "analysis_fa": "این مدخلی است که یک‌سوم باقی نقشه را توضیح می‌دهد.\n\nفضای سبز: ایروان از ۳۰٫۶ درصد سبز در ۱۹۸۶ به ۳٫۶ درصد در ۲۰۰۶ رسید، و نخستین بریدن در تاریکی انجام شد. وقتی جنبش پارک ماشتوتس در ۲۰۱۲ نواری از درختان را اشغال کرد، و وقتی کارزارهای جنگل همان شبکه‌هایی را تمرین دادند که بعدها کرایهٔ اتوبوس را متوقف کردند، آنچه از آن دفاع می‌شد یک بار خورده شده بود.\n\nبرق: جمعیتی که برای دو ساعت روشنایی صف می‌ایستاد، افزایش ۶٫۹۳ درامیِ ۲۰۱۵ را پرسشی حسابداری نمی‌خواند.\n\nمهاجرت: یک‌سوم مردم رفتند. شهری که از ۲۰۰۸ به بعد در میدان‌های این نقشه جدل می‌کند، شهری است که پیشاپیش نسلی را از دست داده بود و می‌دانست.",
+      "actors": [
+        "the people of Yerevan",
+        "Ministry of Ecology"
+      ],
+      "actors_hy": [
+        "Երևանի բնակիչները",
+        "Բնապահպանության նախարարություն"
+      ],
+      "actors_fa": [
+        "مردم ایروان",
+        "وزارت محیط‌زیست"
+      ],
+      "tags": [
+        "dark years",
+        "electricity",
+        "trees",
+        "emigration",
+        "1990s"
+      ],
+      "tags_hy": [
+        "մութ տարիներ",
+        "էլեկտրականություն",
+        "ծառեր",
+        "արտագաղթ",
+        "1990-ականներ"
+      ],
+      "tags_fa": [
+        "سال‌های تاریک",
+        "برق",
+        "درختان",
+        "مهاجرت",
+        "دههٔ ۱۹۹۰"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '1990s Armenian energy crisis'",
+          "url": "https://en.wikipedia.org/wiki/1990s_Armenian_energy_crisis"
+        },
+        {
+          "title": "Ter-Ghazaryan (2010), pp. 79, 94",
+          "note": "green space in Yerevan",
+          "note_hy": "Երևանի կանաչ տարածքը",
+          "note_fa": "فضای سبز ایروان"
+        },
+        {
+          "title": "Hetq, 'Armenia: The Dark Years of Independence'",
+          "url": "https://hetq.am/en/article/62353"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "yerablur-first-war",
+      "title": "Yerablur becomes a military pantheon",
+      "title_hy": "Եռաբլուրը դառնում է զինվորական պանթեոն",
+      "title_fa": "یرابلور پانتئون نظامی می‌شود",
+      "date": "1992-01-01",
+      "dateEnd": "1994-05-12",
+      "datePrecision": "month",
+      "coordinates": [
+        44.45471,
+        40.15996
+      ],
+      "location": "Yerablur, western Yerevan",
+      "location_hy": "Եռաբլուր, Երևանի արևմուտք",
+      "location_fa": "یرابلور، غرب ایروان",
+      "categories": [
+        "memory",
+        "publiclife"
+      ],
+      "summary": "The hill above the Hrazdan in the west of the city became the burial ground of the volunteers and soldiers of this war, and it is the reason Yerablur is what it is. The war is fought two hundred and fifty kilometres east; the graves are eight kilometres west of Republic Square.",
+      "summary_hy": "Քաղաքի արևմուտքում Հրազդանից վեր բարձրացող բլուրը դարձավ այս պատերազմի կամավորների և զինվորների գերեզմանատունը, և հենց դա է պատճառը, որ Եռաբլուրն այն է, ինչ կա։ Պատերազմը մղվում է երկու հարյուր հիսուն կիլոմետր արևելք, գերեզմանները Հանրապետության հրապարակից ութ կիլոմետր արևմուտք են։",
+      "summary_fa": "تپهٔ بالای هرازدان در غرب شهر گورستان داوطلبان و سربازان این جنگ شد، و دلیل اینکه یرابلور همانی است که هست همین است. جنگ دویست‌وپنجاه کیلومتر شرق‌تر است؛ گورها هشت کیلومتر غربِ میدان جمهوری.",
+      "analysis": "Held here so that the 2020 entry is not read as the beginning of anything. The hill has been receiving this war's dead since 1992, and the families who climbed it in the winter of 2020 were often climbing past their own older graves.",
+      "analysis_hy": "Պահված է այստեղ, որպեսզի 2020-ի գրառումը չկարդացվի որպես որևէ բանի սկիզբ։ Բլուրն այս պատերազմի զոհերին ընդունում է 1992 թվականից, և 2020-ի ձմռանն այնտեղ բարձրացող ընտանիքները հաճախ անցնում էին իրենց իսկ ավելի հին գերեզմանների կողքով։",
+      "analysis_fa": "اینجا نگه داشته شده تا مدخل ۲۰۲۰ آغازِ چیزی خوانده نشود. این تپه از ۱۹۹۲ کشتگان این جنگ را می‌پذیرد، و خانواده‌هایی که در زمستان ۲۰۲۰ از آن بالا رفتند، اغلب از کنار گورهای قدیمی‌ترِ خودشان می‌گذشتند.",
+      "actors": [
+        "the volunteers of the first war",
+        "the families"
+      ],
+      "actors_hy": [
+        "առաջին պատերազմի կամավորները",
+        "ընտանիքները"
+      ],
+      "actors_fa": [
+        "داوطلبان جنگ نخست",
+        "خانواده‌ها"
+      ],
+      "tags": [
+        "Yerablur",
+        "burials",
+        "memory",
+        "1990s"
+      ],
+      "tags_hy": [
+        "Եռաբլուր",
+        "թաղումներ",
+        "հիշողություն",
+        "1990-ականներ"
+      ],
+      "tags_fa": [
+        "یرابلور",
+        "خاکسپاری",
+        "حافظه",
+        "دههٔ ۱۹۹۰"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Yerablur'",
+          "url": "https://en.wikipedia.org/wiki/Yerablur"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
+    },
+    {
+      "id": "ceasefire-1994-05-12",
+      "title": "12 May 1994: the ceasefire",
+      "title_hy": "1994 թ. մայիսի 12. հրադադարը",
+      "title_fa": "۱۲ مه ۱۹۹۴: آتش‌بس",
+      "date": "1994-05-12",
+      "coordinates": [
+        46.75106,
+        39.81822
+      ],
+      "location": "The line of contact, agreed at Bishkek",
+      "location_hy": "Շփման գիծ, պայմանավորված Բիշքեքում",
+      "location_fa": "خط تماس، توافق‌شده در بیشکک",
+      "categories": [
+        "state",
+        "politics"
+      ],
+      "summary": "The Bishkek Protocol was signed on 5 May and the ceasefire took effect one minute after midnight on 12 May 1994. No peace treaty followed. The line held, with violations, for twenty-six years.",
+      "summary_hy": "Բիշքեքի արձանագրությունը ստորագրվեց մայիսի 5-ին, և հրադադարն ուժի մեջ մտավ 1994 թվականի մայիսի 12-ի կեսգիշերից մեկ րոպե անց։ Խաղաղության պայմանագիր չհետևեց։ Գիծը, խախտումներով, պահվեց քսանվեց տարի։",
+      "summary_fa": "پروتکل بیشکک در ۵ مه امضا شد و آتش‌بس یک دقیقه پس از نیمه‌شبِ ۱۲ مه ۱۹۹۴ اجرایی شد. هیچ پیمان صلحی در پی نیامد. آن خط، با نقض‌هایی، بیست‌وشش سال دوام آورد.",
+      "analysis": "A ceasefire without a treaty is a shape on a map that everyone agrees not to redraw for a while. This map holds the twenty-six years between this entry and 27 September 2020 as a single unfinished sentence.",
+      "analysis_hy": "Առանց պայմանագրի հրադադարը քարտեզի վրա ձև է, որը բոլորը համաձայնվում են որոշ ժամանակ չվերագծել։ Այս քարտեզը այս գրառման և 2020 թվականի սեպտեմբերի 27-ի միջև ընկած քսանվեց տարին պահում է որպես մեկ չավարտված նախադասություն։",
+      "analysis_fa": "آتش‌بس بدون پیمان، شکلی روی نقشه است که همه موقتاً می‌پذیرند از نو نکشندش. این نقشه بیست‌وشش سالِ میان این مدخل و ۲۷ سپتامبر ۲۰۲۰ را همچون یک جملهٔ ناتمام نگه می‌دارد.",
+      "actors": [
+        "Armenia",
+        "Azerbaijan",
+        "Republic of Artsakh",
+        "Russia"
+      ],
+      "actors_hy": [
+        "Հայաստան",
+        "Ադրբեջան",
+        "Արցախի Հանրապետություն",
+        "Ռուսաստան"
+      ],
+      "actors_fa": [
+        "ارمنستان",
+        "آذربایجان",
+        "جمهوری آرتساخ",
+        "روسیه"
+      ],
+      "tags": [
+        "ceasefire",
+        "Bishkek",
+        "1994"
+      ],
+      "tags_hy": [
+        "հրադադար",
+        "Բիշքեք",
+        "1994"
+      ],
+      "tags_fa": [
+        "آتش‌بس",
+        "بیشکک",
+        "۱۹۹۴"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'First Nagorno-Karabakh War'",
+          "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War"
+        }
+      ],
+      "media": [],
+      "episode": "first-war",
+      "datePrecision": "day"
+    },
+    {
+      "id": "metsamor-restart-1995-10",
+      "title": "October 1995: the reactor comes back",
+      "title_hy": "1995 թ. հոկտեմբեր. ռեակտորը վերադառնում է",
+      "title_fa": "اکتبر ۱۹۹۵: رآکتور بازمی‌گردد",
+      "date": "1995-10-01",
+      "datePrecision": "month",
+      "coordinates": [
+        44.14722,
+        40.18194
+      ],
+      "location": "Armenian Nuclear Power Plant, Metsamor",
+      "location_hy": "Հայկական ատոմային էլեկտրակայան, Մեծամոր",
+      "location_fa": "نیروگاه هسته‌ای ارمنستان، متسامور",
+      "categories": [
+        "infra",
+        "state"
+      ],
+      "summary": "Unit two at Metsamor, shut in March 1989 after the earthquake, was restarted in October 1995: the only reactor anywhere ever brought back after closure. Electricity in Yerevan went from one or two hours a day to ten or twelve, and then to all of them.",
+      "summary_hy": "Մեծամորի երկրորդ բլոկը, որ փակվել էր 1989 թվականի մարտին՝ երկրաշարժից հետո, վերագործարկվեց 1995 թվականի հոկտեմբերին. աշխարհում միակ ռեակտորը, որ երբևէ վերադարձվել է փակվելուց հետո։ Երևանում էլեկտրականությունը օրական մեկ-երկու ժամից դարձավ տասը-տասներկու, ապա՝ բոլորը։",
+      "summary_fa": "واحد دوم متسامور، که در مارس ۱۹۸۹ پس از زمین‌لرزه تعطیل شده بود، در اکتبر ۱۹۹۵ بازراه‌اندازی شد: تنها رآکتور جهان که پس از تعطیلی بازگردانده شده است. برق ایروان از روزی یک تا دو ساعت به ده تا دوازده ساعت رسید، و بعد به همهٔ ساعت‌ها.",
+      "analysis": "The dossier ends at a power station thirty kilometres west of the city, because that is where the dark years ended. Twenty years later the same grid was sold, and the price of what comes out of it filled Baghramyan Avenue.",
+      "analysis_hy": "Թղթապանակն ավարտվում է քաղաքից երեսուն կիլոմետր արևմուտք գտնվող էլեկտրակայանում, որովհետև հենց այնտեղ ավարտվեցին մութ տարիները։ Քսան տարի անց նույն ցանցը վաճառվեց, և նրանից դուրս եկողի գինը լցրեց Բաղրամյան պողոտան։",
+      "analysis_fa": "پرونده در نیروگاهی سی کیلومتر غربِ شهر تمام می‌شود، چون سال‌های تاریک همان‌جا تمام شد. بیست سال بعد همان شبکه فروخته شد، و قیمتِ آنچه از آن بیرون می‌آمد خیابان باغرامیان را پر کرد.",
+      "actors": [
+        "Armenian Nuclear Power Plant"
+      ],
+      "actors_hy": [
+        "Հայկական ատոմային էլեկտրակայան"
+      ],
+      "actors_fa": [
+        "نیروگاه هسته‌ای ارمنستان"
+      ],
+      "tags": [
+        "Metsamor",
+        "electricity",
+        "1995",
+        "end of the dark years"
+      ],
+      "tags_hy": [
+        "Մեծամոր",
+        "էլեկտրականություն",
+        "1995",
+        "մութ տարիների ավարտ"
+      ],
+      "tags_fa": [
+        "متسامور",
+        "برق",
+        "۱۹۹۵",
+        "پایان سال‌های تاریک"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '1990s Armenian energy crisis'",
+          "url": "https://en.wikipedia.org/wiki/1990s_Armenian_energy_crisis"
+        },
+        {
+          "title": "Wikipedia, 'Armenian Nuclear Power Plant'",
+          "url": "https://en.wikipedia.org/wiki/Armenian_Nuclear_Power_Plant",
+          "note": "the coordinates of the plant are taken from this article, not from OpenStreetMap",
+          "note_hy": "կայանի կոորդինատները վերցված են այս հոդվածից, ոչ թե OpenStreetMap-ից",
+          "note_fa": "مختصات نیروگاه از این مقاله گرفته شده، نه از OpenStreetMap"
+        }
+      ],
+      "media": [],
+      "episode": "first-war"
     }
   ],
   "episodes": [
@@ -10002,6 +11011,32 @@
       "cubeMethod": "Dated to the day where the sources give one, to the month for the formation of the Karabakh Committee. Crowd figures are the ranges in the sources and not a single number: thirty thousand on 20 February, and between three hundred thousand and a million on the 22nd and 23rd.",
       "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, որտեղ աղբյուրները տալիս են օր, իսկ Ղարաբաղ կոմիտեի ձևավորումը՝ ամսվա։ Մասնակիցների թվերը աղբյուրների միջակայքերն են, ոչ թե մեկ թիվ. փետրվարի 20-ին՝ երեսուն հազար, 22-ին և 23-ին՝ երեք հարյուր հազարից մեկ միլիոն։",
       "cubeMethod_fa": "تاریخ‌ها هرجا منابع روزی داده‌اند در حد روز است، و شکل‌گیری کمیتهٔ قره‌باغ در حد ماه. ارقام جمعیت همان بازه‌های منابع‌اند نه یک عدد: سی هزار در ۲۰ فوریه، و میان سیصد هزار و یک میلیون در ۲۲ و ۲۳ فوریه."
+    },
+    {
+      "id": "first-war",
+      "label": "The first war and the dark years",
+      "label_hy": "Առաջին պատերազմը և մութ տարիները",
+      "label_fa": "جنگ نخست و سال‌های تاریک",
+      "start": "1991-04-30",
+      "end": "1995-10-31",
+      "color": "#6b5f7a",
+      "note": "A war fought two hundred and fifty kilometres east, and a capital that spent three winters on two hours of electricity a day and burned eight hundred thousand trees.",
+      "note_hy": "Պատերազմ, որ մղվում էր երկու հարյուր հիսուն կիլոմետր արևելք, և մայրաքաղաք, որ երեք ձմեռ անցկացրեց օրական երկու ժամ էլեկտրականությամբ և այրեց ութ հարյուր հազար ծառ։",
+      "note_fa": "جنگی که دویست‌وپنجاه کیلومتر شرق‌تر جریان داشت، و پایتختی که سه زمستان با روزی دو ساعت برق گذراند و هشتصد هزار درخت سوزاند.",
+      "spur": {
+        "kind": "events"
+      },
+      "cube": true,
+      "umbrella": "first-war-dark-years",
+      "cubeTitle": "The war east, the darkness here",
+      "cubeTitle_hy": "Պատերազմն արևելքում, խավարն այստեղ",
+      "cubeTitle_fa": "جنگ در شرق، تاریکی اینجا",
+      "cubeBody": "Time stands up off the map, spring 1991 to October 1995. A disc is an entry on its day, a column is a place holding still, and the tallest columns here are not events but conditions: the blockade, the three winters of darkness, the graves filling at Yerablur. The fighting leans in from the east, and Metsamor closes the cube thirty kilometres west of the city.",
+      "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 1991-ի գարնանից մինչև 1995-ի հոկտեմբեր։ Կետը գրառում է իր օրվա վրա, սյունը՝ տեղ, որը մնում է անշարժ, և այստեղ ամենաբարձր սյուները իրադարձություններ չեն, այլ վիճակներ՝ շրջափակումը, խավարի երեք ձմեռը, Եռաբլուրում լցվող գերեզմանները։ Մարտերը հենվում են արևելքից, իսկ Մեծամորը փակում է խորանարդը քաղաքից երեսուն կիլոմետր արևմուտք։",
+      "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از بهار ۱۹۹۱ تا اکتبر ۱۹۹۵. هر دایره یک مدخل در روز خودش است، هر ستون جایی که ثابت مانده، و بلندترین ستون‌های اینجا رویداد نیستند بلکه وضعیت‌اند: محاصره، سه زمستانِ تاریکی، گورهایی که در یرابلور پر می‌شوند. نبرد از شرق تکیه می‌دهد، و متسامور مکعب را سی کیلومتر غربِ شهر می‌بندد.",
+      "cubeMethod": "Dated to the day where a day is documented, to the month for Operation Ring, the blockade, Aghdam, the dark years, Yerablur and the restart at Metsamor. Khojaly carries two figures, the Human Rights Watch count of at least 161 civilians and the Azerbaijani count of 613, and the map does not choose between them. The coordinates of the Metsamor plant come from Wikipedia rather than OpenStreetMap.",
+      "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, որտեղ օրը փաստագրված է, և ամսվա՝ «Օղակ» գործողության, շրջափակման, Աղդամի, մութ տարիների, Եռաբլուրի և Մեծամորի վերագործարկման համար։ Խոջալուն կրում է երկու թիվ՝ Human Rights Watch-ի առնվազն 161 խաղաղ բնակիչը և ադրբեջանական 613-ը, և քարտեզը նրանց միջև չի ընտրում։ Մեծամորի կայանի կոորդինատները վերցված են Վիքիպեդիայից, ոչ թե OpenStreetMap-ից։",
+      "cubeMethod_fa": "تاریخ‌ها هرجا روزی مستند است در حد روز است، و برای عملیات حلقه، محاصره، آغدام، سال‌های تاریک، یرابلور و بازراه‌اندازی متسامور در حد ماه. خوجالی دو رقم دارد، شمارش دیده‌بان حقوق بشر با دست‌کم ۱۶۱ غیرنظامی و شمارش آذربایجانی با ۶۱۳، و نقشه میان آن‌ها انتخاب نمی‌کند. مختصات نیروگاه متسامور از ویکی‌پدیا گرفته شده، نه از OpenStreetMap."
     },
     {
       "id": "2008-crisis",
