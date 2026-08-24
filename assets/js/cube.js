@@ -86,6 +86,23 @@
     slab:   [0.957, 0.937, 0.902]
   };
 
+  /* The entries come from the map when the map is up, and from the flat file
+     when it is not. graph3d.js learned this the hard way: on a slow
+     connection, or a stalled basemap, window.YerevanMap never appears and
+     anything that waited for it silently did nothing at all. The cube needs
+     dates and coordinates, not a map, so it reads them itself. */
+  var EVENTS = null;
+  fetch("data/events.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { EVENTS = (j && j.events) || []; })
+    .catch(function () { EVENTS = []; });
+
+  function allEvents() {
+    var api = window.YerevanMap;
+    if (api && api.events) { var e = api.events(); if (e && e.length) return e; }
+    return EVENTS || [];
+  }
+
   var map = null, on = false, geo = null, layer = null;
   var lastMatrix = null, hover = null, wrap = null, labels = null;
   var winFrom = null, winTo = null;
@@ -647,11 +664,17 @@
     (wrap || document.body).appendChild(c);
   }
 
+  var enterTries = 0;
   function enter() {
     if (!map || on) return;
-    var api = window.YerevanMap;
-    geo = build(api && api.events ? api.events() : []);
-    if (!geo) return;
+    geo = build(allEvents());
+    /* Nothing to stand up yet means the entries are still in flight, not
+       that there are none. Wait for them rather than failing quietly. */
+    if (!geo) {
+      if (++enterTries < 24) setTimeout(enter, 500);
+      return;
+    }
+    enterTries = 0;
     ensureLabels();
     readWindow();
     layer = makeLayer();
@@ -717,7 +740,7 @@
     map.on("click", function (e) {
       if (!on) return;
       var n = hitTest(e.originalEvent);
-      if (n && window.YerevanMap) {
+      if (n && window.YerevanMap && window.YerevanMap.select) {
         e.preventDefault();
         window.YerevanMap.select(n.id, false);
       }
