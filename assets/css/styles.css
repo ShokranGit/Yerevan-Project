@@ -3018,3 +3018,13 @@ body.cube-on .tl-rail-cube{
   color:var(--ep, var(--accent));
   background:rgba(255,255,255,.10);
 }
+
+/* A control with nothing to act on. The drawn basemap has no earth, so the
+   3D switch is left visible and inert rather than removed: the reader can
+   see that the option exists and why it is not available here. */
+.map-btn.is-void,
+.map-btn:disabled{
+  opacity:.35;
+  cursor:default;
+  pointer-events:none;
+}
