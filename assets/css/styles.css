@@ -1033,12 +1033,18 @@ html.lang-fa.d-route-head, html.lang-hy.d-route-head{ text-transform:none; lette
   display:flex; align-items:center; gap:12px;
   margin:10px 0 0; min-height:26px;
 }
-#tl-rail{
+#tl-rail, #cn-rail{
   position:relative; flex:1; min-width:0;
   height:26px;                       /* grows to 56px when the chips need two rows */
   transition:height.15s;
   direction:ltr;                    /* time runs left to right in every language */
 }
+/* The century's own rail. Same chips, quieter, because the century axis is
+   the reference view and not the one being read. */
+.tl-rail-century{ margin-top:6px; }
+.tl-rail-century .tl-rail-chip{ opacity:.82; }
+.tl-rail-century .tl-rail-chip:hover,
+.tl-rail-century .tl-rail-chip.open{ opacity:1; }
 .tl-rail-chip{
   position:absolute; top:0; left:0; white-space:nowrap;
   max-width:40%; overflow:hidden;
