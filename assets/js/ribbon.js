@@ -49,7 +49,8 @@
   var S = {
     en: { map: "Map", tools: "Tools", basemap: "Basemap", layers: "Layers",
           instruments: "Instruments", timeline: "Timeline", about: "About",
-          terrain: "Terrain in 3D", districts: "Districts", pins: "Event pins",
+          terrain: "Terrain in 3D", districts: "Yerevan districts", pins: "Event pins",
+          region: "Armenia and the region",
           draw: "Draw on the map", reset: "Reset the view",
           cube: "Space-time cube, 2018",
           vertical: "Vertical rail", horizontal: "Horizontal",
@@ -57,7 +58,8 @@
           d3: "3D", pinsShort: "pins", distShort: "districts" },
     hy: { map: "Քարտեզ", tools: "Գործիքներ", basemap: "Հենաքարտեզ", layers: "Շերտեր",
           instruments: "Գործիքներ", timeline: "Ժամանակագիծ", about: "Մասին",
-          terrain: "Ռելիեֆը 3D-ով", districts: "Թաղամասեր", pins: "Իրադարձությունների կետեր",
+          terrain: "Ռելիեֆը 3D-ով", districts: "Երևանի վարչական շրջանները", pins: "Իրադարձությունների կետեր",
+          region: "Հայաստանը և տարածաշրջանը",
           draw: "Գծել քարտեզին", reset: "Վերականգնել տեսքը",
           cube: "Տարածաժամանակային խորանարդ, 2018",
           vertical: "Ուղղահայաց", horizontal: "Հորիզոնական",
@@ -65,7 +67,8 @@
           d3: "3D", pinsShort: "կետեր", distShort: "թաղամասեր" },
     fa: { map: "نقشه", tools: "ابزارها", basemap: "نقشهٔ پایه", layers: "لایه‌ها",
           instruments: "ابزارها", timeline: "خط زمان", about: "درباره",
-          terrain: "ناهمواری سه‌بعدی", districts: "نواحی", pins: "پین رویدادها",
+          terrain: "ناهمواری سه‌بعدی", districts: "نواحی ایروان", pins: "پین رویدادها",
+          region: "ارمنستان و منطقه",
           draw: "روی نقشه بکشید", reset: "بازنشاندن نما",
           cube: "مکعب زمان-مکان، ۲۰۱۸",
           vertical: "ریل عمودی", horizontal: "افقی",
@@ -152,6 +155,9 @@
     }
     box.appendChild(head(s("layers")));
     box.appendChild(row(s("districts"), "switch", pressed("districts-btn"), function () { proxy("districts-btn"); }));
+    if ($("region-btn")) {
+      box.appendChild(row(s("region"), "switch", pressed("region-btn"), function () { proxy("region-btn"); }));
+    }
     box.appendChild(row(s("pins"), "switch", pressed("pins-btn"), function () { proxy("pins-btn"); }));
     box.appendChild(row(s("terrain"), "switch", pressed("terrain-btn"), function () { proxy("terrain-btn"); }));
   }
@@ -329,8 +335,8 @@
        the end. Moving a node inside its own parent keeps every listener. */
     var groups = [
       ["basemap", ["basemap-select"]],
-      ["layers",  ["districts-btn", "pins-btn", "terrain-btn"]],
-      ["instruments", ["draw-btn", "tl-mode", "reset-btn"]],
+      ["layers",  ["districts-btn", "region-btn", "pins-btn", "terrain-btn"]],
+      ["instruments", ["draw-btn", "cube-btn", "tl-mode", "reset-btn"]],
       ["",        ["about-btn"]]
     ];
     /* What the sheet should read like, top to bottom, as a single string. If

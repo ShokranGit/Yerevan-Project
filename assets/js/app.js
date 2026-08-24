@@ -406,6 +406,7 @@
       applyGround();
       applyPins(pinsWanted());
       applyDistricts(districtsWanted());
+      applyRegion(regionWanted());
       return !!map.getSource("geo");
     }
 
@@ -4531,6 +4532,71 @@
   var DIST_LAYERS = ["geo-borough-fill", "geo-borough-home",
                      "geo-borough-case", "geo-borough"];
 
+  /* =================================================================
+     THE REGION, as a switch
+     -----------------------------------------------------------------
+     Armenia, the five neighbours it shares a border with, and Karabakh
+     in its two outlines, 1994 and 2020, have been drawn since the
+     geography went in; they were simply not addressable. They live in
+     a zoom band, appearing under z8.6 and gone above it, which is
+     right for a map whose subject is a square in Yerevan, but it left
+     the reader with no way to say "show me the region" or to take it
+     away for a clean figure of the city.
+
+     So the switch does what a switch should and no more: off hides
+     them at every zoom, on gives them their band back. The one piece
+     of help it adds is for the case where the answer would otherwise
+     be nothing at all: asked for the region from inside the city, the
+     map pulls back far enough to show it, because that is what the
+     question meant. Turning it off never moves the camera.
+     ================================================================= */
+  var REGION_LAYERS = ["geo-country-fill", "geo-country-line",
+                       "geo-am-fill", "geo-am-line",
+                       "geo-nk-1994", "geo-nk-1994-case",
+                       "geo-nk-2020-fill", "geo-nk-2020", "geo-nk-2020-case"];
+  var REGION_KEY = "yerevan.region";
+  /* Armenia with Karabakh inside the frame; the neighbours come in around
+     it on their own at this zoom. */
+  var REGION_BOUNDS = [[43.3, 38.7], [47.1, 41.5]];
+
+  function regionWanted() {
+    try {
+      var v = localStorage.getItem(REGION_KEY);
+      return v === null ? true : v === "on";
+    } catch (e) { return true; }
+  }
+
+  function applyRegion(on) {
+    if (!map) return;
+    REGION_LAYERS.forEach(function (id) {
+      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
+    });
+    var b = $("region-btn");
+    if (b) {
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("on", on);
+    }
+  }
+
+  function wireRegion() {
+    var b = $("region-btn");
+    if (!b) return;
+    b.addEventListener("click", function () {
+      var next = !regionWanted();
+      try { localStorage.setItem(REGION_KEY, next ? "on" : "off"); } catch (e) { /* private */ }
+      applyRegion(next);
+      /* Switched on from inside the city, where the region's band has long
+         since faded out, the honest answer to the click is to go and look. */
+      if (next && map.getZoom() > GEO_BAND.country[2]) {
+        if (map.getPitch() > 1) state.cityPitch = map.getPitch();
+        map.fitBounds(REGION_BOUNDS, {
+          padding: uiPad(40), duration: 1500, pitch: 0, bearing: 0
+        });
+      }
+    });
+    applyRegion(regionWanted());
+  }
+
   function districtsWanted() {
     try {
       var v = localStorage.getItem(DIST_KEY);
@@ -4598,6 +4664,7 @@
   function wireUI() {
     wirePins();
     wireDistricts();
+    wireRegion();
     wireCategoryMenu();
     document.body.classList.toggle("light", state.basemap !== "dark");
     $("map-wrap").classList.toggle("on-light", state.basemap !== "dark");
