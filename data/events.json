@@ -5515,7 +5515,8 @@
     "یادمان",
     "ناتمام",
     "ملت‌سازی"
-   ]
+   ],
+   "episode": "urban-movements"
   },
   {
    "id": "northern-avenue-demolitions-2002",
@@ -5524,8 +5525,8 @@
    "dateEnd": "2007",
    "datePrecision": "year",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51469,
+    40.18219
    ],
    "location": "Pre-Soviet residential fabric on the Northern Avenue corridor, Kentron",
    "categories": [
@@ -5588,7 +5589,7 @@
      "caption_fa": "کریدور در دست ساخت، یک سال پیش از گشایش خیابان."
     }
    ],
-   "fieldnote": "Hakob Hakobyan's painting *No to Neutron Weapons* shows a compressed, headless crowd in an urban corridor framed by buildings closely resembling Northern Avenue. Hakobyan: \"Neutron weapons destroy people, but do not damage buildings… they are no longer worth anything if the people are gone.\"",
+   "fieldnote": "Hakob Hakobyan's painting *No to Neutron Weapons* shows a compressed, headless crowd in an urban corridor framed by buildings closely resembling Northern Avenue. Hakobyan: \"Neutron weapons destroy people, but do not damage buildings… they are no longer worth anything if the people are gone.\" Re-anchored on 25 August 2026 to the OpenStreetMap centreline of Northern Avenue, measured in the browser. The earlier point sat about 160 m west of the street.",
    "title_hy": "Հին թաղամասի քանդումը և 2500 բնակչի տեղահանումը",
    "location_hy": "Նախախորհրդային բնակելի հյուսվածքը Հյուսիսային պողոտայի միջանցքում, Կենտրոն",
    "summary_hy": "2002 թվականից նախատեսվող միջանցքի երկայնքով գոյություն ունեցող նախախորհրդային բնակելի հյուսվածքը քանդվեց, և մոտավորապես 2500 բնակիչ տեղահանվեց՝ ազատելով հին Երևանի վերջին պահպանված հատվածներից մեկը շքեղ բնակարանների, թանկարժեք առևտրի, գրասենյակների, սրճարանների, հյուրանոցների, ռեստորանների և գիշերային ակումբների համար։\n\nՄաքրումը հանրային դիմադրություն առաջացրեց և սկիզբ դրեց Կենտրոնի ինքնությունը պահպանելուն նվիրված քաղաքային ակտիվիզմի առաջին ալիքներին։ Որոշ բնակիչներ վերակառուցումն անվանեցին «սպիտակ ցեղասպանություն»՝ խորհրդանշական զուգահեռ անցկացնելով 1915 թվականի հարկադիր տեղահանումների հետ։",
@@ -5624,7 +5625,81 @@
     "نسل‌کشی سفید",
     "ایروان قدیم",
     "کِنترون"
-   ]
+   ],
+   "episode": "urban-movements",
+   "fieldnote_hy": "Վերակապվել է 2026 թ. օգոստոսի 25-ին Հյուսիսային պողոտայի OpenStreetMap առանցքագծին՝ չափված զննարկիչում։ Նախկին կետը փողոցից մոտ 160 մ արևմուտք էր։",
+   "fieldnote_fa": "در ۲۵ اوت ۲۰۲۶ به خط مرکزی اوپن‌استریت‌مپِ خیابان شمالی گره خورد، اندازه‌گیری‌شده در مرورگر. نقطهٔ پیشین حدود ۱۶۰ متر باختر خیابان بود."
+  },
+  {
+   "id": "urban-movements",
+   "title": "Northern Avenue and the urban movements, 2002 to 2018",
+   "title_hy": "Հյուսիսային պողոտան և քաղաքային շարժումները, 2002-2018",
+   "title_fa": "خیابان شمالی و جنبش‌های شهری، ۲۰۰۲ تا ۲۰۱۸",
+   "date": "2002-01-01",
+   "dateEnd": "2018-04-23",
+   "datePrecision": "year",
+   "coordinates": [
+    44.51469,
+    40.18219
+   ],
+   "location": "Northern Avenue, between Freedom Square and Republic Square",
+   "location_hy": "Հյուսիսային պողոտա, Ազատության և Հանրապետության հրապարակների միջև",
+   "location_fa": "خیابان شمالی، میان میدان آزادی و میدان جمهوری",
+   "categories": [
+    "urban",
+    "movement"
+   ],
+   "summary": "The dossier of the Northern Avenue paper: the demolition of a neighbourhood in 2002, the opening of the avenue in 2007, the closure of Opera Square in 2008, the preservation and green space movements of 2012 and 2014, and the arrival of the crowd in Republic Square in 2018. The argument is that the avenue did not replace the old political square. It loosened it.",
+   "summary_hy": "Հյուսիսային պողոտայի հոդվածի թղթապանակը. 2002-ին թաղամասի քանդումը, 2007-ին պողոտայի բացումը, 2008-ին Օպերայի հրապարակի փակումը, 2012-ի և 2014-ի պահպանման ու կանաչ տարածքների շարժումները, և 2018-ին ամբոխի գալը Հանրապետության հրապարակ։ Փաստարկն այն է, որ պողոտան չփոխարինեց հին քաղաքական հրապարակին։ Այն թուլացրեց այն։",
+   "summary_fa": "پروندهٔ مقالهٔ خیابان شمالی: تخریب یک محله در ۲۰۰۲، گشایش خیابان در ۲۰۰۷، بستن میدان اپرا در ۲۰۰۸، جنبش‌های حفاظت و فضای سبز در ۲۰۱۲ و ۲۰۱۴، و رسیدن جمعیت به میدان جمهوری در ۲۰۱۸. استدلال این است که خیابان جای میدان سیاسی کهنه را نگرفت. آن را سست کرد.",
+   "analysis": "The paper's claim is that Opera Square was not defeated, it was unweighted, and that the unweighting happened 450 metres away, in a corridor nobody thought was political.\n\nThis map can measure the corridor. Northern Avenue is 474 m end to end on the OpenStreetMap centreline, which matches the 450 m of the paper. But its north end stops 179 m short of Freedom Square and its south end stops 316 m short of Republic Square, and the two squares are 949 m apart. So the avenue that is always described as the link between the two squares covers exactly half the distance between them and touches neither. It is a bridge with no ends.\n\nThat is the geography of exfoliation, drawn: a space with two political poles at either end and no contact with either, which is what left it free enough for a generation to do something else in it.\n\nThe sequence the entries hold: 2002 the neighbourhood is demolished and 2,500 people displaced; 2006 and 2007 the avenue opens and is not claimed; 2008 the crackdown at Opera Square kills ten and the square is closed for two years for an underground car park, and the crowd demanding the release of political prisoners moves onto the avenue; 2012 Mashtots Park; 2014 Afrikana, where an interviewee says everything began; 2015 Electric Yerevan takes a carriageway rather than a square; 2018 the crowd goes to Republic Square, and does not go back.",
+   "analysis_hy": "Հոդվածի պնդումն այն է, որ Օպերայի հրապարակը չպարտվեց, այն ազատվեց ծանրությունից, և այդ ազատումը տեղի ունեցավ 450 մետր այն կողմ, մի միջանցքում, որ ոչ ոք քաղաքական չէր համարում։\n\nԱյս քարտեզը կարող է չափել այդ միջանցքը։ Հյուսիսային պողոտան OpenStreetMap-ի առանցքագծով ծայրից ծայր 474 մ է, ինչը համապատասխանում է հոդվածի 450 մետրին։ Բայց նրա հյուսիսային ծայրը կանգ է առնում Ազատության հրապարակից 179 մ առաջ, հարավայինը՝ Հանրապետության հրապարակից 316 մ առաջ, իսկ երկու հրապարակների միջև 949 մ է։ Այսինքն՝ պողոտան, որը միշտ նկարագրվում է որպես երկու հրապարակների կապ, ծածկում է նրանց միջև եղած հեռավորության ուղիղ կեսը և չի դիպչում ոչ մեկին։ Կամուրջ է առանց ծայրերի։\n\nՍա է շերտազատման աշխարհագրությունը՝ գծված. տարածք, որի երկու ծայրերում քաղաքական բևեռներ են, բայց ոչ մեկի հետ շփում չկա, և հենց դա էր, որ բավական ազատ թողեց այն, որպեսզի մի սերունդ այնտեղ այլ բան աներ։\n\nԳրառումների պահած հաջորդականությունը. 2002-ին քանդվում է թաղամասը և տեղահանվում 2500 մարդ, 2006-2007-ին բացվում է պողոտան և չի յուրացվում, 2008-ին Օպերայի հրապարակի ցրումը տանում է տասը կյանք, հրապարակը երկու տարով փակվում է ստորգետնյա ավտոկայանատեղիի համար, և քաղբանտարկյալների ազատ արձակում պահանջող ամբոխը տեղափոխվում է պողոտա, 2012-ին Մաշտոցի այգին, 2014-ին Աֆրիկանան, որտեղ հարցազրույցի մասնակիցն ասում է, թե ամեն ինչ սկսվեց այստեղից, 2015-ին Էլեկտրիկ Երևանը վերցնում է երթևեկելի մասը, ոչ թե հրապարակը, 2018-ին ամբոխը գնում է Հանրապետության հրապարակ և այլևս ետ չի գալիս։",
+   "analysis_fa": "ادعای مقاله این است که میدان اپرا شکست نخورد، بلکه از زیر وزنش درآمد، و این سبک‌شدن ۴۵۰ متر آن‌سوتر رخ داد، در راهرویی که هیچ‌کس آن را سیاسی نمی‌دانست.\n\nاین نقشه می‌تواند آن راهرو را اندازه بگیرد. خیابان شمالی بر خط مرکزی اوپن‌استریت‌مپ از سر تا سر ۴۷۴ متر است، که با ۴۵۰ متر مقاله می‌خواند. اما سر شمالی‌اش ۱۷۹ متر مانده به میدان آزادی می‌ایستد و سر جنوبی‌اش ۳۱۶ متر مانده به میدان جمهوری، و فاصلهٔ دو میدان ۹۴۹ متر است. پس خیابانی که همیشه پیوندِ دو میدان توصیف می‌شود، دقیقاً نیمی از فاصلهٔ میان آن دو را می‌پوشاند و به هیچ‌کدام نمی‌رسد. پلی است بی‌دو سر.\n\nاین جغرافیای «ورقه‌ورقه‌شدن» است، کشیده‌شده: فضایی با دو قطب سیاسی در دو سرش و بی‌تماس با هیچ‌کدام، و همین بود که آن را آن‌قدر آزاد گذاشت تا نسلی در آن کار دیگری بکند.\n\nتوالی‌ای که مدخل‌ها نگه می‌دارند: ۲۰۰۲ محله تخریب و ۲٬۵۰۰ تن آواره می‌شوند؛ ۲۰۰۶ و ۲۰۰۷ خیابان باز می‌شود و از آنِ کسی نمی‌شود؛ ۲۰۰۸ سرکوب میدان اپرا ده کشته می‌گیرد و میدان دو سال برای پارکینگ زیرزمینی بسته می‌شود و جمعیتِ خواهانِ آزادی زندانیان سیاسی به خیابان می‌آید؛ ۲۰۱۲ پارک مشتوتس؛ ۲۰۱۴ آفریکانا، جایی که مصاحبه‌شونده می‌گوید همه‌چیز از اینجا آغاز شد؛ ۲۰۱۵ الکتریک ایروان سواره‌رو را می‌گیرد نه میدان را؛ ۲۰۱۸ جمعیت به میدان جمهوری می‌رود و دیگر برنمی‌گردد.",
+   "actors": [
+    "Northern Avenue",
+    "Freedom Square",
+    "Republic Square",
+    "urban preservation activists"
+   ],
+   "actors_hy": [
+    "Հյուսիսային պողոտա",
+    "Ազատության հրապարակ",
+    "Հանրապետության հրապարակ",
+    "քաղաքային պահպանման ակտիվիստներ"
+   ],
+   "actors_fa": [
+    "خیابان شمالی",
+    "میدان آزادی",
+    "میدان جمهوری",
+    "کنشگران حفاظت شهری"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "exfoliation",
+    "urban movements"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "շերտազատում",
+    "քաղաքային շարժումներ"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "ورقه‌ورقه‌شدن",
+    "جنبش‌های شهری"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    },
+    {
+     "title": "OpenStreetMap",
+     "url": "https://www.openstreetmap.org/"
+    }
+   ],
+   "fieldnote": "The avenue entries were re-anchored on the OpenStreetMap centreline of Հյուսիսային պողոտա, measured on 25 August 2026: 474 m from 44.51491, 40.18431 to 44.51446, 40.18006. The earlier coordinates sat about 160 m west of it.",
+   "episode": "urban-movements",
+   "media": []
   },
   {
    "id": "opera-square-election-protests-2003",
@@ -5709,7 +5784,8 @@
     "میدان اپرا",
     "میدان آزادی",
     "اعتراض ناکام"
-   ]
+   ],
+   "episode": "urban-movements"
   },
   {
    "id": "northern-avenue-first-section-2006",
@@ -5717,8 +5793,8 @@
    "date": "2006-05-30",
    "datePrecision": "day",
    "coordinates": [
-    44.5133,
-    40.1793
+    44.51446,
+    40.18006
    ],
    "location": "Northern Avenue, Abovyan Street end",
    "categories": [
@@ -5767,7 +5843,11 @@
    "tags_fa": [
     "گشایش",
     "ساخت مرحله‌ای"
-   ]
+   ],
+   "episode": "urban-movements",
+   "fieldnote": "Re-anchored on 25 August 2026 to the OpenStreetMap centreline of Northern Avenue, measured in the browser. The earlier point sat about 160 m west of the street.",
+   "fieldnote_hy": "Վերակապվել է 2026 թ. օգոստոսի 25-ին Հյուսիսային պողոտայի OpenStreetMap առանցքագծին՝ չափված զննարկիչում։ Նախկին կետը փողոցից մոտ 160 մ արևմուտք էր։",
+   "fieldnote_fa": "در ۲۵ اوت ۲۰۲۶ به خط مرکزی اوپن‌استریت‌مپِ خیابان شمالی گره خورد، اندازه‌گیری‌شده در مرورگر. نقطهٔ پیشین حدود ۱۶۰ متر باختر خیابان بود."
   },
   {
    "id": "northern-avenue-opening-2007",
@@ -5775,8 +5855,8 @@
    "date": "2007",
    "datePrecision": "year",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51469,
+    40.18219
    ],
    "location": "Northern Avenue, Kentron",
    "categories": [
@@ -5871,7 +5951,11 @@
     "برندسازی شهری",
     "سرمایهٔ روسی",
     "متمدن کردن مرکز شهر"
-   ]
+   ],
+   "episode": "urban-movements",
+   "fieldnote": "Re-anchored on 25 August 2026 to the OpenStreetMap centreline of Northern Avenue, measured in the browser. The earlier point sat about 160 m west of the street.",
+   "fieldnote_hy": "Վերակապվել է 2026 թ. օգոստոսի 25-ին Հյուսիսային պողոտայի OpenStreetMap առանցքագծին՝ չափված զննարկիչում։ Նախկին կետը փողոցից մոտ 160 մ արևմուտք էր։",
+   "fieldnote_fa": "در ۲۵ اوت ۲۰۲۶ به خط مرکزی اوپن‌استریت‌مپِ خیابان شمالی گره خورد، اندازه‌گیری‌شده در مرورگر. نقطهٔ پیشین حدود ۱۶۰ متر باختر خیابان بود."
   },
   {
    "id": "opera-square-closure-2008",
@@ -6289,6 +6373,68 @@
    "episode": "2008-crisis"
   },
   {
+   "id": "avenue-unclaimed-2011",
+   "title": "2011: foreign, and still empty after four years",
+   "title_hy": "2011. օտար և չորս տարի անց դեռ դատարկ",
+   "title_fa": "۲۰۱۱: بیگانه، و پس از چهار سال هنوز خالی",
+   "date": "2011-01-01",
+   "datePrecision": "year",
+   "coordinates": [
+    44.51469,
+    40.18219
+   ],
+   "location": "Northern Avenue",
+   "location_hy": "Հյուսիսային պողոտա",
+   "location_fa": "خیابان شمالی",
+   "categories": [
+    "urban",
+    "fieldwork"
+   ],
+   "summary": "Four years after it opened the avenue was still socially unclaimed. An interlocutor in 2011: the architecture can be compared to Dubai or other new cities of that type, and Northern Avenue is foreign and still empty after four years. In a walking interview the researcher proposed walking down it, and the reply was: what else, who am I then, a tourist?",
+   "summary_hy": "Բացումից չորս տարի անց պողոտան դեռ սոցիալապես յուրացված չէր։ 2011-ի զրուցակիցը. ճարտարապետությունը կարելի է համեմատել Դուբայի կամ նման նոր քաղաքների հետ, և Հյուսիսային պողոտան օտար է ու չորս տարի անց դեռ դատարկ։ Քայլող հարցազրույցի ժամանակ հետազոտողն առաջարկեց քայլել այնտեղով, պատասխանն էր. ուրիշ ի՞նչ, ես ո՞վ եմ ուրեմն, զբոսաշրջի՞կ։",
+   "summary_fa": "چهار سال پس از گشایش، خیابان هنوز از آنِ کسی نشده بود. گفتهٔ یکی از مصاحبه‌شوندگان در ۲۰۱۱: معماری‌اش را می‌شود با دبی یا شهرهای نوِ از این دست سنجید، و خیابان شمالی بیگانه است و پس از چهار سال هنوز خالی. در یک مصاحبهٔ پیاده، پژوهشگر پیشنهاد کرد از آن بگذرند، و پاسخ این بود: چه چیز دیگری؟ پس من کی‌ام؟ توریست؟",
+   "analysis": "The entry that makes the rest of the dossier possible. A space nobody claims is a space with room in it, and the argument of the paper is that this emptiness, which every commentator read as failure, is exactly what let the next thing happen there.",
+   "analysis_hy": "Այն գրառումը, որ հնարավոր է դարձնում մնացած թղթապանակը։ Տարածքը, որ ոչ ոք չի յուրացնում, տեղ ունեցող տարածք է, և հոդվածի փաստարկն այն է, որ հենց այս դատարկությունը, որ բոլոր մեկնաբանները կարդում էին որպես ձախողում, թույլ տվեց, որ այնտեղ տեղի ունենա հաջորդը։",
+   "analysis_fa": "مدخلی که بقیهٔ پرونده را ممکن می‌کند. فضایی که کسی از آنِ خود نمی‌کند فضایی است که در آن جا هست، و استدلال مقاله این است که همین خالی‌بودن، که هر مفسری آن را شکست خواند، دقیقاً همان چیزی بود که گذاشت کار بعدی آنجا رخ دهد.",
+   "actors": [
+    "residents of Yerevan",
+    "the researcher"
+   ],
+   "actors_hy": [
+    "երևանցիներ",
+    "հետազոտողը"
+   ],
+   "actors_fa": [
+    "ساکنان ایروان",
+    "پژوهشگر"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "fieldwork",
+    "2011"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "դաշտային աշխատանք",
+    "2011"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "کار میدانی",
+    "۲۰۱۱"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    },
+    {
+     "title": "Fehlings, S. (2017), on rabiz, the urban intelligentsia and the reception of Northern Avenue, cited in the manuscript"
+    }
+   ],
+   "episode": "urban-movements",
+   "media": []
+  },
+  {
    "id": "mashtots-park-2012",
    "title": "Mashtots Park movement",
    "date": "2012",
@@ -6374,7 +6520,139 @@
     "حفاظت",
     "جامعهٔ مدنی",
     "پارک ماشتوتس"
-   ]
+   ],
+   "episode": "urban-movements"
+  },
+  {
+   "id": "avenue-everyday-2012",
+   "title": "The everyday life of the avenue",
+   "title_hy": "Պողոտայի ամենօրյա կյանքը",
+   "title_fa": "زندگی روزمرهٔ خیابان",
+   "date": "2012-01-01",
+   "dateEnd": "2019-12-31",
+   "datePrecision": "year",
+   "coordinates": [
+    44.51469,
+    40.18219
+   ],
+   "location": "Northern Avenue, the four small squares along it",
+   "location_hy": "Հյուսիսային պողոտա, նրա չորս փոքր հրապարակները",
+   "location_fa": "خیابان شمالی، چهار میدانچهٔ آن",
+   "categories": [
+    "urban",
+    "fieldwork"
+   ],
+   "summary": "Vermishyan and Michikyan record that between 2007 and 2019 activity on the avenue rose sharply, above all walking, photographing and performance, that events centred increasingly on women and young people, and that the commercial landscape shifted from shops to cafes after 2012. The fieldwork records what that looks like: back and forth walking as the dominant practice, skateboarding, bike tricks and parkour in the four small squares, girls returning from music class with santoors, performances timed to the end of school, to sunset and to the early evening.",
+   "summary_hy": "Վերմիշյանը և Միչիկյանը արձանագրում են, որ 2007-2019 թթ. պողոտայի ակտիվությունը կտրուկ աճել է՝ առաջին հերթին քայլելը, լուսանկարվելը և ելույթները, որ իրադարձությունների կենտրոնում ավելի ու ավելի կանայք և երիտասարդներն են, և որ 2012-ից հետո առևտրային պատկերը խանութներից տեղափոխվել է սրճարաններ։ Դաշտային աշխատանքն արձանագրում է, թե դա ինչ տեսք ունի. առաջ-ետ քայլելը՝ որպես գերիշխող պրակտիկա, սքեյթբորդ, հեծանվային հնարքներ և պարկուր չորս փոքր հրապարակներում, երաժշտության դասից վերադարձող աղջիկներ՝ սանթուրներով, ելույթներ՝ դասերի ավարտին, մայրամուտին և վաղ երեկոյան։",
+   "summary_fa": "ورمیشیان و میچیکیان ثبت می‌کنند که میان ۲۰۰۷ و ۲۰۱۹ فعالیت در خیابان به‌شدت بالا رفت، بیش از همه راه‌رفتن، عکس‌گرفتن و اجرا؛ که رویدادها بیش‌ازپیش حول زنان و جوانان شکل گرفت؛ و که پس از ۲۰۱۲ سیمای تجاری از مغازه به کافه چرخید. کار میدانی نشان می‌دهد این‌ها چه شکلی‌اند: راه‌رفتنِ رفت‌وبرگشتی همچون رایج‌ترین کار، اسکیت و بندبازی با دوچرخه و پارکور در چهار میدانچه، دخترانی که از کلاس موسیقی با سنتور برمی‌گردند، و اجراهایی که با پایان مدرسه، غروب و اول شب کوک شده‌اند.",
+   "analysis": "This is the part of the paper a map is worst at and most needs. None of it is an event: it is a rhythm, and rhythms have hours rather than dates. The entry is dated to the span the measured study covers and says so, and the cube shows it as a column rather than a moment, which is the honest shape of a practice that repeats.",
+   "analysis_hy": "Սա հոդվածի այն մասն է, որում քարտեզն ամենաթույլն է և որին ամենաշատն է կարիք ունի։ Սրանից ոչ մեկը դեպք չէ. սա ռիթմ է, իսկ ռիթմերն ունեն ժամեր, ոչ թե ամսաթվեր։ Գրառումը թվագրված է չափված ուսումնասիրության ընդգրկած ժամանակահատվածով և ասում է դա, իսկ խորանարդում այն երևում է որպես սյուն, ոչ թե պահ, ինչը կրկնվող պրակտիկայի ազնիվ ձևն է։",
+   "analysis_fa": "این همان بخشی از مقاله است که نقشه در آن ضعیف‌ترین است و بیشترین نیاز را به آن دارد. هیچ‌کدام از این‌ها رویداد نیست: ریتم است، و ریتم‌ها ساعت دارند نه تاریخ. مدخل به بازه‌ای که پژوهشِ اندازه‌گیری‌شده پوشش می‌دهد تاریخ خورده و همین را می‌گوید، و در مکعب همچون یک ستون دیده می‌شود نه یک لحظه، که شکل صادقانهٔ کاری است که تکرار می‌شود.",
+   "actors": [
+    "teenagers and children of Yerevan",
+    "street vendors",
+    "sketch and spray-paint artists"
+   ],
+   "actors_hy": [
+    "Երևանի դեռահասներ և երեխաներ",
+    "փողոցային վաճառողներ",
+    "էսքիզի և գրաֆիտիի նկարիչներ"
+   ],
+   "actors_fa": [
+    "نوجوانان و کودکان ایروان",
+    "دستفروشان",
+    "طراحان و هنرمندان اسپری"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "everyday life",
+    "youth"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "ամենօրյա կյանք",
+    "երիտասարդություն"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "زندگی روزمره",
+    "جوانان"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    },
+    {
+     "title": "Vermishyan, H. and Michikyan, M. (2020), on activity change on Northern Avenue 2007 to 2019, cited in the manuscript"
+    }
+   ],
+   "fieldnote": "Dated to the years of the study it rests on, not to a day. The practices it describes have hours, not dates.",
+   "episode": "urban-movements",
+   "media": []
+  },
+  {
+   "id": "avenue-alleys",
+   "title": "The alleys behind: visible and invisible",
+   "title_hy": "Հետևի նրբանցքները. տեսանելի և անտեսանելի",
+   "title_fa": "کوچه‌های پشتی: پیدا و ناپیدا",
+   "date": "2013-01-01",
+   "dateEnd": "2018-12-31",
+   "datePrecision": "year",
+   "coordinates": [
+    44.51479,
+    40.18313
+   ],
+   "location": "The back alleys and construction sites around Northern Avenue",
+   "location_hy": "Հյուսիսային պողոտայի շուրջ նրբանցքներն ու շինհրապարակները",
+   "location_fa": "کوچه‌ها و کارگاه‌های ساختمانی پیرامون خیابان شمالی",
+   "categories": [
+    "urban",
+    "fieldwork"
+   ],
+   "summary": "Young people use the alleys and construction sites around the avenue to move between visibility and invisibility. Young women smoke there in private while young men smoke publicly on the street and drink in the same hidden spaces. Police patrol both. The alleys are where graffiti artists compete. Local sex workers are dispersed from Republic Square; international sex workers walk the avenue without interference.",
+   "summary_hy": "Երիտասարդներն օգտագործում են պողոտայի շուրջ նրբանցքներն ու շինհրապարակները՝ տեսանելիի և անտեսանելիի միջև տեղաշարժվելու համար։ Երիտասարդ կանայք այնտեղ ծխում են գաղտնի, մինչ երիտասարդ տղամարդիկ ծխում են բացահայտ փողոցում և խմում հենց այդ թաքուն տեղերում։ Ոստիկանությունը պարեկություն է անում երկուսում էլ։ Նրբանցքներում մրցում են գրաֆիտիստները։ Տեղացի սեքս-աշխատողներին ցրում են Հանրապետության հրապարակից, միջազգային սեքս-աշխատողները քայլում են պողոտայով առանց խոչընդոտի։",
+   "summary_fa": "جوانان از کوچه‌ها و کارگاه‌های ساختمانی پیرامون خیابان برای رفت‌وآمد میان دیده‌شدن و دیده‌نشدن استفاده می‌کنند. زنان جوان آنجا پنهانی سیگار می‌کشند، در حالی که مردان جوان در خیابان آشکارا سیگار می‌کشند و در همان جاهای پنهان مشروب می‌خورند. پلیس هر دو را گشت می‌زند. کوچه‌ها جایی است که هنرمندان گرافیتی با هم رقابت می‌کنند. تن‌فروشان محلی از میدان جمهوری رانده می‌شوند؛ تن‌فروشان خارجی بی‌مزاحمت در خیابان راه می‌روند.",
+   "analysis": "The avenue's politics are not only on the avenue. Every performance of presence needs somewhere to go when it stops performing, and the alleys are that. The gendered asymmetry is the sharpest thing in the fieldwork: the same act is public for boys and hidden for girls, thirty metres apart.",
+   "analysis_hy": "Պողոտայի քաղաքականությունը միայն պողոտայի վրա չէ։ Ներկայության ամեն ելույթի պետք է տեղ, ուր գնա, երբ դադարում է ելույթ լինել, և նրբանցքներն այդ տեղն են։ Գենդերային անհամաչափությունը դաշտային աշխատանքի ամենասուր բանն է. նույն արարքը տղաների համար հրապարակային է, աղջիկների համար՝ թաքուն, երեսուն մետր հեռավորության վրա։",
+   "analysis_fa": "سیاستِ خیابان تنها روی خیابان نیست. هر اجرای حضور جایی لازم دارد که وقتی اجرا تمام شد به آن برود، و کوچه‌ها همان جایند. نامتقارنی جنسیتی تیزترین چیز در کار میدانی است: یک کار برای پسرها عمومی است و برای دخترها پنهان، در فاصلهٔ سی متر.",
+   "actors": [
+    "young women and men of Yerevan",
+    "graffiti artists",
+    "the police"
+   ],
+   "actors_hy": [
+    "Երևանի երիտասարդ կանայք և տղամարդիկ",
+    "գրաֆիտիստներ",
+    "ոստիկանություն"
+   ],
+   "actors_fa": [
+    "زنان و مردان جوان ایروان",
+    "هنرمندان گرافیتی",
+    "پلیس"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "visibility",
+    "gender"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "տեսանելիություն",
+    "գենդեր"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "دیده‌شدن",
+    "جنسیت"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    }
+   ],
+   "fieldnote": "Anchored on the avenue's centreline near its middle, not on a specific alley. The alleys are not individually identified in the manuscript.",
+   "episode": "urban-movements",
+   "media": []
   },
   {
    "id": "barevolution-rallies-2013-02-19",
@@ -7787,7 +8065,8 @@
     "تخریب",
     "جای حافظه",
     "تو نمی‌توانی جای مرا بگیری"
-   ]
+   ],
+   "episode": "urban-movements"
   },
   {
    "id": "northern-avenue-mall-2014",
@@ -7795,8 +8074,8 @@
    "date": "2014",
    "datePrecision": "year",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51462,
+    40.18167
    ],
    "location": "Beneath Northern Avenue",
    "categories": [
@@ -7836,7 +8115,11 @@
     "بازسازی",
     "بازار زیرزمینی",
     "پارکینگ"
-   ]
+   ],
+   "episode": "urban-movements",
+   "fieldnote": "Re-anchored on 25 August 2026 to the OpenStreetMap centreline of Northern Avenue, measured in the browser. The earlier point sat about 160 m west of the street.",
+   "fieldnote_hy": "Վերակապվել է 2026 թ. օգոստոսի 25-ին Հյուսիսային պողոտայի OpenStreetMap առանցքագծին՝ չափված զննարկիչում։ Նախկին կետը փողոցից մոտ 160 մ արևմուտք էր։",
+   "fieldnote_fa": "در ۲۵ اوت ۲۰۲۶ به خط مرکزی اوپن‌استریت‌مپِ خیابان شمالی گره خورد، اندازه‌گیری‌شده در مرورگر. نقطهٔ پیشین حدود ۱۶۰ متر باختر خیابان بود."
   },
   {
    "id": "pension-reform-protests-2014",
@@ -10861,6 +11144,65 @@
    ]
   },
   {
+   "id": "exfoliation-2018",
+   "title": "2018: the crowd goes to the other square",
+   "title_hy": "2018. ամբոխը գնում է մյուս հրապարակ",
+   "title_fa": "۲۰۱۸: جمعیت به آن یکی میدان می‌رود",
+   "date": "2018-04-19",
+   "coordinates": [
+    44.51446,
+    40.18006
+   ],
+   "location": "The southern end of Northern Avenue, 316 m short of Republic Square",
+   "location_hy": "Հյուսիսային պողոտայի հարավային ծայրը, Հանրապետության հրապարակից 316 մ առաջ",
+   "location_fa": "سر جنوبی خیابان شمالی، ۳۱۶ متر مانده به میدان جمهوری",
+   "categories": [
+    "urban",
+    "movement"
+   ],
+   "summary": "On 19 April 2018 Republic Square became the centre of the revolution, and the political life of the city did not return to Freedom Square. The grievances were not new: the same fraudulent elections, the same oligarchy, the same dissatisfied youth that had filled Opera Square in 2003, 2008 and 2013. What had changed was where people were willing to stand.",
+   "summary_hy": "2018 թ. ապրիլի 19-ին Հանրապետության հրապարակը դարձավ հեղափոխության կենտրոնը, և քաղաքի քաղաքական կյանքն այլևս չվերադարձավ Ազատության հրապարակ։ Դժգոհությունները նոր չէին. նույն կեղծված ընտրությունները, նույն օլիգարխիան, նույն դժգոհ երիտասարդությունը, որ լցրել էր Օպերայի հրապարակը 2003-ին, 2008-ին և 2013-ին։ Փոխվել էր այն, թե որտեղ էին մարդիկ պատրաստ կանգնել։",
+   "summary_fa": "در ۱۹ آوریل ۲۰۱۸ میدان جمهوری مرکز انقلاب شد، و زندگی سیاسی شهر دیگر به میدان آزادی برنگشت. نارضایتی‌ها تازه نبودند: همان انتخابات تقلبی، همان الیگارشی، همان جوانانِ ناراضی که در ۲۰۰۳ و ۲۰۰۸ و ۲۰۱۳ میدان اپرا را پر کرده بودند. آنچه عوض شده بود این بود که مردم حاضر بودند کجا بایستند.",
+   "analysis": "The dossier closes here, at the end of the avenue, 316 m short of the square the crowd finally took. That gap is the argument in one measurement: nothing was ever claimed on Northern Avenue, and nothing was claimed from it. A generation simply lived 450 metres away from the old square for ten years, and when the moment came the old square no longer held.\n\nThe entries of the revolution itself are in their own dossier. This one ends at the threshold, which is where the paper ends too.",
+   "analysis_hy": "Թղթապանակը փակվում է այստեղ՝ պողոտայի ծայրին, այն հրապարակից 316 մ առաջ, որ ամբոխը վերջապես վերցրեց։ Այդ բացը փաստարկն է մեկ չափման մեջ. Հյուսիսային պողոտայում երբեք ոչինչ չյուրացվեց, և նրանից ոչինչ չվերցվեց։ Մի սերունդ պարզապես տասը տարի ապրեց հին հրապարակից 450 մետր այն կողմ, և երբ պահը եկավ, հին հրապարակն այլևս չպահեց։\n\nԲուն հեղափոխության գրառումներն իրենց առանձին թղթապանակում են։ Սա ավարտվում է շեմին, ուր ավարտվում է նաև հոդվածը։",
+   "analysis_fa": "پرونده اینجا بسته می‌شود، در انتهای خیابان، ۳۱۶ متر مانده به میدانی که جمعیت سرانجام گرفت. آن فاصله، استدلال است در یک اندازه‌گیری: در خیابان شمالی هرگز چیزی تصاحب نشد، و از آن هم چیزی گرفته نشد. نسلی فقط ده سال در ۴۵۰ متری میدان کهنه زندگی کرد، و وقتی لحظه رسید، میدان کهنه دیگر نگه نداشت.\n\nمدخل‌های خودِ انقلاب در پروندهٔ خودشان‌اند. این یکی بر آستانه تمام می‌شود، همان‌جا که مقاله هم تمام می‌شود.",
+   "actors": [
+    "the crowd of April 2018"
+   ],
+   "actors_hy": [
+    "2018-ի ապրիլի ամբոխը"
+   ],
+   "actors_fa": [
+    "جمعیت آوریل ۲۰۱۸"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "2018",
+    "Republic Square"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "2018",
+    "Հանրապետության հրապարակ"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "۲۰۱۸",
+    "میدان جمهوری"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    },
+    {
+     "title": "OpenStreetMap",
+     "url": "https://www.openstreetmap.org/"
+    }
+   ],
+   "episode": "urban-movements",
+   "media": []
+  },
+  {
    "id": "republic-square-becomes-centre-2018-04-19",
    "title": "The nightly rally moves to Republic Square",
    "date": "2018-04-19",
@@ -12203,6 +12545,66 @@
    "datePrecision": "day"
   },
   {
+   "id": "avenue-street-music-2020",
+   "title": "Where the musicians are allowed to play",
+   "title_hy": "Որտեղ երաժիշտներին թույլ է տրված նվագել",
+   "title_fa": "جایی که نوازندگان اجازهٔ نواختن دارند",
+   "date": "2020-10-01",
+   "datePrecision": "month",
+   "coordinates": [
+    44.51459,
+    40.18135
+   ],
+   "location": "Northern Avenue, near the entrance to the underground market",
+   "location_hy": "Հյուսիսային պողոտա, ստորգետնյա շուկայի մուտքի մոտ",
+   "location_fa": "خیابان شمالی، نزدیک ورودی بازار زیرزمینی",
+   "categories": [
+    "urban",
+    "fieldwork"
+   ],
+   "summary": "Street musicians are forbidden to play in the main spaces of Opera Square and Republic Square, so they play on their edges or on Northern Avenue. During the 2020 war a young musician played Sari Galin, a folk song shared by Armenia, Azerbaijan and Iran, keeping his distance from a group of older men who display a small Armenian flag and play nationalist and nostalgic songs. A retired opera singer who had been a regular presence disappeared during 2020 and 2021.",
+   "summary_hy": "Փողոցային երաժիշտներին արգելված է նվագել Օպերայի և Հանրապետության հրապարակների հիմնական տարածքներում, ուստի նրանք նվագում են դրանց եզրերին կամ Հյուսիսային պողոտայում։ 2020-ի պատերազմի ժամանակ մի երիտասարդ երաժիշտ նվագեց «Սարի աղջիկ»-ը՝ Հայաստանի, Ադրբեջանի և Իրանի ընդհանուր ժողովրդական երգը, հեռու պահելով իրեն մի խումբ տարեց տղամարդկանցից, ովքեր փոքր հայկական դրոշ են դնում և նվագում ազգայնական ու կարոտի երգեր։ Թոշակառու օպերային երգչուհին, որ մշտական ներկայություն էր, անհետացավ 2020-2021 թթ.։",
+   "summary_fa": "نوازندگان خیابانی حق ندارند در فضای اصلی میدان اپرا و میدان جمهوری بنوازند، پس در حاشیهٔ آن‌ها یا در خیابان شمالی می‌نوازند. در جنگ ۲۰۲۰ نوازنده‌ای جوان «ساری گلین» را نواخت، ترانه‌ای مردمی که میان ارمنستان و آذربایجان و ایران مشترک است، و فاصله‌اش را با گروهی از مردان مسن‌تر نگه داشت که پرچم کوچک ارمنستان می‌گذارند و ترانه‌های ملی‌گرایانه و نوستالژیک می‌نوازند. خوانندهٔ بازنشستهٔ اپرا که همیشه آنجا بود، در ۲۰۲۰ و ۲۰۲۱ ناپدید شد.",
+   "analysis": "A rule about noise turns out to be a map of permitted politics. The two squares are kept clear for the state and for the crowd, and everything unofficial, including a song shared with the country Armenia was at war with, is pushed into the corridor between them. The avenue is where the things that do not fit either square are allowed to happen, which is the same sentence as the paper's argument, said in music.",
+   "analysis_hy": "Աղմուկի մասին կանոնը պարզվում է՝ թույլատրված քաղաքականության քարտեզ է։ Երկու հրապարակները մաքուր են պահվում պետության և ամբոխի համար, իսկ ամեն ոչ պաշտոնական բան, ներառյալ երգը, որ ընդհանուր է այն երկրի հետ, որի դեմ Հայաստանը պատերազմում էր, հրվում է նրանց միջև ընկած միջանցք։ Պողոտան այն վայրն է, ուր թույլատրվում է կատարվել այն, ինչը ոչ մի հրապարակի մեջ չի տեղավորվում, և սա նույն նախադասությունն է, ինչ հոդվածի փաստարկը՝ ասված երաժշտությամբ։",
+   "analysis_fa": "قاعده‌ای دربارهٔ سروصدا از آب درمی‌آید نقشهٔ سیاستِ مجاز. دو میدان برای دولت و برای جمعیت خالی نگه داشته می‌شوند، و هر چیز غیررسمی، از جمله ترانه‌ای مشترک با کشوری که ارمنستان با آن در جنگ بود، به راهروی میان آن دو رانده می‌شود. خیابان جایی است که آنچه در هیچ‌یک از دو میدان جا نمی‌شود اجازهٔ رخ‌دادن دارد، و این همان جملهٔ استدلال مقاله است، گفته‌شده با موسیقی.",
+   "actors": [
+    "street musicians",
+    "the police"
+   ],
+   "actors_hy": [
+    "փողոցային երաժիշտներ",
+    "ոստիկանություն"
+   ],
+   "actors_fa": [
+    "نوازندگان خیابانی",
+    "پلیس"
+   ],
+   "tags": [
+    "Northern Avenue",
+    "street music",
+    "2020"
+   ],
+   "tags_hy": [
+    "Հյուսիսային պողոտա",
+    "փողոցային երաժշտություն",
+    "2020"
+   ],
+   "tags_fa": [
+    "خیابان شمالی",
+    "موسیقی خیابانی",
+    "۲۰۲۰"
+   ],
+   "sources": [
+    {
+     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+    }
+   ],
+   "fieldnote": "Dated to October 2020, during the war, because that is when the Sari Galin observation was made. The rule about the squares has no date; it is a standing condition.",
+   "episode": "urban-movements",
+   "media": []
+  },
+  {
    "id": "ghazanchetsots-2020-10-08",
    "title": "8 October: the cathedral struck twice",
    "title_hy": "Հոկտեմբերի 8. տաճարը՝ երկու հարվածով",
@@ -13472,6 +13874,32 @@
    "cubeMethod": "Dated to the day where a day is documented, to the month for Operation Ring, the blockade, Aghdam, the dark years, Yerablur and the restart at Metsamor. Khojaly carries two figures, the Human Rights Watch count of at least 161 civilians and the Azerbaijani count of 613, and the map does not choose between them. The coordinates of the Metsamor plant come from Wikipedia rather than OpenStreetMap.",
    "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, որտեղ օրը փաստագրված է, և ամսվա՝ «Օղակ» գործողության, շրջափակման, Աղդամի, մութ տարիների, Եռաբլուրի և Մեծամորի վերագործարկման համար։ Խոջալուն կրում է երկու թիվ՝ Human Rights Watch-ի առնվազն 161 խաղաղ բնակիչը և ադրբեջանական 613-ը, և քարտեզը նրանց միջև չի ընտրում։ Մեծամորի կայանի կոորդինատները վերցված են Վիքիպեդիայից, ոչ թե OpenStreetMap-ից։",
    "cubeMethod_fa": "تاریخ‌ها هرجا روزی مستند است در حد روز است، و برای عملیات حلقه، محاصره، آغدام، سال‌های تاریک، یرابلور و بازراه‌اندازی متسامور در حد ماه. خوجالی دو رقم دارد، شمارش دیده‌بان حقوق بشر با دست‌کم ۱۶۱ غیرنظامی و شمارش آذربایجانی با ۶۱۳، و نقشه میان آن‌ها انتخاب نمی‌کند. مختصات نیروگاه متسامور از ویکی‌پدیا گرفته شده، نه از OpenStreetMap."
+  },
+  {
+   "id": "urban-movements",
+   "label": "Northern Avenue and the urban movements",
+   "label_hy": "Հյուսիսային պողոտան և քաղաքային շարժումները",
+   "label_fa": "خیابان شمالی و جنبش‌های شهری",
+   "start": "2002-01-01",
+   "end": "2018-04-23",
+   "color": "#7a8f4a",
+   "note": "The dossier of the Northern Avenue paper: a neighbourhood demolished, a corridor built between two political squares and claimed by neither, and the urban movements that grew in it.",
+   "note_hy": "Հյուսիսային պողոտայի հոդվածի թղթապանակը. քանդված թաղամաս, երկու քաղաքական հրապարակների միջև կառուցված միջանցք, որը ոչ մեկը չյուրացրեց, և նրա մեջ աճած քաղաքային շարժումները։",
+   "note_fa": "پروندهٔ مقالهٔ خیابان شمالی: محله‌ای تخریب‌شده، راهرویی ساخته‌شده میان دو میدان سیاسی که هیچ‌کدام آن را از آنِ خود نکردند، و جنبش‌های شهری‌ای که در آن رویید.",
+   "spur": {
+    "kind": "events"
+   },
+   "cube": true,
+   "umbrella": "urban-movements",
+   "cubeTitle": "A bridge with no ends",
+   "cubeTitle_hy": "Կամուրջ առանց ծայրերի",
+   "cubeTitle_fa": "پلی بی‌دو سر",
+   "cubeBody": "Time stands up off the map, 2002 to April 2018. Almost every disc here stands over the same 474 m of pedestrian street, which is why this cube is a narrow tower rather than a field: the dossier is about one place over sixteen years. The two squares it is said to connect are outside the box, 179 m beyond its north end and 316 m beyond its south end. Nothing in this cube ever touches either of them.",
+   "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 2002-ից մինչև 2018-ի ապրիլ։ Այստեղի գրեթե ամեն կետ կանգնած է նույն 474 մետր հետիոտն փողոցի վրա, և հենց դրա համար այս խորանարդը նեղ աշտարակ է, ոչ թե դաշտ. թղթապանակը մեկ վայրի մասին է՝ տասնվեց տարվա ընթացքում։ Երկու հրապարակները, որոնք իբր կապում է, տուփից դուրս են՝ հյուսիսային ծայրից 179 մ և հարավայինից 316 մ այն կողմ։ Այս խորանարդում ոչինչ երբեք չի դիպչում նրանցից ոչ մեկին։",
+   "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از ۲۰۰۲ تا آوریل ۲۰۱۸. تقریباً هر دایره اینجا بر همان ۴۷۴ متر خیابان پیاده می‌ایستد، و به همین سبب این مکعب برجی باریک است نه میدانی پهن: پرونده دربارهٔ یک جاست در شانزده سال. دو میدانی که می‌گویند این خیابان به هم وصلشان می‌کند بیرون جعبه‌اند، ۱۷۹ متر آن‌سوی سر شمالی و ۳۱۶ متر آن‌سوی سر جنوبی. هیچ‌چیز در این مکعب هرگز به هیچ‌کدامشان نمی‌رسد.",
+   "cubeMethod": "The avenue entries were re-anchored on the OpenStreetMap centreline of the pedestrian street, measured through the browser on 25 August 2026: 474 m from 44.51491, 40.18431 to 44.51446, 40.18006. The earlier coordinates sat about 160 m west of it and the entries carry a fieldnote saying so. Most entries here are dated to the year, because they are years rather than days; the everyday-life entry is dated to the span of the study it rests on and says that the practices it describes have hours rather than dates.",
+   "cubeMethod_hy": "Պողոտայի գրառումները վերակապվեցին հետիոտն փողոցի OpenStreetMap առանցքագծին՝ չափված զննարկիչի միջոցով 2026 թ. օգոստոսի 25-ին. 474 մ՝ 44.51491, 40.18431-ից մինչև 44.51446, 40.18006։ Նախկին կոորդինատները դրանից մոտ 160 մ արևմուտք էին, և գրառումները կրում են այդ մասին դաշտային նշում։ Այստեղի գրառումների մեծ մասը թվագրված է տարով, քանի որ դրանք տարիներ են, ոչ թե օրեր, իսկ ամենօրյա կյանքի գրառումը թվագրված է իր հիմքում ընկած ուսումնասիրության ընդգրկմամբ և ասում է, որ իր նկարագրած պրակտիկաներն ունեն ժամեր, ոչ թե ամսաթվեր։",
+   "cubeMethod_fa": "مدخل‌های خیابان به خط مرکزی اوپن‌استریت‌مپِ خیابان پیاده گره خورده‌اند، اندازه‌گیری‌شده از راه مرورگر در ۲۵ اوت ۲۰۲۶: ۴۷۴ متر از ۴۴٫۵۱۴۹۱، ۴۰٫۱۸۴۳۱ تا ۴۴٫۵۱۴۴۶، ۴۰٫۱۸۰۰۶. مختصات پیشین حدود ۱۶۰ متر باختر آن بودند و مدخل‌ها یادداشت میدانیِ همین را دارند. بیشتر مدخل‌ها به سال تاریخ خورده‌اند، چون سال‌اند نه روز؛ و مدخل زندگی روزمره به بازهٔ پژوهشی که بر آن تکیه دارد تاریخ خورده و می‌گوید کارهایی که وصف می‌کند ساعت دارند نه تاریخ."
   },
   {
    "id": "2008-crisis",
