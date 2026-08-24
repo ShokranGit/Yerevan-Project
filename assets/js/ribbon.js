@@ -51,6 +51,7 @@
           instruments: "Instruments", timeline: "Timeline", about: "About",
           terrain: "Terrain in 3D", districts: "Districts", pins: "Event pins",
           draw: "Draw on the map", reset: "Reset the view",
+          cube: "Space-time cube, 2018",
           vertical: "Vertical rail", horizontal: "Horizontal",
           on: "on", off: "off", noTool: "no tool", drawing: "drawing",
           d3: "3D", pinsShort: "pins", distShort: "districts" },
@@ -58,6 +59,7 @@
           instruments: "Գործիքներ", timeline: "Ժամանակագիծ", about: "Մասին",
           terrain: "Ռելիեֆը 3D-ով", districts: "Թաղամասեր", pins: "Իրադարձությունների կետեր",
           draw: "Գծել քարտեզին", reset: "Վերականգնել տեսքը",
+          cube: "Տարածաժամանակային խորանարդ, 2018",
           vertical: "Ուղղահայաց", horizontal: "Հորիզոնական",
           on: "միացված", off: "անջատված", noTool: "գործիք չկա", drawing: "գծում",
           d3: "3D", pinsShort: "կետեր", distShort: "թաղամասեր" },
@@ -65,6 +67,7 @@
           instruments: "ابزارها", timeline: "خط زمان", about: "درباره",
           terrain: "ناهمواری سه‌بعدی", districts: "نواحی", pins: "پین رویدادها",
           draw: "روی نقشه بکشید", reset: "بازنشاندن نما",
+          cube: "مکعب زمان-مکان، ۲۰۱۸",
           vertical: "ریل عمودی", horizontal: "افقی",
           on: "روشن", off: "خاموش", noTool: "بدون ابزار", drawing: "در حال کشیدن",
           d3: "سه‌بعدی", pinsShort: "پین‌ها", distShort: "نواحی" }
@@ -158,6 +161,11 @@
     box.appendChild(head(s("instruments")));
     if ($("draw-btn")) {
       box.appendChild(row(s("draw"), "switch", pressed("draw-btn"), function () { proxy("draw-btn"); }));
+    }
+    /* The cube is an instrument, not a layer: it changes what the map is
+       drawing, so it belongs beside the pen and not beside the basemaps. */
+    if ($("cube-btn")) {
+      box.appendChild(row(s("cube"), "switch", pressed("cube-btn"), function () { proxy("cube-btn"); }));
     }
     if ($("tl-mode")) {
       box.appendChild(sep());

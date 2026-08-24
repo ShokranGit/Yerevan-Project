@@ -349,7 +349,11 @@
          clicked. Keep it this narrow, three functions, no internals. */
       window.YerevanMap = {
         events: function () { return state.events.slice(); },
-        select: function (id) { selectEvent(id, true); },
+        select: function (id, fly) { selectEvent(id, fly !== false); },
+        /* The timeline window, in milliseconds. cube.js lights the slab of
+           the space-time cube that falls inside it, so dragging the timeline
+           slices the cube and pressing play makes the revolution rise. */
+        window: function () { return { from: state.winStart, to: state.winEnd }; },
         search: function (q) {
           state.query = q || "";
           var box = $("search"); if (box) box.value = state.query;
@@ -2873,6 +2877,15 @@
 
   var MARK_MIN_PX = 12;
 
+  /* A wireframe cube, eleven lines of SVG, drawn once. It marks the periods
+     that can be stood up: geography on the floor, time up the side. */
+  var CUBE_GLYPH =
+    '<svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true">' +
+    '<g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">' +
+    '<path d="M2.4 4.6 8 1.9l5.6 2.7v6.8L8 14.1 2.4 11.4z"/>' +
+    '<path d="M2.4 4.6 8 7.3l5.6-2.7M8 7.3v6.8" stroke-opacity=".55"/>' +
+    '</g></svg>';
+
   function episodeOf(e) {
     if (!e || !e.episode) return null;
     var found = null;
@@ -3071,6 +3084,10 @@
                : (b.dataset.ids || "").split(" ").indexOf(id) >= 0;
       if (mine) b.classList.toggle("hot", !!on);
     });
+    /* Kraak's advice for a cube is to keep the flat views beside it and wire
+       them together. A row under the cursor here lights its own disc up in
+       the air, and the cube lights the row back. */
+    document.dispatchEvent(new CustomEvent("yy:hot", { detail: { id: id, on: !!on } }));
   }
 
   /* =================================================================
@@ -3929,6 +3946,12 @@
                '<i class="tl-rail-tick"></i>' +
                '<span>' + esc(tr(it.ep, "label")) + '</span>' +
                (episodeCount(it.ep) ? '<b>' + esc(num(episodeCount(it.ep))) + '</b>' : "") +
+               /* A period that can be stood up in three dimensions says so on
+                  its own chip. This is where the space-time cube is found:
+                  not in a menu of instruments, but on the period it belongs
+                  to, next to the number of days it holds. */
+               (it.ep.cube ? '<i class="tl-rail-cube" role="button" tabindex="0"' +
+                  ' title="' + esc(t("cube.open")) + '" aria-label="' + esc(t("cube.open")) + '">' + CUBE_GLYPH + '</i>' : "") +
                '</button>';
       }).join("");
 
@@ -3971,6 +3994,13 @@
 
       rail.querySelectorAll("[data-ep]").forEach(function (b) {
         b.addEventListener("click", function (evt) {
+          /* The cube glyph is inside the chip, so it has to claim the click
+             before the chip reads it as "open this period". */
+          if (evt.target.closest(".tl-rail-cube")) {
+            evt.stopPropagation();
+            if (window.Cube) window.Cube.toggle();
+            return;
+          }
           evt.stopPropagation();
           showEpisode(state.episodes[+b.dataset.ep]);
         });
@@ -4208,6 +4238,8 @@
     $("tl-from").textContent = fmtStamp(state.winStart);
     $("tl-to").textContent = fmtStamp(state.winEnd);
     markActiveEpisode();
+    /* Anything drawn from the window listens for this rather than polling. */
+    document.dispatchEvent(new CustomEvent("yy:window"));
   }
 
   function setWindow(sFrac, eFrac) {
