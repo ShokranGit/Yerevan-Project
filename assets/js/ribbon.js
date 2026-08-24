@@ -52,7 +52,7 @@
           terrain: "Terrain in 3D", districts: "Yerevan districts", pins: "Event pins",
           region: "Armenia and the region",
           draw: "Draw on the map", reset: "Reset the view",
-          cube: "Space-time cube", cubes: "Space-time maps",
+          cube: "Space-time cube", cubes: "Space-time maps", allPeriods: "All periods", cubesOff: "Turn all off",
           vertical: "Vertical rail", horizontal: "Horizontal",
           on: "on", off: "off", noTool: "no tool", drawing: "drawing",
           d3: "3D", pinsShort: "pins", distShort: "districts" },
@@ -61,7 +61,7 @@
           terrain: "Ռելիեֆը 3D-ով", districts: "Երևանի վարչական շրջանները", pins: "Իրադարձությունների կետեր",
           region: "Հայաստանը և տարածաշրջանը",
           draw: "Գծել քարտեզին", reset: "Վերականգնել տեսքը",
-          cube: "Տարածաժամանակային խորանարդ", cubes: "Տարածաժամանակային քարտեզներ",
+          cube: "Տարածաժամանակային խորանարդ", cubes: "Տարածաժամանակային քարտեզներ", allPeriods: "Բոլոր ժամանակահատվածները", cubesOff: "Անջատել բոլորը",
           vertical: "Ուղղահայաց", horizontal: "Հորիզոնական",
           on: "միացված", off: "անջատված", noTool: "գործիք չկա", drawing: "գծում",
           d3: "3D", pinsShort: "կետեր", distShort: "թաղամասեր" },
@@ -70,7 +70,7 @@
           terrain: "ناهمواری سه‌بعدی", districts: "نواحی ایروان", pins: "پین رویدادها",
           region: "ارمنستان و منطقه",
           draw: "روی نقشه بکشید", reset: "بازنشاندن نما",
-          cube: "مکعب زمان-مکان", cubes: "نقشه‌های زمان-مکان",
+          cube: "مکعب زمان-مکان", cubes: "نقشه‌های زمان-مکان", allPeriods: "همهٔ دوره‌ها", cubesOff: "خاموش کردن همه",
           vertical: "ریل عمودی", horizontal: "افقی",
           on: "روشن", off: "خاموش", noTool: "بدون ابزار", drawing: "در حال کشیدن",
           d3: "سه‌بعدی", pinsShort: "پین‌ها", distShort: "نواحی" }
@@ -149,16 +149,37 @@
   /* A drawer head: a row that opens a list under itself rather than doing
      anything to the map. The count is on it because the number of periods
      that can be stood up is a fact about the project, not decoration. */
-  function drawer(label, isOpen, count, act) {
+  /* A drawer head carries two controls in one row: the label opens the list,
+     and the switch at the end turns the whole thing on or off without the
+     reader having to open anything. Two targets in one row is a settings
+     pattern, and it is the only way to keep the master switch in sight while
+     the list stays folded. */
+  function drawer(label, isOpen, count, act, sw) {
     var r = document.createElement("button");
     r.type = "button";
-    r.className = "rb-row rb-drawer" + (isOpen ? " open" : "");
+    r.className = "rb-row rb-drawer" + (isOpen ? " open" : "") + (sw && sw.on ? " sw-on" : "");
     r.setAttribute("aria-expanded", isOpen ? "true" : "false");
     r.innerHTML = '<span>' + label + '</span>' +
       '<span class="rb-drawer-end">' +
       (count ? '<b class="rb-count">' + count + '</b>' : "") +
-      '<i class="rb-caret-s" aria-hidden="true">&#9662;</i></span>';
+      '<i class="rb-caret-s" aria-hidden="true">&#9662;</i>' +
+      (sw ? '<i class="rb-sw rb-sw-master" role="switch" tabindex="0"' +
+            ' aria-checked="' + (sw.on ? "true" : "false") + '"' +
+            ' aria-label="' + esc(sw.label || label) + '"></i>' : "") +
+      '</span>';
     r.addEventListener("click", function (e) { e.stopPropagation(); act(); });
+    var el = r.querySelector(".rb-sw-master");
+    if (el && sw) {
+      var fire = function (e) {
+        e.stopPropagation(); e.preventDefault();
+        sw.act();
+        setTimeout(function () { render(); }, 0);
+      };
+      el.addEventListener("click", fire);
+      el.addEventListener("keydown", function (e) {
+        if (e.key === " " || e.key === "Enter") fire(e);
+      });
+    }
     return r;
   }
 
@@ -189,25 +210,42 @@
        clicking the one that is standing puts it back down. */
     var cubes = (window.Cube && window.Cube.list) ? window.Cube.list() : [];
     if (cubes.length) {
-      var live = window.Cube.current ? window.Cube.current() : null;
-      var open = cubesOpen === null ? !!live : cubesOpen;
+      var live = (window.Cube.live ? window.Cube.live() : []) || [];
+      var anyOn = live.length > 0;
+      var allOn = live.length === cubes.length;
+      var open = cubesOpen === null ? anyOn : cubesOpen;
       box.appendChild(sep());
-      box.appendChild(drawer(s("cubes"), open, cubes.length, function () {
-        cubesOpen = !open;
-        render();
-        /* Eleven periods do not fit under the layers in the space the menu
-           has, so opening the drawer brings its own head to the top rather
-           than leaving the reader to find it and scroll. */
-        if (cubesOpen) {
-          var m = $("rb-map-menu"), d = m && m.querySelector(".rb-drawer");
-          if (m && d) m.scrollTop = Math.max(0, d.offsetTop - 8);
-        }
-      }));
+      box.appendChild(drawer(
+        s("cubes"), open,
+        anyOn ? live.length + "/" + cubes.length : String(cubes.length),
+        function () {
+          cubesOpen = !open;
+          render();
+          /* Eleven periods do not fit under the layers in the space the menu
+             has, so opening the drawer brings its own head to the top rather
+             than leaving the reader to find it and scroll. */
+          if (cubesOpen) {
+            var m = $("rb-map-menu"), d = m && m.querySelector(".rb-drawer");
+            if (m && d) m.scrollTop = Math.max(0, d.offsetTop - 8);
+          }
+        },
+        /* The master switch: off puts every period down, on stands them all
+           up. Anything in between is reached by the rows underneath. */
+        { on: anyOn, label: anyOn ? s("cubesOff") : s("allPeriods"),
+          act: function () { window.Cube.all(!anyOn); } }
+      ));
       if (open) {
+        /* One row for all of them, then one row per period. Each is a switch
+           and not a radio, because several periods can stand at once and the
+           control has to say so. */
+        var r0 = row(s("allPeriods"), "switch", allOn, function () {
+          window.Cube.all(!allOn);
+        });
+        r0.classList.add("rb-sub", "rb-sub-all");
+        box.appendChild(r0);
         cubes.forEach(function (c) {
-          var r = row(c.label || c.title, "radio", c.id === live, function () {
+          var r = row(c.label || c.title, "switch", live.indexOf(c.id) >= 0, function () {
             window.Cube.toggle(c.id);
-            close();
           });
           r.classList.add("rb-sub");
           box.appendChild(r);

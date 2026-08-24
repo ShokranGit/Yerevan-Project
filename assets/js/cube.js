@@ -66,7 +66,8 @@
      its umbrella entry (which spans the whole period and would sit at the
      bottom meaning nothing), and its own caption in three languages. */
   var EPISODES = [];
-  var cur = null;                       /* the spec of the period now standing */
+  /* build() takes the period it is drawing as its own argument now; there
+     is no single current period any more. */
 
   function hex2rgb(h, dflt) {
     var m = /^#?([0-9a-f]{6})$/i.exec(String(h || ""));
@@ -138,7 +139,17 @@
     return EVENTS || [];
   }
 
-  var map = null, on = false, geo = null, layer = null;
+  var map = null, on = false, layer = null;
+
+  /* More than one period can stand at a time. LIVE is the list of built
+     cubes, in the order they went up; the last one is the primary, which is
+     the one the caption speaks for when only one is standing. A single cube
+     was the old case and is still the common one; nothing in the drawing
+     changes for it. */
+  var LIVE = [];
+  function liveIds() { return LIVE.map(function (g) { return g.id; }); }
+  function isLive(id) { return liveIds().indexOf(id) >= 0; }
+  function primary() { return LIVE.length ? LIVE[LIVE.length - 1] : null; }
   var lastMatrix = null, hover = null, wrap = null, labels = null;
   var winFrom = null, winTo = null;
 
@@ -157,8 +168,10 @@
 
   /* ---------------- the geometry ---------------- */
 
-  function build(events) {
+  function build(events, cur) {
     if (!cur) return null;
+    /* The period's own colour, held locally rather than on COL, because
+       several cubes can stand at once and each keeps its own. */
     COL.line = cur.line; COL.stay = cur.stay;
     var T0 = cur.t0, T1 = cur.t1;
     var all = (events || []).filter(function (e) {
@@ -405,7 +418,8 @@
     }
     seg([anchor[0], anchor[1], 0], [anchor[0], anchor[1], H], COL.box, 0.40, 0.18);
 
-    return { nodes: nodes, segs: segs, H: H, box: box, alt: alt,
+    return { id: cur.id, spec: cur, col: { line: cur.line, stay: cur.stay },
+             nodes: nodes, segs: segs, H: H, box: box, alt: alt,
              ticks: ticks, anchor: anchor, steps: stepPts,
              zLo: zLo, zStart: zStart,
              centre: [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2] };
@@ -466,7 +480,7 @@
      rather than baked into the geometry, because that is the one thing here
      that moves while the reader watches. Pressing play walks it up the
      thirty-nine days. */
-  function slabSegs() {
+  function slabSegs(geo) {
     if (winFrom === null || winTo === null || !geo) return [];
     var a = geo.alt(winFrom), b = geo.alt(winTo);
     if (b < a) { var t2 = a; a = b; b = t2; }
@@ -487,8 +501,8 @@
 
   /* Opacity outside the timeline window. The cube keeps its whole
      shape; the window is what is lit. */
-  function litFactor(z) {
-    if (winFrom === null || winTo === null) return 1;
+  function litFactor(geo, z) {
+    if (winFrom === null || winTo === null || !geo) return 1;
     var a = geo.alt(winFrom), b = geo.alt(winTo);
     if (b < a) { var t2 = a; a = b; b = t2; }
     var edge = geo.H * 0.004;
@@ -515,37 +529,42 @@
       },
 
       refill: function () {
-        if (!gl2 || !geo) return;
+        if (!gl2 || !LIVE.length) return;
         var gl = gl2;
+        var dpr = Math.min(2, window.devicePixelRatio || 1);
+        var L = [], D = [];
 
-        var L = [];
-        geo.segs.concat(slabSegs()).forEach(function (s) {
-          var pa = merc(s.a), pb = merc(s.b);
-          var oa = s.c === COL.slab ? s.o1 : s.o1 * litFactor(s.a[2]);
-          var ob = s.c === COL.slab ? s.o2 : s.o2 * litFactor(s.b[2]);
-          L.push(pa[0], pa[1], pa[2], s.c[0], s.c[1], s.c[2], oa);
-          L.push(pb[0], pb[1], pb[2], s.c[0], s.c[1], s.c[2], ob);
+        /* One buffer, every standing cube in it. The colours were baked in
+           at build time, so a period keeps its own hue however many others
+           are up beside it. */
+        LIVE.forEach(function (geo) {
+          geo.segs.concat(slabSegs(geo)).forEach(function (s) {
+            var pa = merc(s.a), pb = merc(s.b);
+            var oa = s.c === COL.slab ? s.o1 : s.o1 * litFactor(geo, s.a[2]);
+            var ob = s.c === COL.slab ? s.o2 : s.o2 * litFactor(geo, s.b[2]);
+            L.push(pa[0], pa[1], pa[2], s.c[0], s.c[1], s.c[2], oa);
+            L.push(pb[0], pb[1], pb[2], s.c[0], s.c[1], s.c[2], ob);
+          });
+          geo.nodes.forEach(function (n) {
+            var p = merc(n.p), f = litFactor(geo, n.p[2]);
+            var big = (hover === n.id) ? 15 : 10;
+            var c = geo.col.line;
+            /* a coloured halo, then the ivory disc inside it */
+            D.push(p[0], p[1], p[2], c[0], c[1], c[2], 0.85 * f, big * dpr);
+            D.push(p[0], p[1], p[2], COL.node[0], COL.node[1], COL.node[2], 0.95 * f, (big - 5) * dpr);
+          });
         });
+
         lineCount = L.length / 7;
         gl.bindBuffer(gl.ARRAY_BUFFER, lb);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(L), gl.DYNAMIC_DRAW);
-
-        var D = [];
-        var dpr = Math.min(2, window.devicePixelRatio || 1);
-        geo.nodes.forEach(function (n) {
-          var p = merc(n.p), f = litFactor(n.p[2]);
-          var big = (hover === n.id) ? 15 : 10;
-          /* a red halo, then the ivory disc inside it */
-          D.push(p[0], p[1], p[2], COL.line[0], COL.line[1], COL.line[2], 0.85 * f, big * dpr);
-          D.push(p[0], p[1], p[2], COL.node[0], COL.node[1], COL.node[2], 0.95 * f, (big - 5) * dpr);
-        });
         dotCount = D.length / 8;
         gl.bindBuffer(gl.ARRAY_BUFFER, db);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(D), gl.DYNAMIC_DRAW);
       },
 
       render: function (gl, matrix) {
-        if (!geo) return;
+        if (!LIVE.length) return;
         lastMatrix = matrix;
         gl.disable(gl.DEPTH_TEST);
         gl.enable(gl.BLEND);
@@ -606,21 +625,32 @@
   function drawLabels() {
     if (!labels) return;
     var html = [];
-    geo.ticks.forEach(function (k) {
-      if (!k.major) return;
-      var s = project(k.p); if (!s) return;
-      html.push('<span class="cb-tick" style="left:' + s.x.toFixed(1) + 'px;top:' +
-                s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain, k.longRun) + '</span>');
-    });
-    geo.steps.forEach(function (st, i) {
-      if (i === 0 || i === geo.steps.length - 1) {
-        var s = project(st.p); if (!s) return;
-        html.push('<span class="cb-town" style="left:' + s.x.toFixed(1) + 'px;top:' +
-                  s.y.toFixed(1) + 'px">' + st.name + '</span>');
-      }
+    /* Every cube has its own ruler, and eleven rulers over one city is
+       hatching, not type. So when several are standing only the newest one
+       is labelled; the others keep their ticks as lines. The caption says
+       which period the labelled ruler belongs to. */
+    var ruler = primary();
+    LIVE.forEach(function (geo) {
+      geo.ticks.forEach(function (k) {
+        if (!k.major || geo !== ruler) return;
+        var s = project(k.p); if (!s) return;
+        html.push('<span class="cb-tick" style="left:' + s.x.toFixed(1) + 'px;top:' +
+                  s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain, k.longRun) + '</span>');
+      });
+      geo.steps.forEach(function (st, i) {
+        if (i === 0 || i === geo.steps.length - 1) {
+          var s = project(st.p); if (!s) return;
+          html.push('<span class="cb-town" style="left:' + s.x.toFixed(1) + 'px;top:' +
+                    s.y.toFixed(1) + 'px">' + st.name + '</span>');
+        }
+      });
     });
     if (hover) {
-      var n = geo.nodes.filter(function (x) { return x.id === hover; })[0];
+      var n = null;
+      LIVE.forEach(function (geo) {
+        if (n) return;
+        n = geo.nodes.filter(function (x) { return x.id === hover; })[0] || null;
+      });
       var s2 = n && project(n.p);
       if (s2) {
         html.push('<span class="cb-hit" style="left:' + s2.x.toFixed(1) + 'px;top:' +
@@ -640,14 +670,16 @@
   /* ---------------- picking ---------------- */
 
   function hitTest(ev) {
-    if (!geo || !on) return null;
+    if (!LIVE.length) return null;
     var r = map.getCanvas().getBoundingClientRect();
     var mx = ev.clientX - r.left, my = ev.clientY - r.top;
     var best = null, bd = 16 * 16;
-    geo.nodes.forEach(function (n) {
-      var s = project(n.p); if (!s) return;
-      var d = (s.x - mx) * (s.x - mx) + (s.y - my) * (s.y - my);
-      if (d < bd) { bd = d; best = n; }
+    LIVE.forEach(function (geo) {
+      geo.nodes.forEach(function (n) {
+        var s = project(n.p); if (!s) return;
+        var d = (s.x - mx) * (s.x - mx) + (s.y - my) * (s.y - my);
+        if (d < bd) { bd = d; best = n; }
+      });
     });
     return best;
   }
@@ -728,28 +760,70 @@
     return { w: w, h: h, cx: left + w / 2, cy: top + h / 2 };
   }
 
-  function cubeCorners() {
-    var b = geo.box, H = geo.H, out = [];
-    [[b[0], b[1]], [b[2], b[1]], [b[2], b[3]], [b[0], b[3]]].forEach(function (p) {
-      out.push([p[0], p[1], 0]);
-      out.push([p[0], p[1], H]);
+  function cubeCorners(list) {
+    var out = [];
+    (list || LIVE).forEach(function (geo) {
+      var b = geo.box, H = geo.H;
+      [[b[0], b[1]], [b[2], b[1]], [b[2], b[3]], [b[0], b[3]]].forEach(function (p) {
+        out.push([p[0], p[1], 0]);
+        out.push([p[0], p[1], H]);
+      });
     });
     return out;
   }
 
+  /* The camera has to hold everything that is standing, so the ground it
+     measures is the union of the live boxes and the height is the tallest of
+     them. With one cube up this is exactly what build() worked out; with
+     several it is the only honest frame. */
+  function frameGeom() {
+    if (!LIVE.length) return null;
+
+    /* The same rule that keeps one cube from being flattened by a far entry,
+       applied to a shelf of cubes: frame the ones clustered around the median
+       centre and let an outlier lean in from beyond the edge. Without it,
+       standing the 1915 dossier up beside the city periods frames fourteen
+       hundred kilometres and the city becomes a speck. */
+    var cs = LIVE.map(function (g) { return g.centre; });
+    var lons = cs.map(function (c) { return c[0]; }).sort(function (a, b) { return a - b; });
+    var lats = cs.map(function (c) { return c[1]; }).sort(function (a, b) { return a - b; });
+    var mid = [lons[Math.floor(lons.length / 2)], lats[Math.floor(lats.length / 2)]];
+    var core = LIVE.filter(function (g) { return metresBetween(mid, g.centre) <= 40000; });
+    if (!core.length) core = LIVE;
+
+    var lo = [999, 999], hi = [-999, -999], H = 0;
+    core.forEach(function (g) {
+      lo[0] = Math.min(lo[0], g.box[0]); hi[0] = Math.max(hi[0], g.box[2]);
+      lo[1] = Math.min(lo[1], g.box[1]); hi[1] = Math.max(hi[1], g.box[3]);
+      H = Math.max(H, g.H);
+    });
+    var wide = metresBetween([lo[0], lo[1]], [hi[0], lo[1]]);
+    var tall = metresBetween([lo[0], lo[1]], [lo[0], hi[1]]);
+    var midLat = (lo[1] + hi[1]) / 2;
+    var mppNeed = Math.max(1, Math.max(wide, tall)) / 800;
+    var zFit = Math.log(156543.03 * Math.cos(midLat * Math.PI / 180) / mppNeed) / Math.LN2;
+    return {
+      centre: [(lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2],
+      H: H, core: core,
+      zLo: Math.max(1.5, Math.min(9.5, zFit - 1.5)),
+      zStart: Math.max(Math.max(1.5, Math.min(9.5, zFit - 1.5)), Math.min(12.4, zFit))
+    };
+  }
+
   function frameCube() {
-    var pts = cubeCorners();
+    var fg = frameGeom();
+    if (!fg) return;
+    var pts = cubeCorners(fg.core);
     var from = { center: map.getCenter(), zoom: map.getZoom(),
                  pitch: map.getPitch(), bearing: map.getBearing() };
     /* A continental cube is hundreds of kilometres tall, and at 64 degrees
        its top edge climbs past the horizon, where the projection stops
        being usable and the framing pass reads a wrong box. Flatten the
        camera for those. */
-    var tall3d = geo && geo.H > 100000;
+    var tall3d = fg.H > 100000;
     var pitch = tall3d ? 40 : 64, bearing = tall3d ? -18 : -22;
-    var zLo = (geo && geo.zLo != null) ? geo.zLo : 9.5;
-    map.jumpTo({ center: [geo.centre[0], geo.centre[1]],
-                 zoom: (geo && geo.zStart != null) ? geo.zStart : 12.4,
+    var zLo = fg.zLo;
+    map.jumpTo({ center: [fg.centre[0], fg.centre[1]], zoom: fg.zStart,
                  pitch: pitch, bearing: bearing });
     var rect = freeRect();
     for (var i = 0; i < 4; i++) {
@@ -802,17 +876,32 @@
      title is a switch, and on a phone it starts closed. */
   function caption(show) {
     var c = $("cube-note");
-    if (!show) { if (c) c.remove(); return; }
+    if (!show || !LIVE.length) { if (c) c.remove(); return; }
     if (c) c.remove();
-    if (!cur) return;
-    var ep = cur.ep;
     var phone = document.body.classList.contains("is-phone");
     c = document.createElement("div");
     c.id = "cube-note";
     c.className = phone ? "min" : "";
-    var title  = pick(ep, "cubeTitle")  || pick(ep, "label") || t("cube.title", "The cube");
-    var body   = pick(ep, "cubeBody")   || t("cube.body", "");
-    var method = pick(ep, "cubeMethod") || "";
+
+    var title, body, method;
+    if (LIVE.length === 1) {
+      var ep = LIVE[0].spec.ep;
+      title  = pick(ep, "cubeTitle")  || pick(ep, "label") || t("cube.title", "The cube");
+      body   = pick(ep, "cubeBody")   || t("cube.body", "");
+      method = pick(ep, "cubeMethod") || "";
+    } else {
+      /* Several at once. Naming them is the whole caption: which periods are
+         in the air, in the order they went up, and the one warning that
+         matters, which is that their heights mean different things. */
+      var names = LIVE.map(function (g) {
+        return pick(g.spec.ep, "label") || g.id;
+      });
+      title  = t("cube.many", "Space-time maps");
+      body   = t("cube.manyBody", "");
+      var lastName = names[names.length - 1];
+      method = names.join(" \u00b7 ") + ". " +
+               t("cube.manyRuler", "The labelled ruler is") + " " + lastName + "."; 
+    }
     c.innerHTML =
       '<button type="button" class="cb-head">' +
         '<b>' + esc(title) + '</b>' +
@@ -853,52 +942,85 @@
     sel.dispatchEvent(new Event("change", { bubbles: true }));
   }
 
-  var enterTries = 0, wantId = null;
-  function enter(id) {
-    if (!map) return;
-    if (id) wantId = id;
-    var spec = specById(wantId);
-    /* No episodes yet means the file is still in flight, not that there
-       are none to stand up. Wait for it rather than failing quietly. */
-    if (!spec) {
-      if (++enterTries < 24) setTimeout(function () { enter(); }, 500);
-      return;
-    }
-    if (on) {
-      if (spec.id === (cur && cur.id)) return;
-      leave(true);                       /* swapping periods, stay in the cube */
-    }
-    cur = spec;
-    wantId = spec.id;
-    geo = build(allEvents());
-    if (!geo) {
-      cur = null;
-      if (++enterTries < 24) setTimeout(function () { enter(); }, 500);
-      return;
-    }
-    enterTries = 0;
+  var enterTries = 0, wantIds = [];
+
+  /* Everything that has to happen once the live list has changed: the
+     drawing, the caption, the chips and the state. Kept in one place because
+     adding the fourth cube and removing the second are the same event as far
+     as the rest of the page is concerned. */
+  function refresh(frame) {
+    if (!LIVE.length) return;
     ensureLabels();
     readWindow();
-    layer = makeLayer();
-    try { map.addLayer(layer); } catch (err) { window.__cubeErr = String(err); return; }
+    if (!layer) {
+      layer = makeLayer();
+      try { map.addLayer(layer); }
+      catch (err) { window.__cubeErr = String(err); layer = null; return; }
+    } else if (layer.refill) {
+      layer.refill();
+    }
     on = true;
     document.body.classList.add("cube-on");
     caption(true);
     setPressed(true);
     toDrawn();
     markChips();
+    if (frame) frameCube();
+    map.triggerRepaint();
+  }
 
-    frameCube();
+  /* Stand a period up. It joins whatever is already standing rather than
+     replacing it: this map is one city over a century, and the periods are
+     meant to be readable against each other. */
+  function enter(id) {
+    if (!map) return;
+    if (id) { if (wantIds.indexOf(id) < 0) wantIds.push(id); }
+    var want = wantIds.slice();
+    if (!want.length) {
+      var first = cubeEpisodes()[0];
+      if (first) want = [first.id];
+    }
+    var added = 0, pending = 0;
+    want.forEach(function (wid) {
+      if (isLive(wid)) return;
+      var spec = specById(wid);
+      if (!spec) { pending++; return; }
+      var g = build(allEvents(), spec);
+      if (!g) { pending++; return; }
+      LIVE.push(g);
+      added++;
+    });
+    /* No episodes yet means the file is still in flight, not that there are
+       none to stand up. Wait for it rather than failing quietly. */
+    if (pending && ++enterTries < 24) { setTimeout(function () { enter(); }, 500); }
+    if (!added) return;
+    enterTries = 0;
+    refresh(true);
+  }
+
+  /* Put one period down, or all of them. */
+  function leaveOne(id) {
+    var i = liveIds().indexOf(id);
+    if (i < 0) return;
+    LIVE.splice(i, 1);
+    var w = wantIds.indexOf(id);
+    if (w >= 0) wantIds.splice(w, 1);
+    if (!LIVE.length) { leave(); return; }
+    hover = null;
+    if (layer && layer.refill) layer.refill();
+    caption(true);
+    markChips();
+    setPressed(true);
     map.triggerRepaint();
   }
 
   function leave(swapping) {
     if (!map || !on) return;
     try { if (map.getLayer("cube")) map.removeLayer("cube"); } catch (err) {}
-    on = false; geo = null; layer = null; hover = null;
+    on = false; LIVE = []; layer = null; hover = null;
     if (labels) labels.innerHTML = "";
     if (swapping) return;
-    cur = null;
+    wantIds = [];
     document.body.classList.remove("cube-on");
     caption(false);
     setPressed(false);
@@ -908,21 +1030,34 @@
                  center: [44.5136, 40.1818], duration: 1300 });
   }
 
+  /* All of them at once, which is the whole project standing up: eleven
+     periods over one city, each at its own height. */
+  function allOn() {
+    if (!map) return;
+    var ids = cubeEpisodes().map(function (sp) { return sp.id; });
+    if (!ids.length) {
+      if (++enterTries < 24) setTimeout(allOn, 500);
+      return;
+    }
+    ids.forEach(function (id) { if (wantIds.indexOf(id) < 0) wantIds.push(id); });
+    enter();
+  }
+
   /* The rail chips carry the cube glyph, and the glyph of the period that
      is standing should say so. */
   function markChips() {
     var chips = document.querySelectorAll(".tl-rail-chip[data-cube]");
     Array.prototype.forEach.call(chips, function (ch) {
-      var live = on && cur && ch.getAttribute("data-cube") === cur.id;
-      ch.classList.toggle("cube-live", !!live);
+      ch.classList.toggle("cube-live", on && isLive(ch.getAttribute("data-cube")));
     });
   }
 
   function setPressed(v) {
     var b = $("cube-btn");
     if (b) b.setAttribute("aria-pressed", v ? "true" : "false");
+    var p = primary();
     document.dispatchEvent(new CustomEvent("yy:cube", {
-      detail: { on: !!v, id: cur ? cur.id : null }
+      detail: { on: !!v, id: p ? p.id : null, ids: liveIds() }
     }));
   }
 
@@ -1012,22 +1147,38 @@
     if (bm) bm.addEventListener("change", rebuildSoon);
     map.on("style.load", rebuildSoon);
 
+    /* ?cube=<id>, or several ids separated by commas, or ?cube=all. The old
+       ?cube=1 still means the first period, because links to it exist. */
     var q = /[?&]cube=([^&]+)/.exec(location.search);
     if (q) {
       var want = decodeURIComponent(q[1]);
-      setTimeout(function () { enter(want === "1" ? null : want); }, 2200);
+      setTimeout(function () {
+        if (want === "all") { allOn(); return; }
+        if (want === "1") { enter(); return; }
+        want.split(",").forEach(function (id) {
+          id = id.trim();
+          if (id && wantIds.indexOf(id) < 0) wantIds.push(id);
+        });
+        enter();
+      }, 2200);
     }
   }
 
   window.Cube = {
     enter: enter,
-    leave: function () { leave(); },
+    leave: function (id) { if (id) leaveOne(id); else leave(); },
+    /* One period on or off, leaving the others where they are. */
     toggle: function (id) {
-      if (on && (!id || (cur && cur.id === id))) leave();
+      if (!id) { if (on) leave(); else enter(); return; }
+      if (isLive(id)) leaveOne(id);
       else enter(id);
     },
-    isOn: function () { return on; },
-    current: function () { return cur ? cur.id : null; },
+    /* The master switch, and the all-at-once view. Turning it off remembers
+       nothing: the drawer is where the choosing happens. */
+    all: function (v) { if (v === false) leave(); else allOn(); },
+    isOn: function (id) { return id ? isLive(id) : on; },
+    live: function () { return liveIds(); },
+    current: function () { var p = primary(); return p ? p.id : null; },
     /* The periods that can be stood up, for the ribbon and anything else
        that wants to offer them by name. */
     list: function () {
