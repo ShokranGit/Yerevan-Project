@@ -2752,6 +2752,13 @@ body.is-phone .march-note span{ font-size:9px; }
   margin-inline-start:9px;
 }
 .rb-row.rb-sub.on{ border-inline-start-color:color-mix(in srgb, var(--accent) 55%, var(--line)); }
+.rb-row.rb-sub-all{ font-size:12.5px; color:var(--text-2); }
+.rb-row.rb-sub-all.on{ color:var(--text); }
+/* the master switch sits inside the drawer head and is its own target */
+.rb-sw-master{ cursor:pointer; }
+.rb-drawer.sw-on .rb-sw-master{ background:color-mix(in srgb, var(--accent) 62%, var(--line)); }
+.rb-drawer.sw-on .rb-sw-master::after{ inset-inline-start:14px; background:#fff; }
+.rb-sw-master:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 
 /* the old row keeps working, out of sight, wherever it is not the phone */
 body.has-ribbon:not(.is-phone) #map-controls{
