@@ -1,0 +1,15 @@
+{
+  "version": 8,
+  "name": "The city, no earth",
+  "metadata": {
+    "note": "The drawn basemap with the ground taken out from under it. Same absence of tiles, glyphs, sprite and any other host; the difference is that this one also refuses the hillshade and the terrain, so there is no landform at all. Yerevan sits on a slope and the relief is worth seeing, which is why the drawn basemap keeps it; but the space-time cube is a few hundred hairlines standing in the air, and a shaded hillside under them is a photograph with a drawing lost on top of it. This ground exists for that case: the city as a plan, floating on nothing."
+  },
+  "sources": {},
+  "layers": [
+    {
+      "id": "bg",
+      "type": "background",
+      "paint": { "background-color": "#07090c" }
+    }
+  ]
+}
