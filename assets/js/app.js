@@ -3984,11 +3984,17 @@
      is what clicking the label does. A sticky note, then a period.
      ----------------------------------------------------------------- */
 
-  function episodeSpan(ep) {
+  /* A period's place on an axis. The main axis is 2000 to 2028; the century
+     axis is 1900 to 2000, and periods that fall entirely inside it were
+     invisible until the century got a rail of its own. Pass "century" to
+     measure against that one instead. */
+  function episodeSpan(ep, axis) {
+    var lo = axis === "century" ? state.cMin : state.tMin;
+    var hi = axis === "century" ? state.cMax : state.tMax;
     var a = parseDate(ep.start), b = parseDate(ep.end);
     if (a === null || b === null) return null;
-    var f0 = (a - state.tMin) / (state.tMax - state.tMin);
-    var f1 = (b - state.tMin) / (state.tMax - state.tMin);
+    var f0 = (a - lo) / (hi - lo);
+    var f1 = (b - lo) / (hi - lo);
     if (f1 < 0 || f0 > 1) return null;
     return { a: a, b: b, f0: Math.max(0, f0), f1: Math.min(1, f1) };
   }
@@ -4046,12 +4052,13 @@
        Chips are placed under their own span and then pushed right just far
        enough not to overlap the one before, so a chip always sits at or after
        the period it names. A tick joins each chip back to its place. */
-    if (rail) {
+    function buildRail(rail, axis) {
+      if (!rail) return;
       var w = rail.clientWidth || 1000;
       var items = [];
       state.episodes.forEach(function (ep, i) {
         if (ep.axis === false) return;
-        var sp = episodeSpan(ep);
+        var sp = episodeSpan(ep, axis);
         if (sp) items.push({ ep: ep, i: i, sp: sp });
       });
       items.sort(function (x, y) { return x.sp.f0 - y.sp.f0; });
@@ -4133,6 +4140,9 @@
         });
       });
     }
+
+    buildRail(rail, null);
+    buildRail($("cn-rail"), "century");
 
     box.querySelectorAll("[data-ep]").forEach(function (b) {
       b.addEventListener("click", function (evt) {
