@@ -52,7 +52,7 @@
           terrain: "Terrain in 3D", districts: "Yerevan districts", pins: "Event pins",
           region: "Armenia and the region",
           draw: "Draw on the map", reset: "Reset the view",
-          cube: "Space-time cube",
+          cube: "Space-time cube", cubes: "Space-time maps",
           vertical: "Vertical rail", horizontal: "Horizontal",
           on: "on", off: "off", noTool: "no tool", drawing: "drawing",
           d3: "3D", pinsShort: "pins", distShort: "districts" },
@@ -61,7 +61,7 @@
           terrain: "Ռելիեֆը 3D-ով", districts: "Երևանի վարչական շրջանները", pins: "Իրադարձությունների կետեր",
           region: "Հայաստանը և տարածաշրջանը",
           draw: "Գծել քարտեզին", reset: "Վերականգնել տեսքը",
-          cube: "Տարածաժամանակային խորանարդ",
+          cube: "Տարածաժամանակային խորանարդ", cubes: "Տարածաժամանակային քարտեզներ",
           vertical: "Ուղղահայաց", horizontal: "Հորիզոնական",
           on: "միացված", off: "անջատված", noTool: "գործիք չկա", drawing: "գծում",
           d3: "3D", pinsShort: "կետեր", distShort: "թաղամասեր" },
@@ -70,7 +70,7 @@
           terrain: "ناهمواری سه‌بعدی", districts: "نواحی ایروان", pins: "پین رویدادها",
           region: "ارمنستان و منطقه",
           draw: "روی نقشه بکشید", reset: "بازنشاندن نما",
-          cube: "مکعب زمان-مکان",
+          cube: "مکعب زمان-مکان", cubes: "نقشه‌های زمان-مکان",
           vertical: "ریل عمودی", horizontal: "افقی",
           on: "روشن", off: "خاموش", noTool: "بدون ابزار", drawing: "در حال کشیدن",
           d3: "سه‌بعدی", pinsShort: "پین‌ها", distShort: "نواحی" }
@@ -83,6 +83,12 @@
   function s(k) { return S[lang()][k] || S.en[k] || k; }
 
   var openMenu = null, built = false;
+
+  /* The space-time maps are a drawer inside the Map menu: eleven periods is
+     too long a list to hang open under the basemaps, and too important to
+     hide behind a second menu. null means nobody has touched it, and it
+     stands open when a cube is live so the reader can see which one. */
+  var cubesOpen = null;
 
   /* ---------------- reading the old controls ---------------- */
 
@@ -140,6 +146,22 @@
     return d;
   }
 
+  /* A drawer head: a row that opens a list under itself rather than doing
+     anything to the map. The count is on it because the number of periods
+     that can be stood up is a fact about the project, not decoration. */
+  function drawer(label, isOpen, count, act) {
+    var r = document.createElement("button");
+    r.type = "button";
+    r.className = "rb-row rb-drawer" + (isOpen ? " open" : "");
+    r.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    r.innerHTML = '<span>' + label + '</span>' +
+      '<span class="rb-drawer-end">' +
+      (count ? '<b class="rb-count">' + count + '</b>' : "") +
+      '<i class="rb-caret-s" aria-hidden="true">&#9662;</i></span>';
+    r.addEventListener("click", function (e) { e.stopPropagation(); act(); });
+    return r;
+  }
+
   function fillMap(box) {
     box.innerHTML = "";
     var sel = $("basemap-select");
@@ -160,41 +182,65 @@
     }
     box.appendChild(row(s("pins"), "switch", pressed("pins-btn"), function () { proxy("pins-btn"); }));
     box.appendChild(row(s("terrain"), "switch", pressed("terrain-btn"), function () { proxy("terrain-btn"); }));
+
+    /* A cube is a way of drawing the map, not an instrument like the pen, so
+       it lives here with the basemaps and the layers rather than in Tools.
+       Each row is a radio because only one period stands at a time, and
+       clicking the one that is standing puts it back down. */
+    var cubes = (window.Cube && window.Cube.list) ? window.Cube.list() : [];
+    if (cubes.length) {
+      var live = window.Cube.current ? window.Cube.current() : null;
+      var open = cubesOpen === null ? !!live : cubesOpen;
+      box.appendChild(sep());
+      box.appendChild(drawer(s("cubes"), open, cubes.length, function () {
+        cubesOpen = !open;
+        render();
+        /* Eleven periods do not fit under the layers in the space the menu
+           has, so opening the drawer brings its own head to the top rather
+           than leaving the reader to find it and scroll. */
+        if (cubesOpen) {
+          var m = $("rb-map-menu"), d = m && m.querySelector(".rb-drawer");
+          if (m && d) m.scrollTop = Math.max(0, d.offsetTop - 8);
+        }
+      }));
+      if (open) {
+        cubes.forEach(function (c) {
+          var r = row(c.label || c.title, "radio", c.id === live, function () {
+            window.Cube.toggle(c.id);
+            close();
+          });
+          r.classList.add("rb-sub");
+          box.appendChild(r);
+        });
+      }
+    } else if ($("cube-btn")) {
+      box.appendChild(sep());
+      box.appendChild(row(s("cube"), "switch", pressed("cube-btn"), function () { proxy("cube-btn"); }));
+    }
   }
 
   function fillTools(box) {
     box.innerHTML = "";
-    box.appendChild(head(s("instruments")));
+    /* The space-time maps used to be listed here, under Instruments. They are
+       a way of drawing the map rather than an instrument to work with, so
+       they moved into the Map menu, into a drawer of their own. That left the
+       heading able to stand over nothing when draw.js is late, so the heading
+       is now written only if the pen is actually there. */
+    var first = true;
     if ($("draw-btn")) {
+      box.appendChild(head(s("instruments")));
       box.appendChild(row(s("draw"), "switch", pressed("draw-btn"), function () { proxy("draw-btn"); }));
-    }
-    /* The cube is an instrument, not a layer: it changes what the map is
-       drawing, so it belongs beside the pen and not beside the basemaps.
-       There is more than one period that can be stood up now, so this is a
-       short list of them rather than a single switch; each row is a radio,
-       because only one cube stands at a time. */
-    var cubes = (window.Cube && window.Cube.list) ? window.Cube.list() : [];
-    if (cubes.length) {
-      box.appendChild(sep());
-      box.appendChild(head(s("cube")));
-      var live = window.Cube.current ? window.Cube.current() : null;
-      cubes.forEach(function (c) {
-        box.appendChild(row(c.label || c.title, "radio", c.id === live, function () {
-          window.Cube.toggle(c.id);
-          close();
-        }));
-      });
-    } else if ($("cube-btn")) {
-      box.appendChild(row(s("cube"), "switch", pressed("cube-btn"), function () { proxy("cube-btn"); }));
+      first = false;
     }
     if ($("tl-mode")) {
-      box.appendChild(sep());
+      if (!first) box.appendChild(sep());
+      first = false;
       box.appendChild(head(s("timeline")));
       var v = verticalNow();
       box.appendChild(row(s("vertical"), "radio", v, function () { if (!verticalNow()) proxy("tl-mode"); }));
       box.appendChild(row(s("horizontal"), "radio", !v, function () { if (verticalNow()) proxy("tl-mode"); }));
     }
-    box.appendChild(sep());
+    if (!first) box.appendChild(sep());
     box.appendChild(row(s("reset"), "action", false, function () { proxy("reset-btn"); close(); }));
   }
 
@@ -349,8 +395,8 @@
        the end. Moving a node inside its own parent keeps every listener. */
     var groups = [
       ["basemap", ["basemap-select"]],
-      ["layers",  ["districts-btn", "region-btn", "pins-btn", "terrain-btn"]],
-      ["instruments", ["draw-btn", "cube-btn", "tl-mode", "reset-btn"]],
+      ["layers",  ["districts-btn", "region-btn", "pins-btn", "terrain-btn", "cube-btn"]],
+      ["instruments", ["draw-btn", "tl-mode", "reset-btn"]],
       ["",        ["about-btn"]]
     ];
     /* What the sheet should read like, top to bottom, as a single string. If
