@@ -5089,7 +5089,8 @@
       "note": "Thirty-nine days from the walk leaving Gyumri to the parliamentary vote that made Pashinyan prime minister.",
       "spur": {
         "kind": "events"
-      }
+      },
+      "cube": true
     },
     {
       "id": "genocide-commemoration",
