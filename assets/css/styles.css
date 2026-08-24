@@ -3014,7 +3014,9 @@ body.is-phone .cb-tick{ display:none; }
   background:rgba(255,255,255,.07);
   outline:none;
 }
-body.cube-on .tl-rail-cube{
+/* More than one period can be stood up now, so the lit glyph is the one
+   whose cube is actually standing, not every glyph on the rail. */
+.tl-rail-chip.cube-live .tl-rail-cube{
   color:var(--ep, var(--accent));
   background:rgba(255,255,255,.10);
 }
