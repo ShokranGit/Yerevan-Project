@@ -170,12 +170,22 @@
     /* The cube is proportioned by the city it stands on, not by a
        number picked in advance: as tall as the ground it covers is
        wide, so it reads as a cube and not as a mast or a pancake.
-       Gyumri is a hundred kilometres away and would flatten
-       everything, so the proportion is taken from the Yerevan
-       entries and the walk simply leans in from outside. */
-    var kentron = all.filter(function (e) { return e.coordinates[0] > 44.3; });
+
+       Some periods reach far outside the city: the walk from Gyumri in
+       2018, Stepanakert and Shushi in 2020. One such point would flatten
+       the whole drawing into a pancake, so the proportion is taken from
+       the CORE, the entries clustered around the median place, and the
+       far ones lean in from outside and fade with distance. The core is
+       found rather than assumed, so no coordinate is hard coded here. */
+    var lons = all.map(function (e) { return e.coordinates[0]; }).sort(function (a, b) { return a - b; });
+    var lats = all.map(function (e) { return e.coordinates[1]; }).sort(function (a, b) { return a - b; });
+    var mid = [ lons[Math.floor(lons.length / 2)], lats[Math.floor(lats.length / 2)] ];
+    var CORE_M = 25000;                 /* 25 km: a city and its edge */
+    var core = all.filter(function (e) { return metresBetween(mid, e.coordinates) <= CORE_M; });
+    if (!core.length) core = all;
+
     var lo = [ 999, 999 ], hi = [ -999, -999 ];
-    kentron.forEach(function (e) {
+    core.forEach(function (e) {
       lo[0] = Math.min(lo[0], e.coordinates[0]); hi[0] = Math.max(hi[0], e.coordinates[0]);
       lo[1] = Math.min(lo[1], e.coordinates[1]); hi[1] = Math.max(hi[1], e.coordinates[1]);
     });
@@ -184,6 +194,12 @@
     var wide = metresBetween([box[0], box[1]], [box[2], box[1]]);
     var tall = metresBetween([box[0], box[1]], [box[0], box[3]]);
     var H = Math.max(3500, Math.min(9000, Math.max(wide, tall)));
+
+    /* Is this point outside the cube's own ground? Used to fade the far
+       legs and to keep the stalks and the footprint inside the volume. */
+    function outside(p) {
+      return p[0] < box[0] || p[0] > box[2] || p[1] < box[1] || p[1] > box[3];
+    }
 
     function alt(ms) { return (ms - T0) / (T1 - T0) * H; }
 
@@ -213,8 +229,12 @@
 
     /* --- the worldline: the revolution's own thread through the cube --- */
     for (var i = 1; i < chain.length; i++) {
-      if (chain[i - 1].p[0] < 44.3 || chain[i].p[0] < 44.3) continue; /* the walk carries that leg */
-      seg(chain[i - 1].p, chain[i].p, COL.line, 0.62);
+      var A = chain[i - 1].p, B = chain[i].p;
+      /* A leg that leaves the city is drawn, but faintly, and only when a
+         documented walk is not already carrying it. Two hundred kilometres
+         of hairline at full strength would be the only thing anyone saw. */
+      if (cur.walk && (outside(A) || outside(B))) continue;
+      seg(A, B, COL.line, outside(A) ? 0.18 : 0.62, outside(B) ? 0.18 : 0.62);
     }
 
     /* --- a documented walk, if this period has one, leaning in from
@@ -270,14 +290,14 @@
     /* --- stalks: every disc dropped to the ground, so you can read
            where it is without leaving the height it is at --- */
     nodes.forEach(function (n) {
-      if (n.p[0] < 44.3) return;
+      if (outside(n.p)) return;
       seg([n.p[0], n.p[1], 0], n.p, COL.stalk, 0.05, 0.30);
     });
 
     /* --- the footprint: Kraak's ground projection, the plan of the
            thirty-nine days lying flat under them --- */
     for (i = 1; i < chain.length; i++) {
-      if (chain[i - 1].p[0] < 44.3 || chain[i].p[0] < 44.3) continue;
+      if (outside(chain[i - 1].p) || outside(chain[i].p)) continue;
       seg([chain[i - 1].p[0], chain[i - 1].p[1], 0],
           [chain[i].p[0], chain[i].p[1], 0], COL.shade, 0.40);
     }
@@ -287,7 +307,7 @@
            Square is the tall one, and that is the finding. --- */
     var seen = {};
     chain.forEach(function (n) {
-      if (n.p[0] < 44.3) return;
+      if (outside(n.p)) return;
       var k = n.p[0].toFixed(4) + "," + n.p[1].toFixed(4);
       (seen[k] || (seen[k] = [])).push(n);
     });
