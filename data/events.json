@@ -663,10 +663,10 @@
     },
     {
       "id": "karabakh-movement-1988",
-      "title": "The Karabakh movement fills Theatre Square",
-      "date": "1988-02",
-      "datePrecision": "month",
-      "dateEnd": "1990",
+      "title": "18 to 26 February 1988: the square doubles every day",
+      "date": "1988-02-18",
+      "datePrecision": "day",
+      "dateEnd": "1988-02-26",
       "coordinates": [
         44.5152,
         40.1859
@@ -677,8 +677,8 @@
         "conflict",
         "politics"
       ],
-      "summary": "After the regional soviet of Nagorno-Karabakh asked to be transferred to Armenia, the rallies in Yerevan grew within days from thousands to hundreds of thousands. Theatre Square, in front of the Opera, became the standing address of the movement, and the Karabakh Committee that formed around it became the country's real opposition.",
-      "analysis": "The square that 1965 had opened is now occupied continuously, and the difference matters: a demonstration visits a place, a movement lives in one. The Opera's forecourt is the first space in Soviet Armenia to be held rather than used.\n\nIt is also the moment the map's two squares separate. The authorities keep Lenin Square, the movement keeps the Opera, and the city carries that division into 2018, when the whole argument of the revolution becomes how to get from one to the other.",
+      "summary": "After the regional soviet of Nagorno-Karabakh asked to be transferred to Armenia, the rallies in Yerevan grew within days from thousands to hundreds of thousands. Theatre Square, in front of the Opera, became the standing address of the movement, and the Karabakh Committee that formed around it became the country's real opposition. Thirty thousand stood there on 20 February. By the 22nd and 23rd the estimates run from three hundred thousand to a million, in a city of about a million and a quarter.",
+      "analysis": "The square that 1965 had opened is now occupied continuously, and the difference matters: a demonstration visits a place, a movement lives in one. The Opera's forecourt is the first space in Soviet Armenia to be held rather than used.\n\nIt is also the moment the map's two squares separate. The authorities keep Lenin Square, the movement keeps the Opera, and the city carries that division into 2018, when the whole argument of the revolution becomes how to get from one to the other.\n\nNine days, and the crowd is a column nine days tall in the cube. Nothing else on this map before 2018 stands still for that long in one place.",
       "actors": [
         "Karabakh Committee",
         "Yerevan crowds",
@@ -699,13 +699,17 @@
         {
           "title": "Abrahamyan (2012)",
           "note": "the two squares divided between the people and the authorities"
+        },
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
         }
       ],
       "media": [],
-      "title_hy": "Ղարաբաղյան շարժումը լցնում է Թատերական հրապարակը",
+      "title_hy": "1988 թ. փետրվարի 18-26. հրապարակը ամեն օր կրկնապատկվում է",
       "location_hy": "Թատերական հրապարակ (այժմ՝ Ազատության հրապարակ)",
-      "summary_hy": "Այն բանից հետո, երբ Լեռնային Ղարաբաղի մարզխորհուրդը խնդրեց միանալ Հայաստանին, Երևանի հանրահավաքները օրերի ընթացքում հազարներից հասան հարյուր հազարների։ Օպերայի դիմացի Թատերական հրապարակը դարձավ շարժման մշտական հասցեն, իսկ դրա շուրջ ձևավորված Ղարաբաղ կոմիտեն՝ երկրի իրական ընդդիմությունը։",
-      "analysis_hy": "1965-ի բացած հրապարակն այժմ զբաղեցված է անընդհատ, և տարբերությունը կարևոր է․ ցույցը այցելում է վայր, շարժումն ապրում է դրանում։ Օպերայի դիմացի տարածքը Խորհրդային Հայաստանում առաջին տարածքն է, որը ոչ թե օգտագործվում, այլ պահվում է։\n\nԴա նաև այն պահն է, երբ քարտեզի երկու հրապարակները բաժանվում են։ Իշխանությունները պահում են Լենինի հրապարակը, շարժումը՝ Օպերան, և քաղաքն այդ բաժանումը տանում է մինչև 2018 թվականը, երբ հեղափոխության ողջ փաստարկը դառնում է այն, թե ինչպես անցնել մեկից մյուսը։",
+      "summary_hy": "Այն բանից հետո, երբ Լեռնային Ղարաբաղի մարզխորհուրդը խնդրեց միանալ Հայաստանին, Երևանի հանրահավաքները օրերի ընթացքում հազարներից հասան հարյուր հազարների։ Օպերայի դիմացի Թատերական հրապարակը դարձավ շարժման մշտական հասցեն, իսկ դրա շուրջ ձևավորված Ղարաբաղ կոմիտեն՝ երկրի իրական ընդդիմությունը։ Փետրվարի 20-ին այնտեղ կանգնած էր երեսուն հազար մարդ։ 22-ին և 23-ին գնահատականները տատանվում են երեք հարյուր հազարից մինչև մեկ միլիոն՝ մոտ մեկ ու քառորդ միլիոն բնակիչ ունեցող քաղաքում։",
+      "analysis_hy": "1965-ի բացած հրապարակն այժմ զբաղեցված է անընդհատ, և տարբերությունը կարևոր է․ ցույցը այցելում է վայր, շարժումն ապրում է դրանում։ Օպերայի դիմացի տարածքը Խորհրդային Հայաստանում առաջին տարածքն է, որը ոչ թե օգտագործվում, այլ պահվում է։\n\nԴա նաև այն պահն է, երբ քարտեզի երկու հրապարակները բաժանվում են։ Իշխանությունները պահում են Լենինի հրապարակը, շարժումը՝ Օպերան, և քաղաքն այդ բաժանումը տանում է մինչև 2018 թվականը, երբ հեղափոխության ողջ փաստարկը դառնում է այն, թե ինչպես անցնել մեկից մյուսը։\n\nԻնը օր, և ամբոխը խորանարդում ինը օր բարձրությամբ սյուն է։ Այս քարտեզի վրա մինչև 2018 թվականը ոչ մի այլ բան այդքան երկար չի կանգնում մեկ տեղում։",
       "actors_hy": [
         "Ղարաբաղ կոմիտե",
         "Երևանի բազմությունը",
@@ -719,10 +723,10 @@
         "Լեռնային Ղարաբաղ",
         "վերակառուցում"
       ],
-      "title_fa": "جنبش قره‌باغ میدان تئاتر را پر می‌کند",
+      "title_fa": "۱۸ تا ۲۶ فوریهٔ ۱۹۸۸: میدان هر روز دو برابر می‌شود",
       "location_fa": "میدان تئاتر (اکنون میدان آزادی)",
-      "summary_fa": "پس از آنکه شورای منطقه‌ای قره‌باغ کوهستانی خواستار الحاق به ارمنستان شد، تجمع‌های ایروان ظرف چند روز از هزاران نفر به صدها هزار نفر رسید. میدان تئاتر، روبه‌روی اپرا، به نشانی دائمی جنبش بدل شد و کمیتهٔ قره‌باغ که گرد آن شکل گرفت، اپوزیسیون واقعی کشور شد.",
-      "analysis_fa": "میدانی که ۱۹۶۵ گشوده بود اکنون به‌طور پیوسته اشغال شده است، و این تفاوت مهم است: یک تظاهرات به مکانی سر می‌زند، یک جنبش در آن زندگی می‌کند. محوطهٔ جلوی اپرا نخستین فضای ارمنستان شوروی است که به‌جای استفاده‌شدن، نگه‌داشته می‌شود.\n\nاین همچنین لحظه‌ای است که دو میدانِ نقشه از هم جدا می‌شوند. مقامات میدان لنین را نگه می‌دارند، جنبش اپرا را، و شهر این تقسیم را تا ۲۰۱۸ با خود می‌برد، آنجا که تمام استدلال انقلاب همین می‌شود: چگونه از یکی به دیگری برسیم.",
+      "summary_fa": "پس از آنکه شورای منطقه‌ای قره‌باغ کوهستانی خواستار الحاق به ارمنستان شد، تجمع‌های ایروان ظرف چند روز از هزاران نفر به صدها هزار نفر رسید. میدان تئاتر، روبه‌روی اپرا، به نشانی دائمی جنبش بدل شد و کمیتهٔ قره‌باغ که گرد آن شکل گرفت، اپوزیسیون واقعی کشور شد. در ۲۰ فوریه سی هزار نفر آنجا ایستادند. در ۲۲ و ۲۳ فوریه برآوردها از سیصد هزار تا یک میلیون است، در شهری با حدود یک میلیون و ربع جمعیت.",
+      "analysis_fa": "میدانی که ۱۹۶۵ گشوده بود اکنون به‌طور پیوسته اشغال شده است، و این تفاوت مهم است: یک تظاهرات به مکانی سر می‌زند، یک جنبش در آن زندگی می‌کند. محوطهٔ جلوی اپرا نخستین فضای ارمنستان شوروی است که به‌جای استفاده‌شدن، نگه‌داشته می‌شود.\n\nاین همچنین لحظه‌ای است که دو میدانِ نقشه از هم جدا می‌شوند. مقامات میدان لنین را نگه می‌دارند، جنبش اپرا را، و شهر این تقسیم را تا ۲۰۱۸ با خود می‌برد، آنجا که تمام استدلال انقلاب همین می‌شود: چگونه از یکی به دیگری برسیم.\n\nنُه روز، و جمعیت در مکعب ستونی نُه‌روزه است. هیچ چیز دیگری روی این نقشه پیش از ۲۰۱۸ این‌قدر طولانی در یک جا نمی‌ایستد.",
       "actors_fa": [
         "کمیتهٔ قره‌باغ",
         "جمعیت ایروان",
@@ -735,13 +739,14 @@
         "میدان اپرا",
         "قره‌باغ کوهستانی",
         "پرسترویکا"
-      ]
+      ],
+      "episode": "karabakh-movement"
     },
     {
       "id": "people-power-1988",
       "title": "People Power: the square passes to the people",
-      "date": "1988-02",
-      "datePrecision": "month",
+      "date": "1988-02-22",
+      "datePrecision": "day",
       "coordinates": [
         44.5152,
         40.1859
@@ -800,7 +805,8 @@
         "۱۹۸۸",
         "میدان اپرا",
         "اجتماع عمومی"
-      ]
+      ],
+      "episode": "karabakh-movement"
     },
     {
       "id": "arf-ban-protests-1994",
@@ -9126,6 +9132,822 @@
       "media": [],
       "episode": "recognition-1965",
       "datePrecision": "day"
+    },
+    {
+      "id": "karabakh-movement-umbrella",
+      "title": "The Karabakh movement, 1988 to 1990",
+      "title_hy": "Ղարաբաղյան շարժումը, 1988-1990",
+      "title_fa": "جنبش قره‌باغ، ۱۹۸۸ تا ۱۹۹۰",
+      "date": "1988-02-13",
+      "dateEnd": "1990-05-20",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Theatre Square in Yerevan, and Stepanakert",
+      "location_hy": "Երևանի Թատերական հրապարակ և Ստեփանակերտ",
+      "location_fa": "میدان تئاتر در ایروان، و استپاناکرت",
+      "categories": [
+        "protest",
+        "politics",
+        "state",
+        "memory"
+      ],
+      "summary": "It began in Stepanakert on 13 February 1988 with about eight thousand people, and on 20 February the regional soviet of Nagorno-Karabakh voted 110 to 17 to ask to be transferred to Soviet Armenia. In Yerevan the rallies in Theatre Square doubled each day, from thirty thousand on 20 February to somewhere between three hundred thousand and a million by the 22nd and 23rd: the largest gatherings in the Soviet Union since the 1920s. Then the killings in Sumgait at the end of February, general strikes, a death at Zvartnots airport in July, hundreds of thousands in the square in November, a state of emergency on 24 November, the earthquake of 7 December, and the arrest of the Karabakh Committee on 10 December. The Committee was released in May 1989, became the Armenian National Movement, carried the joint declaration of unification on 1 December 1989, and won the elections of 20 May 1990.",
+      "summary_hy": "Այն սկսվեց Ստեփանակերտում 1988 թվականի փետրվարի 13-ին մոտ ութ հազար մարդով, իսկ փետրվարի 20-ին Լեռնային Ղարաբաղի մարզխորհուրդը 110 կողմ, 17 դեմ ձայնով որոշեց խնդրել միացումը Խորհրդային Հայաստանին։ Երևանում Թատերական հրապարակի հանրահավաքները ամեն օր կրկնապատկվում էին՝ փետրվարի 20-ի երեսուն հազարից մինչև երեք հարյուր հազարից մեկ միլիոն 22-ին և 23-ին. Խորհրդային Միության ամենամեծ հավաքները 1920-ականներից ի վեր։ Ապա փետրվարի վերջին Սումգայիթի սպանությունները, համընդհանուր գործադուլներ, հուլիսին մահ Զվարթնոց օդանավակայանում, նոյեմբերին հարյուր հազարավորներ հրապարակում, նոյեմբերի 24-ի արտակարգ դրություն, դեկտեմբերի 7-ի երկրաշարժ և դեկտեմբերի 10-ին Ղարաբաղ կոմիտեի ձերբակալությունը։ Կոմիտեն ազատվեց 1989-ի մայիսին, դարձավ Հայոց համազգային շարժում, 1989 թվականի դեկտեմբերի 1-ին ընդունեց միացման համատեղ որոշումը և հաղթեց 1990 թվականի մայիսի 20-ի ընտրություններում։",
+      "summary_fa": "در استپاناکرت آغاز شد، ۱۳ فوریهٔ ۱۹۸۸، با حدود هشت هزار نفر، و در ۲۰ فوریه شورای منطقه‌ای قره‌باغ کوهستانی با ۱۱۰ رأی موافق در برابر ۱۷ رأی خواستار الحاق به ارمنستان شوروی شد. در ایروان تجمع‌های میدان تئاتر هر روز دو برابر می‌شد: از سی هزار نفر در ۲۰ فوریه تا جایی میان سیصد هزار و یک میلیون در ۲۲ و ۲۳ فوریه؛ بزرگ‌ترین گردهمایی‌های اتحاد شوروی از دههٔ ۱۹۲۰. سپس کشتار سومگاییت در پایان فوریه، اعتصاب‌های عمومی، مرگی در فرودگاه زوارتنوتس در ژوئیه، صدها هزار نفر در میدان در نوامبر، حکومت نظامی در ۲۴ نوامبر، زمین‌لرزهٔ ۷ دسامبر، و بازداشت کمیتهٔ قره‌باغ در ۱۰ دسامبر. کمیته در مه ۱۹۸۹ آزاد شد، به جنبش ملی ارمنستان بدل شد، در ۱ دسامبر ۱۹۸۹ اعلامیهٔ مشترک الحاق را برد و در انتخابات ۲۰ مه ۱۹۹۰ پیروز شد.",
+      "analysis": "This is where the square this map keeps returning to becomes political ground, and the mechanism is worth stating plainly.\n\nTheatre Square is in front of the Opera. It is not the ceremonial square: that is Lenin Square, a kilometre south, built by Tamanyan for parades and holding the Central Committee, the ministries and the statue. In February 1988 the crowd did not go to Lenin Square. It filled the other one, the one that was for concerts and evenings out, and by filling it made a second centre in the city with no state building on it at all. Abrahamian's reading of Yerevan turns on this: the people's square and the square of statehood, and the whole later history of this map is the argument between them.\n\nTwo other things the movement establishes for good. First, the walk: marches formed at the Matenadaran, on the axis above the square, and came down Mashtots into the crowd, which is exactly the route the genocide commemoration and the 2018 revolution still use. Second, the discovery that an unarmed crowd can hold a square for weeks and that the Soviet state, unlike in 1965, could not simply clear it with water. It took a state of emergency in November and an earthquake in December to empty Theatre Square, and the men who had stood on its steps were running the republic within two years.",
+      "analysis_hy": "Ահա որտեղ այն հրապարակը, ուր այս քարտեզը անընդհատ վերադառնում է, դառնում է քաղաքական հող, և մեխանիզմն արժե ուղղակի ասել։\n\nԹատերական հրապարակը Օպերայի դիմաց է։ Այն արարողական հրապարակը չէ. արարողականը Լենինի հրապարակն է՝ մեկ կիլոմետր հարավ, Թամանյանի կառուցած՝ շքերթների համար, որտեղ կենտկոմն է, նախարարություններն ու արձանը։ 1988 թվականի փետրվարին ամբոխը Լենինի հրապարակ չգնաց։ Այն լցրեց մյուսը՝ համերգների և երեկոների հրապարակը, և լցնելով ստեղծեց քաղաքում երկրորդ կենտրոն, որի վրա ոչ մի պետական շենք չկա։ Աբրահամյանի ընթերցումը հենց սրա շուրջ է՝ ժողովրդի հրապարակը և պետականության հրապարակը, և այս քարտեզի ողջ հետագա պատմությունը նրանց միջև վեճն է։\n\nԵվս երկու բան, որ շարժումը հաստատում է վերջնականապես։ Առաջին՝ քայլերթը. երթերը ձևավորվում էին Մատենադարանի մոտ՝ հրապարակից վեր առանցքի վրա, և Մաշտոցով իջնում ամբոխի մեջ. հենց այդ երթուղին են մինչ օրս օգտագործում ցեղասպանության ոգեկոչումը և 2018-ի հեղափոխությունը։ Երկրորդ՝ այն հայտնագործությունը, որ անզեն ամբոխը կարող է շաբաթներով պահել հրապարակը, և որ խորհրդային պետությունը, ի տարբերություն 1965-ի, չէր կարող այն պարզապես ջրով մաքրել։ Թատերական հրապարակը դատարկելու համար պահանջվեց նոյեմբերի արտակարգ դրությունը և դեկտեմբերի երկրաշարժը, իսկ նրա աստիճաններին կանգնած մարդիկ երկու տարի անց ղեկավարում էին հանրապետությունը։",
+      "analysis_fa": "اینجاست که میدانی که این نقشه پیوسته به آن بازمی‌گردد، به زمینِ سیاسی بدل می‌شود، و سازوکارش ارزش صریح گفتن دارد.\n\nمیدان تئاتر روبه‌روی اپراست. میدان تشریفاتی نیست: آن میدان لنین است، یک کیلومتر جنوب‌تر، ساختهٔ تامانیان برای رژه، جایی که کمیتهٔ مرکزی و وزارتخانه‌ها و مجسمه در آن بودند. در فوریهٔ ۱۹۸۸ جمعیت به میدان لنین نرفت. آن یکی را پر کرد، میدانِ کنسرت و شب‌گردی را، و با پر کردنش مرکز دومی در شهر ساخت که هیچ ساختمان دولتی روی آن نیست. خوانش آبراهامیان از ایروان بر همین می‌چرخد: میدانِ مردم و میدانِ دولت، و تمام تاریخ بعدیِ این نقشه، نزاع میان این دو است.\n\nدو چیز دیگر که جنبش برای همیشه تثبیت می‌کند. نخست، راهپیمایی: صف‌ها کنار ماتناداران، بر محور بالای میدان، شکل می‌گرفت و از ماشتوتس به درون جمعیت سرازیر می‌شد؛ همان مسیری که یادبود نسل‌کشی و انقلاب ۲۰۱۸ هنوز به کار می‌برند. دوم، این کشف که جمعیتی بی‌سلاح می‌تواند هفته‌ها میدانی را نگه دارد و دولت شوروی، برخلاف ۱۹۶۵، نمی‌توانست آن را فقط با آب پاک کند. برای خالی کردن میدان تئاتر، حکومت نظامیِ نوامبر و زمین‌لرزهٔ دسامبر لازم شد، و مردانی که روی پله‌هایش ایستاده بودند، دو سال بعد جمهوری را اداره می‌کردند.",
+      "actors": [
+        "Karabakh Committee",
+        "Levon Ter-Petrosyan",
+        "Vazgen Manukyan",
+        "Ashot Manucharyan",
+        "the crowd of Theatre Square"
+      ],
+      "actors_hy": [
+        "Ղարաբաղ կոմիտե",
+        "Լևոն Տեր-Պետրոսյան",
+        "Վազգեն Մանուկյան",
+        "Աշոտ Մանուչարյան",
+        "Թատերական հրապարակի ամբոխը"
+      ],
+      "actors_fa": [
+        "کمیتهٔ قره‌باغ",
+        "لوون تر-پطروسیان",
+        "وازگن مانوکیان",
+        "آشوت مانوچاریان",
+        "جمعیت میدان تئاتر"
+      ],
+      "tags": [
+        "Karabakh movement",
+        "Theatre Square",
+        "1988",
+        "Sumgait",
+        "earthquake",
+        "Armenian National Movement"
+      ],
+      "tags_hy": [
+        "Ղարաբաղյան շարժում",
+        "Թատերական հրապարակ",
+        "1988",
+        "Սումգայիթ",
+        "երկրաշարժ",
+        "Հայոց համազգային շարժում"
+      ],
+      "tags_fa": [
+        "جنبش قره‌باغ",
+        "میدان تئاتر",
+        "۱۹۸۸",
+        "سومگاییت",
+        "زمین‌لرزه",
+        "جنبش ملی ارمنستان"
+      ],
+      "chronology": [
+        {
+          "when": "13 Feb 1988",
+          "note": "About eight thousand people in the square at Stepanakert.",
+          "note_hy": "Մոտ ութ հազար մարդ Ստեփանակերտի հրապարակում։",
+          "note_fa": "حدود هشت هزار نفر در میدان استپاناکرت."
+        },
+        {
+          "when": "20 Feb",
+          "note": "The regional soviet votes 110 to 17 to ask for transfer to Soviet Armenia. Thirty thousand in Theatre Square in Yerevan.",
+          "note_hy": "Մարզխորհուրդը 110 կողմ, 17 դեմ որոշում է խնդրել միացումը Խորհրդային Հայաստանին։ Երևանի Թատերական հրապարակում՝ երեսուն հազար։",
+          "note_fa": "شورای منطقه با ۱۱۰ رأی در برابر ۱۷ خواستار الحاق به ارمنستان شوروی می‌شود. سی هزار نفر در میدان تئاتر ایروان."
+        },
+        {
+          "when": "22-26 Feb",
+          "note": "The crowd doubles each day, to somewhere between three hundred thousand and a million.",
+          "note_hy": "Ամբոխը ամեն օր կրկնապատկվում է՝ հասնելով երեք հարյուր հազարից մեկ միլիոնի։",
+          "note_fa": "جمعیت هر روز دو برابر می‌شود، تا جایی میان سیصد هزار و یک میلیون."
+        },
+        {
+          "when": "27-29 Feb",
+          "note": "The pogrom at Sumgait.",
+          "note_hy": "Սումգայիթի ջարդը։",
+          "note_fa": "کشتار سومگاییت."
+        },
+        {
+          "when": "May 1988",
+          "note": "The Karabakh Committee forms.",
+          "note_hy": "Ձևավորվում է Ղարաբաղ կոմիտեն։",
+          "note_fa": "کمیتهٔ قره‌باغ شکل می‌گیرد."
+        },
+        {
+          "when": "5 Jul",
+          "note": "A general strike; the clash at Zvartnots airport leaves one dead.",
+          "note_hy": "Համընդհանուր գործադուլ, Զվարթնոց օդանավակայանի բախումը մեկ զոհ է խլում։",
+          "note_fa": "اعتصاب عمومی؛ درگیری فرودگاه زوارتنوتس یک کشته می‌دهد."
+        },
+        {
+          "when": "7 and 24 Nov",
+          "note": "Hundreds of thousands in the square, then a state of emergency and a curfew.",
+          "note_hy": "Հարյուր հազարավորներ հրապարակում, ապա արտակարգ դրություն և պարետային ժամ։",
+          "note_fa": "صدها هزار نفر در میدان، سپس حکومت نظامی و منع رفت‌وآمد."
+        },
+        {
+          "when": "7 Dec",
+          "note": "The earthquake at Spitak.",
+          "note_hy": "Սպիտակի երկրաշարժը։",
+          "note_fa": "زمین‌لرزهٔ اسپیتاک."
+        },
+        {
+          "when": "10 Dec",
+          "note": "The Karabakh Committee is arrested and taken to Moscow.",
+          "note_hy": "Ղարաբաղ կոմիտեն ձերբակալվում և տարվում է Մոսկվա։",
+          "note_fa": "کمیتهٔ قره‌باغ بازداشت و به مسکو برده می‌شود."
+        },
+        {
+          "when": "31 May 1989",
+          "note": "The Committee is released.",
+          "note_hy": "Կոմիտեն ազատվում է։",
+          "note_fa": "کمیته آزاد می‌شود."
+        },
+        {
+          "when": "1989",
+          "note": "The Armenian National Movement is founded out of the Committee.",
+          "note_hy": "Կոմիտեի հիմքի վրա ստեղծվում է Հայոց համազգային շարժումը։",
+          "note_fa": "جنبش ملی ارمنستان از دل کمیته بنیان می‌گیرد."
+        },
+        {
+          "when": "1 Dec 1989",
+          "note": "A joint session declares the unification of Soviet Armenia and Nagorno-Karabakh.",
+          "note_hy": "Համատեղ նիստը հռչակում է Խորհրդային Հայաստանի և Լեռնային Ղարաբաղի միացումը։",
+          "note_fa": "نشستی مشترک الحاق ارمنستان شوروی و قره‌باغ کوهستانی را اعلام می‌کند."
+        },
+        {
+          "when": "13-19 Jan 1990",
+          "note": "The pogrom in Baku.",
+          "note_hy": "Բաքվի ջարդը։",
+          "note_fa": "کشتار باکو."
+        },
+        {
+          "when": "20 May 1990",
+          "note": "Elections to the Supreme Council; the movement wins a majority.",
+          "note_hy": "Գերագույն խորհրդի ընտրություններ, շարժումը ստանում է մեծամասնություն։",
+          "note_fa": "انتخابات شورای عالی؛ جنبش اکثریت را می‌گیرد."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        },
+        {
+          "title": "Abrahamian, L. (2012). Yerevan: memory and forgetting in the organisation of post-Soviet urban space"
+        },
+        {
+          "title": "Zolyan, M. (2020)",
+          "note": "the people's square and the square of statehood",
+          "note_hy": "ժողովրդի հրապարակը և պետականության հրապարակը",
+          "note_fa": "میدانِ مردم و میدانِ دولت"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "stepanakert-rally-1988-02-13",
+      "title": "13 February 1988: it begins in Stepanakert",
+      "title_hy": "1988 թ. փետրվարի 13. սկսվում է Ստեփանակերտում",
+      "title_fa": "۱۳ فوریهٔ ۱۹۸۸: در استپاناکرت آغاز می‌شود",
+      "date": "1988-02-13",
+      "coordinates": [
+        46.75106,
+        39.81822
+      ],
+      "location": "Lenin Square, Stepanakert",
+      "location_hy": "Լենինի հրապարակ, Ստեփանակերտ",
+      "location_fa": "میدان لنین، استپاناکرت",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "About eight thousand people gathered in the central square of Stepanakert to demand that the Nagorno-Karabakh Autonomous Oblast be transferred from Soviet Azerbaijan to Soviet Armenia. It was the first open mass demonstration of the movement.",
+      "summary_hy": "Մոտ ութ հազար մարդ հավաքվեց Ստեփանակերտի կենտրոնական հրապարակում՝ պահանջելով Լեռնային Ղարաբաղի ինքնավար մարզի փոխանցումը Խորհրդային Ադրբեջանից Խորհրդային Հայաստանին։ Դա շարժման առաջին բացահայտ զանգվածային ցույցն էր։",
+      "summary_fa": "حدود هشت هزار نفر در میدان مرکزی استپاناکرت گرد آمدند تا خواستار انتقال استان خودمختار قره‌باغ کوهستانی از آذربایجان شوروی به ارمنستان شوروی شوند. نخستین تظاهرات توده‌ای علنی جنبش بود.",
+      "analysis": "Two hundred and fifty kilometres east of Yerevan, and a week ahead of it. The map should be read in that order: the demand is made where the people it concerns live, and the capital answers.",
+      "analysis_hy": "Երևանից երկու հարյուր հիսուն կիլոմետր արևելք և մեկ շաբաթ շուտ։ Քարտեզը պետք է կարդալ այդ հերթականությամբ. պահանջը հնչում է այնտեղ, որտեղ ապրում են այն մարդիկ, ում այն վերաբերում է, իսկ մայրաքաղաքը պատասխանում է։",
+      "analysis_fa": "دویست‌وپنجاه کیلومتر شرقِ ایروان، و یک هفته زودتر. نقشه را باید به همین ترتیب خواند: خواسته آنجا مطرح می‌شود که مردمِ مربوط به آن زندگی می‌کنند، و پایتخت پاسخ می‌دهد.",
+      "actors": [
+        "the people of Nagorno-Karabakh"
+      ],
+      "actors_hy": [
+        "Լեռնային Ղարաբաղի բնակչությունը"
+      ],
+      "actors_fa": [
+        "مردم قره‌باغ کوهستانی"
+      ],
+      "tags": [
+        "Stepanakert",
+        "1988",
+        "unification"
+      ],
+      "tags_hy": [
+        "Ստեփանակերտ",
+        "1988",
+        "միացում"
+      ],
+      "tags_fa": [
+        "استپاناکرت",
+        "۱۹۸۸",
+        "الحاق"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "nkao-vote-1988-02-20",
+      "title": "20 February 1988: a soviet votes 110 to 17",
+      "title_hy": "1988 թ. փետրվարի 20. խորհուրդը քվեարկում է 110 կողմ, 17 դեմ",
+      "title_fa": "۲۰ فوریهٔ ۱۹۸۸: شورا با ۱۱۰ در برابر ۱۷ رأی می‌دهد",
+      "date": "1988-02-20",
+      "coordinates": [
+        46.75106,
+        39.81822
+      ],
+      "location": "Supreme Council of the Nagorno-Karabakh Autonomous Oblast, Stepanakert",
+      "location_hy": "Լեռնային Ղարաբաղի ինքնավար մարզի խորհուրդ, Ստեփանակերտ",
+      "location_fa": "شورای عالی استان خودمختار قره‌باغ کوهستانی، استپاناکرت",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "summary": "The regional soviet passed a resolution asking the Supreme Soviets of Azerbaijan and Armenia and the union authorities in Moscow to transfer the oblast to Armenia. The vote was 110 to 17. It was the first time a Soviet institution had asked to change a republican border from below.",
+      "summary_hy": "Մարզային խորհուրդն ընդունեց որոշում՝ խնդրելով Ադրբեջանի և Հայաստանի Գերագույն խորհուրդներին և Մոսկվայի միութենական իշխանություններին մարզը փոխանցել Հայաստանին։ Քվեարկությունը 110 կողմ, 17 դեմ էր։ Առաջին անգամն էր, որ խորհրդային հաստատությունը ներքևից խնդրում էր փոխել հանրապետական սահման։",
+      "summary_fa": "شورای منطقه‌ای قطعنامه‌ای گذراند و از شوراهای عالی آذربایجان و ارمنستان و مقامات اتحاد در مسکو خواست استان به ارمنستان منتقل شود. رأی ۱۱۰ در برابر ۱۷ بود. نخستین بار بود که نهادی شوروی از پایین خواستار تغییر مرز جمهوری‌ها می‌شد.",
+      "analysis": "The whole thirty years that follow are downstream of a vote in a provincial chamber. This map is mostly about squares, and it is worth having one entry that is a room with a tally in it, because that is the form the demand took before it became a crowd.",
+      "analysis_hy": "Հաջորդ երեսուն տարին ամբողջովին մարզային պալատում կայացած մեկ քվեարկության հետևանքն է։ Այս քարտեզը հիմնականում հրապարակների մասին է, և արժե ունենալ մեկ գրառում, որը սենյակ է՝ ձայների հաշվարկով, որովհետև հենց այդ ձևն ուներ պահանջը՝ ամբոխ դառնալուց առաջ։",
+      "analysis_fa": "تمام سی سالِ پس از آن، پیامد یک رأی‌گیری در تالاری ولایتی است. این نقشه بیشتر دربارهٔ میدان‌هاست، و ارزش دارد یک مدخل داشته باشد که اتاقی است با شمارش آرا، چون خواسته پیش از آنکه جمعیت شود، همین شکل را داشت.",
+      "actors": [
+        "Supreme Council of the NKAO"
+      ],
+      "actors_hy": [
+        "ԼՂԻՄ խորհուրդ"
+      ],
+      "actors_fa": [
+        "شورای عالی استان خودمختار"
+      ],
+      "tags": [
+        "NKAO",
+        "vote",
+        "1988",
+        "borders"
+      ],
+      "tags_hy": [
+        "ԼՂԻՄ",
+        "քվեարկություն",
+        "1988",
+        "սահմաններ"
+      ],
+      "tags_fa": [
+        "استان خودمختار",
+        "رأی",
+        "۱۹۸۸",
+        "مرزها"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "sumgait-1988-02-27",
+      "title": "27 to 29 February 1988: Sumgait",
+      "title_hy": "1988 թ. փետրվարի 27-29. Սումգայիթ",
+      "title_fa": "۲۷ تا ۲۹ فوریهٔ ۱۹۸۸: سومگاییت",
+      "date": "1988-02-27",
+      "dateEnd": "1988-02-29",
+      "coordinates": [
+        49.66967,
+        40.59616
+      ],
+      "location": "Sumgait, Soviet Azerbaijan",
+      "location_hy": "Սումգայիթ, Խորհրդային Ադրբեջան",
+      "location_fa": "سومگاییت، آذربایجان شوروی",
+      "categories": [
+        "state",
+        "memory"
+      ],
+      "summary": "Three days of killings of Armenians in the industrial city of Sumgait, north of Baku, at the end of the same week as the largest rallies in Yerevan. The official Soviet count was thirty-two dead; Armenian accounts give higher figures. It ended the possibility that the question could stay a constitutional one, and it began the movement of populations that emptied each country of the other's people.",
+      "summary_hy": "Երեք օր հայերի սպանություններ Բաքվից հյուսիս գտնվող արդյունաբերական Սումգայիթ քաղաքում՝ Երևանի ամենամեծ հանրահավաքների նույն շաբաթվա վերջում։ Խորհրդային պաշտոնական հաշվարկը երեսուներկու զոհ էր, հայկական վկայությունները տալիս են ավելի բարձր թվեր։ Դա վերջ դրեց այն հնարավորությանը, որ հարցը մնա սահմանադրական, և սկսեց բնակչության տեղաշարժը, որը յուրաքանչյուր երկիրը դատարկեց մյուսի մարդկանցից։",
+      "summary_fa": "سه روز کشتار ارمنیان در شهر صنعتی سومگاییت، شمال باکو، در پایان همان هفته‌ای که بزرگ‌ترین تجمع‌های ایروان برگزار شد. شمارش رسمی شوروی سی‌ودو کشته بود؛ روایت‌های ارمنی ارقام بالاتری می‌دهند. این پایان امکانِ آن بود که پرسش در سطح قانون اساسی بماند، و آغاز جابه‌جایی جمعیتی که هر کشور را از مردم دیگری خالی کرد.",
+      "analysis": "Placed on the map, at four hundred and fifty kilometres from Theatre Square, because leaving it off would make the rallies of the following months unreadable. This project maps Yerevan; some of what Yerevan was answering happened elsewhere, and the honest thing is to draw the distance rather than crop it out.",
+      "analysis_hy": "Տեղադրված է քարտեզին՝ Թատերական հրապարակից չորս հարյուր հիսուն կիլոմետր հեռու, որովհետև առանց դրա հաջորդ ամիսների հանրահավաքներն անընթեռնելի կլինեին։ Այս նախագիծը քարտեզագրում է Երևանը, բայց այն, ինչին Երևանը պատասխանում էր, մասամբ այլուր էր տեղի ունենում, և ազնիվն այն է, որ գծես հեռավորությունը, ոչ թե կտրես այն։",
+      "analysis_fa": "روی نقشه آمده، در چهارصد و پنجاه کیلومتری میدان تئاتر، چون بدون آن تجمع‌های ماه‌های بعد ناخوانا می‌شوند. این پروژه ایروان را نقشه می‌کند؛ بخشی از آنچه ایروان به آن پاسخ می‌داد جای دیگری رخ داد، و کار صادقانه این است که فاصله را بکشی، نه اینکه ببُری‌اش.",
+      "actors": [
+        "the Armenians of Sumgait"
+      ],
+      "actors_hy": [
+        "Սումգայիթի հայերը"
+      ],
+      "actors_fa": [
+        "ارمنیان سومگاییت"
+      ],
+      "tags": [
+        "Sumgait",
+        "pogrom",
+        "1988",
+        "displacement"
+      ],
+      "tags_hy": [
+        "Սումգայիթ",
+        "ջարդ",
+        "1988",
+        "տեղահանում"
+      ],
+      "tags_fa": [
+        "سومگاییت",
+        "کشتار",
+        "۱۹۸۸",
+        "آوارگی"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Sumgait pogrom'",
+          "url": "https://en.wikipedia.org/wiki/Sumgait_pogrom"
+        },
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "karabakh-committee-1988-05",
+      "title": "May 1988: eleven men and a committee",
+      "title_hy": "1988 թ. մայիս. տասնմեկ մարդ և կոմիտե",
+      "title_fa": "مه ۱۹۸۸: یازده مرد و یک کمیته",
+      "date": "1988-05-01",
+      "datePrecision": "month",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Theatre Square, Yerevan",
+      "location_hy": "Թատերական հրապարակ, Երևան",
+      "location_fa": "میدان تئاتر، ایروان",
+      "categories": [
+        "politics",
+        "protest"
+      ],
+      "summary": "The rallies had no leadership until the Karabakh Committee formed in May 1988: academics, writers and researchers, among them Levon Ter-Petrosyan, a philologist at the Matenadaran, and Vazgen Manukyan, a mathematician. They ran the movement from the square rather than from any building, which is what made them a rival authority and, seven months later, made their arrest inevitable.",
+      "summary_hy": "Հանրահավաքները ղեկավարություն չունեին, մինչև 1988-ի մայիսին ձևավորվեց Ղարաբաղ կոմիտեն՝ գիտնականներ, գրողներ և հետազոտողներ, նրանց մեջ Լևոն Տեր-Պետրոսյանը՝ Մատենադարանի բանասերը, և Վազգեն Մանուկյանը՝ մաթեմատիկոսը։ Նրանք շարժումը ղեկավարում էին հրապարակից, ոչ թե որևէ շենքից, և հենց դա նրանց դարձրեց մրցակից իշխանություն և յոթ ամիս անց անխուսափելի դարձրեց նրանց ձերբակալությունը։",
+      "summary_fa": "تجمع‌ها رهبری نداشتند تا آنکه در مه ۱۹۸۸ کمیتهٔ قره‌باغ شکل گرفت: دانشگاهیان، نویسندگان و پژوهشگران، از جمله لوون تر-پطروسیان، زبان‌شناسِ ماتناداران، و وازگن مانوکیان، ریاضی‌دان. جنبش را از میدان اداره می‌کردند نه از ساختمانی، و همین آنان را به قدرتی رقیب بدل کرد و هفت ماه بعد بازداشتشان را ناگزیر.",
+      "analysis": "A committee with no address is the whole point. In 1988 the movement's institution was a square, and the state's institutions were buildings; thirty years later, in 2018, the same asymmetry is used deliberately, with a movement that blocks the buildings from the street and refuses to occupy any of them.",
+      "analysis_hy": "Առանց հասցեի կոմիտեն հենց ամբողջ իմաստն է։ 1988-ին շարժման հաստատությունը հրապարակն էր, իսկ պետության հաստատությունները՝ շենքերը. երեսուն տարի անց՝ 2018-ին, նույն անհամաչափությունը գիտակցաբար օգտագործվում է շարժման կողմից, որը փողոցից փակում է շենքերը և հրաժարվում դրանցից որևէ մեկը գրավելուց։",
+      "analysis_fa": "کمیته‌ای بی‌نشانی، خودِ نکته است. در ۱۹۸۸ نهادِ جنبش یک میدان بود و نهادهای دولت ساختمان؛ سی سال بعد، در ۲۰۱۸، همین ناهم‌سنگی آگاهانه به کار می‌رود، با جنبشی که ساختمان‌ها را از خیابان می‌بندد و از اشغال هیچ‌کدام سر باز می‌زند.",
+      "actors": [
+        "Karabakh Committee",
+        "Levon Ter-Petrosyan",
+        "Vazgen Manukyan",
+        "Ashot Manucharyan",
+        "Babken Ararktsyan"
+      ],
+      "actors_hy": [
+        "Ղարաբաղ կոմիտե",
+        "Լևոն Տեր-Պետրոսյան",
+        "Վազգեն Մանուկյան",
+        "Աշոտ Մանուչարյան",
+        "Բաբկեն Արարքցյան"
+      ],
+      "actors_fa": [
+        "کمیتهٔ قره‌باغ",
+        "لوون تر-پطروسیان",
+        "وازگن مانوکیان",
+        "آشوت مانوچاریان",
+        "بابکن آرارکتسیان"
+      ],
+      "tags": [
+        "Karabakh Committee",
+        "leadership",
+        "1988"
+      ],
+      "tags_hy": [
+        "Ղարաբաղ կոմիտե",
+        "ղեկավարություն",
+        "1988"
+      ],
+      "tags_fa": [
+        "کمیتهٔ قره‌باغ",
+        "رهبری",
+        "۱۹۸۸"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh Committee'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_Committee"
+        },
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement"
+    },
+    {
+      "id": "zvartnots-clash-1988-07-05",
+      "title": "5 July 1988: the airport road",
+      "title_hy": "1988 թ. հուլիսի 5. օդանավակայանի ճանապարհը",
+      "title_fa": "۵ ژوئیهٔ ۱۹۸۸: جادهٔ فرودگاه",
+      "date": "1988-07-05",
+      "coordinates": [
+        44.3959,
+        40.1473
+      ],
+      "location": "Zvartnots Airport",
+      "location_hy": "Զվարթնոց օդանավակայան",
+      "location_fa": "فرودگاه زوارتنوتس",
+      "categories": [
+        "protest",
+        "state"
+      ],
+      "summary": "During a general strike, crowds went out to Zvartnots airport, twelve kilometres west of the centre, and soldiers cleared them. One person was killed and dozens were injured. It was the first death of the movement in Armenia proper.",
+      "summary_hy": "Համընդհանուր գործադուլի ժամանակ ամբոխները դուրս եկան Զվարթնոց օդանավակայան՝ կենտրոնից տասներկու կիլոմետր արևմուտք, և զինվորները ցրեցին նրանց։ Մեկ մարդ սպանվեց, տասնյակներ վիրավորվեցին։ Դա շարժման առաջին զոհն էր բուն Հայաստանում։",
+      "summary_fa": "در جریان اعتصاب عمومی، جمعیت به فرودگاه زوارتنوتس رفت، دوازده کیلومتر غربِ مرکز، و سربازان آنان را پراکندند. یک نفر کشته و ده‌ها نفر زخمی شدند. نخستین کشتهٔ جنبش در خودِ ارمنستان بود.",
+      "analysis": "The one place in this dossier that is infrastructure rather than assembly. An airport is where a movement can be felt by the state materially rather than symbolically, which is why it was blockaded again in April 2018, and why this map already holds the 2018 blockade at the same coordinates.",
+      "analysis_hy": "Այս թղթապանակի միակ վայրը, որ ենթակառուցվածք է, ոչ թե հավաք։ Օդանավակայանն այն վայրն է, որտեղ պետությունը շարժումը զգում է նյութապես, ոչ թե խորհրդանշորեն, և հենց դրա համար այն կրկին փակվեց 2018 թվականի ապրիլին, և հենց դրա համար այս քարտեզն արդեն պահում է 2018-ի փակումը նույն կոորդինատներում։",
+      "analysis_fa": "تنها جای این پرونده که زیرساخت است، نه تجمع. فرودگاه جایی است که دولت جنبش را مادی حس می‌کند، نه نمادین، و برای همین در آوریل ۲۰۱۸ دوباره بسته شد، و برای همین این نقشه پیشاپیش انسداد ۲۰۱۸ را در همان مختصات نگه داشته است.",
+      "actors": [
+        "strikers",
+        "Soviet Army"
+      ],
+      "actors_hy": [
+        "գործադուլավորներ",
+        "Խորհրդային բանակ"
+      ],
+      "actors_fa": [
+        "اعتصاب‌کنندگان",
+        "ارتش شوروی"
+      ],
+      "tags": [
+        "Zvartnots",
+        "general strike",
+        "1988",
+        "infrastructure"
+      ],
+      "tags_hy": [
+        "Զվարթնոց",
+        "համընդհանուր գործադուլ",
+        "1988",
+        "ենթակառուցվածք"
+      ],
+      "tags_fa": [
+        "زوارتنوتس",
+        "اعتصاب عمومی",
+        "۱۹۸۸",
+        "زیرساخت"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "state-of-emergency-1988-11-24",
+      "title": "November 1988: hundreds of thousands, then curfew",
+      "title_hy": "1988 թ. նոյեմբեր. հարյուր հազարավորներ, ապա պարետային ժամ",
+      "title_fa": "نوامبر ۱۹۸۸: صدها هزار نفر، سپس منع رفت‌وآمد",
+      "date": "1988-11-07",
+      "dateEnd": "1988-11-24",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Theatre Square",
+      "location_hy": "Թատերական հրապարակ",
+      "location_fa": "میدان تئاتر",
+      "categories": [
+        "protest",
+        "state"
+      ],
+      "summary": "On 7 November, the anniversary of the revolution, hundreds of thousands filled the square in support of the Karabakh Committee. On 24 November a state of emergency and a curfew were declared in Yerevan and troops were deployed. The square was closed by decree, which is a thing this map has recorded twice more since: in 2008 and, in a different way, in 2020.",
+      "summary_hy": "Նոյեմբերի 7-ին՝ հեղափոխության տարելիցին, հարյուր հազարավորները լցրեցին հրապարակը՝ ի պաշտպանություն Ղարաբաղ կոմիտեի։ Նոյեմբերի 24-ին Երևանում հայտարարվեց արտակարգ դրություն և պարետային ժամ, տեղակայվեցին զորքեր։ Հրապարակը փակվեց հրամանագրով, ինչը այս քարտեզն այդուհետ գրանցել է ևս երկու անգամ՝ 2008-ին և այլ ձևով՝ 2020-ին։",
+      "summary_fa": "در ۷ نوامبر، سالگرد انقلاب، صدها هزار نفر در حمایت از کمیتهٔ قره‌باغ میدان را پر کردند. در ۲۴ نوامبر در ایروان حکومت نظامی و منع رفت‌وآمد اعلام شد و نیرو مستقر گشت. میدان با فرمان بسته شد، چیزی که این نقشه از آن پس دو بار دیگر ثبت کرده است: در ۲۰۰۸ و، به شکلی دیگر، در ۲۰۲۰.",
+      "analysis": "Closing a square is a real urban act, and its effects outlast the emergency. The 2008 closure of Freedom Square for two years, which this map already holds, is the same instrument used by an independent state twenty years later, and it is the reason the protests of 2008 ended up on Northern Avenue.",
+      "analysis_hy": "Հրապարակը փակելը իրական քաղաքային գործողություն է, և դրա հետևանքները ավելի երկար են ապրում, քան արտակարգ դրությունը։ 2008-ին Ազատության հրապարակի երկամյա փակումը, որը այս քարտեզն արդեն պահում է, նույն գործիքն է՝ քսան տարի անց կիրառված անկախ պետության կողմից, և հենց դրա պատճառով 2008-ի բողոքները հայտնվեցին Հյուսիսային պողոտայում։",
+      "analysis_fa": "بستن یک میدان کنشی شهری و واقعی است، و اثرش از خودِ وضعیت اضطراری بیشتر می‌ماند. بستن دوسالهٔ میدان آزادی در ۲۰۰۸، که این نقشه پیشاپیش ثبتش کرده، همان ابزار است که بیست سال بعد دولتی مستقل به کار می‌برد، و دلیل اینکه اعتراض‌های ۲۰۰۸ سر از خیابان شمالی درآورد.",
+      "actors": [
+        "Karabakh Committee",
+        "Soviet Army",
+        "Communist Party of Armenia"
+      ],
+      "actors_hy": [
+        "Ղարաբաղ կոմիտե",
+        "Խորհրդային բանակ",
+        "Հայաստանի կոմունիստական կուսակցություն"
+      ],
+      "actors_fa": [
+        "کمیتهٔ قره‌باغ",
+        "ارتش شوروی",
+        "حزب کمونیست ارمنستان"
+      ],
+      "tags": [
+        "state of emergency",
+        "curfew",
+        "Theatre Square",
+        "1988"
+      ],
+      "tags_hy": [
+        "արտակարգ դրություն",
+        "պարետային ժամ",
+        "Թատերական հրապարակ",
+        "1988"
+      ],
+      "tags_fa": [
+        "حکومت نظامی",
+        "منع رفت‌وآمد",
+        "میدان تئاتر",
+        "۱۹۸۸"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "spitak-earthquake-1988-12-07",
+      "title": "7 December 1988: the earthquake",
+      "title_hy": "1988 թ. դեկտեմբերի 7. երկրաշարժը",
+      "title_fa": "۷ دسامبر ۱۹۸۸: زمین‌لرزه",
+      "date": "1988-12-07",
+      "coordinates": [
+        44.26477,
+        40.83434
+      ],
+      "location": "Spitak, and the whole north of the country",
+      "location_hy": "Սպիտակ և երկրի ողջ հյուսիսը",
+      "location_fa": "اسپیتاک، و تمام شمال کشور",
+      "categories": [
+        "state",
+        "memory"
+      ],
+      "summary": "The earthquake destroyed Spitak and much of Leninakan, now Gyumri, and killed tens of thousands. It fell in the middle of the movement, three days before the Committee was arrested, and it changed what the country was arguing about for a decade. Gyumri has not finished rebuilding, which is part of why the 2018 revolution began there.",
+      "summary_hy": "Երկրաշարժը կործանեց Սպիտակը և Լենինականի՝ այժմ Գյումրիի, մեծ մասը, խլելով տասնյակ հազարավոր կյանքեր։ Այն ընկավ շարժման կեսին՝ Կոմիտեի ձերբակալությունից երեք օր առաջ, և տասնամյակով փոխեց այն, ինչի շուրջ վիճում էր երկիրը։ Գյումրին դեռ չի ավարտել վերակառուցումը, և դա մասամբ պատճառն է, թե ինչու 2018-ի հեղափոխությունը սկսվեց այնտեղից։",
+      "summary_fa": "زمین‌لرزه اسپیتاک و بخش بزرگی از لنیناکان، امروز گیومری، را ویران کرد و ده‌ها هزار نفر را کشت. در میانهٔ جنبش رخ داد، سه روز پیش از بازداشت کمیته، و برای یک دهه موضوع دعوای کشور را عوض کرد. بازسازی گیومری هنوز تمام نشده، و بخشی از دلیل آغاز انقلاب ۲۰۱۸ از آنجا همین است.",
+      "analysis": "It belongs in this dossier because of the timing, not because it is a protest. The map's argument is about what a city does with its ground, and here the ground itself moved, in the same weeks and the same country as the largest political mobilisation of the Soviet era.",
+      "analysis_hy": "Այն պատկանում է այս թղթապանակին ժամանակի պատճառով, ոչ թե որովհետև բողոք է։ Քարտեզի փաստարկը այն մասին է, թե ինչ է քաղաքն անում իր հողի հետ, իսկ այստեղ հենց հողն է շարժվել՝ նույն շաբաթներին և նույն երկրում, ուր տեղի էր ունենում խորհրդային ժամանակաշրջանի ամենամեծ քաղաքական մոբիլիզացիան։",
+      "analysis_fa": "به‌خاطر زمان‌بندی در این پرونده جای دارد، نه از آن رو که اعتراض باشد. استدلال این نقشه دربارهٔ آن است که شهر با زمینش چه می‌کند، و اینجا خودِ زمین جنبید، در همان هفته‌ها و همان کشوری که بزرگ‌ترین بسیج سیاسی دوران شوروی را از سر می‌گذراند.",
+      "actors": [
+        "the north of Armenia"
+      ],
+      "actors_hy": [
+        "Հայաստանի հյուսիսը"
+      ],
+      "actors_fa": [
+        "شمال ارمنستان"
+      ],
+      "tags": [
+        "earthquake",
+        "Spitak",
+        "Gyumri",
+        "1988"
+      ],
+      "tags_hy": [
+        "երկրաշարժ",
+        "Սպիտակ",
+        "Գյումրի",
+        "1988"
+      ],
+      "tags_fa": [
+        "زمین‌لرزه",
+        "اسپیتاک",
+        "گیومری",
+        "۱۹۸۸"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '1988 Armenian earthquake'",
+          "url": "https://en.wikipedia.org/wiki/1988_Armenian_earthquake"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "committee-arrested-1988-12-10",
+      "title": "10 December 1988: the committee is taken to Moscow",
+      "title_hy": "1988 թ. դեկտեմբերի 10. կոմիտեն տարվում է Մոսկվա",
+      "title_fa": "۱۰ دسامبر ۱۹۸۸: کمیته به مسکو برده می‌شود",
+      "date": "1988-12-10",
+      "dateEnd": "1989-05-31",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Yerevan, and then Moscow",
+      "location_hy": "Երևան, ապա Մոսկվա",
+      "location_fa": "ایروان، و سپس مسکو",
+      "categories": [
+        "state",
+        "politics"
+      ],
+      "summary": "Three days after the earthquake, with the country in mourning and the emergency in force, the members of the Karabakh Committee were arrested and flown to Moscow, where they were held without trial until 31 May 1989. They came back to a city that had spent the winter burying its dead, and within a year they were the government.",
+      "summary_hy": "Երկրաշարժից երեք օր անց, երբ երկիրը սգում էր և գործում էր արտակարգ դրությունը, Ղարաբաղ կոմիտեի անդամները ձերբակալվեցին և տեղափոխվեցին Մոսկվա, որտեղ պահվեցին առանց դատի մինչև 1989 թվականի մայիսի 31-ը։ Նրանք վերադարձան մի քաղաք, որը ձմեռն անցկացրել էր իր մահացածներին թաղելով, և մեկ տարվա ընթացքում նրանք իշխանությունն էին։",
+      "summary_fa": "سه روز پس از زمین‌لرزه، در حالی که کشور در سوگ بود و وضعیت اضطراری برقرار، اعضای کمیتهٔ قره‌باغ بازداشت و به مسکو منتقل شدند و تا ۳۱ مه ۱۹۸۹ بدون محاکمه در بازداشت ماندند. به شهری بازگشتند که زمستان را به خاک‌سپاری مردگانش گذرانده بود، و ظرف یک سال خودشان حکومت بودند.",
+      "analysis": "A useful reminder for a map: the place of an arrest is not the place of a detention. This entry stands in Yerevan because that is where the movement lost its leadership, and the caption says the cells were two thousand kilometres north.",
+      "analysis_hy": "Օգտակար հիշեցում քարտեզի համար. ձերբակալության վայրը կալանքի վայրը չէ։ Այս գրառումը կանգնած է Երևանում, որովհետև հենց այնտեղ շարժումը կորցրեց իր ղեկավարությունը, և մակագրությունն ասում է, որ խցերը երկու հազար կիլոմետր հյուսիս էին։",
+      "analysis_fa": "یادآوری‌ای مفید برای یک نقشه: جای بازداشت، جای حبس نیست. این مدخل در ایروان ایستاده چون جنبش همان‌جا رهبری‌اش را از دست داد، و شرحش می‌گوید سلول‌ها دو هزار کیلومتر شمال‌تر بودند.",
+      "actors": [
+        "Karabakh Committee",
+        "Soviet authorities"
+      ],
+      "actors_hy": [
+        "Ղարաբաղ կոմիտե",
+        "խորհրդային իշխանություններ"
+      ],
+      "actors_fa": [
+        "کمیتهٔ قره‌باغ",
+        "مقامات شوروی"
+      ],
+      "tags": [
+        "arrest",
+        "Moscow",
+        "1988",
+        "Karabakh Committee"
+      ],
+      "tags_hy": [
+        "ձերբակալություն",
+        "Մոսկվա",
+        "1988",
+        "Ղարաբաղ կոմիտե"
+      ],
+      "tags_fa": [
+        "بازداشت",
+        "مسکو",
+        "۱۹۸۸",
+        "کمیتهٔ قره‌باغ"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh Committee'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_Committee"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "unification-declared-1989-12-01",
+      "title": "1 December 1989: a joint session declares unification",
+      "title_hy": "1989 թ. դեկտեմբերի 1. համատեղ նիստը հռչակում է միացումը",
+      "title_fa": "۱ دسامبر ۱۹۸۹: نشستی مشترک الحاق را اعلام می‌کند",
+      "date": "1989-12-01",
+      "coordinates": [
+        44.50898,
+        40.19028
+      ],
+      "location": "Supreme Council of the Armenian SSR, Baghramyan Avenue",
+      "location_hy": "Հայկական ԽՍՀ Գերագույն խորհուրդ, Բաղրամյան պողոտա",
+      "location_fa": "شورای عالی جمهوری شوروی ارمنستان، خیابان باغرامیان",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "summary": "The Supreme Council of Soviet Armenia and the National Council of Nagorno-Karabakh, meeting jointly, declared the unification of the Armenian SSR and Nagorno-Karabakh. Moscow annulled it. The decision had no force, and it is still the founding text of the claim.",
+      "summary_hy": "Խորհրդային Հայաստանի Գերագույն խորհուրդը և Լեռնային Ղարաբաղի ազգային խորհուրդը, հանդիպելով համատեղ նիստում, հռչակեցին Հայկական ԽՍՀ-ի և Լեռնային Ղարաբաղի միացումը։ Մոսկվան չեղարկեց այն։ Որոշումն ուժ չուներ, և այն մինչ օրս պահանջի հիմնադիր տեքստն է։",
+      "summary_fa": "شورای عالی ارمنستان شوروی و شورای ملی قره‌باغ کوهستانی، در نشستی مشترک، الحاق جمهوری شوروی ارمنستان و قره‌باغ کوهستانی را اعلام کردند. مسکو آن را باطل کرد. تصمیم قدرتی نداشت، و هنوز متن بنیادین آن ادعاست.",
+      "analysis": "The building matters. This is the same chamber on Baghramyan that the crowd would enter in November 2020, and the decision taken in it in 1989 is what the crowd of 2020 believed had been given away. Thirty-one years and seven hundred metres of avenue connect the two entries.",
+      "analysis_hy": "Շենքը կարևոր է։ Սա Բաղրամյանի նույն դահլիճն է, ուր ամբոխը մտնելու էր 2020 թվականի նոյեմբերին, և 1989-ին այնտեղ ընդունված որոշումն այն է, ինչ 2020-ի ամբոխը համարում էր հանձնված։ Երկու գրառումը կապում է երեսունմեկ տարի և պողոտայի յոթ հարյուր մետրը։",
+      "analysis_fa": "ساختمان مهم است. این همان تالار باغرامیان است که جمعیت در نوامبر ۲۰۲۰ واردش شد، و تصمیمی که در ۱۹۸۹ در آن گرفته شد همان است که جمعیت ۲۰۲۰ باور داشت واگذار شده. سی‌ویک سال و هفتصد متر خیابان این دو مدخل را به هم وصل می‌کند.",
+      "actors": [
+        "Supreme Council of the Armenian SSR",
+        "National Council of Nagorno-Karabakh"
+      ],
+      "actors_hy": [
+        "Հայկական ԽՍՀ Գերագույն խորհուրդ",
+        "Լեռնային Ղարաբաղի ազգային խորհուրդ"
+      ],
+      "actors_fa": [
+        "شورای عالی ارمنستان شوروی",
+        "شورای ملی قره‌باغ کوهستانی"
+      ],
+      "tags": [
+        "unification",
+        "1989",
+        "Supreme Council",
+        "Baghramyan Avenue"
+      ],
+      "tags_hy": [
+        "միացում",
+        "1989",
+        "Գերագույն խորհուրդ",
+        "Բաղրամյան պողոտա"
+      ],
+      "tags_fa": [
+        "الحاق",
+        "۱۹۸۹",
+        "شورای عالی",
+        "خیابان باغرامیان"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
+    },
+    {
+      "id": "supreme-council-election-1990-05-20",
+      "title": "20 May 1990: the square wins the chamber",
+      "title_hy": "1990 թ. մայիսի 20. հրապարակը հաղթում է դահլիճը",
+      "title_fa": "۲۰ مه ۱۹۹۰: میدان تالار را می‌برد",
+      "date": "1990-05-20",
+      "coordinates": [
+        44.50898,
+        40.19028
+      ],
+      "location": "Supreme Council of the Armenian SSR",
+      "location_hy": "Հայկական ԽՍՀ Գերագույն խորհուրդ",
+      "location_fa": "شورای عالی جمهوری شوروی ارمنستان",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "summary": "Elections to the Supreme Council gave the Armenian National Movement, which had grown out of the Karabakh Committee, a working majority. On 4 August Levon Ter-Petrosyan was elected chairman, and on 23 August the Council adopted the declaration of independence.",
+      "summary_hy": "Գերագույն խորհրդի ընտրությունները Ղարաբաղ կոմիտեից աճած Հայոց համազգային շարժմանը տվեցին գործող մեծամասնություն։ Օգոստոսի 4-ին Լևոն Տեր-Պետրոսյանն ընտրվեց նախագահ, իսկ օգոստոսի 23-ին Խորհուրդն ընդունեց անկախության հռչակագիրը։",
+      "summary_fa": "انتخابات شورای عالی به جنبش ملی ارمنستان، که از دل کمیتهٔ قره‌باغ برآمده بود، اکثریتی کارآمد داد. در ۴ اوت لوون تر-پطروسیان رئیس شد، و در ۲۳ اوت شورا اعلامیهٔ استقلال را تصویب کرد.",
+      "analysis": "Two and a half years from a square with no institution in it to the chamber on Baghramyan, and this dossier ends there. What happens next, the declaration, the referendum and the war, is the next two dossiers.",
+      "analysis_hy": "Երկուսուկես տարի՝ առանց հաստատության հրապարակից մինչև Բաղրամյանի դահլիճը, և այս թղթապանակն ավարտվում է այնտեղ։ Հետո եղածը՝ հռչակագիրը, հանրաքվեն և պատերազմը, հաջորդ երկու թղթապանակներն են։",
+      "analysis_fa": "دو سال و نیم از میدانی بدون هیچ نهاد تا تالار باغرامیان، و این پرونده همان‌جا تمام می‌شود. آنچه پس از آن می‌آید، اعلامیه، همه‌پرسی و جنگ، دو پروندهٔ بعدی است.",
+      "actors": [
+        "Armenian National Movement",
+        "Levon Ter-Petrosyan"
+      ],
+      "actors_hy": [
+        "Հայոց համազգային շարժում",
+        "Լևոն Տեր-Պետրոսյան"
+      ],
+      "actors_fa": [
+        "جنبش ملی ارمنستان",
+        "لوون تر-پطروسیان"
+      ],
+      "tags": [
+        "1990",
+        "elections",
+        "Armenian National Movement"
+      ],
+      "tags_hy": [
+        "1990",
+        "ընտրություններ",
+        "Հայոց համազգային շարժում"
+      ],
+      "tags_fa": [
+        "۱۹۹۰",
+        "انتخابات",
+        "جنبش ملی ارمنستان"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Karabakh movement'",
+          "url": "https://en.wikipedia.org/wiki/Karabakh_movement"
+        }
+      ],
+      "media": [],
+      "episode": "karabakh-movement",
+      "datePrecision": "day"
     }
   ],
   "episodes": [
@@ -9154,6 +9976,32 @@
       "cubeMethod": "Dated to the day, except the removal of the first secretary, which is dated to the year. The crowd size of about twenty thousand is the figure in the sources; other accounts give as many as a hundred thousand and the map does not pick between them.",
       "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, բացի առաջին քարտուղարի հեռացումից, որը տարվա ճշտությամբ է։ Մոտ քսան հազար մասնակցի թիվը աղբյուրներում նշվածն է, այլ վկայություններ տալիս են մինչև հարյուր հազար, և քարտեզը նրանց միջև ընտրություն չի կատարում։",
       "cubeMethod_fa": "تاریخ‌ها در حد روز است، جز برکناری دبیر اول که در حد سال است. رقم حدود بیست هزار نفر همان است که در منابع آمده؛ روایت‌های دیگر تا صد هزار نفر می‌گویند و نقشه میان آن‌ها انتخاب نمی‌کند."
+    },
+    {
+      "id": "karabakh-movement",
+      "label": "The Karabakh movement",
+      "label_hy": "Ղարաբաղյան շարժումը",
+      "label_fa": "جنبش قره‌باغ",
+      "start": "1988-02-13",
+      "end": "1990-05-20",
+      "color": "#b0553e",
+      "note": "From eight thousand people in Stepanakert to a million in Theatre Square, and from a square with no institution in it to the chamber on Baghramyan two years later.",
+      "note_hy": "Ստեփանակերտի ութ հազարից մինչև Թատերական հրապարակի մեկ միլիոնը, և առանց հաստատության հրապարակից մինչև Բաղրամյանի դահլիճը երկու տարի անց։",
+      "note_fa": "از هشت هزار نفر در استپاناکرت تا یک میلیون در میدان تئاتر، و از میدانی بدون نهاد تا تالار باغرامیان، دو سال بعد.",
+      "spur": {
+        "kind": "events"
+      },
+      "cube": true,
+      "umbrella": "karabakh-movement-umbrella",
+      "cubeTitle": "The square becomes an institution",
+      "cubeTitle_hy": "Հրապարակը դառնում է հաստատություն",
+      "cubeTitle_fa": "میدان نهاد می‌شود",
+      "cubeBody": "Time stands up off the map, 13 February 1988 to 20 May 1990. A disc is an entry on its day, a column is a place holding still, and the nine days of February 1988 in Theatre Square are the first tall column this map has. Stepanakert and Sumgait lean in from far to the east, Spitak from the north, and everything else happens inside one kilometre of Yerevan.",
+      "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 1988-ի փետրվարի 13-ից մինչև 1990-ի մայիսի 20-ը։ Կետը գրառում է իր օրվա վրա, սյունը՝ տեղ, որը մնում է անշարժ, և 1988-ի փետրվարի ինը օրը Թատերական հրապարակում այս քարտեզի առաջին բարձր սյունն է։ Ստեփանակերտն ու Սումգայիթը հենվում են հեռու արևելքից, Սպիտակը՝ հյուսիսից, իսկ մնացած ամեն ինչ տեղի է ունենում Երևանի մեկ կիլոմետրի ներսում։",
+      "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از ۱۳ فوریهٔ ۱۹۸۸ تا ۲۰ مه ۱۹۹۰. هر دایره یک مدخل در روز خودش است، هر ستون جایی که ثابت مانده، و نُه روزِ فوریهٔ ۱۹۸۸ در میدان تئاتر نخستین ستون بلند این نقشه است. استپاناکرت و سومگاییت از شرقِ دور تکیه می‌دهند، اسپیتاک از شمال، و باقی همه در یک کیلومترِ ایروان رخ می‌دهد.",
+      "cubeMethod": "Dated to the day where the sources give one, to the month for the formation of the Karabakh Committee. Crowd figures are the ranges in the sources and not a single number: thirty thousand on 20 February, and between three hundred thousand and a million on the 22nd and 23rd.",
+      "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, որտեղ աղբյուրները տալիս են օր, իսկ Ղարաբաղ կոմիտեի ձևավորումը՝ ամսվա։ Մասնակիցների թվերը աղբյուրների միջակայքերն են, ոչ թե մեկ թիվ. փետրվարի 20-ին՝ երեսուն հազար, 22-ին և 23-ին՝ երեք հարյուր հազարից մեկ միլիոն։",
+      "cubeMethod_fa": "تاریخ‌ها هرجا منابع روزی داده‌اند در حد روز است، و شکل‌گیری کمیتهٔ قره‌باغ در حد ماه. ارقام جمعیت همان بازه‌های منابع‌اند نه یک عدد: سی هزار در ۲۰ فوریه، و میان سیصد هزار و یک میلیون در ۲۲ و ۲۳ فوریه."
     },
     {
       "id": "2008-crisis",
