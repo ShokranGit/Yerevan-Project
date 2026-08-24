@@ -2899,3 +2899,122 @@ body.is-phone #tl-stack{ left:12px !important; right:12px; width:auto; max-width
 .tl-rail-chip.hot, .tl-rail-chip.on{
   border-color:var(--ep); color:var(--text);
 }
+
+/* ===================================================================
+   THE THIRTY-NINE DAYS; the space-time cube's furniture
+   -------------------------------------------------------------------
+   The cube itself is drawn in WebGL inside the map. Everything here is
+   the small amount of type that has to stay crisp: the date ruler, the
+   two ends of the walk from Gyumri, the label under the cursor, and
+   the caption that says how to read it. All of it is pointer
+   transparent, because the map underneath is still the thing being
+   used.
+   =================================================================== */
+
+#cube-labels{
+  position:absolute; inset:0;
+  pointer-events:none; z-index:5;
+  font-family:var(--font-ui);
+}
+#cube-labels span{
+  position:absolute;
+  transform:translate(6px,-50%);
+  white-space:nowrap;
+}
+.cb-tick{
+  font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--text-3);
+}
+.cb-town{
+  font-size:11px; letter-spacing:.10em; text-transform:uppercase;
+  color:var(--text-2);
+  transform:translate(8px,-50%) !important;
+}
+.cb-hit{
+  transform:translate(14px,-50%) !important;
+  max-width:280px; white-space:normal;
+  background:rgba(15,17,21,.92);
+  border:1px solid var(--line);
+  border-left:2px solid var(--accent);
+  padding:7px 10px 8px;
+  font-size:12.5px; line-height:1.35; color:var(--text);
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.cb-hit b{
+  display:block;
+  font-size:10px; font-weight:600; letter-spacing:.10em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:3px;
+}
+
+#cube-note{
+  position:absolute; left:18px; bottom:22px; z-index:6;
+  width:270px; padding:14px 16px 13px;
+  background:rgba(15,17,21,.86);
+  border:1px solid var(--line);
+  border-top:2px solid var(--accent);
+  backdrop-filter:blur(8px);
+  animation:cbIn .5s ease both;
+}
+#cube-note .cb-head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  width:100%; padding:0; margin:0 0 6px;
+  background:none; border:0; cursor:pointer; text-align:left;
+  color:inherit; font:inherit;
+}
+#cube-note b{
+  display:block; font-family:var(--font-serif);
+  font-size:17px; font-weight:400; letter-spacing:.01em;
+}
+#cube-note .cb-chev{
+  width:8px; height:8px; flex:none;
+  border-right:1.5px solid var(--text-3); border-bottom:1.5px solid var(--text-3);
+  transform:rotate(45deg) translate(-2px,-2px);
+  transition:transform .18s ease;
+}
+#cube-note.min .cb-chev{ transform:rotate(-135deg) translate(-1px,-1px); }
+#cube-note.min .cb-body{ display:none; }
+#cube-note.min{ padding-bottom:11px; }
+#cube-note .cb-head:hover b{ color:#fff; }
+#cube-note p{
+  margin:0 0 8px; font-size:12.5px; line-height:1.5; color:var(--text-2);
+}
+#cube-note small{
+  display:block; font-size:11px; line-height:1.45; color:var(--text-3);
+  border-top:1px solid var(--line-soft); padding-top:7px;
+}
+@keyframes cbIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+
+/* On a phone the bottom of the screen belongs to the timeline strip and the
+   sheet, so the caption goes to the top instead, under the layers button,
+   and loses the ruler it has no room for. */
+body.is-phone #cube-note{
+  left:12px; right:12px; bottom:auto; top:96px; width:auto;
+  padding:11px 13px 10px;
+}
+body.is-phone #cube-note b{ font-size:15px; }
+body.is-phone #cube-note p{ font-size:12px; margin-bottom:6px; }
+body.is-phone #cube-note small{ font-size:10.5px; }
+body.is-phone .cb-tick{ display:none; }
+
+@media (prefers-reduced-motion: reduce){
+  #cube-note{ animation:none; }
+}
+
+/* The cube glyph on a period's chip. It is a control inside a control, so
+   it gets its own hit area and its own hover, and it only appears on the
+   periods whose data says they can be stood up. */
+.tl-rail-cube{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:18px; height:18px; margin-left:5px; margin-right:-2px;
+  color:var(--text-3); border-radius:2px;
+  transition:color .16s ease, background .16s ease;
+}
+.tl-rail-cube:hover, .tl-rail-cube:focus-visible{
+  color:var(--ep, var(--accent));
+  background:rgba(255,255,255,.07);
+  outline:none;
+}
+body.cube-on .tl-rail-cube{
+  color:var(--ep, var(--accent));
+  background:rgba(255,255,255,.10);
+}
