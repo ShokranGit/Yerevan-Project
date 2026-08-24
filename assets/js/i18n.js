@@ -173,6 +173,7 @@
     "map.about": "About",
 
     "basemap.kentron": "Figure-ground",
+    "basemap.drawn": "The city we drew",
     "basemap.light": "Light",
     "basemap.streets": "Streets",
     "basemap.dark": "Dark",
@@ -398,6 +399,7 @@
     "map.about": "Մասին",
 
     "basemap.kentron": "Պատկեր-ֆոն",
+    "basemap.drawn": "Մեր գծած քաղաքը",
     "basemap.light": "Լուսավոր",
     "basemap.streets": "Փողոցներ",
     "basemap.dark": "Մուգ",
@@ -623,6 +625,7 @@
     "map.about": "درباره",
 
     "basemap.kentron": "نگاره‑زمینه",
+    "basemap.drawn": "شهری که خودمان کشیده‌ایم",
     "basemap.light": "روشن",
     "basemap.streets": "خیابان‌ها",
     "basemap.dark": "تیره",

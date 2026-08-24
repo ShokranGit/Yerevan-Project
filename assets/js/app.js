@@ -25,6 +25,13 @@
   }
   var BASEMAPS = {
     kentron:   "assets/style-kentron.json",
+    /* A basemap with nothing in it: a background colour, no tiles, no glyphs,
+       no other host. Everything over it is this project's own drawing, the
+       buildings from figure.json, the streets from streets.json, the ideal
+       ring and the districts from geography.json. Made for the space-time
+       cube, where somebody else's cartography under a drawing of time is
+       just noise. */
+    drawn:     "assets/style-drawn.json",
     light:     "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
     streets:   "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
     dark:      "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
@@ -32,7 +39,7 @@
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       "Imagery &copy; Esri, Maxar, Earthstar Geographics", 19)
   };
-  var BASEMAP_ORDER = ["kentron", "light", "streets", "dark", "satellite"];
+  var BASEMAP_ORDER = ["kentron", "drawn", "light", "streets", "dark", "satellite"];
   /* Basemap labels come from the dictionary, keyed by these same five ids. */
 
   var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
@@ -143,7 +150,7 @@
      LOAD
      ================================================================= */
 
-  var KENTRON = null, FIGURE = null, GAZ = null, GEO = null;
+  var KENTRON = null, FIGURE = null, GAZ = null, GEO = null, STREETS = null;
 
   function getJSON(u) {
     return fetch(u, { cache: "no-store" })
@@ -155,9 +162,11 @@
     getJSON("data/kentron.json"),
     getJSON("data/figure.json"),
     getJSON("data/places.json"),
-    getJSON("data/geography.json")
+    getJSON("data/geography.json"),
+    getJSON("data/streets.json")
   ])
-.then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; GEO = all[3]; })
+.then(function (all) { KENTRON = all[0]; FIGURE = all[1]; GAZ = all[2]; GEO = all[3];
+                       STREETS = all[4]; })
 .then(function () { return fetch("data/events.json", { cache: "no-store" }); })
 .then(function (r) {
       if (!r.ok) throw new Error("events.json returned " + r.status);
@@ -380,6 +389,8 @@
 
     function restoreAfterStyle() {
       if (!map.isStyleLoaded()) return false;
+      /* First, so the streets lie under everything this project draws. */
+      try { addStreets(); } catch (err) { window.__stErr = String(err && err.message || err); }
       try { addFigureGround(); }
       catch (err) { window.__fgErr = String(err && err.message || err); }
       if (!map.getSource(SRC)) { addLayers(); refresh(); }
@@ -1543,6 +1554,69 @@
      rule there and the drawing follows.
      ================================================================= */
 
+  /* =================================================================
+     THE STREETS, when there is no basemap to borrow them from
+     -----------------------------------------------------------------
+     Everywhere else on this map the streets belong to somebody else's
+     cartography and are simply there. On the drawn basemap there is no
+     cartography at all, so the street network has to be part of the
+     project's own material, held in data/streets.json exactly the way
+     the buildings are held in data/figure.json: extracted once from
+     OpenStreetMap, joined end to end so a line is a street and not a
+     fragment, simplified, and stored. Nothing is fetched at read time,
+     and the drawing will be identical in ten years.
+
+     Two bands, and the difference is the argument. INNER is the Kentron
+     rectangle at about eleven metres of detail: the grid inside the
+     ideal ring, and the ring is drawn over it. OUTER is only the
+     arterial network of the wider city, and it is there for one
+     reason, to show the roads leaving the ring; Kentron is a plan and
+     the rest of Yerevan is what happened to it. So outer is dimmer and
+     thinner, a suggestion of the city beyond the figure.
+
+     Pedestrian streets get their own colour. On this map that is not a
+     transport category: it is Northern Avenue, which is the subject.
+     ================================================================= */
+  function addStreets() {
+    if (!map || !STREETS) return;
+    if (state.basemap !== "drawn") {
+      /* Every other basemap has its own streets and does not want ours. */
+      ["st-ped", "st-small", "st-big", "st-outer"].forEach(function (id) {
+        if (map.getLayer(id)) map.removeLayer(id);
+      });
+      return;
+    }
+    if (!map.getSource("streets")) map.addSource("streets", { type: "geojson", data: STREETS });
+
+    function line(id, filter, color, widths, op) {
+      if (map.getLayer(id)) return;
+      map.addLayer({
+        id: id, type: "line", source: "streets", filter: filter,
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": color,
+          "line-opacity": op,
+          "line-width": ["interpolate", ["linear"], ["zoom"],
+            10, widths[0], 13, widths[1], 15, widths[2], 17, widths[3]]
+        }
+      });
+    }
+
+    /* Widths are set at the zoom the cube is READ at, not at the zoom a
+       street map is read at. Standing back to see the whole volume puts the
+       city at z11 to z12, where hairlines disappear; so the network is
+       deliberately heavier there than a road map would draw it. */
+    line("st-outer", ["==", ["get", "band"], "outer"],
+         "#252d3a", [1.1, 2, 3.2, 5], 0.95);
+    line("st-big", ["all", ["==", ["get", "band"], "inner"], ["<=", ["get", "cls"], 2]],
+         "#414d5f", [1.4, 2.8, 4.6, 8], 1);
+    line("st-small", ["all", ["==", ["get", "band"], "inner"],
+                      [">=", ["get", "cls"], 3], ["<=", ["get", "cls"], 4]],
+         "#2d3644", [0.8, 1.7, 2.8, 5], 1);
+    line("st-ped", ["==", ["get", "cls"], 5],
+         "#6a5836", [0.9, 2, 3.2, 6], 1);
+  }
+
   /* The figure is drawn on every basemap, not just the figure-ground one; the
      point of switching to satellite is to check the red buildings against the
      real roofs, which only works if they are still there. */
@@ -2309,6 +2383,35 @@
       boroughLine: "#4d545e",
       massifOp: 0.55
     },
+    /* THE DRAWN CITY has its own row rather than borrowing the dark one, and
+       the reason is what it is for. On every other ground the districts are
+       an overlay on somebody else's map and can afford to be filled. Here
+       there is no other map: the drawing IS the streets, the buildings and
+       the ring, and a filled district would sit on top of all three and be
+       the loudest thing on a page that is meant to be a plan. So the
+       districts keep their outlines and lose their fills, and the city is
+       read from what this project drew. */
+    drawn: {
+      precinctLine: "#aeb5be", precinctFill: "#aeb5be",
+      landmarkLine: "#c8924a", landmarkFill: "#a9793f", landmarkFillOp: 0.22, landmarkCaseOp: 0,
+      countryFillOp: 0.22, boroughFillOp: 0.045, boroughLineOp: 0.55,
+      boroughCaseOp: 0.20, boroughLineW: 1.1, cityLineOp: 0.55, cityFillOp: 0.015,
+      mass: "#9aa0a8",
+      chev: "#ffffff",       chevOp: 0.8,
+      halo: "#05070a",       haloOp: 0.34,
+      animHalo: "#05070a",   animHaloOp: 0.5,
+      headRing: "#ffffff",
+      dotRing: "#14181e",    dotRingOp: 0.9,   glowOp: 0.13,
+      cityLine: "#8f97a2",   distLine: "#6d7480",
+      ringLine: "#7d8695",   ringBed: "#080a0e", ringBedOp: 0.45,
+      countryLine: "#5c636d",
+      idealGrey: "#9aa0a8",
+      boroughCase: "#05070a",
+      karabakh: "#e8b93f",
+      cityFill: "#8f97a2",
+      boroughLine: "#78808c",
+      massifOp: 0.45
+    },
     photo: {
       precinctLine: "#ffffff", precinctFill: "#e4e7ec",
       landmarkLine: "#ffd9a0", landmarkFill: "#ffc477", landmarkFillOp: 0.44, landmarkCaseOp: 0.85,
@@ -2347,6 +2450,7 @@
      Only the `dark` basemap is a dark ground. */
   function groundKind() {
     if (state.basemap === "satellite") return "photo";
+    if (state.basemap === "drawn") return "drawn";
     if (state.basemap === "dark") return "dark";
     return "light";
   }
@@ -4537,7 +4641,8 @@
       bmSel.value = state.basemap;
       bmSel.addEventListener("change", function () {
         state.basemap = this.value;
-        var dark = state.basemap === "dark" || state.basemap === "satellite";
+        var dark = state.basemap === "dark" || state.basemap === "satellite" ||
+                   state.basemap === "drawn";
         document.body.classList.toggle("light", !dark);
         $("map-wrap").classList.toggle("on-light", !dark);
         setLightBasemap();

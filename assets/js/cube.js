@@ -597,29 +597,17 @@
                  bearing: bearing, duration: 1700 });
   }
 
-  /* The floor. A cube needs one, and on a pale basemap the hairlines need
-     something to sit against; this does both jobs with one soft plate. */
-  function floor(add) {
-    if (!map) return;
-    try {
-      if (!add) {
-        if (map.getLayer("cube-floor")) map.removeLayer("cube-floor");
-        if (map.getSource("cube-floor")) map.removeSource("cube-floor");
-        return;
-      }
-      var b = geo.box;
-      var poly = { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: [[
-        [b[0], b[1]], [b[2], b[1]], [b[2], b[3]], [b[0], b[3]], [b[0], b[1]]
-      ]] } };
-      if (map.getSource("cube-floor")) {
-        map.getSource("cube-floor").setData(poly);
-      } else {
-        map.addSource("cube-floor", { type: "geojson", data: poly });
-        map.addLayer({ id: "cube-floor", type: "fill", source: "cube-floor",
-          paint: { "fill-color": "#0d0f14", "fill-opacity": 0.34 } });
-      }
-    } catch (err) { window.__cubeErr = String(err); }
-  }
+  /* THERE USED TO BE A FLOOR HERE, a dark plate laid over the ground under
+     the cube. It did two jobs: it gave the volume a bottom, and it made the
+     hairlines legible over a pale basemap. Both were solving a problem that
+     should not exist. A grey rectangle is not a floor, it is a hole in the
+     map, and the city underneath is the thing the cube is standing on.
+
+     The answer is the basemap called "the city we drew": no tiles, our own
+     buildings, our own streets, our own ring, dark. On that ground the
+     hairlines read without help, and the floor of the cube is Yerevan.
+     So the plate is gone, and entering the cube from a pale basemap moves
+     to the drawn one instead. */
 
   /* ---------------- on and off ---------------- */
 
@@ -664,6 +652,29 @@
     (wrap || document.body).appendChild(c);
   }
 
+  /* The pale basemaps and what to do about them. A cube of hairlines over
+     somebody else's white cartography is unreadable, and the fix is not to
+     thicken the hairlines, it is to stand the cube on the city this project
+     draws for itself. Entering from a pale ground switches to it, and
+     leaving puts back whatever was there before. A reader who is already on
+     a dark ground is left alone. */
+  var PALE = { kentron: 1, light: 1, streets: 1 };
+  var prevBase = null;
+
+  function toDrawn() {
+    var sel = $("basemap-select");
+    if (!sel || !PALE[sel.value]) return;
+    prevBase = sel.value;
+    sel.value = "drawn";
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+  function backFromDrawn() {
+    var sel = $("basemap-select");
+    if (!sel || !prevBase || sel.value !== "drawn") { prevBase = null; return; }
+    sel.value = prevBase; prevBase = null;
+    sel.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+
   var enterTries = 0;
   function enter() {
     if (!map || on) return;
@@ -683,8 +694,8 @@
     document.body.classList.add("cube-on");
     caption(true);
     setPressed(true);
+    toDrawn();
 
-    floor(true);
     frameCube();
     map.triggerRepaint();
   }
@@ -692,12 +703,12 @@
   function leave() {
     if (!map || !on) return;
     try { if (map.getLayer("cube")) map.removeLayer("cube"); } catch (err) {}
-    floor(false);
     on = false; geo = null; layer = null; hover = null;
     document.body.classList.remove("cube-on");
     if (labels) labels.innerHTML = "";
     caption(false);
     setPressed(false);
+    backFromDrawn();
     map.easeTo({ pitch: 55, bearing: -24, zoom: 14.4,
                  center: [44.5136, 40.1818], duration: 1300 });
   }
@@ -779,7 +790,6 @@
       if (!on || !map.getStyle()) return;
       try {
         if (map.getLayer("cube")) map.removeLayer("cube");
-        floor(true);
         layer = makeLayer();
         map.addLayer(layer);
         map.triggerRepaint();
