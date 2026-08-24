@@ -365,6 +365,7 @@
          clicked. Keep it this narrow, three functions, no internals. */
       window.YerevanMap = {
         events: function () { return state.events.slice(); },
+        episodes: function () { return state.episodes.slice(); },
         select: function (id, fly) { selectEvent(id, fly !== false); },
         /* The timeline window, in milliseconds. cube.js lights the slab of
            the space-time cube that falls inside it, so dragging the timeline
@@ -4059,6 +4060,7 @@
         var chipIds = state.events.filter(function (x) { return x.episode === it.ep.id; })
                                   .map(function (x) { return x.id; }).join(" ");
         return '<button type="button" class="tl-rail-chip" data-ep="' + it.i + '"' +
+               (it.ep.cube ? ' data-cube="' + esc(it.ep.id) + '"' : "") +
                ' data-ids="' + esc(chipIds) + '"' +
                ' title="' + esc(tr(it.ep, "label")) + '"' +
                ' style="--ep:' + esc(it.ep.color || RED) + '">' +
@@ -4070,6 +4072,7 @@
                   not in a menu of instruments, but on the period it belongs
                   to, next to the number of days it holds. */
                (it.ep.cube ? '<i class="tl-rail-cube" role="button" tabindex="0"' +
+                  ' data-cube-ep="' + esc(it.ep.id) + '"' +
                   ' title="' + esc(t("cube.open")) + '" aria-label="' + esc(t("cube.open")) + '">' + CUBE_GLYPH + '</i>' : "") +
                '</button>';
       }).join("");
@@ -4111,13 +4114,18 @@
       });
       rail.style.height = (used * ROW_H - 2) + "px";
 
+      document.dispatchEvent(new CustomEvent("yy:rail"));
+
       rail.querySelectorAll("[data-ep]").forEach(function (b) {
         b.addEventListener("click", function (evt) {
           /* The cube glyph is inside the chip, so it has to claim the click
              before the chip reads it as "open this period". */
           if (evt.target.closest(".tl-rail-cube")) {
             evt.stopPropagation();
-            if (window.Cube) window.Cube.toggle();
+            /* Each glyph carries its own period, so the cube stands up the
+               one that was asked for and swaps between them in place. */
+            var epId = evt.target.closest(".tl-rail-cube").getAttribute("data-cube-ep");
+            if (window.Cube) window.Cube.toggle(epId);
             return;
           }
           evt.stopPropagation();

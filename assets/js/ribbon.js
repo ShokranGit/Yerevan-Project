@@ -52,7 +52,7 @@
           terrain: "Terrain in 3D", districts: "Yerevan districts", pins: "Event pins",
           region: "Armenia and the region",
           draw: "Draw on the map", reset: "Reset the view",
-          cube: "Space-time cube, 2018",
+          cube: "Space-time cube",
           vertical: "Vertical rail", horizontal: "Horizontal",
           on: "on", off: "off", noTool: "no tool", drawing: "drawing",
           d3: "3D", pinsShort: "pins", distShort: "districts" },
@@ -61,7 +61,7 @@
           terrain: "Ռելիեֆը 3D-ով", districts: "Երևանի վարչական շրջանները", pins: "Իրադարձությունների կետեր",
           region: "Հայաստանը և տարածաշրջանը",
           draw: "Գծել քարտեզին", reset: "Վերականգնել տեսքը",
-          cube: "Տարածաժամանակային խորանարդ, 2018",
+          cube: "Տարածաժամանակային խորանարդ",
           vertical: "Ուղղահայաց", horizontal: "Հորիզոնական",
           on: "միացված", off: "անջատված", noTool: "գործիք չկա", drawing: "գծում",
           d3: "3D", pinsShort: "կետեր", distShort: "թաղամասեր" },
@@ -70,7 +70,7 @@
           terrain: "ناهمواری سه‌بعدی", districts: "نواحی ایروان", pins: "پین رویدادها",
           region: "ارمنستان و منطقه",
           draw: "روی نقشه بکشید", reset: "بازنشاندن نما",
-          cube: "مکعب زمان-مکان، ۲۰۱۸",
+          cube: "مکعب زمان-مکان",
           vertical: "ریل عمودی", horizontal: "افقی",
           on: "روشن", off: "خاموش", noTool: "بدون ابزار", drawing: "در حال کشیدن",
           d3: "سه‌بعدی", pinsShort: "پین‌ها", distShort: "نواحی" }
@@ -169,8 +169,22 @@
       box.appendChild(row(s("draw"), "switch", pressed("draw-btn"), function () { proxy("draw-btn"); }));
     }
     /* The cube is an instrument, not a layer: it changes what the map is
-       drawing, so it belongs beside the pen and not beside the basemaps. */
-    if ($("cube-btn")) {
+       drawing, so it belongs beside the pen and not beside the basemaps.
+       There is more than one period that can be stood up now, so this is a
+       short list of them rather than a single switch; each row is a radio,
+       because only one cube stands at a time. */
+    var cubes = (window.Cube && window.Cube.list) ? window.Cube.list() : [];
+    if (cubes.length) {
+      box.appendChild(sep());
+      box.appendChild(head(s("cube")));
+      var live = window.Cube.current ? window.Cube.current() : null;
+      cubes.forEach(function (c) {
+        box.appendChild(row(c.label || c.title, "radio", c.id === live, function () {
+          window.Cube.toggle(c.id);
+          close();
+        }));
+      });
+    } else if ($("cube-btn")) {
       box.appendChild(row(s("cube"), "switch", pressed("cube-btn"), function () { proxy("cube-btn"); }));
     }
     if ($("tl-mode")) {

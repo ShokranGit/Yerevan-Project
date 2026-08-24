@@ -1,6 +1,10 @@
 /* ===================================================================
-   Yerevan Project; THE THIRTY-NINE DAYS
-   A space-time cube for the 2018 revolution, standing on the map itself.
+   Yerevan Project; THE SPACE-TIME CUBE
+   A cube for any period in this project that is dated to the day,
+   standing on the map itself. The revolution was the first one; the
+   drawing turned out to be general, so the period is now a parameter
+   and the episode carries its own dates, colour, umbrella entry and
+   caption in data/events.json.
    -------------------------------------------------------------------
    Hägerstrand's diagram, and Kraak's later reading of it, put geography
    on the floor and time up the wall: a person becomes a line, standing
@@ -56,28 +60,49 @@
   var $ = function (id) { return document.getElementById(id); };
   var t = function (k, d) { return (window.I18N && I18N.t) ? I18N.t(k) || d : d; };
 
-  var EPISODE = "2018-revolution";
-  var T0 = Date.UTC(2018, 2, 31);
-  var T1 = Date.UTC(2018, 4, 8);
+  /* WHICH PERIOD. Any episode in data/events.json with cube:true can be
+     stood up. The episode carries everything the drawing needs: start and
+     end for the height of the cube, colour for the worldline, the id of
+     its umbrella entry (which spans the whole period and would sit at the
+     bottom meaning nothing), and its own caption in three languages. */
+  var EPISODES = [];
+  var cur = null;                       /* the spec of the period now standing */
 
-  /* The umbrella entry stands for the whole period and has no single
-     moment of its own; it would sit at the bottom of the cube and mean
-     nothing. The cube is built from the other sixteen. */
-  var UMBRELLA = "velvet-revolution-2018";
+  function hex2rgb(h, dflt) {
+    var m = /^#?([0-9a-f]{6})$/i.exec(String(h || ""));
+    if (!m) return dflt;
+    var n = parseInt(m[1], 16);
+    return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+  }
+  function lift(c, k) {
+    return [ Math.min(1, c[0] + k), Math.min(1, c[1] + k), Math.min(1, c[2] + k) ];
+  }
 
-  /* The walk from Gyumri. Towns documented, dates between them spaced
-     by distance; see the note at the top of this file. */
-  var MY_STEP = [
-    { name: "Gyumri",   c: [43.8465, 40.7877] },
-    { name: "Vanadzor", c: [44.4883, 40.8128] },
-    { name: "Dilijan",  c: [44.8635, 40.7411] },
-    { name: "Hrazdan",  c: [44.7683, 40.4979] },
-    { name: "Abovyan",  c: [44.6272, 40.2704] },
-    { name: "Yerevan",  c: [44.5152, 40.1859] }
-  ];
+  function specOf(ep) {
+    if (!ep || !ep.cube) return null;
+    var t0 = dayMs(ep.start), t1 = dayMs(ep.end);
+    if (t0 === null || t1 === null || t1 <= t0) return null;
+    var line = hex2rgb(ep.color, [0.788, 0.149, 0.173]);
+    return {
+      id: ep.id, ep: ep, t0: t0, t1: t1,
+      umbrella: ep.umbrella || null,
+      walk: (ep.walk && ep.walk.stops && ep.walk.stops.length > 1) ? ep.walk : null,
+      line: line, stay: lift(line, 0.07)
+    };
+  }
+  function cubeEpisodes() {
+    return allEpisodes().map(specOf).filter(Boolean);
+  }
+  function specById(id) {
+    var list = cubeEpisodes();
+    if (!id) return list[0] || null;
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
+  }
 
   var COL = {
-    line:   [0.788, 0.149, 0.173],   /* #c9262c, the episode's red */
+    /* line and stay are filled from the episode's own colour in build() */
+    line:   [0.788, 0.149, 0.173],
     stay:   [0.855, 0.243, 0.259],
     node:   [0.957, 0.937, 0.902],   /* #f4efe6 */
     stalk:  [0.553, 0.569, 0.600],
@@ -94,8 +119,18 @@
   var EVENTS = null;
   fetch("data/events.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (j) { EVENTS = (j && j.events) || []; })
+    .then(function (j) {
+      EVENTS = (j && j.events) || [];
+      EPISODES = (j && j.episodes) || [];
+    })
     .catch(function () { EVENTS = []; });
+
+  function allEpisodes() {
+    if (EPISODES.length) return EPISODES;
+    var api = window.YerevanMap;
+    if (api && api.episodes) { var e = api.episodes(); if (e && e.length) return e; }
+    return [];
+  }
 
   function allEvents() {
     var api = window.YerevanMap;
@@ -123,8 +158,12 @@
   /* ---------------- the geometry ---------------- */
 
   function build(events) {
+    if (!cur) return null;
+    COL.line = cur.line; COL.stay = cur.stay;
+    var T0 = cur.t0, T1 = cur.t1;
     var all = (events || []).filter(function (e) {
-      return e.episode === EPISODE && e.id !== UMBRELLA && e.coordinates;
+      return e.episode === cur.id && e.id !== cur.umbrella && e.coordinates &&
+             dayMs(e.date) !== null;
     });
     if (!all.length) return null;
 
@@ -163,7 +202,7 @@
                 title: pick(e, "title"), place: pick(e, "location") };
       /* An entry that lasts is a column: the sit-in at France Square
          held that corner for ten days and the drawing should say so. */
-      if (end && end > ms && e.id !== "my-step-march-2018-03-31") {
+      if (end && end > ms && !(cur.walk && e.id === cur.walk.entry)) {
         n.top = alt(end);
         seg(p, [p[0], p[1], n.top], COL.stay, 0.85, 0.25);
       }
@@ -178,22 +217,27 @@
       seg(chain[i - 1].p, chain[i].p, COL.line, 0.62);
     }
 
-    /* --- the walk from Gyumri, leaning in from the northwest --- */
-    var lens = [], total = 0;
-    for (i = 1; i < MY_STEP.length; i++) {
-      var d = metresBetween(MY_STEP[i - 1].c, MY_STEP[i].c);
-      lens.push(d); total += d;
+    /* --- a documented walk, if this period has one, leaning in from
+           outside the city. The revolution's is the march from Gyumri;
+           the stops and the two documented dates live on the episode. --- */
+    var stepPts = [];
+    if (cur.walk) {
+      var stops = cur.walk.stops, lens = [], total = 0;
+      for (i = 1; i < stops.length; i++) {
+        var d = metresBetween(stops[i - 1].c, stops[i].c);
+        lens.push(d); total += d;
+      }
+      var walkStart = dayMs(cur.walk.from), walkEnd = dayMs(cur.walk.to), acc = 0;
+      stepPts = stops.map(function (st, k) {
+        if (k) acc += lens[k - 1];
+        var f = total ? acc / total : 0;
+        return { name: pick(st, "name") || st.name,
+                 p: [st.c[0], st.c[1], alt(walkStart + f * (walkEnd - walkStart))] };
+      });
     }
-    var walkStart = dayMs("2018-03-31"), walkEnd = dayMs("2018-04-13"), acc = 0;
-    var stepPts = MY_STEP.map(function (s, k) {
-      if (k) acc += lens[k - 1];
-      var f = total ? acc / total : 0;
-      return { name: s.name, p: [s.c[0], s.c[1], alt(walkStart + f * (walkEnd - walkStart))] };
-    });
-    /* The walk is a hundred kilometres long and the cube is six across, so
-       the far legs would shout over the city. They fade with distance: the
-       thread arrives out of the northwest rather than dragging the eye to
-       Lake Sevan. */
+    /* A walk of a hundred kilometres over a cube six across would shout
+       over the city, so the far legs fade with distance: the thread
+       arrives out of the northwest rather than dragging the eye away. */
     function farFade(p) {
       var dx = Math.max(0, Math.max(box[0] - p[0], p[0] - box[2]));
       var dy = Math.max(0, Math.max(box[1] - p[1], p[1] - box[3]));
@@ -205,14 +249,22 @@
           farFade(stepPts[i - 1].p), farFade(stepPts[i].p));
     }
 
-    /* --- the 22 April march, flat because two hours is flat --- */
+    /* --- a route walked inside a single day is flat, because at this
+           scale two hours IS flat: the 22 April march, the occupied
+           carriageway of Baghramyan Avenue --- */
     all.forEach(function (e) {
-      if (!e.path || e.path.length < 2) return;
       var z = alt(dayMs(e.date));
-      for (var k = 1; k < e.path.length; k++) {
-        seg([e.path[k - 1][0], e.path[k - 1][1], z],
-            [e.path[k][0], e.path[k][1], z], COL.line, 0.55);
-      }
+      var lines = [];
+      if (e.path && e.path.length > 1) lines.push(e.path);
+      if (e.paths && e.paths.length) e.paths.forEach(function (pp) {
+        if (pp && pp.length > 1) lines.push(pp);
+      });
+      lines.forEach(function (ln) {
+        for (var k = 1; k < ln.length; k++) {
+          seg([ln[k - 1][0], ln[k - 1][1], z],
+              [ln[k][0], ln[k][1], z], COL.line, 0.55);
+        }
+      });
     });
 
     /* --- stalks: every disc dropped to the ground, so you can read
@@ -257,17 +309,46 @@
       }
     });
 
-    /* --- the ruler: a day is a tick, a week is a longer one --- */
+    /* --- the ruler. A comb of daily ticks reads beautifully over
+           thirty-nine days and turns into hatching over a summer, so the
+           grain follows the length of the period: days and weeks for a
+           short one, weeks and months for a season, months and years for
+           anything longer. Only the major ticks are labelled. --- */
     var anchor = [box[0], box[3]];
     var ticks = [];
     var tickLen = (box[2] - box[0]) * 0.05;
-    for (var ms2 = T0; ms2 <= T1; ms2 += 86400000) {
+    var days = (T1 - T0) / 86400000;
+    var grain = days <= 60 ? "day" : (days <= 400 ? "week" : "month");
+
+    function nextTick(ms) {
+      if (grain === "day") return ms + 86400000;
+      if (grain === "week") return ms + 7 * 86400000;
+      var d = new Date(ms);
+      return Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1);
+    }
+    function isMajor(ms) {
+      var d = new Date(ms);
+      if (grain === "day") return d.getUTCDay() === 6;
+      if (grain === "week") return d.getUTCDate() <= 7;
+      return d.getUTCMonth() === 0;
+    }
+    /* Start on the grain rather than on the first day of the period, so
+       the ticks fall on weeks and months and not on an arbitrary offset. */
+    var first = T0;
+    if (grain === "week") {
+      var dd = new Date(T0);
+      first = T0 + ((6 - dd.getUTCDay() + 7) % 7) * 86400000;
+    } else if (grain === "month") {
+      var dm = new Date(T0);
+      first = Date.UTC(dm.getUTCFullYear(), dm.getUTCMonth() + (dm.getUTCDate() > 1 ? 1 : 0), 1);
+    }
+    for (var ms2 = first; ms2 <= T1; ms2 = nextTick(ms2)) {
       var z = alt(ms2);
-      var d = new Date(ms2);
-      var weekly = d.getUTCDay() === 6;
-      var L = weekly ? tickLen * 2.1 : tickLen;
-      seg([anchor[0], anchor[1], z], [anchor[0] + L, anchor[1], z], COL.box, weekly ? 0.38 : 0.16);
-      ticks.push({ ms: ms2, p: [anchor[0] + L * 1.25, anchor[1], z], weekly: weekly });
+      var major = isMajor(ms2);
+      var L = major ? tickLen * 2.1 : tickLen;
+      seg([anchor[0], anchor[1], z], [anchor[0] + L, anchor[1], z], COL.box, major ? 0.38 : 0.16);
+      ticks.push({ ms: ms2, p: [anchor[0] + L * 1.25, anchor[1], z],
+                   major: major, grain: grain });
     }
     seg([anchor[0], anchor[1], 0], [anchor[0], anchor[1], H], COL.box, 0.40, 0.18);
 
@@ -456,21 +537,23 @@
   }
 
   var MONTH = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  function tickLabel(ms) {
+  function tickLabel(ms, grain) {
     var d = new Date(ms), day = d.getUTCDate(), mo = d.getUTCMonth();
     var name = (window.I18N && I18N.month) ? I18N.month(mo) : MONTH[mo];
-    var n = (window.I18N && I18N.num) ? I18N.num(day) : String(day);
-    return n + " " + (name || MONTH[mo]);
+    var num = function (v) { return (window.I18N && I18N.num) ? I18N.num(v) : String(v); };
+    if (grain === "month") return num(d.getUTCFullYear());
+    if (grain === "week") return (name || MONTH[mo]);
+    return num(day) + " " + (name || MONTH[mo]);
   }
 
   function drawLabels() {
     if (!labels) return;
     var html = [];
     geo.ticks.forEach(function (k) {
-      if (!k.weekly) return;
+      if (!k.major) return;
       var s = project(k.p); if (!s) return;
       html.push('<span class="cb-tick" style="left:' + s.x.toFixed(1) + 'px;top:' +
-                s.y.toFixed(1) + 'px">' + tickLabel(k.ms) + '</span>');
+                s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain) + '</span>');
     });
     geo.steps.forEach(function (st, i) {
       if (i === 0 || i === geo.steps.length - 1) {
@@ -626,25 +709,24 @@
   function caption(show) {
     var c = $("cube-note");
     if (!show) { if (c) c.remove(); return; }
-    if (c) return;
+    if (c) c.remove();
+    if (!cur) return;
+    var ep = cur.ep;
     var phone = document.body.classList.contains("is-phone");
     c = document.createElement("div");
     c.id = "cube-note";
     c.className = phone ? "min" : "";
+    var title  = pick(ep, "cubeTitle")  || pick(ep, "label") || t("cube.title", "The cube");
+    var body   = pick(ep, "cubeBody")   || t("cube.body", "");
+    var method = pick(ep, "cubeMethod") || "";
     c.innerHTML =
       '<button type="button" class="cb-head">' +
-        '<b>' + esc(t("cube.title", "The thirty-nine days")) + '</b>' +
+        '<b>' + esc(title) + '</b>' +
         '<i class="cb-chev" aria-hidden="true"></i>' +
       '</button>' +
       '<div class="cb-body">' +
-        '<p>' + esc(t("cube.body",
-          "Time stands up off the map, 31 March to 8 May 2018. A disc is an entry on its day, " +
-          "a column is a place holding still, a slope is movement across days. " +
-          "Drag the timeline to slice the cube.")) + '</p>' +
-        '<small>' + esc(t("cube.method",
-          "Dated to the day. The walk from Gyumri passes Vanadzor, Dilijan, Hrazdan and Abovyan; " +
-          "those middle dates are spaced along the route, only the two ends are documented.")) +
-        '</small>' +
+        '<p>' + esc(body) + '</p>' +
+        (method ? '<small>' + esc(method) + '</small>' : "") +
       '</div>';
     c.querySelector(".cb-head").addEventListener("click", function () {
       c.classList.toggle("min");
@@ -677,14 +759,27 @@
     sel.dispatchEvent(new Event("change", { bubbles: true }));
   }
 
-  var enterTries = 0;
-  function enter() {
-    if (!map || on) return;
+  var enterTries = 0, wantId = null;
+  function enter(id) {
+    if (!map) return;
+    if (id) wantId = id;
+    var spec = specById(wantId);
+    /* No episodes yet means the file is still in flight, not that there
+       are none to stand up. Wait for it rather than failing quietly. */
+    if (!spec) {
+      if (++enterTries < 24) setTimeout(function () { enter(); }, 500);
+      return;
+    }
+    if (on) {
+      if (spec.id === (cur && cur.id)) return;
+      leave(true);                       /* swapping periods, stay in the cube */
+    }
+    cur = spec;
+    wantId = spec.id;
     geo = build(allEvents());
-    /* Nothing to stand up yet means the entries are still in flight, not
-       that there are none. Wait for them rather than failing quietly. */
     if (!geo) {
-      if (++enterTries < 24) setTimeout(enter, 500);
+      cur = null;
+      if (++enterTries < 24) setTimeout(function () { enter(); }, 500);
       return;
     }
     enterTries = 0;
@@ -697,27 +792,44 @@
     caption(true);
     setPressed(true);
     toDrawn();
+    markChips();
 
     frameCube();
     map.triggerRepaint();
   }
 
-  function leave() {
+  function leave(swapping) {
     if (!map || !on) return;
     try { if (map.getLayer("cube")) map.removeLayer("cube"); } catch (err) {}
     on = false; geo = null; layer = null; hover = null;
-    document.body.classList.remove("cube-on");
     if (labels) labels.innerHTML = "";
+    if (swapping) return;
+    cur = null;
+    document.body.classList.remove("cube-on");
     caption(false);
     setPressed(false);
+    markChips();
     backFromDrawn();
     map.easeTo({ pitch: 55, bearing: -24, zoom: 14.4,
                  center: [44.5136, 40.1818], duration: 1300 });
   }
 
+  /* The rail chips carry the cube glyph, and the glyph of the period that
+     is standing should say so. */
+  function markChips() {
+    var chips = document.querySelectorAll(".tl-rail-chip[data-cube]");
+    Array.prototype.forEach.call(chips, function (ch) {
+      var live = on && cur && ch.getAttribute("data-cube") === cur.id;
+      ch.classList.toggle("cube-live", !!live);
+    });
+  }
+
   function setPressed(v) {
     var b = $("cube-btn");
     if (b) b.setAttribute("aria-pressed", v ? "true" : "false");
+    document.dispatchEvent(new CustomEvent("yy:cube", {
+      detail: { on: !!v, id: cur ? cur.id : null }
+    }));
   }
 
   function readWindow() {
@@ -737,6 +849,7 @@
 
     var btn = $("cube-btn");
     if (btn) btn.addEventListener("click", function () { on ? leave() : enter(); });
+    document.addEventListener("yy:rail", markChips);
 
     map.on("mousemove", function (e) {
       if (!on) return;
@@ -805,13 +918,30 @@
     if (bm) bm.addEventListener("change", rebuildSoon);
     map.on("style.load", rebuildSoon);
 
-    if (/[?&]cube=1/.test(location.search)) setTimeout(enter, 2200);
+    var q = /[?&]cube=([^&]+)/.exec(location.search);
+    if (q) {
+      var want = decodeURIComponent(q[1]);
+      setTimeout(function () { enter(want === "1" ? null : want); }, 2200);
+    }
   }
 
   window.Cube = {
-    enter: enter, leave: leave,
-    toggle: function () { on ? leave() : enter(); },
-    isOn: function () { return on; }
+    enter: enter,
+    leave: function () { leave(); },
+    toggle: function (id) {
+      if (on && (!id || (cur && cur.id === id))) leave();
+      else enter(id);
+    },
+    isOn: function () { return on; },
+    current: function () { return cur ? cur.id : null; },
+    /* The periods that can be stood up, for the ribbon and anything else
+       that wants to offer them by name. */
+    list: function () {
+      return cubeEpisodes().map(function (sp) {
+        return { id: sp.id, label: pick(sp.ep, "label"),
+                 title: pick(sp.ep, "cubeTitle") || pick(sp.ep, "label") };
+      });
+    }
   };
 
   if (document.readyState === "loading") {
