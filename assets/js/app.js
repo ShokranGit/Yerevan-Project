@@ -2873,6 +2873,17 @@
 
   var MARK_MIN_PX = 12;
 
+  function episodeOf(e) {
+    if (!e || !e.episode) return null;
+    var found = null;
+    (state.episodes || []).forEach(function (ep) { if (ep.id === e.episode) found = ep; });
+    return found;
+  }
+  function onAxisEpisode(e) {
+    var ep = episodeOf(e);
+    return !!(ep && ep.axis !== false);
+  }
+
   /* The grouping is done in pixels, so the rail has to be redrawn whenever the
      pixels change: a resized window, and the flip between the horizontal track
      and the vertical rail, which are the same element at two different
@@ -2913,6 +2924,18 @@
 
     var pts = [];
     (vis || []).forEach(function (e) {
+      /* AN ENTRY IS REPRESENTED ONCE.
+         A period that owns a length of the axis already stands for the
+         entries inside it: the 2018 revolution is a red band and a labelled
+         chip with its own day by day list, and it is the subject of one of
+         Shokran's articles, not a crowd of seventeen anonymous hairlines
+         reading "18". Drawing both the band and a counter for the same
+         seventeen entries says the same thing twice and hides the louder
+         half. So an entry inside an on-axis period gets no mark of its own;
+         the band is its mark, and hovering it in the panel lights the band.
+         Periods with `axis: false`, like the commemoration, draw no band, so
+         their entries keep their own marks. */
+      if (onAxisEpisode(e)) return;
       var T = parseDate(e.date);
       if (T === null) return;
       var f = (T - tMin) / (tMax - tMin);
@@ -2972,7 +2995,7 @@
 
   function paintMarkState() {
     var id = state.selectedId;
-    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk").forEach(function (b) {
+    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk, #tl-episodes .tl-ep, #tl-rail .tl-rail-chip").forEach(function (b) {
       var mine = b.dataset.id ? (b.dataset.id === id)
                : (b.dataset.ids || "").split(" ").indexOf(id) >= 0;
       b.classList.toggle("on", !!id && mine);
@@ -3043,7 +3066,7 @@
      under a counter, and pointing at it should light the counter. */
   function hotMark(id, on) {
     if (!id) return;
-    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk").forEach(function (b) {
+    document.querySelectorAll("#tl-marks .tl-mk, #cn-marks .tl-mk, #tl-episodes .tl-ep, #tl-rail .tl-rail-chip").forEach(function (b) {
       var mine = b.dataset.id ? (b.dataset.id === id)
                : (b.dataset.ids || "").split(" ").indexOf(id) >= 0;
       if (mine) b.classList.toggle("hot", !!on);
@@ -3872,7 +3895,10 @@
       if (ep.axis === false) return "";
       var sp = episodeSpan(ep);
       if (!sp) return "";
+      var mine = state.events.filter(function (x) { return x.episode === ep.id; })
+                            .map(function (x) { return x.id; }).join(" ");
       return '<button type="button" class="tl-ep" data-ep="' + i + '"' +
+             ' data-ids="' + esc(mine) + '"' +
              ' title="' + esc(tr(ep, "label")) + '"' +
              ' style="left:' + (sp.f0 * 100).toFixed(3) + '%;width:' +
              ((sp.f1 - sp.f0) * 100).toFixed(3) + '%;--ep:' + esc(ep.color || RED) + '">' +
@@ -3894,7 +3920,10 @@
       items.sort(function (x, y) { return x.sp.f0 - y.sp.f0; });
 
       rail.innerHTML = items.map(function (it) {
+        var chipIds = state.events.filter(function (x) { return x.episode === it.ep.id; })
+                                  .map(function (x) { return x.id; }).join(" ");
         return '<button type="button" class="tl-rail-chip" data-ep="' + it.i + '"' +
+               ' data-ids="' + esc(chipIds) + '"' +
                ' title="' + esc(tr(it.ep, "label")) + '"' +
                ' style="--ep:' + esc(it.ep.color || RED) + '">' +
                '<i class="tl-rail-tick"></i>' +
