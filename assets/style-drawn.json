@@ -1,0 +1,15 @@
+{
+  "version": 8,
+  "name": "The city we drew",
+  "metadata": {
+    "note": "A basemap with nothing in it. No tiles, no glyphs, no sprite, no host but this one: a background colour and nothing else. Everything you see over it is drawn by this project from its own files, the buildings from data/figure.json, the streets from data/streets.json, the ideal ring and the districts from data/geography.json. It exists for the space-time cube, where a borrowed basemap under a drawing of time is noise, and for any figure that has to be reproducible offline in ten years."
+  },
+  "sources": {},
+  "layers": [
+    {
+      "id": "bg",
+      "type": "background",
+      "paint": { "background-color": "#080a0e" }
+    }
+  ]
+}
