@@ -221,7 +221,11 @@
     var mppNeed = Math.max(wide, tall) / 800;
     var zFit = Math.log(156543.03 * Math.cos(midLat * Math.PI / 180) / mppNeed) / Math.LN2;
     var zLo = Math.max(1.5, Math.min(9.5, zFit - 1.5));
-    var zStart = Math.max(zLo, Math.min(15.5, zFit));
+    /* Never start closer than the old fixed 12.4: a cube is kilometres tall
+       even when its ground is two streets wide, and starting at the zoom the
+       ground alone would want puts the whole volume behind the camera, where
+       not one corner can be measured and the framing pass gives up. */
+    var zStart = Math.max(zLo, Math.min(12.4, zFit));
 
     /* Is this point outside the cube's own ground? Used to fade the far
        legs and to keep the stalks and the footprint inside the volume. */
