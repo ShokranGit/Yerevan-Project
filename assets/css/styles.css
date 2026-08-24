@@ -2886,3 +2886,16 @@ body.tl-vertical .tl-mk i{ box-shadow:0 0 0 1px rgba(0,0,0,.55); }
 body.is-phone .tl-mk{ width:13px; margin-left:-6.5px; }
 body.is-phone .tl-mk i{ left:5px; }
 body.is-phone #tl-stack{ left:12px !important; right:12px; width:auto; max-width:none; }
+
+/* A period of one day has no length, so its band would be zero pixels wide.
+   The concert of 23 April 2015 is one night and the subject of an article;
+   it gets the same minimum presence a mark gets. */
+.tl-ep{ min-width:5px; }
+.tl-ep-band{ min-width:5px; }
+/* a band, or a named chip, standing for an entry the reader is pointing at */
+.tl-ep.hot .tl-ep-band, .tl-ep.on .tl-ep-band{
+  opacity:1; box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 0 9px var(--ep);
+}
+.tl-rail-chip.hot, .tl-rail-chip.on{
+  border-color:var(--ep); color:var(--text);
+}
