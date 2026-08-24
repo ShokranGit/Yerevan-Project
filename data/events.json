@@ -3153,30 +3153,96 @@
     {
       "id": "electric-yerevan-2015",
       "title": "Electric Yerevan",
-      "date": "2015-06",
-      "dateEnd": "2015-07",
-      "datePrecision": "month",
+      "date": "2015-06-17",
+      "dateEnd": "2015-09-30",
+      "datePrecision": "day",
       "coordinates": [
-        44.517,
-        40.1893
+        44.51171,
+        40.191
       ],
-      "location": "Baghramyan Avenue",
+      "location": "Marshal Baghramyan Avenue",
       "categories": [
         "protest",
-        "infra"
+        "infra",
+        "publiclife"
       ],
-      "summary": "The movement against the electricity price hike, occupying Baghramyan Avenue. The peak of the urban politics that had been developing since the late 2000s.",
-      "analysis": "The high-water mark of the urban repertoire before 2018, and, notably, staged on an avenue rather than in a square. Occupying a street toward the National Assembly rather than assembling in Opera Square is itself evidence that the geography of Armenian protest had already moved.",
-      "actors": [],
+      "summary": "Fourteen days in which a tariff decision put twenty thousand people in a carriageway. From the regulator's ruling of 17 June to the audit of 30 September: a rally at Freedom Square, a march that was stopped 212 metres short of the president's residence and sat down where it stopped, a dawn dispersal with water cannon that multiplied the crowd tenfold, a barricade of municipal rubbish bins, a subsidy that split the movement, and a clearance so polite that it worked.",
+      "analysis": "Electric Yerevan is the point at which Armenian protest changes shape, and this map can show the change rather than assert it. Every movement drawn here before 2015, from the genocide recognition demonstration of 1965 to the Karabakh movement, the election protests and the 2008 crackdown, happens in a square: a form the plan of the city set aside for assembly, where a crowd is expected, contained and eventually removed. In June 2015 the crowd walked out of the square and sat down in a road, and the road, unlike the square, could not be conceded without the state conceding movement itself.\n\nThe measurements matter. The held stretch is 768 metres of Marshal Baghramyan Avenue, from France Square to the junction with Derenik Demirchyan Street. The police line stood 212 metres short of the Residence of the President. The regulator that made the decision sits 2.4 kilometres east, at 5/1 Myasnikyan Avenue, and was never the address of a single day of protest. The movement pointed itself at the man rather than the mechanism, which is both why it could gather twenty thousand people and why the mechanism survived it intact.\n\nThe grievance travelled as nothing else in the decade did, to Gyumri, Vanadzor, Spitak, Ashtarak and Martuni, because the grid is national and a price is the same everywhere on it. Three years later a walk from Gyumri would arrive in this city and finish what this summer could not, and in April 2018 the state would answer a march on this same avenue with razor wire rather than water.\n\nAnd the outcome should be recorded honestly. The audit found the tariff justified. The rise was never reversed; it was carried by the budget for a year and then reduced by a different decision. The grid was sold to another Moscow-based owner. Of the three demands, none was met. What survived was the repertoire: a street can be held, a barricade can be made of the city's own bins, and a dispersal filmed by people the police are beating produces a bigger crowd the following evening. All three were used again in 2018, and the second time they worked.",
+      "actors": [
+        "No to Plunder",
+        "Vaghinak Shushanyan",
+        "Andreas Ghukasyan",
+        "Serzh Sargsyan",
+        "Electric Networks of Armenia",
+        "Public Services Regulatory Commission"
+      ],
       "tags": [
         "Electric Yerevan",
         "electricity tariff",
         "Baghramyan",
-        "occupation"
+        "occupation",
+        "No to Plunder",
+        "water cannon"
       ],
       "sources": [
         {
-          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
+          "title": "RFE/RL, 'Armenian Riot Police Deployed At Yerevan Protest', 26 June 2015",
+          "url": "https://www.globalsecurity.org/military/library/news/2015/06/mil-150626-rferl03.htm",
+          "note": "The source for the date of the regulator's decision, 17 June, for the five-member commission, and for the twenty thousand on the avenue on the evening of 26 June."
+        },
+        {
+          "title": "Civic Solidarity Platform, 'Armenia: human rights violations against peaceful protesters'",
+          "url": "http://www.civicsolidarity.org/article/1110/armenia-human-rights-violations-against-peaceful-protesters",
+          "note": "The minute by minute account of the dawn of 23 June: the 05:20 warning, the water cannon at about 05:30, 237 detentions, 25 ambulance calls, fifteen hospitalised, the journalists named one by one."
+        },
+        {
+          "title": "ANCA / Asbarez, 'Electric Yerevan: Police Unblock Baghramyan Avenue', 6 July 2015",
+          "url": "https://anca.org/electric-yerevan-police-unblock-baghramyan-avenue/",
+          "note": "The clearance of 6 July: the bins carried away, more than forty detained, no batons and no water, and the police request that the crowd move to Freedom Square."
+        },
+        {
+          "title": "Hromadske International, 'What Was #ElectricYerevan?'",
+          "url": "https://medium.com/@Hromadske/what-was-electricyerevan-4023bfa935e",
+          "note": "The split of 28 June in Vaghinak Shushanyan's own words, the three demands, and the Gallup finding that ninety-five per cent of Armenians approved of the protest."
+        },
+        {
+          "title": "Alina Vardanyan, 'Armenia Electrified', Institute for War and Peace Reporting, 26 June 2015",
+          "url": "https://iwpr.net/global-voices/armenia-electrified",
+          "note": "Four to five hundred at the start, thousands after the water cannon, and No to Plunder's refusal to negotiate in Artush Chibuhyan's words."
+        },
+        {
+          "title": "BBC News, 'Armenia protests: Electricity price hike suspended', 27 June 2015",
+          "url": "https://www.bbc.com/news/world-europe-33301689",
+          "note": "Sargsyan's offer: the state would carry the rise pending a review, not cancel it, and the crowd stayed."
+        },
+        {
+          "title": "Epress.am, 'Electricity Tariff in Armenia to Rise by Almost 7 Drams', 10 June 2015",
+          "url": "https://epress.am/en/2015/06/10/electricity-tariff-in-armenia-to-rise-by-almost-7-drams.html",
+          "note": "Carries the four figures used here: 41.85 to 48.78 drams by day, 31.85 to 38.78 by night, and Electric Networks of Armenia's May application for seventeen drams."
+        },
+        {
+          "title": "Panorama.am, 'PSRC decision to raise power tariffs in Armenia justified, Deloitte & Touche says', 30 September 2015",
+          "url": "https://www.panorama.am/en/news/2015/09/30/tariff/1454558",
+          "note": "The audit the president promised, and its finding."
+        },
+        {
+          "title": "PanARMENIAN, on the European Court of Human Rights in Ishkhanyan v. Armenia",
+          "url": "https://www.pan.am/en/319709",
+          "note": "The Strasbourg court found the seven hour detention of the journalist Hovhannes Ishkhanyan unlawful and a violation of his freedom of assembly, and awarded about six thousand euro."
+        },
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "Every coordinate in this dossier is an OpenStreetMap feature: the avenue's carriageway, the Demirchyan junction, the Residence of the President, the regulator's building at 5/1 Myasnikyan Avenue, and the five towns."
+        },
+        {
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'",
+          "note": "The entry this dossier grew out of, and the argument it is evidence for."
         }
       ],
       "media": [
@@ -3184,32 +3250,131 @@
           "type": "image",
           "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Electric_Yerevan.JPG/1280px-Electric_Yerevan.JPG",
           "caption": "Electric Yerevan occupying Baghramyan Avenue, a street, not a square.",
+          "caption_hy": "Էլեկտրիկ Երևանը գրավում է Բաղրամյան պողոտան՝ փողոց, ոչ թե հրապարակ։",
+          "caption_fa": "ایروانِ برقی خیابان باغرامیان را اشغال می‌کند: یک خیابان، نه یک میدان.",
           "credit": "Photo: Narek75, 26 June 2015",
           "license": "CC BY-SA 4.0",
-          "source": "https://commons.wikimedia.org/wiki/File:Electric_Yerevan.JPG",
-          "caption_hy": "Էլեկտրիկ Երևանը գրավում է Բաղրամյան պողոտան՝ փողոց, ոչ թե հրապարակ։",
-          "caption_fa": "ایروانِ برقی خیابان باغرامیان را اشغال می‌کند, یک خیابان، نه یک میدان."
+          "source": "https://commons.wikimedia.org/wiki/File:Electric_Yerevan.JPG"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG",
+          "caption": "The held carriageway, looking toward the police line at Demirchyan Street.",
+          "caption_hy": "Պահված երթևեկելի մասը՝ Դեմիրճյան փողոցի ոստիկանական շղթայի ուղղությամբ։",
+          "caption_fa": "سواره‌روی نگاه‌داشته، رو به صف پلیس در خیابان دمیرچیان.",
+          "credit": "Photo: Hayordi, 22 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG"
         }
       ],
       "title_hy": "Էլեկտրիկ Երևան",
       "location_hy": "Բաղրամյան պողոտա",
-      "summary_hy": "Էլեկտրաէներգիայի սակագնի բարձրացման դեմ շարժումը՝ Բաղրամյան պողոտայի գրավմամբ։ 2000-ականների վերջից զարգացող քաղաքային քաղաքականության գագաթնակետը։",
-      "analysis_hy": "2018-ից առաջ քաղաքային երգացանկի ամենաբարձր կետը, և հատկանշական է, որ բեմադրված է պողոտայում, ոչ թե հրապարակում։ Ազգային ժողովի ուղղությամբ փողոց գրավելը՝ Օպերայի հրապարակում հավաքվելու փոխարեն, ինքնին վկայում է, որ հայկական բողոքի աշխարհագրությունն արդեն տեղափոխվել էր։",
+      "summary_hy": "Տասնչորս օր, որոնց ընթացքում սակագնային որոշումը քսան հազար մարդ դրեց երթևեկելի մասում։ Հունիսի 17-ի կարգավորողի որոշումից մինչև սեպտեմբերի 30-ի աուդիտը՝ հանրահավաք Ազատության հրապարակում, երթ, որը կանգնեցվեց նախագահի նստավայրից 212 մետր ներքև և նստեց այնտեղ, ուր կանգնեցվել էր, լուսադեմի ցրում ջրցանով, որը ամբոխը տասնապատկեց, քաղաքային աղբամաններից պատնեշ, սուբսիդիա, որը պառակտեց շարժումը, և այնքան քաղաքավարի մաքրում, որ ստացվեց։",
+      "analysis_hy": "«Էլեկտրիկ Երևանը» այն կետն է, որտեղ հայկական բողոքը ձև է փոխում, և այս քարտեզը կարող է ցույց տալ փոփոխությունը, ոչ թե պնդել այն։ 2015-ից առաջ այստեղ գծված ամեն շարժում՝ 1965-ի ցեղասպանության ճանաչման ցույցից մինչև Ղարաբաղյան շարժումը, ընտրական բողոքները և 2008-ի ճնշումը, տեղի է ունենում հրապարակում՝ ձևում, որ քաղաքի հատակագիծը հատկացրել է հավաքի համար։ 2015-ի հունիսին ամբոխը դուրս եկավ հրապարակից և նստեց ճանապարհին, և ճանապարհը, ի տարբերություն հրապարակի, չէր կարող զիջվել առանց պետությունը զիջելու հենց շարժումը։\n\nՉափումները կարևոր են։ Պահված հատվածը Մարշալ Բաղրամյան պողոտայի 768 մետրն է՝ Ֆրանսիայի հրապարակից մինչև Դերենիկ Դեմիրճյան փողոցի խաչմերուկ։ Ոստիկանական շղթան կանգնած էր Նախագահի նստավայրից 212 մետր ներքև։ Որոշում կայացրած կարգավորողը գտնվում է 2,4 կիլոմետր արևելք՝ Մյասնիկյան պողոտա 5/1, և երբեք չդարձավ ոչ մի բողոքի հասցե։\n\nԴժգոհությունը ճամփորդեց այնպես, ինչպես տասնամյակում ուրիշ ոչինչ՝ Գյումրի, Վանաձոր, Սպիտակ, Աշտարակ և Մարտունի, որովհետև ցանցը համապետական է։ Երեք տարի անց Գյումրիից քայլերթը կգա այս քաղաք և կավարտի այն, ինչ այս ամառը չկարողացավ։\n\nԱրդյունքը պետք է ազնվորեն արձանագրվի։ Աուդիտը սակագինը հիմնավոր համարեց։ Բարձրացումը երբեք հետ չվերցվեց։ Ցանցը վաճառվեց մեկ այլ մոսկվայաբնակ սեփականատիրոջ։ Երեք պահանջներից ոչ մեկը չբավարարվեց։ Ինչը գոյատևեց՝ երգացանկն էր, և 2018-ին այն կրկին օգտագործվեց, և երկրորդ անգամ ստացվեց։",
       "tags_hy": [
         "Էլեկտրիկ Երևան",
         "էլեկտրաէներգիայի սակագին",
         "Բաղրամյան",
-        "գրավում"
+        "գրավում",
+        "Ոչ Թալանին",
+        "ջրցան"
       ],
       "title_fa": "ایروانِ برقی",
       "location_fa": "خیابان باغرامیان",
-      "summary_fa": "جنبش علیه افزایش قیمت برق، با اشغال خیابان باغرامیان. اوج سیاست شهری‌ای که از اواخر دههٔ ۲۰۰۰ در حال شکل‌گیری بود.",
-      "analysis_fa": "بلندترین نقطهٔ مجموعهٔ کنش‌های شهری پیش از ۲۰۱۸, و نکته آنکه در یک خیابان اجرا شد، نه در یک میدان. اشغال خیابانی رو به مجلس ملی به‌جای گردآمدن در میدان اپرا، خود گواهی است که جغرافیای اعتراض ارمنی پیشاپیش جابه‌جا شده بود.",
+      "summary_fa": "چهارده روزی که در آن یک تصمیم تعرفه‌ای بیست هزار نفر را در سواره‌رو نشاند. از رأی تنظیم‌گر در ۱۷ ژوئن تا حسابرسی ۳۰ سپتامبر: تجمعی در میدان آزادی، راهپیمایی‌ای که ۲۱۲ متر مانده به اقامتگاه رئیس‌جمهور متوقف شد و همان‌جا نشست، پراکندنی سحرگاهی با آب‌پاش که جمعیت را ده برابر کرد، سنگری از سطل‌های زبالهٔ شهرداری، یارانه‌ای که جنبش را دو پاره کرد، و پاک‌سازی‌ای چنان مؤدبانه که کارگر افتاد.",
+      "analysis_fa": "ایروانِ برقی نقطه‌ای است که در آن اعتراض ارمنی شکل عوض می‌کند، و این نقشه می‌تواند این تغییر را نشان دهد نه آنکه ادعایش کند. هر جنبشی که پیش از ۲۰۱۵ اینجا کشیده شده، از تظاهرات شناسایی نسل‌کشی ۱۹۶۵ تا جنبش قره‌باغ، اعتراض‌های انتخاباتی و سرکوب ۲۰۰۸، در یک میدان رخ می‌دهد: شکلی که نقشهٔ شهر برای گردهمایی کنار گذاشته است. در ژوئن ۲۰۱۵ جمعیت از میدان بیرون آمد و در خیابان نشست، و خیابان، برخلاف میدان، بدون آنکه دولت خودِ حرکت را واگذار کند واگذارشدنی نبود.\n\nاندازه‌ها مهم‌اند. بخش نگاه‌داشته ۷۶۸ متر از خیابان مارشال باغرامیان است، از میدان فرانسه تا تقاطع درنیک دمیرچیان. صف پلیس ۲۱۲ متر مانده به اقامتگاه رئیس‌جمهور ایستاده بود. تنظیم‌گری که تصمیم را گرفت ۲٫۴ کیلومتر شرقی‌تر، در خیابان میاسنیکیان ۵/۱، است و هرگز نشانی حتی یک روز اعتراض نشد.\n\nشکایت چنان سفر کرد که هیچ‌چیز دیگری در آن دهه نکرد: گیومری، وانادزور، اسپیتاک، آشتاراک و مارتونی، چون شبکه سراسری است. سه سال بعد پیاده‌روی‌ای از گیومری به این شهر می‌رسد و آنچه را این تابستان نتوانست تمام می‌کند.\n\nو نتیجه را باید صادقانه ثبت کرد. حسابرسی تعرفه را موجه یافت. افزایش هرگز بازگردانده نشد. شبکه به مالکی دیگر در مسکو فروخته شد. از سه خواسته هیچ‌کدام برآورده نشد. آنچه ماند، مجموعهٔ کنش بود، و در ۲۰۱۸ دوباره به‌کار رفت، و بار دوم کارگر افتاد.",
       "tags_fa": [
         "ایروان برقی",
         "تعرفهٔ برق",
         "باغرامیان",
-        "اشغال"
+        "اشغال",
+        "نه به غارت",
+        "آب‌پاش"
+      ],
+      "episode": "electric-yerevan",
+      "actors_hy": [
+        "Ոչ Թալանին",
+        "Վաղինակ Շուշանյան",
+        "Անդրեաս Ղուկասյան",
+        "Սերժ Սարգսյան",
+        "«Հայաստանի էլեկտրական ցանցեր»",
+        "Հանրային ծառայությունները կարգավորող հանձնաժողով"
+      ],
+      "actors_fa": [
+        "نه به غارت",
+        "واغیناک شوشانیان",
+        "آندریاس غوکاسیان",
+        "سرژ سرگسیان",
+        "شبکه‌های برق ارمنستان",
+        "کمیسیون تنظیم خدمات عمومی"
+      ],
+      "chronology": [
+        {
+          "when": "May 2015",
+          "note": "Electric Networks of Armenia applies for seventeen drams per kilowatt hour, about forty per cent.",
+          "note_hy": "«Հայաստանի էլեկտրական ցանցերը» դիմում է կիլովատտ-ժամի տասնյոթ դրամի համար՝ մոտ քառասուն տոկոս։",
+          "note_fa": "شبکه‌های برق ارمنستان برای هر کیلووات‌ساعت هفده درام، حدود چهل درصد، درخواست می‌دهد."
+        },
+        {
+          "when": "17 June",
+          "note": "The five-member regulator grants 6.93 drams, from 41.85 to 48.78 by day, effective 1 August.",
+          "note_hy": "Հնգանդամ կարգավորողը տալիս է 6,93 դրամ՝ ցերեկը 41,85-ից 48,78, ուժի մեջ օգոստոսի 1-ից։",
+          "note_fa": "تنظیم‌گر پنج‌نفره ۶٫۹۳ درام می‌دهد، روزانه از ۴۱٫۸۵ به ۴۸٫۷۸، از اول اوت."
+        },
+        {
+          "when": "19 June",
+          "note": "No to Plunder rallies at Freedom Square. Four to five hundred people.",
+          "note_hy": "«Ոչ Թալանին»-ը հանրահավաք է անում Ազատության հրապարակում։ Չորս-հինգ հարյուր մարդ։",
+          "note_fa": "«نه به غارت» در میدان آزادی تجمع می‌کند. چهارصد تا پانصد نفر."
+        },
+        {
+          "when": "22 June",
+          "note": "The march up Baghramyan is stopped at Demirchyan Street and sits down. The occupation begins.",
+          "note_hy": "Բաղրամյանով երթը կանգնեցվում է Դեմիրճյան փողոցի մոտ և նստում։ Գրավումը սկսվում է։",
+          "note_fa": "راهپیمایی در باغرامیان نزد خیابان دمیرچیان متوقف می‌شود و می‌نشیند. اشغال آغاز می‌شود."
+        },
+        {
+          "when": "23 June, 05:30",
+          "note": "Water cannon. 237 detained, fifteen hospitalised, at least seven journalists beaten.",
+          "note_hy": "Ջրցան։ 237 ձերբակալված, տասնհինգը հիվանդանոցում, առնվազն յոթ լրագրող ծեծված։",
+          "note_fa": "آب‌پاش. ۲۳۷ بازداشت، پانزده بستری، دست‌کم هفت خبرنگار کتک‌خورده."
+        },
+        {
+          "when": "24 to 26 June",
+          "note": "The avenue is retaken and barricaded with bins. Twenty thousand on the evening of the 26th.",
+          "note_hy": "Պողոտան վերագրավվում և աղբամաններով փակվում է։ 26-ի երեկոյան՝ քսան հազար։",
+          "note_fa": "خیابان بازپس گرفته و با سطل‌ها سنگربندی می‌شود. غروب ۲۶ ژوئن بیست هزار نفر."
+        },
+        {
+          "when": "27 June",
+          "note": "Sargsyan offers to carry the rise from the budget pending an audit. France Square is closed.",
+          "note_hy": "Սարգսյանն առաջարկում է բյուջեից կրել բարձրացումը՝ մինչ աուդիտը։ Փակվում է Ֆրանսիայի հրապարակը։",
+          "note_fa": "سرگسیان پیشنهاد می‌کند افزایش را تا پایان حسابرسی از بودجه بپردازد. میدان فرانسه بسته می‌شود."
+        },
+        {
+          "when": "28 June",
+          "note": "Shushanyan leads part of the crowd back to Freedom Square. The movement is now two.",
+          "note_hy": "Շուշանյանը ամբոխի մի մասին տանում է Ազատության հրապարակ։ Շարժումն այժմ երկուսն է։",
+          "note_fa": "شوشانیان بخشی از جمعیت را به میدان آزادی بازمی‌گرداند. جنبش اکنون دوتاست."
+        },
+        {
+          "when": "6 July",
+          "note": "Police take the barricade apart without force and reopen the avenue. More than forty detained, none charged.",
+          "note_hy": "Ոստիկանությունն առանց ուժի քանդում է պատնեշը և վերաբացում պողոտան։ Ավելի քան քառասուն ձերբակալված, ոչ ոք մեղադրված։",
+          "note_fa": "پلیس بی‌خشونت سنگر را برمی‌چیند و خیابان را بازمی‌گشاید. بیش از چهل بازداشت، بی هیچ اتهامی."
+        },
+        {
+          "when": "4 and 11 September",
+          "note": "A forty-day sit-in on Republic Square; a march on the 11th, forty-eight detained.",
+          "note_hy": "Քառասնօրյա նստացույց Հանրապետության հրապարակում. 11-ին երթ, քառասունութ ձերբակալված։",
+          "note_fa": "تحصن چهل‌روزه در میدان جمهوری؛ راهپیمایی یازدهم، چهل و هشت بازداشت."
+        },
+        {
+          "when": "30 September",
+          "note": "Deloitte & Touche finds the rise financially justified. The grid is sold to Tashir for 253 million dollars.",
+          "note_hy": "«Դելոյթ և Թուշ»-ը բարձրացումը ֆինանսապես հիմնավոր է համարում։ Ցանցը վաճառվում է «Տաշիրին»՝ 253 միլիոն դոլարով։",
+          "note_fa": "دیلویت اند توش افزایش را از نظر مالی موجه می‌یابد. شبکه به تاشیر به ۲۵۳ میلیون دلار فروخته می‌شود."
+        }
       ]
     },
     {
@@ -5045,6 +5210,1075 @@
         "عید تجلی",
         "زندگی روزمره"
       ]
+    },
+    {
+      "actors": [
+        "Electric Networks of Armenia",
+        "Inter RAO"
+      ],
+      "tags": [
+        "electricity tariff",
+        "monopoly",
+        "Inter RAO"
+      ],
+      "sources": [
+        {
+          "title": "Epress.am, 'Electricity Tariff in Armenia to Rise by Almost 7 Drams', 10 June 2015",
+          "url": "https://epress.am/en/2015/06/10/electricity-tariff-in-armenia-to-rise-by-almost-7-drams.html",
+          "note": "Carries the four figures used here: 41.85 to 48.78 drams by day, 31.85 to 38.78 by night, and Electric Networks of Armenia's May application for seventeen drams."
+        },
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "Every coordinate in this dossier is an OpenStreetMap feature: the avenue's carriageway, the Demirchyan junction, the Residence of the President, the regulator's building at 5/1 Myasnikyan Avenue, and the five towns."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "infra",
+        "politics"
+      ],
+      "id": "ena-tariff-application-2015-05",
+      "title": "Electric Networks of Armenia asks for seventeen drams",
+      "title_hy": "«Հայաստանի էլեկտրական ցանցերը» խնդրում է տասնյոթ դրամ",
+      "title_fa": "شبکه‌های برق ارمنستان هفده درام می‌خواهد",
+      "date": "2015-05",
+      "datePrecision": "month",
+      "coordinates": [
+        44.53629,
+        40.18651
+      ],
+      "location": "Electric Networks of Armenia, Yerevan",
+      "location_hy": "«Հայաստանի էլեկտրական ցանցեր», Երևան",
+      "location_fa": "شبکه‌های برق ارمنستان، ایروان",
+      "summary": "The country's single electricity distributor, owned since 2006 by the Russian state holding Inter RAO, applies to the regulator for an increase of seventeen drams per kilowatt hour. On a daytime tariff of 41.85 drams that is a rise of about forty per cent, and it would be the third increase in three years.",
+      "summary_hy": "Երկրի միակ էլեկտրաբաշխիչը՝ 2006-ից ռուսական «Ինտեր ՌԱՕ» պետական հոլդինգի սեփականությունը, դիմում է կարգավորողին՝ մեկ կիլովատտ-ժամի դիմաց տասնյոթ դրամ բարձրացման համար։ 41,85 դրամ ցերեկային սակագնի պայմաններում դա մոտ քառասուն տոկոս աճ է և կլիներ երրորդ բարձրացումը երեք տարում։",
+      "summary_fa": "تنها توزیع‌کنندهٔ برق کشور، که از ۲۰۰۶ در مالکیت هلدینگ دولتی روسی اینتر رائو است، از نهاد تنظیم‌گر تقاضای افزایش هفده درام به‌ازای هر کیلووات‌ساعت می‌کند. روی تعرفهٔ روزانهٔ ۴۱٫۸۵ درام این یعنی حدود چهل درصد افزایش، و سومین افزایش در سه سال.",
+      "analysis": "The demand is the beginning of the sequence and it is worth stating plainly: the movement that follows is a response to a price, made by a foreign-owned monopoly and adjudicated by a five-member commission, and none of the three sit anywhere near the avenue the crowd will occupy. The building here is two and a half kilometres east of the sit-in, and the regulator is two and a half kilometres east of the sit-in as well. The crowd went to the president instead. That distance is the political argument of the whole episode, drawn on the ground.",
+      "analysis_hy": "Պահանջն այս հաջորդականության սկիզբն է, և արժե պարզ ասել՝ հետո եկող շարժումը պատասխան է գնին, որը սահմանել է օտարերկրյա սեփականությամբ մենաշնորհը և վճռել հնգանդամ հանձնաժողովը, և այս երեքից ոչ մեկը չի գտնվում այն պողոտայի մոտ, որը գրավելու է ամբոխը։ Այս շենքը նստացույցից երկուս ու կես կիլոմետր արևելք է, կարգավորողը՝ նույնպես։ Ամբոխը գնաց նախագահի մոտ։ Այդ հեռավորությունը ողջ դրվագի քաղաքական փաստարկն է՝ գծված գետնի վրա։",
+      "analysis_fa": "این درخواست آغاز زنجیره است و باید صریح گفت: جنبشی که در پی می‌آید پاسخی است به یک قیمت، که انحصاری با مالکیت خارجی آن را خواسته و کمیسیونی پنج‌نفره تصویبش کرده، و هیچ‌یک از این سه نزدیک خیابانی نیست که جمعیت اشغالش خواهد کرد. این ساختمان دو و نیم کیلومتر شرق تحصن است، و نهاد تنظیم‌گر نیز همین‌قدر. جمعیت به‌جای آن نزد رئیس‌جمهور رفت. آن فاصله، استدلال سیاسی کل این ماجراست، کشیده بر زمین.",
+      "tags_hy": [
+        "էլեկտրաէներգիայի սակագին",
+        "մենաշնորհ",
+        "Ինտեր ՌԱՕ"
+      ],
+      "tags_fa": [
+        "تعرفهٔ برق",
+        "انحصار",
+        "اینتر رائو"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Public Services Regulatory Commission"
+      ],
+      "tags": [
+        "electricity tariff",
+        "regulator",
+        "17 June 2015"
+      ],
+      "sources": [
+        {
+          "title": "RFE/RL, 'Armenian Riot Police Deployed At Yerevan Protest', 26 June 2015",
+          "url": "https://www.globalsecurity.org/military/library/news/2015/06/mil-150626-rferl03.htm",
+          "note": "The source for the date of the regulator's decision, 17 June, for the five-member commission, and for the twenty thousand on the avenue on the evening of 26 June."
+        },
+        {
+          "title": "Epress.am, 'Electricity Tariff in Armenia to Rise by Almost 7 Drams', 10 June 2015",
+          "url": "https://epress.am/en/2015/06/10/electricity-tariff-in-armenia-to-rise-by-almost-7-drams.html",
+          "note": "Carries the four figures used here: 41.85 to 48.78 drams by day, 31.85 to 38.78 by night, and Electric Networks of Armenia's May application for seventeen drams."
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "Every coordinate in this dossier is an OpenStreetMap feature: the avenue's carriageway, the Demirchyan junction, the Residence of the President, the regulator's building at 5/1 Myasnikyan Avenue, and the five towns."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "infra",
+        "politics"
+      ],
+      "id": "psrc-tariff-decision-2015-06-17",
+      "title": "17 June: the regulator grants 6.93 of the seventeen",
+      "title_hy": "Հունիսի 17. կարգավորողը տասնյոթից տալիս է 6,93-ը",
+      "title_fa": "۱۷ ژوئن: تنظیم‌گر از هفده، ۶٫۹۳ را می‌دهد",
+      "date": "2015-06-17",
+      "coordinates": [
+        44.53331,
+        40.19312
+      ],
+      "location": "Public Services Regulatory Commission, 5/1 Myasnikyan Avenue",
+      "location_hy": "Հանրային ծառայությունները կարգավորող հանձնաժողով, Մյասնիկյան պողոտա 5/1",
+      "location_fa": "کمیسیون تنظیم خدمات عمومی، خیابان میاسنیکیان ۵/۱",
+      "summary": "The five-member Public Services Regulatory Commission approves an increase of 6.93 drams per kilowatt hour, from 41.85 to 48.78 by day and from 31.85 to 38.78 by night, about seventeen per cent, to take effect on 1 August. It is well short of what the company asked for and it is enough.",
+      "summary_hy": "Հանրային ծառայությունները կարգավորող հնգանդամ հանձնաժողովը հաստատում է կիլովատտ-ժամի 6,93 դրամ բարձրացում՝ ցերեկը 41,85-ից 48,78, գիշերը 31,85-ից 38,78, մոտ տասնյոթ տոկոս, ուժի մեջ՝ օգոստոսի 1-ից։ Դա շատ պակաս է ընկերության խնդրածից և բավական է։",
+      "summary_fa": "کمیسیون پنج‌نفرهٔ تنظیم خدمات عمومی افزایش ۶٫۹۳ درامی هر کیلووات‌ساعت را تصویب می‌کند: روزانه از ۴۱٫۸۵ به ۴۸٫۷۸ و شبانه از ۳۱٫۸۵ به ۳۸٫۷۸، حدود هفده درصد، از اول اوت. بسیار کمتر از خواستهٔ شرکت است و کافی است.",
+      "analysis": "A regulator that grants two fifths of what a monopoly asks for can reasonably believe it has done its job. Two days later the square filled anyway, which is the finding: the tariff was the occasion and not the grievance. What was being refused was a chain of ownership and decision in which nobody at the bottom of it had a say, and the number was simply the first part of that chain a household could feel.",
+      "analysis_hy": "Կարգավորողը, որ մենաշնորհի խնդրածի երկու հինգերորդն է տալիս, կարող է հիմնավոր կերպով կարծել, թե կատարել է իր գործը։ Երկու օր անց հրապարակը միևնույն է լցվեց, և սա է եզրակացությունը՝ սակագինը առիթն էր, ոչ թե դժգոհությունը։ Մերժվում էր սեփականության և որոշման այն շղթան, որի ներքևում ոչ ոք ձայն չուներ, իսկ թիվը պարզապես այդ շղթայի առաջին օղակն էր, որ տունը կարող էր զգալ։",
+      "analysis_fa": "تنظیم‌گری که دو پنجم خواستهٔ یک انحصار را می‌دهد، به‌حق می‌تواند بپندارد کارش را کرده است. دو روز بعد میدان به‌هر‌حال پر شد، و یافته همین است: تعرفه بهانه بود، نه شکایت. آنچه رد می‌شد زنجیره‌ای از مالکیت و تصمیم بود که هیچ‌کس در پایین آن سهمی در آن نداشت، و آن عدد تنها نخستین حلقه‌ای از زنجیره بود که یک خانوار می‌توانست حسش کند.",
+      "tags_hy": [
+        "էլեկտրաէներգիայի սակագին",
+        "կարգավորող",
+        "2015 հունիսի 17"
+      ],
+      "tags_fa": [
+        "تعرفهٔ برق",
+        "تنظیم‌گر",
+        "۱۷ ژوئن ۲۰۱۵"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "No to Plunder"
+      ],
+      "tags": [
+        "No to Plunder",
+        "Freedom Square",
+        "electricity tariff"
+      ],
+      "sources": [
+        {
+          "title": "Alina Vardanyan, 'Armenia Electrified', Institute for War and Peace Reporting, 26 June 2015",
+          "url": "https://iwpr.net/global-voices/armenia-electrified",
+          "note": "Four to five hundred at the start, thousands after the water cannon, and No to Plunder's refusal to negotiate in Artush Chibuhyan's words."
+        },
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "protest",
+        "infra"
+      ],
+      "id": "no-to-plunder-2015-06-19",
+      "title": "19 June: No to Plunder fills Freedom Square",
+      "title_hy": "Հունիսի 19. «Ոչ թալանին»-ը լցնում է Ազատության հրապարակը",
+      "title_fa": "۱۹ ژوئن: «نه به غارت» میدان آزادی را پر می‌کند",
+      "date": "2015-06-19",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Freedom Square",
+      "location_hy": "Ազատության հրապարակ",
+      "location_fa": "میدان آزادی",
+      "summary": "Two days after the decision the civic initiative No to Plunder, Ոչ Թալանին, calls a rally at Freedom Square. Four to five hundred people come. The initiative is not a party, has no seat in parliament and makes three demands and no others: reverse the rise, open the utility's books, and put the company under real oversight.",
+      "summary_hy": "Որոշումից երկու օր անց «Ոչ Թալանին» քաղաքացիական նախաձեռնությունը հանրահավաք է հրավիրում Ազատության հրապարակում։ Գալիս է չորս-հինգ հարյուր մարդ։ Նախաձեռնությունը կուսակցություն չէ, խորհրդարանում տեղ չունի և ներկայացնում է երեք պահանջ և ուրիշ ոչինչ՝ հետ վերցնել բարձրացումը, բացել ընկերության հաշիվները և իրական վերահսկողության տակ դնել ընկերությունը։",
+      "summary_fa": "دو روز پس از تصمیم، ابتکار مدنی «نه به غارت» تجمعی در میدان آزادی فرا می‌خواند. چهارصد تا پانصد نفر می‌آیند. این ابتکار حزب نیست، در مجلس کرسی ندارد و سه خواسته دارد و نه بیشتر: بازگرداندن افزایش، گشودن دفاتر شرکت، و نظارت واقعی بر آن.",
+      "analysis": "The square that opens this is the one this map has been watching since 1965. What is different is that the crowd does not stay in it. Within three days the centre of the movement has moved off the square and onto a street, and the square becomes what it will be for the rest of the summer: the place you retreat to when the street is taken from you.",
+      "analysis_hy": "Այս ամենը սկսվում է այն հրապարակից, որին այս քարտեզը հետևում է 1965-ից։ Տարբերությունն այն է, որ ամբոխը չի մնում այնտեղ։ Երեք օրվա ընթացքում շարժման կենտրոնը հրապարակից տեղափոխվում է փողոց, և հրապարակը դառնում է այն, ինչ կլինի ողջ ամառ՝ տեղը, ուր նահանջում ես, երբ փողոցը քեզնից խլում են։",
+      "analysis_fa": "میدانی که این ماجرا را می‌گشاید همان است که این نقشه از ۱۹۶۵ تماشایش می‌کند. تفاوت در این است که جمعیت در آن نمی‌ماند. ظرف سه روز مرکز جنبش از میدان به خیابان می‌رود، و میدان همان می‌شود که تا پایان تابستان خواهد بود: جایی که وقتی خیابان را از تو گرفتند، به آن عقب می‌نشینی.",
+      "actors_hy": [
+        "Ոչ Թալանին"
+      ],
+      "actors_fa": [
+        "نه به غارت"
+      ],
+      "tags_hy": [
+        "Ոչ Թալանին",
+        "Ազատության հրապարակ",
+        "էլեկտրաէներգիայի սակագին"
+      ],
+      "tags_fa": [
+        "نه به غارت",
+        "میدان آزادی",
+        "تعرفهٔ برق"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "No to Plunder"
+      ],
+      "tags": [
+        "Baghramyan",
+        "occupation",
+        "sit-in",
+        "Electric Yerevan"
+      ],
+      "sources": [
+        {
+          "title": "Alina Vardanyan, 'Armenia Electrified', Institute for War and Peace Reporting, 26 June 2015",
+          "url": "https://iwpr.net/global-voices/armenia-electrified",
+          "note": "Four to five hundred at the start, thousands after the water cannon, and No to Plunder's refusal to negotiate in Artush Chibuhyan's words."
+        },
+        {
+          "title": "RFE/RL, 'Armenian Riot Police Deployed At Yerevan Protest', 26 June 2015",
+          "url": "https://www.globalsecurity.org/military/library/news/2015/06/mil-150626-rferl03.htm",
+          "note": "The source for the date of the regulator's decision, 17 June, for the five-member commission, and for the twenty thousand on the avenue on the evening of 26 June."
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "Every coordinate in this dossier is an OpenStreetMap feature: the avenue's carriageway, the Demirchyan junction, the Residence of the President, the regulator's building at 5/1 Myasnikyan Avenue, and the five towns."
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-_1.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-_1.JPG",
+          "caption": "Baghramyan Avenue during the protest against the electricity price rise, the first night.",
+          "caption_hy": "Բաղրամյան պողոտան հոսանքի թանկացման դեմ ցույցի ժամանակ, առաջին գիշերը։",
+          "caption_fa": "خیابان باغرامیان در جریان اعتراض به گران‌شدن برق، شب نخست.",
+          "credit": "Photo: Hayordi, 22 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-_1.JPG"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG",
+          "caption": "The carriageway held, looking toward the police line.",
+          "caption_hy": "Պահված երթևեկելի մասը՝ ոստիկանական շղթայի ուղղությամբ։",
+          "caption_fa": "سواره‌روی نگاه‌داشته، رو به صف پلیس.",
+          "credit": "Photo: Hayordi, 22 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-2.JPG"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-3.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-3.JPG",
+          "caption": "Sitting down in the road rather than turning back.",
+          "caption_hy": "Հետ դառնալու փոխարեն նստել ճանապարհին։",
+          "caption_fa": "نشستن در خیابان به‌جای بازگشتن.",
+          "credit": "Photo: Hayordi, 22 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-3.JPG"
+        }
+      ],
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "id": "baghramyan-occupation-2015-06-22",
+      "title": "22 June: seven hundred and sixty-eight metres of Baghramyan",
+      "title_hy": "Հունիսի 22. Բաղրամյանի յոթ հարյուր վաթսունութ մետրը",
+      "title_fa": "۲۲ ژوئن: هفتصد و شصت و هشت متر از باغرامیان",
+      "date": "2015-06-22",
+      "dateEnd": "2015-07-06",
+      "coordinates": [
+        44.51171,
+        40.191
+      ],
+      "location": "Marshal Baghramyan Avenue, from France Square to the Demirchyan junction",
+      "location_hy": "Մարշալ Բաղրամյան պողոտա՝ Ֆրանսիայի հրապարակից մինչև Դեմիրճյանի խաչմերուկ",
+      "location_fa": "خیابان مارشال باغرامیان، از میدان فرانسه تا تقاطع دمیرچیان",
+      "summary": "The rally leaves Freedom Square and walks up Baghramyan Avenue toward the president's residence. The police stop it at the junction with Derenik Demirchyan Street and the crowd sits down in the carriageway rather than turn back. That night the sit-in begins, and it holds the avenue for a fortnight.",
+      "summary_hy": "Հանրահավաքը լքում է Ազատության հրապարակը և բարձրանում Բաղրամյան պողոտայով՝ նախագահի նստավայրի ուղղությամբ։ Ոստիկանությունը կանգնեցնում է այն Դերենիկ Դեմիրճյան փողոցի խաչմերուկում, և ամբոխը հետ դառնալու փոխարեն նստում է երթևեկելի մասում։ Այդ գիշեր սկսվում է նստացույցը, որը երկու շաբաթ պահում է պողոտան։",
+      "summary_fa": "تجمع میدان آزادی را ترک می‌کند و خیابان باغرامیان را به‌سوی اقامتگاه رئیس‌جمهور بالا می‌رود. پلیس آن را در تقاطع خیابان درنیک دمیرچیان متوقف می‌کند و جمعیت به‌جای بازگشتن، در سواره‌رو می‌نشیند. آن شب تحصن آغاز می‌شود و دو هفته خیابان را نگاه می‌دارد.",
+      "analysis": "Measured on this map, the held stretch runs 768 metres from France Square to the police line, and the line itself stands 212 metres short of the Residence of the President. The walk itself, drawn here from Freedom Square, is 982 metres; the 768 are the part of it that was kept. That is the whole geometry of Electric Yerevan: close enough to be addressed to one man, far enough that he never had to see it. Everything this map has drawn before 2015 happens in a square, a shape made for assembly. This happens in a carriageway, a shape made for movement, and holding it is a different act, because a square can be filled but a street can only be blocked.",
+      "analysis_hy": "Այս քարտեզի վրա չափված՝ պահված հատվածը Ֆրանսիայի հրապարակից մինչև ոստիկանական շղթան 768 մետր է, իսկ շղթան ինքը կանգնած է Նախագահի նստավայրից 212 մետր ներքև։ Քայլերթն ինքը, Ազատության հրապարակից գծված, 982 մետր է. 768-ը դրա այն մասն է, որը պահվեց։ Ահա «Էլեկտրիկ Երևանի» ամբողջ երկրաչափությունը՝ բավական մոտ, որ ուղղված լինի մեկ մարդու, բավական հեռու, որ նա երբեք ստիպված չլինի տեսնել այն։ Այն ամենը, ինչ այս քարտեզը գծել է մինչև 2015-ը, տեղի է ունենում հրապարակում՝ հավաքի համար ստեղծված ձևում։ Սա տեղի է ունենում երթևեկելի մասում՝ շարժման համար ստեղծված ձևում, և այն պահելը այլ արարք է, որովհետև հրապարակը կարելի է լցնել, իսկ փողոցը՝ միայն փակել։",
+      "analysis_fa": "اندازه‌گیری‌شده روی همین نقشه، بخش اشغال‌شده از میدان فرانسه تا صف پلیس ۷۶۸ متر است، و خود آن صف ۲۱۲ متر پایین‌تر از اقامتگاه رئیس‌جمهور می‌ایستد. خودِ پیاده‌روی، که اینجا از میدان آزادی ترسیم شده، ۹۸۲ متر است؛ ۷۶۸ متر آن بخشی است که نگه داشته شد. هندسهٔ کامل ایروانِ برقی همین است: آن‌قدر نزدیک که خطاب به یک نفر باشد، آن‌قدر دور که او هرگز مجبور به دیدنش نشود. هرچه این نقشه پیش از ۲۰۱۵ کشیده، در میدان رخ می‌دهد؛ شکلی ساخته‌شده برای گردهمایی. این در سواره‌رو رخ می‌دهد؛ شکلی ساخته‌شده برای حرکت، و نگاه‌داشتنش کاری دیگر است، چون میدان را می‌توان پر کرد اما خیابان را فقط می‌توان بست.",
+      "path": [
+        [
+          44.5152,
+          40.1859
+        ],
+        [
+          44.51483,
+          40.1878
+        ],
+        [
+          44.5126,
+          40.19031
+        ],
+        [
+          44.51171,
+          40.191
+        ],
+        [
+          44.51051,
+          40.19147
+        ],
+        [
+          44.50809,
+          40.19182
+        ]
+      ],
+      "route": {
+        "from": "no-to-plunder-2015-06-19",
+        "to": "water-cannon-2015-06-23"
+      },
+      "actors_hy": [
+        "Ոչ Թալանին"
+      ],
+      "actors_fa": [
+        "نه به غارت"
+      ],
+      "tags_hy": [
+        "Բաղրամյան",
+        "գրավում",
+        "նստացույց",
+        "Էլեկտրիկ Երևան"
+      ],
+      "tags_fa": [
+        "باغرامیان",
+        "اشغال",
+        "تحصن",
+        "ایروان برقی"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Valery Osipyan",
+        "Levon Yeranosyan",
+        "Hovhannes Ishkhanyan"
+      ],
+      "tags": [
+        "water cannon",
+        "237 detained",
+        "press freedom",
+        "Baghramyan"
+      ],
+      "sources": [
+        {
+          "title": "Civic Solidarity Platform, 'Armenia: human rights violations against peaceful protesters'",
+          "url": "http://www.civicsolidarity.org/article/1110/armenia-human-rights-violations-against-peaceful-protesters",
+          "note": "The minute by minute account of the dawn of 23 June: the 05:20 warning, the water cannon at about 05:30, 237 detentions, 25 ambulance calls, fifteen hospitalised, the journalists named one by one."
+        },
+        {
+          "title": "PanARMENIAN, on the European Court of Human Rights in Ishkhanyan v. Armenia",
+          "url": "https://www.pan.am/en/319709",
+          "note": "The Strasbourg court found the seven hour detention of the journalist Hovhannes Ishkhanyan unlawful and a violation of his freedom of assembly, and awarded about six thousand euro."
+        },
+        {
+          "title": "Alina Vardanyan, 'Armenia Electrified', Institute for War and Peace Reporting, 26 June 2015",
+          "url": "https://iwpr.net/global-voices/armenia-electrified",
+          "note": "Four to five hundred at the start, thousands after the water cannon, and No to Plunder's refusal to negotiate in Artush Chibuhyan's words."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "state",
+        "protest"
+      ],
+      "id": "water-cannon-2015-06-23",
+      "title": "23 June, half past five: the water cannon",
+      "title_hy": "Հունիսի 23, հինգն անց կես. ջրցան մեքենան",
+      "title_fa": "۲۳ ژوئن، پنج و نیم بامداد: آب‌پاش",
+      "date": "2015-06-23",
+      "coordinates": [
+        44.50809,
+        40.19182
+      ],
+      "location": "Baghramyan Avenue at Derenik Demirchyan Street",
+      "location_hy": "Բաղրամյան պողոտա՝ Դերենիկ Դեմիրճյան փողոցի մոտ",
+      "location_fa": "خیابان باغرامیان، تقاطع درنیک دمیرچیان",
+      "summary": "At 05:20 the deputy chief of the Yerevan police, Valery Osipyan, declares the sit-in unlawful and gives a warning. At about 05:30 two water cannon are turned on three to four hundred seated people. Two hundred and thirty-seven are detained, twenty-five ambulances are called, fifteen go to hospital. At least seven journalists are beaten and three cameras destroyed.",
+      "summary_hy": "Ժամը 05:20-ին Երևանի ոստիկանության պետի տեղակալ Վալերի Օսիպյանը նստացույցն անօրինական է հայտարարում և նախազգուշացնում։ Մոտ 05:30-ին երկու ջրցան մեքենա ուղղվում է երեք-չորս հարյուր նստած մարդու վրա։ Ձերբակալվում է երկու հարյուր երեսունյոթը, կանչվում է քսանհինգ շտապօգնություն, տասնհինգը հայտնվում է հիվանդանոցում։ Ծեծի է ենթարկվում առնվազն յոթ լրագրող, ոչնչացվում է երեք տեսախցիկ։",
+      "summary_fa": "ساعت ۰۵:۲۰ معاون رئیس پلیس ایروان، والری اوسیپیان، تحصن را غیرقانونی اعلام و اخطار می‌دهد. حدود ۰۵:۳۰ دو آب‌پاش به‌روی سیصد تا چهارصد نفر نشسته گشوده می‌شود. دویست و سی و هفت نفر بازداشت، بیست و پنج آمبولانس فراخوانده و پانزده نفر بستری می‌شوند. دست‌کم هفت خبرنگار کتک می‌خورند و سه دوربین نابود می‌شود.",
+      "analysis": "The beating of the press is the part that decided the week. The cameras were broken in front of other cameras, the footage was on the internet by breakfast, and the crowd that came back that evening was several times the size of the one that had been cleared. A dispersal that works removes people from a place; this one moved them from their homes to the avenue. Six years later the European Court of Human Rights ruled on one of the detentions, the journalist Hovhannes Ishkhanyan, and found that seven hours in a police station in wet clothes had no lawful ground and violated his freedom of assembly.",
+      "analysis_hy": "Մամուլի ծեծն է որոշել այդ շաբաթը։ Տեսախցիկները կոտրվել են այլ տեսախցիկների առջև, կադրերը նախաճաշին արդեն համացանցում էին, և այդ երեկո վերադարձած ամբոխը մի քանի անգամ մեծ էր ցրվածից։ Հաջողված ցրումը մարդկանց հեռացնում է տեղից. սա նրանց տներից տեղափոխեց պողոտա։ Վեց տարի անց Մարդու իրավունքների եվրոպական դատարանը վճռեց ձերբակալություններից մեկի՝ լրագրող Հովհաննես Իշխանյանի վերաբերյալ և գտավ, որ թաց հագուստով ոստիկանությունում անցկացրած յոթ ժամը օրինական հիմք չուներ և խախտում էր նրա հավաքների ազատությունը։",
+      "analysis_fa": "کتک‌خوردن خبرنگاران همان چیزی است که سرنوشت آن هفته را رقم زد. دوربین‌ها پیش چشم دوربین‌های دیگر شکسته شد، تصویرها تا وقت صبحانه در اینترنت بود، و جمعیتی که آن شب بازگشت چند برابر جمعیتی بود که پراکنده شده بود. پراکندنِ موفق مردم را از جایی برمی‌دارد؛ این یکی آن‌ها را از خانه‌هایشان به خیابان آورد. شش سال بعد دادگاه اروپایی حقوق بشر دربارهٔ یکی از بازداشت‌ها، خبرنگار هوهانس ایشخانیان، رأی داد که هفت ساعت در کلانتری با لباس خیس هیچ مبنای قانونی نداشته و آزادی تجمع او را نقض کرده است.",
+      "actors_hy": [
+        "Վալերի Օսիպյան",
+        "Լևոն Երանոսյան",
+        "Հովհաննես Իշխանյան"
+      ],
+      "actors_fa": [
+        "والری اوسیپیان",
+        "لوون یرانوسیان",
+        "هوهانس ایشخانیان"
+      ],
+      "tags_hy": [
+        "ջրցան",
+        "237 ձերբակալված",
+        "մամուլի ազատություն",
+        "Բաղրամյան"
+      ],
+      "tags_fa": [
+        "آب‌پاش",
+        "۲۳۷ بازداشت",
+        "آزادی مطبوعات",
+        "باغرامیان"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [],
+      "tags": [
+        "barricade",
+        "twenty thousand",
+        "riot police",
+        "Baghramyan"
+      ],
+      "sources": [
+        {
+          "title": "RFE/RL, 'Armenian Riot Police Deployed At Yerevan Protest', 26 June 2015",
+          "url": "https://www.globalsecurity.org/military/library/news/2015/06/mil-150626-rferl03.htm",
+          "note": "The source for the date of the regulator's decision, 17 June, for the five-member commission, and for the twenty thousand on the avenue on the evening of 26 June."
+        },
+        {
+          "title": "ANCA / Asbarez, 'Electric Yerevan: Police Unblock Baghramyan Avenue', 6 July 2015",
+          "url": "https://anca.org/electric-yerevan-police-unblock-baghramyan-avenue/",
+          "note": "The clearance of 6 July: the bins carried away, more than forty detained, no batons and no water, and the police request that the crowd move to Freedom Square."
+        },
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Electric_Yerevan.JPG/1280px-Electric_Yerevan.JPG",
+          "caption": "Baghramyan Avenue occupied, four days into the sit-in.",
+          "caption_hy": "Գրավված Բաղրամյան պողոտան՝ նստացույցի չորրորդ օրը։",
+          "caption_fa": "خیابان باغرامیان اشغال‌شده، روز چهارم تحصن.",
+          "credit": "Photo: Narek75, 26 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Electric_Yerevan.JPG"
+        },
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-4.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-4.JPG",
+          "caption": "The crowd filling the carriageway between France Square and the police line.",
+          "caption_hy": "Ամբոխը լցնում է երթևեկելի մասը Ֆրանսիայի հրապարակի և ոստիկանական շղթայի միջև։",
+          "caption_fa": "جمعیتی که سواره‌رو را میان میدان فرانسه و صف پلیس پر کرده است.",
+          "credit": "Photo: Hayordi, 22 June 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-4.JPG"
+        }
+      ],
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "id": "avenue-retaken-2015-06-24",
+      "title": "24 to 26 June: the avenue retaken, and barricaded with bins",
+      "title_hy": "Հունիսի 24-26. պողոտան վերագրավված է և աղբամաններով փակված",
+      "title_fa": "۲۴ تا ۲۶ ژوئن: خیابان بازپس‌گرفته و با سطل‌های زباله سنگربندی می‌شود",
+      "date": "2015-06-24",
+      "dateEnd": "2015-06-26",
+      "coordinates": [
+        44.51171,
+        40.191
+      ],
+      "location": "Marshal Baghramyan Avenue",
+      "location_hy": "Մարշալ Բաղրամյան պողոտա",
+      "location_fa": "خیابان مارشال باغرامیان",
+      "summary": "The crowd returns the same evening and does not leave again. Municipal rubbish bins are dragged across the carriageway into a barricade at the rear of the sit-in. On 25 June the government refuses to reverse the decision. On the evening of 26 June RFE/RL counts as many as twenty thousand people on the avenue, and hundreds of riot police form a line facing them.",
+      "summary_hy": "Ամբոխը վերադառնում է նույն երեկո և այլևս չի հեռանում։ Քաղաքային աղբամանները քարշ են տալիս երթևեկելի մասով և պատնեշ սարքում նստացույցի թիկունքում։ Հունիսի 25-ին կառավարությունը հրաժարվում է հետ վերցնել որոշումը։ Հունիսի 26-ի երեկոյան «Ազատություն» ռադիոկայանը պողոտայում հաշվում է մինչև քսան հազար մարդ, և հարյուրավոր ոստիկաններ շարք են կազմում նրանց դիմաց։",
+      "summary_fa": "جمعیت همان شب بازمی‌گردد و دیگر نمی‌رود. سطل‌های زبالهٔ شهرداری را روی سواره‌رو می‌کشند و پشت تحصن سنگر می‌سازند. ۲۵ ژوئن دولت از بازگرداندن تصمیم سر باز می‌زند. غروب ۲۶ ژوئن رادیو آزادی تا بیست هزار نفر در خیابان می‌شمارد و صدها پلیس ضدشورش رو‌به‌رویشان صف می‌بندند.",
+      "analysis": "A barricade of municipal bins is worth dwelling on. It is not a weapon and it would stop nobody; it is the city's own furniture turned ninety degrees. The thing that makes a street a street, its clear run, is what the movement removes, and it does so with objects the municipality itself put there. This is the urban repertoire this map has been tracking since Mashtots Park in 2012 arriving at its sharpest form: not a demand made in a space set aside for demands, but the ordinary equipment of the city used against the city's own circulation.",
+      "analysis_hy": "Քաղաքային աղբամաններից պատնեշն արժե կանգ առնել դրա վրա։ Դա զենք չէ և ոչ ոքի չէր կանգնեցնի. դա քաղաքի սեփական կահույքն է՝ իննսուն աստիճան շրջված։ Այն, ինչ փողոցը փողոց է դարձնում՝ նրա ազատ ընթացքը, հենց այն է, ինչ շարժումը հեռացնում է, և անում է դա այն առարկաներով, որ ինքը՝ քաղաքապետարանն է դրել այնտեղ։ Սա այն քաղաքային երգացանկն է, որին այս քարտեզը հետևում է 2012-ի Մաշտոցի այգուց՝ հասած իր ամենասուր ձևին։",
+      "analysis_fa": "سنگری از سطل‌های زبالهٔ شهرداری ارزش درنگ دارد. سلاح نیست و جلوی کسی را نمی‌گیرد؛ مبلمان خودِ شهر است که نود درجه چرخانده شده. آنچه خیابان را خیابان می‌کند، یعنی گذر آزادش، همان است که جنبش برمی‌دارد، و این کار را با اشیائی می‌کند که خود شهرداری آنجا گذاشته است. این همان مجموعه‌کنش شهری است که این نقشه از پارک ماشتوتس ۲۰۱۲ دنبالش کرده، رسیده به تیزترین شکلش.",
+      "tags_hy": [
+        "պատնեշ",
+        "քսան հազար",
+        "ոստիկանական ուժեր",
+        "Բաղրամյան"
+      ],
+      "tags_fa": [
+        "سنگر",
+        "بیست هزار",
+        "پلیس ضدشورش",
+        "باغرامیان"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [],
+      "tags": [
+        "Gyumri",
+        "Vanadzor",
+        "national grid",
+        "spread"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "Every coordinate in this dossier is an OpenStreetMap feature: the avenue's carriageway, the Demirchyan junction, the Residence of the President, the regulator's building at 5/1 Myasnikyan Avenue, and the five towns."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "protest",
+        "infra"
+      ],
+      "id": "protests-spread-2015-06-24",
+      "title": "The movement leaves the capital",
+      "title_hy": "Շարժումը դուրս է գալիս մայրաքաղաքից",
+      "title_fa": "جنبش از پایتخت بیرون می‌رود",
+      "date": "2015-06-24",
+      "dateEnd": "2015-06-30",
+      "coordinates": [
+        44.51171,
+        40.191
+      ],
+      "location": "Gyumri, Vanadzor, Spitak, Ashtarak, Martuni",
+      "location_hy": "Գյումրի, Վանաձոր, Սպիտակ, Աշտարակ, Մարտունի",
+      "location_fa": "گیومری، وانادزور، اسپیتاک، آشتاراک، مارتونی",
+      "summary": "Within a day of the water cannon the protest is no longer only a Yerevan event. Rallies and sit-ins are reported in Gyumri, Vanadzor, Spitak, Ashtarak and Martuni. A tariff is the one grievance a capital shares with every town on the same grid.",
+      "summary_hy": "Ջրցանից մեկ օր անց բողոքն այլևս միայն երևանյան իրադարձություն չէ։ Հանրահավաքներ և նստացույցեր են գրանցվում Գյումրիում, Վանաձորում, Սպիտակում, Աշտարակում և Մարտունիում։ Սակագինը այն միակ դժգոհությունն է, որ մայրաքաղաքը կիսում է նույն ցանցի վրա գտնվող յուրաքանչյուր քաղաքի հետ։",
+      "summary_fa": "یک روز پس از آب‌پاش، اعتراض دیگر تنها رویدادی ایروانی نیست. تجمع و تحصن در گیومری، وانادزور، اسپیتاک، آشتاراک و مارتونی گزارش می‌شود. تعرفه تنها شکایتی است که پایتخت با هر شهر روی همان شبکه شریک است.",
+      "analysis": "Almost everything else on this map is Yerevan, and mostly the two square kilometres of it that Tamanyan drew. The electricity tariff is the exception, and the reason is technical before it is political: the grid is national, so the grievance is national, and a movement organised around a price does not have to explain itself to a town two hundred kilometres away. Nothing else in the decade before 2018 travelled like this, and it is the clearest rehearsal of what the walk from Gyumri would do three years later.",
+      "analysis_hy": "Այս քարտեզի գրեթե ամեն ինչ Երևանն է, և հիմնականում այն երկու քառակուսի կիլոմետրը, որ գծել է Թամանյանը։ Էլեկտրաէներգիայի սակագինը բացառություն է, և պատճառը նախ տեխնիկական է, ապա քաղաքական՝ ցանցը համապետական է, ուստի դժգոհությունը համապետական է, և գնի շուրջ կազմակերպված շարժումը կարիք չունի իրեն բացատրելու երկու հարյուր կիլոմետր հեռու քաղաքին։ 2018-ից առաջ տասնամյակում ուրիշ ոչինչ այսպես չի ճամփորդել, և սա ամենապարզ փորձն է այն բանի, ինչ երեք տարի անց կանի Գյումրիից քայլերթը։",
+      "analysis_fa": "تقریباً هرچه در این نقشه هست ایروان است، و بیشتر همان دو کیلومتر مربعی که تامانیان کشید. تعرفهٔ برق استثناست، و دلیلش پیش از آنکه سیاسی باشد فنی است: شبکه سراسری است، پس شکایت هم سراسری است، و جنبشی که حول یک قیمت سامان یافته لازم نیست خود را برای شهری در دویست کیلومتری توضیح دهد. در دههٔ پیش از ۲۰۱۸ هیچ‌چیز دیگری این‌گونه سفر نکرد، و این روشن‌ترین تمرین کاری است که سه سال بعد پیاده‌روی از گیومری خواهد کرد.",
+      "dispersal": {
+        "color": "#3d9aa8",
+        "stations": [
+          {
+            "id": "yerevan",
+            "at": [
+              44.51171,
+              40.191
+            ],
+            "kind": "origin",
+            "years": "22 June to 6 July 2015",
+            "label": "Baghramyan Avenue, Yerevan",
+            "label_hy": "Բաղրամյան պողոտա, Երևան",
+            "label_fa": "خیابان باغرامیان، ایروان",
+            "what": "the sit-in",
+            "what_hy": "նստացույցը",
+            "what_fa": "تحصن"
+          },
+          {
+            "id": "gyumri",
+            "at": [
+              43.84161,
+              40.78521
+            ],
+            "kind": "now",
+            "years": "from 23 June 2015",
+            "label": "Gyumri",
+            "label_hy": "Գյումրի",
+            "label_fa": "گیومری",
+            "what": "rallies",
+            "what_hy": "հանրահավաքներ",
+            "what_fa": "تجمع‌ها"
+          },
+          {
+            "id": "vanadzor",
+            "at": [
+              44.48518,
+              40.81124
+            ],
+            "kind": "now",
+            "years": "from 23 June 2015",
+            "label": "Vanadzor",
+            "label_hy": "Վանաձոր",
+            "label_fa": "وانادزور",
+            "what": "rallies",
+            "what_hy": "հանրահավաքներ",
+            "what_fa": "تجمع‌ها"
+          },
+          {
+            "id": "spitak",
+            "at": [
+              44.26477,
+              40.83434
+            ],
+            "kind": "now",
+            "years": "from 23 June 2015",
+            "label": "Spitak",
+            "label_hy": "Սպիտակ",
+            "label_fa": "اسپیتاک",
+            "what": "rallies",
+            "what_hy": "հանրահավաքներ",
+            "what_fa": "تجمع‌ها"
+          },
+          {
+            "id": "ashtarak",
+            "at": [
+              44.36131,
+              40.28868
+            ],
+            "kind": "now",
+            "years": "from 23 June 2015",
+            "label": "Ashtarak",
+            "label_hy": "Աշտարակ",
+            "label_fa": "آشتاراک",
+            "what": "rallies",
+            "what_hy": "հանրահավաքներ",
+            "what_fa": "تجمع‌ها"
+          },
+          {
+            "id": "martuni",
+            "at": [
+              45.30547,
+              40.13905
+            ],
+            "kind": "now",
+            "years": "from 23 June 2015",
+            "label": "Martuni, Gegharkunik",
+            "label_hy": "Մարտունի, Գեղարքունիք",
+            "label_fa": "مارتونی، گغارکونیک",
+            "what": "rallies",
+            "what_hy": "հանրահավաքներ",
+            "what_fa": "تجمع‌ها"
+          }
+        ]
+      },
+      "tags_hy": [
+        "Գյումրի",
+        "Վանաձոր",
+        "համապետական ցանց",
+        "տարածում"
+      ],
+      "tags_fa": [
+        "گیومری",
+        "وانادزور",
+        "شبکهٔ سراسری",
+        "گسترش"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Serzh Sargsyan"
+      ],
+      "tags": [
+        "subsidy",
+        "audit",
+        "Sargsyan"
+      ],
+      "sources": [
+        {
+          "title": "BBC News, 'Armenia protests: Electricity price hike suspended', 27 June 2015",
+          "url": "https://www.bbc.com/news/world-europe-33301689",
+          "note": "Sargsyan's offer: the state would carry the rise pending a review, not cancel it, and the crowd stayed."
+        },
+        {
+          "title": "Hromadske International, 'What Was #ElectricYerevan?'",
+          "url": "https://medium.com/@Hromadske/what-was-electricyerevan-4023bfa935e",
+          "note": "The split of 28 June in Vaghinak Shushanyan's own words, the three demands, and the Gallup finding that ninety-five per cent of Armenians approved of the protest."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "politics",
+        "infra"
+      ],
+      "id": "sargsyan-subsidy-2015-06-27",
+      "title": "27 June: the state will pay the difference",
+      "title_hy": "Հունիսի 27. պետությունը կվճարի տարբերությունը",
+      "title_fa": "۲۷ ژوئن: دولت تفاوت را می‌پردازد",
+      "date": "2015-06-27",
+      "coordinates": [
+        44.50617,
+        40.19305
+      ],
+      "location": "Residence of the President, Baghramyan Avenue",
+      "location_hy": "Նախագահի նստավայր, Բաղրամյան պողոտա",
+      "location_fa": "اقامتگاه رئیس‌جمهور، خیابان باغرامیان",
+      "summary": "President Serzh Sargsyan announces that the government will carry the cost of the rise from the budget while an international audit examines the utility's accounts. The tariff is not cancelled. The crowd stays on the avenue.",
+      "summary_hy": "Նախագահ Սերժ Սարգսյանը հայտարարում է, որ կառավարությունը բյուջեից կկրի բարձրացման ծախսը, մինչ միջազգային աուդիտը կուսումնասիրի ընկերության հաշիվները։ Սակագինը չի չեղարկվում։ Ամբոխը մնում է պողոտայում։",
+      "summary_fa": "رئیس‌جمهور سرژ سرگسیان اعلام می‌کند دولت هزینهٔ افزایش را از بودجه می‌پردازد تا حسابرسی بین‌المللی دفاتر شرکت را بررسی کند. تعرفه لغو نمی‌شود. جمعیت در خیابان می‌ماند.",
+      "analysis": "The offer is precisely engineered: it takes the price off the household without taking the decision back, and it moves the argument from the street to an accountancy firm. It is also the moment the movement's own coherence is tested, because a demand narrow enough to be unarguable, three points about a tariff, is also narrow enough to be met halfway. Read against 2018, this is the difference that matters. A movement that asks for a price to be reversed can be paid off. A movement that asks for a man to leave cannot.",
+      "analysis_hy": "Առաջարկը ճշգրիտ է կառուցված՝ գինը հանում է տնային տնտեսությունից՝ առանց որոշումը հետ վերցնելու, և վեճը փողոցից տեղափոխում աուդիտորական ընկերություն։ Սա նաև այն պահն է, երբ փորձարկվում է շարժման սեփական համախմբվածությունը, որովհետև այնքան նեղ պահանջը, որ անվիճելի լինի, բավական նեղ է նաև կիսով չափ բավարարվելու համար։ 2018-ի հետ համեմատած՝ սա է կարևոր տարբերությունը։ Շարժումը, որ խնդրում է գինը հետ վերցնել, կարելի է գնել։ Շարժումը, որ խնդրում է մարդուն հեռանալ, չի կարելի։",
+      "analysis_fa": "پیشنهاد با دقت مهندسی شده است: قیمت را از دوش خانوار برمی‌دارد بی‌آنکه تصمیم را پس بگیرد، و دعوا را از خیابان به یک مؤسسهٔ حسابرسی می‌برد. همچنین لحظه‌ای است که انسجام خود جنبش آزموده می‌شود، چون خواسته‌ای آن‌قدر باریک که بی‌چون‌وچرا باشد، آن‌قدر باریک هم هست که نیمه‌راه برآورده شود. در سنجش با ۲۰۱۸، تفاوت مهم همین است. جنبشی که بازگرداندن یک قیمت را می‌خواهد، خریدنی است. جنبشی که رفتن یک مرد را می‌خواهد، نه.",
+      "actors_hy": [
+        "Սերժ Սարգսյան"
+      ],
+      "actors_fa": [
+        "سرژ سرگسیان"
+      ],
+      "tags_hy": [
+        "սուբսիդիա",
+        "աուդիտ",
+        "Սարգսյան"
+      ],
+      "tags_fa": [
+        "یارانه",
+        "حسابرسی",
+        "سرگسیان"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [],
+      "tags": [
+        "France Square",
+        "Mashtots",
+        "Sayat-Nova",
+        "blockade"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "protest",
+        "publiclife"
+      ],
+      "id": "france-square-2015-06-27",
+      "title": "27 June: a second front at France Square",
+      "title_hy": "Հունիսի 27. երկրորդ ճակատը Ֆրանսիայի հրապարակում",
+      "title_fa": "۲۷ ژوئن: جبههٔ دوم در میدان فرانسه",
+      "date": "2015-06-27",
+      "coordinates": [
+        44.5152,
+        40.18722
+      ],
+      "location": "France Square, and Mashtots at Sayat-Nova",
+      "location_hy": "Ֆրանսիայի հրապարակ և Մաշտոց-Սայաթ-Նովա",
+      "location_fa": "میدان فرانسه، و تقاطع ماشتوتس و سایات‌نووا",
+      "summary": "Protesters close France Square, at the foot of the occupied avenue, and the crossing of Mashtots and Sayat-Nova avenues half a kilometre to the west. For a day the movement holds not one street but a junction of the centre's main axes.",
+      "summary_hy": "Ցուցարարները փակում են Ֆրանսիայի հրապարակը՝ գրավված պողոտայի ստորոտին, և Մաշտոցի ու Սայաթ-Նովայի խաչմերուկը՝ կես կիլոմետր արևմուտք։ Մեկ օրով շարժումը պահում է ոչ թե մեկ փողոց, այլ կենտրոնի գլխավոր առանցքների հանգույցը։",
+      "summary_fa": "معترضان میدان فرانسه را، در پای خیابان اشغال‌شده، و تقاطع خیابان‌های ماشتوتس و سایات‌نووا را نیم‌کیلومتر غربی‌تر می‌بندند. برای یک روز جنبش نه یک خیابان، که گره محورهای اصلی مرکز شهر را نگاه می‌دارد.",
+      "analysis": "France Square is the hinge of the occupied avenue: whoever holds it decides whether the sit-in can be supplied and whether it can be surrounded. Extending to Mashtots and Sayat-Nova on the same day turns a single blockage into a small system, and it is the only moment in the summer when the movement acts on the plan of the city rather than on one line of it. It does not hold. By the following evening the movement is arguing with itself instead.",
+      "analysis_hy": "Ֆրանսիայի հրապարակը գրավված պողոտայի ծխնին է. ով պահում է այն, որոշում է՝ արդյոք նստացույցը կարող է մատակարարվել և արդյոք կարող է շրջափակվել։ Նույն օրը Մաշտոց և Սայաթ-Նովա տարածվելը մեկ խցանումը վերածում է փոքր համակարգի, և սա ամառվա միակ պահն է, երբ շարժումը գործում է քաղաքի հատակագծի, ոչ թե դրա մեկ գծի վրա։ Չի պահվում։ Հաջորդ երեկո շարժումն արդեն վիճում է ինքն իր հետ։",
+      "analysis_fa": "میدان فرانسه لولای خیابان اشغال‌شده است: هرکه آن را نگاه دارد تعیین می‌کند که تحصن قابل تأمین است یا قابل محاصره. گسترش به ماشتوتس و سایات‌نووا در همان روز، یک انسداد را به سامانه‌ای کوچک بدل می‌کند، و این تنها لحظهٔ آن تابستان است که جنبش بر نقشهٔ شهر عمل می‌کند نه بر یک خط از آن. دوام نمی‌آورد. غروب فردا جنبش با خودش مشغول جدل است.",
+      "tags_hy": [
+        "Ֆրանսիայի հրապարակ",
+        "Մաշտոց",
+        "Սայաթ-Նովա",
+        "փակում"
+      ],
+      "tags_fa": [
+        "میدان فرانسه",
+        "ماشتوتس",
+        "سایات‌نووا",
+        "انسداد"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Vaghinak Shushanyan"
+      ],
+      "tags": [
+        "split",
+        "leaderless",
+        "Freedom Square"
+      ],
+      "sources": [
+        {
+          "title": "Hromadske International, 'What Was #ElectricYerevan?'",
+          "url": "https://medium.com/@Hromadske/what-was-electricyerevan-4023bfa935e",
+          "note": "The split of 28 June in Vaghinak Shushanyan's own words, the three demands, and the Gallup finding that ninety-five per cent of Armenians approved of the protest."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "id": "movement-splits-2015-06-28",
+      "title": "28 June: the column that walked away",
+      "title_hy": "Հունիսի 28. սյունը, որ հեռացավ",
+      "title_fa": "۲۸ ژوئن: ستونی که رفت",
+      "date": "2015-06-28",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "From Baghramyan Avenue to Freedom Square",
+      "location_hy": "Բաղրամյան պողոտայից Ազատության հրապարակ",
+      "location_fa": "از خیابان باغرامیان تا میدان آزادی",
+      "summary": "Vaghinak Shushanyan, the coordinator of No to Plunder, leads part of the crowd off the avenue and back to Freedom Square, saying he did not want people beaten by police again. Others refuse to move and stay behind the barricade. From this evening there are two movements where there was one.",
+      "summary_hy": "«Ոչ Թալանին»-ի համակարգող Վաղինակ Շուշանյանը ամբոխի մի մասին տանում է պողոտայից Ազատության հրապարակ՝ ասելով, որ չի ուզում, որ մարդիկ նորից ոստիկանության ձեռքով ծեծ ուտեն։ Մյուսները հրաժարվում են շարժվել և մնում պատնեշի հետևում։ Այս երեկոյից մեկի փոխարեն երկու շարժում կա։",
+      "summary_fa": "واغیناک شوشانیان، هماهنگ‌کنندهٔ «نه به غارت»، بخشی از جمعیت را از خیابان به میدان آزادی می‌برد و می‌گوید نمی‌خواسته مردم دوباره کتک بخورند. دیگران از جابه‌جایی سر باز می‌زنند و پشت سنگر می‌مانند. از این شب، به‌جای یک جنبش، دو جنبش هست.",
+      "analysis": "Leaderlessness is usually described as this movement's strength, and for six days it was: nobody could be arrested to end it and nobody could be bought. The split shows the other half of the same fact. When the state made an offer there was no body that could accept or refuse it on the movement's behalf, so the decision was taken with feet, and a movement that had been defined by holding one place was now defined by being in two.",
+      "analysis_hy": "Անառաջնորդությունը սովորաբար նկարագրվում է որպես այս շարժման ուժը, և վեց օր այդպես էր՝ ոչ ոքի չէր կարելի ձերբակալել՝ վերջ տալու համար, և ոչ ոքի չէր կարելի գնել։ Պառակտումը ցույց է տալիս նույն փաստի մյուս կեսը։ Երբ պետությունն առաջարկ արեց, չկար մարմին, որ կարող էր շարժման անունից ընդունել կամ մերժել այն, ուստի որոշումը կայացվեց ոտքերով, և շարժումը, որ սահմանվում էր մեկ տեղ պահելով, այժմ սահմանվում էր երկու տեղում լինելով։",
+      "analysis_fa": "بی‌رهبری معمولاً نقطهٔ قوت این جنبش خوانده می‌شود، و شش روز چنین بود: کسی را نمی‌شد بازداشت کرد تا پایان یابد و کسی را نمی‌شد خرید. انشقاق نیمهٔ دیگر همین واقعیت را نشان می‌دهد. وقتی دولت پیشنهادی داد، هیچ پیکری نبود که از سوی جنبش آن را بپذیرد یا رد کند، پس تصمیم با پاها گرفته شد، و جنبشی که با نگاه‌داشتن یک مکان تعریف می‌شد، اکنون با بودن در دو مکان تعریف می‌شد.",
+      "actors_hy": [
+        "Վաղինակ Շուշանյան"
+      ],
+      "actors_fa": [
+        "واغیناک شوشانیان"
+      ],
+      "tags_hy": [
+        "պառակտում",
+        "անառաջնորդ",
+        "Ազատության հրապարակ"
+      ],
+      "tags_fa": [
+        "انشقاق",
+        "بی‌رهبر",
+        "میدان آزادی"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [],
+      "tags": [
+        "clearance",
+        "barricade",
+        "Baghramyan",
+        "policing"
+      ],
+      "sources": [
+        {
+          "title": "ANCA / Asbarez, 'Electric Yerevan: Police Unblock Baghramyan Avenue', 6 July 2015",
+          "url": "https://anca.org/electric-yerevan-police-unblock-baghramyan-avenue/",
+          "note": "The clearance of 6 July: the bins carried away, more than forty detained, no batons and no water, and the police request that the crowd move to Freedom Square."
+        },
+        {
+          "title": "Hromadske International, 'What Was #ElectricYerevan?'",
+          "url": "https://medium.com/@Hromadske/what-was-electricyerevan-4023bfa935e",
+          "note": "The split of 28 June in Vaghinak Shushanyan's own words, the three demands, and the Gallup finding that ninety-five per cent of Armenians approved of the protest."
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-5.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-5.JPG",
+          "caption": "The avenue in the last days of the occupation.",
+          "caption_hy": "Պողոտան գրավման վերջին օրերին։",
+          "caption_fa": "خیابان در روزهای آخر اشغال.",
+          "credit": "Photo: Hayordi, 1 July 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-5.JPG"
+        }
+      ],
+      "categories": [
+        "state",
+        "protest"
+      ],
+      "id": "avenue-cleared-2015-07-06",
+      "title": "6 July: fourteen days, and the bins are carried away",
+      "title_hy": "Հուլիսի 6. տասնչորս օր, և աղբամանները տանում են",
+      "title_fa": "۶ ژوئیه: چهارده روز، و سطل‌ها را می‌برند",
+      "date": "2015-07-06",
+      "coordinates": [
+        44.51171,
+        40.191
+      ],
+      "location": "Marshal Baghramyan Avenue",
+      "location_hy": "Մարշալ Բաղրամյան պողոտա",
+      "location_fa": "خیابان مارشال باغرامیان",
+      "summary": "Police move onto the avenue in the early afternoon, take the barricade apart and reopen the carriageway to traffic. Some two hundred people are there; more than forty are detained and, the police spokesman says, none will be charged. There are no batons, no water cannon and no beatings. The remnant is asked to go to Freedom Square, and goes.",
+      "summary_hy": "Ոստիկանությունը կեսօրին մտնում է պողոտա, քանդում պատնեշը և երթևեկելի մասը վերաբացում տրանսպորտի համար։ Այնտեղ մոտ երկու հարյուր մարդ է. ավելի քան քառասունը ձերբակալվում է, և, ըստ ոստիկանության խոսնակի, ոչ ոքի մեղադրանք չի առաջադրվի։ Չկա մահակ, չկա ջրցան, չկա ծեծ։ Մնացորդին խնդրում են գնալ Ազատության հրապարակ, և նա գնում է։",
+      "summary_fa": "پلیس بعدازظهر وارد خیابان می‌شود، سنگر را برمی‌چیند و سواره‌رو را به روی خودروها بازمی‌گشاید. حدود دویست نفر آنجایند؛ بیش از چهل نفر بازداشت می‌شوند و به گفتهٔ سخنگوی پلیس هیچ‌کس تحت پیگرد قرار نمی‌گیرد. نه باتوم، نه آب‌پاش، نه کتک. از باقی‌مانده خواسته می‌شود به میدان آزادی بروند، و می‌روند.",
+      "analysis": "The second clearance is the mirror of the first and the more effective of the two. On 23 June the state used force on four hundred people and got twenty thousand; on 6 July it used courtesy on two hundred and got the avenue back. Between the two dates nothing was conceded that had not been conceded on 27 June. What had changed was the size of the thing being cleared, and the state had learned that the way to end an occupation is to wait until there is little enough of it that ending it looks reasonable.",
+      "analysis_hy": "Երկրորդ մաքրումը առաջինի հայելին է և երկուսից ավելի արդյունավետը։ Հունիսի 23-ին պետությունը ուժ կիրառեց չորս հարյուր մարդու դեմ և ստացավ քսան հազար. հուլիսի 6-ին քաղաքավարություն կիրառեց երկու հարյուրի դեմ և հետ ստացավ պողոտան։ Երկու ամսաթվերի միջև ոչինչ չզիջվեց, ինչ չէր զիջվել հունիսի 27-ին։ Փոխվել էր մաքրվողի չափը, և պետությունը սովորել էր, որ գրավումը վերջացնելու ձևն այն է, որ սպասես, մինչև այն այնքան փոքրանա, որ վերջացնելը ողջամիտ թվա։",
+      "analysis_fa": "پاک‌سازی دوم آینهٔ اولی است و از آن دو، مؤثرتر. ۲۳ ژوئن دولت بر چهارصد نفر زور آورد و بیست هزار نفر گرفت؛ ۶ ژوئیه بر دویست نفر ادب ورزید و خیابان را پس گرفت. میان این دو تاریخ چیزی افزون بر ۲۷ ژوئن واگذار نشد. آنچه تغییر کرده بود اندازهٔ چیزی بود که پاک می‌شد، و دولت آموخته بود که راه پایان‌دادن به یک اشغال، صبر کردن است تا آن‌قدر کوچک شود که پایان‌دادنش معقول به‌نظر برسد.",
+      "tags_hy": [
+        "մաքրում",
+        "պատնեշ",
+        "Բաղրամյան",
+        "ոստիկանություն"
+      ],
+      "tags_fa": [
+        "پاک‌سازی",
+        "سنگر",
+        "باغرامیان",
+        "پلیس"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Andreas Ghukasyan",
+        "Rise up, Armenia"
+      ],
+      "tags": [
+        "revival",
+        "Republic Square",
+        "Rise up Armenia"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        },
+        {
+          "title": "Hromadske International, 'What Was #ElectricYerevan?'",
+          "url": "https://medium.com/@Hromadske/what-was-electricyerevan-4023bfa935e",
+          "note": "The split of 28 June in Vaghinak Shushanyan's own words, the three demands, and the Gallup finding that ninety-five per cent of Armenians approved of the protest."
+        }
+      ],
+      "media": [
+        {
+          "type": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-6.JPG/1280px-Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-6.JPG",
+          "caption": "The September march, three months after the avenue was cleared.",
+          "caption_hy": "Սեպտեմբերյան երթը՝ պողոտան մաքրելուց երեք ամիս անց։",
+          "caption_fa": "راهپیمایی سپتامبر، سه ماه پس از پاک‌سازی خیابان.",
+          "credit": "Photo: Hayordi, 11 September 2015",
+          "license": "CC BY-SA 4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Բաղրամյան_պողոտան_ընդդեմ_հոսանքի_թանկացման_ցույցի_ժամանակ_-6.JPG"
+        }
+      ],
+      "categories": [
+        "protest",
+        "state"
+      ],
+      "id": "revival-march-2015-09-11",
+      "title": "11 September: forty-eight detained on the second try",
+      "title_hy": "Սեպտեմբերի 11. երկրորդ փորձին քառասունութ ձերբակալված",
+      "title_fa": "۱۱ سپتامبر: چهل و هشت بازداشت در تلاش دوم",
+      "date": "2015-09-11",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Yerevan city centre",
+      "location_hy": "Երևանի կենտրոն",
+      "location_fa": "مرکز ایروان",
+      "summary": "After a quiet August the movement tries again. A march demanding the full repeal of the rise draws a substantial crowd; forty-eight people are detained and released. Rise up, Armenia, founded in July by Andreas Ghukasyan, holds a forty-day sit-in on Republic Square from 4 September. Neither brings the summer back.",
+      "summary_hy": "Հանգիստ օգոստոսից հետո շարժումը նորից փորձում է։ Բարձրացման լիակատար չեղարկում պահանջող երթը զգալի ամբոխ է հավաքում. քառասունութ մարդ ձերբակալվում և ազատ է արձակվում։ «Ելիր, Հայաստան»-ը, որ հուլիսին հիմնել է Անդրեաս Ղուկասյանը, սեպտեմբերի 4-ից քառասնօրյա նստացույց է անում Հանրապետության հրապարակում։ Ոչ մեկը ամառը հետ չի բերում։",
+      "summary_fa": "پس از اوتی آرام، جنبش دوباره می‌کوشد. راهپیمایی‌ای که لغو کامل افزایش را می‌خواهد جمعیتی چشمگیر گرد می‌آورد؛ چهل و هشت نفر بازداشت و آزاد می‌شوند. «برخیز، ارمنستان»، که در ژوئیه به‌دست آندریاس غوکاسیان بنیاد شد، از ۴ سپتامبر چهل روز در میدان جمهوری تحصن می‌کند. هیچ‌کدام تابستان را بازنمی‌گرداند.",
+      "analysis": "The September attempt matters because of where it goes. The avenue is not retaken; the sit-in that follows is on Republic Square, which is the ceremonial centre and the least defensible thing to hold. A movement that had found a street goes back to a square, and the difference is visible in the outcome: forty days on Republic Square produced nothing that fourteen days on Baghramyan had not already produced in three.",
+      "analysis_hy": "Սեպտեմբերյան փորձը կարևոր է նրանով, թե ուր է գնում։ Պողոտան չի վերագրավվում. հաջորդող նստացույցը Հանրապետության հրապարակում է՝ արարողակարգային կենտրոնում և պահելու համար ամենաանպաշտպան տեղում։ Շարժումը, որ գտել էր փողոց, վերադառնում է հրապարակ, և տարբերությունը երևում է արդյունքում՝ Հանրապետության հրապարակի քառասուն օրը ոչինչ չտվեց, ինչ Բաղրամյանի տասնչորս օրն արդեն չէր տվել երեքի ընթացքում։",
+      "analysis_fa": "تلاش سپتامبر از این‌رو مهم است که به کجا می‌رود. خیابان بازپس گرفته نمی‌شود؛ تحصنی که در پی می‌آید در میدان جمهوری است، یعنی مرکز تشریفاتی و بی‌دفاع‌ترین چیزی که بتوان نگاه داشت. جنبشی که خیابانی یافته بود به میدان بازمی‌گردد، و تفاوت در نتیجه پیداست: چهل روز میدان جمهوری چیزی نساخت که چهارده روز باغرامیان در سه روز نساخته بود.",
+      "actors_hy": [
+        "Անդրեաս Ղուկասյան",
+        "Ելիր, Հայաստան"
+      ],
+      "actors_fa": [
+        "آندریاس غوکاسیان",
+        "برخیز، ارمنستان"
+      ],
+      "tags_hy": [
+        "վերածնունդ",
+        "Հանրապետության հրապարակ",
+        "Ելիր Հայաստան"
+      ],
+      "tags_fa": [
+        "احیا",
+        "میدان جمهوری",
+        "برخیز ارمنستان"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Deloitte & Touche"
+      ],
+      "tags": [
+        "audit",
+        "Deloitte",
+        "tariff"
+      ],
+      "sources": [
+        {
+          "title": "Panorama.am, 'PSRC decision to raise power tariffs in Armenia justified, Deloitte & Touche says', 30 September 2015",
+          "url": "https://www.panorama.am/en/news/2015/09/30/tariff/1454558",
+          "note": "The audit the president promised, and its finding."
+        },
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "infra",
+        "politics"
+      ],
+      "id": "deloitte-audit-2015-09-30",
+      "title": "30 September: the audit says the rise was due",
+      "title_hy": "Սեպտեմբերի 30. աուդիտն ասում է՝ բարձրացումը հիմնավոր էր",
+      "title_fa": "۳۰ سپتامبر: حسابرسی می‌گوید افزایش موجه بود",
+      "date": "2015-09-30",
+      "coordinates": [
+        44.53331,
+        40.19312
+      ],
+      "location": "Public Services Regulatory Commission",
+      "location_hy": "Հանրային ծառայությունները կարգավորող հանձնաժողով",
+      "location_fa": "کمیسیون تنظیم خدمات عمومی",
+      "summary": "The international audit promised on 27 June reports. Deloitte & Touche finds the regulator's decision financially justified. The state subsidy stays in place until 31 July 2016, and the tariff is lowered again in June 2016, by 2.58 drams.",
+      "summary_hy": "Հունիսի 27-ին խոստացված միջազգային աուդիտը ներկայացնում է եզրակացությունը։ «Դելոյթ և Թուշ»-ը կարգավորողի որոշումը ֆինանսապես հիմնավոր է համարում։ Պետական սուբսիդիան մնում է մինչև 2016 թվականի հուլիսի 31-ը, և սակագինը 2016-ի հունիսին կրկին իջեցվում է՝ 2,58 դրամով։",
+      "summary_fa": "حسابرسی بین‌المللی که ۲۷ ژوئن وعده داده شد، گزارش می‌دهد. دیلویت اند توش تصمیم تنظیم‌گر را از نظر مالی موجه می‌یابد. یارانهٔ دولتی تا ۳۱ ژوئیهٔ ۲۰۱۶ برقرار می‌ماند و تعرفه در ژوئن ۲۰۱۶ دوباره ۲٫۵۸ درام کاهش می‌یابد.",
+      "analysis": "It is important to record that the audit went against the movement, because the map should not flatter its subjects. The rise was defensible as arithmetic. What the summer was actually about is visible in the fact that the finding changed nothing anybody felt: the households paid the old price for another year, the grid changed owner, and the question of who decides was never audited at all.",
+      "analysis_hy": "Կարևոր է արձանագրել, որ աուդիտը շարժման դեմ եզրակացրեց, որովհետև քարտեզը չպետք է շողոքորթի իր առարկաներին։ Բարձրացումը որպես թվաբանություն պաշտպանելի էր։ Այն, ինչի մասին իրականում ամառն էր, երևում է նրանից, որ եզրակացությունը ոչինչ չփոխեց, որ որևէ մեկը զգար՝ տնային տնտեսությունները ևս մեկ տարի հին գինը վճարեցին, ցանցը սեփականատեր փոխեց, իսկ այն հարցը, թե ով է որոշում, ընդհանրապես չաուդիտվեց։",
+      "analysis_fa": "ثبت این نکته مهم است که حسابرسی به زیان جنبش رأی داد، چون نقشه نباید به موضوعاتش تملق بگوید. افزایش، به‌عنوان حساب و کتاب، قابل دفاع بود. آنچه آن تابستان واقعاً دربارهٔ آن بود در این پیداست که این یافته هیچ‌چیزی را که کسی حس کند تغییر نداد: خانوارها یک سال دیگر قیمت قدیم را پرداختند، شبکه مالک عوض کرد، و پرسش اینکه چه کسی تصمیم می‌گیرد اصلاً حسابرسی نشد.",
+      "tags_hy": [
+        "աուդիտ",
+        "Դելոյթ",
+        "սակագին"
+      ],
+      "tags_fa": [
+        "حسابرسی",
+        "دیلویت",
+        "تعرفه"
+      ],
+      "episode": "electric-yerevan"
+    },
+    {
+      "actors": [
+        "Tashir Group",
+        "Samvel Karapetyan",
+        "Inter RAO"
+      ],
+      "tags": [
+        "Tashir",
+        "privatisation",
+        "Inter RAO",
+        "253 million"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, 'Electric Yerevan'",
+          "url": "https://en.wikipedia.org/wiki/Electric_Yerevan",
+          "note": "The frame of the whole sequence, the September revival, the audit, and the sale of the grid to Tashir for 253 million dollars."
+        }
+      ],
+      "media": [],
+      "categories": [
+        "infra",
+        "politics"
+      ],
+      "id": "ena-sold-tashir-2015-09",
+      "title": "September: the grid changes hands",
+      "title_hy": "Սեպտեմբեր. ցանցը փոխում է տերը",
+      "title_fa": "سپتامبر: شبکه دست به دست می‌شود",
+      "date": "2015-09",
+      "datePrecision": "month",
+      "coordinates": [
+        44.53629,
+        40.18651
+      ],
+      "location": "Electric Networks of Armenia",
+      "location_hy": "«Հայաստանի էլեկտրական ցանցեր»",
+      "location_fa": "شبکه‌های برق ارمنستان",
+      "summary": "The government approves the sale of Electric Networks of Armenia by the Russian holding Inter RAO to the Tashir Group of the Russian-Armenian businessman Samvel Karapetyan, for 253 million dollars. Tashir promises about a billion dollars of investment and some 2,500 jobs.",
+      "summary_hy": "Կառավարությունը հաստատում է «Հայաստանի էլեկտրական ցանցերի» վաճառքը ռուսական «Ինտեր ՌԱՕ» հոլդինգից ռուսահայ գործարար Սամվել Կարապետյանի «Տաշիր» խմբին՝ 253 միլիոն դոլարով։ «Տաշիրը» խոստանում է մոտ մեկ միլիարդ դոլարի ներդրում և շուրջ 2500 աշխատատեղ։",
+      "summary_fa": "دولت فروش شبکه‌های برق ارمنستان از هلدینگ روسی اینتر رائو به گروه تاشیر، متعلق به سرمایه‌دار ارمنی‌روس ساموِل کاراپتیان، به مبلغ ۲۵۳ میلیون دلار را تصویب می‌کند. تاشیر حدود یک میلیارد دلار سرمایه‌گذاری و نزدیک ۲۵۰۰ شغل وعده می‌دهد.",
+      "analysis": "This is the closest thing the summer has to an outcome, and it is not one of the three demands. The company changed hands; the oversight did not change; the price was carried by the budget. Russian state ownership of the grid, the thing Russian media insisted the protest was really about, ended in the same season, and it ended by sale to another Moscow-based owner rather than by anything the avenue did.",
+      "analysis_hy": "Սա ամենամոտն է, ինչ ամառը ունի որպես արդյունք, և դա երեք պահանջներից ոչ մեկը չէ։ Ընկերությունը փոխեց տերը. վերահսկողությունը չփոխվեց. գինը կրեց բյուջեն։ Ցանցի ռուսական պետական սեփականությունը՝ այն, ինչի մասին ռուսական մամուլը պնդում էր, թե բողոքն իրականում այդ մասին է, ավարտվեց նույն եղանակին, և ավարտվեց մեկ այլ մոսկվայաբնակ սեփականատիրոջ վաճառքով, ոչ թե պողոտայի արածով։",
+      "analysis_fa": "این نزدیک‌ترین چیزی است که آن تابستان به‌عنوان نتیجه دارد، و هیچ‌یک از آن سه خواسته نیست. شرکت دست عوض کرد؛ نظارت عوض نشد؛ قیمت را بودجه برداشت. مالکیت دولتی روسیه بر شبکه، همان چیزی که رسانه‌های روسی اصرار داشتند اعتراض واقعاً دربارهٔ آن است، در همان فصل پایان یافت، و با فروش به مالکی دیگر مستقر در مسکو پایان یافت، نه با کاری که خیابان کرد.",
+      "actors_hy": [
+        "«Տաշիր» խումբ",
+        "Սամվել Կարապետյան",
+        "Ինտեր ՌԱՕ"
+      ],
+      "actors_fa": [
+        "گروه تاشیر",
+        "ساموِل کاراپتیان",
+        "اینتر رائو"
+      ],
+      "tags_hy": [
+        "Տաշիր",
+        "սեփականաշնորհում",
+        "Ինտեր ՌԱՕ",
+        "253 միլիոն"
+      ],
+      "tags_fa": [
+        "تاشیر",
+        "خصوصی‌سازی",
+        "اینتر رائو",
+        "۲۵۳ میلیون"
+      ],
+      "episode": "electric-yerevan"
     }
   ],
   "episodes": [
@@ -5079,20 +6313,6 @@
       }
     },
     {
-      "id": "2018-revolution",
-      "label": "2018 Revolution",
-      "label_hy": "2018-ի հեղափոխություն",
-      "label_fa": "انقلاب ۲۰۱۸",
-      "start": "2018-03-31",
-      "end": "2018-05-08",
-      "color": "#c9262c",
-      "note": "Thirty-nine days from the walk leaving Gyumri to the parliamentary vote that made Pashinyan prime minister.",
-      "spur": {
-        "kind": "events"
-      },
-      "cube": true
-    },
-    {
       "id": "genocide-commemoration",
       "label": "1915 Genocide Commemoration",
       "label_hy": "1915-ի Ցեղասպանության հիշատակ",
@@ -5107,6 +6327,116 @@
       "note": "The annual rite, and the one variable that moves inside it: the square the torch starts from.",
       "axis": false,
       "axisNote": "Not drawn as a band on the timeline. A purple length running from 2015 to 2026 reads as eleven years of continuous commemoration, which is not the claim: the rite is two days in April and the entry is about where those two days start from. The episode is kept because entries belong to it."
+    },
+    {
+      "id": "electric-yerevan",
+      "label": "Electric Yerevan",
+      "label_hy": "Էլեկտրիկ Երևան",
+      "label_fa": "ایروان برقی",
+      "start": "2015-06-17",
+      "end": "2015-09-30",
+      "color": "#3d9aa8",
+      "note": "From the regulator's decision to the audit: the summer a tariff put twenty thousand people in a carriageway.",
+      "note_hy": "Կարգավորողի որոշումից մինչև աուդիտը՝ ամառը, երբ սակագինը քսան հազար մարդ դրեց երթևեկելի մասում։",
+      "note_fa": "از تصمیم تنظیم‌گر تا حسابرسی: تابستانی که یک تعرفه بیست هزار نفر را در سواره‌رو نشاند.",
+      "spur": {
+        "kind": "events"
+      },
+      "cube": true,
+      "umbrella": "electric-yerevan-2015",
+      "cubeTitle": "The tariff summer",
+      "cubeTitle_hy": "Սակագնային ամառը",
+      "cubeTitle_fa": "تابستان تعرفه",
+      "cubeBody": "Time stands up off the map, 17 June to 30 September 2015. A disc is an entry on its day, a column is a place holding still, and the tallest column here is the held carriageway of Baghramyan Avenue. A slope is movement across days. Drag the timeline to slice the cube.",
+      "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 2015-ի հունիսի 17-ից սեպտեմբերի 30-ը։ Կետը գրառում է իր օրվա վրա, սյունը՝ տեղ, որը մնում է անշարժ, և ամենաբարձր սյունը Բաղրամյան պողոտայի պահված երթևեկելի մասն է։ Քաշեք ժամանակագիծը՝ խորանարդը կտրելու համար։",
+      "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از ۱۷ ژوئن تا ۳۰ سپتامبر ۲۰۱۵. هر دایره یک مدخل در روز خودش است، هر ستون جایی که ثابت مانده، و بلندترین ستون اینجا سواره‌روِ اشغال‌شدهٔ خیابان باغرامیان است. خط زمان را بکشید تا مکعب برش بخورد.",
+      "cubeMethod": "Dated to the day. The occupied carriageway is drawn from the OpenStreetMap centreline of Baghramyan Avenue between the Opera and the police line at Demirchyan Street, 768 m of it; the police line stood 212 m short of the Residence of the President.",
+      "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են։ Զբաղեցված երթևեկելի մասը գծված է Բաղրամյան պողոտայի OpenStreetMap-ի առանցքագծով՝ Օպերայից մինչև Դեմիրճյան փողոցի ոստիկանական շղթան, 768 մետր. շղթան կանգնած էր Նախագահի նստավայրից 212 մետր առաջ։",
+      "cubeMethod_fa": "تاریخ‌ها در حد روز است. سواره‌روِ اشغال‌شده از خط میانی خیابان باغرامیان در OpenStreetMap ترسیم شده، از اپرا تا صف پلیس در خیابان دمیرچیان، ۷۶۸ متر؛ صف پلیس ۲۱۲ متر مانده به اقامتگاه رئیس‌جمهور ایستاده بود."
+    },
+    {
+      "id": "2018-revolution",
+      "label": "2018 Revolution",
+      "label_hy": "2018-ի հեղափոխություն",
+      "label_fa": "انقلاب ۲۰۱۸",
+      "start": "2018-03-31",
+      "end": "2018-05-08",
+      "color": "#c9262c",
+      "note": "Thirty-nine days from the walk leaving Gyumri to the parliamentary vote that made Pashinyan prime minister.",
+      "spur": {
+        "kind": "events"
+      },
+      "cube": true,
+      "umbrella": "velvet-revolution-2018",
+      "walk": {
+        "from": "2018-03-31",
+        "to": "2018-04-13",
+        "stops": [
+          {
+            "name": "Gyumri",
+            "name_hy": "Գյումրի",
+            "name_fa": "گیومری",
+            "c": [
+              43.8465,
+              40.7877
+            ]
+          },
+          {
+            "name": "Vanadzor",
+            "name_hy": "Վանաձոր",
+            "name_fa": "وانادزور",
+            "c": [
+              44.4883,
+              40.8128
+            ]
+          },
+          {
+            "name": "Dilijan",
+            "name_hy": "Դիլիջան",
+            "name_fa": "دیلیجان",
+            "c": [
+              44.8635,
+              40.7411
+            ]
+          },
+          {
+            "name": "Hrazdan",
+            "name_hy": "Հրազդան",
+            "name_fa": "هرازدان",
+            "c": [
+              44.7683,
+              40.4979
+            ]
+          },
+          {
+            "name": "Abovyan",
+            "name_hy": "Աբովյան",
+            "name_fa": "آبویان",
+            "c": [
+              44.6272,
+              40.2704
+            ]
+          },
+          {
+            "name": "Yerevan",
+            "name_hy": "Երևան",
+            "name_fa": "ایروان",
+            "c": [
+              44.5152,
+              40.1859
+            ]
+          }
+        ]
+      },
+      "cubeTitle": "The thirty-nine days",
+      "cubeTitle_hy": "Երեսունինը օրը",
+      "cubeTitle_fa": "سی و نه روز",
+      "cubeBody": "Time stands up off the map, 31 March to 8 May 2018. A disc is an entry on its day, a column is a place holding still, a slope is movement across days. Drag the timeline to slice the cube; press play and the revolution rises.",
+      "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 2018-ի մարտի 31-ից մայիսի 8-ը։ Կետը գրառում է իր օրվա վրա, սյունը՝ տեղ, որը մնում է անշարժ, թեքությունը՝ շարժում օրերի միջով։ Քաշեք ժամանակագիծը՝ խորանարդը կտրելու համար։",
+      "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از ۳۱ مارس تا ۸ مه ۲۰۱۸. هر دایره یک مدخل در روز خودش است، هر ستون جایی که ثابت مانده، و هر شیب حرکتی در طول روزها. خط زمان را بکشید تا مکعب برش بخورد.",
+      "cubeMethod": "Dated to the day, so the two-hour march of 22 April is drawn flat. The walk from Gyumri passes Vanadzor, Dilijan, Hrazdan and Abovyan; only its two ends are documented, the middle dates are spaced along the route.",
+      "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, ուստի ապրիլի 22-ի երկժամյա երթը գծված է հորիզոնական։ Գյումրիից քայլերթն անցնում է Վանաձոր, Դիլիջան, Հրազդան և Աբովյան. փաստագրված են միայն երկու ծայրերը, միջանկյալ ամսաթվերը բաշխված են ճանապարհի երկայնքով։",
+      "cubeMethod_fa": "تاریخ‌ها در حد روز است، پس راهپیمایی دوساعتهٔ ۲۲ آوریل افقی رسم شده. پیاده‌روی از گیومری از وانادزور، دیلیجان، هرازدان و آبویان می‌گذرد؛ تنها دو سرِ آن مستند است و تاریخ‌های میانی در طول مسیر توزیع شده‌اند."
     }
   ]
 }
