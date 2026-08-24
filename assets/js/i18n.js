@@ -174,6 +174,7 @@
 
     "basemap.kentron": "Figure-ground",
     "basemap.drawn": "The city we drew",
+    "basemap.void": "The city, no earth",
     "basemap.light": "Light",
     "basemap.streets": "Streets",
     "basemap.dark": "Dark",
@@ -400,6 +401,7 @@
 
     "basemap.kentron": "Պատկեր-ֆոն",
     "basemap.drawn": "Մեր գծած քաղաքը",
+    "basemap.void": "Քաղաքը, առանց հողի",
     "basemap.light": "Լուսավոր",
     "basemap.streets": "Փողոցներ",
     "basemap.dark": "Մուգ",
@@ -626,6 +628,7 @@
 
     "basemap.kentron": "نگاره‑زمینه",
     "basemap.drawn": "شهری که خودمان کشیده‌ایم",
+    "basemap.void": "شهر، بدون زمین",
     "basemap.light": "روشن",
     "basemap.streets": "خیابان‌ها",
     "basemap.dark": "تیره",

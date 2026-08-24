@@ -125,8 +125,34 @@
     };
   }
 
+  /* ONE BASEMAP HAS NO EARTH. Everywhere else the hillshade is a gift: the
+     landform stays legible even with the tilt switched off, and Yerevan is a
+     city on a slope, which is half of what its squares and avenues are
+     answering. The drawn basemap keeps it for that reason.
+
+     The ground called "void" is the exception, and it exists for the
+     space-time cube. The cube is a few hundred hairlines standing in the
+     air; a shaded hillside under them is a high contrast photograph with a
+     drawing lost somewhere on top of it. So on that one ground the earth is
+     removed entirely, no shading and no deformation, and the city floats on
+     the background colour. Abstraction there is not a shortcut, it is the
+     condition for reading the thing at all. */
+  function abstractGround() {
+    var sel = document.getElementById("basemap-select");
+    return !!(sel && sel.value === "void");
+  }
+
   function apply() {
     if (!map || !map.isStyleLoaded()) return;
+
+    if (abstractGround()) {
+      if (map.getLayer("hillshade")) map.removeLayer("hillshade");
+      if (map.getTerrain()) map.setTerrain(null);
+      syncButton();
+      report("none, this ground has no earth");
+      done = true;
+      return;
+    }
 
     var hasDem  = !!map.getSource("dem");
     var hasHill = !!map.getLayer("hillshade");
@@ -173,6 +199,7 @@
   }
 
   function setTerrain(on) {
+    if (on && abstractGround()) on = false;
     if (!map) return;
     try {
       if (on) {
@@ -204,6 +231,11 @@
     var on = !!(map && map.getTerrain());
     b.setAttribute("aria-pressed", on ? "true" : "false");
     b.classList.toggle("on", on);
+    /* A switch that cannot do anything should say so rather than flipping
+       back by itself: this ground has no earth to raise. */
+    var none = abstractGround();
+    b.disabled = none;
+    b.classList.toggle("is-void", none);
   }
 
   function toggle(on) {
@@ -418,6 +450,21 @@
          it stops for good the moment the pass succeeds. Cost when idle: zero. */
       startRetry();
       map.on("styledata", function () { done = false; startRetry(); });
+
+      /* Leaving the drawn basemap has to put the earth back, and arriving has
+         to take it away, so the switch is heard here as well as in app.js. */
+      var bm = document.getElementById("basemap-select");
+      if (bm) bm.addEventListener("change", function () {
+        /* Set the switch at once rather than waiting for the new style to
+           settle: apply() only runs once isStyleLoaded is true, and the
+           control should not lie in either direction while the tiles are
+           still arriving. */
+        var b = document.getElementById("terrain-btn"), none = abstractGround();
+        if (b) { b.disabled = none; b.classList.toggle("is-void", none); }
+        done = false;
+        setTimeout(function () { done = false; startRetry(); }, 300);
+        setTimeout(function () { done = false; startRetry(); }, 1500);
+      });
       map.on("movestart", startSample);
       map.on("moveend", endSample);
       startFreezeWatch();

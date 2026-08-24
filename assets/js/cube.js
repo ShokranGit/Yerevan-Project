@@ -655,9 +655,11 @@
   /* The pale basemaps and what to do about them. A cube of hairlines over
      somebody else's white cartography is unreadable, and the fix is not to
      thicken the hairlines, it is to stand the cube on the city this project
-     draws for itself. Entering from a pale ground switches to it, and
-     leaving puts back whatever was there before. A reader who is already on
-     a dark ground is left alone. */
+     draws for itself; and on the version of it with no earth underneath,
+     because a shaded hillside competes with the drawing for exactly the
+     same greys. Entering from a pale ground switches to it, and leaving
+     puts back whatever was there before. A reader who has already chosen a
+     dark ground, relief or not, is left alone. */
   var PALE = { kentron: 1, light: 1, streets: 1 };
   var prevBase = null;
 
@@ -665,12 +667,12 @@
     var sel = $("basemap-select");
     if (!sel || !PALE[sel.value]) return;
     prevBase = sel.value;
-    sel.value = "drawn";
+    sel.value = "void";
     sel.dispatchEvent(new Event("change", { bubbles: true }));
   }
   function backFromDrawn() {
     var sel = $("basemap-select");
-    if (!sel || !prevBase || sel.value !== "drawn") { prevBase = null; return; }
+    if (!sel || !prevBase || sel.value !== "void") { prevBase = null; return; }
     sel.value = prevBase; prevBase = null;
     sel.dispatchEvent(new Event("change", { bubbles: true }));
   }

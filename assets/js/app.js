@@ -32,6 +32,13 @@
        cube, where somebody else's cartography under a drawing of time is
        just noise. */
     drawn:     "assets/style-drawn.json",
+    /* The same ground with the earth taken out from under it. Yerevan is a
+       city on a slope and the relief is worth seeing, so the drawn basemap
+       keeps its hillshade; but the space-time cube is hairlines standing in
+       the air, and a shaded hillside under them is a photograph with a
+       drawing lost on top of it. Two grounds, because both readings are
+       wanted. */
+    "void":    "assets/style-void.json",
     light:     "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
     streets:   "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
     dark:      "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
@@ -39,7 +46,7 @@
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       "Imagery &copy; Esri, Maxar, Earthstar Geographics", 19)
   };
-  var BASEMAP_ORDER = ["kentron", "drawn", "light", "streets", "dark", "satellite"];
+  var BASEMAP_ORDER = ["kentron", "drawn", "void", "light", "streets", "dark", "satellite"];
   /* Basemap labels come from the dictionary, keyed by these same five ids. */
 
   var HOME  = { center: [44.5136, 40.1818], zoom: 14.4, pitch: 55, bearing: -24 };
@@ -1579,7 +1586,7 @@
      ================================================================= */
   function addStreets() {
     if (!map || !STREETS) return;
-    if (state.basemap !== "drawn") {
+    if (!ownGround()) {
       /* Every other basemap has its own streets and does not want ours. */
       ["st-ped", "st-small", "st-big", "st-outer"].forEach(function (id) {
         if (map.getLayer(id)) map.removeLayer(id);
@@ -2448,9 +2455,16 @@
      on the basemap the map opens with.
 
      Only the `dark` basemap is a dark ground. */
+  /* The two grounds this project draws for itself. They differ only in
+     whether the earth is under the city; everything else about them, the
+     streets, the palette, the absence of any other host, is shared. */
+  function ownGround() {
+    return state.basemap === "drawn" || state.basemap === "void";
+  }
+
   function groundKind() {
     if (state.basemap === "satellite") return "photo";
-    if (state.basemap === "drawn") return "drawn";
+    if (ownGround()) return "drawn";
     if (state.basemap === "dark") return "dark";
     return "light";
   }
@@ -4642,7 +4656,7 @@
       bmSel.addEventListener("change", function () {
         state.basemap = this.value;
         var dark = state.basemap === "dark" || state.basemap === "satellite" ||
-                   state.basemap === "drawn";
+                   ownGround();
         document.body.classList.toggle("light", !dark);
         $("map-wrap").classList.toggle("on-light", !dark);
         setLightBasemap();
