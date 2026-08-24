@@ -193,7 +193,11 @@
       var lats = all.map(function (e) { return e.coordinates[1]; }).sort(function (a, b) { return a - b; });
       mid = [ lons[Math.floor(lons.length / 2)], lats[Math.floor(lats.length / 2)] ];
     }
-    var CORE_M = 25000;                 /* 25 km: a city and its edge */
+    /* Most periods here are a city and its edge, so 25 km is the default
+       core. A period whose geography is continental says so in the data:
+       the 1915 dossier runs from Constantinople to the Syrian desert and
+       sets cubeCore to the width it actually needs. */
+    var CORE_M = (cur.ep && +cur.ep.cubeCore) || 25000;
     var core = all.filter(function (e) { return metresBetween(mid, e.coordinates) <= CORE_M; });
     if (!core.length) core = all;
 
@@ -206,7 +210,18 @@
     var box = [ lo[0] - padX, lo[1] - padY, hi[0] + padX, hi[1] + padY ];
     var wide = metresBetween([box[0], box[1]], [box[2], box[1]]);
     var tall = metresBetween([box[0], box[1]], [box[0], box[3]]);
-    var H = Math.max(3500, Math.min(9000, Math.max(wide, tall)));
+    var HMAX = (cur.ep && +cur.ep.cubeHeight) || 9000;
+    var H = Math.max(3500, Math.min(HMAX, Math.max(wide, tall)));
+
+    /* The zoom the box needs if it is to sit inside a window about eight
+       hundred pixels across. A city box wants 12 or 13 and the old fixed
+       floor of 9.5 was safe; a box a thousand kilometres wide wants 4, and
+       the floor would have held the camera far too close to ever frame it. */
+    var midLat = (box[1] + box[3]) / 2;
+    var mppNeed = Math.max(wide, tall) / 800;
+    var zFit = Math.log(156543.03 * Math.cos(midLat * Math.PI / 180) / mppNeed) / Math.LN2;
+    var zLo = Math.max(1.5, Math.min(9.5, zFit - 1.5));
+    var zStart = Math.max(zLo, Math.min(15.5, zFit));
 
     /* Is this point outside the cube's own ground? Used to fade the far
        legs and to keep the stalks and the footprint inside the volume. */
@@ -388,6 +403,7 @@
 
     return { nodes: nodes, segs: segs, H: H, box: box, alt: alt,
              ticks: ticks, anchor: anchor, steps: stepPts,
+             zLo: zLo, zStart: zStart,
              centre: [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2] };
   }
 
@@ -660,8 +676,13 @@
       x0 = Math.min(x0, s.x); x1 = Math.max(x1, s.x);
       y0 = Math.min(y0, s.y); y1 = Math.max(y1, s.y);
     });
-    if (n < pts.length) return null;
-    return { w: x1 - x0, h: y1 - y0, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2 };
+    /* A corner behind the camera cannot be measured. For a city cube that
+       means the pass is worthless and the framing gives up; for a cube
+       hundreds of kilometres tall, whose top edge can pass the horizon, it
+       is normal, and five good corners still frame it better than nothing. */
+    if (n < pts.length && n < 5) return null;
+    return { w: x1 - x0, h: y1 - y0, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2,
+             seen: n };
   }
 
   /* What the furniture leaves free, measured now rather than assumed. */
@@ -674,10 +695,30 @@
       var r = panel.getBoundingClientRect();
       if (r.width && r.right > box.left) left = Math.max(left, r.right - box.left + 28);
     }
+    /* The timeline is a bottom strip in the horizontal layout and a rail up
+       the right-hand side in the vertical one. Reading it as a bottom
+       obstruction in both collapsed the free rectangle to its 160 px floor
+       and pinned every cube to the top of the window. Measure which way it
+       runs, and take the space off the side it actually occupies. */
+    /* The cube's own caption stands over the map on the left. It is part of
+       the furniture too, and framing behind it hid the ruler. */
+    var note = $("cube-note");
+    if (note && !document.body.classList.contains("is-phone")) {
+      var rn = note.getBoundingClientRect();
+      if (rn.width && rn.right > box.left) left = Math.max(left, rn.right - box.left + 24);
+    }
     var tl = $("timeline");
     if (tl) {
       var r2 = tl.getBoundingClientRect();
-      if (r2.height) bottom = Math.max(bottom, box.bottom - r2.top + 20);
+      if (r2.width && r2.height) {
+        if (r2.width >= r2.height) {
+          bottom = Math.max(bottom, box.bottom - r2.top + 20);
+        } else if (r2.left > box.left + box.width * 0.5) {
+          right = Math.max(right, box.right - r2.left + 20);
+        } else {
+          left = Math.max(left, r2.right - box.left + 20);
+        }
+      }
     }
     var w = Math.max(160, W - left - right), h = Math.max(160, Hh - top - bottom);
     return { w: w, h: h, cx: left + w / 2, cy: top + h / 2 };
@@ -696,16 +737,28 @@
     var pts = cubeCorners();
     var from = { center: map.getCenter(), zoom: map.getZoom(),
                  pitch: map.getPitch(), bearing: map.getBearing() };
-    var pitch = 64, bearing = -22;
-    map.jumpTo({ center: [geo.centre[0], geo.centre[1]], zoom: 12.4,
+    /* A continental cube is hundreds of kilometres tall, and at 64 degrees
+       its top edge climbs past the horizon, where the projection stops
+       being usable and the framing pass reads a wrong box. Flatten the
+       camera for those. */
+    var tall3d = geo && geo.H > 100000;
+    var pitch = tall3d ? 40 : 64, bearing = tall3d ? -18 : -22;
+    var zLo = (geo && geo.zLo != null) ? geo.zLo : 9.5;
+    map.jumpTo({ center: [geo.centre[0], geo.centre[1]],
+                 zoom: (geo && geo.zStart != null) ? geo.zStart : 12.4,
                  pitch: pitch, bearing: bearing });
     var rect = freeRect();
     for (var i = 0; i < 4; i++) {
       var M = map.transform.customLayerMatrix();
       var b = projBBox(pts, M);
+      /* Kept as a diagnostic: the framing pass is silent, so when a cube
+         sits wrong on the screen this is the only way to see which pass
+         went wrong and how many corners it could measure. */
+      window.__cubeFrame = { pass: i, seen: b ? b.seen : 0, w: b ? Math.round(b.w) : 0,
+                             h: b ? Math.round(b.h) : 0, zoom: +map.getZoom().toFixed(2) };
       if (!b || !b.w || !b.h) break;
       var s = Math.min(rect.w / b.w, rect.h / b.h) * 0.94;
-      map.jumpTo({ zoom: Math.max(9.5, Math.min(15.5, map.getZoom() + Math.log(s) / Math.LN2)) });
+      map.jumpTo({ zoom: Math.max(zLo, Math.min(15.5, map.getZoom() + Math.log(s) / Math.LN2)) });
       M = map.transform.customLayerMatrix();
       b = projBBox(pts, M);
       if (!b) break;

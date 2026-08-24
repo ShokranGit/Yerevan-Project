@@ -4090,9 +4090,9 @@
          at or after its own position, and only if no row can take it fall back
          to the emptiest one. Chips are capped at 40% of the rail and ellipsed,
          which is what keeps a long Armenian label from making the problem
-         unsolvable. Three rows is far more than this map will need. */
+         unsolvable. Four rows is what the century axis needs now that it carries six periods. */
       var chips = rail.querySelectorAll(".tl-rail-chip");
-      var ROW_H = 28, MAX_ROWS = 3;
+      var ROW_H = 28, MAX_ROWS = 4;
       var rows = [], used = 1, r;
       for (r = 0; r < MAX_ROWS; r++) rows.push(0);
 
