@@ -177,9 +177,22 @@
        the CORE, the entries clustered around the median place, and the
        far ones lean in from outside and fade with distance. The core is
        found rather than assumed, so no coordinate is hard coded here. */
-    var lons = all.map(function (e) { return e.coordinates[0]; }).sort(function (a, b) { return a - b; });
-    var lats = all.map(function (e) { return e.coordinates[1]; }).sort(function (a, b) { return a - b; });
-    var mid = [ lons[Math.floor(lons.length / 2)], lats[Math.floor(lats.length / 2)] ];
+    /* Where is the core? The umbrella entry answers that: it is the one
+       place the period as a whole is filed under, and it is chosen by hand
+       in the data. The median of the entries is the fallback, and it is not
+       good enough on its own: the first war has nine entries in Karabakh
+       and five in Yerevan, so the median would stand the cube two hundred
+       and fifty kilometres east of the city it is about. */
+    var mid = null;
+    if (cur.umbrella) {
+      var um = (events || []).filter(function (e) { return e.id === cur.umbrella; })[0];
+      if (um && um.coordinates) mid = [ um.coordinates[0], um.coordinates[1] ];
+    }
+    if (!mid) {
+      var lons = all.map(function (e) { return e.coordinates[0]; }).sort(function (a, b) { return a - b; });
+      var lats = all.map(function (e) { return e.coordinates[1]; }).sort(function (a, b) { return a - b; });
+      mid = [ lons[Math.floor(lons.length / 2)], lats[Math.floor(lats.length / 2)] ];
+    }
     var CORE_M = 25000;                 /* 25 km: a city and its edge */
     var core = all.filter(function (e) { return metresBetween(mid, e.coordinates) <= CORE_M; });
     if (!core.length) core = all;
