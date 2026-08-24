@@ -1799,9 +1799,9 @@
     },
     {
       "id": "hovannisian-hunger-strike-2013",
-      "title": "Raffi Hovannisian's hunger strike at Opera Square",
-      "date": "2013",
-      "datePrecision": "year",
+      "title": "10 March: twenty-one days without food in Freedom Square",
+      "date": "2013-03-10",
+      "datePrecision": "day",
       "coordinates": [
         44.5152,
         40.1859
@@ -1811,8 +1811,8 @@
         "protest",
         "politics"
       ],
-      "summary": "Raffi Hovannisian, the first foreign minister of the Republic of Armenia and a candidate in the 2013 presidential election, went on a hunger strike for two weeks in Opera Square in protest against the result.",
-      "analysis": "Formal opposition politics still performing itself in the old location, and still not producing an outcome. Hovannisian would later appear at the Afrikana site, a figure moving between the two registers, from the square to the building site, as the centre of political gravity shifts.",
+      "summary": "Raffi Hovannisian, the first foreign minister of the Republic of Armenia and a candidate in the 2013 presidential election, went on a hunger strike for two weeks in Opera Square in protest against the result. He began on 10 March, demanding that Sargsyan step down before the inauguration of 9 April, and ended it on Easter Sunday, 31 March: twenty-one days. The Constitutional Court confirmed the result on the fourth day of the strike, and the parliament speaker came to the square to see him on the fifth.",
+      "analysis": "Formal opposition politics still performing itself in the old location, and still not producing an outcome. Hovannisian would later appear at the Afrikana site, a figure moving between the two registers, from the square to the building site, as the centre of political gravity shifts.\n\nTwenty-one days is the tallest column this period has, and in the cube it is a single unbroken line: one body, one place, three weeks. It changed nothing, and the shape of it is the argument. A hunger strike converts a square into a stage for one person, which is the opposite of what a fare boycott does with a bus stop.",
       "actors": [
         "Raffi Hovannisian"
       ],
@@ -1824,13 +1824,17 @@
       "sources": [
         {
           "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
+        },
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
         }
       ],
       "media": [],
-      "title_hy": "Րաֆֆի Հովհաննիսյանի հացադուլը Օպերայի հրապարակում",
+      "title_hy": "Մարտի 10. քսանմեկ օր առանց սննդի Ազատության հրապարակում",
       "location_hy": "Օպերայի / Ազատության հրապարակ",
-      "summary_hy": "Րաֆֆի Հովհաննիսյանը՝ Հայաստանի Հանրապետության առաջին արտաքին գործերի նախարարը և 2013 թվականի նախագահական ընտրությունների թեկնածուն, արդյունքի դեմ բողոքի նշանով երկու շաբաթ հացադուլ արեց Օպերայի հրապարակում։",
-      "analysis_hy": "Ֆորմալ ընդդիմադիր քաղաքականությունը դեռ ինքն իրեն ներկայացնում է հին վայրում և դեռ արդյունք չի տալիս։ Հովհաննիսյանը հետագայում հայտնվելու էր Աֆրիկանայի տեղանքում՝ երկու ռեգիստրների միջև շարժվող դեմք՝ հրապարակից դեպի շինհրապարակ, մինչ քաղաքական ձգողության կենտրոնը տեղաշարժվում է։",
+      "summary_hy": "Րաֆֆի Հովհաննիսյանը՝ Հայաստանի Հանրապետության առաջին արտաքին գործերի նախարարը և 2013 թվականի նախագահական ընտրությունների թեկնածուն, արդյունքի դեմ բողոքի նշանով երկու շաբաթ հացադուլ արեց Օպերայի հրապարակում։ Նա սկսեց մարտի 10-ին՝ պահանջելով, որ Սարգսյանը հեռանա մինչև ապրիլի 9-ի երդմնակալությունը, և ավարտեց Զատիկի կիրակի օրը՝ մարտի 31-ին. քսանմեկ օր։ Սահմանադրական դատարանը հաստատեց արդյունքը հացադուլի չորրորդ օրը, իսկ հինգերորդ օրը խորհրդարանի նախագահը եկավ հրապարակ նրան տեսնելու։",
+      "analysis_hy": "Ֆորմալ ընդդիմադիր քաղաքականությունը դեռ ինքն իրեն ներկայացնում է հին վայրում և դեռ արդյունք չի տալիս։ Հովհաննիսյանը հետագայում հայտնվելու էր Աֆրիկանայի տեղանքում՝ երկու ռեգիստրների միջև շարժվող դեմք՝ հրապարակից դեպի շինհրապարակ, մինչ քաղաքական ձգողության կենտրոնը տեղաշարժվում է։\n\nՔսանմեկ օրը այս ժամանակահատվածի ամենաբարձր սյունն է, և խորանարդում այն մեկ անընդհատ գիծ է՝ մեկ մարմին, մեկ վայր, երեք շաբաթ։ Այն ոչինչ չփոխեց, և հենց նրա ձևն է փաստարկը։ Հացադուլը հրապարակը վերածում է մեկ մարդու բեմի, ինչը հակառակն է այն բանի, ինչ սակագնային բոյկոտն անում է կանգառի հետ։",
       "actors_hy": [
         "Րաֆֆի Հովհաննիսյան"
       ],
@@ -1839,10 +1843,10 @@
         "2013 թ. ընտրություններ",
         "Օպերայի հրապարակ"
       ],
-      "title_fa": "اعتصاب غذای رافی هوانسیان در میدان اپرا",
+      "title_fa": "۱۰ مارس: بیست‌ویک روز بی‌غذا در میدان آزادی",
       "location_fa": "میدان اپرا / آزادی",
-      "summary_fa": "رافی هوانسیان، نخستین وزیر امور خارجهٔ جمهوری ارمنستان و نامزد انتخابات ریاست‌جمهوری ۲۰۱۳، در اعتراض به نتیجه دو هفته در میدان اپرا اعتصاب غذا کرد.",
-      "analysis_fa": "سیاست رسمیِ اپوزیسیون هنوز خود را در همان مکان قدیمی اجرا می‌کند و هنوز نتیجه‌ای نمی‌دهد. هوانسیان بعدها در محل آفریکانا پیدا می‌شود, چهره‌ای که میان دو ثبت جابه‌جا می‌شود، از میدان به کارگاه ساختمانی، همان‌طور که مرکز ثقل سیاسی جابه‌جا می‌شود.",
+      "summary_fa": "رافی هوانسیان، نخستین وزیر امور خارجهٔ جمهوری ارمنستان و نامزد انتخابات ریاست‌جمهوری ۲۰۱۳، در اعتراض به نتیجه دو هفته در میدان اپرا اعتصاب غذا کرد. او در ۱۰ مارس آغاز کرد و خواست سرکیسیان پیش از مراسم تحلیف ۹ آوریل کنار برود، و در یکشنبهٔ عید پاک، ۳۱ مارس، پایانش داد: بیست‌ویک روز. دادگاه قانون اساسی در روز چهارم اعتصاب نتیجه را تأیید کرد و روز پنجم رئیس مجلس به میدان آمد تا او را ببیند.",
+      "analysis_fa": "سیاست رسمیِ اپوزیسیون هنوز خود را در همان مکان قدیمی اجرا می‌کند و هنوز نتیجه‌ای نمی‌دهد. هوانسیان بعدها در محل آفریکانا پیدا می‌شود, چهره‌ای که میان دو ثبت جابه‌جا می‌شود، از میدان به کارگاه ساختمانی، همان‌طور که مرکز ثقل سیاسی جابه‌جا می‌شود.\n\nبیست‌ویک روز بلندترین ستون این دوره است، و در مکعب یک خط پیوستهٔ واحد: یک بدن، یک مکان، سه هفته. چیزی را عوض نکرد، و شکلش خودِ استدلال است. اعتصاب غذا میدان را به صحنهٔ یک نفر بدل می‌کند، درست وارونهٔ کاری که تحریم کرایه با ایستگاه اتوبوس می‌کند.",
       "actors_fa": [
         "رافی هوانسیان"
       ],
@@ -1850,24 +1854,26 @@
         "اعتصاب غذا",
         "انتخابات ۲۰۱۳",
         "میدان اپرا"
-      ]
+      ],
+      "dateEnd": "2013-03-31",
+      "episode": "protests-2013"
     },
     {
       "id": "hundred-dram-2014",
-      "title": "100 AMD movement against the marshrutka fare rise",
-      "date": "2013-07",
-      "datePrecision": "month",
+      "title": "19 July: coins at the Municipality",
+      "date": "2013-07-19",
+      "datePrecision": "day",
       "coordinates": [
-        44.5152,
-        40.1859
+        44.50396,
+        40.17456
       ],
-      "location": "Yerevan (city-wide; anchored at Freedom Square)",
+      "location": "Yerevan Municipality, Argishti Street 1",
       "categories": [
         "protest",
         "infra"
       ],
-      "summary": "A movement against the price hike of the marshrutka public transport system, organised by the same networks that had formed around forest and park preservation.",
-      "analysis": "Mobility joins heritage and green space in the repertoire of urban grievance. The chain is cumulative: forests, park, fares, building; each campaign trains the same networks and widens what counts as political.",
+      "summary": "A movement against the price hike of the marshrutka public transport system, organised by the same networks that had formed around forest and park preservation. It began the day before the new fares took effect, when young activists gathered at the Municipality on Argishti Street and threw fifty-dram coins toward the entrance, the exact size of the rise. One struck a mayoral adviser. The sit-in at that door continued through the week and outlasted the victory, since on 26 and 27 July the demand had become the resignation of the transport officials and the refund of what had been overpaid.",
+      "analysis": "Mobility joins heritage and green space in the repertoire of urban grievance. The chain is cumulative: forests, park, fares, building; each campaign trains the same networks and widens what counts as political.\n\nThe coin is the whole gesture: fifty drams, thrown at the building that had just asked for it. It is the smallest possible political object, and it is aimed at an office rather than a palace. The entry has been re-anchored from Freedom Square to the Municipality for that reason, and its dates fixed to the six days of July 2013 that the press recorded hour by hour.",
       "actors": [],
       "tags": [
         "marshrutka",
@@ -1878,30 +1884,40 @@
       "sources": [
         {
           "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
+        },
+        {
+          "title": "The Armenian Weekly, 'Yerevan's Bus Fare Protests: A Timeline', 29 July 2013",
+          "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
         }
       ],
       "media": [],
-      "fieldnote": "Location is city-wide; anchored here at Freedom Square. Refine if a focal site is preferred. Dated July 2013 after slide 17 of the deck; the id keeps its old year.",
-      "title_hy": "«100 դրամ» շարժումը մարշրուտկայի սակագնի բարձրացման դեմ",
-      "location_hy": "Երևան (ամբողջ քաղաքով, հենակետը՝ Ազատության հրապարակ)",
-      "summary_hy": "Մարշրուտկայի հանրային տրանսպորտի համակարգի սակագնի բարձրացման դեմ շարժում՝ կազմակերպված նույն ցանցերի կողմից, որոնք ձևավորվել էին անտառների և այգիների պահպանության շուրջ։",
-      "analysis_hy": "Տեղաշարժը միանում է ժառանգությանը և կանաչ տարածքին՝ քաղաքային դժգոհության երգացանկում։ Շղթան կուտակային է․ անտառներ, այգի, սակագներ, շենք; յուրաքանչյուր արշավ մարզում է նույն ցանցերը և ընդլայնում է այն, ինչ համարվում է քաղաքական։",
+      "fieldnote": "Re-anchored to the Municipality and dated to 19-25 July 2013 on 25 August 2026, from the day-by-day press record. The id keeps its old year.",
+      "title_hy": "Հուլիսի 19. մետաղադրամներ քաղաքապետարանի մոտ",
+      "location_hy": "Երևանի քաղաքապետարան, Արգիշտի փողոց 1",
+      "summary_hy": "Մարշրուտկայի հանրային տրանսպորտի համակարգի սակագնի բարձրացման դեմ շարժում՝ կազմակերպված նույն ցանցերի կողմից, որոնք ձևավորվել էին անտառների և այգիների պահպանության շուրջ։ Այն սկսվեց նոր սակագների ուժի մեջ մտնելուց մեկ օր առաջ, երբ երիտասարդ ակտիվիստները հավաքվեցին Արգիշտի փողոցի քաղաքապետարանի մոտ և մուտքի ուղղությամբ նետեցին հիսուն դրամանոցներ՝ ճիշտ բարձրացման չափը։ Մեկը դիպավ քաղաքապետի խորհրդականին։ Այդ դռան մոտ նստացույցը շարունակվեց ամբողջ շաբաթ և ավելի երկար տևեց, քան հաղթանակը, քանի որ հուլիսի 26-ին և 27-ին պահանջն արդեն տրանսպորտի պաշտոնյաների հրաժարականն էր և ավել վճարվածի վերադարձը։",
+      "analysis_hy": "Տեղաշարժը միանում է ժառանգությանը և կանաչ տարածքին՝ քաղաքային դժգոհության երգացանկում։ Շղթան կուտակային է․ անտառներ, այգի, սակագներ, շենք; յուրաքանչյուր արշավ մարզում է նույն ցանցերը և ընդլայնում է այն, ինչ համարվում է քաղաքական։\n\nՄետաղադրամն ամբողջ ժեստն է. հիսուն դրամ, նետված այն շենքի ուղղությամբ, որը հենց նոր էր դա պահանջել։ Սա հնարավոր ամենափոքր քաղաքական առարկան է, և այն ուղղված է գրասենյակին, ոչ թե պալատին։ Հենց դրա համար գրառումը Ազատության հրապարակից տեղափոխվել է քաղաքապետարան, իսկ ամսաթվերը ճշտվել են ըստ 2013-ի հուլիսի այն վեց օրերի, որոնք մամուլն արձանագրել է ժամ առ ժամ։",
       "tags_hy": [
         "մարշրուտկա",
         "հանրային տրանսպորտ",
         "սակագներ",
         "100 դրամ"
       ],
-      "title_fa": "جنبش ۱۰۰ درام علیه افزایش کرایهٔ مارشروتکا",
-      "location_fa": "ایروان (سراسر شهر؛ مستقر در میدان آزادی)",
-      "summary_fa": "جنبشی علیه افزایش قیمت در سامانهٔ حمل‌ونقل عمومی مارشروتکا، سازمان‌یافته به‌دست همان شبکه‌هایی که گرد حفاظت از جنگل و پارک شکل گرفته بودند.",
-      "analysis_fa": "تحرک شهری در کنار میراث و فضای سبز به مجموعهٔ نارضایتی‌های شهری افزوده می‌شود. زنجیره انباشتی است: جنگل‌ها، پارک، کرایه‌ها، ساختمان, هر کارزار همان شبکه‌ها را تمرین می‌دهد و دامنهٔ آنچه سیاسی به‌شمار می‌آید را گسترده‌تر می‌کند.",
+      "title_fa": "۱۹ ژوئیه: سکه‌ها مقابل شهرداری",
+      "location_fa": "شهرداری ایروان، خیابان آرگیشتی ۱",
+      "summary_fa": "جنبشی علیه افزایش قیمت در سامانهٔ حمل‌ونقل عمومی مارشروتکا، سازمان‌یافته به‌دست همان شبکه‌هایی که گرد حفاظت از جنگل و پارک شکل گرفته بودند. یک روز پیش از اجرای کرایه‌های تازه آغاز شد، وقتی فعالان جوان مقابل شهرداری در خیابان آرگیشتی جمع شدند و سکه‌های پنجاه‌درامی را به سوی ورودی پرتاب کردند، دقیقاً به اندازهٔ همان افزایش. یکی به مشاور شهردار خورد. تحصن جلوی آن در تمام هفته ادامه یافت و از پیروزی هم بیشتر دوام آورد، چون در ۲۶ و ۲۷ ژوئیه خواسته دیگر استعفای مقام‌های حمل‌ونقل و بازپرداخت پول‌های اضافی بود.",
+      "analysis_fa": "تحرک شهری در کنار میراث و فضای سبز به مجموعهٔ نارضایتی‌های شهری افزوده می‌شود. زنجیره انباشتی است: جنگل‌ها، پارک، کرایه‌ها، ساختمان, هر کارزار همان شبکه‌ها را تمرین می‌دهد و دامنهٔ آنچه سیاسی به‌شمار می‌آید را گسترده‌تر می‌کند.\n\nسکه خودِ تمامِ آن حرکت است: پنجاه درام، پرتاب‌شده به سوی ساختمانی که همین حالا آن را خواسته بود. کوچک‌ترین شیء سیاسی ممکن است، و به‌جای کاخ، یک دفتر را نشانه می‌رود. به همین دلیل این مدخل از میدان آزادی به شهرداری منتقل شده و تاریخ‌هایش بر شش روزِ ژوئیهٔ ۲۰۱۳ تنظیم شده که مطبوعات ساعت‌به‌ساعت ثبتشان کرده‌اند.",
       "tags_fa": [
         "مارشروتکا",
         "حمل‌ونقل عمومی",
         "کرایه",
         "۱۰۰ درام"
-      ]
+      ],
+      "dateEnd": "2013-07-25",
+      "episode": "protests-2013"
     },
     {
       "id": "afrikana-2014",
@@ -6279,6 +6295,1199 @@
         "۲۵۳ میلیون"
       ],
       "episode": "electric-yerevan"
+    },
+    {
+      "id": "protests-2013",
+      "title": "The 2013 protests",
+      "title_hy": "2013 թվականի բողոքները",
+      "title_fa": "اعتراض‌های ۲۰۱۳",
+      "date": "2013-02-19",
+      "dateEnd": "2014-04-03",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Freedom Square, Baghramyan Avenue, the Municipality, and the bus stops of the whole city",
+      "location_hy": "Ազատության հրապարակ, Բաղրամյան պողոտա, քաղաքապետարան և ամբողջ քաղաքի կանգառները",
+      "location_fa": "میدان آزادی، خیابان باغرامیان، شهرداری، و ایستگاه‌های اتوبوس سراسر شهر",
+      "categories": [
+        "protest",
+        "politics",
+        "infra",
+        "publiclife"
+      ],
+      "summary": "A year in which two entirely different kinds of protest ran through the same city. From February to April the old script was performed once more: a disputed presidential election, a candidate claiming victory, weeks of rallies in Freedom Square, a hunger strike, a march on the president's residence stopped by a police line, and nothing changed. In July a movement with no leaders and no party stopped a bus fare rise in six days. Between them, from October, the largest workplace-based movement of the decade refused a compulsory pension deduction and brought down a prime minister.",
+      "summary_hy": "Մեկ տարի, որի ընթացքում նույն քաղաքով անցան բողոքի երկու բոլորովին տարբեր տեսակներ։ Փետրվարից ապրիլ կրկին խաղարկվեց հին սցենարը՝ վիճարկվող նախագահական ընտրություն, հաղթանակ հայտարարող թեկնածու, շաբաթներ տևած հանրահավաքներ Ազատության հրապարակում, հացադուլ, նախագահի նստավայրի վրա երթ, որը կանգնեցրեց ոստիկանական շղթան, և ոչինչ չփոխվեց։ Հուլիսին առանց առաջնորդների ու կուսակցության շարժումը վեց օրում կանգնեցրեց տրանսպորտի սակագնի բարձրացումը։ Դրանց միջև, հոկտեմբերից, տասնամյակի ամենամեծ աշխատավայրային շարժումը մերժեց պարտադիր կենսաթոշակային պահումը և տապալեց վարչապետին։",
+      "summary_fa": "سالی که در آن دو گونهٔ کاملاً متفاوت از اعتراض از یک شهر گذشت. از فوریه تا آوریل، فیلم‌نامهٔ قدیمی یک بار دیگر اجرا شد: انتخابات ریاست‌جمهوریِ مورد مناقشه، نامزدی که مدعی پیروزی است، هفته‌ها تجمع در میدان آزادی، اعتصاب غذا، راهپیمایی به سوی اقامتگاه رئیس‌جمهور که صف پلیس متوقفش کرد، و هیچ چیز عوض نشد. در ژوئیه، جنبشی بدون رهبر و بدون حزب در شش روز افزایش کرایهٔ اتوبوس را متوقف کرد. میان این دو، از اکتبر، بزرگ‌ترین جنبش مبتنی بر محل کارِ آن دهه کسر اجباری بازنشستگی را رد کرد و نخست‌وزیر را برکنار کرد.",
+      "analysis": "Measured on this map, 2013 is the year the distance changes.\n\nOn 9 April the march from Freedom Square was stopped at the corner of Baghramyan and Isahakyan, 426 metres up the avenue and 769 metres short of Baghramyan 26. Two years later, in June 2015, the police line for Electric Yerevan stood at Demirchyan Street, 213 metres short of the same door. Three years after that the whole city was the argument and the door did not matter. The state did not move its residence; the crowd moved its line.\n\nThe second thing this year shows is where a movement can win. The election protest addressed a person and lost. The fare protest addressed a price, and it was fought at bus stops, in minibuses, on Facebook, and in a sit-in at the Municipality on Argishti Street, 1.6 kilometres from Freedom Square and outside the square-and-palace geometry altogether. It won in six days. The pension movement went further still and fought inside workplaces: the opera house, the railway, the metro, the IT offices. Nobody had to occupy anything.\n\nThe paper's argument is visible here in the plainest form. When protest stays in Freedom Square it is speaking the language the state wrote for it. When it moves to the carriageway, the stop, the municipal counter and the payroll, it starts to win small things, and the practice of winning small things is what 2018 was made of.",
+      "analysis_hy": "Այս քարտեզի վրա չափված՝ 2013-ը այն տարին է, երբ հեռավորությունը փոխվում է։\n\nԱպրիլի 9-ին Ազատության հրապարակից երթը կանգնեցվեց Բաղրամյան և Իսահակյան փողոցների անկյունում՝ պողոտայով 426 մետր վեր և Բաղրամյան 26-ից 769 մետր առաջ։ Երկու տարի անց՝ 2015-ի հունիսին, «Էլեկտրիկ Երևանի» ոստիկանական շղթան կանգնած էր Դեմիրճյան փողոցում՝ նույն դռնից 213 մետր առաջ։ Երեք տարի հետո ամբողջ քաղաքն էր փաստարկը, և դուռն այլևս նշանակություն չուներ։ Պետությունը չտեղափոխեց իր նստավայրը. ամբոխը տեղափոխեց իր գիծը։\n\nԵրկրորդը, ինչ ցույց է տալիս այս տարին, այն է, թե որտեղ կարող է հաղթել շարժումը։ Ընտրական բողոքը դիմում էր անձի և պարտվեց։ Սակագնային բողոքը դիմում էր գնին և մղվում էր կանգառներում, մարշրուտկաներում, Ֆեյսբուքում և Արգիշտի փողոցի քաղաքապետարանի նստացույցում՝ Ազատության հրապարակից 1,6 կիլոմետր հեռու և հրապարակ-պալատ երկրաչափությունից ամբողջովին դուրս։ Այն հաղթեց վեց օրում։ Կենսաթոշակային շարժումն ավելի հեռու գնաց և պայքարեց աշխատավայրերի ներսում՝ օպերա, երկաթուղի, մետրո, տեղեկատվական տեխնոլոգիաների գրասենյակներ։ Ոչ ոք ստիպված չէր որևէ բան գրավել։\n\nՀոդվածի փաստարկն այստեղ երևում է ամենապարզ ձևով։ Երբ բողոքը մնում է Ազատության հրապարակում, այն խոսում է այն լեզվով, որը պետությունը գրել է իր համար։ Երբ այն տեղափոխվում է երթևեկելի մաս, կանգառ, քաղաքապետարանի պատուհան և աշխատավարձի թերթիկ, այն սկսում է փոքր բաներ շահել, և փոքր բաներ շահելու պրակտիկան այն է, ինչից պատրաստվեց 2018-ը։",
+      "analysis_fa": "اندازه‌گیری‌شده روی همین نقشه، ۲۰۱۳ سالی است که فاصله تغییر می‌کند.\n\nدر ۹ آوریل راهپیمایی از میدان آزادی در تقاطع باغرامیان و ایساهاکیان متوقف شد: ۴۲۶ متر بالاتر از میدان و ۷۶۹ متر مانده به باغرامیان ۲۶. دو سال بعد، در ژوئن ۲۰۱۵، صف پلیسِ ایروانِ برقی در خیابان دمیرچیان ایستاد، ۲۱۳ متر مانده به همان در. سه سال بعدتر، تمام شهر خودِ استدلال بود و آن در دیگر اهمیتی نداشت. دولت اقامتگاهش را جابه‌جا نکرد؛ مردم صف خود را جابه‌جا کردند.\n\nدومین چیزی که این سال نشان می‌دهد این است که یک جنبش کجا می‌تواند ببرد. اعتراض انتخاباتی یک شخص را خطاب می‌کرد و باخت. اعتراض کرایه یک قیمت را خطاب می‌کرد، و در ایستگاه‌ها، در مینی‌بوس‌ها، در فیس‌بوک و در تحصن مقابل شهرداری در خیابان آرگیشتی جنگیده شد؛ ۱٫۶ کیلومتر دورتر از میدان آزادی و کاملاً بیرون از هندسهٔ میدان و کاخ. در شش روز برد. جنبش بازنشستگی از این هم فراتر رفت و در درون محل کار جنگید: اپرا، راه‌آهن، مترو، دفترهای فناوری اطلاعات. هیچ‌کس مجبور نبود جایی را اشغال کند.\n\nاستدلال مقاله اینجا در ساده‌ترین شکلش دیده می‌شود. وقتی اعتراض در میدان آزادی می‌ماند، به زبانی حرف می‌زند که دولت برایش نوشته است. وقتی به سواره‌رو، به ایستگاه، به باجهٔ شهرداری و به فیش حقوقی می‌رود، بردن چیزهای کوچک را آغاز می‌کند، و تمرینِ بردنِ چیزهای کوچک همان چیزی است که ۲۰۱۸ از آن ساخته شد.",
+      "actors": [
+        "Raffi Hovannisian",
+        "Serzh Sargsyan",
+        "Taron Margaryan",
+        "Tigran Sargsyan",
+        "Dem Em (I am against)",
+        "I will only pay 100 dram",
+        "Shant Harutyunyan"
+      ],
+      "actors_hy": [
+        "Րաֆֆի Հովհաննիսյան",
+        "Սերժ Սարգսյան",
+        "Տարոն Մարգարյան",
+        "Տիգրան Սարգսյան",
+        "«Դեմ եմ»",
+        "«Վճարելու եմ միայն 100 դրամ»",
+        "Շանթ Հարությունյան"
+      ],
+      "actors_fa": [
+        "رافی هوانسیان",
+        "سرژ سرکیسیان",
+        "تارون مارگاریان",
+        "تیگران سرکیسیان",
+        "«دم ام» (من مخالفم)",
+        "«فقط ۱۰۰ درام می‌پردازم»",
+        "شانت هاروتیونیان"
+      ],
+      "tags": [
+        "2013 election",
+        "Barevolution",
+        "hunger strike",
+        "fare rise",
+        "pension reform",
+        "civil disobedience",
+        "Freedom Square",
+        "Baghramyan Avenue"
+      ],
+      "tags_hy": [
+        "2013 ընտրություններ",
+        "Բարևոլյուցիա",
+        "հացադուլ",
+        "սակագնի բարձրացում",
+        "կենսաթոշակային բարեփոխում",
+        "քաղաքացիական անհնազանդություն",
+        "Ազատության հրապարակ",
+        "Բաղրամյան պողոտա"
+      ],
+      "tags_fa": [
+        "انتخابات ۲۰۱۳",
+        "بارِوُلوسیون",
+        "اعتصاب غذا",
+        "افزایش کرایه",
+        "اصلاح بازنشستگی",
+        "نافرمانی مدنی",
+        "میدان آزادی",
+        "خیابان باغرامیان"
+      ],
+      "chronology": [
+        {
+          "when": "18 Feb 2013",
+          "note": "Presidential election. Serzh Sargsyan is declared winner with about 59 per cent; Raffi Hovannisian, credited with about 37, says the people have won.",
+          "note_hy": "Նախագահական ընտրություն։ Սերժ Սարգսյանը հայտարարվում է հաղթող մոտ 59 տոկոսով, Րաֆֆի Հովհաննիսյանը՝ մոտ 37, ասում է, որ ժողովուրդը հաղթել է։",
+          "note_fa": "انتخابات ریاست‌جمهوری. سرژ سرکیسیان با حدود ۵۹ درصد برنده اعلام می‌شود؛ رافی هوانسیان با حدود ۳۷ درصد می‌گوید مردم برده‌اند."
+        },
+        {
+          "when": "19 Feb",
+          "note": "The first rally in Freedom Square. Rallies continue almost daily for three weeks.",
+          "note_hy": "Առաջին հանրահավաքը Ազատության հրապարակում։ Հանրահավաքները շարունակվում են գրեթե ամեն օր երեք շաբաթ։",
+          "note_fa": "نخستین تجمع در میدان آزادی. تجمع‌ها سه هفته تقریباً هر روز ادامه می‌یابد."
+        },
+        {
+          "when": "25 Feb",
+          "note": "Students strike at Yerevan State University and two other universities.",
+          "note_hy": "Ուսանողները գործադուլ են անում Երևանի պետական համալսարանում և ևս երկու բուհում։",
+          "note_fa": "دانشجویان در دانشگاه دولتی ایروان و دو دانشگاه دیگر اعتصاب می‌کنند."
+        },
+        {
+          "when": "10 Mar",
+          "note": "Hovannisian begins a hunger strike in Freedom Square and keeps it for twenty-one days.",
+          "note_hy": "Հովհաննիսյանը սկսում է հացադուլը Ազատության հրապարակում և պահում այն քսանմեկ օր։",
+          "note_fa": "هوانسیان اعتصاب غذا را در میدان آزادی آغاز می‌کند و بیست‌ویک روز نگه می‌دارد."
+        },
+        {
+          "when": "14 Mar",
+          "note": "The Constitutional Court confirms the result.",
+          "note_hy": "Սահմանադրական դատարանը հաստատում է արդյունքը։",
+          "note_fa": "دادگاه قانون اساسی نتیجه را تأیید می‌کند."
+        },
+        {
+          "when": "9 Apr",
+          "note": "Two inaugurations 2.7 km apart. The march from Freedom Square is stopped at Baghramyan and Isahakyan.",
+          "note_hy": "Երկու երդմնակալություն՝ 2,7 կմ հեռավորության վրա։ Ազատության հրապարակից երթը կանգնեցվում է Բաղրամյան-Իսահակյան անկյունում։",
+          "note_fa": "دو مراسم تحلیف با ۲٫۷ کیلومتر فاصله. راهپیمایی از میدان آزادی در تقاطع باغرامیان و ایساهاکیان متوقف می‌شود."
+        },
+        {
+          "when": "5 May",
+          "note": "Yerevan City Council election. The Republican Party keeps the city; Taron Margaryan stays mayor.",
+          "note_hy": "Երևանի ավագանու ընտրություն։ Հանրապետականը պահում է քաղաքը, Տարոն Մարգարյանը մնում է քաղաքապետ։",
+          "note_fa": "انتخابات شورای شهر ایروان. حزب جمهوری‌خواه شهر را نگه می‌دارد؛ تارون مارگاریان شهردار می‌ماند."
+        },
+        {
+          "when": "18 Jul",
+          "note": "The fare rise is announced: 150 drams on minibuses, 100 on trolleybuses, from 20 July.",
+          "note_hy": "Հայտարարվում է սակագնի բարձրացումը՝ 150 դրամ մարշրուտկայում, 100՝ տրոլեյբուսում, հուլիսի 20-ից։",
+          "note_fa": "افزایش کرایه اعلام می‌شود: ۱۵۰ درام در مینی‌بوس، ۱۰۰ در ترالی‌بوس، از ۲۰ ژوئیه."
+        },
+        {
+          "when": "19–25 Jul",
+          "note": "Coins thrown at the Municipality, flyers at the stops, free rides, a carpool site, detentions, and on 25 July the mayor suspends the rise.",
+          "note_hy": "Մետաղադրամներ քաղաքապետարանի մոտ, թռուցիկներ կանգառներում, անվճար ուղևորումներ, համատեղ երթևեկության կայք, ձերբակալություններ, և հուլիսի 25-ին քաղաքապետը կասեցնում է բարձրացումը։",
+          "note_fa": "سکه‌ها به سوی شهرداری، اعلامیه در ایستگاه‌ها، سواری رایگان، سایت سواری اشتراکی، بازداشت‌ها، و در ۲۵ ژوئیه شهردار افزایش را معلق می‌کند."
+        },
+        {
+          "when": "3 Sep",
+          "note": "In Moscow, Sargsyan announces that Armenia will join the Customs Union rather than sign the EU Association Agreement.",
+          "note_hy": "Մոսկվայում Սարգսյանը հայտարարում է, որ Հայաստանը կմիանա Մաքսային միությանը՝ ԵՄ ասոցացման համաձայնագիրը ստորագրելու փոխարեն։",
+          "note_fa": "در مسکو، سرکیسیان اعلام می‌کند ارمنستان به‌جای امضای موافقت‌نامهٔ همکاری با اتحادیهٔ اروپا به اتحادیهٔ گمرکی می‌پیوندد."
+        },
+        {
+          "when": "21 Sep",
+          "note": "Independence day. Thousands protest the decision; minor clashes on Baghramyan near the residence.",
+          "note_hy": "Անկախության օր։ Հազարավորները բողոքում են որոշման դեմ, փոքր բախումներ Բաղրամյանում՝ նստավայրի մոտ։",
+          "note_fa": "روز استقلال. هزاران نفر به این تصمیم اعتراض می‌کنند؛ درگیری‌های کوچک در باغرامیان نزدیک اقامتگاه."
+        },
+        {
+          "when": "5 Nov",
+          "note": "Shant Harutyunyan leads about a hundred people from Freedom Square toward the residence; some twenty are arrested on Mashtots Avenue.",
+          "note_hy": "Շանթ Հարությունյանը մոտ հարյուր մարդու տանում է Ազատության հրապարակից դեպի նստավայր, մոտ քսանը ձերբակալվում են Մաշտոցի պողոտայում։",
+          "note_fa": "شانت هاروتیونیان حدود صد نفر را از میدان آزادی به سوی اقامتگاه می‌برد؛ حدود بیست نفر در خیابان ماشتوتس بازداشت می‌شوند."
+        },
+        {
+          "when": "23 Dec",
+          "note": "Hundreds at the National Assembly against the gas agreement that leaves distribution with Gazprom until 2043.",
+          "note_hy": "Հարյուրավորներ Ազգային ժողովի մոտ՝ գազի համաձայնագրի դեմ, որը բաշխումը թողնում է «Գազպրոմին» մինչև 2043 թվականը։",
+          "note_fa": "صدها نفر مقابل مجلس ملی علیه توافق گاز که توزیع را تا ۲۰۴۳ نزد گازپروم می‌گذارد."
+        },
+        {
+          "when": "1 Jan – 3 Apr 2014",
+          "note": "The compulsory pension deduction begins, Dem Em spreads through workplaces, the Constitutional Court suspends the penalties, and the prime minister resigns.",
+          "note_hy": "Սկսվում է պարտադիր կենսաթոշակային պահումը, «Դեմ եմ»-ը տարածվում է աշխատավայրերով, Սահմանադրական դատարանը կասեցնում է տույժերը, և վարչապետը հրաժարական է տալիս։",
+          "note_fa": "کسر اجباری بازنشستگی آغاز می‌شود، «دم ام» در محل‌های کار گسترش می‌یابد، دادگاه قانون اساسی جریمه‌ها را معلق می‌کند، و نخست‌وزیر استعفا می‌دهد."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "The Armenian Weekly, 'Yerevan's Bus Fare Protests: A Timeline', 29 July 2013",
+          "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
+        },
+        {
+          "title": "The Armenian Weekly, 'Hovannisian Supporters Scuffle with Police in Yerevan', 9 April 2013",
+          "url": "https://armenianweekly.com/2013/04/09/hovannisian-supporters-scuffle-with-police-in-yerevan/"
+        },
+        {
+          "title": "The Armenian Weekly, 'Activists Clash with Police on Guy Fawkes Day in Yerevan', 5 November 2013",
+          "url": "https://armenianweekly.com/2013/11/05/activists-clash-with-police-on-guy-fawkes-day-in-yerevan/"
+        },
+        {
+          "title": "IWPR, 'Mass Protest Movement Against Armenian Pension Reform'",
+          "url": "https://iwpr.net/global-voices/mass-protest-movement-against-armenian-pension-reform"
+        },
+        {
+          "title": "RFE/RL, 'More Workers Join Protests Against Armenian Pension Reform', 10 February 2014",
+          "url": "https://www.azatutyun.am/a/25259456.html"
+        },
+        {
+          "title": "CIVILNET, 'Armenia Starting Mandatory Pension System: What You Need to Know'",
+          "url": "https://civilnet.am/en/news/382462/armenia-starting-mandatory-pension-system-what-you-need-to-know"
+        },
+        {
+          "title": "CrimethInc., 'High Voltage: Lessons from Four Summers of Unrest in Armenia'",
+          "url": "https://crimethinc.com/2017/02/12/high-voltage-lessons-from-four-summers-of-protests-in-armenia"
+        },
+        {
+          "title": "IANYAN Magazine, 'Marshutka Revolution: How Yerevan Residents Reversed a Bus Fare Hike'",
+          "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "every coordinate and the avenue geometry",
+          "note_hy": "բոլոր կոորդինատները և պողոտայի երկրաչափությունը",
+          "note_fa": "همهٔ مختصات و هندسهٔ خیابان"
+        },
+        {
+          "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "barevolution-rallies-2013-02-19",
+      "title": "19 February: three weeks of rallies in Freedom Square",
+      "title_hy": "Փետրվարի 19. երեք շաբաթ հանրահավաքներ Ազատության հրապարակում",
+      "title_fa": "۱۹ فوریه: سه هفته تجمع در میدان آزادی",
+      "date": "2013-02-19",
+      "dateEnd": "2013-03-09",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Freedom Square",
+      "location_hy": "Ազատության հրապարակ",
+      "location_fa": "میدان آزادی",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "The day after the presidential election, Raffi Hovannisian brought his supporters to Freedom Square and told them the people had won. Rallies followed almost daily for three weeks, with thousands each time, and the press called it the Barevolution, from barev, hello, the greeting Hovannisian used to campaign door to door. Nikol Pashinyan, then an opposition member of parliament, addressed the crowds. On 21 February Hovannisian met the sitting president for two hours; on 23 February he took the claim to Gyumri, Vanadzor, Ashtarak, Spitak and Aparan.",
+      "summary_hy": "Նախագահական ընտրությունից հաջորդ օրը Րաֆֆի Հովհաննիսյանը իր կողմնակիցներին բերեց Ազատության հրապարակ և ասաց, որ ժողովուրդը հաղթել է։ Հանրահավաքները շարունակվեցին գրեթե ամեն օր երեք շաբաթ՝ ամեն անգամ հազարավոր մարդկանցով, և մամուլն այն անվանեց «Բարևոլյուցիա»՝ «բարև» բառից, որով Հովհաննիսյանը դուռ առ դուռ քարոզարշավ էր արել։ Ամբոխին դիմեց նաև Նիկոլ Փաշինյանը՝ այն ժամանակ ընդդիմադիր պատգամավոր։ Փետրվարի 21-ին Հովհաննիսյանը երկու ժամ հանդիպեց գործող նախագահին, փետրվարի 23-ին պահանջը տարավ Գյումրի, Վանաձոր, Աշտարակ, Սպիտակ և Ապարան։",
+      "summary_fa": "فردای انتخابات ریاست‌جمهوری، رافی هوانسیان هوادارانش را به میدان آزادی آورد و گفت مردم برده‌اند. تجمع‌ها سه هفته تقریباً هر روز ادامه یافت، هر بار با هزاران نفر، و مطبوعات آن را «بارِوُلوسیون» نامید، از «بارِو» یعنی سلام، همان واژه‌ای که هوانسیان با آن خانه‌به‌خانه کارزار کرده بود. نیکول پاشینیان، آن زمان نمایندهٔ اپوزیسیون، برای جمعیت سخن گفت. در ۲۱ فوریه هوانسیان دو ساعت با رئیس‌جمهور مستقر دیدار کرد؛ در ۲۳ فوریه ادعا را به گیومری، وانادزور، آشتاراک، اسپیتاک و آپاران برد.",
+      "analysis": "The same square, the same claim, the same outcome as 2003 and 2008. Freedom Square had been the people's square since the late 1980s, and standing in it was a way of saying that the people were present. It was also a way of staying inside a geometry the state understood perfectly: the square speaks, the palace listens or does not, and the distance between them is policed.",
+      "analysis_hy": "Նույն հրապարակը, նույն պահանջը, նույն արդյունքը, ինչ 2003-ին և 2008-ին։ Ազատության հրապարակը 1980-ականների վերջից ժողովրդի հրապարակն էր, և այնտեղ կանգնելը ժողովրդի ներկայությունը հայտարարելու ձև էր։ Բայց դա նաև այն երկրաչափության մեջ մնալու ձև էր, որը պետությունը հիանալի հասկանում էր. հրապարակը խոսում է, պալատը լսում է կամ ոչ, և նրանց միջև հեռավորությունը հսկվում է։",
+      "analysis_fa": "همان میدان، همان ادعا، همان نتیجهٔ ۲۰۰۳ و ۲۰۰۸. میدان آزادی از اواخر دههٔ ۱۹۸۰ میدانِ مردم بود، و ایستادن در آن راهی بود برای گفتن اینکه مردم حاضرند. اما در عین حال راهی بود برای ماندن در هندسه‌ای که دولت کاملاً می‌فهمید: میدان حرف می‌زند، کاخ می‌شنود یا نمی‌شنود، و فاصلهٔ میانشان پاسبانی می‌شود.",
+      "actors": [
+        "Raffi Hovannisian",
+        "Nikol Pashinyan",
+        "Serzh Sargsyan",
+        "Heritage party"
+      ],
+      "actors_hy": [
+        "Րաֆֆի Հովհաննիսյան",
+        "Նիկոլ Փաշինյան",
+        "Սերժ Սարգսյան",
+        "«Ժառանգություն» կուսակցություն"
+      ],
+      "actors_fa": [
+        "رافی هوانسیان",
+        "نیکول پاشینیان",
+        "سرژ سرکیسیان",
+        "حزب میراث"
+      ],
+      "tags": [
+        "Barevolution",
+        "2013 election",
+        "Freedom Square",
+        "rally"
+      ],
+      "tags_hy": [
+        "Բարևոլյուցիա",
+        "2013 ընտրություններ",
+        "Ազատության հրապարակ",
+        "հանրահավաք"
+      ],
+      "tags_fa": [
+        "بارِوُلوسیون",
+        "انتخابات ۲۰۱۳",
+        "میدان آزادی",
+        "تجمع"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "The Armenian Weekly, 'This Movement is Unstoppable: ARF Joins Rally on Freedom Square', 22 February 2013",
+          "url": "https://armenianweekly.com/2013/02/22/this-movement-is-unstoppable-arf-joins-rally-on-freedom-square/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "student-strike-2013-02-25",
+      "title": "25 February: the universities stop",
+      "title_hy": "Փետրվարի 25. համալսարանները կանգ են առնում",
+      "title_fa": "۲۵ فوریه: دانشگاه‌ها می‌ایستند",
+      "date": "2013-02-25",
+      "coordinates": [
+        44.52759,
+        40.18201
+      ],
+      "location": "Yerevan State University, Alek Manukyan Street",
+      "location_hy": "Երևանի պետական համալսարան, Ալեք Մանուկյան փողոց",
+      "location_fa": "دانشگاه دولتی ایروان، خیابان آلک مانوکیان",
+      "categories": [
+        "protest",
+        "politics",
+        "publiclife"
+      ],
+      "summary": "Several hundred students at Yerevan State University, the Medical University and the Agrarian University declared a strike against the conduct of the election and walked out of classes to join the rallies.",
+      "summary_hy": "Երևանի պետական համալսարանի, բժշկական և ագրարային համալսարանների մի քանի հարյուր ուսանողներ գործադուլ հայտարարեցին ընտրության անցկացման դեմ և դասերը թողնելով միացան հանրահավաքներին։",
+      "summary_fa": "چند صد دانشجو در دانشگاه دولتی ایروان، دانشگاه پزشکی و دانشگاه کشاورزی علیه نحوهٔ برگزاری انتخابات اعتصاب اعلام کردند و کلاس‌ها را ترک کردند تا به تجمع‌ها بپیوندند.",
+      "analysis": "A campus is not a square, and this is the first place in the year where the protest is somewhere the state does not control the choreography. It is a small thing in February and a large one by July, when the movement's centre of gravity is students and school pupils who had never been to a rally.",
+      "analysis_hy": "Համալսարանը հրապարակ չէ, և սա տարվա առաջին վայրն է, որտեղ բողոքը գտնվում է այնտեղ, որտեղ պետությունը չի վերահսկում խորեոգրաֆիան։ Փետրվարին դա փոքր բան է, հուլիսին՝ մեծ, երբ շարժման ծանրության կենտրոնը դառնում են ուսանողներն ու դպրոցականները, ովքեր երբեք հանրահավաքի չէին եղել։",
+      "analysis_fa": "دانشگاه میدان نیست، و این نخستین جای سال است که اعتراض در جایی رخ می‌دهد که دولت رقص‌آرایی‌اش را کنترل نمی‌کند. در فوریه چیز کوچکی است و در ژوئیه بزرگ، وقتی مرکز ثقل جنبش دانشجویان و دانش‌آموزانی می‌شوند که هرگز به تجمعی نرفته بودند.",
+      "actors": [
+        "Yerevan State University students",
+        "Yerevan State Medical University",
+        "Armenian National Agrarian University"
+      ],
+      "actors_hy": [
+        "ԵՊՀ ուսանողներ",
+        "Երևանի պետական բժշկական համալսարան",
+        "Հայաստանի ազգային ագրարային համալսարան"
+      ],
+      "actors_fa": [
+        "دانشجویان دانشگاه دولتی ایروان",
+        "دانشگاه پزشکی دولتی ایروان",
+        "دانشگاه کشاورزی ملی ارمنستان"
+      ],
+      "tags": [
+        "student strike",
+        "universities",
+        "2013 election"
+      ],
+      "tags_hy": [
+        "ուսանողական գործադուլ",
+        "համալսարաններ",
+        "2013 ընտրություններ"
+      ],
+      "tags_fa": [
+        "اعتصاب دانشجویی",
+        "دانشگاه‌ها",
+        "انتخابات ۲۰۱۳"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "constitutional-court-2013-03-14",
+      "title": "14 March: the court confirms the result",
+      "title_hy": "Մարտի 14. դատարանը հաստատում է արդյունքը",
+      "title_fa": "۱۴ مارس: دادگاه نتیجه را تأیید می‌کند",
+      "date": "2013-03-14",
+      "coordinates": [
+        44.51307,
+        40.19046
+      ],
+      "location": "Constitutional Court, Baghramyan Avenue 10",
+      "location_hy": "Սահմանադրական դատարան, Բաղրամյան պողոտա 10",
+      "location_fa": "دادگاه قانون اساسی، خیابان باغرامیان ۱۰",
+      "categories": [
+        "state",
+        "politics"
+      ],
+      "summary": "Hovannisian had appealed on 4 March. On 14 March the Constitutional Court rejected the appeal and confirmed Serzh Sargsyan's election, four days into the hunger strike and twenty-six days before the inauguration.",
+      "summary_hy": "Հովհաննիսյանը բողոքարկել էր մարտի 4-ին։ Մարտի 14-ին Սահմանադրական դատարանը մերժեց բողոքը և հաստատեց Սերժ Սարգսյանի ընտրությունը՝ հացադուլի չորրորդ օրը և երդմնակալությունից քսանվեց օր առաջ։",
+      "summary_fa": "هوانسیان در ۴ مارس شکایت کرده بود. در ۱۴ مارس دادگاه قانون اساسی شکایت را رد کرد و انتخاب سرژ سرکیسیان را تأیید کرد، چهار روز پس از آغاز اعتصاب غذا و بیست‌وشش روز پیش از مراسم تحلیف.",
+      "analysis": "The court sits at Baghramyan 10, three hundred metres from the square that was refusing the result and four hundred from the line where the police would stop the march on 9 April. The institutions that decide and the crowds that object are neighbours on one avenue, which is exactly why that avenue is where every Yerevan protest ends up walking.",
+      "analysis_hy": "Դատարանը գտնվում է Բաղրամյան 10-ում՝ արդյունքը մերժող հրապարակից երեք հարյուր մետր և այն գծից չորս հարյուր մետր, որտեղ ոստիկանությունը ապրիլի 9-ին կանգնեցնելու էր երթը։ Որոշող հաստատություններն ու առարկող ամբոխները մեկ պողոտայի հարևաններ են, և հենց դրա համար ամեն երևանյան բողոք ի վերջո քայլում է այդ պողոտայով։",
+      "analysis_fa": "دادگاه در باغرامیان ۱۰ است، سیصد متر از میدانی که نتیجه را رد می‌کرد و چهارصد متر از خطی که پلیس در ۹ آوریل راهپیمایی را متوقف کرد. نهادهایی که تصمیم می‌گیرند و جمعیت‌هایی که اعتراض می‌کنند همسایهٔ یک خیابان‌اند، و دقیقاً برای همین هر اعتراض ایروان سرانجام در همان خیابان راه می‌رود.",
+      "actors": [
+        "Constitutional Court of Armenia",
+        "Raffi Hovannisian"
+      ],
+      "actors_hy": [
+        "ՀՀ Սահմանադրական դատարան",
+        "Րաֆֆի Հովհաննիսյան"
+      ],
+      "actors_fa": [
+        "دادگاه قانون اساسی ارمنستان",
+        "رافی هوانسیان"
+      ],
+      "tags": [
+        "Constitutional Court",
+        "2013 election",
+        "Baghramyan Avenue"
+      ],
+      "tags_hy": [
+        "Սահմանադրական դատարան",
+        "2013 ընտրություններ",
+        "Բաղրամյան պողոտա"
+      ],
+      "tags_fa": [
+        "دادگاه قانون اساسی",
+        "انتخابات ۲۰۱۳",
+        "خیابان باغرامیان"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "sargsyan-inauguration-2013-04-09",
+      "title": "9 April: the official inauguration, 2.7 km away",
+      "title_hy": "Ապրիլի 9. պաշտոնական երդմնակալությունը՝ 2,7 կմ այն կողմ",
+      "title_fa": "۹ آوریل: مراسم تحلیف رسمی، ۲٫۷ کیلومتر آن‌سوتر",
+      "date": "2013-04-09",
+      "coordinates": [
+        44.48333,
+        40.18817
+      ],
+      "location": "Karen Demirchyan Sports and Concerts Complex, Tsitsernakaberd hill",
+      "location_hy": "Կարեն Դեմիրճյանի անվան մարզահամերգային համալիր, Ծիծեռնակաբերդի բլուր",
+      "location_fa": "مجتمع ورزشی و کنسرت کارن دمیرچیان، تپهٔ تسیتسرناکابرد",
+      "categories": [
+        "state",
+        "politics"
+      ],
+      "summary": "Serzh Sargsyan was sworn in for a second term at the Karen Demirchyan Complex, the great Soviet hall on the Tsitsernakaberd hill across the Hrazdan gorge. At the same hour, thousands gathered in Freedom Square for what Hovannisian called the inauguration of a new Armenia.",
+      "summary_hy": "Սերժ Սարգսյանը երկրորդ ժամկետի համար երդվեց Կարեն Դեմիրճյանի անվան համալիրում՝ Հրազդանի կիրճի այն կողմում, Ծիծեռնակաբերդի բլրի խորհրդային մեծ շենքում։ Նույն ժամին հազարավորները հավաքվել էին Ազատության հրապարակում այն բանի համար, ինչը Հովհաննիսյանն անվանեց նոր Հայաստանի երդմնակալություն։",
+      "summary_fa": "سرژ سرکیسیان برای دورهٔ دوم در مجتمع کارن دمیرچیان سوگند خورد، تالار بزرگ شوروی روی تپهٔ تسیتسرناکابرد آن‌سوی درهٔ هرازدان. در همان ساعت هزاران نفر در میدان آزادی گرد آمدند برای آنچه هوانسیان تحلیفِ ارمنستانِ نو نامید.",
+      "analysis": "Two ceremonies, one hour, 2.7 kilometres apart, with a gorge between them. The state's ceremony is held outside the centre entirely, on the hill of the genocide memorial, in a hall that seats thousands and admits by invitation. The counter-ceremony is held in the open square that anyone can walk into. The choice of ground is the whole political statement, on both sides.",
+      "analysis_hy": "Երկու արարողություն, մեկ ժամ, 2,7 կիլոմետր հեռավորություն և կիրճ նրանց միջև։ Պետության արարողությունը լիովին կենտրոնից դուրս է՝ ցեղասպանության հուշահամալիրի բլրին, հազարավոր տեղ ունեցող և հրավերով մուտք գործող դահլիճում։ Հակաարարողությունը բաց հրապարակում է, ուր ամեն մեկը կարող է մտնել։ Հողի ընտրությունը ամբողջ քաղաքական հայտարարությունն է՝ երկու կողմից էլ։",
+      "analysis_fa": "دو مراسم، یک ساعت، ۲٫۷ کیلومتر فاصله و یک دره در میان. مراسم دولت کاملاً بیرون از مرکز است، روی تپهٔ یادمان نسل‌کشی، در تالاری با هزاران صندلی که ورودش با دعوت‌نامه است. مراسم مقابل در میدانی باز است که هر کس می‌تواند واردش شود. انتخاب زمین، خودِ تمامِ بیانیهٔ سیاسی است، از هر دو سو.",
+      "actors": [
+        "Serzh Sargsyan",
+        "Raffi Hovannisian"
+      ],
+      "actors_hy": [
+        "Սերժ Սարգսյան",
+        "Րաֆֆի Հովհաննիսյան"
+      ],
+      "actors_fa": [
+        "سرژ سرکیسیان",
+        "رافی هوانسیان"
+      ],
+      "tags": [
+        "inauguration",
+        "Karen Demirchyan Complex",
+        "2013 election"
+      ],
+      "tags_hy": [
+        "երդմնակալություն",
+        "Կարեն Դեմիրճյանի համալիր",
+        "2013 ընտրություններ"
+      ],
+      "tags_fa": [
+        "مراسم تحلیف",
+        "مجتمع کارن دمیرچیان",
+        "انتخابات ۲۰۱۳"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "inauguration-march-2013-04-09",
+      "title": "9 April: stopped 769 metres short",
+      "title_hy": "Ապրիլի 9. կանգնեցված 769 մետր առաջ",
+      "title_fa": "۹ آوریل: متوقف، ۷۶۹ متر مانده",
+      "date": "2013-04-09",
+      "coordinates": [
+        44.51341,
+        40.18937
+      ],
+      "location": "Baghramyan Avenue at Isahakyan Street",
+      "location_hy": "Բաղրամյան պողոտա, Իսահակյան փողոցի խաչմերուկ",
+      "location_fa": "خیابان باغرامیان، تقاطع ایساهاکیان",
+      "categories": [
+        "protest",
+        "state",
+        "politics"
+      ],
+      "summary": "After the counter-ceremony in Freedom Square, Hovannisian told the crowd: together, hand in hand, we are going to Baghramyan 26. The march turned up the avenue and met a line of riot police at the corner of Isahakyan Street. A standoff followed, with repeated orders to disperse and part of the crowd refusing to leave. There were scuffles and injuries; the opposition politician Armen Martirosyan was among those hurt.",
+      "summary_hy": "Ազատության հրապարակի հակաարարողությունից հետո Հովհաննիսյանն ասաց ամբոխին. միասին, ձեռք ձեռքի, գնում ենք Բաղրամյան 26։ Երթը թեքվեց պողոտայով վեր և Իսահակյան փողոցի անկյունում հանդիպեց ոստիկանական շղթայի։ Սկսվեց դիմակայությունը՝ ցրվելու կրկնվող հրամաններով և ամբոխի մի մասի հրաժարումով հեռանալ։ Եղան բախումներ և վնասվածքներ, տուժածների թվում էր ընդդիմադիր քաղաքական գործիչ Արմեն Մարտիրոսյանը։",
+      "summary_fa": "پس از مراسم مقابل در میدان آزادی، هوانسیان به جمعیت گفت: با هم، دست در دست، به باغرامیان ۲۶ می‌رویم. راهپیمایی به خیابان پیچید و در تقاطع ایساهاکیان به صف پلیس ضدشورش رسید. رویارویی آغاز شد، با دستورهای مکرر به متفرق شدن و امتناع بخشی از جمعیت. درگیری و مصدومیت رخ داد؛ آرمن مارتیروسیان، سیاستمدار اپوزیسیون، از جمله زخمی‌ها بود.",
+      "analysis": "Measured on this map, the march covered 426 metres of Baghramyan and was stopped 769 metres short of Baghramyan 26. That number is the point of this entry, because it can be compared. In June 2015 the police line for Electric Yerevan stood at Derenik Demirchyan Street, 213 metres from the same door: the crowd had come 556 metres further up the same avenue in two years. In 2018 the question of the door stopped mattering, because the movement blocked the city instead of approaching the residence.\n\nThe avenue is the instrument that makes those two years comparable. It is the same street, the same destination, the same tactic of walking toward a man's house, and the only variable is how far the state was willing to let it come.",
+      "analysis_hy": "Այս քարտեզի վրա չափված՝ երթն անցավ Բաղրամյանի 426 մետրը և կանգնեցվեց Բաղրամյան 26-ից 769 մետր առաջ։ Հենց այդ թիվն է այս գրառման իմաստը, որովհետև այն համեմատելի է։ 2015-ի հունիսին «Էլեկտրիկ Երևանի» ոստիկանական շղթան կանգնած էր Դերենիկ Դեմիրճյան փողոցում՝ նույն դռնից 213 մետր. ամբոխը երկու տարում նույն պողոտայով 556 մետր ավելի վեր էր եկել։ 2018-ին դռան հարցն այլևս նշանակություն չուներ, որովհետև շարժումը փակեց քաղաքը՝ նստավայրին մոտենալու փոխարեն։\n\nՊողոտան այն գործիքն է, որը այդ տարիները համեմատելի է դարձնում։ Նույն փողոցը, նույն նպատակակետը, նույն մարտավարությունը՝ քայլել մեկի տան ուղղությամբ, և միակ փոփոխականը այն է, թե որքան հեռու պետությունը թույլ տվեց գալ։",
+      "analysis_fa": "اندازه‌گیری‌شده روی همین نقشه، راهپیمایی ۴۲۶ متر از باغرامیان را پیمود و ۷۶۹ متر مانده به باغرامیان ۲۶ متوقف شد. همین عدد، معنای این مدخل است، چون قابل مقایسه است. در ژوئن ۲۰۱۵ صف پلیسِ ایروانِ برقی در خیابان درنیک دمیرچیان ایستاد، ۲۱۳ متر از همان در: جمعیت در دو سال، ۵۵۶ متر بالاتر در همان خیابان آمده بود. در ۲۰۱۸ پرسشِ آن در دیگر اهمیتی نداشت، چون جنبش به‌جای نزدیک شدن به اقامتگاه، شهر را بست.\n\nخیابان همان ابزاری است که این سال‌ها را قابل مقایسه می‌کند. همان خیابان، همان مقصد، همان تاکتیکِ راه رفتن به سوی خانهٔ یک نفر، و تنها متغیر این است که دولت اجازه داد تا کجا بیایند.",
+      "actors": [
+        "Raffi Hovannisian",
+        "Armen Martirosyan",
+        "Armenian police"
+      ],
+      "actors_hy": [
+        "Րաֆֆի Հովհաննիսյան",
+        "Արմեն Մարտիրոսյան",
+        "Ոստիկանություն"
+      ],
+      "actors_fa": [
+        "رافی هوانسیان",
+        "آرمن مارتیروسیان",
+        "پلیس ارمنستان"
+      ],
+      "tags": [
+        "Baghramyan 26",
+        "police line",
+        "march",
+        "2013 election"
+      ],
+      "tags_hy": [
+        "Բաղրամյան 26",
+        "ոստիկանական շղթա",
+        "երթ",
+        "2013 ընտրություններ"
+      ],
+      "tags_fa": [
+        "باغرامیان ۲۶",
+        "صف پلیس",
+        "راهپیمایی",
+        "انتخابات ۲۰۱۳"
+      ],
+      "path": [
+        [
+          44.5152,
+          40.1859
+        ],
+        [
+          44.51483,
+          40.1878
+        ],
+        [
+          44.51341,
+          40.18937
+        ]
+      ],
+      "route": {
+        "from": "Freedom Square",
+        "to": "the police line at Isahakyan Street"
+      },
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 'Hovannisian Supporters Scuffle with Police in Yerevan', 9 April 2013",
+          "url": "https://armenianweekly.com/2013/04/09/hovannisian-supporters-scuffle-with-police-in-yerevan/"
+        },
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/",
+          "note": "the avenue centreline and the Isahakyan junction",
+          "note_hy": "պողոտայի առանցքագիծը և Իսահակյանի խաչմերուկը",
+          "note_fa": "خط میانی خیابان و تقاطع ایساهاکیان"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "yerevan-council-election-2013-05-05",
+      "title": "5 May: the city stays where it was",
+      "title_hy": "Մայիսի 5. քաղաքը մնում է իր տեղում",
+      "title_fa": "۵ مه: شهر همان‌جا می‌ماند",
+      "date": "2013-05-05",
+      "coordinates": [
+        44.50396,
+        40.17456
+      ],
+      "location": "Yerevan Municipality, Argishti Street 1",
+      "location_hy": "Երևանի քաղաքապետարան, Արգիշտի փողոց 1",
+      "location_fa": "شهرداری ایروان، خیابان آرگیشتی ۱",
+      "categories": [
+        "politics",
+        "state"
+      ],
+      "summary": "The Yerevan City Council election gave the Republican Party an absolute majority and kept Taron Margaryan as mayor. Every opposition party rejected the result. The council that would raise the bus fare ten weeks later was the one elected here.",
+      "summary_hy": "Երևանի ավագանու ընտրությունը Հանրապետական կուսակցությանը տվեց բացարձակ մեծամասնություն և Տարոն Մարգարյանին պահեց քաղաքապետի պաշտոնում։ Բոլոր ընդդիմադիր կուսակցությունները մերժեցին արդյունքը։ Այն ավագանին, որը տասը շաբաթ անց բարձրացնելու էր տրանսպորտի սակագինը, ընտրվեց հենց այստեղ։",
+      "summary_fa": "انتخابات شورای شهر ایروان به حزب جمهوری‌خواه اکثریت مطلق داد و تارون مارگاریان را شهردار نگه داشت. همهٔ احزاب اپوزیسیون نتیجه را رد کردند. همان شورایی که ده هفته بعد کرایهٔ اتوبوس را بالا برد، همین‌جا انتخاب شد.",
+      "analysis": "Worth placing on the map because of what happens at the same address in July. The municipality is not a symbol, it is an office that sets prices, and in 2013 it turned out to be the one part of the state in Yerevan that could be made to reverse itself in six days by people standing outside its door.",
+      "analysis_hy": "Արժե տեղադրել քարտեզին այն բանի պատճառով, ինչ տեղի է ունենում նույն հասցեում հուլիսին։ Քաղաքապետարանը խորհրդանիշ չէ, այն գրասենյակ է, որը գներ է սահմանում, և 2013-ին պարզվեց, որ դա պետության այն միակ մասն է Երևանում, որին կարելի էր վեց օրում ստիպել հետ կանգնել՝ պարզապես նրա դռան առաջ կանգնելով։",
+      "analysis_fa": "ارزش دارد روی نقشه بیاید به‌خاطر آنچه در ژوئیه در همین نشانی رخ می‌دهد. شهرداری نماد نیست، دفتری است که قیمت تعیین می‌کند، و در ۲۰۱۳ معلوم شد تنها بخشی از دولت در ایروان است که می‌شد در شش روز، فقط با ایستادن جلوی درش، وادار به عقب‌نشینی‌اش کرد.",
+      "actors": [
+        "Taron Margaryan",
+        "Republican Party of Armenia",
+        "Yerevan Municipality"
+      ],
+      "actors_hy": [
+        "Տարոն Մարգարյան",
+        "Հայաստանի Հանրապետական կուսակցություն",
+        "Երևանի քաղաքապետարան"
+      ],
+      "actors_fa": [
+        "تارون مارگاریان",
+        "حزب جمهوری‌خواه ارمنستان",
+        "شهرداری ایروان"
+      ],
+      "tags": [
+        "city council",
+        "municipal election",
+        "Yerevan Municipality"
+      ],
+      "tags_hy": [
+        "ավագանի",
+        "քաղաքային ընտրություն",
+        "Երևանի քաղաքապետարան"
+      ],
+      "tags_fa": [
+        "شورای شهر",
+        "انتخابات شهری",
+        "شهرداری ایروان"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Yerevan City Council election'",
+          "url": "https://en.wikipedia.org/wiki/2013_Yerevan_City_Council_election"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "fare-rise-announced-2013-07-18",
+      "title": "18 July: a hundred becomes a hundred and fifty",
+      "title_hy": "Հուլիսի 18. հարյուրը դառնում է հարյուր հիսուն",
+      "title_fa": "۱۸ ژوئیه: صد، صدوپنجاه می‌شود",
+      "date": "2013-07-18",
+      "coordinates": [
+        44.50396,
+        40.17456
+      ],
+      "location": "Yerevan Municipality, transport department",
+      "location_hy": "Երևանի քաղաքապետարան, տրանսպորտի վարչություն",
+      "location_fa": "شهرداری ایروان، ادارهٔ حمل‌ونقل",
+      "categories": [
+        "infra",
+        "state"
+      ],
+      "summary": "The municipality announced that from 20 July a minibus ride would cost 150 drams instead of 100, and a trolleybus 100 instead of 50: a rise of a half and a doubling. The head of the transport department, Henrik Navasardyan, explained it by maintenance costs and the price of imported liquefied gas. Hetq later reported that he owned a bus route himself.",
+      "summary_hy": "Քաղաքապետարանը հայտարարեց, որ հուլիսի 20-ից մարշրուտկայի ուղևորությունը կարժենա 150 դրամ՝ 100-ի փոխարեն, իսկ տրոլեյբուսինը՝ 100՝ 50-ի փոխարեն. կես անգամ և կրկնակի բարձրացում։ Տրանսպորտի վարչության պետ Հենրիկ Նավասարդյանը դա բացատրեց սպասարկման ծախսերով և ներկրվող հեղուկ գազի գնով։ Hetq-ը հետո գրեց, որ ինքն էլ ավտոբուսային երթուղի ունի։",
+      "summary_fa": "شهرداری اعلام کرد از ۲۰ ژوئیه سوارِ مینی‌بوس به‌جای ۱۰۰ درام، ۱۵۰ درام و ترالی‌بوس به‌جای ۵۰، ۱۰۰ درام خواهد بود: یک‌ونیم برابر و دو برابر. رئیس ادارهٔ حمل‌ونقل، هنریک ناواساردیان، آن را با هزینهٔ نگهداری و قیمت گاز مایع وارداتی توضیح داد. هتک بعدها گزارش داد که خودش صاحب یک خط اتوبوس است.",
+      "analysis": "Fifty drams is about ten euro cents. That is the size of the grievance, and it is the reason the movement could not be called political: nobody had to agree about the president to agree about the fare. The paper's argument about urban movements starts exactly here, in the smallness and the concreteness of the thing being contested.",
+      "analysis_hy": "Հիսուն դրամը մոտ տասը եվրոցենտ է։ Ահա դժգոհության չափը, և ահա պատճառը, թե ինչու շարժումը չէր կարող քաղաքական կոչվել. սակագնի շուրջ համաձայնվելու համար պետք չէր համաձայնվել նախագահի շուրջ։ Քաղաքային շարժումների մասին հոդվածի փաստարկը սկսվում է հենց այստեղ՝ վիճարկվողի փոքրության և կոնկրետության մեջ։",
+      "analysis_fa": "پنجاه درام حدود ده سنت یورو است. اندازهٔ نارضایتی همین است، و دلیل اینکه جنبش را نمی‌شد سیاسی نامید همین: برای توافق بر سرِ کرایه لازم نبود کسی بر سرِ رئیس‌جمهور توافق کند. استدلال مقاله دربارهٔ جنبش‌های شهری دقیقاً از همین‌جا آغاز می‌شود، از کوچکی و ملموس‌بودنِ چیزی که بر سرش دعواست.",
+      "actors": [
+        "Yerevan Municipality",
+        "Henrik Navasardyan",
+        "Taron Margaryan"
+      ],
+      "actors_hy": [
+        "Երևանի քաղաքապետարան",
+        "Հենրիկ Նավասարդյան",
+        "Տարոն Մարգարյան"
+      ],
+      "actors_fa": [
+        "شهرداری ایروان",
+        "هنریک ناواساردیان",
+        "تارون مارگاریان"
+      ],
+      "tags": [
+        "fares",
+        "marshrutka",
+        "trolleybus",
+        "Yerevan Municipality"
+      ],
+      "tags_hy": [
+        "սակագներ",
+        "մարշրուտկա",
+        "տրոլեյբուս",
+        "Երևանի քաղաքապետարան"
+      ],
+      "tags_fa": [
+        "کرایه",
+        "مارشروتکا",
+        "ترالی‌بوس",
+        "شهرداری ایروان"
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 'Yerevan's Bus Fare Protests: A Timeline', 29 July 2013",
+          "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
+        },
+        {
+          "title": "Hetq, 'Protestors Demand Resignation of Transportation Department Head'",
+          "url": "https://hetq.am/eng/news/28390/protestors-demand-resignation-of-transportation-department-head.html"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "fare-boycott-2013-07-20",
+      "title": "20 July: I will only pay 100 dram",
+      "title_hy": "Հուլիսի 20. «Վճարելու եմ միայն 100 դրամ»",
+      "title_fa": "۲۰ ژوئیه: «فقط ۱۰۰ درام می‌پردازم»",
+      "date": "2013-07-20",
+      "dateEnd": "2013-07-24",
+      "coordinates": [
+        44.50932,
+        40.18214
+      ],
+      "location": "The bus stops and minibuses of Yerevan",
+      "location_hy": "Երևանի կանգառներն ու մարշրուտկաները",
+      "location_fa": "ایستگاه‌ها و مینی‌بوس‌های ایروان",
+      "categories": [
+        "protest",
+        "infra",
+        "publiclife"
+      ],
+      "summary": "The new fares took effect and were simply not paid. Activists stood at stops with megaphones and flyers asking passengers to hand over a hundred drams and no more; three were detained on the first day for distributing leaflets, six more on 23 July, and four on 24 July. Drivers who refused the extra fare, or did not work at all, joined in. Celebrities and ordinary drivers offered free rides, and a carpooling site, freecar.am, had 269 drivers signed up within days. A movement of about thirty people at the start of the week was the whole city by the end of it, most of them students and school pupils at their first protest.",
+      "summary_hy": "Նոր սակագները ուժի մեջ մտան, և պարզապես չվճարվեցին։ Ակտիվիստները կանգնում էին կանգառներում բարձրախոսներով և թռուցիկներով՝ խնդրելով ուղևորներին տալ հարյուր դրամ և ոչ ավելի. առաջին օրը երեքը ձերբակալվեցին թռուցիկ բաժանելու համար, հուլիսի 23-ին՝ ևս վեցը, հուլիսի 24-ին՝ չորսը։ Միացան նաև վարորդները, ովքեր հրաժարվում էին ավել գումարից կամ ընդհանրապես չէին աշխատում։ Հայտնի մարդիկ և սովորական վարորդներ անվճար էին տանում, իսկ freecar.am համատեղ երթևեկության կայքում օրերի ընթացքում գրանցվեց 269 վարորդ։ Շաբաթվա սկզբին մոտ երեսուն մարդու շարժումը շաբաթվա վերջին ամբողջ քաղաքն էր՝ մեծամասամբ ուսանողներ և դպրոցականներ, ովքեր առաջին անգամ էին բողոքի դուրս եկել։",
+      "summary_fa": "کرایه‌های تازه اجرا شد و به‌سادگی پرداخت نشد. فعالان با بلندگو و اعلامیه در ایستگاه‌ها ایستادند و از مسافران خواستند صد درام بدهند و نه بیشتر؛ روز نخست سه نفر برای پخش اعلامیه بازداشت شدند، ۲۳ ژوئیه شش نفر دیگر، و ۲۴ ژوئیه چهار نفر. رانندگانی که کرایهٔ اضافی را نمی‌گرفتند یا اصلاً کار نمی‌کردند نیز پیوستند. چهره‌های مشهور و رانندگان عادی سواری رایگان دادند و در سایت سواری اشتراکی freecar.am ظرف چند روز ۲۶۹ راننده ثبت‌نام کردند. جنبشی که اول هفته حدود سی نفر بود، آخر هفته تمام شهر بود، بیشترشان دانشجو و دانش‌آموز، در نخستین اعتراض زندگی‌شان.",
+      "analysis": "This is the map's clearest case of a protest with no address. There is no square to occupy and no door to march on: the site of the action is every stop and every vehicle, which is to say the transport network itself, which is to say the city as it is actually used. It is anchored here on Mashtots Avenue only because a point must go somewhere.\n\nThat shapelessness is why it worked and also why it disappeared. There was nothing for the police to surround and nothing for the state to negotiate with, and when the fare was withdrawn there was nothing left to hold the movement together.",
+      "analysis_hy": "Սա քարտեզի ամենապարզ դեպքն է՝ բողոք առանց հասցեի։ Գրավելու հրապարակ չկա և երթ անելու դուռ չկա. գործողության վայրը ամեն կանգառ և ամեն մեքենա է, այսինքն՝ ինքը տրանսպորտային ցանցը, այսինքն՝ քաղաքն այնպես, ինչպես իրականում օգտագործվում է։ Այստեղ այն ամրացված է Մաշտոցի պողոտային միայն այն պատճառով, որ կետը պետք է ինչ-որ տեղ լինի։\n\nԱյդ անձևությունն է պատճառը, թե ինչու այն հաջողվեց և ինչու անհետացավ։ Ոստիկանության շրջափակելու բան չկար և պետության բանակցելու բան չկար, իսկ երբ սակագինը հետ վերցվեց, շարժումը միասին պահող ոչինչ չմնաց։",
+      "analysis_fa": "این روشن‌ترین نمونهٔ نقشه از اعتراضی بدون نشانی است. نه میدانی برای اشغال هست و نه دری برای راهپیمایی: محل کنش هر ایستگاه و هر خودرو است، یعنی خودِ شبکهٔ حمل‌ونقل، یعنی شهر آن‌گونه که واقعاً استفاده می‌شود. اینجا فقط از آن رو به خیابان ماشتوتس گره خورده که یک نقطه بالاخره باید جایی باشد.\n\nهمین بی‌شکلی هم دلیل پیروزی‌اش بود و هم دلیل ناپدید شدنش. چیزی نبود که پلیس محاصره‌اش کند و چیزی نبود که دولت با آن مذاکره کند، و وقتی کرایه پس گرفته شد، چیزی نماند که جنبش را کنار هم نگه دارد.",
+      "actors": [
+        "I will only pay 100 dram",
+        "Davit Haroutyunyan",
+        "Sona Msryan",
+        "Arsen Ohanyan",
+        "Armenian police"
+      ],
+      "actors_hy": [
+        "«Վճարելու եմ միայն 100 դրամ»",
+        "Դավիթ Հարությունյան",
+        "Սոնա Մսրյան",
+        "Արսեն Օհանյան",
+        "Ոստիկանություն"
+      ],
+      "actors_fa": [
+        "«فقط ۱۰۰ درام می‌پردازم»",
+        "داویت هاروتیونیان",
+        "سونا مسریان",
+        "آرسن اوهانیان",
+        "پلیس ارمنستان"
+      ],
+      "tags": [
+        "civil disobedience",
+        "fares",
+        "boycott",
+        "carpooling",
+        "students"
+      ],
+      "tags_hy": [
+        "քաղաքացիական անհնազանդություն",
+        "սակագներ",
+        "բոյկոտ",
+        "համատեղ երթևեկություն",
+        "ուսանողներ"
+      ],
+      "tags_fa": [
+        "نافرمانی مدنی",
+        "کرایه",
+        "تحریم",
+        "سواری اشتراکی",
+        "دانشجویان"
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 'Yerevan's Bus Fare Protests: A Timeline', 29 July 2013",
+          "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
+        },
+        {
+          "title": "CrimethInc., 'High Voltage: Lessons from Four Summers of Unrest in Armenia'",
+          "url": "https://crimethinc.com/2017/02/12/high-voltage-lessons-from-four-summers-of-protests-in-armenia"
+        },
+        {
+          "title": "IANYAN Magazine, 'Marshutka Revolution'",
+          "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "fares-cancelled-2013-07-25",
+      "title": "25 July: six days, and the fare goes back",
+      "title_hy": "Հուլիսի 25. վեց օր, և սակագինը հետ է գնում",
+      "title_fa": "۲۵ ژوئیه: شش روز، و کرایه بازمی‌گردد",
+      "date": "2013-07-25",
+      "coordinates": [
+        44.50396,
+        40.17456
+      ],
+      "location": "Yerevan Municipality, and then Mashtots Avenue and Freedom Square",
+      "location_hy": "Երևանի քաղաքապետարան, ապա Մաշտոցի պողոտա և Ազատության հրապարակ",
+      "location_fa": "شهرداری ایروان، سپس خیابان ماشتوتس و میدان آزادی",
+      "categories": [
+        "protest",
+        "infra",
+        "publiclife"
+      ],
+      "summary": "Mayor Taron Margaryan suspended the new fares. The prime minister, Tigran Sargsyan, had already spoken in the movement's favour, and the human rights defender Karen Andreasyan had questioned whether the municipality had followed the law in setting the price at all. Crowds marched through Freedom Square and along Mashtots Avenue until midnight. The next day activists were back at the Municipality asking for the transport officials to go and for the extra fares to be refunded.",
+      "summary_hy": "Քաղաքապետ Տարոն Մարգարյանը կասեցրեց նոր սակագները։ Վարչապետ Տիգրան Սարգսյանն արդեն խոսել էր շարժման օգտին, իսկ մարդու իրավունքների պաշտպան Կարեն Անդրեասյանը կասկածի տակ էր դրել, թե արդյոք քաղաքապետարանն ընդհանրապես օրենքին հետևել է գինը սահմանելիս։ Ամբոխները մինչև կեսգիշեր քայլեցին Ազատության հրապարակով և Մաշտոցի պողոտայով։ Հաջորդ օրը ակտիվիստները նորից քաղաքապետարանի մոտ էին՝ պահանջելով տրանսպորտի պաշտոնյաների հեռացումը և ավել գանձված գումարների վերադարձը։",
+      "summary_fa": "شهردار تارون مارگاریان کرایه‌های تازه را معلق کرد. نخست‌وزیر، تیگران سرکیسیان، پیش‌تر به سود جنبش سخن گفته بود و مدافع حقوق بشر، کارن آندریاسیان، پرسیده بود آیا شهرداری اصلاً در تعیین قیمت قانون را رعایت کرده است. جمعیت تا نیمه‌شب در میدان آزادی و خیابان ماشتوتس راه رفت. روز بعد فعالان دوباره مقابل شهرداری بودند و برکناری مقام‌های حمل‌ونقل و بازپرداخت کرایه‌های اضافی را می‌خواستند.",
+      "analysis": "Six days from the fare taking effect to its withdrawal, and it is the first time in the independent republic that a street movement made the state reverse a decision. What the map records is where the reversal was won: not in the square, but at an office 1.6 kilometres from it, on a question with a number attached.\n\nThe victory dissolved the movement almost immediately, which several participants later described as its real defeat. The networks survived, though, and they are the ones that show up at Mashtots Park, at the Afrikana site, and in June 2015 on Baghramyan.",
+      "analysis_hy": "Վեց օր՝ սակագնի ուժի մեջ մտնելուց մինչև հետ վերցնելը, և սա անկախ հանրապետությունում առաջին դեպքն է, երբ փողոցային շարժումը ստիպեց պետությանը հետ կանգնել որոշումից։ Քարտեզը գրանցում է, թե որտեղ շահվեց այդ հետկանգնումը. ոչ թե հրապարակում, այլ դրանից 1,6 կիլոմետր հեռու գրասենյակում, թվով չափվող հարցի շուրջ։\n\nՀաղթանակը գրեթե անմիջապես ցրեց շարժումը, ինչը մասնակիցներից մի քանիսը հետո անվանեցին իրական պարտություն։ Ցանցերը, սակայն, մնացին, և հենց նրանք են հայտնվում Մաշտոցի այգում, Աֆրիկանայի տեղանքում և 2015-ի հունիսին Բաղրամյանում։",
+      "analysis_fa": "شش روز از اجرای کرایه تا پس گرفتنش، و این نخستین بار در جمهوری مستقل است که جنبشی خیابانی دولت را وادار به عقب‌گرد از تصمیمی کرد. آنچه نقشه ثبت می‌کند این است که این عقب‌گرد کجا برده شد: نه در میدان، بلکه در دفتری ۱٫۶ کیلومتر دورتر، بر سرِ پرسشی که عددی به آن چسبیده بود.\n\nپیروزی تقریباً بی‌درنگ جنبش را منحل کرد، چیزی که بعدها چند تن از شرکت‌کنندگان شکستِ واقعی نامیدند. اما شبکه‌ها ماندند، و همان‌ها هستند که در پارک ماشتوتس، در محل آفریکانا، و در ژوئن ۲۰۱۵ در باغرامیان پیدا می‌شوند.",
+      "actors": [
+        "Taron Margaryan",
+        "Tigran Sargsyan",
+        "Karen Andreasyan",
+        "I will only pay 100 dram"
+      ],
+      "actors_hy": [
+        "Տարոն Մարգարյան",
+        "Տիգրան Սարգսյան",
+        "Կարեն Անդրեասյան",
+        "«Վճարելու եմ միայն 100 դրամ»"
+      ],
+      "actors_fa": [
+        "تارون مارگاریان",
+        "تیگران سرکیسیان",
+        "کارن آندریاسیان",
+        "«فقط ۱۰۰ درام می‌پردازم»"
+      ],
+      "tags": [
+        "victory",
+        "fares",
+        "Yerevan Municipality",
+        "civil disobedience"
+      ],
+      "tags_hy": [
+        "հաղթանակ",
+        "սակագներ",
+        "Երևանի քաղաքապետարան",
+        "քաղաքացիական անհնազանդություն"
+      ],
+      "tags_fa": [
+        "پیروزی",
+        "کرایه",
+        "شهرداری ایروان",
+        "نافرمانی مدنی"
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 'Yerevan's Bus Fare Protests: A Timeline', 29 July 2013",
+          "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
+        },
+        {
+          "title": "IANYAN Magazine, 'Marshutka Revolution'",
+          "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "customs-union-protest-2013-09-21",
+      "title": "21 September: independence day, and the turn to Moscow",
+      "title_hy": "Սեպտեմբերի 21. անկախության օրը և շրջադարձը դեպի Մոսկվա",
+      "title_fa": "۲۱ سپتامبر: روز استقلال، و چرخش به مسکو",
+      "date": "2013-09-21",
+      "coordinates": [
+        44.50617,
+        40.19305
+      ],
+      "location": "Baghramyan Avenue, by the Residence of the President",
+      "location_hy": "Բաղրամյան պողոտա, Նախագահի նստավայրի մոտ",
+      "location_fa": "خیابان باغرامیان، نزدیک اقامتگاه رئیس‌جمهور",
+      "categories": [
+        "protest",
+        "politics"
+      ],
+      "summary": "On 3 September, in Moscow, Serzh Sargsyan announced that Armenia would join the Russian-led Customs Union instead of signing the Association Agreement with the European Union that had been negotiated for years. Protests followed at the presidential residence on 4 September and a rally at Freedom Square on 20 September. On independence day, 21 September, thousands marched against the decision and there were minor clashes with police on Baghramyan Avenue near the residence.",
+      "summary_hy": "Սեպտեմբերի 3-ին Մոսկվայում Սերժ Սարգսյանը հայտարարեց, որ Հայաստանը կմիանա Ռուսաստանի գլխավորած Մաքսային միությանը՝ տարիներ բանակցված ԵՄ ասոցացման համաձայնագիրը ստորագրելու փոխարեն։ Սեպտեմբերի 4-ին բողոքներ եղան նախագահի նստավայրի մոտ, սեպտեմբերի 20-ին՝ հանրահավաք Ազատության հրապարակում։ Անկախության օրը՝ սեպտեմբերի 21-ին, հազարավորները քայլեցին որոշման դեմ, և Բաղրամյան պողոտայում՝ նստավայրի մոտ, եղան փոքր բախումներ ոստիկանության հետ։",
+      "summary_fa": "در ۳ سپتامبر، در مسکو، سرژ سرکیسیان اعلام کرد ارمنستان به‌جای امضای موافقت‌نامهٔ همکاری با اتحادیهٔ اروپا که سال‌ها بر سرش مذاکره شده بود، به اتحادیهٔ گمرکیِ به رهبری روسیه می‌پیوندد. در ۴ سپتامبر مقابل اقامتگاه رئیس‌جمهور اعتراض شد و در ۲۰ سپتامبر تجمعی در میدان آزادی. در روز استقلال، ۲۱ سپتامبر، هزاران نفر علیه این تصمیم راه رفتند و در خیابان باغرامیان نزدیک اقامتگاه درگیری‌های کوچکی با پلیس رخ داد.",
+      "analysis": "The address matters again: the decision was taken in Moscow and protested outside a house on Baghramyan. The whole grammar of the year is in that mismatch, and it is the same mismatch as Electric Yerevan two years later, where the tariff was set by a regulator two and a half kilometres east and the crowd sat down in front of the president's street instead.",
+      "analysis_hy": "Հասցեն կրկին կարևոր է. որոշումն ընդունվեց Մոսկվայում, իսկ բողոքն ուղղվեց Բաղրամյանի մի տան դռանը։ Տարվա ամբողջ քերականությունը այդ անհամապատասխանության մեջ է, և դա նույն անհամապատասխանությունն է, ինչ երկու տարի անց «Էլեկտրիկ Երևանում», որտեղ սակագինը սահմանել էր երկուսուկես կիլոմետր արևելք գտնվող կարգավորողը, իսկ ամբոխը նստեց նախագահի փողոցի առաջ։",
+      "analysis_fa": "باز هم نشانی مهم است: تصمیم در مسکو گرفته شد و اعتراض جلوی خانه‌ای در باغرامیان. تمام دستور زبانِ آن سال در همین ناهمخوانی است، و همان ناهمخوانی دو سال بعد در ایروانِ برقی تکرار می‌شود، جایی که تعرفه را نهاد تنظیم‌گری در دو و نیم کیلومتری شرق تعیین کرده بود و جمعیت به‌جای آن، جلوی خیابان رئیس‌جمهور نشست.",
+      "actors": [
+        "Serzh Sargsyan",
+        "Raffi Hovannisian",
+        "Paruyr Hayrikyan"
+      ],
+      "actors_hy": [
+        "Սերժ Սարգսյան",
+        "Րաֆֆի Հովհաննիսյան",
+        "Պարույր Հայրիկյան"
+      ],
+      "actors_fa": [
+        "سرژ سرکیسیان",
+        "رافی هوانسیان",
+        "پاروییر هایریکیان"
+      ],
+      "tags": [
+        "Customs Union",
+        "European Union",
+        "independence day",
+        "Baghramyan Avenue"
+      ],
+      "tags_hy": [
+        "Մաքսային միություն",
+        "Եվրոպական միություն",
+        "անկախության օր",
+        "Բաղրամյան պողոտա"
+      ],
+      "tags_fa": [
+        "اتحادیهٔ گمرکی",
+        "اتحادیهٔ اروپا",
+        "روز استقلال",
+        "خیابان باغرامیان"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "guy-fawkes-march-2013-11-05",
+      "title": "5 November: a hundred people and twenty arrests",
+      "title_hy": "Նոյեմբերի 5. հարյուր մարդ և քսան ձերբակալություն",
+      "title_fa": "۵ نوامبر: صد نفر و بیست بازداشت",
+      "date": "2013-11-05",
+      "coordinates": [
+        44.50932,
+        40.18214
+      ],
+      "location": "Mashtots Avenue, from Freedom Square",
+      "location_hy": "Մաշտոցի պողոտա, Ազատության հրապարակից",
+      "location_fa": "خیابان ماشتوتس، از میدان آزادی",
+      "categories": [
+        "protest",
+        "state"
+      ],
+      "summary": "Shant Harutyunyan had been sitting in Freedom Square since 31 October under a sign reading I am starting a revolution. On 5 November, Guy Fawkes day, he led a little over a hundred people, some in Fawkes masks and carrying sticks and homemade flash devices, out of the square toward the presidential residence. Around two hundred police, including special forces, met them. About twenty people were arrested on Mashtots Avenue, Harutyunyan among them, and about ten police officers were injured.",
+      "summary_hy": "Շանթ Հարությունյանը հոկտեմբերի 31-ից նստած էր Ազատության հրապարակում «Ես սկսում եմ հեղափոխություն» գրված պաստառի տակ։ Նոյեմբերի 5-ին՝ Գայ Ֆոքսի օրը, նա հարյուրից մի փոքր ավելի մարդու, ոմանք Ֆոքսի դիմակներով, փայտերով և ինքնաշեն լուսաձայնային միջոցներով, հրապարակից տարավ դեպի նախագահի նստավայրը։ Նրանց դիմավորեց մոտ երկու հարյուր ոստիկան՝ ներառյալ հատուկ ջոկատայինները։ Մաշտոցի պողոտայում ձերբակալվեց մոտ քսան մարդ, նրանց թվում՝ Հարությունյանը, և վիրավորվեց մոտ տասը ոստիկան։",
+      "summary_fa": "شانت هاروتیونیان از ۳۱ اکتبر زیر تابلویی با نوشتهٔ «من انقلابی را آغاز می‌کنم» در میدان آزادی نشسته بود. در ۵ نوامبر، روز گای فاکس، کمی بیش از صد نفر را، برخی با ماسک فاکس و با چوب و وسایل صوتی دست‌ساز، از میدان به سوی اقامتگاه رئیس‌جمهور برد. حدود دویست پلیس، از جمله نیروهای ویژه، مقابلشان ایستادند. حدود بیست نفر در خیابان ماشتوتس بازداشت شدند، از جمله هاروتیونیان، و حدود ده پلیس زخمی شد.",
+      "analysis": "The year's other answer to the same question. If the square cannot make the state move, one conclusion is to leave the square for the bus stop, and the other is to leave it carrying sticks. The first won a fare in six days; the second produced a trial and a prison sentence, and Harutyunyan was released under an amnesty years later. The sources name the avenue but not the block, so the point is placed at the middle of Mashtots.",
+      "analysis_hy": "Տարվա մյուս պատասխանը նույն հարցին։ Եթե հրապարակը չի կարող պետությանը շարժել, մի եզրակացությունն այն է, որ պետք է հրապարակից գնալ դեպի կանգառ, մյուսը՝ որ պետք է գնալ փայտերով։ Առաջինը վեց օրում շահեց սակագինը, երկրորդը բերեց դատավարություն և բանտարկություն, իսկ Հարությունյանն ազատվեց տարիներ անց՝ համաներմամբ։ Աղբյուրները նշում են պողոտան, բայց ոչ հատվածը, ուստի կետը դրված է Մաշտոցի միջնամասում։",
+      "analysis_fa": "پاسخ دیگرِ همان سال به همان پرسش. اگر میدان نمی‌تواند دولت را تکان دهد، یک نتیجه این است که میدان را به مقصد ایستگاه اتوبوس ترک کنی، و نتیجهٔ دیگر این است که با چوب ترکش کنی. اولی در شش روز کرایه را برد؛ دومی به دادگاه و زندان رسید، و هاروتیونیان سال‌ها بعد با عفو آزاد شد. منابع خیابان را نام می‌برند اما بلوک را نه، پس نقطه در میانهٔ ماشتوتس گذاشته شده است.",
+      "actors": [
+        "Shant Harutyunyan",
+        "Armenian police"
+      ],
+      "actors_hy": [
+        "Շանթ Հարությունյան",
+        "Ոստիկանություն"
+      ],
+      "actors_fa": [
+        "شانت هاروتیونیان",
+        "پلیس ارمنستان"
+      ],
+      "tags": [
+        "Guy Fawkes",
+        "arrests",
+        "Mashtots Avenue",
+        "political prisoners"
+      ],
+      "tags_hy": [
+        "Գայ Ֆոքս",
+        "ձերբակալություններ",
+        "Մաշտոցի պողոտա",
+        "քաղբանտարկյալներ"
+      ],
+      "tags_fa": [
+        "گای فاکس",
+        "بازداشت",
+        "خیابان ماشتوتس",
+        "زندانیان سیاسی"
+      ],
+      "path": [
+        [
+          44.5152,
+          40.1859
+        ],
+        [
+          44.51263,
+          40.18441
+        ],
+        [
+          44.50932,
+          40.18214
+        ]
+      ],
+      "sources": [
+        {
+          "title": "The Armenian Weekly, 'Activists Clash with Police on Guy Fawkes Day in Yerevan', 5 November 2013",
+          "url": "https://armenianweekly.com/2013/11/05/activists-clash-with-police-on-guy-fawkes-day-in-yerevan/"
+        },
+        {
+          "title": "Wikipedia, 'Shant Harutyunyan'",
+          "url": "https://en.wikipedia.org/wiki/Shant_Harutyunyan"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "gazprom-protest-2013-12-23",
+      "title": "23 December: the gas agreement",
+      "title_hy": "Դեկտեմբերի 23. գազի համաձայնագիրը",
+      "title_fa": "۲۳ دسامبر: توافق گاز",
+      "date": "2013-12-23",
+      "coordinates": [
+        44.50898,
+        40.19028
+      ],
+      "location": "National Assembly, Baghramyan Avenue 19",
+      "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա 19",
+      "location_fa": "مجلس ملی، خیابان باغرامیان ۱۹",
+      "categories": [
+        "protest",
+        "infra",
+        "politics"
+      ],
+      "summary": "Hundreds gathered outside the National Assembly as parliament considered the agreement that left the country's gas distribution network in the hands of Gazprom until 2043. Two weeks earlier, during Vladimir Putin's visit on 2 December, between five hundred and a thousand people had marched through the centre and been blocked by riot police on their way to the presidential residence.",
+      "summary_hy": "Հարյուրավորներ հավաքվեցին Ազգային ժողովի դիմաց, երբ խորհրդարանը քննարկում էր համաձայնագիրը, որը երկրի գազաբաշխման ցանցը մինչև 2043 թվականը թողնում էր «Գազպրոմի» ձեռքում։ Երկու շաբաթ առաջ՝ դեկտեմբերի 2-ին, Վլադիմիր Պուտինի այցի ժամանակ, հինգ հարյուրից հազար մարդ քայլել էր կենտրոնով և ոստիկանության կողմից արգելափակվել նախագահի նստավայրի ճանապարհին։",
+      "summary_fa": "صدها نفر مقابل مجلس ملی گرد آمدند، هنگامی که پارلمان توافقی را بررسی می‌کرد که شبکهٔ توزیع گاز کشور را تا ۲۰۴۳ در دست گازپروم می‌گذاشت. دو هفته پیش‌تر، در سفر ولادیمیر پوتین در ۲ دسامبر، میان پانصد تا هزار نفر از مرکز شهر راهپیمایی کرده و در راه اقامتگاه رئیس‌جمهور با سد پلیس ضدشورش روبه‌رو شده بودند.",
+      "analysis": "Infrastructure again, and the same shape as the summer: a price and a network owned elsewhere. The energy question that closes 2013 at the National Assembly is the one that reopens in June 2015 on the avenue three hundred metres away, and the map should be read as one continuous argument about who owns the wires and the pipes.",
+      "analysis_hy": "Կրկին ենթակառուցվածք, և ամառվա նույն ձևը՝ գին և այլուր պատկանող ցանց։ Էներգետիկ հարցը, որով 2013-ը փակվում է Ազգային ժողովի մոտ, նույնն է, որ նորից բացվում է 2015-ի հունիսին՝ երեք հարյուր մետր այն կողմ գտնվող պողոտայում, և քարտեզը պետք է կարդալ որպես մեկ շարունակական փաստարկ այն մասին, թե ում են պատկանում լարերն ու խողովակները։",
+      "analysis_fa": "باز هم زیرساخت، و همان شکلِ تابستان: یک قیمت و شبکه‌ای که مالکش جای دیگری است. پرسش انرژی که ۲۰۱۳ را مقابل مجلس ملی می‌بندد، همان است که در ژوئن ۲۰۱۵ در خیابانی سیصد متر آن‌سوتر دوباره باز می‌شود، و نقشه را باید همچون یک استدلال پیوسته خواند دربارهٔ اینکه سیم‌ها و لوله‌ها از آنِ کیست.",
+      "actors": [
+        "National Assembly of Armenia",
+        "Gazprom",
+        "Vladimir Putin"
+      ],
+      "actors_hy": [
+        "ՀՀ Ազգային ժողով",
+        "«Գազպրոմ»",
+        "Վլադիմիր Պուտին"
+      ],
+      "actors_fa": [
+        "مجلس ملی ارمنستان",
+        "گازپروم",
+        "ولادیمیر پوتین"
+      ],
+      "tags": [
+        "Gazprom",
+        "gas",
+        "National Assembly",
+        "infrastructure"
+      ],
+      "tags_hy": [
+        "Գազպրոմ",
+        "գազ",
+        "Ազգային ժողով",
+        "ենթակառուցվածք"
+      ],
+      "tags_fa": [
+        "گازپروم",
+        "گاز",
+        "مجلس ملی",
+        "زیرساخت"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia, '2013 Armenian protests'",
+          "url": "https://en.wikipedia.org/wiki/2013_Armenian_protests"
+        },
+        {
+          "title": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013",
+      "datePrecision": "day"
+    },
+    {
+      "id": "dem-em-pension-2013-10",
+      "title": "Dem Em: the movement that fought from inside workplaces",
+      "title_hy": "«Դեմ եմ». շարժումը, որ պայքարեց աշխատավայրերի ներսից",
+      "title_fa": "«دم ام»: جنبشی که از درون محل کار جنگید",
+      "date": "2013-10-01",
+      "dateEnd": "2014-04-03",
+      "datePrecision": "month",
+      "coordinates": [
+        44.5152,
+        40.1859
+      ],
+      "location": "Freedom Square, the Opera and Ballet Theatre, the railway, the metro, the IT offices",
+      "location_hy": "Ազատության հրապարակ, օպերայի և բալետի թատրոն, երկաթուղի, մետրո, ՏՏ գրասենյակներ",
+      "location_fa": "میدان آزادی، تئاتر اپرا و باله، راه‌آهن، مترو، دفترهای فناوری اطلاعات",
+      "categories": [
+        "protest",
+        "politics",
+        "publiclife"
+      ],
+      "summary": "From October 2013 a campaign called Dem Em, I am against, organised against the compulsory funded pension scheme due to start on 1 January 2014, which deducted up to ten per cent of the wages of everyone born from 1974 onward. It grew to some forty-four thousand people on Facebook. Around eighty per cent of Armenia's twelve thousand IT workers took part; so did lawyers, economists, doctors, teachers, staff of the Opera and Ballet Theatre, who cancelled a performance, more than a hundred railway workers, metro staff and workers at the Metsamor nuclear station. Over seventy companies simply refused to make the deduction. The Constitutional Court suspended the penalties in January 2014 and heard the case in March; three metro employees lost their jobs; the opera's director resigned; and on 3 April 2014 the prime minister, Tigran Sargsyan, resigned. The scheme was postponed repeatedly and became compulsory only in July 2018.",
+      "summary_hy": "2013 թվականի հոկտեմբերից «Դեմ եմ» կոչվող արշավը կազմակերպվեց 2014 թվականի հունվարի 1-ից գործելիք պարտադիր կուտակային կենսաթոշակային համակարգի դեմ, որը 1974 թվականից հետո ծնվածների աշխատավարձից պահում էր մինչև տասը տոկոս։ Ֆեյսբուքում այն հասավ մոտ քառասունչորս հազար մարդու։ Մասնակցեց Հայաստանի տասներկու հազար ՏՏ աշխատողների մոտ ութսուն տոկոսը, ինչպես նաև իրավաբաններ, տնտեսագետներ, բժիշկներ, ուսուցիչներ, օպերայի և բալետի թատրոնի աշխատակիցները, ովքեր չեղարկեցին ներկայացումը, հարյուրից ավելի երկաթուղայիններ, մետրոյի աշխատակիցներ և Մեծամորի ատոմակայանի աշխատողներ։ Ավելի քան յոթանասուն ընկերություն պարզապես հրաժարվեց պահում կատարել։ Սահմանադրական դատարանը 2014-ի հունվարին կասեցրեց տույժերը և գործը լսեց մարտին, մետրոյի երեք աշխատակից կորցրեց աշխատանքը, օպերայի տնօրենը հրաժարական տվեց, իսկ 2014 թվականի ապրիլի 3-ին հրաժարական տվեց վարչապետ Տիգրան Սարգսյանը։ Համակարգը բազմիցս հետաձգվեց և պարտադիր դարձավ միայն 2018 թվականի հուլիսին։",
+      "summary_fa": "از اکتبر ۲۰۱۳ کارزاری به نام «دم ام»، یعنی من مخالفم، علیه نظام بازنشستگی انباشتی اجباری شکل گرفت که قرار بود از ۱ ژانویهٔ ۲۰۱۴ آغاز شود و تا ده درصد از حقوق همهٔ متولدان ۱۹۷۴ به بعد را کسر می‌کرد. در فیس‌بوک به حدود چهل‌وچهار هزار نفر رسید. حدود هشتاد درصد از دوازده هزار کارگر فناوری اطلاعات ارمنستان شرکت کردند؛ و نیز وکیلان، اقتصاددانان، پزشکان، معلمان، کارکنان تئاتر اپرا و باله که اجرایی را لغو کردند، بیش از صد کارگر راه‌آهن، کارکنان مترو و کارکنان نیروگاه هسته‌ای متسامور. بیش از هفتاد شرکت به‌سادگی از کسر کردن خودداری کردند. دادگاه قانون اساسی در ژانویهٔ ۲۰۱۴ جریمه‌ها را معلق کرد و در مارس پرونده را شنید؛ سه کارمند مترو کارشان را از دست دادند؛ مدیر اپرا استعفا داد؛ و در ۳ آوریل ۲۰۱۴ نخست‌وزیر، تیگران سرکیسیان، استعفا داد. اجرای نظام بارها به تعویق افتاد و تنها در ژوئیهٔ ۲۰۱۸ اجباری شد.",
+      "analysis": "This is the movement that leaves the least trace on a map and changed the most. Its sites are payrolls, and its tactic was refusal at the point where the money was taken rather than assembly at the point where the decision was announced. The one place it did use in the old way is Freedom Square, where the largest rally was held with four opposition parties present, and that is why it is anchored here.\n\nRead beside the fare protest, it completes the year's lesson. A movement wins when it can act at the point of extraction: the fare box, the wage slip, later the electricity bill. That is the thread this map follows from 2012 to 2015, and Electric Yerevan is where it finally meets the square again.",
+      "analysis_hy": "Սա այն շարժումն է, որը քարտեզի վրա ամենաքիչ հետք է թողնում և ամենաշատն է փոխել։ Նրա վայրերը աշխատավարձի թերթիկներն են, իսկ մարտավարությունը՝ հրաժարումն այնտեղ, որտեղ գումարը վերցվում է, այլ ոչ թե հավաքը այնտեղ, որտեղ որոշումը հայտարարվում է։ Միակ տեղը, որը այն օգտագործեց հին ձևով, Ազատության հրապարակն է, որտեղ անցկացվեց ամենամեծ հանրահավաքը՝ չորս ընդդիմադիր կուսակցությունների մասնակցությամբ, և հենց դրա համար կետը դրված է այստեղ։\n\nՍակագնային բողոքի կողքին կարդալով՝ այն ամբողջացնում է տարվա դասը։ Շարժումը հաղթում է, երբ կարող է գործել հանման կետում՝ վճարատուփ, աշխատավարձի թերթիկ, հետագայում՝ էլեկտրաէներգիայի հաշիվ։ Ահա այն թելը, որով այս քարտեզը գնում է 2012-ից 2015 թվականները, և «Էլեկտրիկ Երևանն» այն վայրն է, որտեղ այն վերջապես նորից հանդիպում է հրապարակին։",
+      "analysis_fa": "این جنبشی است که کمترین رد را روی نقشه می‌گذارد و بیشترین تغییر را ایجاد کرد. مکان‌هایش فیش‌های حقوقی‌اند، و تاکتیکش امتناع در همان نقطه‌ای بود که پول برداشته می‌شد، نه تجمع در نقطه‌ای که تصمیم اعلام می‌شد. تنها جایی که به شیوهٔ قدیمی از آن استفاده کرد میدان آزادی است، جایی که بزرگ‌ترین تجمع با حضور چهار حزب اپوزیسیون برگزار شد، و به همین دلیل نقطه اینجا گذاشته شده است.\n\nدر کنار اعتراض کرایه که خوانده شود، درسِ آن سال کامل می‌شود. جنبش وقتی می‌برد که بتواند در نقطهٔ برداشت عمل کند: صندوق کرایه، فیش حقوق، و بعدتر قبض برق. این همان رشته‌ای است که این نقشه از ۲۰۱۲ تا ۲۰۱۵ دنبال می‌کند، و ایروانِ برقی جایی است که سرانجام دوباره به میدان می‌رسد.",
+      "actors": [
+        "Dem Em (I am against)",
+        "Tigran Sargsyan",
+        "Constitutional Court of Armenia",
+        "IT workers",
+        "Opera and Ballet Theatre staff",
+        "South Caucasus Railway workers"
+      ],
+      "actors_hy": [
+        "«Դեմ եմ»",
+        "Տիգրան Սարգսյան",
+        "ՀՀ Սահմանադրական դատարան",
+        "ՏՏ աշխատողներ",
+        "Օպերայի և բալետի թատրոնի աշխատակիցներ",
+        "Հարավկովկասյան երկաթուղու աշխատողներ"
+      ],
+      "actors_fa": [
+        "«دم ام» (من مخالفم)",
+        "تیگران سرکیسیان",
+        "دادگاه قانون اساسی ارمنستان",
+        "کارگران فناوری اطلاعات",
+        "کارکنان تئاتر اپرا و باله",
+        "کارگران راه‌آهن قفقاز جنوبی"
+      ],
+      "tags": [
+        "pension reform",
+        "Dem Em",
+        "strike",
+        "workplaces",
+        "Facebook"
+      ],
+      "tags_hy": [
+        "կենսաթոշակային բարեփոխում",
+        "«Դեմ եմ»",
+        "գործադուլ",
+        "աշխատավայրեր",
+        "Ֆեյսբուք"
+      ],
+      "tags_fa": [
+        "اصلاح بازنشستگی",
+        "دم ام",
+        "اعتصاب",
+        "محل کار",
+        "فیس‌بوک"
+      ],
+      "sources": [
+        {
+          "title": "IWPR, 'Mass Protest Movement Against Armenian Pension Reform'",
+          "url": "https://iwpr.net/global-voices/mass-protest-movement-against-armenian-pension-reform"
+        },
+        {
+          "title": "RFE/RL, 'More Workers Join Protests Against Armenian Pension Reform', 10 February 2014",
+          "url": "https://www.azatutyun.am/a/25259456.html"
+        },
+        {
+          "title": "CIVILNET, 'Armenia Starting Mandatory Pension System: What You Need to Know'",
+          "url": "https://civilnet.am/en/news/382462/armenia-starting-mandatory-pension-system-what-you-need-to-know"
+        },
+        {
+          "title": "Asbarez, 'Thousands Protest Pension Reform'",
+          "url": "http://asbarez.com/118646/thousands-protest-pension-reform/"
+        }
+      ],
+      "media": [],
+      "episode": "protests-2013"
     }
   ],
   "episodes": [
@@ -6296,6 +7505,32 @@
       "spur": {
         "kind": "events"
       }
+    },
+    {
+      "id": "protests-2013",
+      "label": "The 2013 protests",
+      "label_hy": "2013-ի բողոքները",
+      "label_fa": "اعتراض‌های ۲۰۱۳",
+      "start": "2013-02-19",
+      "end": "2014-04-03",
+      "color": "#78893f",
+      "note": "A year with two grammars. The election protest of February to April kept to Freedom Square and the walk up Baghramyan, and lost. The fare protest of July worked at bus stops and at the Municipality door, and won in six days. The pension movement that follows works inside workplaces and brings down a prime minister.",
+      "note_hy": "Երկու քերականությամբ տարի։ Փետրվար-ապրիլի ընտրական բողոքը մնաց Ազատության հրապարակում և Բաղրամյանով վեր քայլելու մեջ, և պարտվեց։ Հուլիսի սակագնային բողոքը գործեց կանգառներում և քաղաքապետարանի դռան մոտ, և հաղթեց վեց օրում։ Հետևող կենսաթոշակային շարժումը գործում է աշխատավայրերի ներսում և տապալում է վարչապետին։",
+      "note_fa": "سالی با دو دستور زبان. اعتراض انتخاباتیِ فوریه تا آوریل در میدان آزادی و در بالا رفتن از باغرامیان ماند، و باخت. اعتراض کرایهٔ ژوئیه در ایستگاه‌ها و جلوی در شهرداری کار کرد، و در شش روز برد. جنبش بازنشستگیِ پس از آن در درون محل کار عمل می‌کند و نخست‌وزیر را برکنار می‌کند.",
+      "spur": {
+        "kind": "events"
+      },
+      "cube": true,
+      "umbrella": "protests-2013",
+      "cubeTitle": "The year the distance changed",
+      "cubeTitle_hy": "Տարին, երբ հեռավորությունը փոխվեց",
+      "cubeTitle_fa": "سالی که فاصله تغییر کرد",
+      "cubeBody": "Time stands up off the map, 19 February 2013 to 3 April 2014. A disc is an entry on its day, a column is a place holding still, and the tallest column here is a hunger strike of twenty-one days in Freedom Square. Notice how the year moves west and south, from the square and the avenue in spring to the Municipality in July.",
+      "cubeBody_hy": "Ժամանակը կանգնում է քարտեզից վեր՝ 2013-ի փետրվարի 19-ից մինչև 2014-ի ապրիլի 3-ը։ Կետը գրառում է իր օրվա վրա, սյունը՝ տեղ, որը մնում է անշարժ, և ամենաբարձր սյունը Ազատության հրապարակի քսանմեկօրյա հացադուլն է։ Նկատեք, թե ինչպես է տարին շարժվում դեպի արևմուտք և հարավ՝ գարնան հրապարակից ու պողոտայից դեպի հուլիսի քաղաքապետարանը։",
+      "cubeBody_fa": "زمان از روی نقشه بلند می‌شود، از ۱۹ فوریهٔ ۲۰۱۳ تا ۳ آوریل ۲۰۱۴. هر دایره یک مدخل در روز خودش است، هر ستون جایی که ثابت مانده، و بلندترین ستون اینجا اعتصاب غذای بیست‌ویک‌روزه در میدان آزادی است. ببینید سال چگونه به غرب و جنوب می‌رود: از میدان و خیابانِ بهار تا شهرداریِ ژوئیه.",
+      "cubeMethod": "Dated to the day, except the pension movement, which is dated to the month because it had no single day. The 9 April march is drawn along the OpenStreetMap centreline of Baghramyan from Freedom Square to the Isahakyan junction, 426 m, which left it 769 m short of Baghramyan 26. The 5 November march is placed at the middle of Mashtots Avenue, because the sources name the avenue and not the block.",
+      "cubeMethod_hy": "Ամսաթվերը օրվա ճշտությամբ են, բացի կենսաթոշակային շարժումից, որը ամսվա ճշտությամբ է, քանի որ մեկ օր չուներ։ Ապրիլի 9-ի երթը գծված է Բաղրամյանի OpenStreetMap-ի առանցքագծով՝ Ազատության հրապարակից մինչև Իսահակյանի խաչմերուկ, 426 մետր, ինչը այն թողեց Բաղրամյան 26-ից 769 մետր առաջ։ Նոյեմբերի 5-ի երթը դրված է Մաշտոցի պողոտայի միջնամասում, քանի որ աղբյուրները նշում են պողոտան, ոչ թե հատվածը։",
+      "cubeMethod_fa": "تاریخ‌ها در حد روز است، جز جنبش بازنشستگی که در حد ماه است چون روز واحدی نداشت. راهپیمایی ۹ آوریل بر خط میانی باغرامیان در OpenStreetMap ترسیم شده، از میدان آزادی تا تقاطع ایساهاکیان، ۴۲۶ متر، که ۷۶۹ متر مانده به باغرامیان ۲۶ متوقفش کرد. راهپیمایی ۵ نوامبر در میانهٔ خیابان ماشتوتس گذاشته شده، چون منابع خیابان را نام می‌برند و بلوک را نه."
     },
     {
       "id": "soad-2015",
