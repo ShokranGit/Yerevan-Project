@@ -4104,10 +4104,13 @@
           var tryLeft = Math.max(rows[r], want);
           if (tryLeft + cw <= w) { row = r; left = tryLeft; break; }
         }
-        if (row < 0) {                       /* nothing fits; use the emptiest row */
+        if (row < 0) {
+          /* Nothing fits. Use the emptiest row, and clamp the chip to the right
+             edge rather than sending it back to zero: a period from 1988 must
+             not appear to start in 1900 because its label is wide. */
           row = 0;
           for (r = 1; r < MAX_ROWS; r++) if (rows[r] < rows[row]) row = r;
-          left = rows[row];
+          left = Math.max(0, Math.min(want, w - cw));
         }
         used = Math.max(used, row + 1);
         c.style.left = Math.round(left) + "px";
