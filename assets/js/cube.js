@@ -318,7 +318,8 @@
     var ticks = [];
     var tickLen = (box[2] - box[0]) * 0.05;
     var days = (T1 - T0) / 86400000;
-    var grain = days <= 60 ? "day" : (days <= 400 ? "week" : "month");
+    var grain = days <= 60 ? "day" : (days <= 200 ? "week" : "month");
+    var longRun = days > 1200;      /* years, rather than quarters, get the labels */
 
     function nextTick(ms) {
       if (grain === "day") return ms + 86400000;
@@ -330,7 +331,7 @@
       var d = new Date(ms);
       if (grain === "day") return d.getUTCDay() === 6;
       if (grain === "week") return d.getUTCDate() <= 7;
-      return d.getUTCMonth() === 0;
+      return longRun ? d.getUTCMonth() === 0 : d.getUTCMonth() % 3 === 0;
     }
     /* Start on the grain rather than on the first day of the period, so
        the ticks fall on weeks and months and not on an arbitrary offset. */
@@ -348,7 +349,7 @@
       var L = major ? tickLen * 2.1 : tickLen;
       seg([anchor[0], anchor[1], z], [anchor[0] + L, anchor[1], z], COL.box, major ? 0.38 : 0.16);
       ticks.push({ ms: ms2, p: [anchor[0] + L * 1.25, anchor[1], z],
-                   major: major, grain: grain });
+                   major: major, grain: grain, longRun: longRun });
     }
     seg([anchor[0], anchor[1], 0], [anchor[0], anchor[1], H], COL.box, 0.40, 0.18);
 
@@ -537,11 +538,14 @@
   }
 
   var MONTH = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  function tickLabel(ms, grain) {
+  function tickLabel(ms, grain, longRun) {
     var d = new Date(ms), day = d.getUTCDate(), mo = d.getUTCMonth();
     var name = (window.I18N && I18N.month) ? I18N.month(mo) : MONTH[mo];
     var num = function (v) { return (window.I18N && I18N.num) ? I18N.num(v) : String(v); };
-    if (grain === "month") return num(d.getUTCFullYear());
+    if (grain === "month") {
+      if (longRun || mo === 0) return num(d.getUTCFullYear());
+      return (name || MONTH[mo]);
+    }
     if (grain === "week") return (name || MONTH[mo]);
     return num(day) + " " + (name || MONTH[mo]);
   }
@@ -553,7 +557,7 @@
       if (!k.major) return;
       var s = project(k.p); if (!s) return;
       html.push('<span class="cb-tick" style="left:' + s.x.toFixed(1) + 'px;top:' +
-                s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain) + '</span>');
+                s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain, k.longRun) + '</span>');
     });
     geo.steps.forEach(function (st, i) {
       if (i === 0 || i === geo.steps.length - 1) {
