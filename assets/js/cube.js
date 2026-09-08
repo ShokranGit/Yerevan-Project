@@ -87,6 +87,7 @@
     return {
       id: ep.id, ep: ep, t0: t0, t1: t1,
       umbrella: ep.umbrella || null,
+      cubeWarp: ep.cubeWarp || null,
       walk: (ep.walk && ep.walk.stops && ep.walk.stops.length > 1) ? ep.walk : null,
       line: line, stay: lift(line, 0.07)
     };
@@ -246,7 +247,32 @@
       return p[0] < box[0] || p[0] > box[2] || p[1] < box[1] || p[1] > box[3];
     }
 
-    function alt(ms) { return (ms - T0) / (T1 - T0) * H; }
+    /* --- the time axis, which is not always linear.
+
+           A period that runs sixteen years but whose weight is in the last
+           ten can declare a warp on its episode:
+
+             "cubeWarp": { "at": "2008-01-01", "below": 0.2 }
+
+           The years before `at` are then compressed into the bottom `below`
+           of the column and the years after it get the rest, so the decade
+           that carries the argument is literally bigger. The change of scale
+           is drawn — a hatched band at the seam — and said in the caption,
+           because a silently non-uniform axis would be a lie.
+
+           This is safe here only because nothing in these cubes is a
+           trajectory: they are discrete events, and there is no slope whose
+           meaning a broken scale would corrupt. Give a period a `walk` and
+           the warp must go. --- */
+    var TW = cur.cubeWarp ? dayMs(cur.cubeWarp.at) : null;
+    var WF = cur.cubeWarp ? Math.max(0.05, Math.min(0.6, +cur.cubeWarp.below || 0.2)) : 0;
+    var warped = TW !== null && TW > T0 && TW < T1 && WF > 0 && !cur.walk;
+
+    function alt(ms) {
+      if (!warped) return (ms - T0) / (T1 - T0) * H;
+      if (ms <= TW) return (ms - T0) / (TW - T0) * WF * H;
+      return (WF + (ms - TW) / (T1 - TW) * (1 - WF)) * H;
+    }
 
     var nodes = [], segs = [];
     function seg(a, b, col, a1, a2) {
@@ -260,7 +286,11 @@
       var end = dayMs(e.dateEnd);
       var p = [e.coordinates[0], e.coordinates[1], alt(ms)];
       var n = { id: e.id, e: e, ms: ms, p: p,
-                title: pick(e, "title"), place: pick(e, "location") };
+                title: pick(e, "title"), place: pick(e, "location"),
+                /* Under a warp the compressed years recede: same hue, less
+                   of it, and a smaller disc. They are the approach ramp,
+                   still countable, no longer the argument. */
+                dim: (warped && ms < TW) ? 0.55 : 1 };
       /* An entry that lasts is a column: the sit-in at France Square
          held that corner for ten days and the drawing should say so. */
       if (end && end > ms && !(cur.walk && e.id === cur.walk.entry)) {
@@ -411,10 +441,44 @@
     for (var ms2 = first; ms2 <= T1; ms2 = nextTick(ms2)) {
       var z = alt(ms2);
       var major = isMajor(ms2);
+      /* Under a warp the compressed years keep their year marks and lose
+         everything finer: the grain itself then says where the resolution
+         is, before anyone reads a label. */
+      if (warped && ms2 < TW && !major) continue;
+      /* Over eighteen years a monthly comb is not a grain, it is a grey
+         panel two hundred marks deep. A period this long is ruled by its
+         years alone, which also leaves the hatched seam as the only
+         hatching in the drawing, which is the point of it. */
+      if (longRun && !major) continue;
       var L = major ? tickLen * 2.1 : tickLen;
-      seg([anchor[0], anchor[1], z], [anchor[0] + L, anchor[1], z], COL.box, major ? 0.38 : 0.16);
-      ticks.push({ ms: ms2, p: [anchor[0] + L * 1.25, anchor[1], z],
+      /* Ticks and labels hang OUTSIDE the volume, to the west of it. Drawn
+         inward they land on top of the discs, and on a cube whose ground is
+         a few streets wide that is every disc it has. */
+      seg([anchor[0], anchor[1], z], [anchor[0] - L, anchor[1], z], COL.box, major ? 0.38 : 0.16);
+      ticks.push({ ms: ms2, p: [anchor[0] - L * 1.6 - tickLen * 1.2, anchor[1], z],
                    major: major, grain: grain, longRun: longRun });
+    }
+
+    /* The seam: a hatched band across the ruler where the scale changes,
+       so the break is visible from any angle and not only in the caption. */
+    if (warped) {
+      var zs = WF * H, w = box[2] - box[0], h2 = box[3] - box[1];
+      /* A full ring at the height where the scale breaks, so the seam is
+         visible from any bearing and cannot be mistaken for one more year. */
+      var cs = [[box[0], box[1]], [box[2], box[1]], [box[2], box[3]], [box[0], box[3]]];
+      for (var si = 0; si < 4; si++) {
+        seg([cs[si][0], cs[si][1], zs], [cs[(si + 1) % 4][0], cs[(si + 1) % 4][1], zs],
+            COL.box, 0.42);
+      }
+      /* and hatching on the ruler's own side, where the eye already is */
+      var hatch = 9;
+      for (var hk = 0; hk <= hatch; hk++) {
+        var y0 = box[1] + h2 * (hk / (hatch + 1));
+        seg([box[0], y0, zs - H * 0.010], [box[0], y0 + h2 * 0.06, zs + H * 0.010],
+            COL.box, 0.34);
+      }
+      /* a short spur out to where the ruler hangs, tying the two together */
+      seg([box[0], box[3], zs], [box[0] - tickLen * 3.2, box[3], zs], COL.box, 0.42);
     }
     seg([anchor[0], anchor[1], 0], [anchor[0], anchor[1], H], COL.box, 0.40, 0.18);
 
@@ -547,11 +611,12 @@
           });
           geo.nodes.forEach(function (n) {
             var p = merc(n.p), f = litFactor(geo, n.p[2]);
-            var big = (hover === n.id) ? 15 : 10;
+            var dim = n.dim == null ? 1 : n.dim;
+            var big = ((hover === n.id) ? 15 : 10) * (dim < 1 ? 0.78 : 1);
             var c = geo.col.line;
             /* a coloured halo, then the ivory disc inside it */
-            D.push(p[0], p[1], p[2], c[0], c[1], c[2], 0.85 * f, big * dpr);
-            D.push(p[0], p[1], p[2], COL.node[0], COL.node[1], COL.node[2], 0.95 * f, (big - 5) * dpr);
+            D.push(p[0], p[1], p[2], c[0], c[1], c[2], 0.85 * f * dim, big * dpr);
+            D.push(p[0], p[1], p[2], COL.node[0], COL.node[1], COL.node[2], 0.95 * f * dim, Math.max(3, big - 5) * dpr);
           });
         });
 
@@ -631,12 +696,36 @@
        which period the labelled ruler belongs to. */
     var ruler = primary();
     LIVE.forEach(function (geo) {
+      /* Labels are thinned by measurement rather than by rule. A warped
+         axis crushes its compressed years into a few dozen pixels and a
+         zoomed-out cube crushes all of them, so the ruler collects its
+         candidates, sorts them down the screen and keeps only those far
+         enough apart to read. The two ends are always kept: a ruler whose
+         first and last years are missing is not a ruler. */
+      var cand = [];
       geo.ticks.forEach(function (k) {
         if (!k.major || geo !== ruler) return;
         var s = project(k.p); if (!s) return;
-        html.push('<span class="cb-tick" style="left:' + s.x.toFixed(1) + 'px;top:' +
-                  s.y.toFixed(1) + 'px">' + tickLabel(k.ms, k.grain, k.longRun) + '</span>');
+        cand.push({ y: s.y, x: s.x, k: k });
       });
+      if (cand.length) {
+        cand.sort(function (a, b) { return a.y - b.y; });
+        var GAP = 13, kept = [cand[0]];
+        for (var ci = 1; ci < cand.length; ci++) {
+          var last = kept[kept.length - 1];
+          if (Math.abs(cand[ci].y - last.y) >= GAP) kept.push(cand[ci]);
+        }
+        /* the bottom end, even if it lost to the gap on the way down */
+        var bottom = cand[cand.length - 1];
+        if (kept[kept.length - 1] !== bottom) {
+          if (Math.abs(bottom.y - kept[kept.length - 1].y) < GAP) kept.pop();
+          kept.push(bottom);
+        }
+        kept.forEach(function (c) {
+          html.push('<span class="cb-tick" style="left:' + c.x.toFixed(1) + 'px;top:' +
+                    c.y.toFixed(1) + 'px">' + tickLabel(c.k.ms, c.k.grain, c.k.longRun) + '</span>');
+        });
+      }
       geo.steps.forEach(function (st, i) {
         if (i === 0 || i === geo.steps.length - 1) {
           var s = project(st.p); if (!s) return;
