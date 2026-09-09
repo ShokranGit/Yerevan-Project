@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد.",
-  "version": "20260909c"
+  "version": "20260909d"
  },
  "categories": [
   {
@@ -1906,8 +1906,8 @@
    "date": "1924",
    "datePrecision": "year",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51469,
+    40.18219
    ],
    "location": "Northern Avenue corridor, Kentron",
    "categories": [
@@ -6014,8 +6014,8 @@
    "dateEnd": "2010",
    "datePrecision": "year",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51469,
+    40.18219
    ],
    "location": "Northern Avenue, Kentron",
    "categories": [
@@ -9326,9 +9326,14 @@
      "note": "The source for the date of the regulator's decision, 17 June, for the five-member commission, and for the twenty thousand on the avenue on the evening of 26 June."
     },
     {
-     "title": "Civic Solidarity Platform, 'Armenia: human rights violations against peaceful protesters'",
-     "url": "http://www.civicsolidarity.org/article/1110/armenia-human-rights-violations-against-peaceful-protesters",
-     "note": "The minute by minute account of the dawn of 23 June: the 05:20 warning, the water cannon at about 05:30, 237 detentions, 25 ambulance calls, fifteen hospitalised, the journalists named one by one."
+     "title": "Amnesty International, 'Armenia: Investigate alleged police abuses after protesters doused with water cannon and arrested', 23 June 2015",
+     "url": "https://www.amnesty.org/en/latest/news/2015/06/armenia-investigate-alleged-police-abuses-after-protesters-doused-with-water-cannon-and-arrested/",
+     "note": "Written the same morning: the Yerevan police figure of 237 arrested and twelve more in Gyumri, the water cannon at about half past five, the police claim of seven protesters and eleven officers injured, and the confiscated and damaged press equipment."
+    },
+    {
+     "title": "Council of Europe, Platform for the Safety of Journalists, alert no. 36/2015, 'Journalists Beaten and Arrested while Covering Protest Demonstration'",
+     "url": "https://fom.coe.int/en/alerte/detail/12102291",
+     "note": "Thirteen journalists and camera operators assaulted and eleven detained on 23 June 2015; and, in the closure of 29 November 2024, the three police officers convicted and fined by the Kentron and Nork-Marash district courts on 20 February 2017."
     },
     {
      "title": "ANCA / Asbarez, 'Electric Yerevan: Police Unblock Baghramyan Avenue', 6 July 2015",
@@ -9469,10 +9474,10 @@
      "note_fa": "راهپیمایی در باغرامیان نزد خیابان دمیرچیان متوقف می‌شود و می‌نشیند. اشغال آغاز می‌شود."
     },
     {
-     "when": "23 June, 05:30",
-     "note": "Water cannon. 237 detained, fifteen hospitalised, at least seven journalists beaten.",
-     "note_hy": "Ջրցան։ 237 ձերբակալված, տասնհինգը հիվանդանոցում, առնվազն յոթ լրագրող ծեծված։",
-     "note_fa": "آب‌پاش. ۲۳۷ بازداشت، پانزده بستری، دست‌کم هفت خبرنگار کتک‌خورده."
+     "when": "23 June, about 05:30",
+     "note": "Water cannon at about 05:30. 237 arrested, more than twenty taken to hospital, thirteen journalists and camera operators assaulted and eleven detained.",
+     "note_hy": "Ջրցան՝ մոտ 05:30-ին։ 237 ձերբակալված, ավելի քան քսանը՝ հիվանդանոցում, տասներեք լրագրող և օպերատոր՝ բռնության ենթարկված, տասնմեկը՝ ձերբակալված։",
+     "note_fa": "آب‌پاش حدود ۰۵:۳۰. ۲۳۷ بازداشت، بیش از بیست نفر بستری، سیزده خبرنگار و تصویربردار مورد خشونت و یازده نفر بازداشت."
     },
     {
      "when": "24 to 26 June",
@@ -9771,6 +9776,7 @@
    "actors": [
     "Valery Osipyan",
     "Levon Yeranosyan",
+    "Hunan Poghosyan",
     "Hovhannes Ishkhanyan"
    ],
    "tags": [
@@ -9781,9 +9787,14 @@
    ],
    "sources": [
     {
-     "title": "Civic Solidarity Platform, 'Armenia: human rights violations against peaceful protesters'",
-     "url": "http://www.civicsolidarity.org/article/1110/armenia-human-rights-violations-against-peaceful-protesters",
-     "note": "The minute by minute account of the dawn of 23 June: the 05:20 warning, the water cannon at about 05:30, 237 detentions, 25 ambulance calls, fifteen hospitalised, the journalists named one by one."
+     "title": "Amnesty International, 'Armenia: Investigate alleged police abuses after protesters doused with water cannon and arrested', 23 June 2015",
+     "url": "https://www.amnesty.org/en/latest/news/2015/06/armenia-investigate-alleged-police-abuses-after-protesters-doused-with-water-cannon-and-arrested/",
+     "note": "Written the same morning: the Yerevan police figure of 237 arrested and twelve more in Gyumri, the water cannon at about half past five, the police claim of seven protesters and eleven officers injured, and the confiscated and damaged press equipment."
+    },
+    {
+     "title": "Council of Europe, Platform for the Safety of Journalists, alert no. 36/2015, 'Journalists Beaten and Arrested while Covering Protest Demonstration'",
+     "url": "https://fom.coe.int/en/alerte/detail/12102291",
+     "note": "Thirteen journalists and camera operators assaulted and eleven detained on 23 June 2015; and, in the closure of 29 November 2024, the three police officers convicted and fined by the Kentron and Nork-Marash district courts on 20 February 2017."
     },
     {
      "title": "PanARMENIAN, on the European Court of Human Rights in Ishkhanyan v. Armenia",
@@ -9813,20 +9824,22 @@
    "location": "Baghramyan Avenue at Derenik Demirchyan Street",
    "location_hy": "Բաղրամյան պողոտա՝ Դերենիկ Դեմիրճյան փողոցի մոտ",
    "location_fa": "خیابان باغرامیان، تقاطع درنیک دمیرچیان",
-   "summary": "At 05:20 the deputy chief of the Yerevan police, Valery Osipyan, declares the sit-in unlawful and gives a warning. At about 05:30 two water cannon are turned on three to four hundred seated people. Two hundred and thirty-seven are detained, twenty-five ambulances are called, fifteen go to hospital. At least seven journalists are beaten and three cameras destroyed.",
-   "summary_hy": "Ժամը 05:20-ին Երևանի ոստիկանության պետի տեղակալ Վալերի Օսիպյանը նստացույցն անօրինական է հայտարարում և նախազգուշացնում։ Մոտ 05:30-ին երկու ջրցան մեքենա ուղղվում է երեք-չորս հարյուր նստած մարդու վրա։ Ձերբակալվում է երկու հարյուր երեսունյոթը, կանչվում է քսանհինգ շտապօգնություն, տասնհինգը հայտնվում է հիվանդանոցում։ Ծեծի է ենթարկվում առնվազն յոթ լրագրող, ոչնչացվում է երեք տեսախցիկ։",
-   "summary_fa": "ساعت ۰۵:۲۰ معاون رئیس پلیس ایروان، والری اوسیپیان، تحصن را غیرقانونی اعلام و اخطار می‌دهد. حدود ۰۵:۳۰ دو آب‌پاش به‌روی سیصد تا چهارصد نفر نشسته گشوده می‌شود. دویست و سی و هفت نفر بازداشت، بیست و پنج آمبولانس فراخوانده و پانزده نفر بستری می‌شوند. دست‌کم هفت خبرنگار کتک می‌خورند و سه دوربین نابود می‌شود.",
-   "analysis": "The beating of the press is the part that decided the week. The cameras were broken in front of other cameras, the footage was on the internet by breakfast, and the crowd that came back that evening was several times the size of the one that had been cleared. A dispersal that works removes people from a place; this one moved them from their homes to the avenue. Six years later the European Court of Human Rights ruled on one of the detentions, the journalist Hovhannes Ishkhanyan, and found that seven hours in a police station in wet clothes had no lawful ground and violated his freedom of assembly.",
-   "analysis_hy": "Մամուլի ծեծն է որոշել այդ շաբաթը։ Տեսախցիկները կոտրվել են այլ տեսախցիկների առջև, կադրերը նախաճաշին արդեն համացանցում էին, և այդ երեկո վերադարձած ամբոխը մի քանի անգամ մեծ էր ցրվածից։ Հաջողված ցրումը մարդկանց հեռացնում է տեղից. սա նրանց տներից տեղափոխեց պողոտա։ Վեց տարի անց Մարդու իրավունքների եվրոպական դատարանը վճռեց ձերբակալություններից մեկի՝ լրագրող Հովհաննես Իշխանյանի վերաբերյալ և գտավ, որ թաց հագուստով ոստիկանությունում անցկացրած յոթ ժամը օրինական հիմք չուներ և խախտում էր նրա հավաքների ազատությունը։",
-   "analysis_fa": "کتک‌خوردن خبرنگاران همان چیزی است که سرنوشت آن هفته را رقم زد. دوربین‌ها پیش چشم دوربین‌های دیگر شکسته شد، تصویرها تا وقت صبحانه در اینترنت بود، و جمعیتی که آن شب بازگشت چند برابر جمعیتی بود که پراکنده شده بود. پراکندنِ موفق مردم را از جایی برمی‌دارد؛ این یکی آن‌ها را از خانه‌هایشان به خیابان آورد. شش سال بعد دادگاه اروپایی حقوق بشر دربارهٔ یکی از بازداشت‌ها، خبرنگار هوهانس ایشخانیان، رأی داد که هفت ساعت در کلانتری با لباس خیس هیچ مبنای قانونی نداشته و آزادی تجمع او را نقض کرده است.",
+   "summary": "At about half past five in the morning two water cannon are turned on a sit-in that had held the carriageway since the evening of 22 June. Yerevan police put the number arrested at two hundred and thirty-seven, with twelve more the same night in Gyumri; more than twenty people were taken to hospital with bruises and fractures. Thirteen journalists and camera operators were assaulted and eleven detained, cameras confiscated and smashed, several of them after showing press accreditation.",
+   "summary_hy": "Առավոտյան մոտ հինգն անց կես երկու ջրցան մեքենա ուղղվում է նստացույցի վրա, որը հունիսի 22-ի երեկոյից պահում էր երթևեկելի մասը։ Երևանի ոստիկանությունը ձերբակալվածների թիվը նշում է երկու հարյուր երեսունյոթ, նույն գիշերը Գյումրիում՝ ևս տասներկու. ավելի քան քսան մարդ կապտուկներով և կոտրվածքներով տեղափոխվել է հիվանդանոց։ Տասներեք լրագրող և օպերատոր ենթարկվել է բռնության, տասնմեկը՝ ձերբակալվել, տեսախցիկները բռնագրավվել և ջարդվել են, մի քանիսը՝ լրագրողական վկայական ցույց տալուց հետո։",
+   "summary_fa": "حدود پنج و نیم بامداد دو آب‌پاش به‌روی تحصنی گشوده می‌شود که از غروب ۲۲ ژوئن سواره‌رو را نگاه داشته بود. پلیس ایروان شمار بازداشتی‌ها را دویست و سی و هفت نفر اعلام می‌کند، به‌علاوهٔ دوازده نفر در همان شب در گیومری؛ بیش از بیست نفر با کوفتگی و شکستگی به بیمارستان برده شدند. سیزده خبرنگار و تصویربردار مورد خشونت قرار گرفتند و یازده نفر بازداشت شدند، دوربین‌ها ضبط و شکسته شد، چند نفر پس از نشان دادن کارت مطبوعاتی.",
+   "analysis": "The beating of the press is the part that decided the week. The cameras were broken in front of other cameras, the footage was on the internet by breakfast, and the crowd that came back that evening was several times the size of the one that had been cleared. A dispersal that works removes people from a place; this one moved them from their homes to the avenue. Two things followed at law and both took years. On 20 February 2017 the Kentron and Nork-Marash district courts convicted three police officers of obstructing journalistic activity and of wilful destruction of property, and fined them; on that basis the Council of Europe closed its alert, in 2024. And in 2025 the European Court of Human Rights ruled on one of the detentions, the journalist Hovhannes Ishkhanyan, finding that seven hours in a police station in wet clothes had no lawful ground and violated his freedom of assembly. Nine and ten years, for a morning.",
+   "analysis_hy": "Մամուլի ծեծն է որոշել այդ շաբաթը։ Տեսախցիկները կոտրվել են այլ տեսախցիկների առջև, կադրերը նախաճաշին արդեն համացանցում էին, և այդ երեկո վերադարձած ամբոխը մի քանի անգամ մեծ էր ցրվածից։ Հաջողված ցրումը մարդկանց հեռացնում է տեղից. սա նրանց տներից տեղափոխեց պողոտա։ Իրավական երկու հետևանք եղավ, և երկուսն էլ տարիներ տևեցին։ 2017 թվականի փետրվարի 20-ին Կենտրոն և Նորք-Մարաշ վարչական շրջանների դատարանները երեք ոստիկանի մեղավոր ճանաչեցին լրագրողական գործունեությանը խոչընդոտելու և գույքի դիտավորյալ ոչնչացման համար և տուգանեցին. այդ հիմքով Եվրոպայի խորհուրդը 2024-ին փակեց իր ահազանգը։ 2025-ին Մարդու իրավունքների եվրոպական դատարանը վճռեց ձերբակալություններից մեկի՝ լրագրող Հովհաննես Իշխանյանի վերաբերյալ և գտավ, որ թաց հագուստով ոստիկանությունում անցկացրած յոթ ժամը օրինական հիմք չուներ և խախտում էր նրա հավաքների ազատությունը։",
+   "analysis_fa": "کتک‌خوردن خبرنگاران همان چیزی است که سرنوشت آن هفته را رقم زد. دوربین‌ها پیش چشم دوربین‌های دیگر شکسته شد، تصویرها تا وقت صبحانه در اینترنت بود، و جمعیتی که آن شب بازگشت چند برابر جمعیتی بود که پراکنده شده بود. پراکندنِ موفق مردم را از جایی برمی‌دارد؛ این یکی آن‌ها را از خانه‌هایشان به خیابان آورد. دو پیامد حقوقی در پی آمد و هر دو سال‌ها طول کشید. در ۲۰ فوریهٔ ۲۰۱۷ دادگاه‌های کنترون و نورک-ماراش سه افسر پلیس را به اتهام ممانعت از فعالیت خبرنگاری و تخریب عمدی اموال محکوم و جریمه کردند؛ بر همین اساس شورای اروپا در ۲۰۲۴ هشدار خود را بست. و در ۲۰۲۵ دادگاه اروپایی حقوق بشر دربارهٔ یکی از بازداشت‌ها، خبرنگار هوهانس ایشخانیان، رأی داد که هفت ساعت در کلانتری با لباس خیس هیچ مبنای قانونی نداشته و آزادی تجمع او را نقض کرده است.",
    "actors_hy": [
     "Վալերի Օսիպյան",
     "Լևոն Երանոսյան",
+    "Հունան Պողոսյան",
     "Հովհաննես Իշխանյան"
    ],
    "actors_fa": [
     "والری اوسیپیان",
     "لوون یرانوسیان",
+    "هونان پوغوسیان",
     "هوهانس ایشخانیان"
    ],
    "tags_hy": [
@@ -10519,6 +10532,75 @@
    "episode": "electric-yerevan"
   },
   {
+   "id": "police-convicted-2017-02-20",
+   "title": "20 February 2017: three officers fined for the cameras",
+   "title_hy": "2017 փետրվարի 20. երեք ոստիկան տուգանվում է տեսախցիկների համար",
+   "title_fa": "۲۰ فوریهٔ ۲۰۱۷: سه افسر برای دوربین‌ها جریمه می‌شوند",
+   "date": "2017-02-20",
+   "datePrecision": "day",
+   "coordinates": [
+    44.51417,
+    40.17137
+   ],
+   "location": "Court of Kentron and Nork-Marash Districts, Yerevan",
+   "location_hy": "Կենտրոն և Նորք-Մարաշ վարչական շրջանների դատարան, Երևան",
+   "location_fa": "دادگاه بخش‌های کنترون و نورک-ماراش، ایروان",
+   "categories": [
+    "state",
+    "protest"
+   ],
+   "episode": "electric-yerevan",
+   "actors": [
+    "Kentron and Nork-Marash district courts",
+    "Council of Europe Platform for the Safety of Journalists"
+   ],
+   "actors_hy": [
+    "Կենտրոն և Նորք-Մարաշ վարչական շրջանների դատարաններ",
+    "Եվրոպայի խորհրդի լրագրողների անվտանգության հարթակ"
+   ],
+   "actors_fa": [
+    "دادگاه‌های بخش‌های کنترون و نورک-ماراش",
+    "سکوی ایمنی خبرنگاران شورای اروپا"
+   ],
+   "tags": [
+    "press freedom",
+    "accountability",
+    "Electric Yerevan",
+    "courts"
+   ],
+   "tags_hy": [
+    "մամուլի ազատություն",
+    "հաշվետվողականություն",
+    "Էլեկտրիկ Երևան",
+    "դատարաններ"
+   ],
+   "tags_fa": [
+    "آزادی مطبوعات",
+    "پاسخ‌گویی",
+    "ایروان برقی",
+    "دادگاه‌ها"
+   ],
+   "media": [],
+   "summary": "Twenty months after the dawn on Baghramyan, the Kentron and Nork-Marash district courts convict three police officers of obstructing journalistic activity and of wilful destruction of property, and fine them. No one is convicted for the water cannon, the arrests, or the injuries: the only offence the courts find is the broken equipment.",
+   "summary_hy": "Բաղրամյանի լուսադեմից քսան ամիս անց Կենտրոն և Նորք-Մարաշ վարչական շրջանների դատարանները երեք ոստիկանի մեղավոր են ճանաչում լրագրողական գործունեությանը խոչընդոտելու և գույքի դիտավորյալ ոչնչացման համար և տուգանում։ Ոչ ոք չի դատապարտվում ջրցանի, ձերբակալությունների կամ վնասվածքների համար. դատարանների գտած միակ հանցագործությունը ջարդված սարքավորումն է։",
+   "summary_fa": "بیست ماه پس از آن سحرگاه در باغرامیان، دادگاه‌های بخش‌های کنترون و نورک-ماراش سه افسر پلیس را به ممانعت از فعالیت خبرنگاری و تخریب عمدی اموال محکوم و جریمه می‌کنند. هیچ‌کس بابت آب‌پاش، بازداشت‌ها یا مصدومیت‌ها محکوم نمی‌شود: تنها جرمی که دادگاه‌ها می‌یابند تجهیزات شکسته است.",
+   "analysis": "This is what accountability looked like, and its shape is the argument. The state answered for the property and not for the bodies. Damaged cameras are countable, itemised and owned; a hosed crowd is none of those things, and the two hundred and thirty-seven arrests were processed as the policing of an unlawful assembly rather than as a harm requiring an answer. The court that issued the fines sits two and a half kilometres south of the carriageway it was ruling about, in the part of the city where the state does its paperwork rather than its politics. Eight years after the judgment the Council of Europe treated it as sufficient and closed the file; that same year, in a different courtroom in Strasbourg, one of the detentions was found to have had no lawful ground at all.",
+   "analysis_hy": "Ահա թե ինչ տեսք ուներ հաշվետվողականությունը, և հենց այդ ձևն է փաստարկը։ Պետությունը պատասխան տվեց գույքի, ոչ թե մարմինների համար։ Վնասված տեսախցիկները հաշվելի են, ցուցակագրվող և սեփականություն ունեցող. ջրով ցրված ամբոխը դրանցից ոչ մեկը չէ, և երկու հարյուր երեսունյոթ ձերբակալությունը մշակվեց որպես անօրինական հավաքի ոստիկանական կարգավորում, ոչ թե որպես վնաս, որը պատասխան է պահանջում։ Տուգանքները նշանակած դատարանը գտնվում է իր քննած երթևեկելի մասից երկուսուկես կիլոմետր հարավ՝ քաղաքի այն մասում, որտեղ պետությունն իր թղթաբանությունն է անում, ոչ թե իր քաղաքականությունը։",
+   "analysis_fa": "پاسخ‌گویی این شکل را داشت، و همین شکل استدلال است. دولت بابت اموال پاسخ داد، نه بابت بدن‌ها. دوربین‌های آسیب‌دیده شمردنی، فهرست‌شدنی و صاحب‌دارند؛ جمعیتی که آب‌پاش خورده هیچ‌یک از این‌ها نیست، و دویست و سی و هفت بازداشت به‌عنوان کنترل یک تجمع غیرقانونی پرونده شد، نه به‌عنوان آسیبی که پاسخ می‌طلبد. دادگاهی که جریمه‌ها را صادر کرد دو و نیم کیلومتر جنوبِ همان سواره‌رویی است که درباره‌اش رأی می‌داد، در بخشی از شهر که دولت کاغذبازی‌اش را می‌کند نه سیاستش را.",
+   "sources": [
+    {
+     "title": "Council of Europe, Platform for the Safety of Journalists, alert no. 36/2015, 'Journalists Beaten and Arrested while Covering Protest Demonstration'",
+     "url": "https://fom.coe.int/en/alerte/detail/12102291",
+     "note": "The alert's closure of 29 November 2024 records the judgments of 20 February 2017 and is the reason the Platform declared the case resolved."
+    },
+    {
+     "title": "OpenStreetMap",
+     "url": "https://www.openstreetmap.org/",
+     "note": "Court of Kentron and Nork-Marash Districts, node 4239915469."
+    }
+   ]
+  },
+  {
    "id": "my-step-march-2018-03-31",
    "title": "The My Step march sets out from Gyumri",
    "date": "2018-03-31",
@@ -10710,8 +10792,8 @@
    "dateEnd": "2018-04-23",
    "datePrecision": "day",
    "coordinates": [
-    44.51492,
-    40.18785
+    44.51446,
+    40.18786
    ],
    "location": "France Square, at the top of Northern Avenue",
    "categories": [
@@ -11877,8 +11959,8 @@
    "date": "2018-04-25",
    "datePrecision": "day",
    "coordinates": [
-    44.5138,
-    40.1808
+    44.51469,
+    40.18219
    ],
    "location": "Northern Avenue, Kentron",
    "categories": [
@@ -15025,7 +15107,7 @@
     },
     {
      "title": "epress.am, 11 July 2011 — «Աֆրիկյանների բնակելի տունն ապամոնտաժվում է»",
-     "url": "https://epress.am/2011/07/11/"
+     "url": "https://epress.am/2011/07/11/աֆրիկյանների-բնակելի-տունն-ապամոնտա.html"
     }
    ]
   },
@@ -15322,7 +15404,7 @@
     },
     {
      "title": "epress.am, 6 March 2012 — «Դալմայի այգիներում նոր ավտոմայրուղի»",
-     "url": "https://epress.am/2012/03/06/"
+     "url": "https://epress.am/2012/03/06/Դալմայի-այգիներում-նոր-ավտոմայրուղի.html"
     }
    ]
   },
@@ -15542,11 +15624,11 @@
    "sources": [
     {
      "title": "epress.am, 21 August 2013 — «Կոմիտասի բնակիչները կասեցրել են շինարարությունը»",
-     "url": "https://epress.am/2013/08/21/"
+     "url": "https://epress.am/2013/08/21/կոմիտասի-բնակիչները-կասեցրել-են-շինա.html"
     },
     {
      "title": "epress.am, 17 September 2013 — «Ակցիաներ չկան, Կոմիտաս 5-ում շինարարությունը շարունակվում է»",
-     "url": "https://epress.am/2013/09/17/"
+     "url": "https://epress.am/2013/09/17/ակցիաներ-չկան-կոմիտաս-5-ում-շինարարութ.html"
     }
    ]
   },
@@ -15601,11 +15683,11 @@
    "sources": [
     {
      "title": "epress.am, 26 August 2013 — «Սայաթ-Նովա փողոցում շինարարության դեմ»",
-     "url": "https://epress.am/2013/08/26/"
+     "url": "https://epress.am/2013/08/26/սայաթ-նովա-փողոցում-շինարարության-դե.html"
     },
     {
      "title": "epress.am, 14 September 2013 — «Սայաթ-Նովայի բնակիչները սպառնալիքներ են ստանում»",
-     "url": "https://epress.am/2013/09/14/"
+     "url": "https://epress.am/2013/09/14/սայաթ-նովայի-բնակիչները-սպառնալիքնե.html"
     },
     {
      "title": "epress.am, 10 February 2014 — Yerevan residents protest construction threatening seismic safety",
@@ -15655,11 +15737,11 @@
    "sources": [
     {
      "title": "epress.am, 31 August 2013 — «Բողոքի ակցիա Փակ շուկայի մոտ»",
-     "url": "https://epress.am/2013/08/31/"
+     "url": "https://epress.am/2013/08/31/վիդեո-բողոքի-ակցիա-փակ-շուկայի-մոտ.html"
     },
     {
      "title": "epress.am, 2 September 2013 — «Փակ շուկայի ակցիաներից հետո»",
-     "url": "https://epress.am/2013/09/02/"
+     "url": "https://epress.am/2013/09/02/վիդեո-փակ-շուկայի-ակցիաներից-հետո-ակտ.html"
     }
    ]
   },
@@ -15969,7 +16051,7 @@
     },
     {
      "title": "epress.am, 9 October 2015 — «Դատարանը հյուսիսային պողոտայի բնակիչների...»",
-     "url": "https://epress.am/2015/10/09/"
+     "url": "https://epress.am/2015/10/09/դատարանը-հյուսիսային-պողոտայի-բնակի.html"
     }
    ]
   },
