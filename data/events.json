@@ -8,7 +8,7 @@
   "timelineStart": "2000-01-01",
   "timelineEnd": "2028-12-31",
   "note": "Working research instrument, not a finished publication. Entries derive from the Northern Avenue paper (edited Nov 2025) and carry its citations. Photographs are openly licensed (Wikimedia Commons); each carries its photographer, date and licence, and links to its source file.",
-  "updated": "2026-08-19",
+  "updated": "2026-09-09",
   "title_hy": "Երևանի նախագիծ",
   "subtitle_hy": "Քաղաքային տարածքի, հասարակական շարժումների և քաղաքական իրադարձությունների ինտերակտիվ հետազոտական քարտեզ",
   "author_hy": "Շոկրան Ռահիմինեժադ",
@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد.",
-  "version": "20260909a"
+  "version": "20260909b"
  },
  "categories": [
   {
@@ -13807,23 +13807,31 @@
    "location_fa": "کیوسک‌های خیابان‌های مرکزی",
    "scale": "campaign",
    "form": "press",
-   "summary": "Aravot reports the mayor's attempt to bring the city's kiosks to a standard appearance. The kiosk is the smallest unit of the informal economy that survived the 1990s, and the first thing a city trying to look European wants gone. This is where the ten-year argument over them begins; it ends in August 2011 with bulldozers on Abovyan Street.",
-   "summary_hy": "«Առավոտը» գրում է քաղաքապետի փորձի մասին՝ քաղաքի կրպակները մեկ չափանիշի բերելու։ Կրպակը 1990-ականներից փրկված ոչ ֆորմալ տնտեսության ամենափոքր միավորն է և առաջին բանը, որից եվրոպական տեսք ձեռք բերել ցանկացող քաղաքն ուզում է ազատվել։ Այստեղ է սկսվում նրանց շուրջ տասնամյա վեճը. այն ավարտվում է 2011-ի օգոստոսին՝ Աբովյան փողոցում բուլդոզերներով։",
-   "summary_fa": "«آراوت» از تلاشِ شهردار برای یکدست‌کردنِ ظاهرِ کیوسک‌های شهر خبر می‌دهد. کیوسک کوچک‌ترین واحدِ اقتصادِ غیررسمی‌ای است که از دهه‌ی ۱۹۹۰ جان به در برد، و نخستین چیزی که شهرِ در پیِ ظاهرِ اروپایی می‌خواهد از میان برود. جدالِ ده‌ساله بر سرِ آن‌ها از اینجا آغاز می‌شود و در اوتِ ۲۰۱۱ با بولدوزر در خیابان آبویان پایان می‌یابد.",
+   "summary": "Aravot reports the mayor's attempt to bring the city's kiosks to a standard appearance, and what the standard costs. All 1,044 kiosk operators in Yerevan are told to buy a new kiosk from a firm named Evrostan Uyut or else liquidate themselves; the firm denies any involvement. The paper traces the same instruction back through the mayors Vano Siradeghyan, Suren Abrahamyan and Albert Bazeyan, foundering each time on the same question of who pays. The argument runs another decade and ends in August 2011 with bulldozers on Abovyan Street.",
+   "summary_hy": "«Առավոտը» գրում է քաղաքապետի փորձի մասին՝ քաղաքի կրպակները մեկ չափանիշի բերելու, և թե ինչ արժե այդ չափանիշը։ Երևանի բոլոր 1044 կրպականատերերին ասված է նոր կրպակ գնել «Եվրոստան Ույուտ» ընկերությունից կամ ինքնալուծարվել. ընկերությունը ժխտում է որևէ առնչություն։ Թերթը նույն հանձնարարականը հետագծում է Վանո Սիրադեղյանի, Սուրեն Աբրահամյանի և Ալբերտ Բազեյանի քաղաքապետությունների միջով, և ամեն անգամ այն խրվում է նույն հարցի վրա՝ ո՞վ է վճարում։",
+   "summary_fa": "«آراوت» از تلاشِ شهردار برای یکدست‌کردنِ ظاهرِ کیوسک‌ها خبر می‌دهد — و از بهای این یکدستی. به هر ۱٬۰۴۴ کیوسک‌دارِ ایروان گفته می‌شود کیوسکِ نو را از شرکتی به نامِ «اِوروستان اویوت» بخرند یا خود را منحل کنند؛ شرکت هر دخالتی را انکار می‌کند. روزنامه همین دستور را از دلِ شهرداری‌های وانو سیرادغیان، سورن آبراهامیان و آلبرت بازِیان پی می‌گیرد و هر بار بر سرِ همان پرسش می‌ماند: چه کسی می‌پردازد؟",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "The kiosk file is the one strand of this cube that runs its whole length, and it starts as a procurement problem rather than a planning one. The city does not simply want the kiosks gone in 2001; it wants them replaced, by a named supplier, at the owners' expense. That structure - the order is aesthetic, the cost is private, the beneficiary is a firm - returns exactly in 2011, when the Arabkir owners are made to repaint at their own expense weeks before being told to go.",
+   "analysis_hy": "Կրպակների գործը այս խորանարդի միակ թելն է, որ ձգվում է ամբողջ երկարությամբ, և այն սկսվում է որպես գնումների, ոչ թե քաղաքաշինության խնդիր։ 2001-ին քաղաքը պարզապես չի ուզում կրպակների բացակայությունը. ուզում է դրանց փոխարինումը՝ նշված մատակարարից, տերերի հաշվին։ Այդ կառուցվածքը՝ հրամանը գեղագիտական է, ծախսը՝ մասնավոր, շահառուն՝ ընկերություն, ճշգրտորեն վերադառնում է 2011-ին։",
+   "analysis_fa": "پرونده‌ی کیوسک‌ها تنها رشته‌ای است که کلِ درازای این مکعب را طی می‌کند، و همچون مسئله‌ای در تدارکات آغاز می‌شود، نه در شهرسازی. شهر در ۲۰۰۱ صرفاً نبودِ کیوسک‌ها را نمی‌خواهد؛ جایگزینی‌شان را می‌خواهد، از تأمین‌کننده‌ای معیّن و به خرجِ صاحبانشان. همین ساختار — دستور زیبایی‌شناختی، هزینه خصوصی، ذی‌نفع یک شرکت — دقیقاً در ۲۰۱۱ بازمی‌گردد.",
    "actors": [
     "Yerevan Municipality",
-    "kiosk owners"
+    "1,044 kiosk operators",
+    "Evrostan Uyut",
+    "Vano Siradeghyan",
+    "Suren Abrahamyan",
+    "Albert Bazeyan"
    ],
    "tags": [
     "kiosks",
     "informal economy",
-    "Abovyan Street"
+    "Abovyan Street",
+    "procurement"
    ],
    "sources": [
     {
@@ -13834,42 +13842,53 @@
   },
   {
    "id": "northern-ave-doubt-2002",
-   "title": "Will Northern Avenue be relocated?",
-   "title_hy": "Կտեղափոխվի՞, արդյոք, Հյուսիսային պողոտան",
-   "title_fa": "آیا خیابان شمالی جابه‌جا خواهد شد؟",
+   "title": "Will Northern Avenue be relocated? The generals' fences",
+   "title_hy": "Կտեղափոխվի՞, արդյոք, Հյուսիսային պողոտան. գեներալների ցանկապատերը",
+   "title_fa": "آیا خیابان شمالی جابه‌جا خواهد شد؟ نرده‌های ژنرال‌ها",
    "date": "2002-03-26",
    "datePrecision": "day",
    "coordinates": [
-    44.51469,
-    40.18219
+    44.5187,
+    40.1979
    ],
-   "location": "The corridor between Abovyan and Mashtots, before it was cleared",
-   "location_hy": "Աբովյանի և Մաշտոցի միջև ընկած միջանցքը՝ մինչ մաքրվելը",
-   "location_fa": "راهرو میان آبویان و ماشتوتس، پیش از پاک‌سازی",
+   "location": "Babayan Street, by Haghtanak Park, where the Northern Ray was to emerge at the Cascade",
+   "location_hy": "Բաբայան փողոց, Հաղթանակ այգու մոտ, որտեղ Հյուսիսային ճառագայթը պետք է դուրս գար Կասկադի մոտ",
+   "location_fa": "خیابان بابایان، کنار پارک هاقتاناک، جایی که «پرتوِ شمالی» قرار بود نزد کاسکاد بیرون بزند",
    "scale": "campaign",
    "form": "press",
-   "summary": "Hetq asks, four months before the decree and while the quarter is still standing, whether the avenue could be built somewhere else. It is the earliest doubt about the project found anywhere in the Armenian press, and it is a question rather than a protest: at this date there is still nobody to protest with.",
-   "summary_hy": "«Հետքը» հարցնում է՝ որոշումից չորս ամիս առաջ և թաղամասը դեռ կանգուն, կարո՞ղ էր արդյոք պողոտան կառուցվել այլ տեղում։ Սա հայկական մամուլում գտնված ամենավաղ կասկածն է ծրագրի վերաբերյալ, և դա հարց է, ոչ թե բողոք. այս ամսաթվին դեռ չկա մեկը, ում հետ բողոքել։",
-   "summary_fa": "«هتق» چهار ماه پیش از فرمان و در حالی که محله هنوز پابرجاست می‌پرسد آیا خیابان می‌توانست جای دیگری ساخته شود. این نخستین تردید درباره‌ی طرح است که در مطبوعاتِ ارمنی یافته‌ام، و پرسش است نه اعتراض: در این تاریخ هنوز کسی نیست که با او اعتراض کرد.",
+   "summary": "Four months before the decree, Hetq reports why the avenue's northern continuation cannot be built: three generals have seized land on Babayan Street beside Haghtanak Park, directly across the route. Edik Baghdasaryan and Marianna Grigoryan name General Haykaz Baghmanyan, whose mansion went up without permission before 1998 next to his petrol station, was legalised afterwards and is still expanding, and General Seyran Saroyan. The road was to emerge at the Cascade; it runs into the general's wall.",
+   "summary_hy": "Որոշումից չորս ամիս առաջ «Հետքը» գրում է, թե ինչու պողոտայի հյուսիսային շարունակությունը չի կարող կառուցվել. երեք գեներալ հող են զավթել Բաբայան փողոցում՝ Հաղթանակ այգու կողքին, ուղիղ ճանապարհի վրա։ Էդիկ Բաղդասարյանը և Մարիաննա Գրիգորյանը անվանում են գեներալ Հայկազ Բաղմանյանին, ում առանձնատունը 1998-ից առաջ կառուցվել է առանց թույլտվության՝ իր բենզալցակայանի կողքին, հետո օրինականացվել և դեռ ընդարձակվում է, և գեներալ Սեյրան Սարոյանին։ Ճանապարհը պետք է դուրս գար Կասկադի մոտ. այն հենվում է գեներալի պատին։",
+   "summary_fa": "چهار ماه پیش از فرمان، «هتق» گزارش می‌کند چرا ادامه‌ی شمالیِ خیابان ساخته نمی‌شود: سه ژنرال زمینی را در خیابان بابایان کنارِ پارک هاقتاناک، درست بر سرِ مسیر، تصرف کرده‌اند. ادیک باقداساریان و ماریانا گریگوریان از ژنرال هایکاز باقمانیان نام می‌برند — که عمارتش پیش از ۱۹۹۸ بی‌مجوز کنارِ پمپ‌بنزینش بالا رفت، بعد قانونی شد و هنوز گسترش می‌یابد — و از ژنرال سیران سارویان. جاده قرار بود نزدِ کاسکاد بیرون بزند؛ به دیوارِ ژنرال می‌خورد.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "Read against the rest of this cube, the article is the period's sharpest single fact. The same project that would clear roughly 2,500 residents out of the quarter below could not get past three fences. Expropriation for state needs is not a power the state holds evenly over its territory; it is a power it holds over the people who cannot answer it. Hetq puts the question in exactly those terms, asking whether it would be possible in Armenia to demolish a general's wall, and answering that if it succeeded it would be the first case of the army's defeat.\n\nThis entry replaces an earlier reading of the same source on this map, which took the headline at face value as press doubt about the route. The doubt is real, but its subject is not planning. It is who the plan is permitted to touch.",
+   "analysis_hy": "Այս խորանարդի մնացածի ֆոնին հոդվածը ժամանակահատվածի ամենասուր փաստն է։ Նույն ծրագիրը, որը ներքևի թաղամասից դուրս էր բերելու շուրջ 2500 բնակչի, չկարողացավ անցնել երեք ցանկապատի կողքով։ Պետական կարիքի համար օտարումը իշխանություն չէ, որ պետությունը հավասարապես տարածում է իր տարածքի վրա. այն իշխանություն է նրանց նկատմամբ, ովքեր չեն կարող պատասխանել։ «Հետքը» հարցը դնում է հենց այդպես՝ հնարավո՞ր կլինի Հայաստանում քանդել գեներալի առանձնատան պատը, և պատասխանում, որ եթե հաջողվի, դա բանակի պարտության առաջին դեպքը կլինի։",
+   "analysis_fa": "در برابرِ باقیِ این مکعب، مقاله تیزترین واقعیتِ دوره است. همان طرحی که حدود ۲۵۰۰ ساکن را از محله‌ی پایین بیرون می‌راند، از سه نرده نتوانست بگذرد. سلبِ مالکیت به‌نامِ نیازِ دولتی قدرتی نیست که دولت یکسان بر سراسرِ خاکش بگستراند؛ قدرتی است بر کسانی که نمی‌توانند پاسخ دهند. «هتق» پرسش را دقیقاً همین‌گونه می‌گذارد: آیا در ارمنستان می‌شود دیوارِ عمارتِ یک ژنرال را خراب کرد؟ و پاسخ می‌دهد که اگر بشود، نخستین موردِ شکستِ ارتش خواهد بود.",
    "actors": [
     "Hetq",
+    "Edik Baghdasaryan",
+    "Marianna Grigoryan",
+    "General Haykaz Baghmanyan",
+    "General Seyran Saroyan",
     "Yerevan Municipality"
    ],
    "tags": [
     "Northern Avenue",
+    "Northern Ray",
     "press",
-    "planning"
+    "land seizure",
+    "impunity",
+    "Haghtanak Park"
    ],
    "sources": [
     {
      "title": "Hetq, 26 March 2002 — «Կտեղափոխվի՞, արդյոք, Հյուսիսային պողոտան»",
-     "url": "https://hetq.am/hy/article/2060"
+     "url": "https://hetq.am/hy/article/2060",
+     "note": "Baghdasaryan and Grigoryan on the generals' seizures on Babayan Street"
     }
    ]
   },
@@ -13889,27 +13908,35 @@
    "location_fa": "خیابان شمالی، دو سال پس از آغاز پاک‌سازی",
    "scale": "campaign",
    "form": "press",
-   "summary": "Hetq's verdict on the project while the demolition is still under way. The word it uses for what is being done to the quarter is իրացում, realisation - the same commercial verb later applied to Kond and to Firdus, as if a neighbourhood were an asset being turned into cash.",
-   "summary_hy": "«Հետքի» դատավճիռը ծրագրի մասին, երբ քանդումը դեռ ընթացքի մեջ է։ Բառը, որով նկարագրվում է թաղամասի հետ արվածը, «իրացում» է՝ նույն առևտրային բայը, որը հետո կիրառվեց Կոնդի և Ֆիրդուսի նկատմամբ, կարծես թաղամասը կանխիկի վերածվող ակտիվ լիներ։",
-   "summary_fa": "داوریِ «هتق» درباره‌ی طرح، در حالی که تخریب هنوز جریان دارد. واژه‌ای که برای کارِ انجام‌شده با محله به کار می‌برد «իրացում» است، یعنی نقدکردن — همان فعلِ تجاری که بعدها بر کوند و فردوس هم اطلاق شد، انگار محله دارایی‌ای باشد که به پول بدل می‌شود.",
+   "summary": "Hetq's verdict on the project while the demolition is still under way, with the arithmetic. Of 72,000 square metres in the realisation zone, 32,000 were to be sold off to pay the compensation and build the 40,000-square-metre avenue; the first lot went at 650 US dollars the square metre. The planners concede the flaw to Petrosyan and Mashuryan: selling the first part expensively also raised the value of the old houses still standing behind it. The realisation was to take six months. The deficit grew instead, and residents began going to court.",
+   "summary_hy": "«Հետքի» դատավճիռը ծրագրի մասին, երբ քանդումը դեռ ընթացքի մեջ է՝ հաշվարկով։ Իրացման գոտու 72 000 քառակուսի մետրից 32 000-ը պետք է վաճառվեր՝ փոխհատուցումը վճարելու և 40 000 քառակուսի մետր պողոտան կառուցելու համար. առաջին հատվածը գնաց քառակուսի մետրը 650 ԱՄՆ դոլարով։ Ծրագրողներն ընդունում են սխալը՝ առաջին մասը թանկ վաճառելով՝ բարձրացրին նաև ետևում դեռ կանգուն հին տների արժեքը։ Իրացումը պետք է տևեր վեց ամիս։ Փոխարենը դեֆիցիտն աճեց, և բնակիչները սկսեցին դատարան դիմել։",
+   "summary_fa": "داوریِ «هتق» درباره‌ی طرح در حالی که تخریب هنوز جریان دارد — با حساب و کتابش. از ۷۲٬۰۰۰ مترمربعِ محدوده‌ی «نقدسازی»، ۳۲٬۰۰۰ متر قرار بود فروخته شود تا غرامت پرداخت و خیابانِ ۴۰٬۰۰۰ متری ساخته شود؛ نخستین قطعه متری ۶۵۰ دلار رفت. برنامه‌ریزان نزدِ پتروسیان و ماشوریان به خطا اعتراف می‌کنند: گران‌فروختنِ بخشِ نخست ارزشِ خانه‌های قدیمیِ پشتِ سر را هم بالا برد. نقدسازی قرار بود شش ماه طول بکشد. به‌جایش کسری بزرگ شد و ساکنان راهیِ دادگاه شدند.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "This is the mechanism behind the stuck compensation of the entry that follows. The project was designed to pay for itself out of the land it cleared, which made the compensation owed to residents a function of a property market the clearance itself was inflating. Every month the sale ran late, the houses still standing were worth more and the money set aside for them was worth less. Nobody had to decide not to pay. The arithmetic decided.",
+   "analysis_hy": "Սա հաջորդ գրառման՝ լռված փոխհատուցման մեխանիզմն է։ Ծրագիրը նախագծված էր ինքն իրեն ֆինանսավորելու՝ իր իսկ մաքրած հողի հաշվին, ինչը բնակիչներին հասանելիք փոխհատուցումը դարձնում էր այն գույքային շուկայի ֆունկցիա, որը հենց մաքրումն էր փչում։ Ամեն ամիս, որ վաճառքն ուշանում էր, դեռ կանգուն տներն ավելի թանկ էին արժենում, իսկ դրանց համար հատկացվածը՝ ավելի էժան։ Ոչ ոք չպետք է որոշեր չվճարել։ Որոշեց թվաբանությունը։",
+   "analysis_fa": "این سازوکارِ همان غرامتِ گیرکرده در مدخلِ بعدی است. طرح چنان طراحی شده بود که خرجِ خود را از زمینی درآورد که پاک می‌کرد؛ پس غرامتِ ساکنان تابعی شد از بازارِ ملکی که خودِ پاک‌سازی بادش می‌کرد. هر ماه که فروش عقب می‌افتاد، خانه‌های برجامانده گران‌تر می‌شدند و پولِ کنارگذاشته برایشان کم‌ارزش‌تر. لازم نبود کسی تصمیم بگیرد نپردازد. حساب تصمیم گرفت.",
    "actors": [
-    "Hetq"
+    "Hetq",
+    "Yerevan Municipality",
+    "residents of the Northern Avenue quarter"
    ],
    "tags": [
     "Northern Avenue",
     "expropriation",
-    "press"
+    "press",
+    "compensation",
+    "land value"
    ],
    "sources": [
     {
      "title": "Hetq, 31 March 2004 — «Հյուսիսային պողոտայի իրացումը լավ հաշվարկված չէր»",
-     "url": "https://hetq.am/hy/article/8108"
+     "url": "https://hetq.am/hy/article/8108",
+     "note": "Petrosyan and Mashuryan: 72,000 sq m zone, 32,000 sold, 40,000 of avenue, $650/sq m"
     }
    ]
   },
@@ -14006,31 +14033,40 @@
    "date": "2004-12-02",
    "datePrecision": "day",
    "coordinates": [
-    44.5125,
-    40.181
+    44.5189,
+    40.187
    ],
-   "location": "The listed buildings of the old centre",
-   "location_hy": "Հին կենտրոնի ցուցակագրված շենքերը",
-   "location_fa": "بناهای ثبت‌شده‌ی مرکز قدیم",
-   "scale": "campaign",
+   "location": "Nalbandyan Street 96, the house where Aksel Bakunts lived",
+   "location_hy": "Նալբանդյան փողոց 96՝ տունը, որտեղ ապրել է Ակսել Բակունցը",
+   "location_fa": "خیابان نالباندیان ۹۶، خانه‌ای که آکسل باکونتس در آن زیست",
+   "scale": "courtyard",
    "form": "press",
-   "summary": "A protected building comes down legally. The phrase names the method of the whole decade: the paperwork arrives first and the machine second, and by the time anyone objects the objection is already out of time.",
-   "summary_hy": "Պահպանվող շենքը քանդվում է օրինական ճանապարհով։ Արտահայտությունն անվանում է ամբողջ տասնամյակի եղանակը՝ նախ գալիս են թղթերը, հետո՝ մեքենան, և երբ որևէ մեկն առարկում է, առարկությունն արդեն ուշացած է։",
-   "summary_fa": "بنایی حفاظت‌شده قانوناً فرو می‌ریزد. این عبارت روشِ کلِ دهه را نام می‌برد: اول کاغذها می‌رسند و بعد ماشین، و تا کسی اعتراض کند، اعتراض دیگر از موعد گذشته است.",
+   "summary": "A protected building at Nalbandyan 96, where the writer Aksel Bakunts lived, is taken apart with every paper in order. The residents Armen Stepanyan and Hasmik Arzoyan describe what the documents permitted: the foundation demolished without their consent and left in an emergency state for eight months, the shared entrance hall - common property since 1939 - absorbed into the flat of the developer Vazrik Petrosyan, a member of the ARF, and the staircase moved. Petrosyan holds all the documents.",
+   "summary_hy": "Նալբանդյան 96-ի պահպանվող շենքը, որտեղ ապրել է գրող Ակսել Բակունցը, ապամոնտաժվում է՝ բոլոր թղթերը կարգին։ Բնակիչներ Արմեն Ստեփանյանը և Հասմիկ Արզոյանը նկարագրում են, թե ինչ թույլ տվեցին փաստաթղթերը՝ հիմքը քանդված առանց իրենց համաձայնության և ութ ամիս թողնված վթարային վիճակում, ընդհանուր մուտքի սրահը՝ 1939-ից ընդհանուր սեփականություն, կլանված կառուցապատող, ՀՅԴ անդամ Վազրիկ Պետրոսյանի բնակարանի մեջ, և սանդուղքը՝ տեղափոխված։ Բոլոր փաստաթղթերը Պետրոսյանի մոտ են։",
+   "summary_fa": "بنایی حفاظت‌شده در نالباندیان ۹۶، خانه‌ای که نویسنده آکسل باکونتس در آن می‌زیست، با تمامِ کاغذها رو‌به‌راه از هم باز می‌شود. ساکنان آرمن استپانیان و هاسمیک آرزویان می‌گویند اسناد چه چیزی را مجاز کرده بود: پی بی‌رضایتِ آنان تخریب و هشت ماه در وضعِ اضطراری رها شد، راهروی ورودیِ مشترک — از ۱۹۳۹ مالکیتِ مشاع — در آپارتمانِ سازنده وازریک پتروسیان، عضوِ داشناکسوتیون، بلعیده شد، و پلکان جابه‌جا شد. همه‌ی اسناد نزدِ پتروسیان است.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "The headline is the decade's method stated as a complaint, and the detail is what makes it precise. Nothing here is illegal. The developer has the documents; the residents have the building. What the documents were used to take was not the flat but the space between the flats - the entrance hall held in common since 1939, which no single owner could defend because it belonged to all of them.\n\nThis entry corrects an earlier, address-less version on this map that read the headline as a general observation about heritage. It is not general. It is one staircase.",
+   "analysis_hy": "Վերնագիրը տասնամյակի եղանակն է՝ ձևակերպված որպես բողոք, իսկ մանրամասնն այն է, ինչը դարձնում է այն ճշգրիտ։ Այստեղ ոչինչ ապօրինի չէ։ Կառուցապատողի մոտ փաստաթղթերն են, բնակիչների մոտ՝ շենքը։ Փաստաթղթերով վերցվածը բնակարանը չէր, այլ բնակարանների միջև ընկած տարածքը՝ 1939-ից ընդհանուր տիրապետության մեջ գտնվող մուտքի սրահը, որը ոչ մի առանձին սեփականատեր չէր կարող պաշտպանել, քանի որ այն պատկանում էր բոլորին։",
+   "analysis_fa": "تیتر، روشِ آن دهه است که همچون شکایت بیان شده، و جزئیات آن را دقیق می‌کند. اینجا هیچ‌چیز غیرقانونی نیست. اسناد نزدِ سازنده است و ساختمان نزدِ ساکنان. آنچه با اسناد گرفته شد آپارتمان نبود، فضای میانِ آپارتمان‌ها بود: راهروی ورودی که از ۱۹۳۹ مشاع بود و هیچ مالکی به‌تنهایی نمی‌توانست از آن دفاع کند، چون به همه تعلق داشت.",
    "actors": [
-    "preservationists",
+    "Armen Stepanyan",
+    "Hasmik Arzoyan",
+    "Vazrik Petrosyan",
+    "ARF Dashnaktsutyun",
     "Yerevan Municipality"
    ],
    "tags": [
     "heritage",
     "demolition",
-    "documents"
+    "documents",
+    "Aksel Bakunts",
+    "Nalbandyan Street",
+    "common property"
    ],
    "sources": [
     {
@@ -14104,23 +14140,30 @@
    "location_fa": "کوند، کهن‌ترین محله‌ی بازمانده‌ی ایروان",
    "scale": "campaign",
    "form": "press",
-   "summary": "The announcement of a demolition a year before it is due, in the commercial verb again. Kond is not in fact cleared: it is still standing, and in November 2012 a court removes it from the category of overriding public interest. But between the announcement and that release, seven years pass in which nobody living there can sell, repair or plan.",
-   "summary_hy": "Քանդման հայտարարությունը դրանից մեկ տարի առաջ՝ դարձյալ առևտրային բայով։ Կոնդն իրականում չի մաքրվում. այն դեռ կանգուն է, և 2012-ի նոյեմբերին դատարանը այն հանում է գերակա հանրային շահի կարգից։ Բայց հայտարարության և այդ ազատման միջև անցնում է յոթ տարի, որի ընթացքում այնտեղ ապրողներից ոչ ոք չի կարող վաճառել, նորոգել կամ ծրագրել։",
-   "summary_fa": "اعلامِ تخریب یک سال پیش از موعد، باز با همان فعلِ تجاری. کوند در واقع پاک نمی‌شود: هنوز پابرجاست، و در نوامبرِ ۲۰۱۲ دادگاه آن را از رده‌ی «منفعتِ عمومیِ برتر» بیرون می‌آورد. اما میانِ اعلام و آن رهایی، هفت سال می‌گذرد که در آن هیچ ساکنی نمی‌تواند بفروشد، تعمیر کند یا برنامه بریزد.",
+   "summary": "The announcement of a demolition a year before it is due, in the commercial verb again. Mayor Yervand Zakharyan promises to solve what he calls the question of the native Kond residents by spring. Aravot sets the promise beside the Buzand evictions for state needs, and lets a resident answer it: Sona Harutyunyan, 45, on a city whose parks are choked with cafes whose owners have removed the benches to gather custom. Kond is not in fact cleared - it is still standing, and in November 2012 a court removes it from the category of overriding public interest - but between the announcement and that release seven years pass in which nobody living there can sell, repair or plan.",
+   "summary_hy": "Քանդման հայտարարությունը դրանից մեկ տարի առաջ՝ դարձյալ առևտրային բայով։ Քաղաքապետ Երվանդ Զախարյանը խոստանում է մինչև գարուն լուծել «կոնդեցիների հարցը»։ «Առավոտը» խոստումը դնում է պետական կարիքի համար Բուզանդի վտարումների կողքին և թույլ տալիս, որ բնակիչը պատասխանի՝ 45-ամյա Սոնա Հարությունյանը՝ քաղաքի մասին, որի այգիները խեղդված են սրճարաններով, և որոնց տերերը հանել են նստարանները՝ հաճախորդ հավաքելու համար։ Կոնդն իրականում չի մաքրվում. այն դեռ կանգուն է, և 2012-ի նոյեմբերին դատարանն այն հանում է գերակա հանրային շահի կարգից, բայց հայտարարության և այդ ազատման միջև անցնում է յոթ տարի, որի ընթացքում այնտեղ ապրողներից ոչ ոք չի կարող վաճառել, նորոգել կամ ծրագրել։",
+   "summary_fa": "اعلامِ تخریب یک سال پیش از موعد، باز با همان فعلِ تجاری. شهردار یروند زاخاریان قول می‌دهد تا بهار «مسئله‌ی ساکنانِ بومیِ کوند» را حل کند. «آراوت» این قول را کنارِ اخراج‌های بوزاند به‌نامِ نیازِ دولتی می‌گذارد و می‌گذارد ساکنی پاسخش را بدهد: سونا هاروتیونیان، ۴۵ ساله، از شهری که پارک‌هایش از کافه‌ها خفه شده و صاحبانشان نیمکت‌ها را برداشته‌اند تا مشتری جمع کنند. کوند در واقع پاک نمی‌شود — هنوز پابرجاست و در نوامبرِ ۲۰۱۲ دادگاه آن را از رده‌ی «منفعتِ عمومیِ برتر» بیرون می‌آورد — اما میانِ اعلام و آن رهایی هفت سال می‌گذرد که در آن هیچ ساکنی نمی‌تواند بفروشد، تعمیر کند یا برنامه بریزد.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "The benches are the whole argument in miniature. A park is public because you can sit in it without buying anything; remove the benches and the same ground becomes a place you may only occupy as a customer. Kond's resident is not describing a different grievance from her own demolition. She is describing the same conversion of common ground into saleable ground, at the scale where it can be seen from a footpath.",
+   "analysis_hy": "Նստարաններն ամբողջ փաստարկն են՝ մանրանկարով։ Այգին հանրային է, որովհետև կարող ես նստել այնտեղ առանց որևէ բան գնելու. հանիր նստարանները, և նույն հողը դառնում է տեղ, որը կարող ես զբաղեցնել միայն որպես հաճախորդ։ Կոնդի բնակիչը իր քանդումից տարբեր բողոք չի նկարագրում։ Նա նկարագրում է ընդհանուր հողի՝ վաճառելի հողի վերածվելու նույն գործընթացը՝ այն մասշտաբով, որ երևում է մայթից։",
+   "analysis_fa": "نیمکت‌ها کلِ استدلال‌اند در مقیاسِ کوچک. پارک از آن‌رو عمومی است که می‌توانی بی‌خریدنِ چیزی در آن بنشینی؛ نیمکت‌ها را بردار، همان زمین جایی می‌شود که تنها به‌عنوانِ مشتری می‌توانی اشغالش کنی. ساکنِ کوند شکایتی جدا از تخریبِ خانه‌اش نمی‌گوید. همان تبدیلِ زمینِ مشترک به زمینِ فروختنی را می‌گوید، در مقیاسی که از پیاده‌رو دیده می‌شود.",
    "actors": [
     "residents of Kond",
+    "Yervand Zakharyan",
+    "Sona Harutyunyan",
     "Yerevan Municipality"
    ],
    "tags": [
     "Kond",
     "expropriation",
-    "state needs"
+    "state needs",
+    "green space",
+    "benches"
    ],
    "sources": [
     {
@@ -14225,23 +14268,32 @@
    "location_fa": "محله‌ی سی‌وسوم، پیرامون خیابان فردوسی",
    "scale": "campaign",
    "form": "press",
-   "summary": "Four years after being named in the decree, the district is publicly scheduled. Its residents are received by the prime minister in April 2014 and by the minister of urban development in November 2014; its market traders are still refusing to move in June 2017. Demolition finally comes in 2020, outside this period.",
-   "summary_hy": "Որոշման մեջ նշվելուց չորս տարի անց թաղամասը հրապարակավ նախատեսվում է։ Նրա բնակիչներին վարչապետն ընդունում է 2014-ի ապրիլին, քաղաքաշինության նախարարը՝ 2014-ի նոյեմբերին. շուկայի առևտրականները դեռ հրաժարվում են հեռանալ 2017-ի հունիսին։ Քանդումը գալիս է 2020-ին՝ այս ժամանակահատվածից դուրս։",
-   "summary_fa": "چهار سال پس از نام‌بردنش در فرمان، محله علناً در برنامه قرار می‌گیرد. ساکنانش را نخست‌وزیر در آوریلِ ۲۰۱۴ و وزیرِ شهرسازی در نوامبرِ ۲۰۱۴ می‌پذیرد؛ کسبه‌ی بازارش تا ژوئنِ ۲۰۱۷ هنوز از رفتن سر باز می‌زنند. تخریب سرانجام در ۲۰۲۰ می‌رسد، بیرون از این دوره.",
+   "summary": "Four years after being named in the decree, the district is publicly scheduled - and its residents protest before anything is done to them, naming their own precedents. The residents of Yerevan address 30 say they are acting so as not to share the fate of the residents of Northern Avenue, Buzand Street and the Kozern district. Surveyors have already told them this is an alienation zone, it has to be demolished. One of them, Artur Atanesyan, rents his yard to fifty traders for about five hundred dollars a month. The district's residents are received by the prime minister in April 2014 and by the minister of urban development in November 2014; its market traders are still refusing to move in June 2017. Demolition finally comes in 2020, outside this period.",
+   "summary_hy": "Որոշման մեջ նշվելուց չորս տարի անց թաղամասը հրապարակավ նախատեսվում է, և բնակիչները բողոքում են դեռ նախքան իրենց հետ որևէ բան անելը՝ անվանելով իրենց սեփական նախադեպերը։ Երևանյան 30 հասցեի բնակիչներն ասում են, որ գործում են, որպեսզի չկիսեն Հյուսիսային պողոտայի, Բուզանդի փողոցի և Կոզեռնի թաղամասի բնակիչների ճակատագիրը։ Չափագրողներն արդեն ասել են նրանց՝ «սա օտարման գոտի է, պետք է քանդվի»։ Նրանցից մեկը՝ Արթուր Աթանեսյանը, իր բակը վարձով է տալիս հիսուն առևտրականի՝ ամսական մոտ հինգ հարյուր դոլարով։ Թաղամասի բնակիչներին վարչապետն ընդունում է 2014-ի ապրիլին, քաղաքաշինության նախարարը՝ 2014-ի նոյեմբերին. շուկայի առևտրականները դեռ հրաժարվում են հեռանալ 2017-ի հունիսին։ Քանդումը գալիս է 2020-ին՝ այս ժամանակահատվածից դուրս։",
+   "summary_fa": "چهار سال پس از نام‌بردنش در فرمان، محله علناً در برنامه قرار می‌گیرد — و ساکنانش پیش از آنکه کاری با آنان بشود اعتراض می‌کنند و پیشینه‌های خود را نام می‌برند. ساکنانِ نشانیِ «یروانیان ۳۰» می‌گویند چنین می‌کنند تا سرنوشتِ ساکنانِ خیابان شمالی، خیابان بوزاند و محله‌ی کوزرن را تکرار نکنند. نقشه‌برداران پیشاپیش به آنان گفته‌اند: «اینجا محدوده‌ی سلبِ مالکیت است، باید تخریب شود.» یکی از آنان، آرتور آتانسیان، حیاطش را ماهی حدود پانصد دلار به پنجاه کاسب اجاره می‌دهد. ساکنانِ محله را نخست‌وزیر در آوریلِ ۲۰۱۴ و وزیرِ شهرسازی در نوامبرِ ۲۰۱۴ می‌پذیرد؛ کسبه‌ی بازارش تا ژوئنِ ۲۰۱۷ هنوز از رفتن سر باز می‌زنند. تخریب سرانجام در ۲۰۲۰ می‌رسد، بیرون از این دوره.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "This is the entry that changes what the compressed decade means. The residents of Firdus did not wait to be evicted and then complain; they protested in 2006 against something scheduled for later, and they justified it by listing three neighbourhoods that had already gone. Northern Avenue, Buzand, Kozern - all three are entries in this cube, and here they are being used as evidence by the people next in line.\n\nSo the pre-2008 repertoire is not simply weak. It is a repertoire of appeal aimed upward - to the President, to the Prime Minister, to a court, carried by a newspaper - and in this case it is also preemptive and historically literate. What it lacks is not knowledge or nerve but any mechanism by which the appeal has to be answered. Firdus knew exactly what was coming fourteen years before it came, said so publicly, and was demolished in 2020 anyway.",
+   "analysis_hy": "Սա այն գրառումն է, որ փոխում է սեղմված տասնամյակի իմաստը։ Ֆիրդուսի բնակիչները չսպասեցին վտարմանը, որ հետո բողոքեն. նրանք 2006-ին բողոքեցին ապագայում նախատեսվածի դեմ և հիմնավորեցին դա՝ թվարկելով երեք թաղամաս, որոնք արդեն գնացել էին։ Հյուսիսային պողոտան, Բուզանդը, Կոզեռնը՝ երեքն էլ այս խորանարդի գրառումներ են, և այստեղ դրանք որպես ապացույց օգտագործում են հերթի հաջորդները։\n\nՈւրեմն մինչ 2008-ի ռեպերտուարը պարզապես թույլ չէ։ Այն վերև ուղղված դիմումի ռեպերտուար է՝ նախագահին, վարչապետին, դատարանին, թերթի միջոցով, և այս դեպքում նաև կանխարգելիչ ու պատմականորեն գրագետ։ Այն, ինչ պակասում է, գիտելիքը կամ քաջությունը չէ, այլ որևէ մեխանիզմ, որով դիմումին պարտավոր են պատասխանել։",
+   "analysis_fa": "این مدخل است که معنای آن دهه‌ی فشرده را عوض می‌کند. ساکنانِ فردوس منتظر نماندند بیرونشان کنند و بعد شکایت کنند؛ در ۲۰۰۶ به چیزی اعتراض کردند که برای بعد برنامه‌ریزی شده بود، و دلیلشان فهرست‌کردنِ سه محله‌ای بود که پیش‌تر رفته بودند. خیابان شمالی، بوزاند، کوزرن — هر سه مدخل‌های همین مکعب‌اند، و اینجا نفراتِ بعدیِ صف آن‌ها را همچون شاهد به کار می‌برند.\n\nپس مجموعه‌شیوه‌ی پیش از ۲۰۰۸ صرفاً ضعیف نیست. مجموعه‌شیوه‌ی دادخواهیِ رو به بالاست — به رئیس‌جمهور، به نخست‌وزیر، به دادگاه، به‌واسطه‌ی روزنامه — و در این مورد پیشگیرانه و از نظر تاریخی آگاه هم هست. آنچه کم دارد دانش یا جسارت نیست، سازوکاری است که دادخواهی را ناگزیر از پاسخ کند.",
    "actors": [
     "residents and traders of Firdus",
+    "residents of Yerevanyan 30",
+    "Artur Atanesyan",
     "Yerevan Municipality"
    ],
    "tags": [
     "Firdus",
     "33rd district",
-    "expropriation"
+    "expropriation",
+    "preemptive protest",
+    "Kozern",
+    "Buzand Street",
+    "Northern Avenue"
    ],
    "sources": [
     {
@@ -14292,46 +14344,6 @@
     {
      "title": "Ter-Ghazaryan, Diana (2010), dissertation, pp. 109-118",
      "note": "the march, the placards, the numbers and the municipal bulldozer"
-    }
-   ]
-  },
-  {
-   "id": "kiosk-instead-of-lawn-2007",
-   "title": "A kiosk instead of the square's lawn",
-   "title_hy": "Կրպակ՝ հրապարակի գազոնի փոխարեն",
-   "title_fa": "کیوسک به‌جای چمنِ میدان",
-   "date": "2007-09-10",
-   "datePrecision": "day",
-   "coordinates": [
-    44.5126,
-    40.1776
-   ],
-   "location": "A square in central Yerevan",
-   "location_hy": "Երևանի կենտրոնի հրապարակներից մեկը",
-   "location_fa": "میدانی در مرکز ایروان",
-   "scale": "campaign",
-   "form": "press",
-   "summary": "Public ground converted to retail, one small unit at a time. Six months later the same municipality will be authorising construction on the lawn while stating that it is in favour of green space.",
-   "summary_hy": "Հանրային հողը վերածվում է առևտրի՝ մեկական փոքր միավոր։ Վեց ամիս անց նույն քաղաքապետարանը թույլ կտա շինարարություն գազոնի վրա՝ միաժամանակ հայտարարելով, որ կողմ է կանաչ տարածքներին։",
-   "summary_fa": "زمینِ عمومی واحد به واحد به خرده‌فروشی بدل می‌شود. شش ماه بعد همان شهرداری ساخت‌وساز روی چمن را مجاز می‌کند و هم‌زمان می‌گوید طرفدارِ فضای سبز است.",
-   "episode": "urban-protest",
-   "categories": [
-    "protest",
-    "urbanchange"
-   ],
-   "outcome": "loss",
-   "actors": [
-    "Yerevan Municipality"
-   ],
-   "tags": [
-    "kiosks",
-    "green space",
-    "public land"
-   ],
-   "sources": [
-    {
-     "title": "Hetq, 10 September 2007 — «Կրպակ` հրապարակի գազոնի փոխարեն»",
-     "url": "https://hetq.am/hy/article/21379"
     }
    ]
   },
@@ -14391,9 +14403,9 @@
    "location_fa": "خیابان شمالی، دو سال پس از افتتاح",
    "scale": "campaign",
    "form": "picket",
-   "summary": "Police take eight citizens from the new avenue to the station; the next day Hetq reports that they are manhandling people there again. The first protest to happen physically on Northern Avenue, and it is dispersed twice in two days.",
-   "summary_hy": "Ոստիկանությունը նոր պողոտայից ութ քաղաքացու տանում է բաժանմունք. հաջորդ օրը «Հետքը» գրում է, որ այնտեղ նորից քաշքշում են մարդկանց։ Առաջին բողոքը, որ ֆիզիկապես տեղի է ունենում Հյուսիսային պողոտայում, և այն երկու օրում երկու անգամ ցրվում է։",
-   "summary_fa": "پلیس هشت شهروند را از خیابانِ نو به کلانتری می‌برد؛ روز بعد «هتق» می‌نویسد که آنجا باز مردم را می‌کشند و هل می‌دهند. نخستین اعتراضی که به‌طور فیزیکی در خیابان شمالی رخ می‌دهد، و در دو روز دو بار پراکنده می‌شود.",
+   "summary": "Police take eight citizens from the new avenue to the station; the next day Hetq reports that they are manhandling people there again. What is being dispersed is not a rally but a քաղաքային զբոսանք, a city walk - people walking, deliberately, on a pedestrian street. The red berets close the avenue's entrances so that nobody can even pass through it. The reasons the police give are that a ministry instruction forbids any mass event before 1 May, and that shop owners have complained the walkers are interfering with trade.",
+   "summary_hy": "Ոստիկանությունը նոր պողոտայից ութ քաղաքացու տանում է բաժանմունք. հաջորդ օրը «Հետքը» գրում է, որ այնտեղ նորից քաշքշում են մարդկանց։ Ցրվողը հանրահավաք չէ, այլ «քաղաքային զբոսանք»՝ մարդիկ, որոնք միտումնավոր քայլում են հետիոտն փողոցով։ Կարմիր բերետավորները փակում են պողոտայի մուտքերը, որպեսզի ոչ ոք չկարողանա նույնիսկ անցնել։ Ոստիկանության բերած պատճառները երկուսն են՝ նախարարության հանձնարարական, ըստ որի մինչև մայիսի 1-ը զանգվածային միջոցառում չպետք է անցկացվի, և խանութատերերի բողոքը, թե զբոսնողները խանգարում են առևտրին։",
+   "summary_fa": "پلیس هشت شهروند را از خیابانِ نو به کلانتری می‌برد؛ روز بعد «هتق» می‌نویسد که آنجا باز مردم را می‌کشند و هل می‌دهند. آنچه پراکنده می‌شود گردهمایی نیست، «گردشِ شهری» است: مردمی که عامدانه در خیابانی پیاده راه می‌روند. کلاه‌قرمزها ورودی‌های خیابان را می‌بندند تا کسی حتی نتواند از آن بگذرد. دلایلی که پلیس می‌آورد دوتاست: دستوری وزارتی که تا اولِ ماه مه هر رویدادِ جمعی را منع می‌کند، و شکایتِ مغازه‌داران که گردش‌کنندگان مزاحمِ کسب‌وکارند.",
    "episode": "urban-protest",
    "categories": [
     "protest",
@@ -14401,17 +14413,21 @@
    ],
    "outcome": "loss",
    "dateEnd": "2009-04-09",
-   "analysis": "Worth holding next to the Northern Avenue cube's own finding. The corridor was built as a pedestrian street between two political squares and reaches neither. The first thing that happens on it politically is that people are removed from it — the avenue works as public space in the sense that people can be found there, and not in the sense that they can stay.",
+   "analysis": "The form is the point, and it is why this entry belongs in a dossier about urban space rather than about the 2008 aftermath alone. A walk is the minimum possible political act: it does exactly what the street was built for. Closing the entrances to stop it concedes the argument outright - the avenue is not a public street that may occasionally be regulated, it is a regulated space that ordinarily looks like a street.\n\nThe shopkeepers' complaint is the second half of the same admission. Walking interferes with trade only if trade is what the ground is for. The corridor was built as a pedestrian street between two political squares and reaches neither; the first thing that happens on it politically is that people are removed from it for walking.",
    "analysis_hy": "Արժե պահել Հյուսիսային պողոտայի խորանարդի սեփական գտածոյի կողքին։ Միջանցքը կառուցվեց որպես հետիոտն փողոց երկու քաղաքական հրապարակների միջև և չի հասնում ոչ մեկին։ Առաջին քաղաքական բանը, որ տեղի է ունենում այնտեղ, մարդկանց հեռացնելն է. պողոտան գործում է որպես հանրային տարածք այն իմաստով, որ մարդկանց այնտեղ կարելի է գտնել, և ոչ այն իմաստով, որ նրանք կարող են մնալ։",
    "analysis_fa": "ارزش دارد کنارِ یافته‌ی خودِ مکعبِ خیابان شمالی نگه داشته شود. راهرو همچون خیابانی پیاده میان دو میدانِ سیاسی ساخته شد و به هیچ‌کدام نمی‌رسد. نخستین چیزِ سیاسی که در آن رخ می‌دهد بیرون‌بردنِ مردم است: خیابان همچون فضای عمومی کار می‌کند به این معنا که می‌شود مردم را آنجا یافت، نه به این معنا که می‌توانند بمانند.",
    "actors": [
     "police",
-    "protesters"
+    "red berets",
+    "city walkers",
+    "Northern Avenue shop owners"
    ],
    "tags": [
     "Northern Avenue",
     "policing",
-    "assembly"
+    "assembly",
+    "city walk",
+    "2008 aftermath"
    ],
    "sources": [
     {
@@ -14910,9 +14926,9 @@
    "location_fa": "خیابان آبویان و خیابان‌های مرکزی",
    "scale": "campaign",
    "form": "petition",
-   "summary": "The owners are given seven days on 28 July. On 4 August the deputy head of Arabkir promises to come back in four days. On 9 August Hetq reports the dismantling will continue; the Abovyan Street kiosks come down between 11 and 18 August; on 18 August the owners go to the ombudsman's office, and write to the president. On 3 September epress reports that the kiosks in the courtyards, at least, are not being dismantled.",
-   "summary_hy": "Հուլիսի 28-ին տերերին տրվում է յոթ օր։ Օգոստոսի 4-ին Արաբկիրի ղեկավարի տեղակալը խոստանում է վերադառնալ չորս օրից։ Օգոստոսի 9-ին «Հետքը» գրում է, որ ապամոնտաժումը շարունակվելու է. Աբովյան փողոցի կրպակներն ապամոնտաժվում են օգոստոսի 11-ի և 18-ի միջև. օգոստոսի 18-ին տերերն այցելում են օմբուդսմենի գրասենյակ և նամակ գրում նախագահին։ Սեպտեմբերի 3-ին epress-ը հաղորդում է, որ գոնե բակերում գտնվող կրպակները չեն ապամոնտաժվում։",
-   "summary_fa": "در ۲۸ ژوئیه به صاحبان هفت روز مهلت می‌دهند. در ۴ اوت معاونِ رئیسِ آرابکیر قول می‌دهد چهار روز دیگر برگردد. در ۹ اوت «هتق» می‌نویسد برچیدن ادامه خواهد یافت؛ کیوسک‌های خیابان آبویان میان ۱۱ تا ۱۸ اوت برچیده می‌شوند؛ در ۱۸ اوت صاحبان به دفتر بازرسِ حقوق مردم می‌روند و به رئیس‌جمهور نامه می‌نویسند. در ۳ سپتامبر «ای‌پرس» خبر می‌دهد که دستِ‌کم کیوسک‌های داخلِ حیاط‌ها برچیده نمی‌شوند.",
+   "summary": "The clearance is city-wide, not one street. On 28 July the owners of eighteen kiosks on the Komitas-Papazyan-Kochar block in Arabkir are given seven days, in a notice signed by the deputy head H. Antonyan citing the mayor's instruction no. 342144 of 14 June 2011 and bearing no stamp. They had just been made to repaint the kiosks at their own expense. Some hold ownership certificates, others leases running to 2012, 2013 and 2014. On 9 August Hetq reports the dismantling will continue; the Abovyan Street kiosks come down between 11 and 18 August; on 18 August more than fifty owners go to the ombudsman Karen Andreasyan and ask him to take the matter to the Constitutional Court, and write to the president. On 3 September epress reports that the kiosks in the courtyards, at least, are not being dismantled.",
+   "summary_hy": "Մաքրումը համաքաղաքային է, ոչ թե մեկ փողոցի։ Հուլիսի 28-ին Արաբկիրի Կոմիտաս-Փափազյան-Քոչար հատվածի տասնութ կրպակի տերերին տրվում է յոթ օր՝ ղեկավարի տեղակալ Հ. Անտոնյանի ստորագրած ծանուցմամբ, որը հղում է անում քաղաքապետի 2011 թվականի հունիսի 14-ի թիվ 342144 հանձնարարականին և կնիք չունի։ Նրանց հենց նոր էին ստիպել սեփական հաշվին վերաներկել կրպակները։ Ոմանք ունեն սեփականության վկայական, մյուսները՝ վարձակալություն մինչև 2012, 2013 և 2014 թվականները։ Օգոստոսի 9-ին «Հետքը» գրում է, որ ապամոնտաժումը շարունակվելու է. Աբովյան փողոցի կրպակներն ապամոնտաժվում են օգոստոսի 11-ի և 18-ի միջև. օգոստոսի 18-ին ավելի քան հիսուն տեր այցելում են օմբուդսմեն Կարեն Անդրեասյանին և խնդրում հարցը տանել Սահմանադրական դատարան, ինչպես նաև նամակ գրում նախագահին։ Սեպտեմբերի 3-ին epress-ը հաղորդում է, որ գոնե բակերում գտնվող կրպակները չեն ապամոնտաժվում։",
+   "summary_fa": "پاک‌سازی سراسرِ شهر است، نه یک خیابان. در ۲۸ ژوئیه به صاحبانِ هجده کیوسک در بلوکِ کومیتاس-پاپازیان-کوچارِ آرابکیر هفت روز مهلت می‌دهند، با اخطاری به امضای معاون، ه. آنتونیان، با استناد به دستورِ شماره ۳۴۲۱۴۴ شهردار مورخِ ۱۴ ژوئنِ ۲۰۱۱ — و بدون مهر. تازه وادارشان کرده بودند کیوسک‌ها را به خرجِ خود رنگ کنند. برخی سندِ مالکیت دارند و برخی اجاره‌نامه تا ۲۰۱۲، ۲۰۱۳ و ۲۰۱۴. در ۹ اوت «هتق» می‌نویسد برچیدن ادامه خواهد یافت؛ کیوسک‌های خیابان آبویان میان ۱۱ تا ۱۸ اوت برچیده می‌شوند؛ در ۱۸ اوت بیش از پنجاه صاحبِ کیوسک نزدِ بازرسِ حقوق مردم، کارن آندریاسیان، می‌روند و می‌خواهند موضوع را به دادگاه قانون اساسی ببرد، و به رئیس‌جمهور هم نامه می‌نویسند. در ۳ سپتامبر «ای‌پرس» خبر می‌دهد که دستِ‌کم کیوسک‌های داخلِ حیاط‌ها برچیده نمی‌شوند.",
    "episode": "urban-protest",
    "categories": [
     "protest",
@@ -14920,19 +14936,24 @@
    ],
    "outcome": "loss",
    "dateEnd": "2011-09-03",
-   "analysis": "A dating correction. This map previously recorded the Abovyan Street clearance as January 2012, following the English Wikipedia. The contemporaneous Armenian press puts it in August 2011, with a documented sequence of notice, delay, machine and appeal. If there was a second phase in 2012 it has not been found; the 2011 sequence is the one that is sourced.",
-   "analysis_hy": "Ամսաթվի ուղղում. այս քարտեզը նախկինում Աբովյան փողոցի մաքրումն արձանագրում էր որպես 2012-ի հունվար՝ հետևելով անգլերեն Վիքիպեդիային։ Ժամանակակից հայկական մամուլը այն դնում է 2011-ի օգոստոսին՝ ծանուցման, հետաձգման, մեքենայի և բողոքարկման փաստագրված հաջորդականությամբ։",
-   "analysis_fa": "اصلاحِ تاریخ. این نقشه پیش‌تر پاک‌سازیِ خیابان آبویان را ژانویه‌ی ۲۰۱۲ ثبت کرده بود، به‌پیرویِ ویکی‌پدیای انگلیسی. مطبوعاتِ ارمنیِ همان روزها آن را در اوتِ ۲۰۱۱ می‌گذارند، با توالیِ مستندِ اخطار، تأخیر، ماشین و شکایت.",
+   "analysis": "Two corrections, one of date and one of extent. This map previously recorded the clearance as January 2012, following the English Wikipedia; the contemporaneous Armenian press puts it in August 2011, with a documented sequence of notice, delay, machine and appeal. And it was not an Abovyan Street operation. Hetq's first report is from Arabkir, four kilometres north, and the paperwork there is the same paperwork: one unstamped notice, one mayoral instruction number, seven days.\n\nThe unstamped notice and the fresh paint belong together. Owners were made to spend money on kiosks the city had already decided to remove, then given a week by a piece of paper carrying no seal. Neither fact is an abuse of the procedure; both are the procedure. It is why the appeal goes to the ombudsman and to the president rather than to a court: the owners are not disputing a decision, they are trying to find someone who will treat the decision as reviewable.",
+   "analysis_hy": "Երկու ուղղում՝ ամսաթվի և ընդգրկման։ Այս քարտեզը նախկինում մաքրումն արձանագրում էր որպես 2012-ի հունվար՝ հետևելով անգլերեն Վիքիպեդիային. ժամանակակից հայկական մամուլն այն դնում է 2011-ի օգոստոսին՝ ծանուցման, հետաձգման, մեքենայի և բողոքարկման փաստագրված հաջորդականությամբ։ Եվ դա Աբովյան փողոցի գործողություն չէր։ «Հետքի» առաջին հաղորդումը Արաբկիրից է՝ չորս կիլոմետր հյուսիս, և այնտեղի թղթաբանությունը նույնն է՝ մեկ առանց կնիքի ծանուցում, մեկ քաղաքապետի հանձնարարականի համար, յոթ օր։\n\nԱռանց կնիքի ծանուցումը և թարմ ներկը միասին են։ Տերերին ստիպել էին գումար ծախսել այն կրպակների վրա, որոնք քաղաքն արդեն որոշել էր հեռացնել, ապա մեկ շաբաթ տվել թղթի կտորով, որը կնիք չուներ։",
+   "analysis_fa": "دو اصلاح: یکی در تاریخ، یکی در دامنه. این نقشه پیش‌تر پاک‌سازی را ژانویه‌ی ۲۰۱۲ ثبت کرده بود، به‌پیرویِ ویکی‌پدیای انگلیسی؛ مطبوعاتِ ارمنیِ همان روزها آن را در اوتِ ۲۰۱۱ می‌گذارند، با توالیِ مستندِ اخطار، تأخیر، ماشین و شکایت. و عملیاتی در خیابان آبویان نبود. نخستین گزارشِ «هتق» از آرابکیر است، چهار کیلومتر شمال‌تر، و کاغذبازیِ آنجا همان کاغذبازی است: یک اخطارِ بی‌مهر، یک شماره‌ی دستورِ شهردار، هفت روز.\n\nاخطارِ بی‌مهر و رنگِ تازه به هم تعلق دارند. صاحبان را واداشته بودند برای کیوسک‌هایی خرج کنند که شهر پیشاپیش تصمیم به برداشتنشان گرفته بود، و بعد با کاغذی بی‌مهر یک هفته مهلت دادند.",
    "actors": [
     "kiosk owners",
     "Yerevan Municipality",
     "Arabkir district administration",
-    "ombudsman"
+    "H. Antonyan",
+    "Karen Andreasyan"
    ],
    "tags": [
     "kiosks",
     "Abovyan Street",
-    "clearance"
+    "Arabkir",
+    "Komitas Avenue",
+    "clearance",
+    "ombudsman",
+    "documents"
    ],
    "sources": [
     {
@@ -14969,23 +14990,33 @@
    "location_fa": "خیابان تریان ۱۱",
    "scale": "campaign",
    "form": "press",
-   "summary": "Six years after the property was called repressed, the building is reported under threat of destruction, and epress reports in July that the Afrikyans' residential house is being dismantled. The middle act of the nine-year sequence.",
-   "summary_hy": "Վեց տարի այն բանից հետո, երբ գույքն անվանվեց «բռնադատված», շենքի մասին հաղորդվում է որպես ոչնչացման վտանգի տակ գտնվողի, իսկ epress-ը հուլիսին գրում է, որ Աֆրիկյանների բնակելի տունն ապամոնտաժվում է։ Ինը տարվա հաջորդականության միջին արարը։",
-   "summary_fa": "شش سال پس از آنکه اموال «سرکوب‌شده» خوانده شد، از ساختمان همچون در خطرِ نابودی خبر می‌دهند، و «ای‌پرس» در ژوئیه می‌نویسد خانه‌ی مسکونیِ آفریکیان‌ها در حال برچیده‌شدن است. پرده‌ی میانیِ آن توالیِ نه‌ساله.",
+   "summary": "Six years after the property was called repressed, Ararat Davtyan reports the building - a monument of republican significance - under threat of destruction, and epress reports in July that the Afrikyans' residential house is being dismantled. The Afrikyans were members of the city duma and brought drinking water to Yerevan in 1911. The alarm is raised by Sedrak Baghdasaryan, president of the NGO Victims of State Needs, and the photojournalist Hayk Bianjyan. Dismantling, in practice, means excavators. Davtyan asks where the stones of the dismantled buildings go, and notes that six years after the Old Yerevan project was adopted not one stone has been laid.",
+   "summary_hy": "Վեց տարի այն բանից հետո, երբ գույքն անվանվեց «բռնադատված», Արարատ Դավթյանը գրում է շենքի մասին՝ հանրապետական նշանակության հուշարձան, որպես ոչնչացման վտանգի տակ գտնվողի, իսկ epress-ը հուլիսին հաղորդում է, որ Աֆրիկյանների բնակելի տունն ապամոնտաժվում է։ Աֆրիկյանները քաղաքային դումայի անդամներ էին և 1911 թվականին խմելու ջուր բերեցին Երևան։ Ահազանգում են «Պետական կարիքի զոհեր» ՀԿ նախագահ Սեդրակ Բաղդասարյանը և լուսանկարիչ Հայկ Բիանջյանը։ «Ապամոնտաժումը» գործնականում նշանակում է էքսկավատոր։ Դավթյանը հարցնում է՝ ուր են գնում ապամոնտաժված շենքերի քարերը, և նշում, որ «Հին Երևան» ծրագրի ընդունումից վեց տարի անց ոչ մի քար դրված չէ։",
+   "summary_fa": "شش سال پس از آنکه اموال «سرکوب‌شده» خوانده شد، آرارات داوتیان از ساختمان — بنایی با اهمیتِ جمهوری — همچون در خطرِ نابودی خبر می‌دهد، و «ای‌پرس» در ژوئیه می‌نویسد خانه‌ی مسکونیِ آفریکیان‌ها در حال برچیده‌شدن است. آفریکیان‌ها عضوِ دومای شهر بودند و در ۱۹۱۱ آبِ آشامیدنی به ایروان آوردند. هشدار را سدراک باقداساریان، رئیسِ سازمانِ «قربانیانِ نیازِ دولتی»، و هایک بیانجیانِ عکاس‌خبرنگار می‌دهند. «برچیدن» در عمل یعنی بیل مکانیکی. داوتیان می‌پرسد سنگ‌های ساختمان‌های برچیده کجا می‌روند، و یادآور می‌شود شش سال پس از تصویبِ طرحِ «ایروانِ قدیم» هنوز یک سنگ هم گذاشته نشده است.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
+   "analysis": "Dismantling is the key word, and it is doing legal work. A monument of republican significance cannot be demolished, so it is dismantled - taken down stone by stone to be rebuilt elsewhere, which is lawful. Davtyan's question is whether that ever happens, and his evidence is the Old Yerevan site: six years, no stone laid. The category that protects the building is what permits its removal.\n\nThe name of the NGO raising the alarm is worth keeping. Victims of State Needs takes the statutory phrase from the 2002 decree - state needs, the ground on which every expropriation in this cube rests - and makes it the name of the people it was used against.",
+   "analysis_hy": "«Ապամոնտաժում» բառը իրավական աշխատանք է կատարում։ Հանրապետական նշանակության հուշարձանը չի կարող քանդվել, ուստի այն ապամոնտաժվում է՝ քար առ քար հանվում, որ այլ տեղ վերականգնվի, ինչը օրինական է։ Դավթյանի հարցն այն է՝ երբևէ դա տեղի ունենո՞ւմ է, և նրա ապացույցը «Հին Երևանի» տարածքն է՝ վեց տարի, ոչ մի քար։ Այն կարգը, որ պաշտպանում է շենքը, հենց այն է, ինչ թույլ է տալիս դրա հեռացումը։\n\nԱհազանգող ՀԿ-ի անունն արժե պահել։ «Պետական կարիքի զոհերը» վերցնում է 2002 թվականի որոշման օրենսդրական արտահայտությունը և դարձնում այն մարդկանց անունը, ում դեմ այն կիրառվել է։",
+   "analysis_fa": "«برچیدن» واژه‌ی کلیدی است و کارِ حقوقی می‌کند. بنایی با اهمیتِ جمهوری را نمی‌توان تخریب کرد، پس برچیده می‌شود — سنگ‌سنگ برداشته می‌شود تا جای دیگر بازساخته شود، و این قانونی است. پرسشِ داوتیان این است که آیا این کار هرگز رخ می‌دهد، و شاهدش محوطه‌ی «ایروانِ قدیم» است: شش سال، بی‌یک سنگ. همان رده‌ای که از بنا حفاظت می‌کند، همان است که برداشتنش را مجاز می‌سازد.\n\nنامِ آن سازمان ارزشِ نگه‌داشتن دارد: «قربانیانِ نیازِ دولتی» عبارتِ قانونیِ فرمانِ ۲۰۰۲ را می‌گیرد و نامِ کسانی می‌کند که علیه‌شان به کار رفت.",
    "actors": [
     "the Afrikyan family",
-    "preservationists"
+    "Ararat Davtyan",
+    "Sedrak Baghdasaryan",
+    "Victims of State Needs",
+    "Hayk Bianjyan",
+    "Yerevan Municipality"
    ],
    "tags": [
     "Afrikyan house",
     "heritage",
-    "demolition"
+    "demolition",
+    "Old Yerevan",
+    "state needs",
+    "Teryan Street"
    ],
    "sources": [
     {
@@ -15054,7 +15085,7 @@
    "location_fa": "خیابان پاوستوس بوزاند ۱۷",
    "scale": "campaign",
    "form": "court",
-   "summary": "The European Court of Human Rights finds against the Republic of Armenia over the expropriation at 17 Buzand Street. Aravot's headline says the residents were relieved. Nine years after the decree and five after their eviction, the people cleared for Northern Avenue win - in Strasbourg, on paper, long after the street is gone.",
+   "summary": "The European Court of Human Rights finds against the Republic of Armenia over the expropriation at 17 Buzand Street and awards 18,500 euros to the family of Hovhannes Hovhannisyan - the third Armenian family compensated by the court, with twenty more claims pending. Aravot's headline says the residents were relieved. Nine years after the decree and five after their eviction, the people cleared for Northern Avenue win - in Strasbourg, on paper, long after the street is gone. Aravot's follow-up in February 2012 adds what the win does not undo: people were put out by spetsnaz, and the Constitutional Court afterwards found those actions unconstitutional - but they were already out, so nothing changed.",
    "summary_hy": "Մարդու իրավունքների եվրոպական դատարանը վճիռ է կայացնում Հայաստանի Հանրապետության դեմ՝ Բուզանդի 17 հասցեի օտարման կապակցությամբ։ «Առավոտի» վերնագիրն ասում է՝ բնակիչները հանգստացան։ Որոշումից ինը և իրենց վտարումից հինգ տարի անց Հյուսիսային պողոտայի համար դուրս բերված մարդիկ հաղթում են՝ Ստրասբուրգում, թղթի վրա, փողոցի անհետանալուց շատ անց։",
    "summary_fa": "دادگاه اروپاییِ حقوق بشر بر سرِ سلبِ مالکیت در بوزاند ۱۷ علیه جمهوری ارمنستان رأی می‌دهد. تیترِ «آراوت» می‌گوید ساکنان آسوده شدند. نه سال پس از فرمان و پنج سال پس از اخراجشان، کسانی که برای خیابان شمالی بیرون رانده شدند می‌برند — در استراسبورگ، روی کاغذ، مدت‌ها پس از آنکه خیابان رفته است.",
    "episode": "urban-protest",
@@ -15063,19 +15094,24 @@
     "urbanchange"
    ],
    "outcome": "win",
-   "analysis": "The largest win in the dossier and the emptiest. It arrives through an institution outside the country, years after the fact, and returns nobody to their street. Three months later Aravot asks the obvious question in a headline: did the inviolability of the Constitution not extend to the former residents of Buzand Street?\n\nPut this entry next to the Thursday protests, which begin two weeks earlier and are attended by the same people. They had been standing outside a government building every week for years; the thing that finally worked was a court in France.",
+   "analysis": "The largest win in the dossier and the emptiest. It arrives through an institution outside the country, years after the fact, and returns nobody to their street. Three months later Aravot asks the obvious question in a headline: did the inviolability of the Constitution not extend to the former residents of Buzand Street?\n\nThe answer in the article is stranger than the question. The Constitutional Court did find the evictions unconstitutional. It made no difference, because the finding came after the special forces, and a ruling cannot put a family back into a building that is no longer there. This is the single clearest statement of what the compressed decade was: a period in which the law worked, slowly, in the correct direction, and always second.\n\nPut this entry next to the Thursday protests, which begin two weeks earlier and are attended by the same people. They had been standing outside a government building every week for years; the thing that finally worked was a court in France.",
    "analysis_hy": "Թղթապանակի ամենամեծ և ամենադատարկ հաղթանակը։ Այն գալիս է երկրից դուրս գտնվող հաստատության միջոցով, փաստից տարիներ անց, և ոչ մեկին չի վերադարձնում իր փողոց։ Երեք ամիս անց «Առավոտը» վերնագրում տալիս է ակնհայտ հարցը՝ Սահմանադրության անձեռնմխելիությունը Բուզանդի փողոցի նախկին բնակիչների վրա չէ՞ր տարածվում։\n\nԴրեք այս գրառումը հինգշաբթի բողոքների կողքին, որոնք սկսվում են երկու շաբաթ առաջ և որոնց մասնակցում են նույն մարդիկ։ Նրանք տարիներ շարունակ ամեն շաբաթ կանգնում էին կառավարական շենքի դիմաց. այն, ինչ վերջապես աշխատեց, Ֆրանսիայի մի դատարանն էր։",
    "analysis_fa": "بزرگ‌ترین بردِ پرونده و توخالی‌ترینش. از راهِ نهادی بیرون از کشور می‌رسد، سال‌ها پس از واقعه، و هیچ‌کس را به خیابانش بازنمی‌گرداند. سه ماه بعد «آراوت» پرسشِ آشکار را در تیتری می‌آورد: آیا مصونیتِ قانون اساسی شاملِ ساکنانِ پیشینِ خیابان بوزاند نمی‌شد؟\n\nاین مدخل را کنارِ اعتراض‌های پنجشنبه بگذارید که دو هفته پیش‌تر آغاز می‌شوند و همان آدم‌ها در آن‌اند. سال‌ها هر هفته مقابلِ ساختمانی دولتی ایستاده بودند؛ آنچه سرانجام کارگر افتاد دادگاهی در فرانسه بود.",
    "actors": [
     "former residents of Buzand Street",
+    "the family of Hovhannes Hovhannisyan",
     "European Court of Human Rights",
+    "Constitutional Court of Armenia",
+    "spetsnaz",
     "Government of Armenia"
    ],
    "tags": [
     "Buzand Street",
     "ECHR",
     "expropriation",
-    "Northern Avenue"
+    "Northern Avenue",
+    "Constitutional Court",
+    "compensation"
    ],
    "sources": [
     {
@@ -15205,27 +15241,32 @@
    "location_fa": "مقابل اقامتگاه رئیس‌جمهور، خیابان باغرامیان",
    "scale": "campaign",
    "form": "sit-in",
-   "summary": "Evicted residents promised new apartments and never given them camp outside the presidential residence for three weeks. They threaten a hunger strike; a mother blocks Baghramyan Avenue demanding to meet the president; twice they try to hand over a letter, the second time waving white flags, and twice the motorcade does not stop. In February the president's permanent representative is given the case.",
-   "summary_hy": "Վտարված բնակիչները, որոնց խոստացել էին նոր բնակարաններ և երբեք չէին տվել, երեք շաբաթ նստում են նախագահի նստավայրի դիմաց։ Նրանք սպառնում են հացադուլով. մի մայր փակում է Բաղրամյան պողոտան՝ պահանջելով հանդիպել նախագահին. երկու անգամ փորձում են նամակ հանձնել, երկրորդ անգամ՝ սպիտակ դրոշներ թափահարելով, և երկու անգամ էլ ավտոշարասյունը չի կանգնում։ Փետրվարին գործը հանձնվում է նախագահի մշտական ներկայացուցչին։",
-   "summary_fa": "ساکنانِ اخراج‌شده‌ای که وعده‌ی آپارتمانِ نو گرفتند و هرگز نگرفتند، سه هفته مقابل اقامتگاه رئیس‌جمهور می‌مانند. تهدید به اعتصاب غذا می‌کنند؛ مادری خیابان باغرامیان را می‌بندد و خواهانِ دیدارِ رئیس‌جمهور می‌شود؛ دو بار می‌کوشند نامه‌ای برسانند، بارِ دوم با تکان‌دادنِ پرچمِ سفید، و هر دو بار کاروان نمی‌ایستد.",
+   "summary": "Evicted residents promised new apartments and never given them camp outside the presidential residence for three weeks. They are from four streets - Aram, Buzand, Yekmalyan and Saryan - all of them cleared under the 2002 decree. They threaten a hunger strike; a mother blocks Baghramyan Avenue demanding to meet the president; twice they try to hand over a letter, the second time waving white flags, and twice the motorcade does not stop. They refuse to give the letter to an intermediary: they trust no one, they say, and this is the umpteenth time they have delivered a letter and received no answer, written or spoken. In February the president's permanent representative is given the case.",
+   "summary_hy": "Վտարված բնակիչները, որոնց խոստացել էին նոր բնակարաններ և երբեք չէին տվել, երեք շաբաթ նստում են նախագահի նստավայրի դիմաց։ Նրանք չորս փողոցից են՝ Արամի, Բուզանդի, Եկմալյանի և Սարյանի, բոլորն էլ մաքրված 2002 թվականի որոշմամբ։ Նրանք հրաժարվում են նամակը միջնորդի հանձնել՝ «ոչ մեկին չենք վստահում… սա բազմերորդ անգամն է, որ նամակ ենք հանձնում և պատասխան չենք ստանում՝ ո՛չ գրավոր, ո՛չ բանավոր»։ Նրանք սպառնում են հացադուլով. մի մայր փակում է Բաղրամյան պողոտան՝ պահանջելով հանդիպել նախագահին. երկու անգամ փորձում են նամակ հանձնել, երկրորդ անգամ՝ սպիտակ դրոշներ թափահարելով, և երկու անգամ էլ ավտոշարասյունը չի կանգնում։ Փետրվարին գործը հանձնվում է նախագահի մշտական ներկայացուցչին։",
+   "summary_fa": "ساکنانِ اخراج‌شده‌ای که وعده‌ی آپارتمانِ نو گرفتند و هرگز نگرفتند، سه هفته مقابل اقامتگاه رئیس‌جمهور می‌مانند. اهلِ چهار خیابان‌اند — آرام، بوزاند، یکمالیان و ساریان — که همه با فرمانِ ۲۰۰۲ پاک شدند. نامه را به واسطه نمی‌دهند: «به هیچ‌کس اعتماد نداریم… این چندمین بار است که نامه می‌دهیم و پاسخی نمی‌گیریم، نه کتبی نه شفاهی.» تهدید به اعتصاب غذا می‌کنند؛ مادری خیابان باغرامیان را می‌بندد و خواهانِ دیدارِ رئیس‌جمهور می‌شود؛ دو بار می‌کوشند نامه‌ای برسانند، بارِ دوم با تکان‌دادنِ پرچمِ سفید، و هر دو بار کاروان نمی‌ایستد.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "dateEnd": "2012-02-09",
-   "analysis": "The white flags are the detail to keep. A flag of surrender offered to your own head of state is not a demand; it is a statement that the demanding is over. Read next to the street traders' inventiveness eight months earlier, it marks how quickly a repertoire can exhaust itself when nothing on the other side moves.",
+   "analysis": "The white flags are the detail to keep. A flag of surrender offered to your own head of state is not a demand; it is a statement that the demanding is over. Read next to the street traders' inventiveness eight months earlier, it marks how quickly a repertoire can exhaust itself when nothing on the other side moves.\n\nThe refusal to use an intermediary is the other half of it, and it is not stubbornness. Every previous letter had been accepted by someone and answered by no one; handing this one to an official would have completed the same circuit again. Waving it at a passing motorcade at least required the letter to be seen refused. That is a protest about the mechanism of appeal rather than about housing - which is what the appeal-upward repertoire looks like at the point where it stops working.\n\nFour streets, not two. Aram and Buzand are the pair this map has carried; Yekmalyan and Saryan belong with them.",
    "analysis_hy": "Սպիտակ դրոշներն այն մանրամասնն են, որ արժե պահել։ Հանձնվելու դրոշը, առաջարկված սեփական պետության ղեկավարին, պահանջ չէ. այն հայտարարություն է, որ պահանջելն ավարտվել է։ Կարդալով ութ ամիս առաջվա փողոցային առևտրականների հնարամտության կողքին՝ այն ցույց է տալիս, թե որքան արագ կարող է ռեպերտուարը սպառվել, երբ մյուս կողմում ոչինչ չի շարժվում։",
    "analysis_fa": "پرچم‌های سفید جزئیاتی است که باید نگه داشت. پرچمِ تسلیم که به رئیسِ کشورِ خودت عرضه شود، مطالبه نیست؛ اعلامِ پایانِ مطالبه‌کردن است. کنارِ ابتکارِ دستفروشان در هشت ماه پیش‌تر که بخوانی، نشان می‌دهد یک مجموعه‌شیوه چه زود ته می‌کشد وقتی آن‌سو چیزی تکان نمی‌خورد.",
    "actors": [
-    "evicted residents",
+    "evicted residents of Aram, Buzand, Yekmalyan and Saryan streets",
     "Office of the President"
    ],
    "tags": [
     "eviction",
     "sit-in",
     "presidential residence",
-    "white flags"
+    "white flags",
+    "Aram Street",
+    "Buzand Street",
+    "Yekmalyan Street",
+    "Saryan Street",
+    "Northern Avenue"
    ],
    "sources": [
     {
@@ -15301,9 +15342,9 @@
    "location_fa": "پارک ماشتوتس، کنار بازار سرپوشیده",
    "scale": "movement",
    "form": "occupation",
-   "summary": "Eight weeks that change what protest in Yerevan can do. Environmentalists protest against kiosks being built in the park on 11 February; on the 14th they let the contractors work but ask the mayor to annul the decision; on the 16th the police give them half an hour to pack up and they do not; on the 21st an activist begins a hunger strike and halts it the next day; on 13 March they pitch the first tent, surrounded by police, and on the 15th the police seize it in a brawl. On 29 February the prime minister says he is against pavilions in the park. On 28 March they announce the date and time at which they will dismantle the kiosks themselves; on 3 April they prepare the ground; on the 5th a fourth brigade joins; the kiosks come out.",
-   "summary_hy": "Ութ շաբաթ, որոնք փոխում են այն, ինչ բողոքը կարող է անել Երևանում։ Բնապահպանները փետրվարի 11-ին բողոքում են պուրակում կրպակների կառուցման դեմ. 14-ին թույլ են տալիս կապալառուներին աշխատել, բայց խնդրում են քաղաքապետին չեղարկել որոշումը. 16-ին ոստիկանությունը կես ժամ է տալիս հավաքվելու համար, և նրանք չեն հավաքվում. 21-ին ակտիվիստը հացադուլ է սկսում և հաջորդ օրը դադարեցնում. մարտի 13-ին տեղադրում են առաջին վրանը՝ ոստիկաններով շրջապատված, իսկ 15-ին ոստիկանությունը բռնությամբ վերցնում է այն։ Փետրվարի 29-ին վարչապետն ասում է, որ դեմ է պուրակի տաղավարներին։ Մարտի 28-ին նրանք հայտարարում են այն օրն ու ժամը, երբ իրենք են ապամոնտաժելու կրպակները. ապրիլի 3-ին պատրաստում են հողը. 5-ին միանում է չորրորդ բրիգադը. կրպակները հանվում են։",
-   "summary_fa": "هشت هفته که آنچه اعتراض در ایروان می‌تواند بکند را عوض می‌کند. محیط‌زیستی‌ها در ۱۱ فوریه به ساختِ کیوسک در پارک اعتراض می‌کنند؛ در ۱۴ می‌گذارند پیمانکاران کار کنند اما از شهردار می‌خواهند تصمیم را لغو کند؛ در ۱۶ پلیس نیم‌ساعت مهلت می‌دهد جمع کنند و نمی‌کنند؛ در ۲۱ فعالی اعتصابِ غذا می‌کند و فردایش قطعش می‌کند؛ در ۱۳ مارس نخستین چادر را در محاصره‌ی پلیس برپا می‌کنند و در ۱۵ پلیس در درگیری آن را می‌برد. در ۲۹ فوریه نخست‌وزیر می‌گوید مخالفِ غرفه‌ها در پارک است. در ۲۸ مارس روز و ساعتی را اعلام می‌کنند که خودشان کیوسک‌ها را برمی‌چینند؛ در ۳ آوریل زمین را آماده می‌کنند؛ در ۵ گروهِ چهارم می‌پیوندد؛ کیوسک‌ها بیرون می‌روند.",
+   "summary": "Eight weeks that change what protest in Yerevan can do - and the kiosks at the centre of them are the Abovyan Street kiosks. Epress records it plainly: these same kiosks had recently been dismantled on Abovyan Street, only to be reconstructed in the park beside the Research Center of Maternal and Child Health Protection on Aram Street. The park is the strip of green between Aram and Buzand - two of the streets cleared for Northern Avenue. Environmentalists protest against the kiosks being built in the park on 11 February; on the 14th they let the contractors work but ask the mayor to annul the decision; on the 16th the police give them half an hour to pack up and they do not; on the 21st an activist begins a hunger strike and halts it the next day; on 13 March they pitch the first tent, surrounded by police, and on the 15th the police seize it in a brawl. On 29 February the prime minister says he is against pavilions in the park. On 28 March they announce the date and time at which they will dismantle the kiosks themselves; on 3 April they prepare the ground; on the 5th a fourth brigade joins; the kiosks come out.",
+   "summary_hy": "Ութ շաբաթ, որոնք փոխում են այն, ինչ բողոքը կարող է անել Երևանում, և դրանց կենտրոնում գտնվող կրպակները Աբովյան փողոցի կրպակներն են։ Epress-ը գրում է դա ուղղակի՝ հենց այս կրպակները վերջերս ապամոնտաժվել էին Աբովյան փողոցում, միայն թե վերականգնվեին պուրակում՝ Արամի փողոցի Մոր և մանկան առողջության պահպանման գիտահետազոտական կենտրոնի կողքին։ Պուրակը Արամի և Բուզանդի միջև ընկած կանաչ շերտն է՝ Հյուսիսային պողոտայի համար մաքրված փողոցներից երկուսը։ Բնապահպանները փետրվարի 11-ին բողոքում են պուրակում կրպակների կառուցման դեմ. 14-ին թույլ են տալիս կապալառուներին աշխատել, բայց խնդրում են քաղաքապետին չեղարկել որոշումը. 16-ին ոստիկանությունը կես ժամ է տալիս հավաքվելու համար, և նրանք չեն հավաքվում. 21-ին ակտիվիստը հացադուլ է սկսում և հաջորդ օրը դադարեցնում. մարտի 13-ին տեղադրում են առաջին վրանը՝ ոստիկաններով շրջապատված, իսկ 15-ին ոստիկանությունը բռնությամբ վերցնում է այն։ Փետրվարի 29-ին վարչապետն ասում է, որ դեմ է պուրակի տաղավարներին։ Մարտի 28-ին նրանք հայտարարում են այն օրն ու ժամը, երբ իրենք են ապամոնտաժելու կրպակները. ապրիլի 3-ին պատրաստում են հողը. 5-ին միանում է չորրորդ բրիգադը. կրպակները հանվում են։",
+   "summary_fa": "هشت هفته که آنچه اعتراض در ایروان می‌تواند بکند را عوض می‌کند — و کیوسک‌هایی که در مرکزِ ماجرایند همان کیوسک‌های خیابان آبویان‌اند. «ای‌پرس» صریح می‌نویسد: همین کیوسک‌ها به‌تازگی در خیابان آبویان برچیده شده بودند، تنها برای آنکه در پارکِ کنارِ مرکز تحقیقاتِ سلامتِ مادر و کودک در خیابان آرام دوباره برپا شوند. پارک، نوارِ سبزِ میان آرام و بوزاند است — دو تا از خیابان‌هایی که برای خیابان شمالی پاک شدند. محیط‌زیستی‌ها در ۱۱ فوریه به ساختِ کیوسک در پارک اعتراض می‌کنند؛ در ۱۴ می‌گذارند پیمانکاران کار کنند اما از شهردار می‌خواهند تصمیم را لغو کند؛ در ۱۶ پلیس نیم‌ساعت مهلت می‌دهد جمع کنند و نمی‌کنند؛ در ۲۱ فعالی اعتصابِ غذا می‌کند و فردایش قطعش می‌کند؛ در ۱۳ مارس نخستین چادر را در محاصره‌ی پلیس برپا می‌کنند و در ۱۵ پلیس در درگیری آن را می‌برد. در ۲۹ فوریه نخست‌وزیر می‌گوید مخالفِ غرفه‌ها در پارک است. در ۲۸ مارس روز و ساعتی را اعلام می‌کنند که خودشان کیوسک‌ها را برمی‌چینند؛ در ۳ آوریل زمین را آماده می‌کنند؛ در ۵ گروهِ چهارم می‌پیوندد؛ کیوسک‌ها بیرون می‌روند.",
    "episode": "urban-protest",
    "categories": [
     "protest",
@@ -15311,9 +15352,9 @@
    ],
    "outcome": "win",
    "dateEnd": "2012-04-06",
-   "analysis": "The movement in the strict sense used on this map: a fight that recruited far beyond the people who lost anything. Nobody at Mashtots Park lived in it.\n\nWhat makes it the hinge of the whole cube is not the win but the sequence by which it was won, which is the One Handful of Soil method at nine months' length. They did not petition for the kiosks to be removed; they announced when they would remove them, and then did. Between 2007 and 2012 that gesture acquires a tent, a hunger strike, a legal argument, a prime minister and eight weeks of press. Everything above this entry in the cube is done by people who watched it work.",
-   "analysis_hy": "Շարժում՝ այս քարտեզում օգտագործվող խիստ իմաստով. պայքար, որը հավաքագրեց շատ ավելի լայն շրջանակ, քան ինչ-որ բան կորցրածները։ Մաշտոցի պուրակում ոչ ոք չէր ապրում։\n\nԱմբողջ խորանարդի հոդակապը դարձնողը հաղթանակը չէ, այլ այն հաջորդականությունը, որով հաղթվեց, և դա «Մեկ բուռ հողի» եղանակն է՝ ինն ամսվա երկարությամբ։ Նրանք չմիջնորդեցին, որ կրպակները հանվեն. հայտարարեցին, թե երբ իրենք կհանեն դրանք, և հանեցին։ 2007-ից 2012-ն այդ ժեստը ձեռք է բերում վրան, հացադուլ, իրավական փաստարկ, վարչապետ և ութ շաբաթվա մամուլ։",
-   "analysis_fa": "جنبش، به همان معنای سختگیرانه‌ای که این نقشه به کار می‌برد: نبردی که بسیار فراتر از باخته‌ها آدم جذب کرد. هیچ‌کس در پارک ماشتوتس زندگی نمی‌کرد.\n\nآنچه آن را لولای کلِ مکعب می‌کند بُرد نیست، بلکه توالی‌ای است که با آن برده شد، و آن همان روشِ «یک مشت خاک» است در درازای نه ماه. درخواست نکردند کیوسک‌ها برداشته شوند؛ اعلام کردند کِی خودشان برشان می‌دارند، و برداشتند.",
+   "analysis": "The relocation is the finding, and it closes the cube's circle. In August 2011 the city removed the kiosks from Abovyan Street on seven days' notice; six months later it put the same kiosks back up on the last strip of green left between Aram and Buzand, the streets it had emptied for Northern Avenue a decade earlier. Nothing was destroyed and nothing was created. A row of small commercial units was moved from a street the city wanted to look European onto ground that had already been taken from residents once.\n\nThat also explains why this fight, unlike the kiosk owners' own, could be won. In 2011 the people with a grievance were the kiosk owners, whose claim was private and compensable; in 2012 the same objects landed on public ground, where anybody in the city had standing to object. The kiosks did not change. What changed was who was permitted to be harmed by them.\n\nIt is a movement in the strict sense used on this map: a fight that recruited far beyond the people who lost anything. Nobody at Mashtots Park lived in it.\n\nWhat makes it the hinge of the whole cube is not the win but the sequence by which it was won, which is the One Handful of Soil method at nine months' length. They did not petition for the kiosks to be removed; they announced when they would remove them, and then did. Between 2007 and 2012 that gesture acquires a tent, a hunger strike, a legal argument, a prime minister and eight weeks of press. Everything above this entry in the cube is done by people who watched it work.",
+   "analysis_hy": "Տեղափոխումն է գտածոն, և այն փակում է խորանարդի շրջանը։ 2011-ի օգոստոսին քաղաքը յոթ օրվա ծանուցմամբ հանեց կրպակները Աբովյան փողոցից. վեց ամիս անց նույն կրպակները նորից կանգնեցրեց Արամի և Բուզանդի միջև մնացած վերջին կանաչ շերտի վրա՝ այն փողոցների, որոնք ինքն էր դատարկել Հյուսիսային պողոտայի համար տասնամյակ առաջ։ Ոչինչ չոչնչացվեց և ոչինչ չստեղծվեց։ Փոքր առևտրային միավորների շարքը տեղափոխվեց այն փողոցից, որին քաղաքն ուզում էր եվրոպական տեսք տալ, այն հողի վրա, որն արդեն մեկ անգամ վերցվել էր բնակիչներից։\n\nԴա նաև բացատրում է, թե ինչու այս պայքարը, ի տարբերություն հենց կրպակատերերի պայքարի, կարող էր հաղթվել։ 2011-ին բողոք ունեցողները կրպակատերերն էին, որոնց պահանջը մասնավոր էր և փոխհատուցելի. 2012-ին նույն առարկաները հայտնվեցին հանրային հողի վրա, որտեղ քաղաքի ցանկացած մարդ իրավունք ուներ առարկելու։ Կրպակները չփոխվեցին։ Փոխվեց այն, թե ում էր թույլատրվում վնաս կրել դրանցից։\n\nՇարժում՝ այս քարտեզում օգտագործվող խիստ իմաստով. պայքար, որը հավաքագրեց շատ ավելի լայն շրջանակ, քան ինչ-որ բան կորցրածները։ Մաշտոցի պուրակում ոչ ոք չէր ապրում։\n\nԱմբողջ խորանարդի հոդակապը դարձնողը հաղթանակը չէ, այլ այն հաջորդականությունը, որով հաղթվեց, և դա «Մեկ բուռ հողի» եղանակն է՝ ինն ամսվա երկարությամբ։ Նրանք չմիջնորդեցին, որ կրպակները հանվեն. հայտարարեցին, թե երբ իրենք կհանեն դրանք, և հանեցին։ 2007-ից 2012-ն այդ ժեստը ձեռք է բերում վրան, հացադուլ, իրավական փաստարկ, վարչապետ և ութ շաբաթվա մամուլ։",
+   "analysis_fa": "جابه‌جایی همان یافته است، و دایره‌ی مکعب را می‌بندد. در اوتِ ۲۰۱۱ شهر کیوسک‌ها را با هفت روز اخطار از خیابان آبویان برداشت؛ شش ماه بعد همان کیوسک‌ها را بر آخرین نوارِ سبزِ باقی‌مانده میان آرام و بوزاند برپا کرد — همان خیابان‌هایی که خودش یک دهه پیش برای خیابان شمالی خالی کرده بود. نه چیزی نابود شد و نه چیزی ساخته. ردیفی از واحدهای کوچکِ تجاری از خیابانی که شهر می‌خواست اروپایی به نظر برسد، منتقل شد به زمینی که یک بار از ساکنانش گرفته شده بود.\n\nهمین توضیح می‌دهد چرا این نبرد، برخلافِ نبردِ خودِ کیوسک‌داران، بردنی بود. در ۲۰۱۱ شاکیان کیوسک‌داران بودند و ادعاشان خصوصی و قابلِ‌غرامت؛ در ۲۰۱۲ همان اشیاء بر زمینِ عمومی نشستند، جایی که هر کسِ شهر حقِ اعتراض داشت. کیوسک‌ها عوض نشدند. آنچه عوض شد این بود که چه کسی اجازه داشت از آن‌ها آسیب ببیند.\n\nجنبش، به همان معنای سختگیرانه‌ای که این نقشه به کار می‌برد: نبردی که بسیار فراتر از باخته‌ها آدم جذب کرد. هیچ‌کس در پارک ماشتوتس زندگی نمی‌کرد.\n\nآنچه آن را لولای کلِ مکعب می‌کند بُرد نیست، بلکه توالی‌ای است که با آن برده شد، و آن همان روشِ «یک مشت خاک» است در درازای نه ماه. درخواست نکردند کیوسک‌ها برداشته شوند؛ اعلام کردند کِی خودشان برشان می‌دارند، و برداشتند.",
    "actors": [
     "environmental activists",
     "Yerevan Municipality",
@@ -15325,7 +15366,11 @@
     "occupation",
     "green space",
     "kiosks",
-    "movement"
+    "movement",
+    "Abovyan Street",
+    "Aram Street",
+    "Buzand Street",
+    "Northern Avenue"
    ],
    "sources": [
     {
@@ -15462,27 +15507,37 @@
    "location_hy": "Կոմիտասի պողոտա 5, Արաբկիր",
    "location_fa": "خیابان کومیتاس ۵، آرابکیر",
    "scale": "courtyard",
-   "form": "blockade",
-   "summary": "Two years after their first win, the same residents halt construction in their yard on 21 August. They refuse to take part in negotiations on 3 September. By the 5th the work has resumed, and by 17 September epress reports that there are no more actions at Komitas 5 and the construction continues.",
-   "summary_hy": "Իրենց առաջին հաղթանակից երկու տարի անց նույն բնակիչներն օգոստոսի 21-ին կասեցնում են շինարարությունն իրենց բակում։ Սեպտեմբերի 3-ին նրանք հրաժարվում են մասնակցել բանակցություններին։ 5-ին աշխատանքները վերսկսվում են, իսկ սեպտեմբերի 17-ին epress-ը գրում է, որ Կոմիտաս 5-ում ակցիաներ այլևս չկան, և շինարարությունը շարունակվում է։",
-   "summary_fa": "دو سال پس از نخستین بردشان، همان ساکنان در ۲۱ اوت ساخت‌وساز را در حیاطشان متوقف می‌کنند. در ۳ سپتامبر از شرکت در مذاکره سر باز می‌زنند. تا ۵ سپتامبر کار از سر گرفته شده، و تا ۱۷ سپتامبر «ای‌پرس» می‌نویسد دیگر کنشی در کومیتاس ۵ نیست و ساخت‌وساز ادامه دارد.",
+   "form": "occupation",
+   "summary": "Two years after their first win, the same residents halt construction in their yard on 21 August - not with a picket but by storming the site. They block Komitas Avenue twice, and climb onto the excavator, saying they will spend the night on it and will not come down unless the machinery goes. Argishti Kiviryan, Ani Kaghinyan, Yeghia Nersisyan and Hasmik Lalayan are among them; Davit Sanasaryan is shoved; Tigran Khzmalyan is detained and released. They refuse to take part in negotiations on 3 September. By the 5th the work has resumed, and by 17 September epress reports that there are no more actions at Komitas 5 and the construction continues.",
+   "summary_hy": "Իրենց առաջին հաղթանակից երկու տարի անց նույն բնակիչներն օգոստոսի 21-ին կասեցնում են շինարարությունն իրենց բակում՝ ոչ թե հսկողությամբ, այլ տարածք ներխուժելով։ Երկու անգամ փակում են Կոմիտասի պողոտան և բարձրանում էքսկավատորի վրա՝ ասելով, որ գիշերելու են դրա վրա և չեն իջնի, քանի դեռ տեխնիկան չի հեռացել։ Նրանց մեջ են Արգիշտի Կիվիրյանը, Անի Կաղինյանը, Եղիա Ներսիսյանը և Հասմիկ Լալայանը. Դավիթ Սանասարյանին հրում են. Տիգրան Խզմալյանին բերման են ենթարկում և բաց թողնում։ Սեպտեմբերի 3-ին նրանք հրաժարվում են մասնակցել բանակցություններին։ 5-ին աշխատանքները վերսկսվում են, իսկ սեպտեմբերի 17-ին epress-ը գրում է, որ Կոմիտաս 5-ում ակցիաներ այլևս չկան, և շինարարությունը շարունակվում է։",
+   "summary_fa": "دو سال پس از نخستین بردشان، همان ساکنان در ۲۱ اوت ساخت‌وساز را در حیاطشان متوقف می‌کنند — نه با تحصن، بلکه با هجوم به کارگاه. دو بار خیابان کومیتاس را می‌بندند و بالای بیل مکانیکی می‌روند و می‌گویند شب را رویش می‌مانند و پایین نمی‌آیند مگر ماشین‌آلات برود. آرگیشتی کیویریان، آنی کاقینیان، یغیا نرسیسیان و هاسمیک لالایان میانشان‌اند؛ داویت ساناساریان را هل می‌دهند؛ تیگران خزمالیان بازداشت و آزاد می‌شود. در ۳ سپتامبر از شرکت در مذاکره سر باز می‌زنند. تا ۵ سپتامبر کار از سر گرفته شده، و تا ۱۷ سپتامبر «ای‌پرس» می‌نویسد دیگر کنشی در کومیتاس ۵ نیست و ساخت‌وساز ادامه دارد.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "dateEnd": "2013-09-17",
-   "analysis": "The rematch, and it goes the other way. Worth keeping beside the 2011 entry precisely because a courtyard action that succeeded once fails on the identical ground with the identical people. What changed is not the residents but the developer's patience: the technique of waiting out a blockade is learned during exactly these years.",
-   "analysis_hy": "Կրկնախաղ, և այն գնում է հակառակ ուղղությամբ։ Արժե պահել 2011-ի գրառման կողքին հենց այն պատճառով, որ մեկ անգամ հաջողված բակային գործողությունը ձախողվում է նույն հողի վրա, նույն մարդկանցով։ Փոխվել են ոչ թե բնակիչները, այլ կառուցապատողի համբերությունը. պաշարումը սպասելով հաղթահարելու տեխնիկան սովորվում է հենց այս տարիներին։",
-   "analysis_fa": "بازیِ برگشت، و این‌بار وارونه. باید کنارِ مدخلِ ۲۰۱۱ نگه داشته شود، دقیقاً چون کنشی حیاطی که یک‌بار موفق شد، روی همان زمین و با همان آدم‌ها شکست می‌خورد. آنچه عوض شده ساکنان نیستند، صبرِ سازنده است: فنِ «صبرکردن تا محاصره تمام شود» درست در همین سال‌ها آموخته می‌شود.",
+   "analysis": "The rematch, and it goes the other way despite being fought harder. This was entered on the map as a picket; the sources make it an occupation - a blocked avenue, a machine climbed onto, an announced intention to stay the night. The escalation is the point. In 2011 standing in the yard was enough; in 2013 the same people had to take the excavator itself, and still lost.\n\nWhat changed is not the residents but the developer's patience: the technique of waiting out a blockade is learned during exactly these years. Notice also who is in the yard. Kiviryan, Khzmalyan, Sanasaryan are not neighbours; they are the activist core that came out of Mashtots Park. From 2013 the courtyard fight and the movement share personnel, which is what allows the scale to jump in 2015 - and what means that when the courtyard loses, it loses in public.",
+   "analysis_hy": "Կրկնախաղ, և այն գնում է հակառակ ուղղությամբ՝ չնայած ավելի կատաղի պայքարին։ Քարտեզում սա մուտքագրված էր որպես հսկողություն. աղբյուրները դարձնում են այն գրավում՝ փակված պողոտա, էքսկավատոր, որի վրա բարձրացել են, գիշերելու հայտարարված մտադրություն։ Սրացումն է էականը։ 2011-ին բակում կանգնելը բավական էր. 2013-ին նույն մարդիկ ստիպված էին վերցնել հենց էքսկավատորը և դարձյալ պարտվեցին։\n\nՆկատեք նաև, թե ով է բակում։ Կիվիրյանը, Խզմալյանը, Սանասարյանը հարևաններ չեն. նրանք Մաշտոցի պուրակից դուրս եկած ակտիվիստական միջուկն են։",
+   "analysis_fa": "بازیِ برگشت، و این‌بار وارونه — با آنکه سخت‌تر جنگیده شد. در نقشه همچون تحصن ثبت شده بود؛ منابع آن را اشغال می‌کنند: خیابانی بسته، ماشینی که رویش رفته‌اند، اعلامِ ماندن تا صبح. تشدید همان نکته است. در ۲۰۱۱ ایستادن در حیاط بس بود؛ در ۲۰۱۳ همان آدم‌ها ناچار شدند خودِ بیل مکانیکی را بگیرند و باز باختند.\n\nببینید چه کسانی در حیاط‌اند. کیویریان، خزمالیان، ساناساریان همسایه نیستند؛ هسته‌ی فعالانی‌اند که از پارک ماشتوتس بیرون آمد.",
    "actors": [
     "residents of Komitas 5",
+    "Argishti Kiviryan",
+    "Ani Kaghinyan",
+    "Yeghia Nersisyan",
+    "Hasmik Lalayan",
+    "Davit Sanasaryan",
+    "Tigran Khzmalyan",
+    "police",
     "developer"
    ],
    "tags": [
     "Komitas",
     "courtyard",
-    "infill construction"
+    "infill construction",
+    "occupation",
+    "road blockade",
+    "Mashtots Park network"
    ],
    "sources": [
     {
@@ -15497,38 +15552,51 @@
   },
   {
    "id": "sayat-nova-2013",
-   "title": "Sayat-Nova Avenue: construction next to the houses",
-   "title_hy": "Սայաթ-Նովա. շինարարություն տների կողքին",
-   "title_fa": "خیابان سایات-نووا: ساخت‌وساز کنارِ خانه‌ها",
+   "title": "Sayat-Nova 10 and 12: four hundred residents against Larco",
+   "title_hy": "Սայաթ-Նովա 10 և 12. չորս հարյուր բնակիչ «Լարկո»-ի դեմ",
+   "title_fa": "سایات-نووا ۱۰ و ۱۲: چهارصد ساکن در برابر لارکو",
    "date": "2013-08-26",
    "datePrecision": "day",
    "coordinates": [
     44.517,
     40.1848
    ],
-   "location": "Sayat-Nova Avenue",
-   "location_hy": "Սայաթ-Նովայի պողոտա",
-   "location_fa": "خیابان سایات-نووا",
-   "scale": "courtyard",
+   "location": "Sayat-Nova Avenue 10 and 12",
+   "location_hy": "Սայաթ-Նովայի պողոտա 10 և 12",
+   "location_fa": "خیابان سایات-نووا ۱۰ و ۱۲",
+   "scale": "campaign",
    "form": "picket",
-   "summary": "Residents protest against construction on Sayat-Nova Street in late August; by 14 September epress reports that they are receiving threats. The construction is still being described as problematic in December.",
-   "summary_hy": "Բնակիչներն օգոստոսի վերջին բողոքում են Սայաթ-Նովայի փողոցում շինարարության դեմ. սեպտեմբերի 14-ին epress-ը գրում է, որ նրանք սպառնալիքներ են ստանում։ Դեկտեմբերին շինարարությունը դեռ բնութագրվում է որպես խնդրահարույց։",
-   "summary_fa": "ساکنان در اواخر اوت به ساخت‌وساز در خیابان سایات-نووا اعتراض می‌کنند؛ تا ۱۴ سپتامبر «ای‌پرس» می‌نویسد تهدید دریافت می‌کنند. در دسامبر ساخت‌وساز هنوز «مسئله‌دار» توصیف می‌شود.",
+   "summary": "Four hundred residents of Sayat-Nova 10 and 12, with the lawyer Albert Kandalyan, fight construction that they argue endangers the seismic safety of their own buildings - the argument with the shortest route to being heard in a city that lost twenty-five thousand people to an earthquake in 1988. The pressure comes back in kind. Seven of the most active receive threatening letters from Ashot Abrahamyan, lawyer to Larco Group; unknown muscular men visit daily; men presenting themselves as Republican Party representatives collect signatures under false pretences. Among those named are professor Gohar Kyureghyan of the Conservatory and Albert Sargsyan. The municipality re-runs the seismic tests in order to overturn the residents' own findings, and the Administrative Court sits on the case for two months.",
+   "summary_hy": "Սայաթ-Նովայի 10 և 12 շենքերի չորս հարյուր բնակիչ՝ փաստաբան Ալբերտ Կանդալյանի հետ, պայքարում են շինարարության դեմ՝ պնդելով, որ այն վտանգում է իրենց շենքերի սեյսմիկ անվտանգությունը. այն քաղաքում, որը 1988-ին երկրաշարժից կորցրեց քսանհինգ հազար մարդ, սա լսված լինելու ամենակարճ ճանապարհն ունեցող փաստարկն է։ Ճնշումը վերադառնում է նույն կերպ։ Ամենաակտիվներից յոթը սպառնական նամակներ են ստանում «Լարկո Գրուպ»-ի փաստաբան Աշոտ Աբրահամյանից. անհայտ մկանուտ տղամարդիկ ամեն օր այցելում են. Հանրապետական կուսակցության ներկայացուցիչ ներկայացող մարդիկ ստորագրություններ են հավաքում կեղծ պատրվակով։ Անվանվածների մեջ են կոնսերվատորիայի պրոֆեսոր Գոհար Կյուրեղյանը և Ալբերտ Սարգսյանը։ Քաղաքապետարանը կրկնում է սեյսմիկ փորձարկումները՝ բնակիչների եզրակացությունը շրջելու համար, իսկ Վարչական դատարանը գործը պահում է երկու ամիս։",
+   "summary_fa": "چهارصد ساکنِ سایات-نووا ۱۰ و ۱۲، همراهِ وکیل آلبرت کاندالیان، با ساخت‌وسازی می‌جنگند که به گفته‌ی آنان ایمنیِ لرزه‌ایِ ساختمان‌هایشان را به خطر می‌اندازد — استدلالی با کوتاه‌ترین راه به شنیده‌شدن، در شهری که در ۱۹۸۸ بیست‌وپنج هزار نفر را به زلزله باخت. فشار به همان زبان بازمی‌گردد. هفت تن از فعال‌ترین‌ها نامه‌ی تهدیدآمیز از آشوت آبراهامیان، وکیلِ «لارکو گروپ»، می‌گیرند؛ مردانی درشت‌هیکل و ناشناس هر روز سر می‌زنند؛ کسانی خود را نماینده‌ی حزب جمهوری‌خواه معرفی می‌کنند و به‌دروغ امضا جمع می‌کنند. از جمله‌ی نام‌بردگان، گوهر کیورقیانِ استادِ هنرستان و آلبرت سارگسیان‌اند. شهرداری آزمایش‌های لرزه‌ای را از نو اجرا می‌کند تا یافته‌های ساکنان را باطل کند، و دادگاه اداری دو ماه روی پرونده می‌نشیند.",
    "episode": "urban-protest",
    "categories": [
     "protest",
     "urbanchange"
    ],
    "outcome": "loss",
-   "dateEnd": "2013-09-14",
+   "dateEnd": "2014-02-10",
+   "analysis": "Merging what this map had as two entries. The Sayat-Nova protest of 2013 and the seismic-safety protest of February 2014 are one fight at one address, and separating them hid its length and its shape.\n\nThe shape is what matters. Every instrument in this entry is a legitimate one used sideways: a lawyer writes letters, a party collects signatures, a municipality commissions a survey, a court takes its time. None of that is illegal and all of it is aimed at the same thing - producing a second version of the facts, so that the residents' engineering report becomes one opinion among two. The muscular men are almost redundant. They are what the procedure looks like when it is in a hurry.\n\nAnd the residents' argument is worth naming precisely. They did not claim a right to a view or to quiet. They claimed the building might fall down. In Yerevan that is not a metaphor, which is exactly why it had to be neutralised with a counter-survey rather than ignored.",
+   "analysis_hy": "Այս քարտեզում երկու գրառում եղածի միավորում։ 2013-ի Սայաթ-Նովայի բողոքը և 2014-ի փետրվարի սեյսմիկ անվտանգության բողոքը մեկ հասցեում մեկ պայքար են, և դրանք բաժանելը թաքցնում էր պայքարի երկարությունն ու ձևը։\n\nՁևն է կարևորը։ Այս գրառման ամեն գործիք օրինական գործիք է՝ կիրառված շեղ. փաստաբանը նամակ է գրում, կուսակցությունը ստորագրություն է հավաքում, քաղաքապետարանը հետազոտություն է պատվիրում, դատարանը ժամանակ է վերցնում։ Դրանցից ոչ մեկն ապօրինի չէ, և բոլորն ուղղված են նույն բանին՝ փաստերի երկրորդ տարբերակ արտադրելուն, որպեսզի բնակիչների ինժեներական եզրակացությունը դառնա երկուսից մեկ կարծիք։",
+   "analysis_fa": "ادغامِ آنچه در این نقشه دو مدخل بود. اعتراضِ سایات-نووا در ۲۰۱۳ و اعتراضِ ایمنیِ لرزه‌ای در فوریه‌ی ۲۰۱۴ یک نبردند در یک نشانی، و جداکردنشان درازا و شکلش را پنهان می‌کرد.\n\nشکل مهم است. هر ابزارِ این مدخل ابزاری مشروع است که کج به کار رفته: وکیل نامه می‌نویسد، حزب امضا جمع می‌کند، شهرداری بررسی سفارش می‌دهد، دادگاه وقت می‌گیرد. هیچ‌کدام غیرقانونی نیست و همه به یک چیز نشانه رفته‌اند: ساختنِ روایتِ دومی از واقعیت، تا گزارشِ مهندسیِ ساکنان یکی از دو نظر شود.",
    "actors": [
-    "residents of Sayat-Nova Avenue",
-    "developer"
+    "400 residents of Sayat-Nova 10 and 12",
+    "Albert Kandalyan",
+    "Larco Group",
+    "Ashot Abrahamyan",
+    "Gohar Kyureghyan",
+    "Albert Sargsyan",
+    "Yerevan Municipality",
+    "Administrative Court"
    ],
    "tags": [
     "Sayat-Nova",
     "infill construction",
-    "intimidation"
+    "intimidation",
+    "seismic safety",
+    "1988 earthquake",
+    "courts",
+    "Larco Group"
    ],
    "sources": [
     {
@@ -15538,6 +15606,11 @@
     {
      "title": "epress.am, 14 September 2013 — «Սայաթ-Նովայի բնակիչները սպառնալիքներ են ստանում»",
      "url": "https://epress.am/2013/09/14/"
+    },
+    {
+     "title": "epress.am, 10 February 2014 — Yerevan residents protest construction threatening seismic safety",
+     "url": "https://epress.am/en/2014/02/10/yerevan-residents-protest-construction-threatening-seismic-safety.html",
+     "note": "the February 2014 seismic protest is the same address and the same residents"
     }
    ]
   },
@@ -15633,45 +15706,6 @@
     {
      "title": "epress.am, 19 November 2013 — Yerevan residents unite in fight against building construction",
      "url": "https://epress.am/en/2013/11/19/yerevan-residents-unite-in-fight-against-building-construction.html"
-    }
-   ]
-  },
-  {
-   "id": "seismic-2014",
-   "title": "Construction that threatens seismic safety",
-   "title_hy": "Շինարարություն, որը վտանգում է սեյսմիկ անվտանգությունը",
-   "title_fa": "ساخت‌وسازی که ایمنی لرزه‌ای را تهدید می‌کند",
-   "date": "2014-02-10",
-   "datePrecision": "day",
-   "coordinates": [
-    44.50431,
-    40.1856
-   ],
-   "location": "Central Yerevan",
-   "location_hy": "Երևանի կենտրոն",
-   "location_fa": "مرکز ایروان",
-   "scale": "courtyard",
-   "form": "picket",
-   "summary": "Residents protest against construction on the grounds that it endangers the seismic safety of their own building. In a city that lost twenty-five thousand people to an earthquake in 1988, this is the argument with the shortest route to being heard.",
-   "summary_hy": "Բնակիչները բողոքում են շինարարության դեմ այն հիմքով, որ այն վտանգում է իրենց սեփական շենքի սեյսմիկ անվտանգությունը։ Քաղաքում, որը 1988-ին երկրաշարժից կորցրեց քսանհինգ հազար մարդ, սա ամենակարճ ճանապարհն ունեցող փաստարկն է լսված լինելու համար։",
-   "summary_fa": "ساکنان به ساخت‌وساز اعتراض می‌کنند به این دلیل که ایمنیِ لرزه‌ایِ ساختمانِ خودشان را به خطر می‌اندازد. در شهری که در ۱۹۸۸ بیست‌وپنج هزار نفر را به زلزله باخت، این استدلالی است با کوتاه‌ترین راه به شنیده‌شدن.",
-   "episode": "urban-protest",
-   "categories": [
-    "protest",
-    "urbanchange"
-   ],
-   "actors": [
-    "residents"
-   ],
-   "tags": [
-    "seismic safety",
-    "infill construction",
-    "1988 earthquake"
-   ],
-   "sources": [
-    {
-     "title": "epress.am, 10 February 2014 — Yerevan residents protest construction threatening seismic safety",
-     "url": "https://epress.am/en/2014/02/10/yerevan-residents-protest-construction-threatening-seismic-safety.html"
     }
    ]
   },
@@ -15880,17 +15914,17 @@
    "date": "2015-03-09",
    "datePrecision": "day",
    "coordinates": [
-    44.51469,
-    40.18219
+    44.5141,
+    40.1832
    ],
-   "location": "Northern Avenue, and the courts",
-   "location_hy": "Հյուսիսային պողոտան և դատարանները",
-   "location_fa": "خیابان شمالی، و دادگاه‌ها",
+   "location": "Teryan Street 23 and 25 and Lalayants Street 37, and the courts",
+   "location_hy": "Տերյան փողոց 23 և 25, Լալայանց փողոց 37, և դատարանները",
+   "location_fa": "خیابان تریان ۲۳ و ۲۵ و خیابان لالایانتس ۳۷، و دادگاه‌ها",
    "scale": "campaign",
    "form": "court",
-   "summary": "Thirteen years after the demolition, the residents of the old buildings on Northern Avenue are still fighting the methods used to evict them. They protest on 9 March 2015 and stand outside the court on the 10th; in June they start a petition demanding their apartments back; in July epress reports on the residents' agreement; in October the court rules against them; in January 2016 they are preparing to go on.",
-   "summary_hy": "Քանդումից տասներեք տարի անց Հյուսիսային պողոտայի հին շենքերի բնակիչները դեռ պայքարում են իրենց վտարման եղանակների դեմ։ 2015-ի մարտի 9-ին նրանք բողոքի ակցիա են անում, 10-ին կանգնում դատարանի դիմաց. հունիսին ստորագրահավաք են սկսում՝ պահանջելով վերադարձնել իրենց բնակարանները. հուլիսին epress-ը գրում է բնակիչների համաձայնագրի մասին. հոկտեմբերին դատարանը վճիռ է կայացնում նրանց դեմ. 2016-ի հունվարին նրանք պատրաստվում են շարունակել։",
-   "summary_fa": "سیزده سال پس از تخریب، ساکنانِ ساختمان‌های قدیمِ خیابان شمالی هنوز با شیوه‌های اخراجشان می‌جنگند. در ۹ مارس ۲۰۱۵ اعتراض می‌کنند و در ۱۰ مقابل دادگاه می‌ایستند؛ در ژوئن طوماری برای بازپس‌گیریِ آپارتمان‌هایشان آغاز می‌کنند؛ در اکتبر دادگاه علیه‌شان رأی می‌دهد؛ در ژانویه‌ی ۲۰۱۶ آماده‌ی ادامه‌اند.",
+   "summary": "Thirteen years after the demolition, fifteen residents of 23 and 25 Teryan Street and 37 Lalayants Street are still fighting. Their buildings were declared subject to eminent domain by the 2002 decree; they have been fighting since 2007. They may sell only to one buyer, the Local Developers Company, and at two and a half times below market price; the sale process was re-run for the fourth time on 29 August 2013 with a deadline of 1 June 2015. The owner is Samvel Mayrapetyan, an associate of Robert Kocharyan, who sues to evict them. Vardan Geravetyan of Teryan 23 is offered 35 million drams - about 72,000 US dollars - for 81 square metres, and a lien blocks him from selling to anyone else. They protest on 9 March 2015 and stand outside the court on the 10th; in June they start a petition demanding their apartments back, under the Mer Kaghake initiative; in October the court gives them two months to leave, and Local Developers has by then won three cases. The company refuses a public discussion because, it says, the time for talking has passed.",
+   "summary_hy": "Քանդումից տասներեք տարի անց Տերյան 23 և 25 և Լալայանց 37 հասցեների տասնհինգ բնակիչ դեռ պայքարում են։ Իրենց շենքերը 2002 թվականի որոշմամբ ճանաչվել են օտարման ենթակա. նրանք պայքարում են 2007-ից։ Կարող են վաճառել միայն մեկ գնորդի՝ «Լոկալ Դեվելոփերս» ընկերությանը, և շուկայականից երկուսուկես անգամ ցածր գնով. վաճառքի գործընթացը չորրորդ անգամ վերսկսվել է 2013 թվականի օգոստոսի 29-ին՝ 2015-ի հունիսի 1 վերջնաժամկետով։ Սեփականատերը Ռոբերտ Քոչարյանի գործընկեր Սամվել Մայրապետյանն է, ով դատի է տալիս նրանց վտարելու համար։ Տերյան 23-ի բնակիչ Վարդան Գերավետյանին առաջարկվում է 35 միլիոն դրամ՝ մոտ 72 000 ԱՄՆ դոլար, 81 քառակուսի մետրի դիմաց, իսկ արգելանքը թույլ չի տալիս վաճառել որևէ մեկ ուրիշին։ Մարտի 9-ին նրանք բողոքի ակցիա են անում, 10-ին կանգնում դատարանի դիմաց. հունիսին «Մեր քաղաքը» նախաձեռնության ներքո ստորագրահավաք են սկսում՝ պահանջելով վերադարձնել իրենց բնակարանները. հոկտեմբերին դատարանը երկու ամիս է տալիս հեռանալու համար, և «Լոկալ Դեվելոփերսն» այդ պահին արդեն շահել է երեք գործ։ Ընկերությունը հրաժարվում է հանրային քննարկումից, քանի որ, ըստ իրենց, «խոսելու ժամանակն անցել է»։",
+   "summary_fa": "سیزده سال پس از تخریب، پانزده ساکنِ تریان ۲۳ و ۲۵ و لالایانتس ۳۷ هنوز می‌جنگند. ساختمان‌هایشان با فرمانِ ۲۰۰۲ مشمولِ سلبِ مالکیت اعلام شد؛ از ۲۰۰۷ در نبردند. تنها به یک خریدار می‌توانند بفروشند، «شرکت توسعه‌گران محلی»، و به دو‌ونیم برابر زیرِ قیمتِ بازار؛ روندِ فروش برای بارِ چهارم در ۲۹ اوت ۲۰۱۳ با مهلتِ اولِ ژوئنِ ۲۰۱۵ از نو اجرا شد. مالک، ساموِل مایراپتیان است، از نزدیکانِ روبرت کوچاریان، که برای اخراجشان شکایت می‌کند. به واردان گِراوتیانِ ساکنِ تریان ۲۳ در برابرِ ۸۱ مترمربع، ۳۵ میلیون درام — حدود ۷۲٬۰۰۰ دلار — پیشنهاد می‌شود، و توقیفی مانع از فروش به هرکسِ دیگر است. در ۹ مارس اعتراض می‌کنند و در ۱۰ مقابل دادگاه می‌ایستند؛ در ژوئن ذیلِ ابتکارِ «شهرِ ما» طوماری برای بازپس‌گیریِ آپارتمان‌هایشان آغاز می‌کنند؛ در اکتبر دادگاه دو ماه مهلتِ تخلیه می‌دهد و «توسعه‌گران محلی» تا آن زمان سه پرونده برده است. شرکت از گفت‌وگوی عمومی سر باز می‌زند، چون به گفته‌ی خودش «وقتِ حرف‌زدن گذشته است».",
    "episode": "urban-protest",
    "categories": [
     "protest",
@@ -15898,11 +15932,15 @@
    ],
    "outcome": "loss",
    "dateEnd": "2016-01-15",
-   "analysis": "The dossier's own subject returning at its far end. This is the same expropriation as the compressed decade below — the same street, the same decree, in several cases the same families — arriving in a period when protest is finally a thing people do, and still losing. Four months after this entry begins, twenty thousand people fill Baghramyan Avenue over the price of electricity and win in nine days.\n\nThat contrast is the honest limit of the escalation story. Scale changes what a movement can win, but it does not travel backwards: nothing the city learned between 2010 and 2015 could be applied to a demolition that had already happened.",
+   "analysis": "The dossier's own subject returning at its far end. This is the same expropriation as the compressed decade below — the same street, the same decree, in several cases the same families — arriving in a period when protest is finally a thing people do, and still losing. Four months after this entry begins, twenty thousand people fill Baghramyan Avenue over the price of electricity and win in nine days.\n\nThat contrast is the honest limit of the escalation story. Scale changes what a movement can win, but it does not travel backwards: nothing the city learned between 2010 and 2015 could be applied to a demolition that had already happened.\n\nThe mechanism these fifteen households are caught in deserves its own sentence, because it is not eviction. They still own their flats. What the decree removed was not their title but their market: one permitted buyer, a price set at two and a half times below value, a lien preventing sale to anyone else, and a deadline. Ownership without the right to sell to whom you choose is a formality, and the four re-runs of the sale process show the state was willing to wait as long as it took for the formality to become unbearable. When the company finally says the time for talking has passed, it is describing thirteen years accurately.",
    "analysis_hy": "Թղթապանակի սեփական թեման վերադառնում է իր հեռավոր ծայրում։ Սա նույն օտարումն է, ինչ ներքևի սեղմված տասնամյակում՝ նույն փողոցը, նույն որոշումը, մի քանի դեպքում նույն ընտանիքները, և այն հասնում է մի ժամանակահատված, երբ բողոքը վերջապես մի բան է, որ մարդիկ անում են, և դեռ պարտվում է։ Այս գրառման սկսվելուց չորս ամիս անց քսան հազար մարդ լցնում է Բաղրամյան պողոտան հոսանքի գնի պատճառով և հաղթում ինը օրում։\n\nԱյս հակադրությունը էսկալացիայի պատմության ազնիվ սահմանն է։ Մասշտաբը փոխում է այն, ինչ շարժումը կարող է շահել, բայց այն հետ չի գնում։",
    "analysis_fa": "موضوعِ خودِ پرونده در انتهای دورش بازمی‌گردد. این همان سلبِ مالکیتِ دهه‌ی فشرده‌ی زیر است — همان خیابان، همان فرمان، در چند مورد همان خانواده‌ها — که به دوره‌ای می‌رسد که اعتراض بالاخره کاری است که مردم می‌کنند، و باز می‌بازد. چهار ماه پس از آغازِ این مدخل، بیست هزار نفر بر سرِ بهای برق خیابان باغرامیان را پر می‌کنند و در نه روز می‌برند.\n\nاین تضاد، حدِ صادقانه‌ی روایتِ تشدید است. مقیاس آنچه یک جنبش می‌تواند ببرد را عوض می‌کند، اما به عقب سفر نمی‌کند.",
    "actors": [
-    "former residents of the Northern Avenue buildings",
+    "15 residents of Teryan 23 and 25 and Lalayants 37",
+    "Vardan Geravetyan",
+    "Local Developers Company",
+    "Samvel Mayrapetyan",
+    "Mer Kaghake",
     "the courts",
     "Yerevan Municipality"
    ],
@@ -15910,7 +15948,11 @@
     "Northern Avenue",
     "eviction",
     "compensation",
-    "courts"
+    "courts",
+    "Teryan Street",
+    "Lalayants Street",
+    "eminent domain",
+    "Mer Kaghake"
    ],
    "sources": [
     {
@@ -16065,7 +16107,7 @@
    "title": "July 2016: Sari Tagh",
    "title_hy": "2016 թվականի հուլիս. Սարի թաղ",
    "title_fa": "ژوئیه‌ی ۲۰۱۶: ساری تاق",
-   "date": "2016-07-20",
+   "date": "2016-07-19",
    "datePrecision": "day",
    "coordinates": [
     44.529,
@@ -16076,9 +16118,9 @@
    "location_fa": "ساری تاق، پایینِ محوطه‌ی پلیس ارِبونی",
    "scale": "movement",
    "form": "repression",
-   "summary": "A neighbourhood becomes the site of an operation. On 20 July a criminal case is opened over violence against police officers in Sari Tagh; a resident later describes lying in the street as if in a Karabakh dugout; another describes his legs burned from the feet up. On 29 August charges are brought over obstructing journalists' lawful work, and on 31 August nineteen journalists are recognised as victims in the case.",
-   "summary_hy": "Թաղամասը դառնում է գործողության վայր։ Հուլիսի 20-ին քրեական գործ է հարուցվում Սարի թաղում ոստիկանության ծառայողների նկատմամբ բռնություն կիրառելու առթիվ. բնակիչներից մեկը հետագայում նկարագրում է, թե ինչպես պառկած էր փողոցում՝ ասես Ղարաբաղի բլինդաժում. մյուսը՝ ոտքերն այրված ներքևից վեր։ Օգոստոսի 29-ին մեղադրանք է առաջադրվում լրագրողների օրինական գործունեությանը խոչընդոտելու համար, իսկ օգոստոսի 31-ին տասնինը լրագրող ճանաչվում է տուժող։",
-   "summary_fa": "محله‌ای به صحنه‌ی عملیات بدل می‌شود. در ۲۰ ژوئیه پرونده‌ای کیفری بابتِ خشونت علیه مأمورانِ پلیس در ساری تاق گشوده می‌شود؛ ساکنی بعدها می‌گوید در خیابان دراز کشیده بود انگار در سنگری در قره‌باغ؛ دیگری می‌گوید پاهایش از پایین به بالا سوخته بود. در ۲۹ اوت اتهامِ ممانعت از کارِ قانونیِ خبرنگاران مطرح می‌شود، و در ۳۱ اوت نوزده خبرنگار به‌عنوان قربانی شناخته می‌شوند.",
+   "summary": "Two distinct nights, not one. On 19 July there is violence against police at Glinka and Vormnadirneri near Khorenatsi Street; eleven people are charged and seven officers are named as victims. Then on the night of 29 to 30 July the neighbourhood itself becomes the site of an operation, and the Special Investigation Service's own figures are the record: 99 citizens injured and 23 journalists; 63 people recognised as victims and 19 journalists recognised as victims; 47 shrapnel wounds, 36 cases of physical violence, 5 people with burns, alongside a list of destroyed equipment. A resident describes lying in the street as if in a Karabakh dugout; another describes his legs burned from the feet up. On 29 August charges are brought over obstructing journalists' lawful work.",
+   "summary_hy": "Երկու տարբեր գիշեր, ոչ թե մեկ։ Հուլիսի 19-ին բռնություն է կիրառվում ոստիկանների նկատմամբ Գլինկայի և Որմնադիրների հատվածում՝ Խորենացու փողոցի մոտ. մեղադրանք է առաջադրվում տասնմեկ մարդու, յոթ ոստիկան ճանաչվում է տուժող։ Ապա հուլիսի 29-ից 30-ի գիշերը հենց թաղամասը դառնում է գործողության վայր, և արձանագրությունը Հատուկ քննչական ծառայության սեփական թվերն են՝ 99 քաղաքացի և 23 լրագրող վիրավոր. 63 մարդ ճանաչված է տուժող և 19 լրագրող՝ տուժող. 47 բեկորային վնասվածք, 36 ֆիզիկական բռնության դեպք, 5 մարդ այրվածքով, և ոչնչացված սարքավորումների ցանկ։ Բնակիչներից մեկը նկարագրում է, թե ինչպես պառկած էր փողոցում՝ ասես Ղարաբաղի բլինդաժում. մյուսը՝ ոտքերն այրված ներքևից վեր։",
+   "summary_fa": "دو شبِ متمایز، نه یکی. در ۱۹ ژوئیه در گلینکا و ورمنادیرنری نزدیکِ خیابان خورناتسی خشونت علیه پلیس رخ می‌دهد؛ یازده نفر متهم و هفت مأمور قربانی شناخته می‌شوند. سپس در شبِ ۲۹ به ۳۰ ژوئیه خودِ محله صحنه‌ی عملیات می‌شود، و سند، ارقامِ خودِ سرویسِ ویژه‌ی تحقیقات است: ۹۹ شهروند و ۲۳ خبرنگار مجروح؛ ۶۳ تن و ۱۹ خبرنگار به‌عنوان قربانی شناخته‌شده؛ ۴۷ زخمِ ترکش، ۳۶ موردِ خشونتِ فیزیکی، ۵ تن با سوختگی، به‌همراه فهرستی از تجهیزاتِ نابودشده. ساکنی می‌گوید در خیابان دراز کشیده بود انگار در سنگری در قره‌باغ؛ دیگری می‌گوید پاهایش از پایین به بالا سوخته بود.",
    "episode": "urban-protest",
    "categories": [
     "protest",
@@ -16086,19 +16128,23 @@
    ],
    "outcome": "loss",
    "dateEnd": "2016-10-21",
-   "analysis": "The only entry in this cube where the neighbourhood is not defending its ground but is standing on ground the state has decided to enter. It belongs here because the unit of analysis is the same: a residential quarter, its own streets, its own residents, and an argument about who may be in them.\n\nIt is also the moment the period's method is turned around. Every technique in this cube depends on a protest being visible; at Sari Tagh nineteen journalists are formally recognised as having been prevented from seeing it.",
+   "analysis": "The only entry in this cube where the neighbourhood is not defending its ground but is standing on ground the state has decided to enter. It belongs here because the unit of analysis is the same: a residential quarter, its own streets, its own residents, and an argument about who may be in them.\n\nIt is also the moment the period's method is turned around. Every technique in this cube depends on a protest being visible; at Sari Tagh nineteen journalists are formally recognised as having been prevented from seeing it.\n\nSeparating the two nights matters, and this map had them as one. On 19 July the state is the injured party and its casualties are seven officers; eleven days later the same neighbourhood produces 99 injured citizens and 63 recognised victims, and the figures come from the state's own investigators. Holding them apart is what makes the second night legible as something other than a continuation - and the fact that both counts are official is the reason this entry can be argued from the record rather than from testimony alone.",
    "analysis_hy": "Այս խորանարդի միակ գրառումը, որտեղ թաղամասը չի պաշտպանում իր հողը, այլ կանգնած է այն հողի վրա, ուր պետությունը որոշել է մտնել։ Այն այստեղ է, որովհետև վերլուծության միավորը նույնն է՝ բնակելի թաղամաս, իր փողոցները, իր բնակիչները և վեճ այն մասին, թե ով կարող է դրանցում լինել։\n\nՍա նաև այն պահն է, երբ ժամանակահատվածի եղանակը շրջվում է։ Այս խորանարդի ամեն տեխնիկա հենվում է բողոքի տեսանելիության վրա. Սարի թաղում տասնինը լրագրող պաշտոնապես ճանաչվում է որպես տեսնելուց արգելված։",
    "analysis_fa": "تنها مدخلِ این مکعب که در آن محله از زمینِ خود دفاع نمی‌کند، بلکه بر زمینی ایستاده که دولت تصمیم گرفته واردش شود. اینجاست چون واحدِ تحلیل همان است: محله‌ای مسکونی، خیابان‌های خودش، ساکنانِ خودش، و نزاعی بر سرِ اینکه چه کسی می‌تواند در آن‌ها باشد.\n\nهمچنین لحظه‌ای است که روشِ دوره وارونه می‌شود. هر فنِ این مکعب به دیده‌شدنِ اعتراض وابسته است؛ در ساری تاق نوزده خبرنگار رسماً به‌عنوانِ کسانی که از دیدن بازداشته شدند شناخته می‌شوند.",
    "actors": [
     "residents of Sari Tagh",
     "police",
-    "journalists"
+    "journalists",
+    "Special Investigation Service"
    ],
    "tags": [
     "Sari Tagh",
     "policing",
     "press freedom",
-    "2016"
+    "2016",
+    "Sasna Tsrer",
+    "Khorenatsi Street",
+    "casualty figures"
    ],
    "sources": [
     {
@@ -16201,10 +16247,6 @@
     {
      "title": "Hetq, 5 June 2017 — «Ֆիրդուսի փողոցի առևտրականները կտեղափոխվեն գործող այլ շուկաներ»",
      "url": "https://hetq.am/hy/article/79433"
-    },
-    {
-     "title": "Hetq, 19 July 2017 — «Ֆիրդուս»-ի շուկան այնուամենայնիվ սկսեց",
-     "url": "https://hetq.am/hy/article/81000"
     }
    ]
   },
@@ -16700,13 +16742,13 @@
   },
   {
    "id": "urban-protest",
-   "label": "Urban protest, 2001–2018",
-   "label_hy": "Քաղաքային բողոքը, 2001–2018",
-   "label_fa": "اعتراض شهری، ۲۰۰۱–۲۰۱۸",
+   "label": "Urban protest in Yerevan, 2001 to 2018",
+   "label_hy": "Քաղաքային բողոքը Երևանում, 2001-2018",
+   "label_fa": "اعتراض شهری در ایروان، ۲۰۰۱ تا ۲۰۱۸",
    "start": "2001-01-01",
    "end": "2018-05-08",
    "color": "#b06a3c",
-   "note": "Eighteen years of protest over what happens to the ground people live on: demolition, eviction, expropriation, kiosks, trees, parks, courtyards, fares. Not the number of protests but the change in their form is the finding. Before 2008 the answer to losing your street is a court case and one newspaper article. After 2010 it is a body standing in the way.",
+   "note": "Eighteen years of protest over what happens to the ground people live on: demolition, eviction, expropriation, kiosks, trees, parks, courtyards, fares. Not the number of protests but the change in their form is the finding. Before 2008 the answer to losing your street is petition and publicity aimed upward - a letter to the President or the Prime Minister, a court case, a newspaper article, and in one case a protest lodged before the surveyors had finished. After 2010 it is a body standing in the way.",
    "note_hy": "Տասնութ տարվա բողոք այն բանի շուրջ, թե ինչ է կատարվում այն հողի հետ, որի վրա մարդիկ ապրում են՝ քանդում, վտարում, օտարում, կրպակներ, ծառեր, այգիներ, բակեր, ուղեվարձ։ Գտածոն բողոքների թիվը չէ, այլ դրանց ձևի փոփոխությունը։ Մինչև 2008-ը քո փողոցը կորցնելու պատասխանը դատական հայց է և մեկ թերթի հոդված։ 2010-ից հետո՝ ճանապարհին կանգնած մարմին։",
    "note_fa": "هجده سال اعتراض بر سرِ آنچه بر زمینی می‌گذرد که مردم رویش زندگی می‌کنند: تخریب، اخراج، سلبِ مالکیت، کیوسک‌ها، درختان، پارک‌ها، حیاط‌ها، کرایه‌ها. یافته، شمارِ اعتراض‌ها نیست بلکه تغییرِ شکل آن‌هاست. پیش از ۲۰۰۸ پاسخِ از دست دادنِ خیابانت یک پرونده‌ی دادگاه است و یک مقاله‌ی روزنامه. پس از ۲۰۱۰، بدنی است که سرِ راه می‌ایستد.",
    "spur": {
@@ -16716,12 +16758,12 @@
    "umbrella": "decree-2002",
    "cubeWarp": {
     "at": "2008-01-01",
-    "below": 0.26
+    "below": 0.2
    },
    "cubeTitle": "The years that had nowhere to go",
    "cubeTitle_hy": "Տարիներ, որոնք գնալու տեղ չունեին",
    "cubeTitle_fa": "سال‌هایی که جایی برای رفتن نداشتند",
-   "cubeBody": "The scale of this cube changes. Everything before 2008 is compressed into the bottom fifth of the column, above a hatched seam, and drawn at less than half strength; 2008 to 2018 gets the other four fifths at full weight. That is not a decoration. The compressed years are the years in which Kond and the 33rd district were scheduled for demolition, Buzand Street was emptied, the Afrikyan property was taken and the compensation for the Northern Avenue clearance sat unpaid in an office at City Hall - and the entire recorded response is a court case and one newspaper article per loss. They are thin because what happened in them had nowhere to go, not because nothing happened. Read the ramp, then read what it becomes.",
+   "cubeBody": "The scale of this cube changes. Everything before 2008 is compressed into the bottom fifth of the column, above a hatched seam, and drawn at less than half strength; 2008 to 2018 gets the other four fifths at full weight. That is not a decoration. The compressed years are the years in which Kond and the 33rd district were scheduled for demolition, Buzand Street was emptied, the Afrikyan property was taken and the compensation for the Northern Avenue clearance sat unpaid in an office at City Hall - and the entire recorded response is an appeal addressed upward - to a court, to a minister, to the President - carried by a newspaper and answered by nobody. They are thin because what happened in them had nowhere to go, not because nothing happened. Read the ramp, then read what it becomes.",
    "cubeBody_hy": "Այս խորանարդի սանդղակը փոխվում է։ 2008-ից առաջ ամեն ինչ սեղմված է սյան ստորին հինգերորդում՝ շտրիխավոր կարից ներքև, և գծված է կես ուժից էլ պակաս. 2008-2018-ը ստանում է մնացած չորս հինգերորդը՝ լիարժեք։ Սա զարդ չէ։ Սեղմված տարիներն այն տարիներն են, երբ Կոնդն ու 33-րդ թաղամասը նախատեսվեցին քանդման, Բուզանդի փողոցը դատարկվեց, Աֆրիկյանների գույքը վերցվեց, իսկ Հյուսիսային պողոտայի մաքրման փոխհատուցումը մնաց չվճարված քաղաքապետարանի մի գրասենյակում, և ամբողջ արձանագրված պատասխանը մեկ դատական հայց է ու մեկ թերթի հոդված՝ յուրաքանչյուր կորստի դիմաց։ Դրանք բարակ են, որովհետև իրենց մեջ կատարվածը գնալու տեղ չուներ, ոչ թե որովհետև ոչինչ չի կատարվել։",
    "cubeBody_fa": "مقیاسِ این مکعب تغییر می‌کند. هرچه پیش از ۲۰۰۸ است در یک‌پنجمِ پایینیِ ستون فشرده شده — زیرِ درزی هاشورخورده — و با کمتر از نیمِ قدرت کشیده شده؛ ۲۰۰۸ تا ۲۰۱۸ چهار‌پنجمِ دیگر را با تمامِ وزن می‌گیرد. این تزیین نیست. سال‌های فشرده همان سال‌هایی‌اند که کوند و محله‌ی سی‌وسوم برای تخریب برنامه‌ریزی شدند، خیابان بوزاند خالی شد، اموالِ آفریکیان گرفته شد و غرامتِ پاک‌سازیِ خیابان شمالی پرداخت‌نشده در دفتری در شهرداری ماند — و کلِ پاسخِ ثبت‌شده یک پرونده‌ی دادگاه است و یک مقاله‌ی روزنامه به ازای هر باخت. باریک‌اند چون آنچه در آن‌ها رخ داد جایی برای رفتن نداشت، نه چون چیزی رخ نداد."
   }
