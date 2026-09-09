@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد.",
-  "version": "20260909d"
+  "version": "20260909e"
  },
  "categories": [
   {
@@ -3710,8 +3710,8 @@
    "title_fa": "۱ دسامبر ۱۹۸۹: نشستی مشترک الحاق را اعلام می‌کند",
    "date": "1989-12-01",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Supreme Council of the Armenian SSR, Baghramyan Avenue",
    "location_hy": "Հայկական ԽՍՀ Գերագույն խորհուրդ, Բաղրամյան պողոտա",
@@ -3773,8 +3773,8 @@
    "title_fa": "۲۰ مه ۱۹۹۰: میدان تالار را می‌برد",
    "date": "1990-05-20",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Supreme Council of the Armenian SSR",
    "location_hy": "Հայկական ԽՍՀ Գերագույն խորհուրդ",
@@ -3833,8 +3833,8 @@
    "title_fa": "۲۳ اوت ۱۹۹۰: اعلامیه",
    "date": "1990-08-23",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Supreme Council, Baghramyan Avenue",
    "location_hy": "Գերագույն խորհուրդ, Բաղրամյան պողոտա",
@@ -4020,8 +4020,8 @@
    "title_fa": "۱۷ مارس ۱۹۹۱: پرسشی که ارمنستان به آن پاسخ نداد",
    "date": "1991-03-17",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Supreme Council, Baghramyan Avenue",
    "location_hy": "Գերագույն խորհուրդ, Բաղրամյան պողոտա",
@@ -4509,8 +4509,8 @@
    "title_fa": "۲۳ سپتامبر ۱۹۹۱: دولت اعلام می‌شود",
    "date": "1991-09-23",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Supreme Council, Baghramyan Avenue",
    "location_hy": "Գերագույն խորհուրդ, Բաղրամյան պողոտա",
@@ -4628,8 +4628,8 @@
    "date": "1991-10-16",
    "datePrecision": "month",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "Yerevan",
    "location_hy": "Երևան",
@@ -6932,8 +6932,9 @@
      "url": "https://crimethinc.com/2017/02/12/high-voltage-lessons-from-four-summers-of-protests-in-armenia"
     },
     {
-     "title": "IANYAN Magazine, 'Marshutka Revolution: How Yerevan Residents Reversed a Bus Fare Hike'",
-     "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+     "title": "Public Radio of Armenia, 'Activists urge to review bus fares', 24 July 2013",
+     "url": "https://en.armradio.am/2013/07/24/activists-urge-to-review-bus-fares/",
+     "note": "Reported on the sixth day, from inside the campaign: the movement's own short-term demand (review the decision, because the public was not part of the calculation) and long-term demand (regulate the field and improve the service), and the Free Car initiative with celebrities and 'tens of drivers' already registered at freecar.am."
     },
     {
      "title": "OpenStreetMap",
@@ -7310,8 +7311,8 @@
    "title_fa": "۵ مه: شهر همان‌جا می‌ماند",
    "date": "2013-05-05",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality, Argishti Street 1",
    "location_hy": "Երևանի քաղաքապետարան, Արգիշտի փողոց 1",
@@ -7377,8 +7378,8 @@
    "title_fa": "۱۸ ژوئیه: صد، صدوپنجاه می‌شود",
    "date": "2013-07-18",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality, transport department",
    "location_hy": "Երևանի քաղաքապետարան, տրանսպորտի վարչություն",
@@ -7446,8 +7447,8 @@
    "date": "2013-07-19",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality, Argishti Street 1",
    "categories": [
@@ -7520,7 +7521,7 @@
     "infra",
     "publiclife"
    ],
-   "summary": "The new fares took effect and were simply not paid. Activists stood at stops with megaphones and flyers asking passengers to hand over a hundred drams and no more; three were detained on the first day for distributing leaflets, six more on 23 July, and four on 24 July. Drivers who refused the extra fare, or did not work at all, joined in. Celebrities and ordinary drivers offered free rides, and a carpooling site, freecar.am, had 269 drivers signed up within days. A movement of about thirty people at the start of the week was the whole city by the end of it, most of them students and school pupils at their first protest.",
+   "summary": "The new fares took effect and were simply not paid. Activists stood at stops with megaphones and flyers asking passengers to hand over a hundred drams and no more; three were detained on the first day for distributing leaflets and six more on 23 July. Drivers who refused the extra fare, or did not work at all, joined in. Celebrities and ordinary drivers offered free rides, and a carpooling site, freecar.am, had 269 drivers signed up within days. A movement of about thirty people at the start of the week was the whole city by the end of it, most of them students and school pupils at their first protest.",
    "summary_hy": "Նոր սակագները ուժի մեջ մտան, և պարզապես չվճարվեցին։ Ակտիվիստները կանգնում էին կանգառներում բարձրախոսներով և թռուցիկներով՝ խնդրելով ուղևորներին տալ հարյուր դրամ և ոչ ավելի. առաջին օրը երեքը ձերբակալվեցին թռուցիկ բաժանելու համար, հուլիսի 23-ին՝ ևս վեցը, հուլիսի 24-ին՝ չորսը։ Միացան նաև վարորդները, ովքեր հրաժարվում էին ավել գումարից կամ ընդհանրապես չէին աշխատում։ Հայտնի մարդիկ և սովորական վարորդներ անվճար էին տանում, իսկ freecar.am համատեղ երթևեկության կայքում օրերի ընթացքում գրանցվեց 269 վարորդ։ Շաբաթվա սկզբին մոտ երեսուն մարդու շարժումը շաբաթվա վերջին ամբողջ քաղաքն էր՝ մեծամասամբ ուսանողներ և դպրոցականներ, ովքեր առաջին անգամ էին բողոքի դուրս եկել։",
    "summary_fa": "کرایه‌های تازه اجرا شد و به‌سادگی پرداخت نشد. فعالان با بلندگو و اعلامیه در ایستگاه‌ها ایستادند و از مسافران خواستند صد درام بدهند و نه بیشتر؛ روز نخست سه نفر برای پخش اعلامیه بازداشت شدند، ۲۳ ژوئیه شش نفر دیگر، و ۲۴ ژوئیه چهار نفر. رانندگانی که کرایهٔ اضافی را نمی‌گرفتند یا اصلاً کار نمی‌کردند نیز پیوستند. چهره‌های مشهور و رانندگان عادی سواری رایگان دادند و در سایت سواری اشتراکی freecar.am ظرف چند روز ۲۶۹ راننده ثبت‌نام کردند. جنبشی که اول هفته حدود سی نفر بود، آخر هفته تمام شهر بود، بیشترشان دانشجو و دانش‌آموز، در نخستین اعتراض زندگی‌شان.",
    "analysis": "This is the map's clearest case of a protest with no address. There is no square to occupy and no door to march on: the site of the action is every stop and every vehicle, which is to say the transport network itself, which is to say the city as it is actually used. It is anchored here on Mashtots Avenue only because a point must go somewhere.\n\nThat shapelessness is why it worked and also why it disappeared. There was nothing for the police to surround and nothing for the state to negotiate with, and when the fare was withdrawn there was nothing left to hold the movement together.",
@@ -7578,8 +7579,9 @@
      "url": "https://crimethinc.com/2017/02/12/high-voltage-lessons-from-four-summers-of-protests-in-armenia"
     },
     {
-     "title": "IANYAN Magazine, 'Marshutka Revolution'",
-     "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+     "title": "Public Radio of Armenia, 'Activists urge to review bus fares', 24 July 2013",
+     "url": "https://en.armradio.am/2013/07/24/activists-urge-to-review-bus-fares/",
+     "note": "Reported on the sixth day, from inside the campaign: the movement's own short-term demand (review the decision, because the public was not part of the calculation) and long-term demand (regulate the field and improve the service), and the Free Car initiative with celebrities and 'tens of drivers' already registered at freecar.am."
     }
    ],
    "media": [],
@@ -7593,8 +7595,8 @@
    "title_fa": "۲۵ ژوئیه: شش روز، و کرایه بازمی‌گردد",
    "date": "2013-07-25",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality, and then Mashtots Avenue and Freedom Square",
    "location_hy": "Երևանի քաղաքապետարան, ապա Մաշտոցի պողոտա և Ազատության հրապարակ",
@@ -7652,8 +7654,9 @@
      "url": "https://armenianweekly.com/2013/07/29/yerevans-bus-fare-protests-a-timeline/"
     },
     {
-     "title": "IANYAN Magazine, 'Marshutka Revolution'",
-     "url": "https://www.ianyanmag.com/marshutka-revolution-how-yerevan-residents-reversed-a-bus-fare-hike/"
+     "title": "Public Radio of Armenia, 'Activists urge to review bus fares', 24 July 2013",
+     "url": "https://en.armradio.am/2013/07/24/activists-urge-to-review-bus-fares/",
+     "note": "Reported on the sixth day, from inside the campaign: the movement's own short-term demand (review the decision, because the public was not part of the calculation) and long-term demand (regulate the field and improve the service), and the Free Car initiative with celebrities and 'tens of drivers' already registered at freecar.am."
     }
    ],
    "media": [],
@@ -7667,8 +7670,8 @@
    "title_fa": "۲۱ سپتامبر: روز استقلال، و چرخش به مسکو",
    "date": "2013-09-21",
    "coordinates": [
-    44.50617,
-    40.19305
+    44.50621,
+    40.19298
    ],
    "location": "Baghramyan Avenue, by the Residence of the President",
    "location_hy": "Բաղրամյան պողոտա, Նախագահի նստավայրի մոտ",
@@ -7906,8 +7909,8 @@
    "title_fa": "۲۳ دسامبر: توافق گاز",
    "date": "2013-12-23",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "National Assembly, Baghramyan Avenue 19",
    "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա 19",
@@ -10177,8 +10180,8 @@
    "title_fa": "۲۷ ژوئن: دولت تفاوت را می‌پردازد",
    "date": "2015-06-27",
    "coordinates": [
-    44.50617,
-    40.19305
+    44.50621,
+    40.19298
    ],
    "location": "Residence of the President, Baghramyan Avenue",
    "location_hy": "Նախագահի նստավայր, Բաղրամյան պողոտա",
@@ -11055,8 +11058,8 @@
    "date": "2018-04-17",
    "datePrecision": "day",
    "coordinates": [
-    44.51125,
-    40.19115
+    44.50917,
+    40.1898
    ],
    "location": "National Assembly, Baghramyan Avenue",
    "categories": [
@@ -12053,8 +12056,8 @@
    "date": "2018-05-01",
    "datePrecision": "day",
    "coordinates": [
-    44.51125,
-    40.19115
+    44.50917,
+    40.1898
    ],
    "location": "National Assembly, Baghramyan Avenue",
    "categories": [
@@ -12216,8 +12219,8 @@
    "date": "2018-05-08",
    "datePrecision": "day",
    "coordinates": [
-    44.51125,
-    40.19115
+    44.50917,
+    40.1898
    ],
    "location": "National Assembly, Baghramyan Avenue",
    "categories": [
@@ -13084,8 +13087,8 @@
    "title_fa": "۱۰ نوامبر: رئیس مجلس، از خودرو بیرون کشیده شد",
    "date": "2020-11-10",
    "coordinates": [
-    44.50898,
-    40.19028
+    44.50917,
+    40.1898
    ],
    "location": "National Assembly, Baghramyan Avenue 19",
    "location_hy": "Ազգային ժողով, Բաղրամյան պողոտա 19",
@@ -14071,8 +14074,8 @@
    "date": "2004-10-05",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality, Argishti Street",
    "location_hy": "Երևանի քաղաքապետարան, Արգիշտի փողոց",
@@ -14569,8 +14572,8 @@
    "date": "2010-05-18",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality",
    "location_hy": "Երևանի քաղաքապետարան",
@@ -14612,8 +14615,8 @@
    "date": "2010-08-27",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Yerevan Municipality",
    "location_hy": "Երևանի քաղաքապետարան",
@@ -14715,8 +14718,8 @@
    "date": "2011-01-20",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "City Hall, then the Government Building, the UN office, and a pedestrian underpass",
    "location_hy": "Քաղաքապետարանը, ապա Կառավարության շենքը, ՄԱԿ-ի գրասենյակը և ստորգետնյա անցումը",
@@ -14824,8 +14827,8 @@
    "date": "2011-04-26",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Organised on Facebook, addressed to the mayor",
    "location_hy": "Կազմակերպված Facebook-ում, ուղղված քաղաքապետին",
@@ -15315,8 +15318,8 @@
    "date": "2012-01-16",
    "datePrecision": "day",
    "coordinates": [
-    44.50617,
-    40.19305
+    44.50621,
+    40.19298
    ],
    "location": "Outside the Residence of the President, Baghramyan Avenue",
    "location_hy": "ՀՀ նախագահի նստավայրի դիմաց, Բաղրամյան պողոտա",
@@ -15535,8 +15538,8 @@
    "date": "2013-07-18",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "The Municipality, and every bus stop in the city",
    "location_hy": "Քաղաքապետարանը և քաղաքի բոլոր կանգառները",
@@ -16251,8 +16254,8 @@
    "date": "2016-10-13",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "Central Yerevan",
    "location_hy": "Երևանի կենտրոն",
@@ -16340,8 +16343,8 @@
    "date": "2018-01-16",
    "datePrecision": "day",
    "coordinates": [
-    44.50396,
-    40.17456
+    44.50435,
+    40.17476
    ],
    "location": "The public transport routes of Yerevan",
    "location_hy": "Երևանի հանրային տրանսպորտի երթուղիները",
