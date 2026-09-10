@@ -7,19 +7,19 @@
   "description": "This map presents an ongoing research project on Yerevan's urban space, beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
   "timelineStart": "2000-01-01",
   "timelineEnd": "2028-12-31",
-  "note": "Working research instrument, not a finished publication. Entries derive from the Northern Avenue paper (edited Nov 2025) and carry its citations. Photographs are openly licensed (Wikimedia Commons); each carries its photographer, date and licence, and links to its source file.",
+  "note": "Working research instrument, not a finished publication. Entries derive from the Northern Avenue paper (edited Nov 2025) and carry its citations. Media are of three kinds and are labelled as such: photographs from Wikimedia Commons, each openly licensed and carrying its photographer, date and licence and a link to its source file; the author's own fieldwork photographs, marked 'fieldnote' and credited to the Author; and embedded video hosted elsewhere, credited to the uploader with a link to the original.",
   "updated": "2026-09-09",
   "title_hy": "Երևանի նախագիծ",
   "subtitle_hy": "Քաղաքային տարածքի, հասարակական շարժումների և քաղաքական իրադարձությունների ինտերակտիվ հետազոտական քարտեզ",
   "author_hy": "Շոկրան Ռահիմինեժադ",
   "description_hy": "Այս քարտեզը ներկայացնում է Երևանի քաղաքային տարածքի շուրջ ընթացող հետազոտություն՝ սկսած Հյուսիսային պողոտայի կառուցումից և տարածվելով դեպի 2000-ականների ու 2010-ականների հասարակական շարժումները, 2018 թվականի հեղափոխությունը, Լեռնային Ղարաբաղի հակամարտությունը և քաղաքի հանրային տարածքների առօրյա հասարակական կյանքը։\n\nՅուրաքանչյուր կետ ժամանակի և վայրի մեջ ամրագրված իրադարձություն է։ Օգտվեք ժամանակագրությունից՝ տեսնելու, թե ինչպես է կուտակվում քաղաքի քաղաքական աշխարհագրությունը, և թեմաներից՝ փաստարկի մեկ թելը միանգամից առանձնացնելու համար։",
-  "note_hy": "Աշխատանքային հետազոտական գործիք է, ոչ թե ավարտուն հրապարակում։ Գրառումները բխում են Հյուսիսային պողոտայի մասին հոդվածից (խմբագրված՝ 2025 թ. նոյեմբեր) և կրում են դրա հղումները։ Լուսանկարներն ազատ արտոնագրված են (Wikimedia Commons)․ յուրաքանչյուրը կրում է իր հեղինակին, թվականը և արտոնագիրը և հղվում է իր սկզբնաղբյուրին։",
+  "note_hy": "Աշխատանքային հետազոտական գործիք է, ոչ թե ավարտուն հրապարակում։ Գրառումները բխում են Հյուսիսային պողոտայի մասին հոդվածից (խմբագրված՝ 2025 թ. նոյեմբեր) և կրում են դրա հղումները։ Պատկերները երեք տեսակի են և այդպես էլ նշված են. Wikimedia Commons-ի ազատ արտոնագրված լուսանկարներ՝ հեղինակով, թվականով, արտոնագրով և սկզբնաղբյուրի հղումով. հեղինակի սեփական դաշտային լուսանկարները՝ «fieldnote» նշումով. և այլ տեղ տեղակայված ներդրված տեսանյութ՝ վերբեռնողի նշումով և բնօրինակի հղումով։",
   "title_fa": "پروژهٔ ایروان",
   "subtitle_fa": "نقشهٔ پژوهشی تعاملی فضای شهری، جنبش‌های اجتماعی و رویدادهای سیاسی",
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
-  "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد.",
-  "version": "20260910b"
+  "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. رسانه‌ها سه گونه‌اند و همان‌گونه برچسب خورده‌اند: عکس‌های ویکی‌مدیا کامنز با پروانهٔ آزاد، هر یک با نام عکاس، تاریخ، پروانه و پیوند به فایل منبع؛ عکس‌های میدانی خودِ نگارنده با نشان «fieldnote»؛ و ویدیوی جاسازی‌شده که جای دیگری میزبانی می‌شود، با اعتبار بارگذارنده و پیوند به اصل.",
+  "version": "20260910c"
  },
  "categories": [
   {
@@ -2260,7 +2260,10 @@
      "date": "2021-07-15",
      "fieldnote": true,
      "credit_hy": "Հեղինակ",
-     "credit_fa": "نگارنده"
+     "credit_fa": "نگارنده",
+     "rights": "Author's own photograph. Rights not yet stated by the author.",
+     "rights_hy": "Հեղինակի սեփական լուսանկարը։ Իրավունքները հեղինակի կողմից դեռ նշված չեն։",
+     "rights_fa": "عکس از خودِ نگارنده. حقوق هنوز از سوی نگارنده اعلام نشده است."
     },
     {
      "type": "image",
@@ -13776,7 +13779,10 @@
      "credit_hy": "Հեղինակ",
      "credit_fa": "نگارنده",
      "date": "2021-07-11",
-     "fieldnote": true
+     "fieldnote": true,
+     "rights": "Author's own photograph. Rights not yet stated by the author.",
+     "rights_hy": "Հեղինակի սեփական լուսանկարը։ Իրավունքները հեղինակի կողմից դեռ նշված չեն։",
+     "rights_fa": "عکس از خودِ نگارنده. حقوق هنوز از سوی نگارنده اعلام نشده است."
     },
     {
      "type": "image",
@@ -13788,7 +13794,10 @@
      "credit_hy": "Հեղինակ",
      "credit_fa": "نگارنده",
      "date": "2021-07-11",
-     "fieldnote": true
+     "fieldnote": true,
+     "rights": "Author's own photograph. Rights not yet stated by the author.",
+     "rights_hy": "Հեղինակի սեփական լուսանկարը։ Իրավունքները հեղինակի կողմից դեռ նշված չեն։",
+     "rights_fa": "عکس از خودِ نگارنده. حقوق هنوز از سوی نگارنده اعلام نشده است."
     }
    ],
    "fieldnote": "The two Republic Square photographs are Shokran's own, 11 July 2021, which is exactly ninety-eight days after Easter that year. The fieldwork and the rule agree.",
