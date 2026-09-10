@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. عکس‌ها با پروانهٔ آزاد (ویکی‌مدیا کامنز) منتشر شده‌اند؛ هر یک نام عکاس، تاریخ و پروانهٔ خود را دارد و به فایل منبعش پیوند می‌خورد.",
-  "version": "20260909e"
+  "version": "20260910a"
  },
  "categories": [
   {
@@ -5483,7 +5483,8 @@
    ],
    "sources": [
     {
-     "title": "Northern Avenue paper (Rahiminezhad), 'The Rise of Northern Avenue'"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025.",
+     "note": "Section: 'The Rise of Northern Avenue'."
     }
    ],
    "media": [],
@@ -5553,19 +5554,19 @@
    ],
    "sources": [
     {
-     "title": "Petrosyan (2016), p. 2",
-     "note": "~2,500 displaced",
+     "title": "Petrosyan, S. (2016).",
+     "note": "~2,500 displaced p. 2. Full citation to be completed from the manuscript's bibliography.",
      "note_hy": "մոտ 2500 տեղահանված",
      "note_fa": "حدود ۲٬۵۰۰ آواره"
     },
     {
-     "title": "Fehlings, S. (2017). The ignoble savage in urban Yerevan",
+     "title": "Fehlings, S. (2017). 'The ignoble savage in urban Yerevan'. Caucasus Survey.",
      "note": "\"white genocide\"; resident testimony",
      "note_hy": "«սպիտակ ցեղասպանություն». բնակչի վկայություն",
      "note_fa": "«نسل‌کشی سفید»؛ شهادت ساکنان"
     },
     {
-     "title": "Vermishyan & Michikyan (2020). The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue"
+     "title": "Vermishyan, H. and Michikyan, M. (2020). 'The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue'."
     }
    ],
    "media": [
@@ -5691,7 +5692,7 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     },
     {
      "title": "OpenStreetMap",
@@ -5732,16 +5733,17 @@
    ],
    "sources": [
     {
-     "title": "Tangiyan, S. (2020), p. 65"
+     "title": "Tangiyan, S. (2020).",
+     "note": "p. 65. Full citation to be completed from the manuscript's bibliography."
     },
     {
-     "title": "Zolyan, M. (2020), p. 67",
-     "note": "\"the people's square\" / statehood",
+     "title": "Zolyan, M. (2020).",
+     "note": "\"the people's square\" / statehood p. 67.",
      "note_hy": "«ժողովրդի հրապարակը» / պետականություն",
      "note_fa": "«میدانِ مردم» / دولت‌مداری"
     },
     {
-     "title": "Abrahamian, L. (2012). Yerevan: memory and forgetting in the organisation of post-Soviet urban space"
+     "title": "Abrahamian, L. (2012). 'Yerevan: memory and forgetting in the organisation of post-Soviet urban space'."
     }
    ],
    "media": [
@@ -5894,13 +5896,13 @@
      "note_fa": "آبراهامیان دربارهٔ سرمایه‌گذاری‌اش"
     },
     {
-     "title": "Ter-Ghazaryan (2013)",
+     "title": "Ter-Ghazaryan, D. K. (2013). 'Civilizing the City Center: Symbolic Spaces and Narratives of the Nation in Yerevan's Post-Soviet Landscape'. Nationalities Papers.",
      "note": "\"civilizing the city center\"",
      "note_hy": "«քաղաքի կենտրոնը քաղաքակրթել»",
      "note_fa": "«متمدن کردن مرکز شهر»"
     },
     {
-     "title": "Vermishyan & Michikyan (2020)"
+     "title": "Vermishyan, H. and Michikyan, M. (2020). 'The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue'."
     }
    ],
    "media": [
@@ -6426,10 +6428,11 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     },
     {
-     "title": "Fehlings, S. (2017), on rabiz, the urban intelligentsia and the reception of Northern Avenue, cited in the manuscript"
+     "title": "Fehlings, S. (2017). 'The ignoble savage in urban Yerevan'. Caucasus Survey.",
+     "note": "On rabiz, the urban intelligentsia and the reception of Northern Avenue. Reached through the manuscript, not read directly."
     }
    ],
    "episode": "urban-movements",
@@ -6463,13 +6466,14 @@
    ],
    "sources": [
     {
-     "title": "Ter-Ghazaryan (2010), pp. 79, 94",
-     "note": "construction volume and green-space decline",
+     "title": "Ter-Ghazaryan, D. K. (2010). 'Re-imagining Yerevan in the Post-Soviet Era: Urban Symbolism and Narratives of the Nation in the Landscape of Armenia's Capital'. PhD dissertation, Florida International University.",
+     "note": "construction volume and green-space decline pp. 79, 94.",
      "note_hy": "շինարարության ծավալը և կանաչ տարածքի նվազումը",
      "note_fa": "حجم ساخت‌وساز و افت فضای سبز"
     },
     {
-     "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025.",
+     "note": "Section: 'The emergence of urban movements'."
     }
    ],
    "media": [
@@ -6581,10 +6585,11 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     },
     {
-     "title": "Vermishyan, H. and Michikyan, M. (2020), on activity change on Northern Avenue 2007 to 2019, cited in the manuscript"
+     "title": "Vermishyan, H. and Michikyan, M. (2020). 'The Transformation of Urban Public Space of Post-Soviet Yerevan: The Case of Northern Avenue'.",
+     "note": "On activity change on Northern Avenue, 2007 to 2019. Reached through the manuscript, not read directly."
     }
    ],
    "fieldnote": "Dated to the years of the study it rests on, not to a day. The practices it describes have hours, not dates.",
@@ -6648,7 +6653,7 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     }
    ],
    "fieldnote": "Anchored on the avenue's centreline near its middle, not on a specific alley. The alleys are not individually identified in the manuscript.",
@@ -8004,8 +8009,8 @@
    ],
    "sources": [
     {
-     "title": "Northern Avenue paper (Rahiminezhad), 'The emergence of urban movements'",
-     "note": "walking interview, fieldwork",
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025.",
+     "note": "walking interview, fieldwork Section: 'The emergence of urban movements'.",
      "note_hy": "քայլող հարցազրույց, դաշտային աշխատանք",
      "note_fa": "مصاحبهٔ قدم‌زنان، کار میدانی"
     },
@@ -8095,10 +8100,10 @@
    ],
    "sources": [
     {
-     "title": "Ter-Ghazaryan (2013)"
+     "title": "Ter-Ghazaryan, D. K. (2013). 'Civilizing the City Center: Symbolic Spaces and Narratives of the Nation in Yerevan's Post-Soviet Landscape'. Nationalities Papers."
     },
     {
-     "title": "Northern Avenue paper (Rahiminezhad)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     }
    ],
    "media": [],
@@ -11278,7 +11283,7 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     },
     {
      "title": "OpenStreetMap",
@@ -12683,7 +12688,7 @@
    ],
    "sources": [
     {
-     "title": "Rahiminezhad, S., 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007-2018' (manuscript, Nov 2025)"
+     "title": "Rahiminezhad, S. (2025). 'Exfoliating the Square: Northern Avenue and the Remaking of Yerevan's Political Culture, 2007–2018'. Manuscript, November 2025."
     }
    ],
    "fieldnote": "Dated to October 2020, during the war, because that is when the Sari Galin observation was made. The rule about the squares has no date; it is a standing condition.",
