@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. رسانه‌ها سه گونه‌اند و همان‌گونه برچسب خورده‌اند: عکس‌های ویکی‌مدیا کامنز با پروانهٔ آزاد، هر یک با نام عکاس، تاریخ، پروانه و پیوند به فایل منبع؛ عکس‌های میدانی خودِ نگارنده با نشان «fieldnote»؛ و ویدیوی جاسازی‌شده که جای دیگری میزبانی می‌شود، با اعتبار بارگذارنده و پیوند به اصل.",
-  "version": "20260910d"
+  "version": "20260911a"
  },
  "categories": [
   {
@@ -19035,6 +19035,90 @@
    "analysis": "A square is closed by digging it up and it is reopened by a decision. The map has the closing, at dawn on 1 March 2008, in detail; it did not have the day the decision was reversed, and without that day the 2008 episode has no end.\n\nThree years and sixteen days is also the correct measure of what happened on 1 March 2008. The killing of ten people is the event; the three-year removal of the city's principal protest space is the policy that followed it, and it is the part with a spatial form. Everything the map records in Yerevan between March 2008 and March 2011 — the kiosk disputes, the tree protests, the metro fare campaign, the Afrikyan house, the first Komitas 5 win — happened while the square that political opposition had used since 1988 was fenced off.\n\nThe reopening is therefore the beginning of something rather than the end. The Barevolution rallies of February 2013 assemble in Freedom Square; so does Electric Yerevan in June 2015; so does the march of 13 April 2018. None of that is available before 17 March 2011.",
    "analysis_hy": "Հրապարակը փակվում է փորելով և վերաբացվում է որոշմամբ։ Քարտեզն ունի փակումը՝ 2008 թ. մարտի 1-ի լուսաբացին, մանրամասնորեն. այն չուներ այն օրը, երբ որոշումը հետ շրջվեց, և առանց այդ օրվա 2008-ի դրվագը վերջ չունի։\n\nԵրեք տարի և տասնվեց օրը նաև 2008 թ. մարտի 1-ին կատարվածի ճիշտ չափանիշն է։ Տասը մարդու սպանությունն իրադարձությունն է. քաղաքի գլխավոր բողոքի տարածքի եռամյա հեռացումն այն քաղաքականությունն է, որ հետևեց դրան, և հենց այն մասն է, որ ունի տարածական ձև։ Այն ամենը, ինչ քարտեզը գրանցում է Երևանում 2008 թ. մարտի և 2011 թ. մարտի միջև՝ կրպակների վեճերը, ծառերի բողոքները, մետրոյի ուղեվարձի արշավը, Աֆրիկյանների տունը, Կոմիտասի 5-ի առաջին հաղթանակը, տեղի է ունեցել այն ժամանակ, երբ այն հրապարակը, որը քաղաքական ընդդիմությունն օգտագործում էր 1988-ից, ցանկապատված էր։\n\nՈւստի վերաբացումը ինչ-որ բանի սկիզբն է, այլ ոչ թե վերջը։ 2013 թ. փետրվարի «Բարևոլյուցիայի» հանրահավաքները հավաքվում են Ազատության հրապարակում. նույնն է «Էլեկտրիկ Երևանը» 2015 թ. հունիսին. նույնն է 2018 թ. ապրիլի 13-ի երթը։ Այդ ամենը հասանելի չէ մինչև 2011 թ. մարտի 17-ը։",
    "analysis_fa": "میدانی را با کندن می‌بندند و با یک تصمیم باز می‌کنند. نقشه بستن را، در سپیده‌دم ۱ مارس ۲۰۰۸، با جزئیات دارد؛ روزی را که آن تصمیم وارونه شد نداشت، و بدون آن روز، دورهٔ ۲۰۰۸ پایانی ندارد.\n\nسه سال و شانزده روز، معیار درست آن چیزی است که در ۱ مارس ۲۰۰۸ رخ داد. کشته‌شدن ده نفر رویداد است؛ برداشتن سه‌سالهٔ اصلی‌ترین فضای اعتراض شهر سیاستی است که در پی آن آمد، و همان بخشی است که صورتی مکانی دارد. هرآنچه نقشه در ایروان میان مارس ۲۰۰۸ و مارس ۲۰۱۱ ثبت می‌کند — نزاع دکه‌ها، اعتراض‌های درختان، کارزار کرایهٔ مترو، خانهٔ آفریکیان، نخستین پیروزی کومیتاس ۵ — در حالی رخ داد که میدانی که اپوزیسیون سیاسی از ۱۹۸۸ به کار می‌برد حصار داشت.\n\nپس بازگشایی آغاز چیزی است، نه پایان آن. تجمع‌های «باروولوسیون» در فوریهٔ ۲۰۱۳ در میدان آزادی گرد می‌آیند؛ «ایروانِ برقی» در ژوئن ۲۰۱۵ نیز؛ راهپیمایی ۱۳ آوریل ۲۰۱۸ نیز. هیچ‌یک از این‌ها پیش از ۱۷ مارس ۲۰۱۱ در دسترس نیست."
+  },
+  {
+   "id": "hadrut-executions-2020-10-15",
+   "title": "15 October 2020: the video from Hadrut, and the disagreement inside it",
+   "title_hy": "2020 թ. հոկտեմբերի 15. Հադրութի տեսանյութը և դրա ներսի անհամաձայնությունը",
+   "title_fa": "۱۵ اکتبر ۲۰۲۰: ویدئوی هادروت، و اختلافی که در دل آن است",
+   "date": "2020-10-15",
+   "datePrecision": "day",
+   "coordinates": [
+    47.03138,
+    39.51901
+   ],
+   "location": "Hadrut",
+   "location_hy": "Հադրութ",
+   "location_fa": "هادروت",
+   "categories": [
+    "violence",
+    "justice",
+    "state"
+   ],
+   "summary": "On 15 October 2020 a video surfaced of two captured Armenians — Yuri Adamyan, aged twenty-five, and Benik Hakobyan, aged seventy-three — being executed in Hadrut by Azerbaijani soldiers. Bellingcat analysed the footage, concluded it was real, and found that both men had been captured by Azerbaijani forces between 9 and 15 October and then executed; the BBC corroborated the investigation. Artsakh authorities identified Hakobyan as a civilian of Hadrut. The Armenian representation at the European Court of Human Rights said it was investigating filing an official complaint.",
+   "summary_hy": "2020 թ. հոկտեմբերի 15-ին հայտնվեց տեսանյութ, որում ադրբեջանցի զինվորները Հադրութում մահապատժի են ենթարկում երկու գերի հայի՝ քսանհինգամյա Յուրի Ադամյանին և յոթանասուներեքամյա Բենիկ Հակոբյանին։ Bellingcat-ը վերլուծեց կադրերը, եզրակացրեց, որ դրանք իսկական են, և պարզեց, որ երկու տղամարդիկ գերեվարվել են ադրբեջանական ուժերի կողմից հոկտեմբերի 9-ի և 15-ի միջև և ապա մահապատժի ենթարկվել. BBC-ն հաստատեց հետաքննությունը։ Արցախի իշխանությունները Հակոբյանին բնորոշեցին որպես Հադրութի խաղաղ բնակիչ։ Մարդու իրավունքների եվրոպական դատարանում Հայաստանի ներկայացուցչությունը հայտնեց, որ ուսումնասիրում է պաշտոնական բողոք ներկայացնելու հարցը։",
+   "summary_fa": "در ۱۵ اکتبر ۲۰۲۰ ویدئویی منتشر شد که در آن سربازان آذربایجانی دو اسیر ارمنی — یوری آدامیان، بیست‌وپنج‌ساله، و بنیک هاکوبیان، هفتادوسه‌ساله — را در هادروت اعدام می‌کنند. بلینگ‌کت فیلم را تحلیل کرد، آن را واقعی یافت و نتیجه گرفت هر دو مرد میان ۹ تا ۱۵ اکتبر به دست نیروهای آذربایجانی اسیر و سپس اعدام شده‌اند؛ بی‌بی‌سی این تحقیق را تأیید کرد. مقامات آرتساخ هاکوبیان را غیرنظامیِ اهل هادروت معرفی کردند. نمایندگی ارمنستان در دادگاه اروپایی حقوق بشر گفت در حال بررسی طرح شکایت رسمی است.",
+   "actors": [
+    "Yuri Adamyan",
+    "Benik Hakobyan",
+    "Azerbaijani armed forces",
+    "Bellingcat",
+    "BBC",
+    "authorities of the Republic of Artsakh",
+    "Armenian representation at the European Court of Human Rights"
+   ],
+   "actors_hy": [
+    "Յուրի Ադամյան",
+    "Բենիկ Հակոբյան",
+    "ադրբեջանական զինված ուժեր",
+    "Bellingcat",
+    "BBC",
+    "Արցախի Հանրապետության իշխանություններ",
+    "ՄԻԵԴ-ում Հայաստանի ներկայացուցչություն"
+   ],
+   "actors_fa": [
+    "یوری آدامیان",
+    "بنیک هاکوبیان",
+    "نیروهای مسلح آذربایجان",
+    "بلینگ‌کت",
+    "بی‌بی‌سی",
+    "مقامات جمهوری آرتساخ",
+    "نمایندگی ارمنستان در دادگاه اروپایی حقوق بشر"
+   ],
+   "tags": [
+    "Hadrut",
+    "2020",
+    "war crime",
+    "open-source investigation",
+    "Bellingcat"
+   ],
+   "tags_hy": [
+    "Հադրութ",
+    "2020",
+    "պատերազմական հանցագործություն",
+    "բաց աղբյուրների հետաքննություն",
+    "Bellingcat"
+   ],
+   "tags_fa": [
+    "هادروت",
+    "۲۰۲۰",
+    "جنایت جنگی",
+    "تحقیق منبع‌باز",
+    "بلینگ‌کت"
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia, 'Battle of Hadrut'",
+     "url": "https://en.wikipedia.org/wiki/Battle_of_Hadrut"
+    }
+   ],
+   "media": [],
+   "episode": "war-2020",
+   "fatalities": "2 named",
+   "fieldnote": "TWO THINGS IN THIS ENTRY ARE UNRESOLVED AND THE ENTRY KEEPS THEM THAT WAY.\n\nFIRST, THE DATE IS THE VIDEO'S, NOT THE KILLING'S. The source says a video surfaced on 15 October; Bellingcat dates the capture to somewhere between 9 and 15 October and the execution to after it. So 15 October is the last day the men could have been killed and the first day the killing was visible. The entry is pinned to that day because it is the only day the source fixes, and the map must not be read as saying the executions happened on it.\n\nSECOND, THE TWO BEST SOURCES DISAGREE ABOUT WHO THE MEN WERE. Artsakh authorities identified Benik Hakobyan as a civilian of Hadrut. Bellingcat concluded that both men were Armenian combatants captured between 9 and 15 October. The cited article carries both statements and does not resolve them, and neither does this entry. The distinction is not decorative: the execution of a captured combatant and the execution of a captured civilian are different crimes under the law the ECHR complaint would have invoked, and both are crimes. Do not let a later edit quietly pick one.\n\nThe coordinate is the town's, not the site's; the source does not say where in Hadrut this happened.",
+   "analysis": "This is the best-evidenced single act of violence in the 2020 dossier, and it is better evidenced than most of what the map carries for this war — an open-source investigation of primary video, independently corroborated by a news organisation, naming two people and bounding the date. Set that against the rest of the Battle of Hadrut article, where every military casualty figure is an Azerbaijani claim and the only Armenian figures are eleven civilians and a post-war statement that a thousand to fifteen hundred soldiers fled. In an episode built almost entirely from competing official announcements, the one thing two independent parties examined and agreed on is a recording of a killing.\n\nThe disagreement that remains is the reason this entry exists rather than a sentence inside `hadrut-2020-10-15`. On one side the de facto authorities of Artsakh, who had an interest in the men being civilians; on the other Bellingcat, whose method is to establish what the footage itself can support and which found them to be combatants. The library's rule holds here as it does at Khojaly and Maraga: give the figure or the finding with the name of whoever produced it attached, and let the contradiction stand where the sources leave it. A map that resolves this one silently would be making a legal determination it has no standing to make.\n\nAnd it belongs beside the older entries in this library that do the same work. Talat Pasha's assassination in Berlin in 1921 is filed under justice because the trial that followed is where Lemkin began; Human Rights Watch at Khojaly and Kalbajar, Memorial in the Karabakh rayons, Amnesty and Christian Solidarity International at Maraga. Hadrut in 2020 is the first entry in that line where the evidence is a video file and the investigator is a website, and it is also the one with the clearest chain from footage to finding to an intended filing at an international court. Nothing came of the filing in the sources this map holds.",
+   "analysis_hy": "Սա 2020-ի թղթապանակի ամենալավ փաստավորված առանձին բռնարարքն է, և այն ավելի լավ է փաստավորված, քան այն, ինչ քարտեզը կրում է այս պատերազմի մասին. բաց աղբյուրների հետաքննություն առաջնային տեսանյութի վրա, անկախորեն հաստատված լրատվական կազմակերպության կողմից, երկու մարդու անուններով և սահմանափակված ամսաթվով։ Դրեք դա Հադրութի ճակատամարտի հոդվածի մնացած մասի կողքին, որտեղ ռազմական զոհերի յուրաքանչյուր թիվ ադրբեջանական պնդում է, իսկ միակ հայկական թվերը տասնմեկ խաղաղ բնակիչ են և հետպատերազմյան հայտարարություն այն մասին, որ հազարից հազար հինգ հարյուր զինվոր փախել է։ Գրեթե ամբողջությամբ մրցակցող պաշտոնական հայտարարություններից կառուցված դրվագում այն միակ բանը, որ երկու անկախ կողմ ուսումնասիրեցին և համաձայնեցին, սպանության տեսագրություն է։\n\nՄնացող անհամաձայնությունն այն պատճառն է, թե ինչու է սա առանձին գրառում, այլ ոչ թե նախադասություն `hadrut-2020-10-15`-ի ներսում։ Մի կողմում Արցախի փաստացի իշխանություններն են, որոնք շահագրգռված էին, որ մարդիկ խաղաղ բնակիչ լինեն, մյուս կողմում՝ Bellingcat-ը, որի մեթոդը հաստատելն է, թե ինչ կարող են հիմնավորել հենց կադրերը, և որը նրանց գտավ մարտիկներ։ Գրադարանի կանոնը գործում է այստեղ, ինչպես Խոջալուում և Մարաղայում. տվեք թիվը կամ եզրակացությունը՝ կցելով նրա անունը, ով այն արտադրել է, և թողեք հակասությունն այնտեղ, որտեղ աղբյուրները թողել են։ Այն քարտեզը, որ սա լուռ լուծի, կկայացներ իրավական որոշում, որի լիազորությունը չունի։\n\nԵվ այն տեղ ունի այս գրադարանի ավելի հին գրառումների կողքին, որոնք նույն գործն են անում։ Թալեաթ փաշայի սպանությունը Բեռլինում 1921-ին դասվում է արդարադատության տակ, որովհետև հետագա դատավարությունն այն վայրն է, որտեղից սկսեց Լեմկինը. Human Rights Watch-ը Խոջալուում և Քարվաճառում, «Մեմորիալը» Ղարաբաղի շրջաններում, Amnesty-ն և Christian Solidarity International-ը Մարաղայում։ 2020-ի Հադրութն այդ շարքի առաջին գրառումն է, որտեղ վկայությունը տեսաֆայլ է, իսկ հետաքննողը՝ կայք, և այն նաև ամենապարզ շղթան ունի՝ կադրից դեպի եզրակացություն և դեպի միջազգային դատարանում նախատեսվող բողոք։ Այն աղբյուրներում, որ ունի այս քարտեզը, բողոքից ոչինչ չծնվեց։",
+   "analysis_fa": "این بهترین مستندشدهٔ تک‌کنش خشونت در پروندهٔ ۲۰۲۰ است، و بهتر از بیشتر آنچه این نقشه دربارهٔ این جنگ دارد مستند شده: تحقیقی منبع‌باز روی ویدئوی دست‌اول، تأییدشده به‌طور مستقل از سوی یک سازمان خبری، با نام دو نفر و تاریخی محدودشده. این را کنار باقی مقالهٔ نبرد هادروت بگذارید، جایی که هر رقم تلفات نظامی ادعایی آذربایجانی است و تنها ارقام ارمنی یازده غیرنظامی و اظهاری پس از جنگ است که هزار تا هزاروپانصد سرباز گریختند. در دوره‌ای که تقریباً یکسره از اعلام‌های رسمیِ متعارض ساخته شده، تنها چیزی که دو طرف مستقل بررسی کردند و بر سرش به توافق رسیدند، فیلمی از یک کشتن است.\n\nاختلافی که برجا می‌ماند، همان دلیلی است که این مدخلی جداست و نه جمله‌ای درون `hadrut-2020-10-15`. در یک سو مقامات بالفعل آرتساخ‌اند که ذی‌نفع بودند آن دو غیرنظامی باشند؛ در سوی دیگر بلینگ‌کت، که روشش تعیین آن چیزی است که خودِ فیلم می‌تواند پشتیبانی کند، و آن دو را رزمنده یافت. قاعدهٔ این کتابخانه اینجا هم برقرار است، همان‌گونه که در خوجالی و ماراغا: رقم یا یافته را با نام پدیدآورنده‌اش بیاور، و تناقض را همان‌جا که منابع رهایش کرده‌اند رها کن. نقشه‌ای که این را در سکوت حل کند، حکمی حقوقی صادر کرده که صلاحیتش را ندارد.\n\nو جای آن کنار مدخل‌های کهن‌ترِ همین کتابخانه است که همین کار را می‌کنند. ترور طلعت پاشا در برلین ۱۹۲۱ زیر «دادخواهی» رده‌بندی شده، چون دادگاهِ پس از آن جایی است که لمکین از آن آغاز کرد؛ دیده‌بان حقوق بشر در خوجالی و کلبجر، مموریال در نواحی قره‌باغ، عفو بین‌الملل و همبستگی مسیحی بین‌الملل در ماراغا. هادروتِ ۲۰۲۰ نخستین مدخل این خط است که شاهدش یک فایل ویدئویی و پژوهنده‌اش یک وب‌سایت است، و روشن‌ترین زنجیره را هم دارد: از فیلم به یافته و به شکایتی که قرار بود در دادگاهی بین‌المللی طرح شود. در منابعی که این نقشه دارد، از آن شکایت چیزی برنیامد."
   }
  ],
  "episodes": [
