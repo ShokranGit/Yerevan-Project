@@ -99,6 +99,93 @@ button,input,select{ font-family:inherit; font-size:inherit; color:inherit; }
 #search::placeholder{ color:var(--text-3); }
 #search:focus{ border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
 
+/* ---- dissertation / atlas frame ---- */
+.mode-switch{
+  margin:0 0 18px;
+  padding:10px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.mode-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px;
+}
+.mode-tab{
+  min-height:34px;
+  padding:7px 8px;
+  border:1px solid transparent;
+  border-radius:6px;
+  background:transparent;
+  color:var(--text-2);
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+}
+.mode-tab:hover{ background:var(--bg-3); color:var(--text); }
+.mode-tab.active{
+  background:var(--accent-soft);
+  border-color:#7b2429;
+  color:var(--text);
+}
+.mode-note{
+  margin:8px 2px 0;
+  color:var(--text-2);
+  font-size:12px;
+  line-height:1.45;
+}
+.article-nav{ margin-bottom:18px; }
+.article-buttons,.context-buttons{
+  display:grid;
+  gap:7px;
+}
+.article-card,.context-buttons button{
+  width:100%;
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--bg-2);
+  color:var(--text-2);
+  cursor:pointer;
+  text-align:start;
+}
+.article-card:hover,.context-buttons button:hover{
+  background:var(--bg-3);
+  color:var(--text);
+}
+.article-card.active{
+  border-color:#7b2429;
+  background:linear-gradient(90deg,var(--accent-soft),rgba(201,38,44,.04));
+  color:var(--text);
+}
+.article-card b,.context-buttons b{
+  display:block;
+  margin-bottom:2px;
+  font-size:12.5px;
+  line-height:1.3;
+}
+.article-card span,.context-buttons span{
+  display:block;
+  color:var(--text-3);
+  font-size:11.5px;
+  line-height:1.35;
+}
+.context-dock{
+  margin-bottom:20px;
+  padding-top:2px;
+}
+.context-buttons{
+  grid-template-columns:1fr;
+}
+.context-buttons button{
+  background:var(--bg);
+  border-style:dashed;
+}
+.context-buttons b{
+  color:var(--text);
+}
+
 /* ---- blocks ---- */
 .block{ margin-bottom:26px; }
 .block-head{

@@ -81,10 +81,86 @@
     cStart: Date.UTC(1900, 0, 1), cEnd: Date.UTC(2000, 0, 1),
     selectedId: null,
     basemap: "kentron",
+    siteMode: "dissertation",
+    activeArticle: "all",
     cityPitch: 55,
     playing: false,
     playRAF: null
   };
+
+  var ARTICLE_EVENTS = {
+    article1: [
+      "northern-avenue-demolitions-2002",
+      "decree-2002",
+      "northern-ave-doubt-2002",
+      "northern-ave-miscalculated-2004",
+      "compensation-stuck-2004",
+      "kond-scheduled-2005",
+      "northern-avenue-first-section-2006",
+      "death-by-eviction-2006",
+      "buzand-eviction-2006",
+      "northern-avenue-opening-2007",
+      "political-prisoners-northern-avenue-2008",
+      "avenue-unclaimed-2011",
+      "avenue-everyday-2012",
+      "urban-mashtots-park-2012",
+      "urban-electric-yerevan-2015",
+      "avenue-alleys",
+      "northern-avenue-posters-2018-04-25"
+    ],
+    article2: [
+      "genocide-1915",
+      "genocide-recognition-1965",
+      "lenin-square-1965-04-24",
+      "recognition-1965",
+      "tsitsernakaberd-opens-1967-11-29",
+      "deir-ez-zor-memorial-destroyed-2014",
+      "soad-republic-square-2015",
+      "genocide-ceremony",
+      "genocide-day-2018-04-24"
+    ],
+    article3: [
+      "karabakh-movement-umbrella",
+      "stepanakert-rally-1988-02-13",
+      "nkao-vote-1988-02-20",
+      "sumgait-1988-02-27",
+      "first-war-dark-years",
+      "march-first-2008",
+      "political-prisoners-northern-avenue-2008",
+      "urban-mashtots-park-2012",
+      "protests-2013",
+      "electric-yerevan-2015",
+      "soad-republic-square-2015",
+      "my-step-march-2018-03-31",
+      "france-square-sit-in-2018-04-13",
+      "baghramyan-razor-wire-2018-04-16",
+      "sargsyan-elected-pm-2018-04-17",
+      "tigran-mets-march-2018-04-18",
+      "republic-square-becomes-centre-2018-04-19",
+      "marriott-meeting-2018-04-22",
+      "pashinyan-arrest-2018-04-22",
+      "pashinyan-march-2018-04-22",
+      "sargsyan-resigns-2018-04-23",
+      "genocide-day-2018-04-24",
+      "parliament-rejects-pashinyan-2018-05-01",
+      "general-strike-2018-05-02",
+      "pashinyan-elected-pm-2018-05-08",
+      "war-2020-2021",
+      "government-house-stormed-2020-11-10",
+      "parliament-stormed-2020-11-10",
+      "general-strike-2020-12-22"
+    ]
+  };
+
+  function articleSet() {
+    var ids = [];
+    if (state.activeArticle === "all") {
+      Object.keys(ARTICLE_EVENTS).forEach(function (k) { ids = ids.concat(ARTICLE_EVENTS[k]); });
+    } else {
+      ids = ARTICLE_EVENTS[state.activeArticle] || [];
+    }
+    return new Set(ids);
+  }
 
   var map;
   var ROUTES = null, ROUTE_MARKS = null, ROUTE_ENDS = null;
@@ -2802,7 +2878,9 @@
 
   function visibleEvents() {
     var q = state.query.trim().toLowerCase();
+    var articleIds = state.siteMode === "dissertation" ? articleSet() : null;
     return state.events.filter(function (e) {
+      if (articleIds && !articleIds.has(e.id)) return false;
       if (!inWindow(e)) return false;
       if (state.categories.length) {
         var hit = e.categories.some(function (c) { return state.activeCats.has(c); });
@@ -2853,6 +2931,58 @@
     buildMarks(vis);
     updateCategoryCounts();
     $("result-count").textContent = num(vis.length);
+  }
+
+  function setMode(mode) {
+    state.siteMode = mode === "atlas" ? "atlas" : "dissertation";
+    if (state.siteMode === "atlas") state.activeArticle = "all";
+    syncModeUI();
+    refresh();
+  }
+
+  function setArticle(article) {
+    state.siteMode = "dissertation";
+    state.activeArticle = ARTICLE_EVENTS[article] ? article : "all";
+    syncModeUI();
+    refresh();
+  }
+
+  function syncModeUI() {
+    var isAtlas = state.siteMode === "atlas";
+    document.body.classList.toggle("atlas-mode", isAtlas);
+    document.body.classList.toggle("dissertation-mode", !isAtlas);
+
+    document.querySelectorAll(".mode-tab[data-mode]").forEach(function (b) {
+      var on = b.dataset.mode === state.siteMode;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+
+    document.querySelectorAll(".article-card[data-article]").forEach(function (b) {
+      var on = !isAtlas && b.dataset.article === state.activeArticle;
+      b.classList.toggle("active", on);
+    });
+
+    var note = $("mode-note");
+    if (note) {
+      note.textContent = t(isAtlas ? "mode.atlasNote" : "mode.dissertationNote");
+    }
+  }
+
+  function enterContextLayer(kind) {
+    if (kind === "models") {
+      var g = $("g3-thumb");
+      if (g) g.click();
+      return;
+    }
+    var terms = kind === "world"
+      ? "diaspora Los Angeles Iran Lebanon Russia Georgia Karabakh displacement"
+      : "Republic Square Lenin Tamanyan Northern Avenue Baghramyan Tsitsernakaberd Kond Dalma";
+    state.query = terms.toLowerCase();
+    var box = $("search");
+    if (box) box.value = terms;
+    syncModeUI();
+    refresh();
   }
 
   /* stable numeric id for feature-state */
@@ -4699,6 +4829,15 @@
     $("search").addEventListener("input", function () {
       state.query = this.value; refresh();
     });
+    document.querySelectorAll(".mode-tab[data-mode]").forEach(function (b) {
+      b.addEventListener("click", function () { setMode(b.dataset.mode); });
+    });
+    document.querySelectorAll(".article-card[data-article]").forEach(function (b) {
+      b.addEventListener("click", function () { setArticle(b.dataset.article); });
+    });
+    document.querySelectorAll(".context-buttons [data-context]").forEach(function (b) {
+      b.addEventListener("click", function () { enterContextLayer(b.dataset.context); });
+    });
     $("sort").addEventListener("change", function () {
       state.sort = this.value; refresh();
     });
@@ -4794,12 +4933,14 @@
         if (spurEp) { var _e = episodeById(spurEp); spurEp = null; if (_e) openSpur(_e); }
         lightboxLabels();
         buildAbout();
+        syncModeUI();
         updateTimelineUI();
         updateCenturyUI();
         refresh();
         if (state.selectedId && !$("detail-view").hidden) selectEvent(state.selectedId, false);
       });
     }
+    syncModeUI();
   }
 
 

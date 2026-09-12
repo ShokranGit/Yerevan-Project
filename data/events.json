@@ -4,11 +4,11 @@
   "subtitle": "An interactive research map of urban space, social movements, and political events",
   "author": "Shokran Rahiminezhad",
   "affiliation": "",
-  "description": "This map presents an ongoing research project on Yerevan's urban space, beginning with the Northern Avenue development and extending outward to the social movements of the 2000s and 2010s, the 2018 revolution, the Nagorno-Karabakh conflict, and the everyday social life of the city's public spaces.\n\nEach point is an event fixed in time and place. Use the timeline to watch the city's political geography accumulate, and the themes to isolate one thread of the argument at a time.",
+  "description": "This map is both a dissertation interface and an ongoing research atlas. In dissertation mode, it gives a selective route through the three articles: Northern Avenue and urban transformation; the 2015 System of a Down concert, commemoration and Republic Square; and the 2018 revolution, Nagorno-Karabakh and political geography. In atlas mode, it remains an open archive for future work on Armenia, the South Caucasus, diaspora, displacement and migration.\n\nEach point is an event fixed in time and place. The city, the models and the Armenian world act as context layers that can support both readings.",
   "timelineStart": "2000-01-01",
   "timelineEnd": "2028-12-31",
-  "note": "Working research instrument, not a finished publication. Entries derive from the Northern Avenue paper (edited Nov 2025) and carry its citations. Media are of three kinds and are labelled as such: photographs from Wikimedia Commons, each openly licensed and carrying its photographer, date and licence and a link to its source file; the author's own fieldwork photographs, marked 'fieldnote' and credited to the Author; and embedded video hosted elsewhere, credited to the uploader with a link to the original.",
-  "updated": "2026-09-09",
+  "note": "Working research instrument, not a finished publication. Dissertation mode is a first public prototype of the article-led structure and does not yet settle the final corpus of records for each article. Atlas mode keeps the broader archive visible. Media are of three kinds and are labelled as such: photographs from Wikimedia Commons, each openly licensed and carrying its photographer, date and licence and a link to its source file; the author's own fieldwork photographs, marked 'fieldnote' and credited to the Author; and embedded video hosted elsewhere, credited to the uploader with a link to the original.",
+  "updated": "2026-09-12",
   "title_hy": "Երևանի նախագիծ",
   "subtitle_hy": "Քաղաքային տարածքի, հասարակական շարժումների և քաղաքական իրադարձությունների ինտերակտիվ հետազոտական քարտեզ",
   "author_hy": "Շոկրան Ռահիմինեժադ",
@@ -19,7 +19,7 @@
   "author_fa": "شکران رحیمی‌نژاد",
   "description_fa": "این نقشه پژوهشی در جریان دربارهٔ فضای شهری ایروان را نشان می‌دهد, از ساخت خیابان شمالی آغاز می‌شود و به جنبش‌های اجتماعی دههٔ ۲۰۰۰ و ۲۰۱۰، انقلاب ۲۰۱۸، مناقشهٔ قره‌باغ کوهستانی و زندگی اجتماعی روزمرهٔ فضاهای عمومی شهر گسترش می‌یابد.\n\nهر نقطه رویدادی است که در زمان و مکان تثبیت شده است. از خط زمان استفاده کنید تا ببینید جغرافیای سیاسی شهر چگونه انباشته می‌شود، و از موضوع‌ها تا هر بار یک رشتهٔ استدلال را جدا کنید.",
   "note_fa": "ابزاری پژوهشی در دست کار است، نه انتشاری پایان‌یافته. مدخل‌ها از مقالهٔ خیابان شمالی (ویرایش نوامبر ۲۰۲۵) برآمده‌اند و ارجاعات همان را دارند. رسانه‌ها سه گونه‌اند و همان‌گونه برچسب خورده‌اند: عکس‌های ویکی‌مدیا کامنز با پروانهٔ آزاد، هر یک با نام عکاس، تاریخ، پروانه و پیوند به فایل منبع؛ عکس‌های میدانی خودِ نگارنده با نشان «fieldnote»؛ و ویدیوی جاسازی‌شده که جای دیگری میزبانی می‌شود، با اعتبار بارگذارنده و پیوند به اصل.",
-  "version": "20260911a"
+  "version": "20260912a"
  },
  "categories": [
   {
